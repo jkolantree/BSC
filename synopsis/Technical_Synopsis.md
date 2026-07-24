@@ -1,0 +1,140 @@
+# On Boundaries of Evidence
+
+## Two-page technical synopsis
+
+**J. Tree · Independent researcher · 24 July 2026**
+
+Scientific claims often fail not within either of two descriptions, but in the
+passage between them: from an interior state to boundary data, one instrument
+to another, a fine model to a coarse model, a learned operator to a dynamical
+claim, or a topological invariant to a physical quantity. *On Boundaries of
+Evidence* develops Boundary-State Calculus (BSC) as a typed audit calculus for
+this passage.
+
+BSC is not proposed as an ontology, a unified physical theory, or a proof of
+holography, quantum gravity, consciousness, or QCD. Its unit of evaluation is
+one claimed transfer. The question is whether that transfer states:
+
+1. what moves;
+2. which observables remain meaningful;
+3. what information is destroyed;
+4. whether the target equations remain satisfied;
+5. which diagrams fail to commute;
+6. what physically implements the passage; and
+7. what evidence licenses the resulting claim.
+
+The paper retains the BSC corpus's original finite-system tuple and its later
+measurable repair rather than replacing them with a cleaner retrospective
+object (§3, pp. 6–8). The repaired system separates raw state from exact
+observational equivalence and includes controls, outputs, physical context,
+legal filtration, dynamics, observation, comparison geometry, viability,
+transformation registries, and a boundary ledger. A companion record supplies
+reconstruction data, provenance, and certificate state without silently
+changing the inherited tuple. The instrument, controller, observer or reference
+frame, clock, and calibration state are physical configuration variables, not
+informal metadata.
+
+Several operations that boundary language often conflates are kept distinct
+(§5, pp. 9–10): an ideal trace, a finite sensor-layer observation, a boundary
+response such as a Dirichlet-to-Neumann map, a reconstruction relation, and a
+selected extension. A boundary response supports an interior claim only
+relative to a governing equation, admissible coefficient class, equivalence or
+gauge class, regularity assumptions, data regime, and stability theorem.
+
+The central added object is the typed transfer record (§7, pp. 11–14):
+
+\[
+\mathfrak M_{\ell\to m}
+=
+\left(
+T_{\ell m},
+T_{\ell m}^{\sharp},
+K_{\ell m},
+R_{\ell m},
+\Theta_{\ell m},
+\delta_{\ell m},
+C_{\ell m},
+\mathsf{Cert}_{\ell m}
+\right).
+\]
+
+Here \(T_{\ell m}\) transports states, while \(T_{\ell m}^{\sharp}\) pulls
+target observables in the reverse direction. \(K_{\ell m}\) is an observation
+post-processing or simulation channel. \(R_{\ell m}\) records failure to
+satisfy the target equations after transport. \(\Theta_{\ell m}\) measures a
+declared naturality or commuting-square defect. \(\delta_{\ell m}\) is the
+directed Blackwell–Le Cam deficiency: the best achievable error when the source
+experiment attempts to simulate the target experiment. \(C_{\ell m}\) records
+the carrier, controller, instrument, reference frame, clock, resource
+interface, and boundary conditions. \(\mathsf{Cert}_{\ell m}\) binds
+assumptions, tolerances, sources, proof or execution artifacts, hashes,
+unresolved obligations, and a five-axis status vector.
+
+These coordinates are not collapsed into one score. Equation residual,
+observation defect, statistical deficiency, quotient loss, and viability
+failure occupy different spaces and obey different propagation laws (§8,
+pp. 14–15). A missing carrier or undefined observable pullback is therefore a
+blocked transfer, not a small numerical error.
+
+For compatible stochastic transfers, state kernels compose in the forward
+direction and observable pullbacks compose in reverse. Observation defects obey
+a contraction-weighted bound, directed deficiencies obey a triangle
+inequality, and deterministic equation residuals propagate only when a
+compatible equation-space map has been supplied (§7.1, pp. 13–14). The
+resulting admissible-chain bounds are collected in §15 (pp. 23–24). If clocks,
+interfaces, resource contracts, or boundary conditions do not match, the
+composite is undefined rather than merely inaccurate.
+
+Persistence is defined at the level of induced path laws (§9, pp. 15–17).
+Endpoint return is insufficient. Persistent identity requires every required
+prefix of a fold chain to remain within its operational-identity, viability,
+residual, deficiency, and certificate budgets. The statement that a persistent
+object is a recursively maintained finite boundary-state is therefore a formal
+organizing principle and a target-relative definition. Its promotion to a
+universal physical law remains conjectural, empirically untested, and
+computationally unexecuted.
+
+## Mathematical provenance and status
+
+| Layer | Content | Status in this paper |
+|---|---|---|
+| Established imports | Markov kernels and operational quotients; Blackwell–Le Cam comparison; boundary trace and Calderón-type response; Koopman operators and stated learnability limits; periodic homogenization; sheaf descent; structured cospans; non-invertible defects; proof checking | Imported under their published or preprint hypotheses. These ingredients are not claimed as new BSC discoveries. |
+| Paper-level consequences | Quotient descent; paired state–observable probability preservation; defect, deficiency, and deterministic residual propagation; persistence obstruction; operational factorization; structured-cospan composition; dependency-DAG demotion; the block from winding to physical charge | Proved locally under the manuscript's stated assumptions. No empirical status is inherited. |
+| Reference fixtures | Eight finite examples covering winding, inverse ambiguity, directed deficiency, Koopman pollution, quantum-reference-frame descent, sheaf obstruction, off-shell residual, and exact counterexample retention | Fixtures 1–7 have exact mathematical derivations but no separate execution receipts. Fixture 8 has a deterministic CPython receipt. |
+| Open status | Universal persistence, generic empirical validation, nonlinear stochastic residual composition, instrument-uncertain reconstruction, QRF quotient characterization, learnability-aware recurrence, physical charge bridges, and a machine-checked BSC kernel | Conjectural, untested, unexecuted, or open as individually recorded. |
+
+The fixtures (§16, pp. 24–27) compute a torus winding class \((2,-3)\) while
+blocking electric charge without a physical bridge; exhibit two distinct
+one-dimensional conductivities with the same Dirichlet-to-Neumann map; obtain
+directed deficiencies \(0\) and \(1/4\) for two binary experiments; separate a
+Koopman pseudomode residual \(\sqrt{2/N}\) from polluted compression
+eigenvalues; prove that a finite \(\mathbb Z_2\) frame transformation does not
+descend through the stated reduced-system quotient; give locally nonempty
+parity constraints with no global section; detect the nonzero residual \(m^2c\)
+of an off-shell field shift; and retain a deterministic receipt for the
+counterexample \(x=-1\) to \(\sqrt{x^2}=x\).
+
+The paper also makes physical promotion deliberately expensive. Winding and
+physical charge are different typed objects (§13, p. 21). A charge claim needs
+a derived bridge from a gauge representation, action and current, Gauss law,
+anomaly condition, boundary condition, or calibrated measurement protocol. The
+application section therefore treats primordial-field toroidal models as
+candidate topological and stabilization grammar, not as an established
+derivation of quark charge, QCD, or hadron dynamics (§17, pp. 28–30).
+
+Claims carry separate mathematical, empirical, computational, source, and
+transfer statuses (§2.2, p. 5). A dependency graph propagates demotion only
+along declared axes (§2.3, pp. 5–6). A theorem does not raise empirical status;
+a hash establishes artifact identity rather than truth; a proof DAG is not
+itself a proof; and an unexecuted numerical description remains unexecuted
+(§14, pp. 21–23).
+
+The appropriate test is narrow and adversarial. Ask whether an equivalent
+compositional record already exists, whether any map is ill-typed, whether a
+composition law fails, whether a fixture has a counterexample, or whether the
+record changes no scientific decision. If an established formalism already
+supplies the same obligations and demotion semantics, or if BSC never
+distinguishes an invalid transfer from a nearby valid one, the additional
+structure is unnecessary. If it exposes such a distinction and preserves it
+through composition, that—not a claim about the universe—is the contribution
+requiring further development.
