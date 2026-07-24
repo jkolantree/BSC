@@ -1,0 +1,45 @@
+name: Fixture or reproduction failure
+description: Report a mathematical counterexample, receipt mismatch, or deterministic reproduction failure.
+title: "[Fixture] "
+body:
+  - type: dropdown
+    id: fixture
+    attributes:
+      label: Fixture
+      options:
+        - F1 — torus winding
+        - F2 — Dirichlet-to-Neumann ambiguity
+        - F3 — Blackwell deficiency
+        - F4 — Koopman pollution
+        - F5 — quantum reference frame
+        - F6 — sheaf obstruction
+        - F7 — off-shell shift
+        - F8 — exact regression receipt
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment and exact command
+      description: For computational failures, include versions, operating system, and complete command.
+    validations:
+      required: false
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed result or counterexample
+    validations:
+      required: true
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: Minimal supporting artifacts
+      description: Include code, input, output, hashes, or the mathematical derivation needed to inspect the report.
+    validations:
+      required: true

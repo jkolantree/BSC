@@ -1,0 +1,30 @@
+name: Scope or status correction
+description: Report overstatement, source-status error, unsupported transfer, or ambiguity in a non-claim.
+title: "[Scope] "
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Exact location
+      description: Give the page, section, table, ledger row, README heading, or metadata field.
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: Current wording and problem
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Give the relevant source, status distinction, or domain restriction.
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction or demotion
+    validations:
+      required: false

@@ -1,0 +1,32 @@
+name: Prior-art equivalence
+description: Identify an existing formalism that may make part or all of the proposed transfer record unnecessary.
+title: "[Prior art] "
+body:
+  - type: input
+    id: citation
+    attributes:
+      label: Exact source
+      description: Give a DOI, arXiv identifier, book citation, or stable URL.
+    validations:
+      required: true
+  - type: textarea
+    id: construction
+    attributes:
+      label: Existing construction
+      description: State the objects, maps, and composition or status semantics that overlap.
+    validations:
+      required: true
+  - type: textarea
+    id: mapping
+    attributes:
+      label: Proposed correspondence
+      description: Map the existing construction to the relevant BSC fields, theorem, or fixture.
+    validations:
+      required: true
+  - type: textarea
+    id: consequence
+    attributes:
+      label: Consequence if correct
+      description: State which novelty, scope, or necessity claim should change.
+    validations:
+      required: true

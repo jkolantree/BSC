@@ -1,0 +1,32 @@
+name: Type or proof error
+description: Report an ill-typed map, missing hypothesis, invalid deduction, or domain mismatch.
+title: "[Type/proof] "
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Exact location
+      description: Give the page, section, definition, theorem, equation, or claim identifier.
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current statement
+      description: Quote only the minimum needed to identify the claim.
+    validations:
+      required: true
+  - type: textarea
+    id: objection
+    attributes:
+      label: Objection
+      description: State the domain, codomain, hypothesis, inference, or counterexample that fails.
+    validations:
+      required: true
+  - type: textarea
+    id: repair
+    attributes:
+      label: Smallest repair or demotion
+      description: If known, state the corrected hypothesis, formulation, or status.
+    validations:
+      required: false
