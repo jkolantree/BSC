@@ -1,0 +1,202 @@
+\documentclass[11pt,a4paper,twocolumn]{extarticle}
+
+\usepackage[left=18mm,right=18mm,top=16mm,bottom=16mm,columnsep=8mm,headheight=12pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathpazo}
+\usepackage[scaled=0.92]{helvet}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs,tabularx,array}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{ragged2e}
+
+\definecolor{inkblue}{RGB}{23,55,78}
+\definecolor{rulegray}{RGB}{105,112,118}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=inkblue,
+  urlcolor=inkblue,
+  pdftitle={On Boundaries of Evidence --- Technical Synopsis},
+  pdfauthor={J. Tree},
+  pdfsubject={Two-page technical synopsis of Boundary-State Calculus},
+  pdfkeywords={Boundary-State Calculus, scientific transfer, evidence, admissibility}
+}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\textsc{On Boundaries of Evidence --- Technical Synopsis}}
+\fancyhead[R]{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\linespread{0.98}
+\setlength{\parindent}{1em}
+\setlength{\parskip}{0.1em}
+\setlist{nosep,leftmargin=1.4em}
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\sloppy
+\raggedbottom
+\addtolength{\textheight}{3pt}
+\vfuzz=3pt
+
+\begin{document}
+\twocolumn[
+\begin{center}
+{\LARGE\bfseries On Boundaries of Evidence}\\
+\vspace{0.25em}
+{\large Boundary-State Calculus for Typed Observation,\\
+Admissible Transfer, and Falsifiable Persistence}\\
+\vspace{0.45em}
+{\small J. Tree \(\cdot\) Independent researcher \(\cdot\) 24 July 2026}\\
+\vspace{0.55em}
+\end{center}
+\hrule
+\vspace{0.75em}
+]
+
+\section*{The problem}
+
+Scientific claims often fail not within either of two descriptions, but in the
+passage between them: interior state to boundary data, one instrument to
+another, a fine model to a coarse model, a learned operator to a dynamical
+claim, or a topological invariant to a physical quantity.  The paper develops
+Boundary-State Calculus (BSC) as a typed audit calculus for this passage.
+
+BSC is not proposed as an ontology, a unified physical theory, or a proof of
+holography, quantum gravity, consciousness, or QCD.  Its unit of evaluation is
+one claimed transfer.  That transfer must state what moves, which observables
+remain meaningful, what information is destroyed, whether target equations
+remain satisfied, which diagrams fail to commute, what physically implements
+the passage, and what evidence licenses the result.
+
+\section*{System and boundary discipline}
+
+The paper retains the BSC corpus's original finite-system tuple and its later
+measurable repair rather than replacing them retrospectively (\S3, pp.~6--8).
+The repaired system separates raw state from exact observational equivalence
+and includes controls, outputs, physical context, legal filtration, dynamics,
+observation, comparison geometry, viability, transformation registries, and a
+boundary ledger.  A companion record supplies reconstruction data, provenance,
+and certificate state without silently changing the inherited tuple.
+Instrument, controller, observer or reference frame, clock, and calibration
+are physical configuration variables, not metadata.
+
+An ideal trace, finite sensor layer, boundary response, reconstruction
+relation, and selected extension are kept distinct (\S5, pp.~9--10).  A
+boundary response supports an interior claim only relative to a governing
+equation, coefficient class, equivalence or gauge class, regularity, data
+regime, and stability theorem.
+
+\section*{The transfer record}
+
+The central added object is (\S7, pp.~11--14)
+\[
+\resizebox{0.96\columnwidth}{!}{$\displaystyle
+\mathfrak M_{\ell\to m}=
+\bigl(T_{\ell m},T_{\ell m}^{\sharp},K_{\ell m},R_{\ell m},
+\Theta_{\ell m},\delta_{\ell m},C_{\ell m},\mathsf{Cert}_{\ell m}\bigr)
+$}.
+\]
+\(T_{\ell m}\) transports states; \(T_{\ell m}^{\sharp}\) pulls target
+observables in the reverse direction.  \(K_{\ell m}\) is post-processing or a
+simulation channel.  \(R_{\ell m}\) records target-equation failure.
+\(\Theta_{\ell m}\) is a declared naturality defect.  \(\delta_{\ell m}\) is
+directed Blackwell--Le Cam deficiency: the best error when the source
+experiment simulates the target.  \(C_{\ell m}\) records carrier, controller,
+instrument, reference frame, clock, resources, and boundary conditions.
+\(\mathsf{Cert}_{\ell m}\) binds assumptions, tolerances, sources, proof or
+execution artifacts, hashes, open obligations, and status.
+
+These coordinates do not collapse into one score.  Equation residual,
+observation defect, statistical deficiency, quotient loss, and viability
+failure occupy different spaces and obey different propagation laws (\S8,
+pp.~14--15).  A missing carrier or undefined observable pullback is a blocked
+transfer, not a small numerical error.
+
+\section*{Composition and persistence}
+
+For compatible stochastic transfers, state kernels compose forward and
+observable pullbacks compose in reverse.  Observation defects have a
+contraction-weighted bound; directed deficiencies satisfy a triangle
+inequality; deterministic equation residuals propagate only with a compatible
+equation-space map (\S7.1, pp.~13--14; \S15, pp.~23--24).  Incompatible clocks,
+interfaces, resources, or boundary conditions make the composite undefined.
+
+Persistence is defined through induced path laws (\S9, pp.~15--17).
+Endpoint return is insufficient.  Every required prefix must remain within
+operational-identity, viability, residual, deficiency, and certificate
+budgets.  ``A persistent object is a recursively maintained finite
+boundary-state'' is therefore a target-relative organizing principle.  Its
+promotion to a universal physical law remains conjectural, untested, and
+unexecuted.
+
+\section*{Provenance and status}
+
+\begin{itemize}
+\RaggedRight
+\item \textbf{Imported mathematics.} Markov kernels and operational quotients;
+Blackwell--Le Cam comparison; boundary trace and Calderón-type response;
+Koopman residual methods and stated learnability limits; periodic
+homogenization; sheaf descent; structured cospans; non-invertible defects; and
+proof checking.  These are not claimed as new BSC discoveries.
+\item \textbf{Paper-level consequences.} Assumption-bound results include
+quotient descent; paired state--observable probability preservation; defect,
+deficiency, and deterministic residual propagation; prefix persistence
+obstruction; operational factorization and discard obstruction; typed
+structured-cospan composition; dependency-DAG demotion; and the block from
+winding to physical charge.  No empirical status is inherited.
+\item \textbf{Open work.} Universal persistence, empirical validation,
+stochastic residuals, instrument-aware reconstruction, QRF descent, certified
+recurrence, physical charge bridges, and a machine-checked kernel remain
+conjectural, untested, unexecuted, or open.
+\end{itemize}
+
+\section*{Eight fixtures}
+
+The exact fixtures (\S16, pp.~24--27) are:
+\begin{enumerate}
+\item torus winding \((2,-3)\), with electric charge blocked without a physical
+bridge;
+\item distinct one-dimensional conductivities with one Dirichlet-to-Neumann
+map;
+\item binary experiments with directed deficiencies \(0\) and \(1/4\);
+\item Koopman residual \(\sqrt{2/N}\) separated from polluted zero
+eigenvalues;
+\item a finite \(\mathbb Z_2\) frame transformation that does not descend
+through the stated reduced quotient;
+\newpage
+\item locally nonempty parity constraints with no global section;
+\item the off-shell residual \(m^2c\) of a massive-field shift; and
+\item an exact receipt for \(x=-1\) refuting \(\sqrt{x^2}=x\).
+\end{enumerate}
+Fixtures 1--7 have mathematical derivations but no separate execution
+receipts.  Fixture 8 has a deterministic CPython receipt.  The package is a
+preprint with audit artifacts, not a complete reference implementation.
+
+\section*{Physical promotion and the test}
+
+Winding and physical charge are different typed objects (\S13, p.~21).  A
+charge claim needs a derived bridge from a gauge representation, action and
+current, Gauss law, anomaly condition, boundary condition, or calibrated
+measurement.  Primordial-field toroidal models are therefore treated as
+candidate topological and stabilization grammar, not an established derivation
+of quark charge, QCD, or hadron dynamics (\S17, pp.~28--30).
+
+Claims carry separate mathematical, empirical, computational, source, and
+transfer statuses (\S2.2, p.~5).  Demotion propagates only along declared
+dependency axes.  A theorem does not raise empirical status; a hash establishes
+identity rather than truth; a proof DAG is not a proof; and an unexecuted
+calculation remains unexecuted.
+
+The appropriate test is adversarial and narrow: Does an equivalent
+compositional record already exist?  Is a map ill-typed?  Does a composition
+law fail?  Is there a counterexample to a fixture?  Does the record change no
+scientific decision?  If existing formalisms already supply the same
+obligations and demotion semantics, or if BSC never separates an invalid
+transfer from a nearby valid one, the added structure is unnecessary.  If it
+exposes that distinction and preserves it through composition, that---not a
+claim about the universe---is the contribution requiring further work.
+
+\end{document}
