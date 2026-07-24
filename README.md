@@ -2,13 +2,16 @@
 
 ## Boundary-State Calculus for Typed Observation, Admissible Transfer, and Falsifiable Persistence
 
-**J. Tree · Independent researcher · 24 July 2026**
+**J. Tree · Independent researcher · version 1.0.1 · 24 July 2026**
 
-**Status:** foundational preprint with audit artifacts; not peer reviewed.
+**Status:** corrected foundational preprint with audit artifacts; not peer
+reviewed.
 
 **Canonical repository:** https://github.com/jkolantree/BSC
 
-**DOI:** https://doi.org/10.5281/zenodo.21541161
+**Version DOI:** https://doi.org/10.5281/zenodo.21541561
+
+**All versions:** https://doi.org/10.5281/zenodo.21541160
 
 Scientific claims often fail in the crossing between two otherwise valid
 descriptions. Boundary-State Calculus (BSC) treats that crossing as a typed,
@@ -28,14 +31,15 @@ The unit of evaluation is not the universe. It is one claimed transfer.
 | 10 minutes | [Technical synopsis](synopsis/Technical_Synopsis.pdf) | See the formal object, status boundaries, and eight fixtures |
 | Field-specific | [Reader map](synopsis/Reader_Map.md) | Go directly to the sections nearest your expertise |
 | Full review | [Complete paper](paper/On_Boundaries_of_Evidence.pdf) | Inspect definitions, proofs, fixtures, applications, and references |
-| Status audit | [Claim-status ledger](ledgers/Claim_Status_Ledger.md) | Check each claim on five independent evidence axes |
+| Status audit | [Claim-status ledger](ledgers/Claim_Status_Ledger.md) | Separate mathematical verdict from support and other readiness coordinates |
 | Source audit | [Revision memorandum](revision/Revision_Memorandum.md) | See every material repair and unresolved source conflict |
+| Release audit | [v1.0.0 audit report](AUDIT_REPORT_v1.0.0.md) | See what survived, what failed, and what v1.0.1 repaired |
 
 ## The proposal
 
-The paper proposes a typed transfer record
+The paper proposes a typed transfer record:
 
-\[
+$$
 \mathfrak M_{\ell\to m}
 =
 \left(
@@ -48,7 +52,7 @@ R_{\ell m},
 C_{\ell m},
 \mathsf{Cert}_{\ell m}
 \right).
-\]
+$$
 
 It keeps together:
 
@@ -87,14 +91,17 @@ recurrence, or duality earns the right to support a target claim.
 
 ## Available now
 
-- A 35-page reviewer-facing preprint and editable LaTeX/BibTeX source.
+- A reviewer-facing preprint and editable LaTeX/BibTeX source.
 - A two-page technical synopsis and field-specific reader map.
 - A symbol and notation ledger, claim-status ledger, and revision memorandum.
 - Eight exact mathematical fixtures in §16 of the paper.
 - One executable fixture, F8, with one deterministic CPython 3.12.13 receipt.
-- A fail-closed checker for that receipt and its JSON Schema.
+- A fail-closed checker for that receipt and its parsed JSON Schema, with
+  independent semantic recomputation and negative regression tests.
 - Reproduction instructions, release metadata, licenses, source-availability
   statement, and file-integrity manifest.
+- A complete-set manifest gate that rejects missing, extra, duplicate, unsafe,
+  or hash-mismatched release paths.
 
 Fixtures F1–F7 have exact mathematical derivations but no separate execution
 receipts. No proof-assistant artifact is included.
@@ -122,13 +129,15 @@ Use the repository issue forms for
 
 ## Current status boundary
 
-| Object | Mathematical | Empirical | Computational | Transfer |
-|---|---|---|---|---|
-| Typed morphism and local composition results | Proved under stated hypotheses | N/A | Mostly symbolic and unexecuted | Local or bounded |
-| Persistent-object principle | Conjectural organizing principle | Untested | Unexecuted | Local only |
-| Fixtures F1–F7 | Exact mathematical derivations | N/A | Unexecuted | Fixture-local |
-| Fixture F8 | Exact counterexample | N/A | One exact receipt | Fixture-local |
-| Generic BSC physical validation | Not established | Untested | Unexecuted | Blocked pending domain-specific bridges |
+| Object | Verdict | Math support | Empirical | Computational | Transfer |
+|---|---|---|---|---|---|
+| Repaired partial stochastic composite | True | Proved under stated support and completion hypotheses | N/A | Symbolic, unexecuted | Bounded |
+| Generic decorated-cospan theorem | True | Proved under the assumed lax-monoidal functor | N/A | Unexecuted | Bounded |
+| Canonical BSC-specific decoration functor | Open | Conditional schema only | N/A | Unexecuted | Blocked |
+| Persistent-object principle | Open | Conjectural organizing principle | Untested | Unexecuted | Local only |
+| Fixtures F1–F7 | True | Exact mathematical derivations | N/A | Unexecuted | Fixture-local |
+| Fixture F8 | True fixture result | Proved counterexample | N/A | One exact receipt | Fixture-local |
+| Generic BSC physical validation | Open | No general bridge | Untested | Unexecuted | Blocked |
 
 The complete axis-by-axis record is in the
 [claim-status ledger](ledgers/Claim_Status_Ledger.md).
@@ -141,9 +150,12 @@ From the repository root:
 python3 fixtures/F08_sqrt_square_sign/check_fixture.py
 ```
 
-The checker does not overwrite the retained receipt. It validates the claim and
-script hashes, derives the expected result from the predicate, runs the original
-verifier in a temporary location, and requires byte-identical output.
+The checker does not overwrite the retained receipt. It parses the shipped
+schema, validates exact types and constants, verifies the claim, schema, and
+script hashes, independently recomputes $\sqrt{x^2}=|x|$ in the declared
+integer model, runs the generator in a temporary location, and requires
+byte-identical output. Negative tests retain the two mutants that the v1.0.0
+checker incorrectly accepted.
 
 For the full local verification sequence:
 
@@ -163,12 +175,18 @@ ledgers/      claim status and notation
 fixtures/     executable F8 artifact, receipt, schema, and checker
 revision/     explicit definition repairs and unresolved obligations
 provenance/   supplied-corpus identity records
+tools/        complete-set manifest and release verification
+tests/        positive and negative release-gate regressions
 ```
 
 ## Citation, disclosure, and licensing
 
 Machine-readable citation metadata is in [CITATION.cff](CITATION.cff).
-The version-of-record DOI is
+The version 1.0.1 DOI is
+[10.5281/zenodo.21541561](https://doi.org/10.5281/zenodo.21541561).
+The concept DOI
+[10.5281/zenodo.21541160](https://doi.org/10.5281/zenodo.21541160)
+resolves to the latest published version. The immutable v1.0.0 DOI remains
 [10.5281/zenodo.21541161](https://doi.org/10.5281/zenodo.21541161).
 
 Material generative assistance and its limits are recorded in
@@ -179,6 +197,8 @@ Paper and documentation are licensed under
 [CC BY 4.0](LICENSES/paper-and-documentation.txt). Code and machine-readable
 fixture tooling are licensed under the [MIT License](LICENSES/code.txt).
 The supplied internal source corpus is not redistributed by this repository.
+The [license map](LICENSES/README.md) also records the historical clarification
+for commits preceding the explicit dual-license notice.
 
 ## Contact
 

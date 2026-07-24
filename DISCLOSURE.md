@@ -10,6 +10,12 @@ formal reconstruction, made the final scope and status decisions, reviewed the
 release artifacts, and accepts responsibility for the published content and
 for correcting errors.
 
+After publication of version 1.0.0, a fresh model-assisted adversarial audit
+identified formal and release-engineering defects. The immutable record was
+preserved; the findings, negative tests, and repairs are disclosed in
+[AUDIT_REPORT_v1.0.0.md](AUDIT_REPORT_v1.0.0.md) and version 1.0.1. This audit
+is not represented as independent external review.
+
 Automated checks, model-assisted reviews, and parallel model passes are not
 independent peer review. They do not establish novelty, correctness, consensus,
 or empirical validity. No external researcher is represented as having

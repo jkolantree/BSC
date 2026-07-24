@@ -34,7 +34,7 @@
   urlcolor=inkblue,
   pdftitle={On Boundaries of Evidence --- Boundary-State Calculus for Typed Observation, Admissible Transfer, and Falsifiable Persistence},
   pdfauthor={J. Tree},
-  pdfsubject={A typed audit calculus for scientific transfers},
+  pdfsubject={Version 1.0.1; DOI 10.5281/zenodo.21541561; a typed audit calculus for scientific transfers},
   pdfkeywords={Boundary-State Calculus, scientific transfer, evidence, admissibility, information loss, claim status}
 }
 \urlstyle{same}
@@ -92,12 +92,14 @@
 \newcommand{\Lip}{\operatorname{Lip}}
 \newcommand{\push}{_{\#}}
 \newcommand{\blank}{\text{--}}
+\newcommand{\BSCVersion}{1.0.1}
+\newcommand{\BSCDOI}{\href{https://doi.org/10.5281/zenodo.21541561}{DOI 10.5281/zenodo.21541561}}
 
 \title{\vspace{-1.3cm}\textbf{On Boundaries of Evidence}\\[0.3em]
 \Large--- Boundary-State Calculus for Typed Observation,\\
 Admissible Transfer, and Falsifiable Persistence}
 \author{J. Tree\\[-0.15em]\small Independent researcher}
-\date{24 July 2026}
+\date{24 July 2026\\[0.25em]\small Version \BSCVersion\quad\textbullet\quad \BSCDOI}
 
 \begin{document}
 \maketitle
@@ -108,21 +110,24 @@ Boundary-State Calculus (BSC) is developed here as a typed audit calculus for
 finite open systems.  Its purpose is not to supply a new ontology, but to decide
 when a claim remains warranted after boundary observation, quotienting,
 instrument change, transport, coarse-graining, dynamics, reconstruction,
-composition, and perturbation.  We retain the authoritative BSC system objects
-and make explicit their measurable repair.  We add a typed morphism record
+composition, and perturbation.  We transcribe the hash-identified internal BSC
+system objects, subject to the public source-access limitation, and make
+explicit their measurable repair.  We add a typed morphism record
 containing state and observable transport, stochastic simulation, equation
 residual, naturality defect, directed statistical deficiency, physical
 completion, and a certificate.  Composition theorems show how defects and
-deficiencies accumulate and when a persistence claim must be demoted.
+deficiencies accumulate and when a persistence certificate succeeds, becomes
+inconclusive, or is refuted.
 
 The calculus incorporates boundary trace and Dirichlet-to-Neumann response,
 operational quantum quotients, Blackwell--Le Cam comparison of experiments,
-Koopman residuals and ordered learnability limits, sheaf descent, structured
-cospan composition, non-invertible defects, and rigorous scale limits.  It
+Koopman residuals and ordered learnability limits, sheaf descent, a conditional
+structured-cospan schema, non-invertible defects, and rigorous scale limits.  It
 separates topological charge from physical charge by requiring an explicit
 bridge derived from a gauge structure, action, current, anomaly, boundary
-condition, or measurement protocol.  A five-axis claim ledger and a
-proof-dependency graph prevent local success from promoting unrelated claims.
+condition, or measurement protocol.  A claim-local mathematical verdict,
+five readiness coordinates, and a proof-dependency graph prevent local
+success from promoting unrelated claims.
 Eight exact fixtures expose both admissible transfers and hard obstructions,
 including a deterministic regression receipt.  The resulting formalism treats
 persistence as an operational organizing principle:
@@ -173,10 +178,13 @@ does not supply a missing map or proof.
 \end{convention}
 
 The cited core corpus contains both durable mathematics and explicit later
-repairs.  The relevant lineage is recorded in the source set
-\citep{BSCvol1,BSCvol2,BSCvol3,BSCsecond}.  This paper keeps the
-durable core, records the repairs, and excludes civic or metaphysical material
-from mathematical inference.  No empirical result is reported from the corpus.
+repairs.  The relevant lineage is transcribed from the hash-identified
+internal source set \citep{BSCvol1,BSCvol2,BSCvol3,BSCsecond}, which is not
+independently inspectable in this public release.  This paper records that
+transcription and its repairs, and excludes civic or metaphysical material
+from mathematical inference.  The lineage claims are therefore source-local,
+not an independently replayable textual comparison.  No empirical result is
+reported from the corpus.
 
 \section{Nomenclature, types, and front ledger}\label{sec:nomenclature}
 
@@ -214,8 +222,9 @@ controls, outputs, and contexts/calibrations\\
 \(\sim_\ell\) & measurable equivalence relation on \(X_\ell\) &
 observational, gauge, or representational equivalence; quotient
 \(\bar X_\ell=X_\ell/{\sim_\ell}\) used only when standard Borel\\
-\(\mathcal F_{\ell,t}\) & increasing sigma-algebras & legal information
-available immediately before time \(t\)'s outcome\\
+\(\mathcal F_{\ell,t}\) & increasing sigma-algebras & legal experiment
+information through index \(t\); pre-outcome information is
+\(\mathcal F_{\ell,t-}\)\\
 \(K_{\ell,t}^{X},H_{\ell,t}^{X}\) &
 \(X_\ell\times U_\ell\times C_\ell\rightsquigarrow X_\ell,Y_\ell\) &
 raw dynamics and observation kernels before quotient descent\\
@@ -249,39 +258,45 @@ proof/execution receipts, sources, obligations, and status vector\\
 \bottomrule
 \end{longtable}
 
-\subsection{Independent status axes}
+\subsection{Verdict and independent readiness axes}
 
 \begin{definition}[Status vector]\label{def:status}
 Every claim \(c\) carries
 \[
 \Stat(c)=
-(s_{\rm math},s_{\rm emp},s_{\rm comp},s_{\rm src},s_{\rm tr}),
+(v_{\rm math},s_{\rm math},s_{\rm emp},s_{\rm comp},s_{\rm src},s_{\rm tr}).
 \]
-with the following partially ordered axes:
+The claim-local mathematical verdict is
+\[
+v_{\rm math}\in\{\text{ill-posed},\text{open},\text{true},\text{false}\}.
+\]
+These four verdicts are not ordered.  Only evidence about \(c\) itself may
+change \(v_{\rm math}(c)\); in particular, a false premise does not make a
+dependent claim false.  The remaining coordinates are readiness chains:
 \begin{align*}
-s_{\rm math}&\in\{\text{ill-posed},\text{refuted},\text{conjectural},
-\text{conditional},\text{proved}\},\\
+s_{\rm math}&\in\{\text{none},\text{conjectural},\text{conditional},
+   \text{proved}\},\\
 s_{\rm emp}&\in\{\text{contradicted},\text{untested},\text{single study},
-\text{replicated}\},\\
+   \text{replicated}\},\\
 s_{\rm comp}&\in\{\text{failed},\text{unexecuted},\text{executed},
 \text{exact receipt}\},\\
 s_{\rm src}&\in\{\text{unchecked},\text{internal},\text{present proof},
 \text{verified preprint},\text{verified publication}\},\\
 s_{\rm tr}&\in\{\text{blocked},\text{local only},\text{bounded},
-\text{certified}\}.
+   \text{certified}\}.
 \end{align*}
-Within each displayed set, entries are ordered from least to greatest support;
-the resulting finite chains supply the meet used below.  The ordering is for
-evidential propagation: it does not identify ``ill-posed'' with ``false'' or
-``contradicted'' with ``untested.''  An axis may instead be marked not
-applicable, in which case no edge may depend on it.  Coordinates are never
-averaged.
+Each readiness set is ordered from least to greatest support and is denoted
+\(L_j\); its meet is \(\wedge_j\).  An axis may instead be marked not
+applicable, in which case no edge may depend on it.  Verdicts are never met,
+and readiness coordinates are never averaged.  When monotonicity of a map
+from \(\Stat\) is invoked, the verdict coordinate has the discrete order and
+the readiness coordinates have their displayed product order.
 \end{definition}
 
 The ordering is evidential, not rhetorical.  For example, a proved theorem can
-remain empirically untested; an exact execution can implement an ill-posed
-physical encoding; a peer-reviewed source can be irrelevant to the asserted
-bridge.
+remain empirically untested; an exact execution can implement a claim whose
+encoding is ill-posed; a peer-reviewed source can be irrelevant to the
+asserted bridge.
 
 \begin{table}[htbp]
 \centering
@@ -289,25 +304,25 @@ bridge.
 \caption{Concise claim-status ledger at entry.  Every cell uses exactly one
 status from \cref{def:status}, or N/A when that axis is inapplicable.}
 \label{tab:frontledger}
-\begin{tabularx}{\textwidth}{L{0.25\textwidth}L{0.12\textwidth}L{0.12\textwidth}L{0.13\textwidth}L{0.15\textwidth}Y}
+\begin{tabularx}{\textwidth}{L{0.20\textwidth}L{0.085\textwidth}L{0.09\textwidth}L{0.10\textwidth}L{0.11\textwidth}L{0.13\textwidth}Y}
 \toprule
-Claim & Math. & Empirical & Computation & Source & Transfer\\
+Claim & Verdict & Math support & Empirical & Computation & Source & Transfer\\
 \midrule
-Kernel quotient descent & proved & N/A & N/A & present proof & certified\\
-Morphism defect accumulation & proved & N/A & unexecuted & present proof &
+Kernel quotient descent & true & proved & N/A & N/A & present proof & certified\\
+Morphism defect accumulation & true & proved & N/A & unexecuted & present proof &
 bounded\\
-Universal persistence principle & conjectural & untested & unexecuted &
+Universal persistence principle & open & conjectural & untested & unexecuted &
 internal & local only\\
-Universal boundary reconstruction & refuted & N/A & unexecuted & present proof &
-blocked\\
-Specified Koopman impossibility classes & proved & N/A & N/A &
-verified publication & local only\\
-Winding determines electric charge & refuted & untested & unexecuted &
+Universal boundary reconstruction & false & proved & N/A & unexecuted &
 present proof & blocked\\
-Klingman toroidal model yields QCD & ill-posed & untested & unexecuted &
-verified publication & blocked\\
-Fixtures F1--F7 & proved & N/A & unexecuted & present proof & local only\\
-Fixture F8 universal claim & refuted & N/A & exact receipt & present proof &
+Specified Koopman impossibility classes & true & proved & N/A & N/A &
+verified publication & local only\\
+Winding determines electric charge & false & proved & untested & unexecuted &
+present proof & blocked\\
+Klingman toroidal model yields QCD & ill-posed & proved & untested &
+unexecuted & verified publication & blocked\\
+Fixtures F1--F7 & true & proved & N/A & unexecuted & present proof & local only\\
+Fixture F8 universal claim & false & proved & N/A & exact receipt & present proof &
 local only\\
 \bottomrule
 \end{tabularx}
@@ -316,9 +331,16 @@ local only\\
 \subsection{Dependency graph}
 
 A claim ledger is a directed acyclic graph \(D=(\mathcal C,E)\).  An edge
-\(a\xrightarrow{J}b\) states that claim \(b\) depends on claim \(a\) on the
-axis set \(J\subseteq\{\rm math,emp,comp,src,tr\}\).  Status propagates only
-along named axes.
+\(e:a\xrightarrow{J_e}b\) states that claim \(b\) depends on claim \(a\) on
+the readiness set
+\(J_e\subseteq\{\rm math,emp,comp,src,tr\}\).  For every named coordinate it
+also declares a monotone cap
+\[
+\kappa_{e,j}:\Stat(a)\longrightarrow L_j.
+\]
+Readiness propagates only through these caps.  A false indispensable premise
+may make \(\kappa_{e,j}\) the bottom element and thereby block transfer, but it
+does not assign the verdict false to \(b\).
 
 \begin{figure}[htbp]
 \centering
@@ -341,28 +363,35 @@ along named axes.
 \draw[arr] (transfer) -- (physical);
 \end{tikzpicture}
 \caption{Minimal dependency architecture.  Failure of an upstream requirement
-demotes only descendants reached by the edge's declared status axes.}
+caps only the readiness of descendants reached by the edge's declared axes.}
 \label{fig:dag}
 \end{figure}
 
-\begin{definition}[Demotion operator]\label{def:demotion}
-For a claim \(b\), let \(\operatorname{Req}_j(b)\) be its immediate
-predecessors on axis \(j\).  Its admissible status is bounded above by
+\begin{definition}[Readiness-cap operator]\label{def:demotion}
+Let \(r_j^0(b)\in L_j\) be claim \(b\)'s readiness before dependency
+propagation.  In a topological ordering of the claim DAG, define
 \[
- s_j(b)\ \preceq\ \bigwedge_{a\in\operatorname{Req}_j(b)}s_j(a)
+r_j^*(b)=r_j^0(b)\wedge_j
+\bigwedge_{\substack{e:a\to b\\j\in J_e}}
+\kappa_{e,j}\!\left(\Stat^*(a)\right),
 \]
-unless \(b\) contains an independent certificate that discharges the
-dependency.  New contradictory evidence applies the meet again.  Missing type
-data makes the mathematical status ill-posed; missing execution makes only the
-computational status unexecuted; a failed transfer makes only the deployment
-status blocked unless it also supplies a mathematical counterexample.
+where the empty meet is the top of \(L_j\).  An independent certificate is
+represented by changing the edge set or its cap, not by ignoring a stated
+dependency.  Here \(\Stat^*(a)\) combines \(a\)'s unchanged verdict with its
+recursively capped readiness coordinates.  The verdict is unchanged by this
+operator.  Missing type data
+makes the claim-local verdict ill-posed and mathematical support none; missing
+execution lowers only computational readiness; a failed transfer lowers only
+transfer readiness unless it also supplies claim-local mathematical evidence.
 \end{definition}
 
 \section{Finite boundary-state systems}\label{sec:systems}
 
-\subsection{Retained authoritative objects}
+\subsection{Transcribed lineage objects}
 
-The original system object is retained exactly:
+The hash-identified internal source gives the following original system
+object, transcribed here but not independently text-comparable from the public
+release:
 \begin{equation}\label{eq:originaltuple}
 S_\ell(t)=
 \left(
@@ -378,7 +407,8 @@ local dynamics, boundary ledger, and an admission penalty
 used by \(H_\ell\) and the legal filtration are absent, \(R_\ell\) is
 overloaded, and \(\operatorname{rent}_\ell\) has no fixed codomain.
 
-The corpus then makes the following measurable repair, also retained exactly:
+The internal corpus then gives the following measurable repair, likewise
+transcribed with the same source-status limitation:
 \begin{equation}\label{eq:currenttuple}
 \widehat S_\ell=
 \left(
@@ -387,9 +417,11 @@ U_\ell,Y_\ell,C_\ell,\mathcal F_\ell,K_\ell,H_\ell,G_\ell,V_\ell,
 R_\ell,B_\ell
 \right).
 \end{equation}
-Volume III explicitly works with \eqref{eq:currenttuple} while retaining the
-application layers of the first object \citep{BSCvol2,BSCvol3}.  We therefore
-take \(\widehat S_\ell\), not a newly invented tuple, as the current core.
+The recorded lineage says that Volume III works with
+\eqref{eq:currenttuple} while retaining the application layers of the first
+object \citep{BSCvol2,BSCvol3}.  Subject to the inability to inspect those
+internal sources in this public release, we take \(\widehat S_\ell\), not a
+newly invented tuple, as the current core.
 
 \begin{definition}[Typed interpretation of \(\widehat S_\ell\)]
 \(\Omega_\ell\) is a declared bounded domain or finite carrier;
@@ -403,7 +435,11 @@ a declared quotient, not a claim that the factor is nonphysical.
 \(\sim_\ell\) is a measurable exact equivalence and
 \(\bar X_\ell=X_\ell/{\sim_\ell}\) is required to be standard Borel whenever
 ordinary quotient kernels are used.
-\(\mathcal F_{\ell,t}\) is an increasing filtration.
+An instantiated experiment declares a probability space
+\((\Xi_\ell,\mathcal A_\ell,\Prob_\ell)\) and an increasing filtration
+\(\mathcal F_{\ell,t}\subseteq\mathcal A_\ell\), with
+\(\mathcal F_{\ell,t-}=\sigma(\bigcup_{s<t}\mathcal F_{\ell,s})\) when the
+time order admits this notation.
 \[
 K_{\ell,t}^{X}:X_\ell\times U_\ell\times C_\ell\rightsquigarrow X_\ell,
 \qquad
@@ -436,14 +472,25 @@ semidefinite bilinear-form field; \(V_\ell\subseteq\bar X_\ell\) is measurable.
 representation, and reconstruction maps, never a single polymorphic arrow.
 \(B_\ell\) is a schema of ledger entries, each with a value, unit, method,
 uncertainty, time, and provenance.
-Legal preparation and feedback are kernels
+For legal preparation and feedback, let
+\((\mathsf H_{\ell,t},\mathscr H_{\ell,t})\) be a standard Borel history
+space and let
 \[
-\pi_{\ell,t}:(\mathsf H_{\ell,t},\mathcal F_{\ell,t})
-\rightsquigarrow U_\ell\times C_\ell
+\mathbf H_{\ell,t}:(\Xi_\ell,\mathcal F_{\ell,t-})
+\longrightarrow(\mathsf H_{\ell,t},\mathscr H_{\ell,t})
 \]
-from the measurable observation history \(\mathsf H_{\ell,t}\); their
-adaptedness means that \(\pi_{\ell,t}\) depends only on information in
-\(\mathcal F_{\ell,t}\).  A state-Markov policy is separately denoted
+be the measurable history random variable.  A history policy is a kernel
+\[
+\pi_{\ell,t}:
+(\mathsf H_{\ell,t},\mathscr H_{\ell,t})
+\rightsquigarrow U_\ell\times C_\ell .
+\]
+The implemented random kernel
+\(\pi_{\ell,t}(\mathbf H_{\ell,t},\cdot)\) is
+\(\mathcal F_{\ell,t-}\)-measurable and hence adapted.  If a preparation does
+not factor through \(\mathbf H_{\ell,t}\), it must instead be declared as an
+\(\mathcal F_{\ell,t-}\)-measurable random kernel on \(\Xi_\ell\).  A
+state-Markov policy is separately denoted
 \(\bar\pi_{\ell,t}:\bar X_\ell\rightsquigarrow U_\ell\times C_\ell\).
 Such a policy, or a sufficient history augmentation of \(\bar X_\ell\), is
 required before the joint kernels below induce a state-marginal fold.
@@ -550,8 +597,13 @@ It is legal for prediction horizon \(h>0\) when \(x_t\in\bar X_\ell\),
 \(Y_\ell\subseteq\mathbb R^d\), \(\Sigma_{y,t}\in\mathbb R^{d\times d}\) is
 positive semidefinite and has declared output units squared; for a general
 output space it is replaced by a typed uncertainty object.
-Every statistic used to predict \(Y_{t+h}\) is
-\(\mathcal F_t\)-measurable.
+The displayed atom is a realization of jointly defined random objects
+\(\mathbf X_{\ell,t},\mathbf U_{\ell,t},\mathbf C_{\ell,t},
+\mathbf Y_{\ell,t},\boldsymbol\Sigma_{\ell,t}\) on
+\((\Xi_\ell,\mathcal A_\ell,\Prob_\ell)\).  Every design, preparation, and
+statistic used before observing \(\mathbf Y_{\ell,t}\), including every
+predictor of \(\mathbf Y_{\ell,t+h}\), is measurable with respect to the
+declared pre-outcome sigma-algebra \(\mathcal F_{\ell,t-}\).
 \end{definition}
 
 \begin{definition}[Boundary event]\label{def:boundaryevent}
@@ -568,16 +620,21 @@ formed.
 \begin{assumption}[Pre-outcome freeze]\label{ass:freeze}
 For an outcome at time \(t\), the design, preprocessing graph, dictionary,
 candidate operators, null library, thresholds, and seed policy are
-\(\mathcal F_{t-}\)-measurable.  Holdout outcomes and post-outcome edits are not.
+\(\mathcal F_{\ell,t-}\)-measurable random objects on \(\Xi_\ell\).
+Holdout outcomes and post-outcome edits are not
+\(\mathcal F_{\ell,t-}\)-measurable.
 \end{assumption}
 
 \begin{definition}[Leakage defect]\label{def:leakage}
-Let \(Z\) denote the complete fitted artifact and \(Y^{\rm hold}\) the
-held-out outcome.  A protocol has structural leakage if \(Z\) is not measurable
-with respect to the declared pre-outcome sigma-algebra.  A probabilistic
-diagnostic is
+Let \(\mathbf Z:\Xi_\ell\to\mathcal Z\) denote the complete fitted artifact
+and \(\mathbf Y^{\rm hold}:\Xi_\ell\to\mathcal Y_{\rm hold}\) the held-out
+outcome.  A protocol has structural leakage if \(\mathbf Z\) is not
+\(\mathcal F_{\ell,t-}\)-measurable.  A probabilistic diagnostic under
+\(\Prob_\ell\) is
 \[
-\lambda_{\rm leak}=I(Z;Y^{\rm hold}\mid\mathcal F_{t-}),
+\lambda_{\rm leak}
+=I_{\Prob_\ell}(\mathbf Z;\mathbf Y^{\rm hold}\mid
+\mathcal F_{\ell,t-}),
 \]
 when the conditional mutual information exists.  The diagnostic being zero
 does not prove correct measurability; positive value refutes isolation.
@@ -590,17 +647,19 @@ is conditional isolation plus a logged access history.  If
 holdout is demoted regardless of predictive score.
 
 \begin{proposition}[Predictable sequential admission]\label{prop:sequential}
-Let \(A_t\) be false-admission events and let \(\alpha_t\) be
-\(\mathcal F_{t-1}\)-measurable.  If
-\(\Prob(A_t\mid\mathcal F_{t-1})\le\alpha_t\) almost surely and
+Let \(A_t\in\mathcal A_\ell\) be false-admission events on \(\Xi_\ell\), and
+let \(\alpha_t:\Xi_\ell\to[0,1]\) be
+\(\mathcal F_{\ell,t-1}\)-measurable.  If
+\(\Prob_\ell(A_t\mid\mathcal F_{\ell,t-1})\le\alpha_t\) almost surely and
 \(\sum_t\alpha_t\le\alpha\), then
-\(\Prob(\bigcup_tA_t)\le\alpha\).
+\(\Prob_\ell(\bigcup_tA_t)\le\alpha\).
 \end{proposition}
 \begin{proof}
-Taking expectations gives \(\Prob(A_t)\le\E\alpha_t\).  The union bound and
+Taking expectations gives
+\(\Prob_\ell(A_t)\le\E_{\Prob_\ell}\alpha_t\).  The union bound and
 Tonelli's theorem give
-\(\Prob(\bigcup_tA_t)\le\sum_t\E\alpha_t
-\le\E\sum_t\alpha_t\le\alpha\).
+\(\Prob_\ell(\bigcup_tA_t)\le\sum_t\E_{\Prob_\ell}\alpha_t
+\le\E_{\Prob_\ell}\sum_t\alpha_t\le\alpha\).
 \end{proof}
 
 This result does not validate the null model, exchangeability, or the physical
@@ -665,10 +724,15 @@ on a stated subset, for a declared modulus \(\omega\).
 For a declared subset \(\mathcal D_0\subseteq\mathcal D\), a selected
 extension is a measurable map
 \[
-e_\partial:\mathcal D_0\to\mathcal X(\Omega)
+e_\partial:\mathcal D_0\to\mathcal A\subseteq\mathcal X(\Omega).
 \]
-whose graph, after passage to the ambiguity class, lies in
-\(E_\partial\).  Existence and measurability are assumptions; linearity and
+Writing \(r:\mathcal A\to\mathcal A/{\approx}\) for the quotient map, it
+must satisfy
+\[
+(d,r(e_\partial(d)))\in E_\partial
+\quad\text{for every }d\in\mathcal D_0.
+\]
+Existence and measurability are assumptions; linearity and
 boundedness are additional assumptions, never consequences of the
 relation.  Any quantity evaluated on \(e_\partial(d)\) must either be
 invariant under \(\approx\) or record the representative-selection
@@ -820,19 +884,23 @@ This is the definition of the Banach adjoint \(\Phi^\sharp\).
 
 \section{Admissible morphisms and composition}\label{sec:morphisms}
 
-The inherited deterministic morphism
+The hash-identified internal source is reported to contain the deterministic
+morphism
 \[
 \mu_{a\to b}=(R_{a\to b},R_Y,\varepsilon_R,\tau_R,q_{a\to b})
 \]
-paired state and output maps with an error field, an otherwise untyped
-\(\tau_R\), and quotient compatibility \citep{BSCvol1}.  In particular,
+which is transcribed here as pairing state and output maps with an error
+field, an otherwise untyped \(\tau_R\), and quotient compatibility
+\citep{BSCvol1}.  The internal source is not independently inspectable in this
+public release.  In particular,
 \(\tau_R\) is not silently promoted here to a certificate.  The printed
 two-step error rule in that source is repaired to the type-correct downstream
 Lipschitz bound
 \[
 \varepsilon_{ac}\le \varepsilon_{bc}+L_{bc}\varepsilon_{ab}.
 \]
-The later budgeted record is retained exactly as
+The later budgeted record is reported in the supplied lineage and transcribed
+as
 \[
 \mu=(R_X,R_Y,R_U,R_C,\alpha_H,\alpha_K,q_{ab},b_\mu),
 \]
@@ -944,9 +1012,19 @@ states and its completely positive unital adjoint.  Defect and fusion variants
 are treated in \cref{sec:open}.  These variants do not share a single
 unqualified composition theorem.
 
-\begin{definition}[Admissibility]\label{def:admissible}
-\(\mathfrak M_{\ell m}\) is admissible for a declared claim only if its
-certificate answers all of the following:
+\begin{definition}[Claim-relative admissibility]\label{def:admissible}
+A claim \(c\) supplies a specification
+\[
+\mathcal A_c=(J_c,(\tau_{c,j})_{j\in J_c},
+\mathcal G_c,\operatorname{Req}_c).
+\]
+Here \(J_c\) names the coordinates of the loss vector
+\(\mathcal L_{\ell m}\) in \cref{def:lossvector} that the claim uses,
+\(\tau_{c,j}\) is the tolerance for coordinate \(j\),
+\(\mathcal G_c\) is a finite set of Boolean hard gates, and
+\(\operatorname{Req}_c\) gives minimum readiness on the applicable status
+axes.  The morphism is \emph{well formed for \(c\)} only if its certificate
+answers all of the following:
 \begin{enumerate}
 \item the domain, codomain, variant, regularity, units, and boundary conditions
 of \(T_{\ell m}\);
@@ -958,9 +1036,30 @@ of \(T_{\ell m}\);
 \item the physical carrier, controller, clock, observer, reference frame, and
 instrument that implement the transfer;
 \item the assumptions, sources, proof objects, execution receipts, hashes,
-unresolved obligations, and five-axis status.
+unresolved obligations, claim-local verdict, and readiness coordinates.
 \end{enumerate}
-Failure to supply an item is a blocked transfer, not a small numerical error.
+It is \emph{evaluated for \(c\)} only if every \(j\in J_c\) has a proved
+enclosure
+\[
+I_{c,j}=[\underline\ell_{c,j},\overline\ell_{c,j}]
+\quad\text{with}\quad
+\ell_{c,j}^{\rm actual}\in I_{c,j},
+\]
+and every hard gate has a certified truth value.  It is
+\emph{admissible for \(c\)} if and only if it is well formed and evaluated,
+\(\overline\ell_{c,j}\le\tau_{c,j}\) for all \(j\in J_c\), every gate in
+\(\mathcal G_c\) is true, and its readiness meets
+\(\operatorname{Req}_c\).
+
+A missing type makes the record not well formed; a missing enclosure or gate
+evaluation makes it unevaluated; a failed threshold, hard gate, or readiness
+requirement makes it inadmissible.  If
+\(\underline\ell_{c,j}>\tau_{c,j}\), the coordinate violates its tolerance.
+If
+\(\underline\ell_{c,j}\le\tau_{c,j}<\overline\ell_{c,j}\), the enclosure is
+inconclusive: the certificate fails to establish admissibility, but the claim
+is not thereby refuted.  None of these cases is represented as a small
+numerical error in a missing field.
 \end{definition}
 
 \subsection{Composition in the stochastic variant}
@@ -970,37 +1069,81 @@ For \(\mathfrak M_{\ell m}\) and \(\mathfrak M_{mn}\), the target interface,
 clock, resource contract, boundary conditions, control/context law, and
 carrier output of \(C_{\ell m}\) match the source requirements of \(C_{mn}\).
 The composite completion is their specified fiber product over the shared
-interface.  Moreover,
-\(\widehat T_{\ell m}(z,\widehat D_{mn})=1\) for every
-\(z\in\widehat D_{\ell m}\) in the composite domain.  Correlated failure
-modes are retained.
+interface.  On its eventual domain, the projection to source state lies in
+the state-composite domain, and its state marginal agrees with the composite
+state kernel under the declared composed policy.  Correlated failure modes
+are retained.
 \end{assumption}
 
 \begin{definition}[Stochastic composite]\label{def:stochcomp}
 Under \cref{ass:completion}, define
 \[
-T_{\ell n}=T_{mn}\odot T_{\ell m},\qquad
 K_{\ell n}=K_{mn}\odot K_{\ell m},
 \]
-on the maximal measurable domain
+and give the state composite the maximal measurable domain
 \[
 D_{\ell n}
 =\{x\in D_{\ell m}:T_{\ell m}(x,D_{mn})=1\}.
 \]
-Then
+For \(x\in D_{\ell n}\), set
+\[
+T_{\ell n}(x,A)
+=\int_{D_{mn}}T_{mn}(y,A)\,T_{\ell m}(x,dy);
+\]
+this is the partial-kernel composite denoted
+\(T_{mn}\odot T_{\ell m}\).  Define the restricted pullback
+\[
+T_{\ell m}^{\sharp\mid D_{mn}}:
+B_b(D_{mn})\longrightarrow B_b(D_{\ell n}),\qquad
+T_{\ell m}^{\sharp\mid D_{mn}}h(x)
+=\int_{D_{mn}}h(y)\,T_{\ell m}(x,dy).
+\]
+The type-correct reverse composite is
 \[
 T_{\ell n}^{\sharp}
-=T_{\ell m}^{\sharp}\circ T_{mn}^{\sharp}.
+=T_{\ell m}^{\sharp\mid D_{mn}}\circ T_{mn}^{\sharp}:
+B_b(\bar X_n)\longrightarrow B_b(D_{\ell n}).
 \]
-On state--control--context space the compatible completion defines
+On state--control--context space put
+\[
+\widehat D_{\ell n}
+=\{z\in\widehat D_{\ell m}:
+\widehat T_{\ell m}(z,\widehat D_{mn})=1\}.
+\]
+The compatible completion defines, for \(z\in\widehat D_{\ell n}\),
 \[
 \widehat T_{\ell n}
 =\widehat T_{mn}\odot\widehat T_{\ell m}.
 \]
-The certificate is the conjunction of assumptions and obligations, the union
-of provenance DAGs, and the axiswise meet of statuses.  A new hash identifies
-the composite record; it is not a new proof.
+Its source-state projection lies in \(D_{\ell n}\), and its state marginal is
+\(T_{\ell n}\) under the declared composed policy, as required by
+\cref{ass:completion}.  The certificate is the conjunction of assumptions and
+obligations and the union of provenance DAGs.  It preserves claim-local
+verdicts and computes descendant readiness through the declared caps of
+\cref{def:demotion}.
+A new hash identifies the composite record; it is not a new proof.
 \end{definition}
+
+\begin{proposition}[Partial pullback composition]\label{prop:partialpullback}
+The pullback in \cref{def:stochcomp} is independent of any extension of
+\(T_{mn}^{\sharp}g\) away from \(D_{mn}\), and for every
+\(g\in B_b(\bar X_n)\) it is the observable pullback induced by
+\(T_{\ell n}\).
+\end{proposition}
+\begin{proof}
+For \(x\in D_{\ell n}\), the measure \(T_{\ell m}(x,\cdot)\) is supported on
+\(D_{mn}\), so two bounded measurable extensions agreeing on \(D_{mn}\) have
+equal integrals.  For \(g\ge0\), Tonelli's theorem gives
+\[
+\int_{\bar X_n}g(w)\,T_{\ell n}(x,dw)
+=\int_{D_{mn}}\!\left[
+\int_{\bar X_n}g(w)\,T_{mn}(y,dw)\right]T_{\ell m}(x,dy).
+\]
+This is
+\((T_{\ell m}^{\sharp\mid D_{mn}}T_{mn}^{\sharp}g)(x)\).
+Positive and negative parts, and then real and imaginary parts, extend the
+identity to every bounded real- or complex-valued \(g\).
+\end{proof}
 
 \begin{theorem}[Observation-defect propagation]\label{thm:theta}
 Let \(d_i=\|\cdot\|_{\TV}\), and let
@@ -1122,9 +1265,12 @@ propagation law.
 \begin{definition}[Blackwell order]\label{def:blackwell}
 Experiment \(\mathsf E_\ell\) Blackwell-dominates \(\mathsf E_m\), written
 \(\mathsf E_\ell\succeq_B\mathsf E_m\), when a Markov kernel \(K\) satisfies
-\(K P_{\ell,\theta}=P_{m,\theta}\) for every \(\theta\).  Thus
-\(\delta(\mathsf E_\ell,\mathsf E_m)=0\): data from \(\ell\) can simulate
-data from \(m\).  The converse deficiency may be positive.
+\(K P_{\ell,\theta}=P_{m,\theta}\) for every \(\theta\).  This exact
+simulation implies \(\delta(\mathsf E_\ell,\mathsf E_m)=0\).  Under the
+ordinary-kernel infimum used here, the equality \(\delta=0\) by itself means
+that simulation is arbitrarily accurate; it implies exact Blackwell
+simulation only when an optimizing kernel exists or an applicable
+randomization theorem supplies one.  The converse deficiency may be positive.
 \end{definition}
 
 This direction follows \citet{blackwell1953} and \citet{lecam1964}, while
@@ -1150,24 +1296,44 @@ target decision rule.  The expectation of a function in \([0,M]\) changes by
 at most \(M\|P-Q\|_{\TV}\).
 \end{proof}
 
-\begin{definition}[Boundary sufficiency gates]\label{def:boundarygates}
+\begin{definition}[Boundary relevance and closure screens]\label{def:boundarygates}
 For a target \(Y_{t+h}\), boundary data \(X_{\partial,t}\), observed interior
 \(X_{\Omega,t}^{\rm obs}\), exterior \(X_{{\rm ext},t}\), and legal covariates
-\(Z_t\), define
+\(Z_t\), all variables are random elements on a declared experiment
+probability space.  The deployed boundary inputs and legal covariates are
+\(\mathcal F_{t-}\)-measurable; \(Y_{t+h}\) is not, and
+\(X_{{\rm ext},t}\) may be a held-out audit variable rather than deployed
+information.  Write \(X_{{\rm partial},t}:=X_{\partial,t}\) for the declared
+partial boundary record and define
 \[
-G_\partial=I(Y_{t+h};X_{\partial,t}\mid Z_t),\qquad
-S_{\rm ext}=I(Y_{t+h};X_{{\rm ext},t}\mid
-X_{\partial,t},X_{\Omega,t}^{\rm obs},Z_t).
+G_{\rm partial}
+=I(Y_{t+h};X_{{\rm partial},t}\mid Z_t),\qquad
+S_{\rm ext}^{\rm aug}
+=I(Y_{t+h};X_{{\rm ext},t}\mid
+X_{{\rm partial},t},X_{\Omega,t}^{\rm obs},Z_t).
 \]
-All logarithms are base \(2\), so \(G_\partial,S_{\rm ext},g_0,s_0\) are in
-bits.
-A target-relative statistical boundary claim requires
-\(G_\partial\ge g_0\) and \(S_{\rm ext}\le s_0\) separately.  A large gain
-cannot compensate for an open exterior channel.
+These are, respectively, a relevance screen and an exterior-closure screen
+for an already augmented information set.  If a proposed application
+predeclares thresholds \(g_0,s_{\rm ext}\), passing
+\(G_{\rm partial}\ge g_0\) and
+\(S_{\rm ext}^{\rm aug}\le s_{\rm ext}\) is necessary for that application
+gate, but is not boundary sufficiency.  For a separately declared collection
+\(X_{{\rm rest},t}\) of all target-relevant information omitted by
+\((X_{{\rm partial},t},Z_t)\), exact statistical boundary sufficiency requires
+\(S_{\rm rest}=0\).  A declared approximate-sufficiency claim instead requires
+the distinct residual-information condition
+\[
+S_{\rm rest}
+=I(Y_{t+h};X_{{\rm rest},t}\mid X_{{\rm partial},t},Z_t)
+\le s_{\rm rest}.
+\]
+All logarithms are base \(2\), so the screens and thresholds are in bits.
 \end{definition}
 
-These are predictive diagnostics, not Sobolev traces, response maps, causal
-carrier proofs, or coefficient reconstruction theorems.
+None of these mutual-information conditions establishes causality, a Sobolev
+trace theorem, a response map, a carrier mechanism, or coefficient
+reconstruction.  A large relevance score cannot compensate for a failed
+closure or sufficiency condition.
 
 \section{Dynamics, recurrence, Koopman operators, and learnability}
 \label{sec:koopman}
@@ -1259,12 +1425,19 @@ E_n\le
 \left(\prod_{j=0}^{n-1}L_j\right)E_0+
 \sum_{i=0}^{n-1}e_i\prod_{j=i+1}^{n-1}L_j.
 \]
-Persistence is invalid at the first prefix whose bound exceeds its declared
-tolerance, even if later contraction brings the endpoint below tolerance.
+At a prefix \(k\), an upper bound not exceeding the declared tolerance
+certifies the identity coordinate.  An upper bound above tolerance is
+inconclusive: it fails to certify the coordinate but does not prove a
+violation.  Persistence is invalid through the first prefix only when the
+actual discrepancy, a certified lower bound, or a qualified measurement
+exceeds tolerance.  A later contraction does not erase such a demonstrated
+excursion.
 \end{theorem}
 \begin{proof}
-Induction on \(n\).  The prefix condition follows from
-\cref{def:persistence}.
+Induction on \(n\) proves the displayed upper bound.  The certification and
+violation statements follow from interval order and
+\cref{def:persistence}; an upper enclosure that straddles a threshold decides
+neither side.
 \end{proof}
 
 Directed deficiencies satisfy the separate additive bound of
@@ -1489,10 +1662,10 @@ itself is infinite.  Let
 \(L:\mathsf I_{\mathcal T}\to\mathsf C\) embed an interface as a free boundary
 carrier.
 
-\begin{definition}[BSC decoration datum]\label{def:decoration}
+\begin{assumption}[Conditional BSC decoration schema]\label{def:decoration}
 Fix one mode
 \(\mathsf r\in\{\mathrm{det},\mathrm{stoch},\mathrm{nondet}\}\) and one
-compatible time object \(\mathbb T\).  A BSC decoration datum is a lax
+compatible time object \(\mathbb T\).  Assume that a lax
 symmetric monoidal functor
 \[
 \mathcal D_{\mathsf r,\mathbb T}:
@@ -1512,7 +1685,7 @@ along a carrier map \(f\).  Illegal unit, clock, boundary, or resource
 identifications map to a distinguished absorbing failed decoration and are
 blocked by admissibility.  Mixed modes or clocks require a separately
 declared lax monoidal comparison functor; they are not composed by default.
-\end{definition}
+\end{assumption}
 
 \begin{definition}[Typed open BSC system]\label{def:cospan}
 A deterministic, stochastic, or nondeterministic open system of the fixed
@@ -1561,10 +1734,14 @@ laxator give the same laws for \(d_P\).  Identity cospans and
 \(\varphi_0\) give the unit laws.
 \end{proof}
 
-This is the needed categorical construction, not decorative vocabulary.  It
-is a BSC hybrid: structured cospans carry behavior and certificate
-decorations.  Decorated and structured cospans are distinct constructions,
-with precise comparison hypotheses
+This theorem gives a generic open-system construction conditional on a
+supplied functor \(\mathcal D_{\mathsf r,\mathbb T}\).  It does not prove that
+the eight-field BSC morphism records canonically define such a functor, nor
+that their certificate transport satisfies the laxator coherence laws.
+Constructing that BSC-specific decoration and proving its coherence remain
+open.  The conditional schema is a hybrid in which structured cospans carry
+behavior and certificate decorations.  Decorated and structured cospans are
+distinct constructions, with precise comparison hypotheses
 \citep{fong2015,baezcourser2020,baezcourservasilakopoulou2022}.
 Heterogeneous internal types remain in the
 apex decoration; only declared ports are identified.  Stochastic behavior may
@@ -1623,17 +1800,20 @@ and the de Rham pairing is \(Q_{\rm top}=\int_C\omega\), with any
 normalization stated separately.
 \end{definition}
 
-\begin{definition}[Physical charge bridge]\label{def:chargebridge}
-A physical charge is
+\begin{definition}[Topology-to-physical-charge bridge]\label{def:chargebridge}
+When a claim asserts that a physical charge is determined by
+\(Q_{\rm top}\), it must supply a typed map
 \[
-q_{\rm phys}=\chi(Q_{\rm top}),
+\chi:\operatorname{Dom}(\chi)\subseteq A\longrightarrow Q_{\rm phys},
+\qquad q_{\rm phys}=\chi(Q_{\rm top}),
 \]
-where \(\chi:A\to Q_{\rm phys}\) is a typed map into a declared physical
-quantity space with charge units, derived from at least one declared physical
-structure: gauge representation and coupling, an action and Noether current, a
-Gauss-law boundary flux, anomaly constraint, boundary condition, or calibrated
-measurement protocol.  Its normalization and units are part of the
-derivation.
+with \(Q_{\rm top}\in\operatorname{Dom}(\chi)\) and \(Q_{\rm phys}\) a
+declared physical quantity space with charge units.  The map must be derived
+from at least one declared physical structure: gauge representation and
+coupling, an action and Noether current, a Gauss-law boundary flux, anomaly
+constraint, boundary condition, or calibrated measurement protocol.  Its
+normalization and units are part of the derivation.  This is an obligation on
+topology-to-charge claims, not a definition of every physical charge.
 \end{definition}
 
 \begin{proposition}[Normalization underdetermination]\label{thm:nocharge}
@@ -1704,11 +1884,14 @@ structural equivalence.
 
 \subsection{Corpus inheritance and local demotion}
 
-The complete supplied corpus was treated as evidence under
-\cref{conv:source}.  Table~\ref{tab:inheritance} records the disposition of
-material not already represented by the retained tuples and morphism lineage.
-The words ``retained'' and ``demoted'' apply locally to the listed statement,
-not to an entire volume.
+The prior reconstruction treated a hash-identified internal corpus as evidence
+under \cref{conv:source}.  Those source files are not independently
+inspectable in this public release, so the present reader cannot replay the
+textual comparison.  Table~\ref{tab:inheritance} records this manuscript's
+source-local disposition of material not already represented by the
+transcribed tuples and morphism lineage.  The words ``retained'' and
+``demoted'' apply locally to the listed statement, not to an entire volume,
+and do not assert an independently verified quotation.
 
 \begingroup
 \small
@@ -1771,19 +1954,23 @@ Their computational status is therefore unexecuted here.\\
 
 \begin{enumerate}
 \item An undefined domain, codomain, unit, quotient, or boundary condition
-demotes the mathematical axis to ill-posed.
-\item A counterexample demotes the quantified mathematical claim to refuted;
-a repaired restricted claim receives a new identifier.
-\item A proof sketch with an open lemma is conditional or conjectural, not
-proved.
+makes the claim-local verdict ill-posed and mathematical support none.
+\item A counterexample makes the quantified mathematical verdict false; a
+repaired restricted claim receives a new identifier.
+\item A proof sketch with an open lemma leaves the verdict open and supplies,
+at most, conditional or conjectural mathematical support.
 \item Failure of a leakage gate invalidates promotion from the affected
 evaluation.
 \item A numerical result without a reproducible receipt is unexecuted; a failed
 build is failed.
 \item A verified preprint is not recorded as peer reviewed.
-\item If an upstream dependency is demoted, descendants inherit the axiswise
-meet under \cref{def:demotion}.
-\item Exceeding any prefix persistence tolerance blocks persistence at that
+\item If an upstream dependency loses readiness, descendants receive only the
+declared readiness caps under \cref{def:demotion}; their verdicts do not
+propagate.
+\item A proved upper enclosure below every prefix tolerance certifies the
+relevant coordinate.  A straddling enclosure blocks certification but does
+not refute persistence.  An actual discrepancy, certified lower bound, or
+qualified measurement above tolerance refutes persistence through that
 horizon; later recovery does not erase the excursion.
 \item A successful transfer outside its declared domain is local only; using it
 in a new domain requires a new morphism certificate.
@@ -1796,7 +1983,7 @@ slot.
 This section collects consequences established in the present paper.  Their
 scope is exactly the hypotheses cited; no empirical coordinate is promoted.
 
-\begin{theorem}[Admissible-chain bound]\label{thm:chain}
+\begin{theorem}[Compatible-chain bounds]\label{thm:chain}
 For a compatible chain of stochastic BSC morphisms
 \(\mathfrak M_{0,1},\ldots,\mathfrak M_{n-1,n}\), let
 \(\eta_i\) be the observation-channel contraction of the \(i\)-th
@@ -1817,12 +2004,15 @@ Iterate \cref{thm:theta,thm:deftriangle}.
 \end{proof}
 
 \begin{corollary}[Persistence obstruction]\label{cor:persistobstruct}
-If any prefix in an admissible fold chain exceeds its declared identity,
-viability, naturality, residual, or deficiency tolerance, that chain does not
-certify persistent identity through the prefix.
+If, at any prefix in a fold chain, the actual identity, viability,
+naturality, residual, or deficiency coordinate---or a certified lower
+bound for it---exceeds its declared tolerance, persistent identity through
+that prefix is false.  If only a certified upper bound exceeds tolerance, the
+chain fails to certify persistence but does not by that fact refute it.
 \end{corollary}
 \begin{proof}
-This is the conjunction of \cref{def:admissible,def:persistence}; the distinct
+This is the conjunction of
+\cref{def:admissible,def:persistence,thm:persistencebudget}; the distinct
 coordinates are not allowed to compensate one another.
 \end{proof}
 
@@ -1848,18 +2038,20 @@ reduced quotient.
 Contrapositive of \cref{thm:opfactor}.
 \end{proof}
 
-\begin{theorem}[DAG demotion monotonicity]\label{thm:dagmonotone}
-Repeated application of the axiswise meet rule on a finite claim DAG
-terminates at a unique greatest status assignment below the initial statuses
-and all dependency constraints.  Status can only remain fixed or demote unless
-new independent evidence is added.
+\begin{theorem}[DAG readiness-cap monotonicity]\label{thm:dagmonotone}
+On a finite claim DAG, the recursion in \cref{def:demotion} determines a
+unique greatest readiness assignment below the initial readiness and every
+declared cap.  Readiness can only remain fixed or decrease unless initial
+evidence, edges, or cap maps change.  Every claim-local mathematical verdict
+is unchanged by dependency propagation.
 \end{theorem}
 \begin{proof}
-Each finite status axis is a finite meet-semilattice.  Processing vertices in
-topological order applies each predecessor constraint after its inputs have
-stabilized.
-The coordinatewise meet is associative, commutative, and idempotent, yielding
-the unique greatest feasible assignment.
+Each readiness axis is a finite meet-semilattice.  Process vertices in a
+topological order.  At each vertex, all predecessor values are already fixed,
+and meeting the initial value with the monotone cap values gives the greatest
+element satisfying those inequalities.  Induction over the topological order
+gives existence, uniqueness, and greatestness.  The recursion has no verdict
+update, so verdicts remain claim-local.
 \end{proof}
 
 \begin{corollary}[Topology-to-charge block]
@@ -1985,8 +2177,8 @@ are \(p_0=(3r_0+r_1)/4\) and \(p_1=(r_0+3r_1)/4\), so
 \(p_1-p_0=(r_1-r_0)/2\le1/2\).  Errors below \(1/4\) would require
 \(p_0<1/4\) and \(p_1>3/4\), a contradiction.  The identity reverse channel
 attains \(1/4\).
-\textbf{Expected certificate.}  Exact rational proof; mathematical status
-proved; source and target direction explicit.
+\textbf{Expected certificate.}  Exact rational proof; mathematical verdict
+true with proved support; source and target direction explicit.
 \textbf{Failure and demotion.}  Reversing the prose or calling directed
 deficiency symmetric is a type/status failure.
 \textbf{Evidence that changes the result.}  Enlarging the observation or
@@ -2045,32 +2237,41 @@ W^\dagger(I_R\otimes A)W
 which is invariant under the simultaneous action \(L_h\otimes X^h\).
 Let
 \[
-\rho_1=|{+0}\rangle\langle{+0}|,\qquad
-\rho_2=|{00}\rangle\langle{00}|.
+\lvert\Phi^+\rangle
+=\frac{\lvert00\rangle+\lvert11\rangle}{\sqrt2},\qquad
+\lvert\Psi^+\rangle
+=\frac{\lvert01\rangle+\lvert10\rangle}{\sqrt2},
 \]
-Both have reduced system state \(|0\rangle\langle0|\).
+and
+\(\rho_\Phi=\lvert\Phi^+\rangle\langle\Phi^+\rvert\),
+\(\rho_\Psi=\lvert\Psi^+\rangle\langle\Psi^+\rvert\).
+Both states are invariant under \(X_R\otimes X_S\), and both have the same
+reduced system state \(I_S/2\).
 \textbf{Claimed result.}
 \[
-\Tr_R(W\rho_1W^\dagger)=I_S/2,\qquad
-\Tr_R(W\rho_2W^\dagger)=|0\rangle\langle0|.
+\Tr_R(W\rho_\Phi W^\dagger)=\lvert0\rangle\langle0\rvert,\qquad
+\Tr_R(W\rho_\Psi W^\dagger)=\lvert1\rangle\langle1\rvert.
 \]
-Their trace distance is \(1/2\); the expectations of \(Z_S\) are \(0\) and
-\(1\).  Hence no channel on the reduced system can factor
+Their trace distance is \(1\); the expectations of \(Z_S\) are \(+1\) and
+\(-1\).  Hence no channel on the common reduced input \(I_S/2\) can factor
 \(\Tr_R\circ\operatorname{Ad}_W\) through \(\Tr_R\) on a class containing
-\(\rho_1,\rho_2\).
+\(\rho_\Phi,\rho_\Psi\).
 \textbf{Test.}  Here \(W\) is
-\(\operatorname{CNOT}_{R\to S}\).  It maps \(|+0\rangle\) to the Bell state
-\((|00\rangle+|11\rangle)/\sqrt2\).  Discarding \(R\) gives \(I/2\).
-It leaves \(|00\rangle\) unchanged.  Equivalently, for the
+\(\operatorname{CNOT}_{R\to S}\), and exact ket calculation gives
+\[
+W\lvert\Phi^+\rangle=\lvert+\rangle_R\lvert0\rangle_S,\qquad
+W\lvert\Psi^+\rangle=\lvert+\rangle_R\lvert1\rangle_S .
+\]
+Equivalently, for the
 discard--reset--transform route with
 \(\iota_0(\rho_S)=|0\rangle\langle0|_R\otimes\rho_S\),
 \[
-\Tr_R\operatorname{Ad}_W(\iota_0(\Tr_R\rho_1))
-=|0\rangle\langle0|\ne I/2.
+\Tr_R\operatorname{Ad}_W(\iota_0(I_S/2))=I_S/2,
 \]
+which agrees with neither transform--discard output.
 \textbf{Expected certificate.}  Exact \(4\times4\) matrix or ket calculation;
-group action, paired relational algebra, and nonfactorization proved on the
-declared accessible algebra.
+invariance of both inputs, paired relational algebra, and nonfactorization
+proved on the declared accessible algebra.
 \textbf{Failure and demotion.}  No reduced transformed channel may be inferred
 from \(\Tr_R\rho\) alone on a class containing joint correlations that alter
 the output.  \textbf{Evidence that changes the result.}  A restricted state
@@ -2150,13 +2351,19 @@ correct real identity is \(\sqrt{x^2}=|x|\).
 \textbf{Mechanical test.}
 The retained script \texttt{verify\_counterexample.py}, run under CPython
 3.12.13, emitted a deterministically serialized, key-sorted JSON receipt twice
-with byte-identical output.
-The script SHA-256 is
-\texttt{\seqsplit{0c5e019d3398b4aacfeeee29ef05e97664989b3412459eefab05d01c1bc84ada}};
-the receipt SHA-256 is
-\texttt{\seqsplit{7b7d416914068b1e1e5510b5658f82d17c9615bfa6954ec5facfb6eeb0f43333}}.
-\textbf{Expected certificate.}  Mathematical status refuted for the universal
-claim; computational status exact receipt; no floating arithmetic.
+with byte-identical output.  The fail-closed checker validates the shipped
+schema and independently recomputes \(\operatorname{isqrt}(x^2)\); permanent
+negative tests reject a schema-invalid generator and a false arithmetic
+generator.  The generator, schema, retained receipt, and checker SHA-256
+values are respectively
+\texttt{\seqsplit{f56d833f54b537d79111a08aa432e455c6e2b7223c44c3f536c73e4d9ea20dde}},
+\texttt{\seqsplit{786edf0427324310048f1060ffab594d73aec137529d46aec14225d44b20c311}},
+\texttt{\seqsplit{491eb5c6b4cec20b457010003197bd8472236810a28f304bef89cd7caf20cc72}},
+and
+\texttt{\seqsplit{ad2c0f9797a37b4ae56f48d45727961565e478b19e7f149a768190d2c5c28eae}}.
+\textbf{Expected certificate.}  Mathematical verdict false with proved
+support for the universal claim; computational status exact receipt; no
+floating arithmetic.
 \textbf{Failure and demotion.}  Any future rewrite that returns the original
 universal identity passes formatting but fails the permanent regression.
 \textbf{Evidence that changes the result.}  Restricting \(x\ge0\) creates a
@@ -2192,9 +2399,12 @@ certificate must preserve that domain boundary.
 The primordial-field papers propose a candidate structure consisting of a
 self-interacting field, dual field components, toroidal configurations,
 complex or Kähler duality, closed paths and winding, stabilization through
-competing effects, a winding-to-charge correspondence, and a solenoidal
-confinement mechanism \citep{klingman2024,klingman2022}.  These are legitimate
-objects for formalization and testing.  The current classification is:
+competing effects, and a winding-to-charge correspondence
+\citep{klingman2024,klingman2022}.  A later paper proposes a qualitative
+solenoidal-flux account of confinement and expressly leaves a detailed
+quantitative treatment to future work \citep{klingman2025}.  These are
+legitimate objects for formalization and testing.  The current classification
+is:
 
 \begin{quote}
 \textbf{Candidate grammar:} topological carrier and stabilization model.\\
@@ -2229,7 +2439,7 @@ quantization rule & not established\\
 Color structure & \(SU(3)\) representations, gauge connection, observables &
 not established\\
 Confinement criterion & Wilson/'t Hooft behavior or gauge-invariant equivalent
-with regime & solenoidal analogy only\\
+with regime & qualitative solenoidal analogy only \citep{klingman2025}\\
 Running and scale & renormalization prescription and beta function & not
 established\\
 Generations and mixing & spectrum and mixing matrix from the action & not
@@ -2287,16 +2497,17 @@ Claim class & Decisive adverse finding & Immediate demotion & What remains\\
 Claim class & Decisive adverse finding & Immediate demotion & What remains\\
 \midrule
 \endhead
-Boundary sufficiency & positive exterior residual above threshold after legal
-conditioning & transfer blocked for that target/domain & boundary may remain
-predictive but insufficient\\
+Boundary screens & failed relevance or exterior-closure screen after legal
+conditioning & application gate fails; sufficiency remains undecided &
+boundary may remain predictive, and \(S_{\rm rest}\) still requires testing\\
 Interior reconstruction & two inequivalent admissible interiors with identical
 data & identifiability refuted & forward response and quotient recovery may
 remain valid\\
 Operational quotient & query differs on one exact observation class & query
 descent refuted & quotient valid for other descending queries\\
-Scale transfer & target residual or prefix defect exceeds tolerance & transfer
-blocked at that scale/horizon & source and target models remain local\\
+Scale transfer & actual target residual or prefix defect, or a certified lower
+bound, exceeds tolerance & transfer false at that scale/horizon & source and
+target models remain local\\
 Persistent identity & any required prefix leaves identity or viability tube &
 persistence through that horizon refuted & endpoint recurrence may still hold\\
 Koopman mode & certified full residual lower bound exceeds tolerance, or
@@ -2372,7 +2583,7 @@ normalization conditions.  A no-go result is as valuable as a construction.
 \end{openproblem}
 
 \begin{openproblem}[Machine-checked BSC kernel]
-Formalize the status lattice, dependency demotion, finite experiment
+Formalize the claim-local verdict type, readiness lattices and caps, finite experiment
 deficiency fixture, parity-gluing obstruction, and morphism chain inequalities
 in a declared proof assistant.  Pin the environment and retain accepted proof
 objects and build receipts.
@@ -2385,8 +2596,8 @@ hard obstructions before expensive deployment.
 
 \section{Conclusion}\label{sec:conclusion}
 
-BSC earns its place by refusing silent transfers.  Its retained system object
-describes a finite, open, instrumented domain.  Its measurable repair separates
+BSC earns its place by refusing silent transfers.  Its transcribed system
+object describes a finite, open, instrumented domain.  Its measurable repair separates
 raw states from equivalence, supplies context and legal filtration, and exposes
 the dynamics and observation kernels.  The added morphism record makes state
 transport travel with observables, records the information destroyed by
@@ -2398,8 +2609,9 @@ paired state and observable transport preserves accessible probabilities;
 statistical deficiency and naturality defects obey composition bounds;
 equation residuals propagate when an equation-space map exists; compatible
 sheaf sections glue while locally satisfiable relations may fail globally;
-dependency demotion is monotone; and topology alone does not select electric
-charge.  The fixtures make these statements vulnerable to exact tests.
+dependency readiness caps are monotone; and topology alone does not select
+electric charge.  The fixtures make these statements vulnerable to exact
+tests.
 
 Persistence is consequently neither visual recurrence nor final-time return.
 It is maintenance of a declared operational identity through every required
