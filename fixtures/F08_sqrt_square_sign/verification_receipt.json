@@ -2,7 +2,7 @@
   "arithmetic_model": "exact integers",
   "claim": "for every real x, sqrt(x^2) = x",
   "claim_sha256": "85fb1e2c50eba67f401565980f20e03d219db6858c6511dcadcda0d565e128d9",
-  "command": "python3 verify_counterexample.py verification_receipt.json",
+  "command": "python3 fixtures/F08_sqrt_square_sign/verify_counterexample.py build/F08_actual_receipt.json",
   "fixture_id": "F8-SQRT-SQUARE-SIGN",
   "input": {
     "x": -1
@@ -16,7 +16,9 @@
     "x": -1
   },
   "predicate_holds": false,
-  "receipt_schema": "bsc-deterministic-receipt/1",
+  "receipt_schema": "bsc-deterministic-receipt/2",
   "result": "counterexample_confirmed",
-  "script_sha256": "0c5e019d3398b4aacfeeee29ef05e97664989b3412459eefab05d01c1bc84ada"
+  "schema_sha256": "786edf0427324310048f1060ffab594d73aec137529d46aec14225d44b20c311",
+  "script_sha256": "f56d833f54b537d79111a08aa432e455c6e2b7223c44c3f536c73e4d9ea20dde",
+  "working_directory": "repository root"
 }
