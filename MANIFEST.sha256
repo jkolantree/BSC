@@ -4,7 +4,7 @@ f1e0264228c09c75f3e16efa64a90f55b3c32309683083a3183d9dafeae60567  ./.github/ISSU
 5df874a2694a1e3fd39854be78dc737afec989d1b0edca8a648944a553014766  ./.github/ISSUE_TEMPLATE/prior-art-equivalence.yml
 5e8e4a3fc0fcd563eb5ea5ddc1f2546ed101df4cd55e97f07d7b17c21fcf1f32  ./.github/ISSUE_TEMPLATE/scope-correction.yml
 541ab3b54a149a763f66985e8062ad73795e7a4e6587e9a6335ca09e5dbdf014  ./.github/ISSUE_TEMPLATE/type-or-proof-error.yml
-9a2de3cbabe33af233b37ecf633d1ba424a19bc854bc4c0571b54884cb302729  ./.github/workflows/verify-release.yml
+b41551293c321f7d7a8fe3bb4e4be3afa2185b442438ac98549c0144f0c6dd43  ./.github/workflows/verify-release.yml
 2eb56f5d30d92fdd871d8bb8a83adbccbe6b15175d8a18be925794be78e3ce77  ./.gitignore
 f16a38f73720a1d17200b85443497b13c03c358ffa43a737f101b537d965b61c  ./.zenodo.json
 c8fe1c48196b4e8591f5e78bc0b29c7e1ac6a855b4e2df7e0ef47125a69836df  ./AUDIT_REPORT_v1.0.0.md
