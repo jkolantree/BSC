@@ -8,10 +8,10 @@ Section 16 of the paper defines eight exact reference fixtures.
 | F2 | One-dimensional Dirichlet-to-Neumann ambiguity | Unexecuted mathematical derivation |
 | F3 | Exact Blackwell order and directed deficiency | Unexecuted mathematical derivation |
 | F4 | Koopman pseudomode and spectral pollution | Unexecuted mathematical derivation |
-| F5 | Finite \(\mathbb Z_2\) quantum-reference-frame descent | Unexecuted mathematical derivation |
+| F5 | Finite $\mathbb Z_2$ quantum-reference-frame descent | Unexecuted mathematical derivation |
 | F6 | Locally satisfiable parity data that do not glue | Unexecuted mathematical derivation |
 | F7 | Off-shell massive-field shift | Unexecuted mathematical derivation |
-| F8 | \(\sqrt{x^2}=x\) regression counterexample | Exact retained CPython receipt |
+| F8 | $\sqrt{x^2}=x$ regression counterexample | Exact retained CPython receipt |
 
 Only F8 is executable in this release. Its directory includes:
 
