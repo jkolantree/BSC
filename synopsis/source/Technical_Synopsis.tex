@@ -17,13 +17,15 @@
 
 \definecolor{inkblue}{RGB}{23,55,78}
 \definecolor{rulegray}{RGB}{105,112,118}
+\newcommand{\BSCVersion}{1.0.1}
+\newcommand{\BSCDOI}{\href{https://doi.org/10.5281/zenodo.21541561}{DOI 10.5281/zenodo.21541561}}
 \hypersetup{
   colorlinks=true,
   linkcolor=inkblue,
   urlcolor=inkblue,
   pdftitle={On Boundaries of Evidence --- Technical Synopsis},
   pdfauthor={J. Tree},
-  pdfsubject={Two-page technical synopsis of Boundary-State Calculus},
+  pdfsubject={Version 1.0.1; DOI 10.5281/zenodo.21541561; two-page technical synopsis of Boundary-State Calculus},
   pdfkeywords={Boundary-State Calculus, scientific transfer, evidence, admissibility}
 }
 \pagestyle{fancy}
@@ -50,6 +52,7 @@
 Admissible Transfer, and Falsifiable Persistence}\\
 \vspace{0.45em}
 {\small J. Tree \(\cdot\) Independent researcher \(\cdot\) 24 July 2026}\\
+{\footnotesize Version \BSCVersion\ \(\cdot\) \BSCDOI}\\
 \vspace{0.55em}
 \end{center}
 \hrule
@@ -73,8 +76,11 @@ the passage, and what evidence licenses the result.
 
 \section*{System and boundary discipline}
 
-The paper retains the BSC corpus's original finite-system tuple and its later
-measurable repair rather than replacing them retrospectively (\S3, pp.~6--8).
+The paper transcribes the BSC corpus's original finite-system tuple and its
+later measurable repair rather than replacing them retrospectively (\S3).
+The hash-identified internal sources are not independently inspectable in the
+public release, so this lineage is source-local and cannot be replayed by the
+reader.
 The repaired system separates raw state from exact observational equivalence
 and includes controls, outputs, physical context, legal filtration, dynamics,
 observation, comparison geometry, viability, transformation registries, and a
@@ -84,14 +90,14 @@ Instrument, controller, observer or reference frame, clock, and calibration
 are physical configuration variables, not metadata.
 
 An ideal trace, finite sensor layer, boundary response, reconstruction
-relation, and selected extension are kept distinct (\S5, pp.~9--10).  A
+relation, and selected extension are kept distinct (\S5).  A
 boundary response supports an interior claim only relative to a governing
 equation, coefficient class, equivalence or gauge class, regularity, data
 regime, and stability theorem.
 
 \section*{The transfer record}
 
-The central added object is (\S7, pp.~11--14)
+The central added object is (\S7)
 \[
 \resizebox{0.96\columnwidth}{!}{$\displaystyle
 \mathfrak M_{\ell\to m}=
@@ -104,27 +110,35 @@ observables in the reverse direction.  \(K_{\ell m}\) is post-processing or a
 simulation channel.  \(R_{\ell m}\) records target-equation failure.
 \(\Theta_{\ell m}\) is a declared naturality defect.  \(\delta_{\ell m}\) is
 directed Blackwell--Le Cam deficiency: the best error when the source
-experiment simulates the target.  \(C_{\ell m}\) records carrier, controller,
+experiment simulates the target.  Zero deficiency means arbitrarily accurate
+simulation; exact Blackwell simulation additionally requires an attaining
+kernel or an applicable randomization theorem.  \(C_{\ell m}\) records carrier, controller,
 instrument, reference frame, clock, resources, and boundary conditions.
 \(\mathsf{Cert}_{\ell m}\) binds assumptions, tolerances, sources, proof or
 execution artifacts, hashes, open obligations, and status.
 
+For a declared claim, admissibility requires a well-formed and evaluated
+record, certified upper enclosures within every applicable tolerance, true
+hard gates, and adequate readiness.  An enclosure that straddles a tolerance
+is inconclusive: it blocks certification but does not prove a violation.
 These coordinates do not collapse into one score.  Equation residual,
 observation defect, statistical deficiency, quotient loss, and viability
-failure occupy different spaces and obey different propagation laws (\S8,
-pp.~14--15).  A missing carrier or undefined observable pullback is a blocked
+failure occupy different spaces and obey different propagation laws (\S8).
+A missing carrier or undefined observable pullback is a blocked
 transfer, not a small numerical error.
 
 \section*{Composition and persistence}
 
-For compatible stochastic transfers, state kernels compose forward and
-observable pullbacks compose in reverse.  Observation defects have a
+For compatible partial stochastic transfers, state kernels compose only on
+points whose intermediate law is supported in the next domain; observable
+pullbacks then compose in reverse through the corresponding restricted
+pullback.  Observation defects have a
 contraction-weighted bound; directed deficiencies satisfy a triangle
 inequality; deterministic equation residuals propagate only with a compatible
-equation-space map (\S7.1, pp.~13--14; \S15, pp.~23--24).  Incompatible clocks,
+equation-space map (\S7.1; \S15).  Incompatible clocks,
 interfaces, resources, or boundary conditions make the composite undefined.
 
-Persistence is defined through induced path laws (\S9, pp.~15--17).
+Persistence is defined through induced path laws (\S9).
 Endpoint return is insufficient.  Every required prefix must remain within
 operational-identity, viability, residual, deficiency, and certificate
 budgets.  ``A persistent object is a recursively maintained finite
@@ -144,18 +158,20 @@ proof checking.  These are not claimed as new BSC discoveries.
 \item \textbf{Paper-level consequences.} Assumption-bound results include
 quotient descent; paired state--observable probability preservation; defect,
 deficiency, and deterministic residual propagation; prefix persistence
-obstruction; operational factorization and discard obstruction; typed
-structured-cospan composition; dependency-DAG demotion; and the block from
-winding to physical charge.  No empirical status is inherited.
+obstruction; operational factorization and discard obstruction; a generic
+structured-cospan category conditional on a supplied decoration functor;
+dependency-DAG readiness caps; and the block from winding to physical charge.
+No empirical status is inherited.
 \item \textbf{Open work.} Universal persistence, empirical validation,
 stochastic residuals, instrument-aware reconstruction, QRF descent, certified
-recurrence, physical charge bridges, and a machine-checked kernel remain
+recurrence, a coherent BSC-specific decoration functor, physical charge
+bridges, and a machine-checked kernel remain
 conjectural, untested, unexecuted, or open.
 \end{itemize}
 
 \section*{Eight fixtures}
 
-The exact fixtures (\S16, pp.~24--27) are:
+The exact fixtures (\S16) are:
 \begin{enumerate}
 \item torus winding \((2,-3)\), with electric charge blocked without a physical
 bridge;
@@ -164,8 +180,8 @@ map;
 \item binary experiments with directed deficiencies \(0\) and \(1/4\);
 \item Koopman residual \(\sqrt{2/N}\) separated from polluted zero
 eigenvalues;
-\item a finite \(\mathbb Z_2\) frame transformation that does not descend
-through the stated reduced quotient;
+\item two invariant, correlated Bell states with common reduced state \(I/2\)
+whose finite \(\mathbb Z_2\) frame transforms reduce to orthogonal outputs;
 \newpage
 \item locally nonempty parity constraints with no global section;
 \item the off-shell residual \(m^2c\) of a massive-field shift; and
@@ -177,16 +193,18 @@ preprint with audit artifacts, not a complete reference implementation.
 
 \section*{Physical promotion and the test}
 
-Winding and physical charge are different typed objects (\S13, p.~21).  A
+Winding and physical charge are different typed objects (\S13).  A
 charge claim needs a derived bridge from a gauge representation, action and
 current, Gauss law, anomaly condition, boundary condition, or calibrated
 measurement.  Primordial-field toroidal models are therefore treated as
 candidate topological and stabilization grammar, not an established derivation
-of quark charge, QCD, or hadron dynamics (\S17, pp.~28--30).
+of quark charge, QCD, or hadron dynamics (\S17).
 
-Claims carry separate mathematical, empirical, computational, source, and
-transfer statuses (\S2.2, p.~5).  Demotion propagates only along declared
-dependency axes.  A theorem does not raise empirical status; a hash establishes
+Each claim has a local mathematical verdict---ill-posed, open, true, or
+false---and five readiness coordinates: mathematical support, empirical,
+computational, source, and transfer (\S2.2).  Dependency edges cap named
+readiness coordinates; they never propagate verdicts.
+A theorem does not raise empirical status; a hash establishes
 identity rather than truth; a proof DAG is not a proof; and an unexecuted
 calculation remains unexecuted.
 
@@ -194,7 +212,7 @@ The appropriate test is adversarial and narrow: Does an equivalent
 compositional record already exist?  Is a map ill-typed?  Does a composition
 law fail?  Is there a counterexample to a fixture?  Does the record change no
 scientific decision?  If existing formalisms already supply the same
-obligations and demotion semantics, or if BSC never separates an invalid
+obligations and readiness-cap semantics, or if BSC never separates an invalid
 transfer from a nearby valid one, the added structure is unnecessary.  If it
 exposes that distinction and preserves it through composition, that---not a
 claim about the universe---is the contribution requiring further work.
