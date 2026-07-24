@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "arithmetic_model": {
+      "const": "exact integers"
+    },
+    "claim": {
+      "type": "string"
+    },
+    "claim_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "command": {
+      "type": "string"
+    },
+    "fixture_id": {
+      "const": "F8-SQRT-SQUARE-SIGN"
+    },
+    "input": {
+      "additionalProperties": false,
+      "properties": {
+        "x": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "x"
+      ],
+      "type": "object"
+    },
+    "interpreter": {
+      "additionalProperties": false,
+      "properties": {
+        "implementation": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "implementation",
+        "version"
+      ],
+      "type": "object"
+    },
+    "output": {
+      "additionalProperties": false,
+      "properties": {
+        "sqrt_x_squared": {
+          "type": "integer"
+        },
+        "x": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "sqrt_x_squared",
+        "x"
+      ],
+      "type": "object"
+    },
+    "predicate_holds": {
+      "const": false
+    },
+    "receipt_schema": {
+      "const": "bsc-deterministic-receipt/1"
+    },
+    "result": {
+      "const": "counterexample_confirmed"
+    },
+    "script_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "arithmetic_model",
+    "claim",
+    "claim_sha256",
+    "command",
+    "fixture_id",
+    "input",
+    "interpreter",
+    "output",
+    "predicate_holds",
+    "receipt_schema",
+    "result",
+    "script_sha256"
+  ],
+  "title": "BSC deterministic fixture receipt",
+  "type": "object"
+}

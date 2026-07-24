@@ -1,0 +1,22 @@
+{
+  "arithmetic_model": "exact integers",
+  "claim": "for every real x, sqrt(x^2) = x",
+  "claim_sha256": "85fb1e2c50eba67f401565980f20e03d219db6858c6511dcadcda0d565e128d9",
+  "command": "python3 verify_counterexample.py verification_receipt.json",
+  "fixture_id": "F8-SQRT-SQUARE-SIGN",
+  "input": {
+    "x": -1
+  },
+  "interpreter": {
+    "implementation": "CPython",
+    "version": "3.12.13"
+  },
+  "output": {
+    "sqrt_x_squared": 1,
+    "x": -1
+  },
+  "predicate_holds": false,
+  "receipt_schema": "bsc-deterministic-receipt/1",
+  "result": "counterexample_confirmed",
+  "script_sha256": "0c5e019d3398b4aacfeeee29ef05e97664989b3412459eefab05d01c1bc84ada"
+}
