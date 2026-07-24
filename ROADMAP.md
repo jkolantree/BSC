@@ -3,6 +3,15 @@
 This file records planned work. Nothing listed here is part of the current
 evidence base.
 
+## Completed in 1.0.1
+
+- Typed the partial stochastic composite with a restricted observable pullback.
+- Split mathematical verdict from support/readiness propagation.
+- Distinguished well-formed, evaluated, and claim-admissible transfers.
+- Corrected persistence certification and boundary-screening language.
+- Hardened F8, complete-set manifest verification, Markdown rendering, and CI.
+- Added version/DOI provenance and a transparent post-release audit.
+
 ## Highest-leverage next work
 
 1. **External adversarial reading**
@@ -22,10 +31,11 @@ evidence base.
    - Do not call the set a reference implementation until the general transfer
      record and its gates are implemented.
 
-4. **Observable-complete composition**
-   - Construct and test a category or double category joining physical
-     interfaces, one fixed morphism variant, paired observable transport, and
-     certificate-preserving composition.
+4. **BSC-specific decoration functor**
+   - Construct the actual lax symmetric monoidal decoration functor for one
+     fixed mode and clock.
+   - Prove functorial pushout transport and coherence. The generic
+     decorated-cospan theorem does not discharge this obligation.
 
 5. **Domain-specific scientific tests**
    - Choose one real transfer with public data and a nearby invalid control.

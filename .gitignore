@@ -1,4 +1,6 @@
 /build/
+/dist/
+/tmp/
 *.aux
 *.bbl
 *.blg

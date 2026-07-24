@@ -18,6 +18,9 @@ Consequences:
 - Readers can inspect every imported public citation through the bibliography.
 - Readers cannot independently replay internal corpus-lineage claims from this
   repository alone.
+- Statements that reproduce the supplied tuple lineage are therefore
+  transcriptions from hash-identified internal sources, not independently
+  certified public-source facts.
 - The displayed identities “Boundary-State Research Program,” “Open Research
   Program,” and related variants reproduce source-document metadata. They are
   not presented as legal institutions or independent reviewing bodies.
