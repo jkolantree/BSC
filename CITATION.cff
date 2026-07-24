@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use this work, cite the preprint described in preferred-citation."
+title: "On Boundaries of Evidence — Boundary-State Calculus for Typed Observation, Admissible Transfer, and Falsifiable Persistence"
+type: dataset
+authors:
+  - family-names: "Tree"
+    given-names: "J."
+    affiliation: "Independent researcher"
+version: "1.0.0"
+date-released: 2026-07-24
+license: CC-BY-4.0
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21541161"
+    description: "Zenodo version-of-record DOI for release 1.0.0"
+repository-code: "https://github.com/jkolantree/BSC"
+url: "https://doi.org/10.5281/zenodo.21541161"
+keywords:
+  - "Boundary-State Calculus"
+  - "scientific transfer"
+  - "operational quotient"
+  - "statistical deficiency"
+  - "Koopman operator"
+  - "inverse problems"
+  - "claim status"
+abstract: >-
+  A foundational preprint proposing a typed audit calculus for claims that
+  move between scientific descriptions. The release contains the paper,
+  editable source, a two-page synopsis, audit ledgers, eight exact mathematical
+  fixtures, and one deterministic execution receipt.
+preferred-citation:
+  type: article
+  title: "On Boundaries of Evidence — Boundary-State Calculus for Typed Observation, Admissible Transfer, and Falsifiable Persistence"
+  authors:
+    - family-names: "Tree"
+      given-names: "J."
+      affiliation: "Independent researcher"
+  year: 2026
+  doi: "10.5281/zenodo.21541161"
+  url: "https://doi.org/10.5281/zenodo.21541161"
+  notes: "Preprint; not peer reviewed"

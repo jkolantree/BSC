@@ -1,21 +1,19 @@
-MIT License
+On Boundaries of Evidence — licensing notice
 
-Copyright (c) 2026 jtree
+Copyright © 2026 J. Tree.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This repository contains materials under two licenses:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+1. The manuscript, synopsis, bibliography, ledgers, revision memorandum,
+   README files, roadmap, disclosure, provenance descriptions, figures,
+   tables, and other human-readable documentation are licensed under the
+   Creative Commons Attribution 4.0 International License (CC BY 4.0).
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+2. Python code, JSON Schema, machine-readable fixture tooling, workflow files,
+   and the Makefile are licensed under the MIT License.
+
+The authoritative scope map, the full MIT text, and links to the CC BY 4.0
+legal code are in LICENSES/.
+
+The twelve internal source documents identified in provenance/ are not
+included in this repository and receive no license through this notice.
