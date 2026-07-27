@@ -39,7 +39,7 @@ The unit of evaluation is not the universe. It is one claimed transfer.
 
 The paper proposes a typed transfer record:
 
-$$
+```math
 \mathfrak M_{\ell\to m}
 =
 \left(
@@ -52,7 +52,7 @@ R_{\ell m},
 C_{\ell m},
 \mathsf{Cert}_{\ell m}
 \right).
-$$
+```
 
 It keeps together:
 
