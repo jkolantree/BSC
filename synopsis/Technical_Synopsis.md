@@ -4,10 +4,11 @@
 
 **J. Tree · Independent researcher**
 
-**Repository state:** version 1.1.0-development draft; unreleased. The latest
-released version remains v1.0.1, dated 24 July 2026.
+**Repository state:** version 1.1.0 release, dated 30 July 2026.
 
-**Latest released-version DOI:** https://doi.org/10.5281/zenodo.21541561
+**Version record:** https://github.com/jkolantree/BSC/releases/tag/v1.1.0
+
+**Zenodo concept DOI:** https://doi.org/10.5281/zenodo.21541160
 
 Scientific claims often fail not within either of two descriptions, but in the
 passage between them: from an interior state to boundary data, one instrument
@@ -110,7 +111,7 @@ organizing principle and a target-relative definition. Its promotion to a
 universal physical law remains conjectural, empirically untested, and
 computationally unexecuted.
 
-The unreleased 1.1.0-development framework adds certified normalized-scale
+Version 1.1.0 adds certified normalized-scale
 profiles $L_N=A_N/Z_N$. A diverging normalizer can collapse the raw limit
 without creating finite zeros, while logarithmic rates split exactly into
 normalizer and carrier exponents. Continuous scaled normalization changes
@@ -150,7 +151,7 @@ temperature, or an independent physical origin.
 |---|---|---|
 | Established imports | Markov kernels and operational quotients; Blackwell–Le Cam comparison; boundary trace and Calderón-type response; Koopman operators and stated learnability limits; periodic homogenization; sheaf descent; structured cospans; non-invertible defects; proof checking | Imported under their published or preprint hypotheses. These ingredients are not claimed as new BSC discoveries. |
 | Paper-level consequences | Quotient and exact-decision descent; repaired restricted-pullback composition; paired state–observable probability preservation; defect, deficiency, and deterministic residual propagation; normalized-scale rate decomposition and covariance; singular-set and slice visibility; analytic zero and multiplicity transfer; the zeta-specific alternating-tail bound, pointwise exponent/rate split, ambient and fixed-$\beta$ singular sets, bounded contour count, and local root drift; persistence certification; generic decorated-cospan composition; readiness-cap propagation; the block from winding to physical charge | Proved locally under the manuscript's stated assumptions. The canonical BSC decoration functor and full quantum-morphism composition remain open. No empirical status is inherited. |
-| Reference fixtures | Nine development examples covering winding, inverse ambiguity, directed deficiency, Koopman pollution, quantum-reference-frame descent, sheaf obstruction, off-shell residual, exact counterexample retention, and zeta–DQPT scope separation | Fixtures 1–7 and 9 have exact mathematical derivations but no separate execution receipts. Fixture 8 has a deterministic CPython receipt. The immutable v1.0.1 release contains Fixtures 1–8. |
+| Reference fixtures | Nine release examples covering winding, inverse ambiguity, directed deficiency, Koopman pollution, quantum-reference-frame descent, sheaf obstruction, off-shell residual, exact counterexample retention, and zeta–DQPT scope separation | Fixtures 1–7 and 9 have exact mathematical derivations but no separate execution receipts. Fixture 8 has a deterministic CPython receipt. The immutable v1.0.1 release contains Fixtures 1–8. |
 | Open status | Universal persistence, generic empirical validation, nonlinear stochastic residual composition, full quantum-morphism composition (BSC-QOP-03), instrument-uncertain reconstruction, QRF quotient characterization, learnability-aware recurrence, physical charge bridges, end-to-end zeta-algorithm advantage, temperature/origin bridges, and a machine-checked BSC kernel | Conjectural, untested, unexecuted, blocked, or open as individually recorded. |
 
 The fixtures (§16) compute a torus winding class $(2,-3)$ while

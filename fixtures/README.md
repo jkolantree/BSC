@@ -1,8 +1,7 @@
 # Fixtures
 
-The immutable v1.0.1 release defines eight exact reference fixtures. The
-unreleased 1.1.0-development draft adds F9, for a development total of
-nine.
+Version 1.1.0 defines nine exact reference fixtures. The immutable v1.0.1
+release remains the historical eight-fixture record.
 
 | Fixture | Subject | Current computational status |
 |---|---|---|
@@ -16,9 +15,8 @@ nine.
 | F8 | $\sqrt{x^2}=x$ regression counterexample | Exact retained CPython receipt |
 | F9 | Finite zeta–coherence identity with blocked unsupported promotions | Unexecuted documentary and mathematical audit |
 
-Only F8 is executable in both the latest release and the 1.1.0-development
-state. F9 has no raw-data replay, fitting execution, hardware receipt, or
-complexity benchmark. F8's directory includes:
+Only F8 is executable in version 1.1.0. F9 has no raw-data replay, fitting
+execution, hardware receipt, or complexity benchmark. F8's directory includes:
 
 - the original receipt generator;
 - the retained reference receipt;

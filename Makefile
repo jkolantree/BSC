@@ -2,7 +2,7 @@ PYTHON ?= python3
 LATEXMK ?= latexmk
 PAPER_PAGES ?= 50
 SYNOPSIS_PAGES ?= 2
-VERSION ?= 1.1.0-dev
+VERSION ?= 1.1.0
 SOURCE_DATE_EPOCH ?= 1785369600
 
 .PHONY: paper synopsis fixture manifest manifest-refresh markdown test verify build-check dist ci

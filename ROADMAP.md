@@ -1,7 +1,7 @@
 # Roadmap
 
-This file records planned and in-development work. Only the items under
-“Completed in 1.0.1” are part of the latest published evidence base.
+This file records completed and planned work. Items under “Completed in
+1.0.1” and “Completed in 1.1.0” are part of the published evidence base.
 
 ## Completed in 1.0.1
 
@@ -12,7 +12,7 @@ This file records planned and in-development work. Only the items under
 - Hardened F8, complete-set manifest verification, Markdown rendering, and CI.
 - Added version/DOI provenance and a transparent post-release audit.
 
-## Present in the unreleased 1.1.0-development draft
+## Completed in 1.1.0
 
 - Added the normalized-scale profile as a reusable framework layer over
   directed comparison families of certified finite systems, without modifying the core
@@ -37,8 +37,8 @@ This file records planned and in-development work. Only the items under
 - Recorded the Nature Communications study as a single source-reported study;
   retain the inspected article-in-press state and do not infer replication.
 
-This development work does not assign a release date or DOI and does not alter
-the immutable v1.0.1 release.
+Release v1.1.0 is dated 30 July 2026 and does not alter the immutable v1.0.1
+release or its version DOI.
 
 ## Highest-leverage next work
 

@@ -23,7 +23,7 @@ endorsed this work. The exact boundary between symbolic derivation, source
 verification, computation, and open obligation is recorded in the
 [claim-status ledger](ledgers/Claim_Status_Ledger.md).
 
-Only Fixture F8 presently has a retained execution receipt. The remaining seven
-fixtures are mathematical derivations in the manuscript and are computationally
-unexecuted unless and until separate executable artifacts and receipts are
-added.
+Only Fixture F8 presently has a retained execution receipt. The remaining
+eight fixtures—F1–F7 and F9—are mathematical derivations in the manuscript and
+are computationally unexecuted unless and until separate executable artifacts
+and receipts are added.

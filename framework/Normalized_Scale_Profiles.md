@@ -2,8 +2,8 @@
 
 ## Status and scope
 
-This development module records reusable mathematics for Boundary-State
-Calculus (BSC). It is part of the unreleased `1.1.0-dev` framework and is not
+This module records reusable mathematics for Boundary-State Calculus (BSC).
+It is part of the released `1.1.0` framework and is not
 an empirical claim, an execution receipt, or a new field in the eight-field
 BSC morphism record. It is not a new morphism field.
 

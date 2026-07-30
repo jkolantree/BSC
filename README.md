@@ -4,19 +4,19 @@
 
 **J. Tree · Independent researcher**
 
-**Latest released version:** v1.0.1 · 24 July 2026.
+**Latest released version:** v1.1.0 · 30 July 2026.
 
-**Repository state:** version 1.1.0-development draft; unreleased, with no new
-version DOI or release date assigned.
+**Repository state:** version 1.1.0 release.
 
-**Release status:** v1.0.1 is a corrected foundational preprint with audit
-artifacts; not peer reviewed.
+**Release status:** v1.1.0 is a foundational preprint with mathematical
+framework, audit artifacts, and explicit claim boundaries; not peer reviewed.
 
 **Canonical repository:** https://github.com/jkolantree/BSC
 
-**Latest released-version DOI:** https://doi.org/10.5281/zenodo.21541561
+**Version record:** https://github.com/jkolantree/BSC/releases/tag/v1.1.0
 
-**All versions:** https://doi.org/10.5281/zenodo.21541160
+**Zenodo concept DOI (all deposited versions):**
+https://doi.org/10.5281/zenodo.21541160
 
 Scientific claims often fail in the crossing between two otherwise valid
 descriptions. Boundary-State Calculus (BSC) treats that crossing as a typed,
@@ -106,8 +106,8 @@ recurrence, or duality earns the right to support a target claim.
   exact-decision bounds.
 - A two-page technical synopsis and field-specific reader map.
 - A symbol and notation ledger, claim-status ledger, and revision memorandum.
-- Nine exact mathematical fixtures in the 1.1.0-development draft; the
-  immutable v1.0.1 release contains eight.
+- Nine exact mathematical fixtures in version 1.1.0; the immutable v1.0.1
+  release contains eight.
 - One executable fixture, F8, with one deterministic CPython 3.12.13 receipt.
 - A fail-closed checker for that receipt and its parsed JSON Schema, with
   independent semantic recomputation and negative regression tests.
@@ -116,7 +116,7 @@ recurrence, or duality earns the right to support a target claim.
 - A complete-set manifest gate that rejects missing, extra, duplicate, unsafe,
   or hash-mismatched release paths.
 
-Fixtures F1–F7 and the development-only F9 have exact mathematical derivations
+Fixtures F1–F7 and F9 have exact mathematical derivations
 but no separate execution receipts. F9 checks only the finite engineered
 zeta–coherence identity; it does not execute the application-level analytic
 transfer and is not an NMR-data replay. No proof-assistant artifact is
@@ -145,7 +145,7 @@ Use the repository issue forms for
 
 ## Normalized-scale framework and zeta–DQPT instance
 
-The 1.1.0-development draft adds a reusable normalized-scale profile to the
+Version 1.1.0 adds a reusable normalized-scale profile to the
 core calculus and applies it to Wei et al.'s engineered correspondence between
 finite quantum observables, the
 Riemann zeta function, and dynamical quantum phase transitions
@@ -241,11 +241,16 @@ tests/        positive and negative release-gate regressions
 ## Citation, disclosure, and licensing
 
 Machine-readable citation metadata is in [CITATION.cff](CITATION.cff).
-The version 1.0.1 DOI is
-[10.5281/zenodo.21541561](https://doi.org/10.5281/zenodo.21541561).
+Version 1.1.0 is published in the immutable
+[GitHub release record](https://github.com/jkolantree/BSC/releases/tag/v1.1.0).
 The concept DOI
 [10.5281/zenodo.21541160](https://doi.org/10.5281/zenodo.21541160)
-resolves to the latest published version. The immutable v1.0.0 DOI remains
+identifies all deposited versions and resolves to the latest Zenodo deposit.
+Any version-specific Zenodo DOI assigned after deposit is recorded on the
+GitHub release page rather than anticipated in the tagged bytes. The immutable
+v1.0.1 DOI is
+[10.5281/zenodo.21541561](https://doi.org/10.5281/zenodo.21541561), and the
+immutable v1.0.0 DOI remains
 [10.5281/zenodo.21541161](https://doi.org/10.5281/zenodo.21541161).
 
 Material generative assistance and its limits are recorded in

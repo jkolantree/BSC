@@ -1,9 +1,8 @@
 # Changelog
 
-## 1.1.0-dev - Unreleased
+## 1.1.0 — 2026-07-30
 
-The mathematical framework and its first zeta–DQPT instance are being
-extended:
+The mathematical framework and its first zeta–DQPT instance were extended:
 
 - added certified normalized-scale families that keep finite BSC systems,
   ideal carriers, nonzero normalizers, reported observables, interscale
@@ -35,7 +34,10 @@ extended:
   promotion until typed causal/ontological and energy-unit/calibration bridges
   are supplied.
 
-This development state has no release date or DOI. The immutable v1.0.1
+Published at GitHub tag `v1.1.0`. The Zenodo concept DOI
+`10.5281/zenodo.21541160` identifies the deposited version family; any
+version-specific DOI assigned after deposit is recorded on the GitHub release
+page rather than anticipated in these tagged bytes. The immutable v1.0.1
 release and DOI `10.5281/zenodo.21541561` remain unchanged.
 
 ## 1.0.1 — 2026-07-24

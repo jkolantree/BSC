@@ -1,10 +1,12 @@
 # Symbol and Notation Ledger
 
-This ledger is normative for the unreleased 1.1.0-development draft of
-*On Boundaries of Evidence*. The latest published version remains v1.0.1,
-dated 24 July 2026, with version DOI `10.5281/zenodo.21541561`. A symbol has no
-meaning outside the row or local declaration that types it. Local
-specializations are permitted only when their scope is explicit.
+This ledger is normative for version 1.1.0 of *On Boundaries of Evidence*,
+released 30 July 2026 at
+`https://github.com/jkolantree/BSC/releases/tag/v1.1.0`. The Zenodo concept DOI
+is `10.5281/zenodo.21541160`; the immutable v1.0.1 version DOI remains
+`10.5281/zenodo.21541561`. A symbol has no meaning outside the row or local
+declaration that types it. Local specializations are permitted only when their
+scope is explicit.
 
 ## Global conventions
 
@@ -228,8 +230,8 @@ BSC morphism record, and they do not construct an infinite-system limit.
 
 ## Engineered zeta–DQPT case-study notation
 
-These symbols are local to the unreleased 1.1.0-development case study. They do not
-redefine the global BSC system or morphism records.
+These symbols are local to the version 1.1.0 case study. They do not redefine
+the global BSC system or morphism records.
 
 | Symbol | Type or codomain | Meaning and constraints |
 |---|---|---|

@@ -3,10 +3,12 @@
 ## Record status
 
 - **BSC baseline:** [`b56495bc9c33dae73c28228708110450586b46e7`](https://github.com/jkolantree/BSC/tree/b56495bc9c33dae73c28228708110450586b46e7), version 1.0.1.
-- **Integration state:** incorporated into the local version 1.1.0-development
-  draft together with the central manuscript, claim ledger, fixture index, and
-  manifest. This is not a release: no tag, DOI, publication, or remote state
-  is created or changed.
+- **Integration state:** incorporated into version 1.1.0 together with the
+  central manuscript, claim ledger, fixture index, and manifest, and published
+  in the immutable
+  [`v1.1.0` release](https://github.com/jkolantree/BSC/releases/tag/v1.1.0).
+  The Zenodo concept DOI is `10.5281/zenodo.21541160`; no version-specific DOI
+  is anticipated in these tagged bytes.
 - **Execution:** unexecuted. No experiment, simulation, interval computation,
   zero census, complexity replay, or independent reproduction was performed
   for this record.
@@ -540,10 +542,10 @@ composition explicitly only for the stochastic variant. Accordingly, this
 table is a well-typed application proposal; it is not a claim that a complete
 BSC quantum-composition theorem already exists.
 
-## 6. Development claim statuses
+## 6. Release claim statuses
 
-These identifiers are synchronized with the central claim ledger in the local
-version 1.1.0-development draft.
+These identifiers are synchronized with the central claim ledger in version
+1.1.0.
 
 | ID | Claim | Verdict | Math support | Empirical | Computational | Source | Transfer |
 |---|---|---|---|---|---|---|---|

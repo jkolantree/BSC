@@ -1,11 +1,12 @@
 # Claim-Status Ledger
 
-This ledger is updated for the unreleased 1.1.0-development draft of
-*On Boundaries of Evidence*. The latest published version remains v1.0.1,
-dated 24 July 2026, with version DOI `10.5281/zenodo.21541561`. This is a
-status record, not a substitute for proofs, sources, or receipts. A materially
-repaired or restricted proposition receives a new identifier; the superseded
-row remains visible.
+This ledger is updated for version 1.1.0 of *On Boundaries of Evidence*,
+released 30 July 2026 at
+`https://github.com/jkolantree/BSC/releases/tag/v1.1.0`. The Zenodo concept DOI
+is `10.5281/zenodo.21541160`; the immutable v1.0.1 version DOI remains
+`10.5281/zenodo.21541561`. This is a status record, not a substitute for
+proofs, sources, or receipts. A materially repaired or restricted proposition
+receives a new identifier; the superseded row remains visible.
 
 ## Status vocabulary
 

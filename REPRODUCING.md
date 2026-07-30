@@ -1,4 +1,4 @@
-# Building development draft 1.1.0-dev
+# Reproducing release 1.1.0
 
 ## Scope
 
@@ -6,7 +6,10 @@ The manuscript and synopsis can be rebuilt from their shipped LaTeX sources.
 Fixture F8 can be reproduced byte-for-byte in the pinned Python environment.
 Fixture F9 is a mathematical and documentary case study and has no execution
 receipt. The immutable released version 1.0.1 remains available at DOI
-`10.5281/zenodo.21541561`; this development tree does not claim that DOI.
+`10.5281/zenodo.21541561`; version 1.1.0 does not claim that prior DOI. The
+release record is `https://github.com/jkolantree/BSC/releases/tag/v1.1.0`, and
+the Zenodo concept DOI for the deposited version family is
+`10.5281/zenodo.21541160`.
 Fresh PDF builds are not claimed to be byte-identical because PDF timestamps
 and trailer identifiers may vary. Reproduction of the paper means matching
 content, pagination, references, and visual layout.
@@ -19,9 +22,9 @@ content, pagination, references, and visual layout.
 - BibTeX 0.99d
 - CPython 3.12.13
 
-## Development render used for this update
+## Release render
 
-The tracked PDFs in this unreleased working tree were also compiled and
+The tracked PDFs in this release were compiled and
 visually inspected with Tectonic 0.16.9. The official Windows MSVC archive had
 SHA-256
 `131a24604785a9600989a3d91225f597df52ac06f00aeffe86fd529f99ee5cdd`.
@@ -29,15 +32,15 @@ With `SOURCE_DATE_EPOCH=1785369600`, two independent builds were byte-identical
 and produced a 50-page paper and a two-page synopsis:
 
 - paper SHA-256:
-  `6a836cdce746cf24a4bcdcabc58f6139db6cd92f430ba5a3b9fb0f6395e167e7`;
+  `7223ff840a098ad90239b96319463af4b948cbcea3eec4a16e3c8ed0d523b460`;
 - synopsis SHA-256:
-  `ad17f2a4ca23e5f70a807d67c1661bf8d20229909af4324975dd8eb85390ed26`.
+  `446e523b835bde5bba8cc417213016d60e4f657f64f92e0efe5e72f61d8710dd`.
 
-This is a development render check, not a substitute for the canonical
-`make ci` release gate above. Before any promotion, rebuild with the canonical
-environment and require its clean-log check to pass.
+This independent render check does not replace the canonical `make ci` release
+gate above. GitHub Actions runs that gate for pull requests, `main`, and
+version tags.
 
-## Refresh and verify the development tree
+## Refresh and verify the release tree
 
 After an intentional source change, regenerate the complete-set manifest:
 
@@ -125,7 +128,7 @@ The expected page count is 2.
 make verify
 ```
 
-This checks the complete development inventory, retained executable fixture,
+This checks the complete release inventory, retained executable fixture,
 negative regressions, and build-verifier tests. Building the PDFs is a separate
 target because a full TeX installation is larger than the minimal verification
 environment.
@@ -140,11 +143,25 @@ The build gate requires a 50-page paper and two-page synopsis, one final PDF
 record per log, and no unresolved reference, citation, font, glyph, box, or
 fatal TeX warning.
 
+## Build deterministic release archives
+
+With a verified manifest, build the complete-release and manuscript-source
+archives:
+
+```bash
+make dist VERSION=1.1.0 SOURCE_DATE_EPOCH=1785369600
+```
+
+Run the archive builder again in a separate empty output directory and require
+the two runs to be byte-identical. The builder re-verifies the manifest,
+rejects unsafe member paths, normalizes ZIP metadata to the release epoch, and
+refuses to overwrite an existing archive.
+
 ## Source corpus boundary
 
 The twelve supplied corpus documents used to reconstruct BSC's internal
 lineage are not included. Their identifiers and SHA-256 hashes are retained in
 `provenance/`; see [SOURCE_AVAILABILITY.md](SOURCE_AVAILABILITY.md). Therefore
-an external reader can rebuild this development package but cannot
+an external reader can rebuild this release package but cannot
 independently replay the complete corpus-lineage audit from this archive
 alone.

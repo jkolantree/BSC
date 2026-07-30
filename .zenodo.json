@@ -6,7 +6,7 @@
       "name": "Tree, J."
     }
   ],
-  "description": "Unreleased version 1.1.0-development draft of a foundational preprint proposing Boundary-State Calculus as a typed mathematical audit calculus for claims that move between scientific descriptions. This draft adds certified normalized-scale families, logarithmic-rate and singular-set theorems, analytic zero-transfer and exact-decision bounds, a Riemann-zeta and dynamical-quantum-phase-transition instance, nine mathematical fixtures, and one retained deterministic execution receipt. This metadata claims no DOI or publication date. The work is not a fundamental ontology, a unified physical theory, a proof of the Riemann Hypothesis, a complete reference implementation, or a peer-reviewed result.",
+  "description": "Version 1.1.0 of a foundational preprint proposing Boundary-State Calculus as a typed mathematical audit calculus for claims that move between scientific descriptions. This release adds certified normalized-scale families, logarithmic-rate and singular-set theorems, analytic zero-transfer and exact-decision bounds, a Riemann-zeta and dynamical-quantum-phase-transition instance, nine mathematical fixtures, and one retained deterministic execution receipt. The work is not a fundamental ontology, a unified physical theory, a proof of the Riemann Hypothesis, a complete reference implementation, or a peer-reviewed result.",
   "keywords": [
     "Boundary-State Calculus",
     "scientific transfer",
@@ -24,8 +24,17 @@
   ],
   "language": "eng",
   "license": "cc-by-4.0",
+  "publication_date": "2026-07-30",
   "publication_type": "preprint",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/jkolantree/BSC/releases/tag/v1.1.0",
+      "relation": "isSupplementedBy",
+      "resource_type": "software",
+      "scheme": "url"
+    }
+  ],
   "title": "On Boundaries of Evidence — Boundary-State Calculus for Typed Observation, Admissible Transfer, and Falsifiable Persistence",
   "upload_type": "publication",
-  "version": "1.1.0-dev"
+  "version": "1.1.0"
 }

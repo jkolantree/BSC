@@ -3,12 +3,13 @@
 ## Purpose
 
 This memorandum records every material repair made while constructing and
-auditing *On Boundaries of Evidence*, through version 1.0.1, plus the bounded
-case-study integration in the unreleased 1.1.0-development draft. The latest
-published version remains v1.0.1, dated 24 July 2026, with version DOI
-`10.5281/zenodo.21541561`. It is separate from the manuscript so that the paper
-can stand as a coherent formal work while the source lineage remains
-inspectable. Repairs are classified as:
+auditing *On Boundaries of Evidence*, through version 1.1.0. The latest
+published version is v1.1.0, dated 30 July 2026, with immutable GitHub release
+record `https://github.com/jkolantree/BSC/releases/tag/v1.1.0` and Zenodo
+concept DOI `10.5281/zenodo.21541160`. The immutable v1.0.1 version DOI remains
+`10.5281/zenodo.21541561`. This memorandum is separate from the manuscript so
+that the paper can stand as a coherent formal work while the source lineage
+remains inspectable. Repairs are classified as:
 
 - **adopted correction:** a later authoritative corpus source explicitly
   corrects an earlier definition;
@@ -916,7 +917,7 @@ confusability almost entirely inside one application. That was mathematically
 correct but architecturally incomplete: the reusable structure was not part
 of BSC's general scale and observation calculus.
 
-The 1.1.0-development framework now adds a certified scale-family record over
+Version 1.1.0 adds a certified scale-family record over
 existing finite BSC systems and a normalized profile
 
 $$
@@ -963,7 +964,7 @@ stochastic morphism composition theorem does not establish closure of the
 full quantum variant. This is now recorded as open claim BSC-QOP-03; no
 application may inherit the missing theorem.
 
-## 22. Unreleased 1.1.0-development zeta–DQPT instance
+## 22. Version 1.1.0 zeta–DQPT instance
 
 ### Source state observed
 
@@ -1101,8 +1102,8 @@ supplied energy-unit and calibration bridge.
 
 ### Release and fixture status
 
-Development Fixture F9 records only the exact finite identity and the blocked
+Fixture F9 records only the exact finite identity and the blocked
 promotion boundary. It is an unexecuted documentary fixture, not an execution
-of the application-level analytic theorems or an empirical receipt. The
-development state has no assigned release date or DOI and does not modify the
-immutable v1.0.1 release or its DOI.
+of the application-level analytic theorems or an empirical receipt. Version
+1.1.0 was released on 30 July 2026 and does not modify the immutable v1.0.1
+release or its DOI.
