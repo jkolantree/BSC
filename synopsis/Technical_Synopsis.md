@@ -2,9 +2,13 @@
 
 ## Two-page technical synopsis
 
-**J. Tree · Independent researcher · version 1.0.1 · 24 July 2026**
+**J. Tree · Independent researcher**
 
-**DOI:** https://doi.org/10.5281/zenodo.21541561
+**Repository state:** version 1.1.0 release, dated 30 July 2026.
+
+**Version record:** https://github.com/jkolantree/BSC/releases/tag/v1.1.0
+
+**Zenodo concept DOI:** https://doi.org/10.5281/zenodo.21541160
 
 Scientific claims often fail not within either of two descriptions, but in the
 passage between them: from an interior state to boundary data, one instrument
@@ -14,8 +18,10 @@ Evidence* develops Boundary-State Calculus (BSC) as a typed audit calculus for
 this passage.
 
 BSC is not proposed as an ontology, a unified physical theory, or a proof of
-holography, quantum gravity, consciousness, or QCD. Its unit of evaluation is
-one claimed transfer. The question is whether that transfer states:
+holography, quantum gravity, consciousness, QCD, or the Riemann Hypothesis. It
+does not independently establish a physical origin for RH or an end-to-end
+quantum advantage. Its unit of evaluation is one claimed transfer. The
+question is whether that transfer states:
 
 1. what moves;
 2. which observables remain meaningful;
@@ -39,13 +45,13 @@ frame, clock, and calibration state are physical configuration variables, not
 informal metadata.
 
 Several operations that boundary language often conflates are kept distinct
-(§5, pp. 9–10): an ideal trace, a finite sensor-layer observation, a boundary
+(§5): an ideal trace, a finite sensor-layer observation, a boundary
 response such as a Dirichlet-to-Neumann map, a reconstruction relation, and a
 selected extension. A boundary response supports an interior claim only
 relative to a governing equation, admissible coefficient class, equivalence or
 gauge class, regularity assumptions, data regime, and stability theorem.
 
-The central added object is the typed transfer record (§7, pp. 11–14):
+The central added object is the typed transfer record (§7):
 
 $$
 \mathfrak M_{\ell\to m}
@@ -78,7 +84,7 @@ coordinates.
 These coordinates are not collapsed into one score. Equation residual,
 observation defect, statistical deficiency, quotient loss, and viability
 failure occupy different spaces and obey different propagation laws (§8,
-pp. 14–15). A missing type makes a record not well formed; a missing required
+§7.2). A missing type makes a record not well formed; a missing required
 evaluation leaves it unevaluated; a failed claim-specific tolerance or gate
 makes it inadmissible for that claim.
 
@@ -89,7 +95,7 @@ pullbacks compose in reverse through the restricted map
 $T_{\ell m}^{\sharp\mid D_{mn}}:B_b(D_{mn})\to B_b(D_{\ell n})$. Observation defects obey
 a contraction-weighted bound, directed deficiencies obey a triangle
 inequality, and deterministic equation residuals propagate only when a
-compatible equation-space map has been supplied (§7.1, pp. 13–14). The
+compatible equation-space map has been supplied (§7.1). The
 resulting claim-admissible chain bounds are collected in §15. If clocks,
 interfaces, resource contracts, or boundary conditions do not match, the
 composite is undefined rather than merely inaccurate.
@@ -105,16 +111,50 @@ organizing principle and a target-relative definition. Its promotion to a
 universal physical law remains conjectural, empirically untested, and
 computationally unexecuted.
 
+Version 1.1.0 adds certified normalized-scale
+profiles $L_N=A_N/Z_N$. A diverging normalizer can collapse the raw limit
+without creating finite zeros, while logarithmic rates split exactly into
+normalizer and carrier exponents. Continuous scaled normalization changes
+preserve singular loci; quantitative rate stability requires a positive
+amplitude margin; positive branch gaps expose the boundary of an exceptional
+set; continuous parameter slices may hide ambient singularities; and strict
+holomorphic contour margins transfer zero counts and local multiplicity.
+Ideal scalars remain distinct from their estimator laws.
+Exact finite-label decoding requires measurably separated output laws, with a
+total-variation lower bound when they overlap.
+
+The zeta–DQPT construction is the first substantial instance. It proves the
+declared finite identity
+$Z_N(\beta_{\rm eff})\mathcal L_N(\beta_{\rm eff},t)
+=-S_N(\beta_{\rm eff}+it)$, local-uniform alternating-tail control, and a
+fixed-$s$ decay exponent that separates eta zeros from nonzeros. For
+$N=2^d$ this recovers the source's pointwise free-energy values
+$(1-\operatorname{Re}(s))\log 2$ off the zero set and $\log 2$ on it. The
+rate discontinuities are therefore exactly the zeta zeros, with jump
+$\operatorname{Re}(s_0)\log 2$ at $s_0$; confining all of them to the
+critical line is equivalent to, rather than a proof of, RH. Near a fixed zero
+of multiplicity $m$, the $m$ roots of the finite partial sum localize at scale
+$N^{-\operatorname{Re}(s_0)/m}$; a simple root has an explicit signed leading
+displacement. On each fixed-$\beta$ real-time slice, the rate
+discontinuities are exactly the ordinates of zeros on that line. The instance
+also proves a bounded Rouché zero-count transfer conditional on certified
+whole-contour separation.
+It separately records the reported five-qubit NMR agreement with
+the first five known zero ordinates as one un-replayed study. Finite agreement
+does not certify an exact zero, thermodynamic nonanalyticity, the universal RH
+quantifier, a comparator-independent quantum advantage, a unique Kelvin
+temperature, or an independent physical origin.
+
 ## Mathematical provenance and status
 
 | Layer | Content | Status in this paper |
 |---|---|---|
 | Established imports | Markov kernels and operational quotients; Blackwell–Le Cam comparison; boundary trace and Calderón-type response; Koopman operators and stated learnability limits; periodic homogenization; sheaf descent; structured cospans; non-invertible defects; proof checking | Imported under their published or preprint hypotheses. These ingredients are not claimed as new BSC discoveries. |
-| Paper-level consequences | Quotient descent; repaired restricted-pullback composition; paired state–observable probability preservation; defect, deficiency, and deterministic residual propagation; persistence certification; operational factorization; generic decorated-cospan composition; readiness-cap propagation; the block from winding to physical charge | Proved locally under the manuscript's stated assumptions. The canonical BSC decoration functor remains open. No empirical status is inherited. |
-| Reference fixtures | Eight finite examples covering winding, inverse ambiguity, directed deficiency, Koopman pollution, quantum-reference-frame descent, sheaf obstruction, off-shell residual, and exact counterexample retention | Fixtures 1–7 have exact mathematical derivations but no separate execution receipts. Fixture 8 has a deterministic CPython receipt. |
-| Open status | Universal persistence, generic empirical validation, nonlinear stochastic residual composition, instrument-uncertain reconstruction, QRF quotient characterization, learnability-aware recurrence, physical charge bridges, and a machine-checked BSC kernel | Conjectural, untested, unexecuted, or open as individually recorded. |
+| Paper-level consequences | Quotient and exact-decision descent; repaired restricted-pullback composition; paired state–observable probability preservation; defect, deficiency, and deterministic residual propagation; normalized-scale rate decomposition and covariance; singular-set and slice visibility; analytic zero and multiplicity transfer; the zeta-specific alternating-tail bound, pointwise exponent/rate split, ambient and fixed-$\beta$ singular sets, bounded contour count, and local root drift; persistence certification; generic decorated-cospan composition; readiness-cap propagation; the block from winding to physical charge | Proved locally under the manuscript's stated assumptions. The canonical BSC decoration functor and full quantum-morphism composition remain open. No empirical status is inherited. |
+| Reference fixtures | Nine release examples covering winding, inverse ambiguity, directed deficiency, Koopman pollution, quantum-reference-frame descent, sheaf obstruction, off-shell residual, exact counterexample retention, and zeta–DQPT scope separation | Fixtures 1–7 and 9 have exact mathematical derivations but no separate execution receipts. Fixture 8 has a deterministic CPython receipt. The immutable v1.0.1 release contains Fixtures 1–8. |
+| Open status | Universal persistence, generic empirical validation, nonlinear stochastic residual composition, full quantum-morphism composition (BSC-QOP-03), instrument-uncertain reconstruction, QRF quotient characterization, learnability-aware recurrence, physical charge bridges, end-to-end zeta-algorithm advantage, temperature/origin bridges, and a machine-checked BSC kernel | Conjectural, untested, unexecuted, blocked, or open as individually recorded. |
 
-The fixtures (§16, pp. 24–27) compute a torus winding class $(2,-3)$ while
+The fixtures (§16) compute a torus winding class $(2,-3)$ while
 blocking electric charge without a physical bridge; exhibit two distinct
 one-dimensional conductivities with the same Dirichlet-to-Neumann map; obtain
 directed deficiencies $0$ and $1/4$ for two binary experiments; separate a
@@ -125,7 +165,11 @@ transformation does not descend through the stated reduced-system quotient;
 give locally nonempty
 parity constraints with no global section; detect the nonzero residual $m^2c$
 of an off-shell field shift; and retain a deterministic receipt for the
-counterexample $x=-1$ to $\sqrt{x^2}=x$.
+counterexample $x=-1$ to $\sqrt{x^2}=x$. Development Fixture 9 retains only
+the finite zeta–coherence identity while blocking unsupported promotion from
+the unexecuted fixture to the application-level analytic transfer, RH, a
+limiting DQPT, broad quantum advantage, unique Kelvin temperature, or
+independent physical origin.
 
 The paper also makes physical promotion deliberately expensive. Winding and
 physical charge are different typed objects (§13, p. 21). A charge claim needs
@@ -133,7 +177,7 @@ a derived bridge from a gauge representation, action and current, Gauss law,
 anomaly condition, boundary condition, or calibrated measurement protocol. The
 application section therefore treats primordial-field toroidal models as
 candidate topological and stabilization grammar, not as an established
-derivation of quark charge, QCD, or hadron dynamics (§17, pp. 28–30).
+derivation of quark charge, QCD, or hadron dynamics (§17).
 
 Claims carry a categorical mathematical verdict plus separate mathematical,
 empirical, computational, source, and transfer readiness (§2.2). A dependency
@@ -141,7 +185,7 @@ graph propagates only edge-specific readiness caps; it does not manufacture a
 descendant verdict (§2.3). A theorem does not raise empirical readiness;
 a hash establishes artifact identity rather than truth; a proof DAG is not
 itself a proof; and an unexecuted numerical description remains unexecuted
-(§14, pp. 21–23).
+(§14).
 
 The appropriate test is narrow and adversarial. Ask whether an equivalent
 compositional record already exists, whether any map is ill-typed, whether a

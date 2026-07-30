@@ -6,8 +6,7 @@
       "name": "Tree, J."
     }
   ],
-  "description": "Version 1.0.1 of a foundational preprint proposing Boundary-State Calculus as a typed audit calculus for claims that move between scientific descriptions. The associated repository supplies editable source, a two-page synopsis, claim and notation ledgers, a revision memorandum, eight exact mathematical fixtures, and one deterministic execution receipt. It is not a fundamental ontology, a unified physical theory, a complete reference implementation, or a peer-reviewed result.",
-  "doi": "10.5281/zenodo.21541561",
+  "description": "Version 1.1.0 of a foundational preprint proposing Boundary-State Calculus as a typed mathematical audit calculus for claims that move between scientific descriptions. This release adds certified normalized-scale families, logarithmic-rate and singular-set theorems, analytic zero-transfer and exact-decision bounds, a Riemann-zeta and dynamical-quantum-phase-transition instance, nine mathematical fixtures, and one retained deterministic execution receipt. The work is not a fundamental ontology, a unified physical theory, a proof of the Riemann Hypothesis, a complete reference implementation, or a peer-reviewed result.",
   "keywords": [
     "Boundary-State Calculus",
     "scientific transfer",
@@ -17,15 +16,19 @@
     "inverse problems",
     "open systems",
     "formal certificates",
-    "claim status"
+    "claim status",
+    "normalized scale profile",
+    "analytic zero transfer",
+    "Riemann zeta function",
+    "dynamical quantum phase transitions"
   ],
   "language": "eng",
   "license": "cc-by-4.0",
-  "publication_date": "2026-07-24",
+  "publication_date": "2026-07-30",
   "publication_type": "preprint",
   "related_identifiers": [
     {
-      "identifier": "https://github.com/jkolantree/BSC/releases/tag/v1.0.1",
+      "identifier": "https://github.com/jkolantree/BSC/releases/tag/v1.1.0",
       "relation": "isSupplementedBy",
       "resource_type": "software",
       "scheme": "url"
@@ -33,5 +36,5 @@
   ],
   "title": "On Boundaries of Evidence — Boundary-State Calculus for Typed Observation, Admissible Transfer, and Falsifiable Persistence",
   "upload_type": "publication",
-  "version": "1.0.1"
+  "version": "1.1.0"
 }

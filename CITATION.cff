@@ -1,26 +1,23 @@
 cff-version: 1.2.0
-message: "If you use this work, cite the preprint described in preferred-citation."
+message: "If you use this work, cite Version 1.1.0 using the release record below."
 title: "On Boundaries of Evidence — Boundary-State Calculus for Typed Observation, Admissible Transfer, and Falsifiable Persistence"
 type: dataset
 authors:
   - family-names: "Tree"
     given-names: "J."
     affiliation: "Independent researcher"
-version: "1.0.1"
-date-released: 2026-07-24
+version: "1.1.0"
+date-released: 2026-07-30
 license:
   - CC-BY-4.0
   - MIT
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.21541561"
-    description: "Zenodo version-of-record DOI for release 1.0.1"
-  - type: doi
     value: "10.5281/zenodo.21541160"
     description: "Zenodo concept DOI for all versions"
 repository-code: "https://github.com/jkolantree/BSC"
-repository-artifact: "https://github.com/jkolantree/BSC/releases/tag/v1.0.1"
-url: "https://doi.org/10.5281/zenodo.21541561"
+repository-artifact: "https://github.com/jkolantree/BSC/releases/tag/v1.1.0"
+url: "https://github.com/jkolantree/BSC/releases/tag/v1.1.0"
 keywords:
   - "Boundary-State Calculus"
   - "scientific transfer"
@@ -29,11 +26,18 @@ keywords:
   - "Koopman operator"
   - "inverse problems"
   - "claim status"
+  - "normalized scale profile"
+  - "analytic zero transfer"
+  - "Riemann zeta function"
+  - "dynamical quantum phase transitions"
 abstract: >-
-  A foundational preprint proposing a typed audit calculus for claims that
-  move between scientific descriptions. The release contains the paper,
-  editable source, a two-page synopsis, audit ledgers, eight exact mathematical
-  fixtures, and one deterministic execution receipt. Paper and human-readable
+  A foundational preprint proposing a typed mathematical audit calculus for
+  claims that move between scientific descriptions. Version 1.1.0 adds
+  certified normalized-scale families, logarithmic-rate and singular-set
+  theorems, analytic zero-transfer and exact-decision bounds, and a
+  zeta-DQPT instance. The package contains the paper, editable source, a
+  two-page synopsis, ledgers, nine exact mathematical fixtures, and one
+  deterministic execution receipt. Paper and human-readable
   documentation are CC BY 4.0; code, workflows, JSON Schema, and
   machine-readable fixture tooling are MIT licensed according to the repository
   license map.
@@ -45,6 +49,5 @@ preferred-citation:
       given-names: "J."
       affiliation: "Independent researcher"
   year: 2026
-  doi: "10.5281/zenodo.21541561"
-  url: "https://doi.org/10.5281/zenodo.21541561"
-  notes: "Version 1.0.1 preprint; not peer reviewed"
+  url: "https://github.com/jkolantree/BSC/releases/tag/v1.1.0"
+  notes: "Version 1.1.0 preprint; not peer reviewed; Zenodo concept DOI 10.5281/zenodo.21541160"

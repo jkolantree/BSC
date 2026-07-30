@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper,twocolumn]{extarticle}
+\documentclass[10pt,a4paper,twocolumn]{extarticle}
 
 \usepackage[left=18mm,right=18mm,top=16mm,bottom=16mm,columnsep=8mm,headheight=12pt]{geometry}
 \usepackage[T1]{fontenc}
@@ -17,15 +17,15 @@
 
 \definecolor{inkblue}{RGB}{23,55,78}
 \definecolor{rulegray}{RGB}{105,112,118}
-\newcommand{\BSCVersion}{1.0.1}
-\newcommand{\BSCDOI}{\href{https://doi.org/10.5281/zenodo.21541561}{DOI 10.5281/zenodo.21541561}}
+\newcommand{\BSCVersion}{1.1.0}
+\newcommand{\BSCDOI}{Concept DOI 10.5281/zenodo.21541160}
 \hypersetup{
   colorlinks=true,
   linkcolor=inkblue,
   urlcolor=inkblue,
   pdftitle={On Boundaries of Evidence --- Technical Synopsis},
   pdfauthor={J. Tree},
-  pdfsubject={Version 1.0.1; DOI 10.5281/zenodo.21541561; two-page technical synopsis of Boundary-State Calculus},
+  pdfsubject={Version 1.1.0; released 30 July 2026; two-page technical synopsis of Boundary-State Calculus},
   pdfkeywords={Boundary-State Calculus, scientific transfer, evidence, admissibility}
 }
 \pagestyle{fancy}
@@ -51,7 +51,7 @@
 {\large Boundary-State Calculus for Typed Observation,\\
 Admissible Transfer, and Falsifiable Persistence}\\
 \vspace{0.45em}
-{\small J. Tree \(\cdot\) Independent researcher \(\cdot\) 24 July 2026}\\
+{\small J. Tree \(\cdot\) Independent researcher \(\cdot\) 30 July 2026}\\
 {\footnotesize Version \BSCVersion\ \(\cdot\) \BSCDOI}\\
 \vspace{0.55em}
 \end{center}
@@ -156,20 +156,25 @@ Koopman residual methods and stated learnability limits; periodic
 homogenization; sheaf descent; structured cospans; non-invertible defects; and
 proof checking.  These are not claimed as new BSC discoveries.
 \item \textbf{Paper-level consequences.} Assumption-bound results include
-quotient descent; paired state--observable probability preservation; defect,
-deficiency, and deterministic residual propagation; prefix persistence
-obstruction; operational factorization and discard obstruction; a generic
-structured-cospan category conditional on a supplied decoration functor;
-dependency-DAG readiness caps; and the block from winding to physical charge.
-No empirical status is inherited.
-\item \textbf{Open work.} Universal persistence, empirical validation,
-stochastic residuals, instrument-aware reconstruction, QRF descent, certified
-recurrence, a coherent BSC-specific decoration functor, physical charge
-bridges, and a machine-checked kernel remain
-conjectural, untested, unexecuted, or open.
+quotient and exact-decision descent; paired state--observable probability
+preservation; defect, deficiency, and deterministic residual propagation;
+normalized-scale rate decomposition and covariance; singular-set and slice
+visibility; analytic zero transfer; the zeta-specific tail, pointwise
+exponent/rate split, ambient and fixed-\(\beta\) singular sets, contour count,
+and local root drift; prefix persistence; conditional
+structured-cospan composition; readiness caps; and the topology-to-charge
+block.  The full quantum-morphism composition theorem remains open.  No
+empirical status is inherited.
+\item \textbf{Open work.} Open problems include universal persistence,
+empirical validation, stochastic residuals, closure under composition for the
+full quantum variant (BSC-QOP-03), reconstruction with instrument uncertainty,
+QRF descent, certified recurrence, a coherent decoration functor for BSC,
+physical charge bridges, a complete analysis of quantum advantage for zeta
+algorithms, temperature and origin bridges, and a machine-checked kernel.  Their
+statuses remain conjectural, untested, unexecuted, blocked, or open.
 \end{itemize}
 
-\section*{Eight fixtures}
+\section*{Nine fixtures}
 
 The exact fixtures (\S16) are:
 \begin{enumerate}
@@ -184,37 +189,64 @@ eigenvalues;
 whose finite \(\mathbb Z_2\) frame transforms reduce to orthogonal outputs;
 \newpage
 \item locally nonempty parity constraints with no global section;
-\item the off-shell residual \(m^2c\) of a massive-field shift; and
-\item an exact receipt for \(x=-1\) refuting \(\sqrt{x^2}=x\).
+\item the off-shell residual \(m^2c\) of a massive-field shift;
+\item an exact receipt for \(x=-1\) refuting \(\sqrt{x^2}=x\); and
+\item a finite zeta--coherence identity while leaving the broader framework
+and application theorems unexecuted and blocking exact-zero,
+thermodynamic-DQPT, RH, and physical-origin promotions.
 \end{enumerate}
-Fixtures 1--7 have mathematical derivations but no separate execution
+Fixtures 1--7 and 9 have mathematical derivations but no separate execution
 receipts.  Fixture 8 has a deterministic CPython receipt.  The package is a
 preprint with audit artifacts, not a complete reference implementation.
 
-\section*{Physical promotion and the test}
+\section*{Normalized scales and zeta--DQPT}
 
-Winding and physical charge are different typed objects (\S13).  A
-charge claim needs a derived bridge from a gauge representation, action and
-current, Gauss law, anomaly condition, boundary condition, or calibrated
-measurement.  Primordial-field toroidal models are therefore treated as
-candidate topological and stabilization grammar, not an established derivation
-of quark charge, QCD, or hadron dynamics (\S17).
+A certified scale family keeps finite systems, interscale comparisons, ideal
+carriers \(A_N\), nonzero normalizers \(Z_N\), normalized observables
+\(L_N=A_N/Z_N\), and estimator laws distinct.  The framework proves
+normalization collapse, additive logarithmic rates, normalization covariance,
+lower-margin rate stability, exceptional-set and slice visibility,
+contour/root transfer, and total-variation decision bounds.  It does not
+manufacture an infinite-system state or physical phase.
 
-Each claim has a local mathematical verdict---ill-posed, open, true, or
-false---and five readiness coordinates: mathematical support, empirical,
-computational, source, and transfer (\S2.2).  Dependency edges cap named
-readiness coordinates; they never propagate verdicts.
-A theorem does not raise empirical status; a hash establishes
-identity rather than truth; a proof DAG is not a proof; and an unexecuted
-calculation remains unexecuted.
+For \(s=\beta_{\rm eff}+it\), the engineered finite model gives the exact
+identity
+\[
+ \begin{aligned}
+ Z_N(\beta_{\rm eff})\mathcal L_N(\beta_{\rm eff},t)&=-S_N(s),\\
+ S_N(s)&=\sum_{n=1}^{N}(-1)^{n+1}n^{-s}.
+ \end{aligned}
+\]
+Abel summation yields
+\[
+ \begin{gathered}
+ |\eta(s)-S_N(s)|
+ \le N^{-\sigma}\!\left(1+\frac{|s|}{\sigma}\right),\\[-0.2em]
+ \sigma=\Re s>0.
+ \end{gathered}
+\]
+Together with a certified nonzero boundary margin, this gives a bounded
+Rouch\'e zero-count transfer.  It does not turn fitted finite minima into
+exact zeros, a finite recurrence into a thermodynamic singularity, selected
+zeros into RH, \(\beta_{\rm eff}\) into the \(305\,{\rm K}\) laboratory
+temperature, or an engineered encoding into an independent physical origin.
+Indeed, for fixed \(0<\beta_{\rm eff}\le1\), the raw normalized
+\(\mathcal L_N\to0\) for every \(t\).  For \(0<\beta_{\rm eff}<1\), its
+fixed-\(s\) decay exponent is \(1-\beta_{\rm eff}\) off the eta zero set and
+\(1\) on it.  With \(N=2^d\), this proves the source's pointwise rate values
+\((1-\beta_{\rm eff})\log2\) and \(\log2\), respectively.  The rate
+discontinuities are exactly the zeta zeros, with jump
+\(\beta_{\rm eff}\log2\); confinement of all such points to
+\(\beta_{\rm eff}=1/2\) is equivalent to, not a proof of, RH.  At a fixed
+multiplicity-\(m\) zero, the \(m\) finite partial-sum roots localize at scale
+\(N^{-\beta_{\rm eff}/m}\), with an explicit signed leading displacement for
+a simple zero.  A fixed-\(\beta\) real-time slice sees exactly the zero
+ordinates on that line.  No uniform-in-height or finite-size empirical
+conclusion follows.  The renormalized limit is \(Z_N\mathcal L_N\).
 
-The appropriate test is adversarial and narrow: Does an equivalent
-compositional record already exist?  Is a map ill-typed?  Does a composition
-law fail?  Is there a counterexample to a fixture?  Does the record change no
-scientific decision?  If existing formalisms already supply the same
-obligations and readiness-cap semantics, or if BSC never separates an invalid
-transfer from a nearby valid one, the added structure is unnecessary.  If it
-exposes that distinction and preserves it through composition, that---not a
-claim about the universe---is the contribution requiring further work.
+\medskip
+\noindent\textbf{Physical boundary.}
+No mathematical rate, winding class, or finite observation promotes a
+physical claim without its declared bridge and readiness dependencies.
 
 \end{document}

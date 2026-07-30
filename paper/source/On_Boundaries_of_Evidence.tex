@@ -34,7 +34,7 @@
   urlcolor=inkblue,
   pdftitle={On Boundaries of Evidence --- Boundary-State Calculus for Typed Observation, Admissible Transfer, and Falsifiable Persistence},
   pdfauthor={J. Tree},
-  pdfsubject={Version 1.0.1; DOI 10.5281/zenodo.21541561; a typed audit calculus for scientific transfers},
+  pdfsubject={Version 1.1.0; released 30 July 2026; a typed audit calculus for scientific transfers},
   pdfkeywords={Boundary-State Calculus, scientific transfer, evidence, admissibility, information loss, claim status}
 }
 \urlstyle{same}
@@ -92,14 +92,14 @@
 \newcommand{\Lip}{\operatorname{Lip}}
 \newcommand{\push}{_{\#}}
 \newcommand{\blank}{\text{--}}
-\newcommand{\BSCVersion}{1.0.1}
-\newcommand{\BSCDOI}{\href{https://doi.org/10.5281/zenodo.21541561}{DOI 10.5281/zenodo.21541561}}
+\newcommand{\BSCVersion}{1.1.0}
+\newcommand{\BSCDOI}{Concept DOI 10.5281/zenodo.21541160}
 
 \title{\vspace{-1.3cm}\textbf{On Boundaries of Evidence}\\[0.3em]
 \Large--- Boundary-State Calculus for Typed Observation,\\
 Admissible Transfer, and Falsifiable Persistence}
 \author{J. Tree\\[-0.15em]\small Independent researcher}
-\date{24 July 2026\\[0.25em]\small Version \BSCVersion\quad\textbullet\quad \BSCDOI}
+\date{30 July 2026\\[0.25em]\small Version \BSCVersion\quad\textbullet\quad \BSCDOI}
 
 \begin{document}
 \maketitle
@@ -122,13 +122,17 @@ inconclusive, or is refuted.
 The calculus incorporates boundary trace and Dirichlet-to-Neumann response,
 operational quantum quotients, Blackwell--Le Cam comparison of experiments,
 Koopman residuals and ordered learnability limits, sheaf descent, a conditional
-structured-cospan schema, non-invertible defects, and rigorous scale limits.  It
+structured-cospan schema, non-invertible defects, and rigorous scale limits.
+For certified finite families it adds normalized scale profiles,
+normalization-covariant logarithmic rates, exceptional-set and slice
+singularities, contour-certified analytic transfer, and exact-decision bounds.
+It
 separates topological charge from physical charge by requiring an explicit
 bridge derived from a gauge structure, action, current, anomaly, boundary
 condition, or measurement protocol.  A claim-local mathematical verdict,
 five readiness coordinates, and a proof-dependency graph prevent local
 success from promoting unrelated claims.
-Eight exact fixtures expose both admissible transfers and hard obstructions,
+Nine exact fixtures expose both admissible transfers and hard obstructions,
 including a deterministic regression receipt.  The resulting formalism treats
 persistence as an operational organizing principle:
 a persistent object is a recursively maintained finite boundary-state, and
@@ -309,8 +313,14 @@ status from \cref{def:status}, or N/A when that axis is inapplicable.}
 Claim & Verdict & Math support & Empirical & Computation & Source & Transfer\\
 \midrule
 Kernel quotient descent & true & proved & N/A & N/A & present proof & certified\\
+Exact finite-label decoding criterion & true & proved & N/A & unexecuted &
+present proof & certified\\
 Morphism defect accumulation & true & proved & N/A & unexecuted & present proof &
 bounded\\
+Normalized scale-profile calculus & true & proved & N/A & unexecuted &
+present proof & certified\\
+Zeta tail, rate, slice, contour, and local-root results & true & proved & N/A &
+unexecuted & present proof & bounded\\
 Universal persistence principle & open & conjectural & untested & unexecuted &
 internal & local only\\
 Universal boundary reconstruction & false & proved & N/A & unexecuted &
@@ -324,6 +334,8 @@ unexecuted & verified publication & blocked\\
 Fixtures F1--F7 & true & proved & N/A & unexecuted & present proof & local only\\
 Fixture F8 universal claim & false & proved & N/A & exact receipt & present proof &
 local only\\
+Fixture F9 finite zeta identity & true & proved & N/A & unexecuted & present proof &
+bounded\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -813,6 +825,60 @@ The set \(d_E(x,x')\le\varepsilon\) is an identified neighborhood or
 confusability graph relation.  It is not generally transitive and therefore
 does not generally define a quotient.
 \end{definition}
+
+\begin{proposition}[Exact decision descent and stochastic separation]
+\label{prop:decisiondescent}
+Let \(\Sigma\subseteq X\) be measurable, let
+\(R:X\to Y\) be a measurable deterministic report, and put
+\(q_\Sigma=\mathbf 1_\Sigma\).  There is a measurable
+\(d:Y\to\{0,1\}\) with \(q_\Sigma=d\circ R\) if and only if there is a
+measurable \(B\subseteq Y\) such that
+\[
+ \Sigma=R^{-1}(B).
+\]
+In particular, a report fiber meeting both \(\Sigma\) and its complement
+blocks exact decision descent.
+
+More generally, let \(Q\) be finite with its discrete sigma-algebra, let
+\(q:X\to Q\) be measurable, and let
+\(O:X\rightsquigarrow Y\) be a kernel on a standard Borel output space.  An
+exact decoder \(d:Y\to Q\), satisfying
+\[
+ O\bigl(x,d^{-1}(\{q(x)\})\bigr)=1
+ \quad\text{for every }x,
+\]
+exists if and only if a measurable partition \((B_a)_{a\in Q}\) of \(Y\)
+satisfies \(O(x,B_{q(x)})=1\) for every \(x\).  Hence laws associated with
+different labels must be mutually singular.  For
+\(x_0,x_1\) with \(q(x_0)\ne q(x_1)\), put
+\(P_j=O(x_j,\cdot)\).  Under equal priors, every binary decoder has average,
+and therefore worst-case, error at least
+\[
+ \frac{1-d_{\rm TV}(P_0,P_1)}2,\qquad
+ d_{\rm TV}(P_0,P_1)=\sup_B|P_0(B)-P_1(B)|.
+\]
+\end{proposition}
+\begin{proof}
+For the deterministic statement, a factorization gives
+\(B=d^{-1}(\{1\})\); conversely \(d=\mathbf 1_B\) gives the
+factorization.  The fibers of an exact finite-label decoder form the required
+partition, and a declared partition defines the decoder.  Distinct labels
+then concentrate on disjoint cells.
+
+For the binary bound, if \(B\) is the decision region for label \(0\), the
+equal-prior error is
+\[
+ \frac12\{P_0(B^c)+P_1(B)\}
+ =\frac12\{1-(P_0(B)-P_1(B))\}
+ \geq\frac{1-d_{\rm TV}(P_0,P_1)}2.
+\]
+The maximum of the two conditional errors is at least their average.
+\end{proof}
+
+Identical output laws therefore make exact classification impossible, while
+close laws require a quantitative testing statement.  Repeated observations
+replace \(P_0,P_1\) by the declared product or dependent joint laws and must
+record the sample count; repetition is not inherited for free.
 
 \subsection{Quantum operational quotients}
 
@@ -1488,6 +1554,290 @@ parameters},\ \text{error},\ \text{excluded regimes}).
 If more than one parameter tends to a limit, the certificate records whether
 the limit is joint, iterated, or path-dependent.
 \end{definition}
+
+\subsection{Certified families and normalized scale profiles}
+
+\begin{definition}[Certified scale family]\label{def:certscalefamily}
+A certified scale family is a directed comparison family of existing finite BSC
+systems, recorded as
+\[
+\mathfrak A=
+\left(
+I,P,\{\lambda_i,\mathsf S_i,\Cert_i,A_i,Z_i,L_i,\mathsf O_i\}_{i\in I},
+\{\mathfrak M_{ij}\}_{i\preceq j}
+\right).
+\]
+Here \(I\) is a directed scale index, \(P\) is one common topological
+parameter space, and \(\lambda_i\to\infty\) is a dimensionless logarithmic
+size gauge.  Each \((\mathsf S_i,\Cert_i)\) is a certified finite system;
+\(\mathfrak M_{ij}\) is an interscale comparison or records its defect;
+\(A_i:P\to\mathbb C\) is an ideal carrier;
+\(Z_i:P\to\mathbb C\setminus\{0\}\) is a normalizer;
+\(L_i=A_i/Z_i\) is the normalized ideal observable; and
+\(\mathsf O_i:P\rightsquigarrow Y_i\) is its observation or estimator law.
+\end{definition}
+
+No categorical identity or composition law is inferred from this record; a
+strict directed diagram requires those coherences as additional hypotheses.
+The ideal scalar and the estimator distribution are different typed objects.
+This comparison family is not a new morphism field, and it does not by itself construct
+an infinite-system state, quasilocal algebra, limiting dynamics, or physical
+thermodynamic phase.  Such an object requires a separate construction and
+compatibility theorem.
+
+\begin{definition}[Normalized scale profile]\label{def:normscaleprofile}
+For a sequence version of \cref{def:certscalefamily}, set \(X=P\) and write
+\[
+ A_N:X\to\mathbb C,\qquad
+ Z_N:X\to\mathbb C\setminus\{0\},\qquad
+ L_N=\frac{A_N}{Z_N},\qquad \lambda_N\longrightarrow\infty .
+\]
+Where the expressions are finite, define
+\[
+ \gamma_N(x)=\frac{\log|Z_N(x)|}{\lambda_N},\qquad
+ \kappa_N(x)=-\frac{\log|A_N(x)|}{\lambda_N},\qquad
+ \mathcal R_N(x)=-\frac{\log|L_N(x)|}{\lambda_N}.
+\]
+The profile declares the limiting carrier \(A\), parameter topology,
+uniformity domain, error norm, zero convention, and order of limits.  If exact
+finite zeros are admitted, the extended convention
+\(-\log0=+\infty\) must be stated.  Every logarithm acts on a dimensionless
+quantity or on a quantity divided by a declared nonzero reference value.
+\end{definition}
+
+\begin{proposition}[Normalization collapse]\label{prop:normcollapse}
+Fix \(x\in X\).  If \(A_N(x)\to A(x)\in\mathbb C\) and
+\(|Z_N(x)|\to\infty\), then \(L_N(x)\to0\).  Uniformly on \(K\subseteq X\),
+if \(0<\inf_{x\in K}|Z_N(x)|\) for all sufficiently large \(N\) and
+\[
+ \frac{\sup_{x\in K}|A_N(x)|}
+      {\inf_{x\in K}|Z_N(x)|}\longrightarrow0,
+\]
+then \(\sup_K|L_N|\to0\).  At every finite \(N\),
+\[
+ \{x:L_N(x)=0\}=\{x:A_N(x)=0\}.
+\]
+\end{proposition}
+\begin{proof}
+Use \(|L_N|=|A_N|/|Z_N|\), first pointwise and then with the displayed
+supremum and infimum.  Nonvanishing of \(Z_N\) proves the zero-set equality.
+\end{proof}
+
+Thus the zero set of the normalized limit may be all of \(X\), while every
+finite carrier is nonzero.  For example, \(A_N=1,Z_N=N\) gives
+\(L_N\to0\).  Conversely \(A_N=N,Z_N=N\) gives \(L_N=1\); divergence of the
+normalizer alone is insufficient.
+
+\begin{theorem}[Additive scaling signature]\label{thm:rateadd}
+Fix \(x\), assume \(A_N(x)\) and \(Z_N(x)\) are eventually nonzero, and
+suppose the finite limits
+\[
+ \gamma(x)=\lim_N\gamma_N(x),\qquad
+ \kappa(x)=\lim_N\kappa_N(x)
+\]
+exist.  Then
+\[
+ \lim_N\mathcal R_N(x)=\gamma(x)+\kappa(x).
+\]
+If \(A_N(x)\to A(x)\ne0\), then \(\kappa(x)=0\).  If instead
+\[
+ A_N(x)=c(x)e^{-\rho(x)\lambda_N+o(\lambda_N)},
+ \qquad c(x)\ne0,\quad \rho(x)\in\mathbb R,
+\]
+then \(\kappa(x)=\rho(x)\).
+\end{theorem}
+\begin{proof}
+The exact identity
+\[
+ -\log|L_N|=\log|Z_N|-\log|A_N|
+\]
+gives \(\mathcal R_N=\gamma_N+\kappa_N\).  The remaining conclusions follow
+by dividing the stated asymptotics by \(\lambda_N\).
+\end{proof}
+
+Existence of the carrier limit does not guarantee an extra rate at its zeros.
+For \(A_N(x)=x+1/\log N\) and \(\lambda_N=\log N\), the limiting carrier
+vanishes at \(0\) but \(\kappa(0)=0\).  The exponent itself can fail to exist:
+take \(A_N=N^{-1}\) for even \(N\) and \(A_N=N^{-2}\) for odd \(N\).
+
+\begin{proposition}[Normalization covariance]\label{prop:normcovariance}
+Let \(\widetilde L_N=c_NL_N\), where \(c_N(x)\ne0\), and suppose both finite
+rate limits and
+\[
+ \chi(x)=\lim_N\frac{\log|c_N(x)|}{\lambda_N}
+\]
+exist as finite values.  Then
+\[
+ \widetilde{\mathcal R}(x)=\mathcal R(x)-\chi(x).
+\]
+If \(\chi\) is continuous, the two limiting rates have the same discontinuity
+set.  If \(\chi=0\), their values agree.
+\end{proposition}
+\begin{proof}
+Apply
+\[
+ -\lambda_N^{-1}\log|\widetilde L_N|
+ =
+ -\lambda_N^{-1}\log|L_N|
+ -\lambda_N^{-1}\log|c_N|
+\]
+and take limits.  Adding a continuous finite function preserves the
+discontinuity set.
+\end{proof}
+
+A nonzero prefactor always preserves finite zero sets.  It preserves limiting
+rate values only when its scaled logarithm vanishes; a continuous nonzero
+scaled limit preserves singular locations but shifts rate values.
+
+\begin{proposition}[Rate stability away from zero]\label{prop:ratestability}
+Let \(L_N,\widehat L_N\ne0\) be dimensionless amplitudes at a fixed parameter
+point.  If
+\[
+ |L_N|\geq m_N>0,\qquad
+ |\widehat L_N-L_N|\leq\varepsilon_N<m_N,
+ \qquad \delta_N=\varepsilon_N/m_N,
+\]
+then
+\[
+ \left|
+ -\frac{\log|\widehat L_N|}{\lambda_N}
+ +\frac{\log|L_N|}{\lambda_N}
+ \right|
+ \leq
+ \frac{-\log(1-\delta_N)}{\lambda_N}.
+\]
+\end{proposition}
+\begin{proof}
+The triangle inequalities give
+\[
+ 1-\delta_N
+ \leq\frac{|\widehat L_N|}{|L_N|}
+ \leq1+\delta_N.
+\]
+Take logarithms and use
+\(\log(1+\delta)\leq-\log(1-\delta)\) for \(0\leq\delta<1\).
+\end{proof}
+
+There is no uniform Lipschitz rate bound as \(m_N\downarrow0\).  A small
+amplitude error can become a large logarithmic-rate error near a zero.
+Rate transport there requires a lower margin, contour certificate, or root
+localization rather than an unqualified amplitude tolerance.
+
+\begin{theorem}[Exceptional-set rate singularities]\label{thm:ratesupport}
+Let \(X\) be metric, let \(\Sigma\subseteq X\) be closed, and let
+\(\gamma,\rho:X\to\mathbb R\) be continuous with
+\(\rho>0\) on \(\partial\Sigma\).  If
+\[
+ \mathcal R(x)=\gamma(x)+\rho(x)\mathbf1_\Sigma(x),
+\]
+then
+\[
+ \operatorname{Disc}(\mathcal R)=\partial\Sigma.
+\]
+If \(\Sigma\) has empty interior, then
+\(\operatorname{Disc}(\mathcal R)=\Sigma\).  In particular, when \(X\) is a
+domain in \(\mathbb C\), this applies if \(\Sigma\) is the zero set of a
+holomorphic function that is not identically zero on any connected component.
+\end{theorem}
+\begin{proof}
+Off \(\partial\Sigma\), the indicator is locally constant.  At a boundary
+point, approach through \(\Sigma\) and its complement; continuity of
+\(\gamma,\rho\) and strict positivity of \(\rho\) give two limits separated
+by \(\rho(x)\).  A closed set with empty interior equals its boundary.  The
+final statement uses the one-variable isolated-zero theorem.
+\end{proof}
+
+The empty-interior hypothesis is necessary: for
+\(\Sigma=[-1,1]\subset\mathbb R\), the indicator is discontinuous only at the
+two endpoints.  A discontinuous background can also create unrelated
+singularities.
+
+\begin{proposition}[Parameter-slice visibility]\label{prop:slicevisibility}
+Let \(\iota:Q\to X\) be continuous.  For every
+\(\mathcal R:X\to\mathbb R\),
+\[
+ \operatorname{Disc}(\mathcal R\circ\iota)
+ \subseteq
+ \iota^{-1}\!\left(\operatorname{Disc}(\mathcal R)\right).
+\]
+Equality requires a visibility hypothesis ensuring that the slice approaches
+each branch responsible for the ambient discontinuity.
+\end{proposition}
+\begin{proof}
+Continuity of \(\mathcal R\) at \(\iota(q)\), composed with continuity of
+\(\iota\), implies continuity of \(\mathcal R\circ\iota\) at \(q\).
+\end{proof}
+
+\begin{definition}[DQPT interpretation certificate]\label{def:dqptcert}
+A promotion from a mathematical scale-rate singularity to a dynamical quantum
+phase transition declares: the finite Hamiltonian or dynamical family;
+preparation, quench, and control protocols; physical size or volume
+normalization; amplitude or squared-echo convention; real-time parameter
+slice; convergence topology and limit order; singularity class
+(discontinuity, nondifferentiability, failure of real analyticity, or complex
+nonanalyticity); perturbation regime; estimator and instrument laws; and
+implementation evidence.
+\end{definition}
+
+A mathematical discontinuity discharges only the corresponding mathematical
+item.  A singular set in a full complex parameter space need not remain
+visible on a declared real-time slice, and a family of finite systems is not
+an undeclared thermodynamic-limit system.
+
+\begin{theorem}[Certified holomorphic zero-count transfer]
+\label{thm:analyticzerotransfer}
+Let \(\Omega\) be a bounded Jordan domain with
+\(\overline\Omega\subset D\subseteq\mathbb C\), and let \(A,A_N\) be
+holomorphic on a neighborhood of \(\overline\Omega\).  If certified bounds
+satisfy
+\[
+ \sup_{\partial\Omega}|A_N-A|
+ \leq\varepsilon_N
+ <m_\Omega
+ \leq\inf_{\partial\Omega}|A|,
+\]
+then \(A_N\) and \(A\) have the same number of zeros in \(\Omega\), counted
+with multiplicity.
+\end{theorem}
+\begin{proof}
+The strict boundary inequality is Rouch\'e's theorem.
+\end{proof}
+
+Pointwise convergence is insufficient.  Even uniform convergence does not
+stabilize a count when a limiting zero lies on the contour: for the unit disk,
+\[
+ A(z)=z-1,\qquad
+ A_N(z)=z-\left(1+\frac{(-1)^N}{N}\right),
+\]
+the zero alternates inside and outside.
+
+\begin{theorem}[Local multiplicity transfer]\label{thm:rootstability}
+Let \(A\) be holomorphic near \(z_0\), with a zero of multiplicity \(m\),
+\[
+ A(z)=a_m(z-z_0)^m+O(|z-z_0|^{m+1}),\qquad a_m\ne0.
+\]
+Let \(A_N\) be holomorphic on the same neighborhood and \(r_N\downarrow0\).
+If
+\[
+ \frac{\sup_{|z-z_0|=r_N}|A_N(z)-A(z)|}
+      {|a_m|r_N^m}
+ \longrightarrow q<1,
+\]
+then \(A_N\) has exactly \(m\) zeros in
+\(|z-z_0|<r_N\), counted with multiplicity, for all sufficiently large \(N\).
+\end{theorem}
+\begin{proof}
+Uniformly on the shrinking circle,
+\(|A(z)|=|a_m|r_N^m(1+o(1))\).  The hypothesis gives
+\(|A_N-A|<|A|\) there for large \(N\), and Rouch\'e's theorem applies.
+\end{proof}
+
+The analytic theorems act on the holomorphic carrier \(A_N\), not on a
+normalization that depends nonholomorphically on the complex parameter.  They
+certify counts in declared regions, not canonical root pairings or zeros
+outside those regions.  Analytic truncation, implementation, and measurement
+errors must be enclosed in the same boundary norm before comparison with the
+margin.
 
 \begin{theorem}[Periodic elliptic homogenization]\label{thm:periodichom}
 Let \(\Omega\subset\mathbb R^d\) be bounded and Lipschitz,
@@ -2370,8 +2720,49 @@ universal identity passes formatting but fails the permanent regression.
 true new proposition; it does not repair the original quantified claim.
 \end{fixture}
 
+\begin{fixture}[Documentary zeta--DQPT scope fixture]\label{fix:zdq}
+\textbf{Inputs and types.}
+For \(N\in\mathbb N\), \(\beta_{\rm eff}>0\), \(t\in\mathbb R\), and
+\(s=\beta_{\rm eff}+it\), put
+\[
+ Z_N(\beta_{\rm eff})=\sum_{n=1}^{N}n^{-\beta_{\rm eff}},\qquad
+ S_N(s)=\sum_{n=1}^{N}(-1)^{n+1}n^{-s},
+\]
+and define the ideal accumulated phase factor
+\[
+ \mathcal L_N(\beta_{\rm eff},t)=-\frac{S_N(s)}
+ {Z_N(\beta_{\rm eff})}.
+\]
+The source is the journal article and its supplementary material pinned in
+\cref{sec:zeta-dqpt}; no experimental data or control program is an input to
+this fixture.
+\textbf{Claimed result.}
+\[
+ Z_N(\beta_{\rm eff})\mathcal L_N(\beta_{\rm eff},t)+S_N(s)=0
+\]
+exactly.
+\textbf{Test.}  Substitute the definitions for the finite identity.
+\textbf{Expected certificate.}  BSC-ZDQ-01 is true with proved support.
+F9 is documentary and computationally unexecuted: it contains no checker,
+receipt, BSC replay of the reported NMR experiment, or high-zero simulation.
+The general normalized-scale, singularity-support, local-root, and contour
+theorems proved earlier in the framework, together with the zeta-specific
+hypotheses in \cref{sec:zeta-dqpt}, support BSC-ZDQ-02a--02e.  This fixture executes
+neither that general mathematics nor the application-specific transfer.
+\textbf{Failure and demotion.}  A finite-resolution observation
+\(|\widehat{\mathcal L}_N|\le\varepsilon\) does not by itself certify
+\(\zeta(s)=0\), a complete zero count, or the Riemann Hypothesis.  Failure of an
+implementation residual demotes the implementation edge, not the exact finite
+identity.
+\textbf{Evidence that changes the result.}  An exact checker and retained
+receipt can promote this fixture's computational axis.  Guarded complex
+enclosures and a complete zero-count calculation belong to a separate
+application certificate.  Public raw data, pulse programs, calibration and an
+independent replication can promote the empirical axes.
+\end{fixture}
+
 \section{Application boundaries: holography, QCD, primordial-field theory,
-and learned models}\label{sec:applications}
+engineered arithmetic dynamics, and learned models}\label{sec:applications}
 
 \subsection{Holography and reconstruction}
 
@@ -2439,7 +2830,7 @@ quantization rule & not established\\
 Color structure & \(SU(3)\) representations, gauge connection, observables &
 not established\\
 Confinement criterion & Wilson/'t Hooft behavior or gauge-invariant equivalent
-with regime & qualitative solenoidal analogy only \citep{klingman2025}\\
+with regime & qualitative solenoidal analogy only; source report\\
 Running and scale & renormalization prescription and beta function & not
 established\\
 Generations and mixing & spectrum and mixing matrix from the action & not
@@ -2454,6 +2845,506 @@ Failure of promotion does not erase useful mathematics: winding classes,
 stability conditions, and toroidal boundary-value problems can survive as
 mathematical candidate components.  BSC does not validate primordial-field
 theory, and the theory does not validate BSC.
+
+\subsection{Riemann zeros and DQPTs: a normalized-scale instance}
+\label{sec:zeta-dqpt}
+
+Riemann zeros and dynamical quantum phase transitions (DQPTs) are treated here
+as an instance of the general scale framework above.
+The source pinned here is the article by \citet{wei2026riemanndqpt}, DOI
+\href{https://doi.org/10.1038/s41467-026-74935-8}
+{10.1038/s41467-026-74935-8}.  The publisher record was checked on 30 July
+2026: it listed publication on 1 July 2026 and still identified the available
+text as an unedited early-access article in press.  Later copy-editing,
+pagination, data release, or corrections are not silently inherited by this
+release record.
+
+\paragraph{Mathematical provenance.}
+The eta factorization, Abel summation, the Euler transformation of an
+alternating tail, harmonic-sum asymptotics, isolated holomorphic zeros, and
+Rouch\'e's theorem are classical imported ingredients.  The explicit bounds,
+normalization diagnosis, pointwise rate split, singular-set and slice
+corollaries, and local root-displacement formula below are self-contained
+consequences assembled here from those ingredients.  No historical-priority
+claim is made for them.
+
+\paragraph{Exact finite algebra.}
+For \(s=\beta_{\rm eff}+it\), define
+\[
+\begin{split}
+ H_{0,N}&=\sum_{n=1}^{N}\log n\,|n\rangle\langle n|,\qquad
+ Z_N(\beta_{\rm eff})=\sum_{n=1}^{N}n^{-\beta_{\rm eff}},\\
+ \rho_{N,\beta_{\rm eff}}
+ &=Z_N(\beta_{\rm eff})^{-1}
+   \sum_{n=1}^{N}n^{-\beta_{\rm eff}}|n\rangle\langle n|,\\
+ P_N&=\sum_{n=1}^{N}(-1)^n|n\rangle\langle n|,\qquad
+ S_N(s)=\sum_{n=1}^{N}(-1)^{n+1}n^{-s}.
+\end{split}
+\]
+The ideal probe coherence is therefore
+\begin{equation}\label{eq:zdq-finite}
+ \mathcal L_N(\beta_{\rm eff},t)
+ =\Tr\!\left(\rho_{N,\beta_{\rm eff}}e^{-itH_{0,N}}P_N\right)
+ =-\frac{S_N(s)}{Z_N(\beta_{\rm eff})}.
+\end{equation}
+This is an exact finite identity, not an analogy and not a thermodynamic
+statement.  With
+\[
+ \eta(s)=\sum_{n=1}^{\infty}(-1)^{n+1}n^{-s}
+       =(1-2^{1-s})\zeta(s),\qquad \Re s>0,
+\]
+it gives \(Z_N\mathcal L_N=-S_N\to-\eta
+=(2^{1-s}-1)\zeta(s)\) at fixed \(s\).
+The normalization is not innocuous.  For fixed \(s\) with
+\(0<\beta_{\rm eff}\leq1\), \(Z_N(\beta_{\rm eff})\to\infty\) while
+\(S_N(s)\to\eta(s)\), and therefore
+\[
+ \mathcal L_N(\beta_{\rm eff},t)\longrightarrow0
+\]
+whether or not \(\zeta(s)=0\).  Raw limiting coherence is thus not a
+zero discriminator in the critical strip.  An admissible descendant must use
+the renormalized amplitude \(Z_N\mathcal L_N\), a finite-\(N\) root certificate,
+or a separately defined rate-function limit.
+This is \cref{prop:normcollapse} with carrier \(A_N=-S_N\) and positive
+normalizer \(Z_N\): normalization preserves every finite zero but collapses
+the raw pointwise limit.
+
+\begin{proposition}[Certified alternating-tail transfer]
+\label{prop:eta-tail}
+Let \(S_N\) and \(\eta\) be as above.  If
+\(\sigma=\Re s>0\), then
+\begin{equation}\label{eq:eta-tail}
+ |\eta(s)-S_N(s)|
+ \le N^{-\sigma}\left(1+\frac{|s|}{\sigma}\right).
+\end{equation}
+Consequently \(S_N\to\eta\) locally uniformly on the half-plane
+\(\Re s>0\).  More precisely, for compact
+\(K\subset\{\Re s>0\}\), with
+\(\sigma_K=\min_{s\in K}\Re s\) and \(M_K=\max_{s\in K}|s|\),
+\[
+ \sup_{s\in K}|\eta(s)-S_N(s)|
+ \le N^{-\sigma_K}\left(1+\frac{M_K}{\sigma_K}\right).
+\]
+\end{proposition}
+\begin{proof}
+Let \(a_n=(-1)^{n+1}\) and \(A(x)=\sum_{n\le x}a_n\), so
+\(|A(x)|\le1\).  Abel summation applied after \(N\), followed by
+\(\frac{d}{dx}x^{-s}=-s x^{-s-1}\), bounds the endpoint contribution by
+\(N^{-\sigma}\) and the integral contribution by
+\[
+ |s|\int_N^\infty x^{-\sigma-1}\,dx
+ =\frac{|s|}{\sigma}N^{-\sigma}.
+\]
+This proves \eqref{eq:eta-tail}; taking the extrema on \(K\) proves the
+uniform statement.
+\end{proof}
+
+\begin{proposition}[Fixed-\(s\) scaling discriminator]
+\label{prop:eta-scaling}
+Fix \(s=\beta+it\) with \(0<\beta<1\), write
+\(\mathcal L_N(s)=\mathcal L_N(\beta,t)\), and define, for \(N\geq2\)
+whenever
+\(\mathcal L_N(s)\ne0\),
+\[
+ \alpha_N(s)=-\frac{\log|\mathcal L_N(s)|}{\log N}.
+\]
+Then \(\mathcal L_N(s)\ne0\) for all sufficiently large \(N\), and
+\[
+ \lim_{N\to\infty}\alpha_N(s)
+ =
+ \begin{cases}
+  1-\beta,&\eta(s)\ne0,\\
+  1,&\eta(s)=0.
+ \end{cases}
+\]
+\end{proposition}
+\begin{proof}
+Put \(R_N(s)=\eta(s)-S_N(s)\), \(m=N+1\), \(f_n=n^{-s}\), and
+\(\Delta f_n=f_n-f_{n+1}\).  The one-step Euler identity is
+\[
+ \sum_{k=0}^{\infty}(-1)^k f_{m+k}
+ =\frac12f_m+
+  \frac12\sum_{k=0}^{\infty}(-1)^k\Delta f_{m+k}.
+\]
+Since \(\Delta f_n=O_s(n^{-\beta-1})\) and
+\(\Delta^2 f_n=O_s(n^{-\beta-2})\), Abel summation bounds the second
+alternating series by
+\[
+ O_s\!\left(
+  |\Delta f_m|+\sum_{n=m}^{\infty}|\Delta^2f_n|
+ \right)
+ =O_s(m^{-\beta-1}).
+\]
+Restoring the sign of the first omitted term gives
+\[
+ R_N(s)=(-1)^N\left(
+  \frac12(N+1)^{-s}+O_s(N^{-\beta-1})
+ \right).
+\]
+On every fixed compact \(U\Subset\{\Re s>0\}\), the difference estimates are
+uniform: if the displayed error is \(E_N(s)\), then
+\[
+ |E_N(s)|\le C_U N^{-\Re s-1},\qquad s\in U.
+\]
+Integral comparison gives
+\[
+ Z_N(\beta)=\frac{N^{1-\beta}}{1-\beta}+O_\beta(1).
+\]
+If \(\eta(s)\ne0\), equation~\eqref{eq:zdq-finite} yields
+\[
+ \mathcal L_N(s)=-(1-\beta)\eta(s)N^{\beta-1}(1+o(1)).
+\]
+If \(\eta(s)=0\), then \(S_N=-R_N\), so
+\[
+ \mathcal L_N(s)
+ =(-1)^N\frac{1-\beta}{2}N^{-1-it}(1+o(1)).
+\]
+Both expansions are eventually nonzero, and taking logarithms proves the
+claim.
+\end{proof}
+In the notation of \cref{def:normscaleprofile}, this instance has
+\[
+ \lambda_N=\log N,\qquad
+ \gamma(s)=1-\beta,\qquad
+ \kappa(s)=
+ \begin{cases}
+ 0,&\eta(s)\ne0,\\
+ \beta,&\eta(s)=0.
+ \end{cases}
+\]
+\Cref{thm:rateadd} separates a normalization background from the exceptional
+carrier exponent.
+Since \(1-2^{1-s}\ne0\) in the open critical strip, the second branch is
+exactly the zeta-zero branch.  Thus raw coherence decays throughout the strip,
+but its fixed-\(s\) decay exponent changes at a zero.  Promoting that exponent
+to a measured-zero claim still requires a finite-size error budget and
+implementation certificate.
+
+For the source's qubit scaling \(N=2^d\), the declared finite-size
+free-energy rate is
+\[
+ \mathcal F_{1,N}(s)
+ =-\frac1d\log|\mathcal L_N(s)|
+ =(\log2)\alpha_N(s).
+\]
+\Cref{prop:eta-scaling} therefore proves the pointwise fixed-\(s\) formula
+\[
+ \mathcal F_1(s)
+ =
+ \begin{cases}
+  (1-\beta)\log2,&\eta(s)\ne0,\\
+  \log2,&\eta(s)=0.
+ \end{cases}
+\]
+This is the mathematical rate-value bridge used in the source's DQPT
+interpretation.  It is not uniform near a zero, does not interchange a
+growing-\(t\) limit with \(N\to\infty\), and is not a finite-size
+experimental certificate.
+
+\begin{corollary}[Pointwise rate singularity set]\label{cor:eta-rate-sing}
+On \(0<\Re s<1\), the discontinuity set of \(\mathcal F_1\) is exactly the
+zero set of \(\zeta\).  At a zero \(s_0=\beta_0+it_0\), its value exceeds the
+limiting off-zero background by \(\beta_0\log2\).  Consequently,
+\[
+ {\rm RH}
+ \quad\Longleftrightarrow\quad
+ \operatorname{Disc}(\mathcal F_1)
+ \subseteq\{s:\Re s=1/2\}
+ \quad\text{within }0<\Re s<1.
+\]
+\end{corollary}
+\begin{proof}
+Apply \cref{thm:ratesupport} with
+\(\Sigma=\{s:\eta(s)=0\}\),
+\(\gamma(s)=(1-\Re s)\log2\), and
+\(\rho(s)=(\Re s)\log2\).  The eta zero set is locally discrete, and its
+prefactor is nonzero in the open strip, so it is precisely the nontrivial zeta
+zero set.  The final equivalence is therefore a restatement of the RH
+zero-location predicate.
+\end{proof}
+This corollary is a representation equivalence in the ideal model, not a
+decision of either side of RH and not an empirical zero certificate.
+
+\begin{corollary}[Fixed-\(\beta\) real-time slice]\label{cor:eta-timeslice}
+For fixed \(0<\beta<1\), let
+\(\iota_\beta(t)=\beta+it\).  Then
+\[
+ \operatorname{Disc}(\mathcal F_1\circ\iota_\beta)
+ =
+ \{t\in\mathbb R:\zeta(\beta+it)=0\},
+\]
+and every such sliced jump has size \(\beta\log2\).
+\end{corollary}
+\begin{proof}
+\Cref{prop:slicevisibility} gives the general inclusion.  Here the formula is
+constant at \((1-\beta)\log2\) off the isolated zeros on the line and equals
+\(\log2\) at each zero.  Nonzero points on the line approach every such
+isolated zero, proving visibility and equality.
+\end{proof}
+
+In the exact limiting model, zero membership also descends through the scalar
+rate by the Borel decision cell \(\{\log2\}\), because
+\(\mathcal F_1(s)=\log2\) exactly on the zero set.  This is a statement about
+the exact pointwise limit.  A finite noisy estimator does not inherit that
+decision without the separation required by
+\cref{prop:decisiondescent}.  Moreover, \cref{prop:ratestability} shows that
+the logarithmic rate is stable under amplitude error only with an explicit
+nonzero lower margin; that margin closes at a zero.  The source's DQPT reading
+must additionally supply the physical fields of \cref{def:dqptcert}.
+
+\begin{proposition}[Local finite-\(N\) zero drift]\label{prop:eta-zero-drift}
+Let \(s_0=\beta_0+it_0\), with \(0<\beta_0<1\), be a zero of \(\eta\) of
+multiplicity \(m\), and put
+\[
+ a_m=\frac{\eta^{(m)}(s_0)}{m!}\ne0.
+\]
+For every fixed \(C>(2|a_m|)^{-1/m}\), \(S_N\) has exactly \(m\) zeros,
+counted with multiplicity, in
+\[
+ |s-s_0|<C N^{-\beta_0/m}
+\]
+for all sufficiently large \(N\).  If \(m=1\), the unique zero \(s_N\) in
+this disk is simple and
+\[
+ s_N-s_0
+ =
+ \frac{(-1)^N(N+1)^{-s_0}}{2\eta'(s_0)}
+ +O_{s_0}\!\left(
+   N^{-2\beta_0}\log N+N^{-\beta_0-1}
+ \right).
+\]
+\end{proposition}
+\begin{proof}
+Choose a compact disk \(U\Subset\{0<\Re s<1\}\) centered at \(s_0\) and
+containing no other eta zero.  On
+\(|s-s_0|=C N^{-\beta_0/m}\),
+\[
+ \eta(s)=a_m(s-s_0)^m(1+o(1)),
+\]
+and hence
+\[
+ |\eta(s)|=(|a_m|C^m+o(1))N^{-\beta_0}.
+\]
+The compact-uniform Euler expansion and
+\(N^{-\beta_0/m}\log N\to0\) give, uniformly on the circle,
+\[
+ R_N(s)=(-1)^N\left(
+  \frac12(N+1)^{-s}+O_U(N^{-\Re s-1})
+ \right),
+ \qquad
+ \sup |R_N(s)|=
+ \left(\frac12+o(1)\right)N^{-\beta_0}.
+\]
+The strict condition on \(C\) therefore makes \(|R_N|<|\eta|\) for large
+\(N\).  Rouch\'e's theorem gives exactly \(m\) zeros of
+\(S_N=\eta-R_N\) in the disk; this is the explicit
+\cref{thm:rootstability} instance with
+\(r_N=C N^{-\beta_0/m}\).
+
+For \(m=1\), write the unique root as \(s_N=s_0+\delta_N\).  The disk result
+gives \(\delta_N=O(N^{-\beta_0})\).  Expanding
+\[
+ \eta(s_N)=\eta'(s_0)\delta_N+O(\delta_N^2),\qquad
+ (N+1)^{-s_N}
+ =(N+1)^{-s_0}\bigl(1+O(\delta_N\log N)\bigr)
+\]
+in the uniform tail formula proves the stated displacement.
+\end{proof}
+The eta prefactor is nonzero in the open strip, so eta and zeta
+multiplicities agree.  The zeros of \(S_N\) are also the zeros of the
+normalized ideal coherence because \(Z_N(\Re s)>0\), although that
+normalization is not holomorphic in \(s\).  A simple critical-line zero has
+ideal displacement \(O(N^{-1/2})\), generally in both real and imaginary
+parts.  This does not put an exact finite-\(N\) zero on a scan constrained to
+\(\beta_{\rm eff}=1/2\), furnish a calibrated five-qubit error bar, or give
+uniform control over zero height, multiplicity, or the strip boundary.
+
+\begin{corollary}[Bounded zero-set transfer]\label{cor:eta-zero-count}
+Let \(\Gamma\) be a positively oriented rectifiable Jordan contour with
+interior \(D\) and
+\(\overline D\subset\{s:0<\Re s<1\}\).  Suppose \(\eta\) has no zero on
+\(\Gamma\), and put
+\[
+ \sigma_\Gamma=\min_{s\in\Gamma}\Re s,\quad
+ M_\Gamma=\max_{s\in\Gamma}|s|,\quad
+ m_\Gamma=\min_{s\in\Gamma}|\eta(s)|>0.
+\]
+If
+\[
+ N^{-\sigma_\Gamma}
+ \left(1+\frac{M_\Gamma}{\sigma_\Gamma}\right)<m_\Gamma,
+\]
+then \(S_N\) and \(\zeta\) have the same number of zeros in \(D\), counted
+with multiplicity.
+\end{corollary}
+\begin{proof}
+\Cref{prop:eta-tail} gives
+\(|\eta-S_N|<|\eta|\) on \(\Gamma\), so Rouch\'e's theorem gives the same
+zero count for \(S_N\) and \(\eta\), equivalently by
+\cref{thm:analyticzerotransfer}.  The factor \(1-2^{1-s}\) has no zero in
+\(0<\Re s<1\), hence \(\eta\) and \(\zeta\) have the same zeros there.
+\end{proof}
+
+The corollary is a positive finite-to-infinite certificate, but its premise is
+substantive: \(m_\Gamma\) must be a certified lower enclosure on the whole
+contour.  A plot, a grid of small values, or a fitted minimum is not such an
+enclosure.  Local-uniform convergence on compact sets also supplies no
+uniform large-\(|t|\) claim, since the displayed modulus grows with
+\(M_\Gamma\).
+
+\begin{corollary}[Exact-zero non-descent]\label{prop:zero-nondesc}
+Let \(A\subseteq\mathbb C\) contain \(0\), let \(O:A\to Y\) be an observation
+map, and define \(q(a)=\mathbf 1_{\{0\}}(a)\).  If some
+\(z\in A\setminus\{0\}\) satisfies \(O(z)=O(0)\), then there is no decision map
+\(d:Y\to\{0,1\}\) for which \(q=d\circ O\) on \(A\).
+\end{corollary}
+\begin{proof}
+The fiber \(O^{-1}(O(0))\) meets both the zero set and its complement, so
+\cref{prop:decisiondescent} blocks the factorization.
+\end{proof}
+Thus any positive-radius report cell containing both zero and a nonzero
+amplitude blocks an exact-zero decision from that report alone.  This does not
+block an analytic identity, a certified contour count, or another independent
+root certificate.  For stochastic reports, non-mutually-singular zero and
+nonzero output laws likewise block an exact decoder, and total variation gives
+the quantitative one-shot testing bound in \cref{prop:decisiondescent}.
+
+\paragraph{Two distinct limits.}
+In the first construction, a DQPT is assigned through a normalized
+free-energy or rate-function limit after \(s\) is fixed and
+\(N\to\infty\).  The finite exponential sum in
+\eqref{eq:zdq-finite} is not itself the claimed thermodynamic
+nonanalyticity.  The second construction uses the Riemann--Siegel phase
+\(\theta(t)\) and the generalized Loschmidt amplitude
+\[
+ \mathcal G_N(\beta_{\rm eff},t)
+ =\frac{
+ e^{i\theta(t)}\sum_{n=1}^{N}n^{-\beta_{\rm eff}-it}
+ +e^{-i\theta(t)}\sum_{n=1}^{N}n^{-\beta_{\rm eff}+it}}
+ {2Z_N(\beta_{\rm eff})}.
+\]
+At \(\beta_{\rm eff}=1/2\), its numerator is a Riemann--Siegel truncation
+when \(N=N(t)\asymp\sqrt{t/(2\pi)}\), with the stated asymptotic remainder
+of order \(t^{-1/4}\).  This is a coupled long-time and thermodynamic regime,
+not the fixed-\(s\) limit above.  A BSC scale certificate must separately
+record the integer convention for \(N(t)\), normalization, convergence
+topology, time window, finite-size remainder, gate precision, sampling error,
+and order or path of limits.
+
+\paragraph{Morphism chain and implementation boundary.}
+The audit object is a chain, not one undifferentiated correspondence:
+\[
+ \begin{gathered}
+ \text{analytic specification}\longrightarrow
+ \text{ideal finite dynamics}\longrightarrow
+ \text{NMR implementation}\\
+ {}\longrightarrow\text{scale limit}\longrightarrow
+ \text{exact-zero or RH query}.
+ \end{gathered}
+\]
+On the first edge, \(T\) prepares \(\rho_{N,\beta_{\rm eff}}\) and the
+controlled evolution, \(T^\sharp\) pairs probe \(\sigma_x,\sigma_y\)
+effects with the real and imaginary parts of \(\mathcal L_N\), and \(K\)
+assembles the complex coherence.  Equation~\eqref{eq:zdq-finite} makes the
+ideal algebraic residual exact.  The hardware edge instead owes state and
+pulse maps, their Heisenberg pullbacks, readout post-processing, equation and
+naturality residuals, the directed deficiency from the implemented to the
+ideal experiment, and the physical completion \(C\).  The scale edge is
+governed by \cref{def:scalecert}; the last query is governed by
+\cref{def:obseq,def:confusable} and, for a bounded zero census, by
+\cref{cor:eta-zero-count}.
+
+The reported experiment used five nuclear spins, one probe and a
+sixteen-dimensional four-spin working system, on a 600 MHz NMR spectrometer
+whose laboratory temperature was \(305\,{\rm K}\).  The parameter
+\(\beta_{\rm eff}\) in the zeta encoding was implemented by engineered level
+populations.  It is not the inverse of the \(305\,{\rm K}\) laboratory
+temperature; identifying the two would require an energy-unit and calibration
+bridge not supplied by the symbol \(\beta\) alone.  The paper reports fitted
+coherence minima near five known low zeros.  Its own finite-size discussion
+states that the coherence is nonzero and only approaches zero.  This is a
+single published study, not an exact-zero receipt.  Its data-and-code statement
+made material available from the corresponding author on reasonable request;
+no public bundle was replayed for this manuscript.
+
+The high-zero results for \(\mathcal G_N\), including selected zeros near the
+trillionth zero, are reported numerical simulations rather than executions on
+the NMR processor.  They are neither an enumeration of the first trillion
+zeros nor an off-critical-line exclusion or complete zero census.  Likewise,
+vanishing-and-revival in one observable is recurrence in the sense of return
+behavior.  It is not BSC persistence, which requires every declared prefix
+identity, viability and morphism certificate in \cref{def:persistence}.
+Within the engineered first model, the universal statement that DQPT
+singularities occur only at \(\beta_{\rm eff}=1/2\) is equivalent to the RH;
+it remains open rather than becoming experimental output.
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\caption{Claim-local disposition of the engineered zeta--DQPT case, pinned to
+the article state checked 30 July 2026.}\label{tab:zdq-status}
+\begin{tabularx}{\textwidth}{L{0.13\textwidth}L{0.43\textwidth}Y}
+\toprule
+ID & Bounded claim & BSC status boundary\\
+\midrule
+BSC-ZDQ-01 & Exact finite identity \eqref{eq:zdq-finite} &
+true, proved; empirical N/A; BSC computation unexecuted; present proof and
+verified publication; bounded\\
+BSC-ZDQ-02a & Alternating eta tail and local-uniform convergence &
+proved with the explicit half-plane and compact-set bound; no uniform
+large-\(|t|\) promotion\\
+BSC-ZDQ-02b & Bounded contour zero-count transfer &
+proved conditionally on a certified strict whole-boundary margin\\
+BSC-ZDQ-02c & Fixed-\(s\) coherence exponent and pointwise rate &
+proved; nonuniform near zeros and not a growing-\(t\) limit\\
+BSC-ZDQ-02d & Ambient ideal rate-singularity set and RH equivalence &
+proved as a representation equivalence; neither RH nor a physical DQPT is
+promoted\\
+BSC-ZDQ-02d.1 & Fixed-\(\beta\) real-time singularity slice &
+proved under branch visibility; no finite noisy exact-zero decision\\
+BSC-ZDQ-02e & Multiplicity-dependent local zero drift &
+proved for each fixed isolated zero; no uniform height, multiplicity, or
+strip-boundary control\\
+BSC-ZDQ-03 & A finite-resolution report that identifies zero with a nonzero
+amplitude can by itself decide exact vanishing & false, proved by operational
+non-descent; an analytic identity or certified contour count remains possible\\
+BSC-ZDQ-04 & Five low-zero NMR coherence signatures &
+empirical single study; reported execution; verified publication; no BSC exact
+receipt or replication; local only\\
+BSC-ZDQ-05 & Finite experimental and simulated agreement entails
+thermodynamic exclusivity and unrestricted RH & false, proved as an inference:
+finite windows and selected zeros do not discharge the universal quantifier or
+the required limit and zero-census gates\\
+BSC-ZDQ-06 & End-to-end quantum advantage for RH verification &
+open and conditional on state preparation, oracle precision, sampling and the
+chosen classical comparator; unexecuted here; local only\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+For BSC-ZDQ-06, the reported total bound is
+\[
+ \delta^{-1}|t|^{(1-\beta_{\rm eff})/2}
+ \operatorname{Poly}\!\left(\log\delta^{-1},\log|t|,
+ (1-\beta_{\rm eff})^{-1},\beta_{\rm eff}^{-1}\right).
+\]
+At \(\beta_{\rm eff}=1/2\) this gives a \(t^{1/4}\) dependence against a
+direct Riemann--Siegel \(t^{1/2}\) baseline under the paper's assumptions.
+It is not polynomial in the bit length \(\log t\), and the article itself
+notes that faster classical zeta-evaluation methods exist.  A quantum
+advantage claim therefore still requires an end-to-end, precision-matched
+comparison against the best applicable classical zero-location and zero-count
+methods.
+
+The construction is mathematically substantive and experimentally
+interesting, but its logarithmic spectrum, alternating-sign observable and
+Riemann--Siegel phase deliberately import the arithmetic target.  Realizability
+of that encoding does not establish an independent causal ``physical origin''
+of the zeta zeros or a unique Kelvin temperature.  Nor do finite minima or
+selected simulations promote the RH; BSC-ZDQ-05 blocks that inference while
+the status of RH itself remains open.  The existing BSC morphism, quotient,
+scale-certificate and status machinery is sufficient for this audit; no new
+foundational primitive is inferred.
 
 \subsection{Learned models}
 
@@ -2523,6 +3414,11 @@ derived \(\chi\) & charge promotion blocked & topological invariant remains\\
 Primordial-field QCD & failure of gauge covariance, anomaly consistency,
 spectra, or an independent prediction & affected physical bridge refuted &
 toroidal mathematics may remain\\
+Engineered zeta--DQPT transfer & exact finite-identity mismatch under the
+pinned convention, certified implementation residual above budget, or a
+certified bounded zero-count disagreement & only the affected BSC-ZDQ node is
+demoted; exact-zero and RH promotion are blocked & unaffected finite algebra,
+limit-qualified analysis, or local empirical report remains separately typed\\
 Numerical verification & irreproducible build, hash mismatch, or tolerance
 failure & computational axis failed & mathematical statement unaffected unless
 execution was its only support\\
@@ -2539,7 +3435,10 @@ Construct a category or double category whose objects are
 \((\widehat S_\ell,\mathscr C_\ell)\), whose horizontal arrows are physical
 interfaces, whose vertical arrows are one fixed morphism variant, and whose
 2-cells certify paired observable transport.  Prove closure of hard gates and
-identity normalization without assuming the needed coherence.
+identity normalization without assuming the needed coherence.  In particular,
+resolve BSC-QOP-03 by proving or refuting closure of the full quantum variant
+under compatible trace-class domains, observable pullbacks, completions, and
+defect propagation.
 \end{openproblem}
 
 \begin{openproblem}[Residual calculus for stochastic equations]
@@ -2576,6 +3475,17 @@ classification to produce a recurrence certificate with an honest ordered
 limit and finite-data stopping rule.
 \end{openproblem}
 
+\begin{openproblem}[Physical observation to certified zeta-zero census]
+\label{op:zdq-census}
+For a bounded contour in \(0<\Re s<1\), combine public raw hardware data,
+control programs and calibration with a uniform finite-size modulus, guarded
+complex root enclosures, certified boundary nonvanishing, and a complete
+argument-principle, Rouch\'e, or Turing zero count.  Quantify the directed
+deficiency from the implemented experiment to the ideal encoding and compare
+precision-matched end-to-end quantum and best applicable classical costs.
+The target is a bounded statement \({\rm RH}(T)\), not unrestricted RH.
+\end{openproblem}
+
 \begin{openproblem}[Physical topology-to-charge bridges]
 For any proposed carrier, derive \(\chi\) from a complete action/gauge/current
 or measurement structure and test anomaly, boundary, quantization, and
@@ -2609,9 +3519,16 @@ paired state and observable transport preserves accessible probabilities;
 statistical deficiency and naturality defects obey composition bounds;
 equation residuals propagate when an equation-space map exists; compatible
 sheaf sections glue while locally satisfiable relations may fail globally;
-dependency readiness caps are monotone; and topology alone does not select
-electric charge.  The fixtures make these statements vulnerable to exact
-tests.
+dependency readiness caps are monotone; normalized scale rates split into
+normalizer and carrier exponents; continuous branch gaps expose exceptional
+boundaries while parameter slices may hide them; strict holomorphic contour
+margins transfer zero counts and local multiplicity; exact finite-label
+decoding requires separated observation laws; alternating Dirichlet
+truncations instantiate these results with an explicit tail, pointwise
+exponent and rate split, ambient and fixed-line singular sets, contour count,
+and local root drift; and
+topology alone does not select electric charge.  The fixtures make these
+statements vulnerable to exact tests.
 
 Persistence is consequently neither visual recurrence nor final-time return.
 It is maintenance of a declared operational identity through every required
