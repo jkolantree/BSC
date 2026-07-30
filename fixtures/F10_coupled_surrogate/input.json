@@ -1,0 +1,51 @@
+{
+  "environment": {
+    "arithmetic": "fractions.Fraction",
+    "implementation": "CPython",
+    "version": "3.12.13"
+  },
+  "claim_id": "BSC-FIX-10",
+  "fixture_id": "F10-COUPLED-SURROGATE",
+  "horizon": 10,
+  "hosts": {
+    "HOST-A": {
+      "a": {
+        "denominator": 2,
+        "numerator": 1
+      },
+      "host_id": "HOST-A"
+    },
+    "HOST-B": {
+      "a": {
+        "denominator": 10,
+        "numerator": 9
+      },
+      "host_id": "HOST-B"
+    }
+  },
+  "initial_reference_state": {
+    "denominator": 1,
+    "numerator": 0
+  },
+  "initial_surrogate_state": {
+    "denominator": 1,
+    "numerator": 0
+  },
+  "recurrence": "error[k] = a * error[k-1] + abs(zhat - z)",
+  "reference": {
+    "z": {
+      "denominator": 1,
+      "numerator": 0
+    }
+  },
+  "surrogate": {
+    "zhat": {
+      "denominator": 100,
+      "numerator": 1
+    }
+  },
+  "tolerance": {
+    "denominator": 20,
+    "numerator": 1
+  }
+}

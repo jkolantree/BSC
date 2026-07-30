@@ -1,12 +1,14 @@
 # Symbol and Notation Ledger
 
-This ledger is normative for version 1.1.0 of *On Boundaries of Evidence*,
-released 30 July 2026 at
-`https://github.com/jkolantree/BSC/releases/tag/v1.1.0`. The Zenodo concept DOI
-is `10.5281/zenodo.21541160`; the immutable v1.0.1 version DOI remains
+The released baseline for this normative ledger is version 1.2.0 of *On
+Boundaries of Evidence*, released 30 July 2026 at
+`https://github.com/jkolantree/BSC/releases/tag/v1.2.0`. The Zenodo concept DOI
+is `10.5281/zenodo.21541160`; a v1.2.0 version DOI assigned after deposit is
+recorded on the GitHub release page. The immutable v1.1.0 version DOI is
+`10.5281/zenodo.21710743`, and the immutable v1.0.1 version DOI remains
 `10.5281/zenodo.21541561`. A symbol has no meaning outside the row or local
-declaration that types it. Local specializations are permitted only when their
-scope is explicit.
+declaration that types
+it. Local specializations are permitted only when their scope is explicit.
 
 ## Global conventions
 
@@ -209,6 +211,34 @@ kept distinct from the extended eight-field record in the next section.
 | $R^X_{ab}$ | state scale map | Direct state coarse-graining, namespaced from equation residual. |
 | $T^{\mathrm{dyn}}_{ab}$ | nonnegative Wasserstein defect | Failure of a state scale map to intertwine source and target dynamics on a declared Polish target state space $(\bar X_b,d_b)$; all displayed and propagated laws must lie in $\mathcal P_p(\bar X_b)$. |
 | $\varepsilon$ | scale or sensor parameter | Units, limiting path, and order declared locally. |
+
+## Claim-relative simulation-evidence profiles
+
+These symbols are version 1.2.0 additions. They refine the
+existing certificate, loss-vector, and claim-admissibility machinery. They do
+not add a ninth field to the BSC morphism record. Statistical experiment
+simulation, numerical execution, and surrogate deployment remain separate
+typed uses of the word "simulation."
+
+| Symbol | Type or codomain | Meaning and constraints |
+|---|---|---|
+| $\mathcal U_c$ | intended-use record | $(D_c,H_c,Q_c,\pi_c,\mathsf{BC}_c,\mathsf{Units}_c,\tau_c)$: operating domain, horizon, quantity of interest, policy, initial/boundary conditions, unit declarations, and claim-local tolerances. |
+| $\mathsf{SEC}_{c,\iota}$ | claim-relative simulation-evidence profile | $(\mathcal U_c,I_c^\ell,J_c^\ell,J_c^g,\{\mathsf E_{c,i}\}_{i\in I_c^\ell},\{g_{c,k}\}_{k\in J_c^g},\Phi_c,\boldsymbol\rho_c,\mathsf{Prov}_{c,\iota})$. It refines $\mathsf{Cert}$ and is neither a new system object nor a morphism variant. |
+| $I_c^\ell$ | finite source-coordinate index set | Indexes estimands and evidence records before propagation into the BSC loss vector. A source coordinate is not silently identified with a target loss coordinate. |
+| $J_c^\ell,J_c^g$ | finite target index sets | Applicable coordinates of the existing BSC loss vector and required Boolean hard gates for claim $c$. Missing required evidence is missing or unevaluated, never zero. |
+| $\mathcal V_c,\mathcal W_c$ | ordered product spaces with declared units | $\mathcal V_c=\prod_{i\in I_c^\ell}V_{c,i}$ is the source evidence space and $\mathcal W_c=\prod_{j\in J_c^\ell}W_{c,j}$ is the target BSC loss space. |
+| $g_{c,k}$ | $\{\mathsf{true},\mathsf{false},\mathsf{unevaluated}\}$ | Claim-required hard gate. Admission requires every required deployment gate to be certified true. |
+| $\mathsf E_{c,i}$ | statistical or deterministic source-evidence record | $(\eta_{c,i},d_{c,i},\mathcal O_{c,i},\widehat\eta_{c,i},n_{c,i},\alpha_{c,i},[L^{\mathrm{src}}_{c,i},U^{\mathrm{src}}_{c,i}],\varepsilon^{\mathrm{opt}}_{c,i},\Psi_{c,i})$. It binds a source estimand, discrepancy, observation model, evaluator, effort, coverage, source enclosure, optimization gap, and proxy-transfer theorem. |
+| $(\Omega_c,\mathcal F_c,\mathbb P_c)$ | joint observation-and-analysis probability space | Every statistical record used together is defined on this common space, and every random interval endpoint is $\mathcal F_c$-measurable. |
+| $\mathcal C_c^{\mathrm{src}},\alpha_c$ | joint source-coverage event and failure bound | $\mathcal C_c^{\mathrm{src}}=\bigcap_i\{\eta_{c,i}\in[L^{\mathrm{src}}_{c,i},U^{\mathrm{src}}_{c,i}]\}$ with $\mathbb P_c(\mathcal C_c^{\mathrm{src}})\ge1-\alpha_c$. A union-bound justification additionally requires every marginal failure probability to be at most $\alpha_{c,i}$ and $\sum_i\alpha_{c,i}\le\alpha_c$. Setting $\alpha_c=0$ gives probability-one coverage only; a deterministic enclosure must hold pointwise. |
+| $\Phi_c$ | monotone unit-respecting map $\mathcal V_c\to\mathcal W_c$ | A proved relation $\boldsymbol\ell_c^0\le_{\mathcal W_c}\Phi_c(\boldsymbol\eta_c)$ transports source estimands into applicable frozen-state BSC loss coordinates. Incommensurate quantities are not added without this map, an applicable norm inequality, or another claim-specific rule. |
+| $\boldsymbol U_c^{\mathrm{src}},\boldsymbol U_c^0$ | source and propagated frozen-state target-loss upper-bound vectors | $\boldsymbol U_c^0=\Phi_c(\boldsymbol U_c^{\mathrm{src}})$. Deployment admission compares $U^0_{c,j}+\rho_{c,j}$, not a raw source interval, with $\tau_{c,j}$. |
+| $\ell^0_{c,j},\ell^1_{c,j}$ | common-unit loss coordinates | Frozen-evaluation and proposed-deployment losses. Direct inheritance is blocked unless exact identity transfer or a certified compatibility relation applies. |
+| $\rho_{c,j},\boldsymbol\rho_c$ | nonnegative compatibility reserve and its vector | Certified additional-loss enclosure satisfying $\ell^1_{c,j}\le\ell^0_{c,j}+\rho_{c,j}$ on the declared domain, horizon, and joint event. It is not unallocated tolerance. Frozen uncertainty already represented in $U^0_{c,j}$ and uncertainty in the deployment change are each represented exactly once. |
+| $s_{c,j}$ | signed remaining deployment slack | $\tau_{c,j}-(U^0_{c,j}+\rho_{c,j})$. Positive slack certifies stated headroom, zero passes with no certified reserve, and negative slack blocks admission but does not alone prove actual violation. |
+| $\iota$ | factored evidence identity | $(\iota_{\mathrm{cand}},\iota_{\mathrm{data}},\iota_{\mathrm{analysis}},\iota_{\mathrm{env}},\iota_{\mathrm{contract}})$. Evidence transfers exactly only across every identity factor on which it depends; a changed identity needs theorem-class applicability or a certified compatibility morphism. A genuinely absent factor uses a typed not-applicable value rather than being omitted. |
+| $\Phi_k,\widehat\Phi_k$ | reference and surrogate-coupled host maps | $\Phi_k(x)=F_k(x,g_k(x))$ and $\widehat\Phi_k(x)=F_k(x,\widehat g_k(x))$ on a certified reachable domain. |
+| $E_k,L_k,b_k$ | nonnegative state error, host amplification, and one-step injection | If $E_{k+1}\le L_kE_k+b_k$, then the existing prefix theorem gives the finite-horizon product-sum bound. Average standalone RMSE does not establish a uniform reachable-domain $b_k$. |
 
 ## Certified normalized-scale profiles
 

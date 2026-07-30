@@ -1,8 +1,8 @@
 PYTHON ?= python3
 LATEXMK ?= latexmk
-PAPER_PAGES ?= 50
+PAPER_PAGES ?= 56
 SYNOPSIS_PAGES ?= 2
-VERSION ?= 1.1.0
+VERSION ?= 1.2.0
 SOURCE_DATE_EPOCH ?= 1785369600
 
 .PHONY: paper synopsis fixture manifest manifest-refresh markdown test verify build-check dist ci
@@ -17,6 +17,7 @@ synopsis:
 
 fixture:
 	$(PYTHON) fixtures/F08_sqrt_square_sign/check_fixture.py
+	$(PYTHON) fixtures/F10_coupled_surrogate/check_fixture.py
 
 manifest:
 	$(PYTHON) tools/verify_manifest.py

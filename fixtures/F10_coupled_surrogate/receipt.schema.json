@@ -1,0 +1,379 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Exact deterministic receipt for the F10 coupled-surrogate host-dependence fixture.",
+  "properties": {
+    "arithmetic_model": {
+      "const": "fractions.Fraction exact rational arithmetic"
+    },
+    "claim": {
+      "const": "the same exact standalone surrogate interface error stays within the declared host-state tolerance in HOST-A and produces an exact tolerance violation in HOST-B"
+    },
+    "claim_id": {
+      "const": "BSC-FIX-10"
+    },
+    "claim_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "command": {
+      "const": "python3 fixtures/F10_coupled_surrogate/verify_coupled_surrogate.py build/F10_actual_receipt.json"
+    },
+    "environment": {
+      "additionalProperties": false,
+      "properties": {
+        "arithmetic": {
+          "const": "fractions.Fraction"
+        },
+        "implementation": {
+          "const": "CPython"
+        },
+        "version": {
+          "const": "3.12.13"
+        }
+      },
+      "required": [
+        "arithmetic",
+        "implementation",
+        "version"
+      ],
+      "type": "object"
+    },
+    "evidence_identity": {
+      "additionalProperties": false,
+      "properties": {
+        "analysis": {
+          "additionalProperties": false,
+          "properties": {
+            "analysis_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "checker_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "generator_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "schema_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "serialization": {
+              "const": "UTF-8 JSON, two-space indentation, sorted keys, LF terminator"
+            }
+          },
+          "required": [
+            "analysis_sha256",
+            "checker_sha256",
+            "generator_sha256",
+            "schema_sha256",
+            "serialization"
+          ],
+          "type": "object"
+        },
+        "candidate": {
+          "additionalProperties": false,
+          "properties": {
+            "candidate_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "host_sha256": {
+              "additionalProperties": false,
+              "properties": {
+                "HOST-A": {
+                  "pattern": "^[0-9a-f]{64}$",
+                  "type": "string"
+                },
+                "HOST-B": {
+                  "pattern": "^[0-9a-f]{64}$",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "HOST-A",
+                "HOST-B"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "candidate_sha256",
+            "host_sha256"
+          ],
+          "type": "object"
+        },
+        "contract": {
+          "additionalProperties": false,
+          "properties": {
+            "claim": {
+              "const": "the same exact standalone surrogate interface error stays within the declared host-state tolerance in HOST-A and produces an exact tolerance violation in HOST-B"
+            },
+            "claim_id": {
+              "const": "BSC-FIX-10"
+            },
+            "contract_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "fixture_id": {
+              "const": "F10-COUPLED-SURROGATE"
+            },
+            "input_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            }
+          },
+          "required": [
+            "claim",
+            "claim_id",
+            "contract_sha256",
+            "fixture_id",
+            "input_sha256"
+          ],
+          "type": "object"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "data_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "reason": {
+              "const": "exact rational fixture; no training, calibration, validation, or empirical data"
+            },
+            "status": {
+              "const": "not_applicable"
+            }
+          },
+          "required": [
+            "data_sha256",
+            "reason",
+            "status"
+          ],
+          "type": "object"
+        },
+        "environment": {
+          "additionalProperties": false,
+          "properties": {
+            "environment_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            }
+          },
+          "required": [
+            "environment_sha256"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "analysis",
+        "candidate",
+        "contract",
+        "data",
+        "environment"
+      ],
+      "type": "object"
+    },
+    "fixture_id": {
+      "const": "F10-COUPLED-SURROGATE"
+    },
+    "hosts": {
+      "additionalProperties": false,
+      "properties": {
+        "HOST-A": {
+          "additionalProperties": false,
+          "properties": {
+            "a": {
+              "const": "1/2"
+            },
+            "effective_gain": {
+              "const": "1023/512"
+            },
+            "first_violation_step": {
+              "type": "null"
+            },
+            "host_id": {
+              "const": "HOST-A"
+            },
+            "maximum_error": {
+              "const": "1023/51200"
+            },
+            "prefix_errors": {
+              "type": "array"
+            },
+            "reference_state_path": {
+              "type": "array"
+            },
+            "stable": {
+              "const": true
+            },
+            "surrogate_state_path": {
+              "type": "array"
+            },
+            "tolerance_disposition": {
+              "const": "within_tolerance"
+            },
+            "violation_basis": {
+              "const": "none"
+            },
+            "within_tolerance": {
+              "const": true
+            }
+          },
+          "required": [
+            "a",
+            "effective_gain",
+            "first_violation_step",
+            "host_id",
+            "maximum_error",
+            "prefix_errors",
+            "reference_state_path",
+            "stable",
+            "surrogate_state_path",
+            "tolerance_disposition",
+            "violation_basis",
+            "within_tolerance"
+          ],
+          "type": "object"
+        },
+        "HOST-B": {
+          "additionalProperties": false,
+          "properties": {
+            "a": {
+              "const": "9/10"
+            },
+            "effective_gain": {
+              "const": "6513215599/1000000000"
+            },
+            "first_violation_step": {
+              "const": 7
+            },
+            "host_id": {
+              "const": "HOST-B"
+            },
+            "maximum_error": {
+              "const": "6513215599/100000000000"
+            },
+            "prefix_errors": {
+              "type": "array"
+            },
+            "reference_state_path": {
+              "type": "array"
+            },
+            "stable": {
+              "const": true
+            },
+            "surrogate_state_path": {
+              "type": "array"
+            },
+            "tolerance_disposition": {
+              "const": "tolerance_violated"
+            },
+            "violation_basis": {
+              "const": "exact_actual_error_above_tolerance"
+            },
+            "within_tolerance": {
+              "const": false
+            }
+          },
+          "required": [
+            "a",
+            "effective_gain",
+            "first_violation_step",
+            "host_id",
+            "maximum_error",
+            "prefix_errors",
+            "reference_state_path",
+            "stable",
+            "surrogate_state_path",
+            "tolerance_disposition",
+            "violation_basis",
+            "within_tolerance"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "HOST-A",
+        "HOST-B"
+      ],
+      "type": "object"
+    },
+    "receipt_schema": {
+      "const": "bsc-deterministic-receipt/4"
+    },
+    "result": {
+      "const": "host_relative_tolerance_disposition_confirmed"
+    },
+    "self_hash_policy": {
+      "const": "no recursive self-hash is embedded; bind verification_receipt.json externally in MANIFEST.sha256"
+    },
+    "specification": {
+      "additionalProperties": false,
+      "properties": {
+        "horizon": {
+          "const": 10
+        },
+        "initial_error": {
+          "const": "0"
+        },
+        "initial_reference_state": {
+          "const": "0"
+        },
+        "initial_surrogate_state": {
+          "const": "0"
+        },
+        "interface_error": {
+          "const": "1/100"
+        },
+        "reference_z": {
+          "const": "0"
+        },
+        "surrogate_zhat": {
+          "const": "1/100"
+        },
+        "tolerance": {
+          "const": "1/20"
+        }
+      },
+      "required": [
+        "horizon",
+        "initial_error",
+        "initial_reference_state",
+        "initial_surrogate_state",
+        "interface_error",
+        "reference_z",
+        "surrogate_zhat",
+        "tolerance"
+      ],
+      "type": "object"
+    },
+    "working_directory": {
+      "const": "repository root"
+    }
+  },
+  "required": [
+    "arithmetic_model",
+    "claim",
+    "claim_id",
+    "claim_sha256",
+    "command",
+    "environment",
+    "evidence_identity",
+    "fixture_id",
+    "hosts",
+    "receipt_schema",
+    "result",
+    "self_hash_policy",
+    "specification",
+    "working_directory"
+  ],
+  "title": "BSC F10 deterministic fixture receipt",
+  "type": "object"
+}

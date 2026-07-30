@@ -86,7 +86,7 @@ def build_parser() -> argparse.ArgumentParser:
         description="Verify release PDF existence, page counts, and final logs."
     )
     parser.add_argument("--root", type=Path, default=repository_root)
-    parser.add_argument("--paper-pages", type=int, default=50)
+    parser.add_argument("--paper-pages", type=int, default=56)
     parser.add_argument("--synopsis-pages", type=int, default=2)
     return parser
 

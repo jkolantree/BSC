@@ -2,7 +2,6 @@
 
 \usepackage[margin=26mm,headheight=15pt]{geometry}
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
 \usepackage{mathpazo}
 \usepackage[scaled=0.92]{helvet}
 \usepackage{microtype}
@@ -34,12 +33,14 @@
   urlcolor=inkblue,
   pdftitle={On Boundaries of Evidence --- Boundary-State Calculus for Typed Observation, Admissible Transfer, and Falsifiable Persistence},
   pdfauthor={J. Tree},
-  pdfsubject={Version 1.1.0; released 30 July 2026; a typed audit calculus for scientific transfers},
+  pdfsubject={Version 1.2.0; released 30 July 2026; a typed audit calculus for scientific transfers},
   pdfkeywords={Boundary-State Calculus, scientific transfer, evidence, admissibility, information loss, claim status}
 }
 \urlstyle{same}
 \setlength{\parindent}{1.25em}
 \setlength{\parskip}{0.15em}
+\setlength{\emergencystretch}{3em}
+\hbadness=10000
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
 \setlist{nosep,leftmargin=1.7em}
@@ -92,14 +93,15 @@
 \newcommand{\Lip}{\operatorname{Lip}}
 \newcommand{\push}{_{\#}}
 \newcommand{\blank}{\text{--}}
-\newcommand{\BSCVersion}{1.1.0}
+\newcommand{\BSCVersion}{1.2.0}
 \newcommand{\BSCDOI}{Concept DOI 10.5281/zenodo.21541160}
 
 \title{\vspace{-1.3cm}\textbf{On Boundaries of Evidence}\\[0.3em]
 \Large--- Boundary-State Calculus for Typed Observation,\\
 Admissible Transfer, and Falsifiable Persistence}
 \author{J. Tree\\[-0.15em]\small Independent researcher}
-\date{30 July 2026\\[0.25em]\small Version \BSCVersion\quad\textbullet\quad \BSCDOI}
+\date{30 July 2026\\[0.25em]\small Version \BSCVersion\quad\textbullet\quad
+\BSCDOI}
 
 \begin{document}
 \maketitle
@@ -126,14 +128,18 @@ structured-cospan schema, non-invertible defects, and rigorous scale limits.
 For certified finite families it adds normalized scale profiles,
 normalization-covariant logarithmic rates, exceptional-set and slice
 singularities, contour-certified analytic transfer, and exact-decision bounds.
+It also defines a claim-relative simulation-evidence profile with typed loss
+coordinates, hard gates, joint statistical coverage, factored evidence
+identity, compatibility reserves, and finite-horizon surrogate propagation.
 It
 separates topological charge from physical charge by requiring an explicit
 bridge derived from a gauge structure, action, current, anomaly, boundary
 condition, or measurement protocol.  A claim-local mathematical verdict,
 five readiness coordinates, and a proof-dependency graph prevent local
 success from promoting unrelated claims.
-Nine exact fixtures expose both admissible transfers and hard obstructions,
-including a deterministic regression receipt.  The resulting formalism treats
+Ten exact fixtures expose both admissible transfers and hard obstructions,
+including deterministic receipts for a permanent regression counterexample
+and stable-host surrogate dependence.  The resulting formalism treats
 persistence as an operational organizing principle:
 a persistent object is a recursively maintained finite boundary-state, and
 persistent identity is operational equivalence maintained under repeated
@@ -319,6 +325,8 @@ Morphism defect accumulation & true & proved & N/A & unexecuted & present proof 
 bounded\\
 Normalized scale-profile calculus & true & proved & N/A & unexecuted &
 present proof & certified\\
+Simulation evidence profile and deployment admission & true & proved & N/A &
+unexecuted & present proof & bounded\\
 Zeta tail, rate, slice, contour, and local-root results & true & proved & N/A &
 unexecuted & present proof & bounded\\
 Universal persistence principle & open & conjectural & untested & unexecuted &
@@ -336,6 +344,8 @@ Fixture F8 universal claim & false & proved & N/A & exact receipt & present proo
 local only\\
 Fixture F9 finite zeta identity & true & proved & N/A & unexecuted & present proof &
 bounded\\
+Fixture F10 host-relative surrogate tolerance & true & proved & N/A &
+exact receipt & present proof & local only\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -2012,7 +2022,7 @@ itself is infinite.  Let
 \(L:\mathsf I_{\mathcal T}\to\mathsf C\) embed an interface as a free boundary
 carrier.
 
-\begin{assumption}[Conditional BSC decoration schema]\label{def:decoration}
+\begin{assumption}[Conditional decoration schema]\label{def:decoration}
 Fix one mode
 \(\mathsf r\in\{\mathrm{det},\mathrm{stoch},\mathrm{nondet}\}\) and one
 compatible time object \(\mathbb T\).  Assume that a lax
@@ -2231,6 +2241,302 @@ requires a sampling frame, instrument and calibration, protocol, exclusions,
 uncertainty analysis, and data provenance.  Simulation agreement is not
 structural equivalence.
 \end{definition}
+
+\subsection{Simulation evidence profile and deployment compatibility}
+\label{sec:simulation-profile}
+
+Several neighboring uses of ``simulation'' must not be conflated.  In
+\cref{def:morphism,def:blackwell}, \emph{statistical simulation} means a
+Markov kernel comparing experiments in the Blackwell--Le Cam sense.
+\emph{Computational simulation} means numerical execution of a declared
+mathematical model by a solver.  A learned \emph{surrogate} is a fitted
+replacement for a declared component, while \emph{in-simulator deployment}
+inserts that component into a host solver, controller, or coupled pipeline.
+None of these meanings inherits the evidence of another without a typed
+bridge.
+
+\begin{definition}[Simulation evidence profile]\label{def:simprofile}
+For a claim \(c\) and evidence identity \(\iota\), a simulation evidence
+profile is the certificate subrecord
+\[
+\mathsf{SEC}_{c,\iota}
+=
+\left(
+\mathcal U_c,I_c^\ell,J_c^\ell,J_c^g,
+\{\mathsf E_{c,i}\}_{i\in I_c^\ell},
+\{g_{c,k}\}_{k\in J_c^g},
+\Phi_c,\boldsymbol\rho_c,\mathsf{Prov}_{c,\iota}
+\right).
+\]
+It augments \(\Cert_{\ell m}\); it is not a ninth field of
+\(\mathfrak M_{\ell\to m}\).  The intended-use record
+\[
+\mathcal U_c
+=
+(D_c,H_c,Q_c,\pi_c,\mathsf{BC}_c,\mathsf{Units}_c,\tau_c)
+\]
+fixes the operating domain, horizon, quantity of interest, intervention or
+control policy, initial and boundary conditions, units, and claim
+tolerances.  \(I_c^\ell\) indexes typed source evidence coordinates,
+\(J_c^\ell\) indexes applicable coordinates of the existing BSC loss vector,
+and \(J_c^g\) indexes Boolean hard gates with values true, false, or
+unevaluated.  With ordered source and target products
+\(\mathcal V_c=\prod_{i\in I_c^\ell}V_{c,i}\) and
+\(\mathcal W_c=\prod_{j\in J_c^\ell}W_{c,j}\), the declared monotone,
+unit-respecting map
+\(\Phi_c:\mathcal V_c\to\mathcal W_c\) has a proved relation
+\(\boldsymbol\ell_c^0\le_{\mathcal W_c}\Phi_c(\boldsymbol\eta_c)\).
+It is the typed bridge from source estimands to BSC loss coordinates.
+
+For every statistically evaluated source coordinate \(i\), the evidence
+record is
+\[
+\mathsf E_{c,i}
+=
+\left(
+\eta_{c,i},d_{c,i},\mathcal O_{c,i},\widehat\eta_{c,i},n_{c,i},
+\alpha_{c,i},[L^{\rm src}_{c,i},U^{\rm src}_{c,i}],
+\varepsilon_{c,i}^{\rm opt},\Psi_{c,i}
+\right).
+\]
+It names the estimand, metric or divergence, sampling or oracle model,
+estimator, sample count, coverage-failure probability, confidence or
+deterministic enclosure, optimization-gap certificate, and a proved proxy
+relationship \(\Psi_{c,i}\), or explicitly records that none is known.
+All records used together live on one declared joint observation-and-analysis
+space \((\Omega_c,\mathcal F_c,\Prob_c)\), with measurable random endpoints.
+The profile must justify
+\[
+\Prob_c\!\left\{
+ \eta_{c,i}\in[L^{\rm src}_{c,i},U^{\rm src}_{c,i}]
+ \ \text{for every }i\in I_c^\ell
+\right\}\ge 1-\alpha_c .
+\]
+Separate marginal coverage statements do not imply this display; a
+simultaneous procedure or the marginal guarantees
+\(\Prob_c\{\eta_{c,i}\notin[L^{\rm src}_{c,i},U^{\rm src}_{c,i}]\}
+\le\alpha_{c,i}\) together with
+\(\sum_i\alpha_{c,i}\le\alpha_c\) is required.  Data reuse, adaptive search,
+calibration, and dependence belong to the joint law.  Writing
+\[
+\boldsymbol U_c^{\rm src}
+=(U^{\rm src}_{c,i})_i,\qquad
+\boldsymbol U_c^0
+=\Phi_c(\boldsymbol U_c^{\rm src})
+=(U^0_{c,j})_j,
+\]
+monotonicity gives
+\(\boldsymbol\ell_c^0\le\Phi_c(\boldsymbol\eta_c)
+\le\boldsymbol U_c^0\) on this event.  Setting \(\alpha_{c,i}=0\)
+asserts probability-one coverage; determinism additionally requires
+pointwise deterministic endpoints and inequalities.
+
+The evidence identity is factored rather than represented by one opaque
+label:
+\[
+\iota
+=
+(\iota_{\mathrm{cand}},\iota_{\mathrm{data}},
+ \iota_{\mathrm{analysis}},\iota_{\mathrm{env}},
+ \iota_{\mathrm{contract}}).
+\]
+These factors bind, respectively, the candidate model, simulator, solver and
+surrogate; training, calibration, validation and reference data; estimator,
+optimization, analysis code and seeds; runtime, hardware, services and clock;
+and intended use, thresholds, metrics, gates and evaluation policy.  Each is
+the root of its claim-relevant dependency graph.  A relevant change creates
+a new evidence identity; a prose-only repository change need not.  Exact
+transfer requires equality of every factor on which the evidence depends.
+Otherwise, evidence transfers only through a theorem quantified over both
+identities or a freshly certified compatibility record
+\(\Gamma_{\iota\to\iota'}\).
+\end{definition}
+
+For deficiency, the comparison and implementation problems remain distinct.
+For a tested channel \(\widehat K\),
+\[
+\delta(\mathsf E_\ell,\mathsf E_m)
+\le e_{\ell m}(\widehat K).
+\]
+Thus a valid upper enclosure for \(e_{\ell m}(\widehat K)\) is also an upper
+enclosure for the ordinary deficiency, but it is not an estimate of the
+infimum and gives no lower bound.  Reporting an optimization gap requires a
+certificate such as
+\[
+L_\delta\le\delta(\mathsf E_\ell,\mathsf E_m)
+\le e_{\ell m}(\widehat K)\le U_e,
+\qquad U_e-L_\delta\le\omega^{\rm opt}.
+\]
+An RMSE, MMD, Wasserstein, or other proxy may replace neither total variation
+nor deficiency unless \(\Psi_{c,i}\) proves the needed direction and constants
+on the declared distribution class.  The sampling or oracle model is
+substantive: ordinary-sample estimation of high-dimensional total variation
+can have exponential sample complexity, while stronger conditional oracles
+define a different information model \citep{meel2025}.
+For example, \(P=\delta_0\) and \(Q=\delta_\epsilon\) on
+\(\mathbb R\), with \(\epsilon>0\), satisfy
+\[
+W_1(P,Q)=\epsilon
+\qquad\text{but}\qquad
+d_{\rm TV}(P,Q)=1.
+\]
+Thus an arbitrarily small Wasserstein value does not alone certify a small
+total-variation coordinate.  This also fails for deficiency: take
+\(\Theta=\{-1,+1\}\), \(P_{-1}=P_{+1}=\delta_0\), and
+\(Q_{\pm1}=\delta_{\pm\epsilon}\).  Then
+\(\sup_\theta W_1(P_\theta,Q_\theta)=\epsilon\), but every source channel
+produces one common law \(R\).  The total-variation triangle inequality gives
+\(\max_\theta\lVert R-Q_\theta\rVert_{\rm TV}\ge1/2\), and the equal mixture
+of the two target atoms attains equality.  Hence
+\(\delta(\mathsf E,\mathsf F)=1/2\).
+
+\begin{proposition}[Compatibility-bounded deployment]
+\label{prop:deploymentcompat}
+Fix a claim \(c\), a frozen evidence identity \(f\), and a deployment identity
+\(d\).  Suppose that, jointly for every required loss coordinate
+\(j\in J_c^\ell\),
+\[
+\ell_{c,j}^{0}\le U^0_{c,j},
+\qquad
+\ell_{c,j}^{1}\le\ell_{c,j}^{0}+\rho_{c,j},
+\qquad
+\rho_{c,j}
+=\rho_{c,j}^{\rm op}+\rho_{c,j}^{\rm ver}
++\rho_{c,j}^{\rm cpl},
+\]
+where all terms have the units of coordinate \(j\).  They bound,
+respectively, operating-region or distribution drift, version or pipeline
+drift, and coupling or clock exposure introduced by the declared change.
+Frozen-loss estimator uncertainty belongs inside \(U^0_{c,j}\) and is not
+counted again in \(\rho_{c,j}\).  Uncertainty in estimating deployment change
+is counted exactly once, either in the compatibility reserve on the joint
+event or as a separate source coordinate propagated into that reserve.  If
+\[
+U^0_{c,j}+\rho_{c,j}\le\tau_{c,j}
+\quad\text{for every }j\in J_c^\ell,
+\]
+then the deployment satisfies the loss-coordinate part of
+\cref{def:admissible}.  If it is also well formed, every hard gate is true,
+and readiness meets \(\operatorname{Req}_c\), it is admissible for \(c\).
+For a stochastic compatibility certificate the conclusion holds on its
+declared joint-coverage event, whose probability is at least its declared
+lower bound.
+\end{proposition}
+\begin{proof}
+On the certified event, for every \(j\in J_c^\ell\),
+\[
+\ell_{c,j}^{1}
+\le\ell_{c,j}^{0}+\rho_{c,j}
+\le U^0_{c,j}+\rho_{c,j}
+\le\tau_{c,j}.
+\]
+Every coordinate of the BSC loss vector is nonnegative, so on this event
+\[
+I^1_{c,j}=[0,U^0_{c,j}+\rho_{c,j}]
+\]
+is a proved deployment enclosure containing \(\ell^1_{c,j}\).  Thus the
+deployment is evaluated for \(c\).  Conjunction with well-formedness, the
+hard gates, and the readiness requirements is precisely claim-relative
+admissibility.  The joint-coverage statement controls the probability that
+all displayed inequalities hold simultaneously.  A probability-one
+conclusion obtained by setting
+\(\alpha_c=0\) is deterministic only when the enclosures and compatibility
+inequalities hold pointwise (in particular, on a singleton probability
+space).
+\end{proof}
+
+The certified remaining reserve is
+\[
+s_{c,j}=\tau_{c,j}-(U^0_{c,j}+\rho_{c,j}).
+\]
+Equality in the headroom test can establish admissibility under the complete
+frozen bounds, but \(s_{c,j}=0\) leaves no certified margin for any additional
+positive perturbation.  A new simulator, solver, dataset, analysis cycle,
+surrogate, or pipeline hash starts a new evaluation unless
+\(\Gamma_{f\to d}\) bounds its effect on every required coordinate.  A new
+hash establishes a new identity, not compatibility; an unchanged hash does
+not bound operating-region drift.
+
+\begin{corollary}[Coupled-surrogate prefix specialization]
+\label{cor:coupled-surrogate}
+For host \(h\), suppose a standalone surrogate has a certified one-step
+interface error at most \(\varepsilon_h\), and the coupled host error satisfies
+\[
+E_{k+1}^{(h)}\le g_hE_k^{(h)}+\varepsilon_h,
+\qquad E_0^{(h)}=0,\qquad g_h\ge0 .
+\]
+Then at every prefix \(n\),
+\[
+E_n^{(h)}
+\le\varepsilon_h\sum_{r=0}^{n-1}g_h^r
+=
+\begin{cases}
+\varepsilon_h(1-g_h^n)/(1-g_h),&g_h\ne1,\\
+n\varepsilon_h,&g_h=1.
+\end{cases}
+\]
+Consequently, two hosts can have the same standalone surrogate error and
+different loss-coordinate tolerance outcomes solely because their certified
+coupling gains or horizons differ.
+\end{corollary}
+\begin{proof}
+Apply the prefix error budget of \cref{thm:persistencebudget} with
+\(L_k=g_h\) and \(e_k=\varepsilon_h\), then sum the geometric series.  The
+coordinate statement follows by comparing each required prefix enclosure
+with its claim tolerance.  Full claim-relative admissibility still requires
+all other applicable coordinates, gates, and readiness obligations.
+\end{proof}
+
+\begin{remark}[Exact stable-host Fixture F10]
+\label{rem:stable-host-fixture}
+Fixture F10 makes the scalar recurrences in
+\cref{cor:coupled-surrogate} exact with the same standalone interface error
+\(\varepsilon=1/100\), horizon \(10\), and host-state tolerance
+\(\tau=1/20\).  Host \(A\) has \(g_A=1/2\), so its largest prefix error is
+\[
+E_{10}^{(A)}
+=\frac1{100}\sum_{r=0}^{9}\left(\frac12\right)^r
+=\frac{1023}{51200}<\frac1{20}.
+\]
+Host \(B\) has \(g_B=9/10\), so
+\[
+E_{10}^{(B)}
+=\frac1{100}\sum_{r=0}^{9}\left(\frac9{10}\right)^r
+=\frac{6513215599}{100000000000}>\frac1{20}.
+\]
+Both gains are strictly below one.  Host \(A\) remains within this tolerance
+at every prefix, whereas Host \(B\) first violates it at step \(7\), where its
+exact actual error is
+\(5217031/100000000>1/20\).  The retained deterministic CPython receipt uses
+exact rational arithmetic, binds claim identifier \(\mathrm{BSC\mbox{-}FIX\mbox{-}10}\),
+maps the candidate, data, analysis, environment, and contract identity
+factors (with data typed not applicable), and records the initial condition
+and both exact state trajectories.  The checker independently validates the
+arithmetic and byte-for-byte regeneration; the repository manifest
+externally binds the receipt hash, avoiding self-reference.  This is an exact
+execution receipt for the declared finite recurrence and one loss coordinate
+only, not full BSC admissibility, physical validation, a general surrogate
+guarantee, or evidence for a Riemann claim.
+\end{remark}
+
+\paragraph{Prior-art boundary.}
+The separation of verification, validation, uncertainty, intended use, and
+decision authority is established modeling-and-simulation practice, not a
+BSC invention.  NASA's active standard and companion handbook organize
+credibility across the model life cycle and use context
+\citep{nasa7009b}; contemporary SciML guidance separately treats problem
+definition, code and solution verification, calibration, validation,
+application domains, and continuous credibility \citep{jakeman2025}.
+Finite-horizon in-simulator surrogate bounds already expose coupling
+sensitivity and horizon dependence \citep{ellinas2026}, while ECMWF's
+reported response to an upstream IFS-cycle change provides an operational
+example of version-conditioned performance, reverification, and operational
+response
+\citep{ecmwf2026external}.  The BSC-specific contribution here is narrower:
+bind those established obligations to one claim's typed loss coordinates,
+joint coverage, factored evidence identity, compatibility record, readiness
+caps, and prefix-admissibility rule.  No solver improvement, surrogate
+accuracy gain, speedup, or empirical validation is claimed by this profile.
 
 \subsection{Corpus inheritance and local demotion}
 
@@ -2759,6 +3065,49 @@ receipt can promote this fixture's computational axis.  Guarded complex
 enclosures and a complete zero-count calculation belong to a separate
 application certificate.  Public raw data, pulse programs, calibration and an
 independent replication can promote the empirical axes.
+\end{fixture}
+
+\begin{fixture}[Executable coupled-surrogate host dependence]
+\label{fix:coupled-surrogate}
+\textbf{Inputs and types.}
+Use exact rational arithmetic, \(z_k=0\),
+\(\widehat z_k=1/100\), \(E_0^{(h)}=0\), horizon \(H=10\), tolerance
+\(\tau=1/20\), and
+\[
+E_{k+1}^{(h)}=a_hE_k^{(h)}+\frac1{100}.
+\]
+The two stable hosts have \(a_A=1/2\) and \(a_B=9/10\).
+\textbf{Claimed result.}
+Both hosts receive exactly the same standalone interface error, but
+\[
+E_{10}^{(A)}=\frac{1023}{51200}<\tau,
+\qquad
+E_{10}^{(B)}
+=\frac{6513215599}{100000000000}>\tau.
+\]
+Host \(A\) remains within tolerance at every prefix.  Host \(B\) first
+violates the tolerance at \(k=7\).
+\textbf{Mechanical test.}
+The retained receipt in
+\path{fixtures/F10_coupled_surrogate/} records every exact prefix.  Its
+fail-closed checker independently recomputes the recurrence, validates the
+schema and factored identities, executes the generator in an isolated
+temporary directory, and requires byte-identical regeneration.  Negative
+tests reject a stale host hash, an altered horizon with stale arithmetic, a
+false within-tolerance disposition for Host \(B\), a decimal substituted for
+an exact rational, and attempted receipt overwrite.
+\textbf{Expected certificate.}
+The universal statement that equal standalone surrogate error entails equal
+coupled-host tolerance disposition is false, with proved support and an exact
+CPython 3.12.13 receipt.  This one-coordinate result is not a certificate of
+full claim-relative admissibility.
+\textbf{Failure and demotion.}
+The fixture is code-verification evidence for this finite recurrence only.
+It supplies no empirical or physical validation and no guarantee for another
+host, operating domain, coupling, horizon, or simulator.
+\textbf{Evidence that changes the result.}
+A different host or horizon is a new claim identity and must be recomputed or
+covered by a certified compatibility map.
 \end{fixture}
 
 \section{Application boundaries: holography, QCD, primordial-field theory,
@@ -3526,7 +3875,10 @@ margins transfer zero counts and local multiplicity; exact finite-label
 decoding requires separated observation laws; alternating Dirichlet
 truncations instantiate these results with an explicit tail, pointwise
 exponent and rate split, ambient and fixed-line singular sets, contour count,
-and local root drift; and
+and local root drift; compatibility reserves admit a deployment only when its
+frozen enclosure plus certified change remains within every claim tolerance;
+coupled-surrogate error inherits host sensitivity and horizon rather than
+standalone accuracy alone; and
 topology alone does not select electric charge.  The fixtures make these
 statements vulnerable to exact tests.
 

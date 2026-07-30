@@ -40,6 +40,27 @@ This file records completed and planned work. Items under “Completed in
 Release v1.1.0 is dated 30 July 2026 and does not alter the immutable v1.0.1
 release or its version DOI.
 
+## Implemented in release v1.2.0
+
+- Added the simulation-evidence profile as a certificate refinement, not a
+  ninth morphism field.
+- Typed intended use, numeric loss coordinates, hard gates, statistical
+  estimators and oracle models, joint coverage, optimization gaps,
+  proxy-transfer relations, factored evidence identity, and compatibility
+  reserves.
+- Proved compatibility-bounded deployment admission and a coupled-surrogate
+  corollary of the existing finite-horizon prefix-error theorem.
+- Added executable Fixture F10 with exact rational prefixes, two stable hosts,
+  one common standalone error, one within-tolerance outcome, one actual
+  violation, a deterministic receipt, and fail-closed negative mutations.
+- Delimited the prior-art boundary: established V&V/UQ and surrogate-coupling
+  results are imported; the BSC contribution is typed integration, evidence
+  transfer, and local demotion.
+- Preserved all v1.1.0 zeta–DQPT and Riemann verdicts.
+
+Release v1.2.0 is dated 30 July 2026 and does not alter the immutable v1.1.0,
+v1.0.1, or v1.0.0 release records.
+
 ## Highest-leverage next work
 
 1. **External adversarial reading**
@@ -74,6 +95,9 @@ release or its version DOI.
      already proved variants. This is ledger claim BSC-QOP-03.
 
 6. **Domain-specific scientific tests**
+   - Apply the simulation-evidence profile to one frozen simulator deployment
+     with public inputs, a claim-local tolerance vector, and a compatibility
+     record; do not promote F10 beyond its exact recurrence.
    - Complete the zeta–DQPT pilot with inspectable data, a frozen fitting rule,
      calibration and uncertainty records, and a nearby invalid control.
    - Replay the empirical analysis and complexity accounting before raising

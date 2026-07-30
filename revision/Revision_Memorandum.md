@@ -3,12 +3,14 @@
 ## Purpose
 
 This memorandum records every material repair made while constructing and
-auditing *On Boundaries of Evidence*, through version 1.1.0. The latest
-published version is v1.1.0, dated 30 July 2026, with immutable GitHub release
-record `https://github.com/jkolantree/BSC/releases/tag/v1.1.0` and Zenodo
-concept DOI `10.5281/zenodo.21541160`. The immutable v1.0.1 version DOI remains
-`10.5281/zenodo.21541561`. This memorandum is separate from the manuscript so
-that the paper can stand as a coherent formal work while the source lineage
+auditing *On Boundaries of Evidence* through published version 1.2.0. The
+latest published version is v1.2.0, dated 30 July 2026, with immutable GitHub
+release record `https://github.com/jkolantree/BSC/releases/tag/v1.2.0` and
+Zenodo concept DOI `10.5281/zenodo.21541160`. A v1.2.0 version DOI assigned
+after deposit is recorded on the GitHub release page. The immutable v1.1.0
+version DOI is `10.5281/zenodo.21710743`; the immutable v1.0.1 version DOI
+remains `10.5281/zenodo.21541561`. This memorandum is separate from the manuscript
+so that the paper can stand as a coherent formal work while the source lineage
 remains inspectable. Repairs are classified as:
 
 - **adopted correction:** a later authoritative corpus source explicitly
@@ -1107,3 +1109,296 @@ promotion boundary. It is an unexecuted documentary fixture, not an execution
 of the application-level analytic theorems or an empirical receipt. Version
 1.1.0 was released on 30 July 2026 and does not modify the immutable v1.0.1
 release or its DOI.
+
+## 23. Version 1.2.0 simulation-evidence refinement
+
+### Architectural gap
+
+The released framework already separates proofs, execution receipts,
+provenance, typed loss coordinates, hard gates, and claim-relative
+admissibility. It did not yet provide one reusable record for evidence about a
+computational model or for transferring that evidence when a previously
+evaluated component is deployed inside a changed host. In particular, the
+shared word "simulation" could obscure three different constructions:
+
+1. statistical simulation of one experiment from another by a Markov kernel;
+2. numerical execution of a mathematical model; and
+3. deployment of a learned or reduced surrogate inside a computational host.
+
+The version 1.2.0 repair keeps these meanings distinct and adds no field to the
+eight-field BSC morphism record.
+
+### Claim-relative profile
+
+For a claim $c$, the released framework declares the intended-use record
+
+$$
+\mathcal U_c
+=
+(D_c,H_c,Q_c,\pi_c,\mathsf{BC}_c,\mathsf{Units}_c,\tau_c)
+$$
+
+and the simulation-evidence profile
+
+$$
+\mathsf{SEC}_{c,\iota}
+=
+\left(
+\mathcal U_c,
+I_c^\ell,
+J_c^\ell,
+J_c^g,
+\{\mathsf E_{c,i}\}_{i\in I_c^\ell},
+\{g_{c,k}\}_{k\in J_c^g},
+\Phi_c,
+\boldsymbol\rho_c,
+\mathsf{Prov}_{c,\iota}
+\right).
+$$
+
+The source index $I_c^\ell$ and target index $J_c^\ell$ are deliberately
+different. For $i\in I_c^\ell$, the evidence record is
+
+$$
+\mathsf E_{c,i}
+=
+\left(
+\eta_{c,i},
+d_{c,i},
+\mathcal O_{c,i},
+\widehat\eta_{c,i},
+n_{c,i},
+\alpha_{c,i},
+[L^{\mathrm{src}}_{c,i},U^{\mathrm{src}}_{c,i}],
+\varepsilon^{\mathrm{opt}}_{c,i},
+\Psi_{c,i}
+\right).
+$$
+
+Thus $\eta_{c,i}$ and
+$[L^{\mathrm{src}}_{c,i},U^{\mathrm{src}}_{c,i}]$ belong to a typed source
+evidence space. The applicable coordinates of the existing BSC loss vector
+are indexed by $j\in J_c^\ell$. They are connected only by a proved monotone,
+unit-respecting propagation relation
+
+$$
+\boldsymbol\ell_c^0
+\le_{\mathcal W_c}
+\Phi_c(\boldsymbol\eta_c).
+$$
+
+Writing
+
+$$
+\boldsymbol U_c^0
+=
+\Phi_c(\boldsymbol U_c^{\mathrm{src}})
+=
+(U^0_{c,j})_{j\in J_c^\ell}
+$$
+
+therefore produces frozen-state target-loss bounds; it does not relabel the
+source intervals as BSC losses. Numeric coordinates and Boolean hard gates
+remain noncompensating.
+
+All statistical records used together live on one declared joint
+observation-and-analysis probability space
+$(\Omega_c,\mathcal F_c,\mathbb P_c)$. Their source coverage event is
+
+$$
+\mathcal C_c^{\mathrm{src}}
+=
+\bigcap_{i\in I_c^\ell}
+\left\{
+\eta_{c,i}\in
+[L^{\mathrm{src}}_{c,i},U^{\mathrm{src}}_{c,i}]
+\right\}.
+$$
+
+A union-bound justification requires each marginal guarantee
+
+$$
+\mathbb P_c\!\left(
+\eta_{c,i}\notin
+[L^{\mathrm{src}}_{c,i},U^{\mathrm{src}}_{c,i}]
+\right)
+\le\alpha_{c,i}
+$$
+
+and $\sum_i\alpha_{c,i}\le\alpha_c$. Marginal interval labels without these
+hypotheses or another joint argument do not establish
+$\mathbb P_c(\mathcal C_c^{\mathrm{src}})\ge1-\alpha_c$. Data-dependent
+coordinate, threshold, proxy, or estimator selection must be included in the
+coverage analysis or frozen before evaluation.
+
+A proxy such as RMSE, Wasserstein distance, MMD, or a learned discriminator
+has authority for a target discrepancy only through a proved,
+hypothesis-checked transfer inequality. The two-point experiment makes the
+failure concrete. Let
+
+$$
+\Theta=\{-1,+1\},
+\qquad
+P_{-1}=P_{+1}=\delta_0,
+\qquad
+Q_{\pm1}=\delta_{\pm\epsilon},
+\quad\epsilon>0.
+$$
+
+Although
+$\sup_\theta W_1(P_\theta,Q_\theta)=\epsilon$, every channel applied to the
+source produces one common law $R$. The total-variation triangle inequality
+gives
+
+$$
+\max_{\theta\in\Theta}
+\lVert R-Q_\theta\rVert_{\mathrm{TV}}
+\ge\frac12.
+$$
+
+The mixture
+$R=(\delta_{-\epsilon}+\delta_{+\epsilon})/2$ attains the bound, so
+$\delta(\mathsf E,\mathsf F)=1/2$. Uniformly small corresponding-law
+Wasserstein error therefore does not imply small directed total-variation
+deficiency.
+
+The evidence identity is factored as
+
+$$
+\iota
+=
+(\iota_{\mathrm{cand}},
+  \iota_{\mathrm{data}},
+  \iota_{\mathrm{analysis}},
+  \iota_{\mathrm{env}},
+  \iota_{\mathrm{contract}}).
+$$
+
+Exact transfer requires equality of every factor on which the evidence
+depends. A changed identity does not make the new candidate false, but it
+blocks direct inheritance until theorem-class applicability or a certified
+compatibility morphism is supplied.
+
+### Compatibility-bounded deployment theorem
+
+The repair proves a claim-local admission rule. If, on a joint event
+$\mathcal C_c^{\mathrm{dep}}$ with
+$\mathbb P_c(\mathcal C_c^{\mathrm{dep}})\ge1-\alpha_c$,
+
+$$
+\ell^0_{c,j}\le U^0_{c,j},
+\qquad
+\ell^1_{c,j}\le\ell^0_{c,j}+\rho_{c,j},
+\qquad
+U^0_{c,j}+\rho_{c,j}\le\tau_{c,j}
+$$
+
+for every required coordinate, the frozen and deployment profiles are well
+formed, and every required deployment gate and readiness coordinate passes,
+then nonnegativity makes
+$[0,U^0_{c,j}+\rho_{c,j}]$ the proved deployment enclosure required for
+evaluated status, and the deployment is admissible for $c$ on that event.
+Setting $\alpha_c=0$ establishes probability-one admission only. A
+deterministic admission statement requires the enclosures and compatibility
+inequalities to hold pointwise, independently of
+$\omega\in\Omega_c$.
+
+The compatibility reserve $\rho_{c,j}$ is a proved or qualified enclosure of
+additional loss introduced by the declared change. It is not spare tolerance
+chosen by preference. Frozen uncertainty already included in $U^0_{c,j}$ is
+not counted again, and uncertainty in the deployment change is represented
+exactly once. The remaining slack
+
+$$
+s_{c,j}=\tau_{c,j}-(U^0_{c,j}+\rho_{c,j})
+$$
+
+distinguishes positive certified headroom, equality with no certified reserve,
+and failure to certify. A negative slack or an upper bound above tolerance is
+not by itself proof of an actual violation.
+
+### Coupled-surrogate prefix corollary
+
+For reference and surrogate-coupled host maps $\Phi_k$ and
+$\widehat\Phi_k$, suppose the trajectories remain in the certified domain and
+
+$$
+E_{k+1}\le L_kE_k+b_k.
+$$
+
+The existing BSC prefix theorem then gives
+
+$$
+E_n
+\le
+\left(\prod_{j=0}^{n-1}L_j\right)E_0
++
+\sum_{i=0}^{n-1}b_i\prod_{j=i+1}^{n-1}L_j.
+$$
+
+This isolates host amplification, horizon, and one-step injection. A
+standalone average error does not establish the reachable-domain bound $b_k$
+and therefore does not by itself certify the coupled host.
+
+### Executed exact fixture F10
+
+The version 1.2.0 fixture uses exact rational arithmetic, the common interface
+error $1/100$, horizon 10, and tolerance $1/20$ in two stable scalar hosts:
+
+| Host | Stable coefficient | Exact maximum error | Disposition |
+|---|---:|---:|---|
+| HOST-A | $a=1/2$ | $1023/51200$ | within tolerance |
+| HOST-B | $a=9/10$ | $6513215599/100000000000$ | tolerance violated first at step 7 |
+
+The retained deterministic receipt reports
+`host_relative_tolerance_disposition_confirmed`. It binds the fixture's finite
+recurrence claim; exact rational reference and surrogate component
+definitions; every exact reference and surrogate-coupled trajectory value;
+horizon, initial condition, and tolerance; generator, checker, schema, input,
+environment, and host hashes; runtime; and candidate, analysis, environment,
+and contract identity mappings. The data identity is explicitly typed not
+applicable for this data-free fixture. The manifest, rather than the receipt,
+binds the final receipt bytes so that the receipt does not require an
+impossible self-hash.
+
+The checker independently recomputes the trajectories, tolerance comparisons,
+factored identities, schema, and byte-identical regeneration. This refutes the
+universal claim that equal standalone surrogate error entails equal
+coupled-host tolerance disposition. It proves one numeric loss-coordinate
+disposition for the declared finite recurrence, not full BSC admissibility. It
+does not validate an external simulator, an operating region, a physical
+system, or any zeta–DQPT claim.
+
+### Prior-art and originality boundary
+
+The version 1.2.0 module treats the following as prior art rather than BSC
+discoveries:
+
+- [NASA-STD-7009B](https://standards.nasa.gov/standard/nasa/nasa-std-7009) and
+  [NASA-HDBK-7009B](https://standards.nasa.gov/standard/nasa/nasa-hdbk-7009)
+  for modeling-and-simulation credibility, acceptance, verification,
+  validation, uncertainty, intended use, and reuse;
+- [Jakeman, Barba, Martins, and O'Leary-Roseberry (2025)](https://arxiv.org/abs/2502.15496)
+  for scientific-machine-learning verification, validation, application
+  domains, uncertainty, provenance, and distribution shift;
+- [Ellinas, Chaudhuri, Vorwerk, and Chatzivasileiadis (2026)](https://arxiv.org/abs/2603.17836)
+  for finite-horizon error propagation of surrogate components inside host
+  dynamic simulators;
+- [ECMWF's 2026 operational account](https://www.ecmwf.int/en/about/media-centre/aifs-blog/2026/farewell-external-ai-models)
+  of upstream-system changes affecting external machine-learning workflows;
+  it motivates selective re-verification of claims affected by changed
+  dependencies, not automatic recertification of a workflow; and
+- [Meel, Kumar, and Pote (2025)](https://proceedings.mlr.press/v258/meel25a.html)
+  for finite-sample limits in high-dimensional distribution-distance
+  estimation.
+
+The narrow BSC addition is their integration with claim-local typed losses,
+noncompensating gates, factored evidence identity, compatibility reserves, and
+the existing admissibility and prefix-propagation calculus. The module does not
+claim a universal credibility scalar, universal validation procedure, optimal
+sample complexity, automatic cross-version transfer, or physical validation.
+Its transfer status is bounded by the declared claim, intended use, source and
+target coordinate types, identity factors, joint event, horizon, domain,
+gates, and tolerances.
+The Riemann-hypothesis and DQPT verdicts recorded in version 1.1.0 remain
+unchanged.

@@ -1,0 +1,158 @@
+{
+  "arithmetic_model": "fractions.Fraction exact rational arithmetic",
+  "claim": "the same exact standalone surrogate interface error stays within the declared host-state tolerance in HOST-A and produces an exact tolerance violation in HOST-B",
+  "claim_id": "BSC-FIX-10",
+  "claim_sha256": "725283f769f54ec6697f54906a589ac35fea4a2203e621b069df7f4f0087dc3a",
+  "command": "python3 fixtures/F10_coupled_surrogate/verify_coupled_surrogate.py build/F10_actual_receipt.json",
+  "environment": {
+    "arithmetic": "fractions.Fraction",
+    "implementation": "CPython",
+    "version": "3.12.13"
+  },
+  "evidence_identity": {
+    "analysis": {
+      "analysis_sha256": "bcb9dbdfa3ed78debbfa7adf30c69f78697874e194750bd0a4bb409c03b81525",
+      "checker_sha256": "0df0c2f2a53aafdfe80a31d64666e5b52353c9623de44864a72a584c6d62df69",
+      "generator_sha256": "fe5baf1e512dd0de1a612579110f91c73a3aaa44063bffbb2580dda4717197b1",
+      "schema_sha256": "8d56fc5762642643716c4ad77a9d22594a90e108e17e607314b6069a2c55632f",
+      "serialization": "UTF-8 JSON, two-space indentation, sorted keys, LF terminator"
+    },
+    "candidate": {
+      "candidate_sha256": "0b89dd71e049fd1d945089cadc3f9cc6e7669e3372d1e560c5654d4d01b90734",
+      "host_sha256": {
+        "HOST-A": "46ddd8fda18f19111c91a048cf067d982da49d87cd5aa3d2ca1adb7bd06e82a9",
+        "HOST-B": "7c179ef0fa9239832fd5a166e9de0ab76d52492adcd801d2570af3d74731e9ae"
+      }
+    },
+    "contract": {
+      "claim": "the same exact standalone surrogate interface error stays within the declared host-state tolerance in HOST-A and produces an exact tolerance violation in HOST-B",
+      "claim_id": "BSC-FIX-10",
+      "contract_sha256": "d75b189ffb518c645884914d163227938fb06b311f53f06ee927595bd59c0219",
+      "fixture_id": "F10-COUPLED-SURROGATE",
+      "input_sha256": "cb8ffa494ace2cc204d02f3060eaf04783abb89b0c66c161c42415b8538f9497"
+    },
+    "data": {
+      "data_sha256": "50efe462fccf1acf2728f41932ddd722b5a4d0c3c9148db96460dd0327f9e593",
+      "reason": "exact rational fixture; no training, calibration, validation, or empirical data",
+      "status": "not_applicable"
+    },
+    "environment": {
+      "environment_sha256": "4b6563ab78811d7c88283bbeabc3fbd11798772490b3863f47d5bb310c1e0a14"
+    }
+  },
+  "fixture_id": "F10-COUPLED-SURROGATE",
+  "hosts": {
+    "HOST-A": {
+      "a": "1/2",
+      "effective_gain": "1023/512",
+      "first_violation_step": null,
+      "host_id": "HOST-A",
+      "maximum_error": "1023/51200",
+      "prefix_errors": [
+        "1/100",
+        "3/200",
+        "7/400",
+        "3/160",
+        "31/1600",
+        "63/3200",
+        "127/6400",
+        "51/2560",
+        "511/25600",
+        "1023/51200"
+      ],
+      "reference_state_path": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "stable": true,
+      "surrogate_state_path": [
+        "0",
+        "1/100",
+        "3/200",
+        "7/400",
+        "3/160",
+        "31/1600",
+        "63/3200",
+        "127/6400",
+        "51/2560",
+        "511/25600",
+        "1023/51200"
+      ],
+      "tolerance_disposition": "within_tolerance",
+      "violation_basis": "none",
+      "within_tolerance": true
+    },
+    "HOST-B": {
+      "a": "9/10",
+      "effective_gain": "6513215599/1000000000",
+      "first_violation_step": 7,
+      "host_id": "HOST-B",
+      "maximum_error": "6513215599/100000000000",
+      "prefix_errors": [
+        "1/100",
+        "19/1000",
+        "271/10000",
+        "3439/100000",
+        "40951/1000000",
+        "468559/10000000",
+        "5217031/100000000",
+        "56953279/1000000000",
+        "612579511/10000000000",
+        "6513215599/100000000000"
+      ],
+      "reference_state_path": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "stable": true,
+      "surrogate_state_path": [
+        "0",
+        "1/100",
+        "19/1000",
+        "271/10000",
+        "3439/100000",
+        "40951/1000000",
+        "468559/10000000",
+        "5217031/100000000",
+        "56953279/1000000000",
+        "612579511/10000000000",
+        "6513215599/100000000000"
+      ],
+      "tolerance_disposition": "tolerance_violated",
+      "violation_basis": "exact_actual_error_above_tolerance",
+      "within_tolerance": false
+    }
+  },
+  "receipt_schema": "bsc-deterministic-receipt/4",
+  "result": "host_relative_tolerance_disposition_confirmed",
+  "self_hash_policy": "no recursive self-hash is embedded; bind verification_receipt.json externally in MANIFEST.sha256",
+  "specification": {
+    "horizon": 10,
+    "initial_error": "0",
+    "initial_reference_state": "0",
+    "initial_surrogate_state": "0",
+    "interface_error": "1/100",
+    "reference_z": "0",
+    "surrogate_zhat": "1/100",
+    "tolerance": "1/20"
+  },
+  "working_directory": "repository root"
+}

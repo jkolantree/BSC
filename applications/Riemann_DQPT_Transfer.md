@@ -7,8 +7,12 @@
   central manuscript, claim ledger, fixture index, and manifest, and published
   in the immutable
   [`v1.1.0` release](https://github.com/jkolantree/BSC/releases/tag/v1.1.0).
-  The Zenodo concept DOI is `10.5281/zenodo.21541160`; no version-specific DOI
-  is anticipated in these tagged bytes.
+  The Zenodo concept DOI is `10.5281/zenodo.21541160`; Zenodo subsequently
+  assigned v1.1.0 the version DOI `10.5281/zenodo.21710743`.
+- **Version 1.2.0 interaction:** version 1.2.0 adds the
+  [simulation-evidence profile](../framework/Simulation_Evidence_Profile.md).
+  It does not change any Riemann, zeta–DQPT, physical-origin, temperature, or
+  quantum-advantage verdict below.
 - **Execution:** unexecuted. No experiment, simulation, interval computation,
   zero census, complexity replay, or independent reproduction was performed
   for this record.
@@ -37,6 +41,15 @@ formula are derived here from those ingredients. No claim of historical
 priority is made for these consequences.
 
 In particular, the finite experiment does not prove the Riemann hypothesis.
+
+The simulation-evidence profile can type a future replay more sharply:
+high-zero numerical simulation needs a frozen estimator, oracle and error
+model; ideal-to-NMR transfer needs pulse, noise, calibration, readout, clock,
+and compatibility coordinates; an implementation-deficiency bound must
+distinguish one tested channel from the optimized deficiency; and any
+quantum-advantage claim needs a matched classical comparator identity. None of
+those evidence objects is present here, so every existing execution and
+promotion boundary remains unchanged.
 
 ## 1. What the primary paper establishes and reports
 
