@@ -1,0 +1,53 @@
+{
+  "format": "bsc-f09-expected-output-v1",
+  "fixture_id": "F09",
+  "claim_id": "BSC-ZDQ-01",
+  "execution_status": "unexecuted",
+  "receipt": null,
+  "exact_arithmetic": {
+    "Z_N": {
+      "numerator": 25,
+      "denominator": 12
+    },
+    "S_N": {
+      "numerator": 7,
+      "denominator": 12
+    },
+    "source_signed_sum": {
+      "numerator": -7,
+      "denominator": 12
+    },
+    "L_N": {
+      "numerator": -7,
+      "denominator": 25
+    }
+  },
+  "required_equalities": [
+    "source_signed_sum = -S_N",
+    "Z_N * L_N = source_signed_sum",
+    "Z_N * L_N = -S_N"
+  ],
+  "negative_control": {
+    "id": "flip_phase_n4",
+    "source_signed_sum": {
+      "numerator": -13,
+      "denominator": 12
+    },
+    "L_control": {
+      "numerator": -13,
+      "denominator": 25
+    },
+    "absolute_difference_from_expected_L_N": {
+      "numerator": 6,
+      "denominator": 25
+    },
+    "required_gate_result": "reject_as_BSC-ZDQ-01_implementation"
+  },
+  "scope_guards": {
+    "riemann_zero_test": false,
+    "dqpt_test": false,
+    "rh_verification": false,
+    "empirical_execution": false,
+    "computational_execution": false
+  }
+}

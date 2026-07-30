@@ -1,11 +1,11 @@
 PYTHON ?= python3
 LATEXMK ?= latexmk
-PAPER_PAGES ?= 38
+PAPER_PAGES ?= 50
 SYNOPSIS_PAGES ?= 2
-VERSION ?= 1.0.1
-SOURCE_DATE_EPOCH ?= 1784851200
+VERSION ?= 1.1.0-dev
+SOURCE_DATE_EPOCH ?= 1785369600
 
-.PHONY: paper synopsis fixture manifest markdown test verify build-check dist ci
+.PHONY: paper synopsis fixture manifest manifest-refresh markdown test verify build-check dist ci
 
 paper:
 	mkdir -p build/paper
@@ -20,6 +20,9 @@ fixture:
 
 manifest:
 	$(PYTHON) tools/verify_manifest.py
+
+manifest-refresh:
+	$(PYTHON) tools/update_manifest.py
 
 markdown:
 	$(PYTHON) tools/check_markdown_math.py

@@ -3,8 +3,10 @@
 ## Purpose
 
 This memorandum records every material repair made while constructing and
-auditing *On Boundaries of Evidence*, through version 1.0.1. It is separate
-from the manuscript so that the paper
+auditing *On Boundaries of Evidence*, through version 1.0.1, plus the bounded
+case-study integration in the unreleased 1.1.0-development draft. The latest
+published version remains v1.0.1, dated 24 July 2026, with version DOI
+`10.5281/zenodo.21541561`. It is separate from the manuscript so that the paper
 can stand as a coherent formal work while the source lineage remains
 inspectable. Repairs are classified as:
 
@@ -905,3 +907,202 @@ remain binding:
 
 These obligations are open by design. They are not defects that language can
 repair; they require constructions, proofs, experiments, or counterexamples.
+
+## 21. Normalized-scale framework promoted from the application
+
+The first zeta–DQPT pass placed normalization collapse, logarithmic-rate
+separation, singular loci, analytic zero transfer, and exact-zero
+confusability almost entirely inside one application. That was mathematically
+correct but architecturally incomplete: the reusable structure was not part
+of BSC's general scale and observation calculus.
+
+The 1.1.0-development framework now adds a certified scale-family record over
+existing finite BSC systems and a normalized profile
+
+$$
+L_N=\frac{A_N}{Z_N},\qquad
+\mathcal R_N=-\frac{\log|L_N|}{\lambda_N}.
+$$
+
+It proves:
+
+1. bounded-carrier collapse under a diverging nonzero normalizer, while
+   preserving each finite zero set;
+2. the exact additive decomposition of the limiting rate into normalizer and
+   carrier exponents;
+3. covariance of the rate under multiplicative normalization changes, with
+   singular-locus preservation only when the scaled logarithmic shift is
+   continuous;
+4. quantitative rate stability under amplitude perturbations relative to a
+   positive lower amplitude margin, and the failure of a uniform bound as the
+   margin closes;
+5. identification of rate discontinuities with the boundary of a closed
+   exceptional set under a continuous positive branch gap;
+6. the inclusion of sliced singularities in the inverse image of the ambient
+   singular set, with equality requiring visibility along the slice;
+7. contour-certified holomorphic zero-count transfer and
+   multiplicity-sensitive shrinking-circle transfer; and
+8. deterministic and finite-label stochastic exact-decision criteria,
+   including the binary total-variation testing bound.
+
+The framework also adds a DQPT interpretation certificate. A mathematical
+rate singularity is kept distinct from a finite-system Hamiltonian family,
+physical volume normalization, real-time slice, infinite-system construction,
+singularity class, estimator law, robustness statement, and implementation
+evidence.
+
+This is not a ninth morphism field and does not assert a universal phase
+transition. The general profile is a directed comparison family of already
+typed finite systems; it asserts no categorical identity or composition
+coherence without an additional hypothesis.
+The zeta functions, eta-tail constants, RH equivalence, and explicit root
+drift remain application-specific.
+
+The application also exposed a separate core obligation: the manuscript's
+stochastic morphism composition theorem does not establish closure of the
+full quantum variant. This is now recorded as open claim BSC-QOP-03; no
+application may inherit the missing theorem.
+
+## 22. Unreleased 1.1.0-development zeta–DQPT instance
+
+### Source state observed
+
+Wei et al., “The Riemann Hypothesis manifested in dynamical quantum phase
+transitions,” *Nature Communications* (2026),
+DOI `10.1038/s41467-026-74935-8`, was inspected as an unedited
+article-in-press version. The source constructs quantum systems whose declared
+finite observables encode alternating Dirichlet sums or a Riemann–Siegel-type
+expression. It reports a five-qubit NMR proof of principle, polynomial-fit
+locations where both measured coherence components approached zero and whose
+first five $\beta_{\mathrm{eff}}=1/2$ values agree
+with the first five known zero ordinates, and a
+$\beta_{\mathrm{eff}}=0.3$ control with no discernible zeros. It also states a
+resource comparison with direct Riemann–Siegel evaluation and uses
+physical-origin language.
+
+This memorandum records those statements as source claims. No raw-data replay,
+fit re-execution, calibration audit, hardware execution, simulation replay, or
+complexity benchmark has been performed in this repository.
+
+### Mathematical boundary retained
+
+For the declared finite logarithmic Hamiltonian, normalization, and alternating
+phase operation, the case study proves
+
+$$
+Z_N(\beta_{\mathrm{eff}})\mathcal L_N(\beta_{\mathrm{eff}},t)
+=-S_N(\beta_{\mathrm{eff}}+it).
+$$
+
+For $\sigma=\operatorname{Re}(s)>0$, Abel summation gives the explicit bound
+
+$$
+|\eta(s)-S_N(s)|
+\le N^{-\sigma}\left(1+\frac{|s|}{\sigma}\right).
+$$
+
+Thus $S_N\to\eta$ locally uniformly on the half-plane
+$\operatorname{Re}(s)>0$, where
+$\eta(s)=(1-2^{1-s})\zeta(s)$. For fixed $s=\beta+it$ with
+$0<\beta<1$, the Euler-transformed alternating tail and the asymptotic for
+$Z_N$ give
+
+$$
+-\frac{\log|\mathcal L_N(s)|}{\log N}
+\longrightarrow
+\begin{cases}
+1-\beta,&\eta(s)\ne0,\\
+1,&\eta(s)=0.
+\end{cases}
+$$
+
+The raw normalized coherence therefore tends to zero throughout the strip,
+while its fixed-$s$ decay exponent separates the zero and nonzero branches.
+For the source scaling $N=2^d$, this proves the pointwise rate formula
+
+$$
+\mathcal F_1(s)=
+\begin{cases}
+(1-\beta)\log 2,&\eta(s)\ne0,\\
+\log 2,&\eta(s)=0.
+\end{cases}
+$$
+
+The formula is pointwise at fixed $s$ and is not uniform near a zero; it is
+not by itself a finite-size experimental certificate.
+Its discontinuity set in the open strip is exactly the zeta-zero set: at a
+zero $s_0=\beta_0+it_0$, the rate lies $\beta_0\log 2$ above the limiting
+off-zero background. Thus confining every such discontinuity to
+$\operatorname{Re}(s)=1/2$ is equivalent to RH. This is a representation
+equivalence, not a proof or an unbounded census.
+For every fixed $0<\beta<1$, the real-time slice $t\mapsto\beta+it$ sees
+discontinuities exactly at the ordinates satisfying $\zeta(\beta+it)=0$,
+with jump $\beta\log 2$. This equality uses visibility of both rate branches
+along that slice; the general framework guarantees only inclusion without
+such a hypothesis.
+For a fixed zero $s_0=\beta_0+it_0$ of multiplicity $m$, Rouché's theorem on
+a shrinking circle further gives exactly $m$ roots of $S_N$ within
+$O(N^{-\beta_0/m})$. If the zero is simple, the unique root satisfies
+
+$$
+s_N-s_0=
+\frac{(-1)^N(N+1)^{-s_0}}{2\eta'(s_0)}
++O_{s_0}\!\left(N^{-2\beta_0}\log N+N^{-\beta_0-1}\right).
+$$
+
+This is fixed-zero localization with constants depending on the isolation
+neighborhood, not a uniform-in-height theorem or an experimental error bar.
+More strongly, let $\Gamma$ be a declared Jordan contour in the critical
+strip, and define
+
+$$
+\sigma_\Gamma=\min_\Gamma\operatorname{Re}(s),\qquad
+M_\Gamma=\max_\Gamma|s|,\qquad
+m_\Gamma=\min_\Gamma|\eta(s)|.
+$$
+
+If the whole-contour separation is certified and
+
+$$
+N^{-\sigma_\Gamma}
+\left(1+\frac{M_\Gamma}{\sigma_\Gamma}\right)<m_\Gamma,
+$$
+
+then Rouché's theorem gives the same enclosed zero count for $S_N$ and
+$\zeta$, with multiplicity. This is a bounded positive transfer, not a
+uniform growing-$|t|$ result. A plot, point grid, or fitted minimum does not
+supply the required contour lower enclosure, and no conclusion about the
+unnormalized finite coherence is inherited.
+
+### Demotions and unresolved bridges
+
+The finite identity is engineered into the state, Hamiltonian, and measured
+observable. It is a valid correspondence, but not independent evidence for
+RH. An exact-zero query does not descend through a finite-resolution
+observation class that contains both zero and nonzero amplitudes. A dynamical
+phase transition is a nonanalyticity of a certified limiting rate function,
+not merely a finite-size dip or fitted zero. Agreement with finitely many
+previously known zero ordinates cannot discharge the universal quantifier over
+all nontrivial zeros.
+
+The quantum-advantage claim remains conditional on the complete precision,
+state-preparation, success-probability, sampling, error-correction, input-size,
+and comparator model. The inspected source compares its stated $|t|$ scaling
+with direct Riemann–Siegel evaluation and also acknowledges faster classical
+methods. No end-to-end best-classical advantage is certified here.
+
+“Physical origin of RH” remains blocked until “origin” receives a typed causal
+or ontological criterion and an independent generative bridge. An engineered
+representation of $\zeta$ in observable dynamics does not by itself provide
+that bridge and does not prove RH. Likewise,
+$\beta_{\mathrm{eff}}$ is encoded in level populations. It is not the inverse
+of the reported $305\,\mathrm K$ laboratory temperature without a separately
+supplied energy-unit and calibration bridge.
+
+### Release and fixture status
+
+Development Fixture F9 records only the exact finite identity and the blocked
+promotion boundary. It is an unexecuted documentary fixture, not an execution
+of the application-level analytic theorems or an empirical receipt. The
+development state has no assigned release date or DOI and does not modify the
+immutable v1.0.1 release or its DOI.

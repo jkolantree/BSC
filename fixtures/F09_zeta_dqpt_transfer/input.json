@@ -1,0 +1,67 @@
+{
+  "format": "bsc-f09-input-v1",
+  "fixture_id": "F09",
+  "claim_id": "BSC-ZDQ-01",
+  "execution_status": "unexecuted",
+  "purpose": "exact_finite_identity_only",
+  "parameters": {
+    "N": 4,
+    "beta_eff": {
+      "numerator": 1,
+      "denominator": 1
+    },
+    "t": {
+      "numerator": 0,
+      "denominator": 1
+    }
+  },
+  "definitions": {
+    "energy": "H_N[n] = ln(n)",
+    "partition_term": "n^(-beta_eff)",
+    "S_N_definition": "S_N(s) = eta_N(s) = sum from n=1 to N of (-1)^(n-1) * n^(-s)",
+    "eta_phase": "(-1)^(n-1)",
+    "source_phase": "(-1)^n",
+    "coherence_identity": "L_N(beta_eff,t) = -S_N(beta_eff+i*t)/Z_N(beta_eff)"
+  },
+  "source_phase_by_n": [
+    {
+      "n": 1,
+      "phase": -1
+    },
+    {
+      "n": 2,
+      "phase": 1
+    },
+    {
+      "n": 3,
+      "phase": -1
+    },
+    {
+      "n": 4,
+      "phase": 1
+    }
+  ],
+  "negative_control": {
+    "id": "flip_phase_n4",
+    "description": "Flip only the n=4 source phase from +1 to -1.",
+    "source_phase_by_n": [
+      {
+        "n": 1,
+        "phase": -1
+      },
+      {
+        "n": 2,
+        "phase": 1
+      },
+      {
+        "n": 3,
+        "phase": -1
+      },
+      {
+        "n": 4,
+        "phase": -1
+      }
+    ],
+    "required_gate_result": "reject_as_BSC-ZDQ-01_implementation"
+  }
+}

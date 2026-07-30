@@ -1,5 +1,43 @@
 # Changelog
 
+## 1.1.0-dev - Unreleased
+
+The mathematical framework and its first zeta–DQPT instance are being
+extended:
+
+- added certified normalized-scale families that keep finite BSC systems,
+  ideal carriers, nonzero normalizers, reported observables, interscale
+  comparisons, and estimator laws separately typed;
+- proved normalization collapse, additive logarithmic-rate signatures,
+  normalization covariance, rate stability away from zero, exceptional-set
+  singular support, parameter-slice visibility, contour-certified zero
+  transfer, and local multiplicity transfer;
+- proved deterministic and stochastic exact-decision descent criteria,
+  including the binary total-variation testing lower bound;
+- added a DQPT interpretation certificate separating a mathematical
+  singularity from a physical infinite-system phase claim;
+- added exact, separate claim records for the finite engineered
+  alternating-sum identity, fixed-$s$ decay-exponent discriminator and its
+  pointwise and fixed-$\beta$ free-energy-rate and singularity-set
+  consequences,
+  multiplicity-dependent finite-root localization, and the
+  local-uniform/conditional-contour analytic transfer;
+- proved that an exact-zero query cannot descend through a finite-resolution
+  observation class containing both zero and nonzero amplitudes;
+- recorded the five-qubit NMR result as a single source-reported study without
+  claiming a local replay, replication, or exact-zero measurement;
+- added Fixture F9 as an unexecuted documentary and mathematical audit;
+- blocked promotion from finite agreement to thermodynamic exclusivity or the
+  universal Riemann Hypothesis;
+- kept the end-to-end quantum-advantage claim open and conditional on a full
+  cost model, comparator class, and benchmark; and
+- blocked independent “physical origin of RH” and unique-Kelvin-temperature
+  promotion until typed causal/ontological and energy-unit/calibration bridges
+  are supplied.
+
+This development state has no release date or DOI. The immutable v1.0.1
+release and DOI `10.5281/zenodo.21541561` remain unchanged.
+
 ## 1.0.1 — 2026-07-24
 
 Post-release correction and hardening:

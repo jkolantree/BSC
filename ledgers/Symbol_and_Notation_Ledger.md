@@ -1,6 +1,8 @@
 # Symbol and Notation Ledger
 
-This ledger is normative for *On Boundaries of Evidence*, version 1.0.1. A symbol has no
+This ledger is normative for the unreleased 1.1.0-development draft of
+*On Boundaries of Evidence*. The latest published version remains v1.0.1,
+dated 24 July 2026, with version DOI `10.5281/zenodo.21541561`. A symbol has no
 meaning outside the row or local declaration that types it. Local
 specializations are permitted only when their scope is explicit.
 
@@ -206,6 +208,46 @@ kept distinct from the extended eight-field record in the next section.
 | $T^{\mathrm{dyn}}_{ab}$ | nonnegative Wasserstein defect | Failure of a state scale map to intertwine source and target dynamics on a declared Polish target state space $(\bar X_b,d_b)$; all displayed and propagated laws must lie in $\mathcal P_p(\bar X_b)$. |
 | $\varepsilon$ | scale or sensor parameter | Units, limiting path, and order declared locally. |
 
+## Certified normalized-scale profiles
+
+These are reusable framework symbols. They do not add a ninth field to the
+BSC morphism record, and they do not construct an infinite-system limit.
+
+| Symbol | Type or codomain | Meaning and constraints |
+|---|---|---|
+| $\mathfrak A$ | directed comparison family of certified finite systems | Scale-family record $(I,P,\{\lambda_i,\mathsf S_i,\mathsf{Cert}_i,\mathfrak M_{ij},A_i,Z_i,L_i,\mathsf O_i\})$. It keeps ideal observables and estimator laws distinct and asserts no categorical identity or composition coherence without an additional hypothesis. |
+| $I,P$ | directed index and common topological parameter space | Every scale comparison and parameter slice must use these declared objects or an explicitly typed replacement. |
+| $\lambda_N$ | positive dimensionless gauge with $\lambda_N\to\infty$ | Denominator of logarithmic rates. Power-law scaling uses $\lambda_N=\log N$; physical volume or qubit normalizations must be stated separately. |
+| $A_N,Z_N,L_N$ | complex carrier, nonzero normalizer, and normalized observable | $L_N=A_N/Z_N$. A nonvanishing normalizer preserves finite zero sets but may collapse the raw limit or shift logarithmic rates. |
+| $\mathsf O_N$ | observation or estimator kernel | Report law for the ideal observable. It is not identified with the complex scalar $L_N$. |
+| $\gamma_N,\kappa_N,\mathcal R_N$ | real logarithmic profiles when finite | $\gamma_N=\log|Z_N|/\lambda_N$, $\kappa_N=-\log|A_N|/\lambda_N$, and $\mathcal R_N=-\log|L_N|/\lambda_N=\gamma_N+\kappa_N$. Exact zeros require an explicit extended-value convention. |
+| $\Sigma,\rho$ | closed exceptional set and branch-gap function | A limit $\mathcal R=\gamma+\rho\mathbf1_\Sigma$ has discontinuities on $\partial\Sigma$ under the stated continuity and positivity hypotheses, not automatically on every point of an arbitrary $\Sigma$. |
+| $\iota:Q\to P$ | continuous parameter slice | $\operatorname{Disc}(\mathcal R\circ\iota)\subseteq\iota^{-1}(\operatorname{Disc}\mathcal R)$. Equality requires visibility of the competing branches along the slice. |
+| $\Omega,m_\Omega,\varepsilon_N$ | Jordan domain, boundary margin, and uniform error | The certified zero-count condition is $\sup_{\partial\Omega}|A_N-A|\le\varepsilon_N<m_\Omega\le\inf_{\partial\Omega}|A|$. |
+| $q_\Sigma,d$ | finite-valued query and decoder | Exact stochastic decoding requires a measurable output partition supporting the corresponding laws; non-mutually-singular different-label laws block exact decoding. |
+
+## Engineered zeta–DQPT case-study notation
+
+These symbols are local to the unreleased 1.1.0-development case study. They do not
+redefine the global BSC system or morphism records.
+
+| Symbol | Type or codomain | Meaning and constraints |
+|---|---|---|
+| $s=\beta_{\mathrm{eff}}+it$ | complex parameter | $\beta_{\mathrm{eff}}=\operatorname{Re}(s)$ and $t=\operatorname{Im}(s)$ in the zeta case study. The experiment encodes $\beta_{\mathrm{eff}}$ in state populations; it is not the inverse of the $305\,\mathrm K$ laboratory temperature without a separately supplied energy-unit and calibration bridge. |
+| $N,d$ | positive integers | Finite truncation/engineered dimension and qubit count, with $N=2^d$ for the source's rate normalization. Calling $N\to\infty$ a thermodynamic limit requires the declared embedding, normalization, and observable limit; finite $N$ is not a phase-transition singularity. |
+| $H_{0,N}$ | self-adjoint operator on the declared $N$-level space | Logarithmic Hamiltonian $\sum_{n=1}^{N}\log n\,|n\rangle\langle n|$ used in the engineered correspondence. |
+| $Z_N(\beta_{\mathrm{eff}})$ | positive scalar | Finite normalization $\sum_{n=1}^{N}n^{-\beta_{\mathrm{eff}}}$. It is retained explicitly when comparing normalized coherence with an unnormalized Dirichlet sum. |
+| $S_N(s)$ | complex scalar | Finite alternating Dirichlet sum $\sum_{n=1}^{N}(-1)^{n+1}n^{-s}$. Its fixed-$s$ limit is distinct from a uniform limit over growing time windows. |
+| $\eta(s)$ | holomorphic function on $\operatorname{Re}(s)>0$ | Dirichlet eta function $\sum_{n=1}^{\infty}(-1)^{n+1}n^{-s}=(1-2^{1-s})\zeta(s)$. The factor relation at $s=1$ is interpreted through its removable value. |
+| $\mathcal L_N(\beta_{\mathrm{eff}},t)$ | complex observable expectation | Finite average accumulated phase factor, normalized so that $Z_N(\beta_{\mathrm{eff}})\mathcal L_N(\beta_{\mathrm{eff}},t)=-S_N(\beta_{\mathrm{eff}}+it)$ for the declared phase operation. A small measured modulus is not an exact zero without a zero-isolation certificate. |
+| $\alpha_N(s)$ | nonnegative finite-size exponent when $\mathcal L_N(s)\ne0$ | Local zeta-case notation $-\log\lvert\mathcal L_N(s)\rvert/\log N$. For fixed $0<\operatorname{Re}(s)<1$, its proved limit is $1-\operatorname{Re}(s)$ off the eta zero set and $1$ on it. This fixed-$s$ discriminator is not a uniform growing-time or empirical DQPT certificate. |
+| $s_0,\beta_0,m,a_m,s_N$ | local zero data | $s_0=\beta_0+it_0$ is a fixed isolated eta/zeta zero in the open strip, $m$ its multiplicity, and $a_m=\eta^{(m)}(s_0)/m!$. The $m$ nearby zeros of $S_N$ localize at scale $N^{-\beta_0/m}$; for $m=1$, $s_N$ denotes the unique simple descendant root. Constants are not uniform over zero height, multiplicity, or the strip boundary. |
+| $K,\sigma_K,M_K$ | compact set and nonnegative bounds | For compact $K\subset\{\operatorname{Re}(s)>0\}$, $\sigma_K=\min_K\operatorname{Re}(s)$ and $M_K=\max_K\lvert s\rvert$ type the local-uniform tail bound. They do not provide a uniform large-$\lvert t\rvert$ result. |
+| $\Gamma,D,\sigma_\Gamma,M_\Gamma,m_\Gamma$ | contour, interior, and positive bounds | $\Gamma$ is a declared positively oriented Jordan contour with interior $D$ in the critical strip; $m_\Gamma=\min_\Gamma|\eta|$ must have a certified positive lower enclosure. The Rouché zero-count transfer requires $N^{-\sigma_\Gamma}(1+M_\Gamma/\sigma_\Gamma)<m_\Gamma$ on the whole contour. |
+| $\mathcal G_N(\beta_{\mathrm{eff}},t)$ | complex observable expectation | Finite generalized Loschmidt amplitude in the second engineered construction. Any zeta or DQPT promotion must state the coupled $N,t$ limit and its error bound. |
+| $\mathcal F_{1,N}(s),\mathcal F_1(s)$ | finite-size rate and pointwise limit when defined | For $N=2^d$, $\mathcal F_{1,N}=-d^{-1}\log\lvert\mathcal L_N\rvert=(\log 2)\alpha_N$. On the open critical strip, the proved pointwise limit is $(1-\operatorname{Re}(s))\log 2$ off the zeta-zero set and $\log 2$ on it, so its discontinuity set is exactly that zero set. The jump at $s_0$ is $\operatorname{Re}(s_0)\log 2$. This does not supply uniform near-zero convergence or a finite-size empirical singularity. |
+| $\iota_\beta(t)=\beta+it$ | continuous real-time slice into the critical strip | The sliced rate is discontinuous exactly at ordinates $t$ for which $\zeta(\beta+it)=0$, with jump $\beta\log 2$. This is an ideal pointwise-limit statement, not an experimental singularity certificate. |
+
 ## Sheaf, interface, and symmetry notation
 
 | Symbol | Type or codomain | Meaning and constraints |
@@ -262,3 +304,5 @@ kept distinct from the extended eight-field record in the next section.
 | residual space vs joint configuration space | $Z_\ell$ carries equation residuals; $\mathsf Z_\ell^{\mathrm{sc}}=\bar X_\ell\times U_\ell\times C_\ell$ carries completed joint states |
 | Volume II morphism vs extended morphism | $\mu^{\mathrm{II}}$ retains $(R_X,R_Y,R_U,R_C,\alpha_H,\alpha_K,q_{ab},b_\mu)$; $\mathfrak M_{\ell\to m}$ is the later eight-field typed extension |
 | cohomology vs path defect | “Cohomology” appears only with a coefficient complex and differential; otherwise use naturality/path defect. |
+| persistence exit bound vs zeta parameter | $\beta_i$ is a one-step exit-event bound; $\beta$ or $\beta_{\mathrm{eff}}$ is the locally declared real part/effective inverse-temperature parameter in the zeta–DQPT case study. |
+| interface apex vs zeta truncation | $N$ is a structured-cospan apex inside §12.1 and a positive truncation integer only inside the zeta–DQPT case study. |
