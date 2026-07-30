@@ -1,15 +1,17 @@
-# Reproducing release 1.1.0
+# Reproducing release 1.2.0
 
 ## Scope
 
-The manuscript and synopsis can be rebuilt from their shipped LaTeX sources.
-Fixture F8 can be reproduced byte-for-byte in the pinned Python environment.
-Fixture F9 is a mathematical and documentary case study and has no execution
-receipt. The immutable released version 1.0.1 remains available at DOI
-`10.5281/zenodo.21541561`; version 1.1.0 does not claim that prior DOI. The
-release record is `https://github.com/jkolantree/BSC/releases/tag/v1.1.0`, and
-the Zenodo concept DOI for the deposited version family is
-`10.5281/zenodo.21541160`.
+The manuscript and synopsis can be rebuilt from their shipped
+LaTeX sources. Fixtures F8 and F10 can be reproduced byte-for-byte in the
+pinned Python environment. Fixture F9 is a mathematical and documentary case
+study and has no execution receipt. The release record is
+`https://github.com/jkolantree/BSC/releases/tag/v1.2.0`. The Zenodo concept DOI
+for the deposited version family is `10.5281/zenodo.21541160`; a
+version-specific DOI assigned after deposit is recorded on the GitHub release
+page rather than anticipated in these bytes. Immutable v1.1.0 remains
+available at DOI `10.5281/zenodo.21710743`, and immutable v1.0.1 remains
+available at DOI `10.5281/zenodo.21541561`.
 Fresh PDF builds are not claimed to be byte-identical because PDF timestamps
 and trailer identifiers may vary. Reproduction of the paper means matching
 content, pagination, references, and visual layout.
@@ -22,7 +24,7 @@ content, pagination, references, and visual layout.
 - BibTeX 0.99d
 - CPython 3.12.13
 
-## Release render
+## Published v1.1.0 render
 
 The tracked PDFs in this release were compiled and
 visually inspected with Tectonic 0.16.9. The official Windows MSVC archive had
@@ -39,6 +41,31 @@ and produced a 50-page paper and a two-page synopsis:
 This independent render check does not replace the canonical `make ci` release
 gate above. GitHub Actions runs that gate for pull requests, `main`, and
 version tags.
+
+These hashes describe the immutable v1.1.0 release, not the current v1.2.0
+release PDFs.
+
+## Release v1.2.0 render
+
+The tracked release PDFs were rebuilt after the source changes and are
+recorded below. Their hashes and page counts are part of the v1.2.0 release
+verification.
+
+- renderer: Tectonic 0.16.9 using its cached dependency bundle;
+- paper: 56 pages, SHA-256
+  `106631826fc417549d68927418759b856e5610c7c0c27ab53c33665994a60b8c`;
+- synopsis: two pages, SHA-256
+  `1900a525c66e92cf925de142ed2f7f11447b7af13a36298829d5156ff8965b5c`;
+- build logs: no unresolved citations or references, missing glyphs,
+  overfull/underfull boxes, package/class/font warnings, or fatal errors;
+- visual inspection: title, simulation-evidence definitions and theorem,
+  F10, final references, and both synopsis pages checked without clipping or
+  overlap.
+
+Accessibility limitation: both PDFs report `Tagged: no`. The inspected paper
+fonts embed ToUnicode maps except CMSY10 and CMEX10, so mathematical-symbol
+extraction remains tool-dependent even though ordinary text extraction is
+available. No tagged-PDF or universal screen-reader claim is made.
 
 ## Refresh and verify the release tree
 
@@ -58,22 +85,24 @@ The updater uses the same inventory rules as the verifier. The complete-set
 gate rejects missing, extra, duplicate, unsafe, unnormalized, symlinked,
 special, and hash-mismatched payload paths. The manifest omits itself.
 
-## Verify the retained executable Fixture F8
+## Verify the retained executable fixtures
 
 ```bash
 python3 fixtures/F08_sqrt_square_sign/check_fixture.py
+python3 fixtures/F10_coupled_surrogate/check_fixture.py
 ```
 
 Expected terminal line:
 
 ```text
 F8-SQRT-SQUARE-SIGN: PASS
+F10-COUPLED-SURROGATE: PASS
 ```
 
-The check parses and validates the shipped JSON Schema, verifies the claim,
-schema, and script hashes, independently recomputes the exact integer
-arithmetic, refuses to overwrite the retained receipt, runs the generator in
-an isolated location, and requires byte-identical output.
+Each check parses and validates its shipped JSON Schema, verifies bound
+identities, independently recomputes the exact mathematics, refuses to
+overwrite the retained receipt, runs the generator in an isolated location,
+and requires byte-identical output.
 
 ## Run the release-gate tests
 
@@ -81,8 +110,11 @@ an isolated location, and requires byte-identical output.
 python3 -m unittest discover -s tests -v
 ```
 
-The suite retains one schema-invalid mutant and one false-arithmetic mutant.
-Both must fail. It also checks that F9 remains documentary and unexecuted,
+The suite retains one schema-invalid F8 mutant and one false-arithmetic F8
+mutant. It also rejects F10 mutants with stale host identity, altered horizon,
+false tolerance disposition, decimal substitution for an exact rational, and
+attempted receipt overwrite. All must fail. It checks that F9 remains documentary and
+unexecuted,
 that the application and central ledger expose the same claim-local
 BSC-ZDQ identifier roster, that the primary citation and core scope-boundary
 language remain present, and that no F9 receipt is shipped. These are
@@ -106,7 +138,7 @@ build/paper/On_Boundaries_of_Evidence.pdf
 ```
 
 The final LaTeX log must contain no unresolved citations or references, missing
-glyphs, overfull boxes, or fatal errors. The expected page count is 50.
+glyphs, overfull boxes, or fatal errors. The expected page count is 56.
 
 ## Build the synopsis
 
@@ -128,7 +160,7 @@ The expected page count is 2.
 make verify
 ```
 
-This checks the complete release inventory, retained executable fixture,
+This checks the complete release inventory, both retained executable fixtures,
 negative regressions, and build-verifier tests. Building the PDFs is a separate
 target because a full TeX installation is larger than the minimal verification
 environment.
@@ -139,7 +171,7 @@ For the full gate, including both document builds, run:
 make ci
 ```
 
-The build gate requires a 50-page paper and two-page synopsis, one final PDF
+The build gate requires a 56-page paper and two-page synopsis, one final PDF
 record per log, and no unresolved reference, citation, font, glyph, box, or
 fatal TeX warning.
 
@@ -149,7 +181,7 @@ With a verified manifest, build the complete-release and manuscript-source
 archives:
 
 ```bash
-make dist VERSION=1.1.0 SOURCE_DATE_EPOCH=1785369600
+make dist VERSION=1.2.0 SOURCE_DATE_EPOCH=1785369600
 ```
 
 Run the archive builder again in a separate empty output directory and require

@@ -4,9 +4,9 @@
 
 **J. Tree · Independent researcher**
 
-**Repository state:** version 1.1.0 release, dated 30 July 2026.
+**Repository state:** version 1.2.0 release, dated 30 July 2026.
 
-**Version record:** https://github.com/jkolantree/BSC/releases/tag/v1.1.0
+**Version record:** https://github.com/jkolantree/BSC/releases/tag/v1.2.0
 
 **Zenodo concept DOI:** https://doi.org/10.5281/zenodo.21541160
 
@@ -111,6 +111,33 @@ organizing principle and a target-relative definition. Its promotion to a
 universal physical law remains conjectural, empirically untested, and
 computationally unexecuted.
 
+The version 1.2.0 simulation-evidence profile refines the existing certificate
+rather than adding a morphism field. For each claim and evidence identity it
+fixes intended use, typed numeric losses, hard gates, statistical estimators
+and oracle models on a joint probability space, joint coverage, optimization
+gaps, proxy-transfer relations, a monotone unit-respecting map from source
+estimands to target BSC losses, compatibility reserves, and factored
+provenance. Statistical simulation between experiments, computational
+simulation, and surrogate deployment remain distinct.
+
+If the propagated frozen loss obeys $\ell^0_{c,j}\le U^0_{c,j}$ and a certified change
+obeys $\ell^{\rm dep}_{c,j}\le\ell^0_{c,j}+\rho_{c,j}$, deployment is admitted
+only when $U^0_{c,j}+\rho_{c,j}\le\tau_{c,j}$ for every required coordinate,
+all hard gates are true, and readiness is adequate. Estimator uncertainty
+already inside $U^0_{c,j}$ is not counted again; deployment-change uncertainty
+is counted once. The conclusion holds with at least the declared joint
+coverage. Failure probability zero is not determinism without pointwise
+bounds. Zero slack has no certified robustness.
+
+The coupled-surrogate corollary specializes the prefix-error theorem:
+standalone component error propagates through host sensitivity and horizon.
+Exact executable Fixture F10 gives both stable hosts the same interface error
+$1/100$ for ten steps. Host A ($a=1/2$) stays within $1/20$, while Host B
+($a=9/10$) first violates it at step 7. This is code verification of one
+finite recurrence, not empirical or physical validation. Established V&V/UQ
+and finite-horizon coupling work remain prior art; BSC claims only the typed
+integration, evidence-transfer rule, and local demotion behavior.
+
 Version 1.1.0 adds certified normalized-scale
 profiles $L_N=A_N/Z_N$. A diverging normalizer can collapse the raw limit
 without creating finite zeros, while logarithmic rates split exactly into
@@ -150,8 +177,8 @@ temperature, or an independent physical origin.
 | Layer | Content | Status in this paper |
 |---|---|---|
 | Established imports | Markov kernels and operational quotients; Blackwell–Le Cam comparison; boundary trace and Calderón-type response; Koopman operators and stated learnability limits; periodic homogenization; sheaf descent; structured cospans; non-invertible defects; proof checking | Imported under their published or preprint hypotheses. These ingredients are not claimed as new BSC discoveries. |
-| Paper-level consequences | Quotient and exact-decision descent; repaired restricted-pullback composition; paired state–observable probability preservation; defect, deficiency, and deterministic residual propagation; normalized-scale rate decomposition and covariance; singular-set and slice visibility; analytic zero and multiplicity transfer; the zeta-specific alternating-tail bound, pointwise exponent/rate split, ambient and fixed-$\beta$ singular sets, bounded contour count, and local root drift; persistence certification; generic decorated-cospan composition; readiness-cap propagation; the block from winding to physical charge | Proved locally under the manuscript's stated assumptions. The canonical BSC decoration functor and full quantum-morphism composition remain open. No empirical status is inherited. |
-| Reference fixtures | Nine release examples covering winding, inverse ambiguity, directed deficiency, Koopman pollution, quantum-reference-frame descent, sheaf obstruction, off-shell residual, exact counterexample retention, and zeta–DQPT scope separation | Fixtures 1–7 and 9 have exact mathematical derivations but no separate execution receipts. Fixture 8 has a deterministic CPython receipt. The immutable v1.0.1 release contains Fixtures 1–8. |
+| Paper-level consequences | Quotient and exact-decision descent; repaired restricted-pullback composition; paired state–observable probability preservation; defect, deficiency, and deterministic residual propagation; simulation-evidence typing, compatibility-bounded deployment, and coupled-surrogate prefix propagation; normalized-scale rate decomposition and covariance; singular-set and slice visibility; analytic zero and multiplicity transfer; the zeta-specific alternating-tail bound, pointwise exponent/rate split, ambient and fixed-$\beta$ singular sets, bounded contour count, and local root drift; persistence certification; generic decorated-cospan composition; readiness-cap propagation; the block from winding to physical charge | Proved locally under the manuscript's stated assumptions. The canonical BSC decoration functor and full quantum-morphism composition remain open. No empirical status is inherited. |
+| Reference fixtures | Ten examples covering winding, inverse ambiguity, directed deficiency, Koopman pollution, quantum-reference-frame descent, sheaf obstruction, off-shell residual, exact counterexample retention, zeta–DQPT scope separation, and stable-host surrogate dependence | Fixtures 1–7 and 9 have exact mathematical derivations but no separate execution receipts. Fixtures 8 and 10 have deterministic CPython receipts. Immutable v1.1.0 contains Fixtures 1–9; immutable v1.0.1 contains Fixtures 1–8. |
 | Open status | Universal persistence, generic empirical validation, nonlinear stochastic residual composition, full quantum-morphism composition (BSC-QOP-03), instrument-uncertain reconstruction, QRF quotient characterization, learnability-aware recurrence, physical charge bridges, end-to-end zeta-algorithm advantage, temperature/origin bridges, and a machine-checked BSC kernel | Conjectural, untested, unexecuted, blocked, or open as individually recorded. |
 
 The fixtures (§16) compute a torus winding class $(2,-3)$ while
@@ -165,11 +192,14 @@ transformation does not descend through the stated reduced-system quotient;
 give locally nonempty
 parity constraints with no global section; detect the nonzero residual $m^2c$
 of an off-shell field shift; and retain a deterministic receipt for the
-counterexample $x=-1$ to $\sqrt{x^2}=x$. Development Fixture 9 retains only
+counterexample $x=-1$ to $\sqrt{x^2}=x$. Fixture 9 retains only
 the finite zeta–coherence identity while blocking unsupported promotion from
 the unexecuted fixture to the application-level analytic transfer, RH, a
 limiting DQPT, broad quantum advantage, unique Kelvin temperature, or
-independent physical origin.
+independent physical origin. Fixture 10 retains exact prefix trajectories for
+equal standalone surrogate error in two stable hosts and demonstrates
+different host-relative tolerance dispositions for one loss coordinate,
+without promoting the recurrence to full admissibility or physical validation.
 
 The paper also makes physical promotion deliberately expensive. Winding and
 physical charge are different typed objects (§13, p. 21). A charge claim needs

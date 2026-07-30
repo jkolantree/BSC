@@ -23,7 +23,11 @@ endorsed this work. The exact boundary between symbolic derivation, source
 verification, computation, and open obligation is recorded in the
 [claim-status ledger](ledgers/Claim_Status_Ledger.md).
 
-Only Fixture F8 presently has a retained execution receipt. The remaining
-eight fixtures—F1–F7 and F9—are mathematical derivations in the manuscript and
-are computationally unexecuted unless and until separate executable artifacts
-and receipts are added.
+In version 1.2.0, Fixtures F8 and F10 have retained
+execution receipts. F10 verifies only its declared exact finite recurrence;
+its result is one loss-coordinate tolerance disposition, not full BSC
+admissibility or empirical or physical validation of a surrogate model. The
+remaining eight fixtures—F1–F7 and F9—are mathematical derivations in the
+manuscript and are computationally unexecuted unless and until separate
+executable artifacts and receipts are added. Immutable v1.1.0 contains only
+the F8 executable receipt.

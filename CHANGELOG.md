@@ -1,5 +1,43 @@
 # Changelog
 
+## 1.2.0 — 2026-07-30
+
+The mathematical framework gains a simulation-evidence layer without changing
+the eight-field BSC morphism:
+
+- defined the claim-relative simulation-evidence profile
+  $\mathsf{SEC}_{c,\iota}$ with intended use, typed numeric coordinates, hard
+  gates, evidence records, propagation maps, compatibility reserves, and
+  factored provenance;
+- distinguished statistical simulation, computational simulation, and
+  surrogate deployment;
+- required estimator, sampling or oracle model, sample count, joint coverage,
+  optimization gap, and proved proxy transfer for statistical evidence;
+- proved compatibility-bounded deployment admission and made zero remaining
+  reserve distinct from robust headroom;
+- specialized the existing prefix-error theorem to coupled surrogates while
+  preserving the boundary between standalone accuracy and host behavior;
+- added exact executable Fixture F10, in which the same $1/100$ interface
+  error remains within tolerance in one stable host and first violates
+  tolerance at step 7 in another stable host;
+- added a retained deterministic CPython 3.12.13 receipt, independent checker,
+  parsed schema, factored hashes, byte-reproduction gate, and negative
+  mappings for the five evidence-identity factors, exact state trajectories,
+  and negative mutations for stale host identity, altered horizon, false
+  tolerance disposition, attempted overwrite, and decimal-for-rational
+  regression;
+- recorded NASA modeling-and-simulation guidance, contemporary SciML V&V,
+  finite-horizon surrogate-coupling work, ECMWF's version-conditioned
+  operational example, and statistical-distance sample-complexity results as
+  prior art rather than BSC inventions; and
+- preserved every v1.1.0 Riemann/DQPT mathematical and physical verdict.
+
+Published at GitHub tag `v1.2.0`. The Zenodo concept DOI
+`10.5281/zenodo.21541160` identifies the deposited version family; any
+version-specific DOI assigned after deposit is recorded on the GitHub release
+page rather than anticipated in these tagged bytes. The immutable v1.1.0 tag
+and version DOI `10.5281/zenodo.21710743` remain unchanged.
+
 ## 1.1.0 — 2026-07-30
 
 The mathematical framework and its first zeta–DQPT instance were extended:
