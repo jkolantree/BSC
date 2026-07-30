@@ -31,7 +31,7 @@ and produced a 50-page paper and a two-page synopsis:
 - paper SHA-256:
   `6a836cdce746cf24a4bcdcabc58f6139db6cd92f430ba5a3b9fb0f6395e167e7`;
 - synopsis SHA-256:
-  `8337a9d3097f357cd3cd61bd23f1075cc2af8d0fe46ecfd45d8c5933f3cd330e`.
+  `ad17f2a4ca23e5f70a807d67c1661bf8d20229909af4324975dd8eb85390ed26`.
 
 This is a development render check, not a substitute for the canonical
 `make ci` release gate above. Before any promotion, rebuild with the canonical
