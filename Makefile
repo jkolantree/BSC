@@ -1,11 +1,12 @@
 PYTHON ?= python3
 LATEXMK ?= latexmk
-PAPER_PAGES ?= 71
+PAPER_PAGES ?= 75
 SYNOPSIS_PAGES ?= 2
-VERSION ?= 1.3.0
-SOURCE_DATE_EPOCH ?= 1785369600
+VERSION ?= 1.4.0
+SOURCE_DATE_EPOCH ?= 1785456000
+export SOURCE_DATE_EPOCH
 
-.PHONY: paper synopsis fixture manifest manifest-refresh markdown test verify build-check dist ci
+.PHONY: paper synopsis fixture fixture-full manifest manifest-refresh markdown test verify build-check dist ci
 
 paper:
 	mkdir -p build/paper
@@ -18,6 +19,10 @@ synopsis:
 fixture:
 	$(PYTHON) fixtures/F08_sqrt_square_sign/check_fixture.py
 	$(PYTHON) fixtures/F10_coupled_surrogate/check_fixture.py
+	$(PYTHON) fixtures/F11_collatz_recursive_sieve/check_fixture.py
+
+fixture-full: fixture
+	$(PYTHON) fixtures/F11_collatz_recursive_sieve/check_fixture.py --full-scan
 
 manifest:
 	$(PYTHON) tools/verify_manifest.py

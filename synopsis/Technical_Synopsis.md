@@ -4,9 +4,9 @@
 
 **J. Tree · Independent researcher**
 
-**Repository state:** version 1.3.0 release, dated 30 July 2026.
+**Repository state:** version 1.4.0 release, dated 31 July 2026.
 
-**Version record:** https://github.com/jkolantree/BSC/releases/tag/v1.3.0
+**Version record:** https://github.com/jkolantree/BSC/releases/tag/v1.4.0
 
 **Zenodo concept DOI:** https://doi.org/10.5281/zenodo.21541160
 
@@ -290,7 +290,7 @@ temperature, or an independent physical origin.
 | Electromagnetic evidence bridge | Gauge and bundle theory; Maxwell source laws and Poynting balance; passive scattering and calibration; scoped electromagnetic inversion; Chern/Dirac quantization; revised-SI and coupling metrology; Ward identities and RG flow; aperiodic tilings and point diffraction | The physical mathematics is imported. BSC adds the typed route, exact nonidentifiability tests, three-valued calibrated passivity disposition, pure-delay phase no-go, aperiodic selector/materialization descent, and local demotion when a coupling boundary value or other bridge coordinate is absent. It does not derive or predict $\alpha$. |
 | Established imports | Markov kernels and operational quotients; Blackwell–Le Cam comparison; boundary trace and Calderón-type response; Koopman operators and stated learnability limits; periodic homogenization; sheaf descent; structured cospans; non-invertible defects; proof checking | Imported under their published or preprint hypotheses. These ingredients are not claimed as new BSC discoveries. |
 | Paper-level consequences | Quotient and exact-decision descent; repaired restricted-pullback composition; paired state–observable probability preservation; defect, deficiency, and deterministic residual propagation; simulation-evidence typing, compatibility-bounded deployment, and coupled-surrogate prefix propagation; fixed-interface operational-channel error propagation, no downstream resurrection, nonlinear-postselection and spectral-marginal counterexamples, robust inverse-set enclosure, driven open-system energy accounting, energy-port residual localization, denominator-typed efficiency, scalar Bernoulli information/zero-error bounds, and same-identity relation alignment; normalized-scale rate decomposition and covariance; singular-set and slice visibility; analytic zero and multiplicity transfer; the zeta-specific alternating-tail bound, pointwise exponent/rate split, ambient and fixed-$\beta$ singular sets, bounded contour count, and local root drift; persistence certification; generic decorated-cospan composition; readiness-cap propagation; the blocks from winding to physical charge and from channel form to $\alpha$ | Proved locally under the manuscript's stated assumptions. The canonical BSC decoration functor and full quantum-morphism composition remain open. No empirical status is inherited. |
-| Reference fixtures | Ten examples covering winding, inverse ambiguity, directed deficiency, Koopman pollution, quantum-reference-frame descent, sheaf obstruction, off-shell residual, exact counterexample retention, zeta–DQPT scope separation, and stable-host surrogate dependence | Fixtures 1–7 and 9 have exact mathematical derivations but no separate execution receipts. Fixtures 8 and 10 have deterministic CPython receipts. Immutable v1.1.0 contains Fixtures 1–9; immutable v1.0.1 contains Fixtures 1–8. |
+| Reference fixtures | Eleven examples covering winding, inverse ambiguity, directed deficiency, Koopman pollution, quantum-reference-frame descent, sheaf obstruction, off-shell residual, exact counterexample retention, zeta–DQPT scope separation, stable-host surrogate dependence, and a Collatz recursive-sufficiency repair | Fixtures 1–7 and 9 have exact mathematical derivations but no separate execution receipts. Fixtures 8, 10, and 11 have deterministic CPython receipts. F11's finite extension remains conditional on the separately sourced $2^{71}$ base. Immutable v1.1.0 contains Fixtures 1–9; immutable v1.0.1 contains Fixtures 1–8. |
 | Open status | Universal persistence, generic empirical validation, nonlinear stochastic residual composition, full quantum-morphism composition (BSC-QOP-03), instrument-uncertain reconstruction, QRF quotient characterization, learnability-aware recurrence, faithfulness of operational report envelopes under added interventions, non-iid hardware rate-distortion, physical charge bridges, end-to-end zeta-algorithm advantage, temperature/origin bridges, and a machine-checked BSC kernel | Conjectural, untested, unexecuted, blocked, or open as individually recorded. |
 
 The fixtures (§16) compute a torus winding class $(2,-3)$ while
@@ -312,6 +312,12 @@ independent physical origin. Fixture 10 retains exact prefix trajectories for
 equal standalone surrogate error in two stable hosts and demonstrates
 different host-relative tolerance dispositions for one loss coordinate,
 without promoting the recurrence to full admissibility or physical validation.
+Fixture 11 identifies the first missing residue layer in a published Collatz
+recursive-sufficiency induction, proves replacement zero-density
+recursively-sufficient sieves, and retains exact row-replay and exhaustive
+candidate-enumeration evidence for a conditional ten-billion extension beyond
+$2^{71}$. It does not independently replay the external base computation,
+repair the unresolved $36k+27$ class, or prove the Collatz conjecture.
 
 The paper also makes physical promotion deliberately expensive. Winding and
 physical charge are different typed objects (§13, p. 21). A charge claim needs

@@ -115,6 +115,28 @@ v1.0.1, or v1.0.0 release records.
 Release v1.3.0 is dated 30 July 2026 and does not alter the immutable v1.2.0,
 v1.1.0, v1.0.1, or v1.0.0 release records.
 
+## Implemented in 1.4.0
+
+- Audited Ansari's first ternary induction layer and retained the exact
+  $27,31\pmod {36}$ defect without claiming a journal corrigendum.
+- Proved an unconditional zero-density parity-prefix recursively-sufficient
+  replacement and the safety-net ternary-spine construction.
+- Added the cutoff-conditioned $V_m$ and $W_m$ sieves with exact
+  $m=173$ count and density, while keeping the external $2^{71}$ base
+  claim conditional.
+- Added executable Fixture F11 with exact row replay of 52,686 first-descent
+  certificates and exhaustive enumeration of all 1,388,888,889 compatible
+  candidates in a ten-billion-wide interval.
+- Withheld the unneeded ghost-cylinder and $1/243$ claims pending separate
+  symbolic review.
+- Preserved the unresolved $36k+27$, original $F_n$, interval-jump, and
+  universal Collatz claims as explicit non-promotions.
+- Left every BSC core framework module unchanged; this is a bounded
+  application and evidence-fixture release.
+
+Release v1.4.0 is dated 31 July 2026 and does not alter the immutable v1.3.0,
+v1.2.0, v1.1.0, v1.0.1, or v1.0.0 release records.
+
 ## Highest-leverage next work
 
 1. **External adversarial reading**
@@ -191,6 +213,14 @@ v1.1.0, v1.0.1, or v1.0.0 release records.
      illumination, polarization, and calibrated diffraction report. Compare
      only observables shared by those layers; do not treat an infinite tiling
      theorem as execution evidence for the device.
+
+10. **Collatz $36k+27$ adaptive certificate tree**
+    - Build a well-founded exact residue tree or prove a scoped obstruction
+      for a declared class of trees.
+    - Machine-check every affine edge, integrality condition, positivity
+      condition, and coverage statement.
+    - Do not promote density, finite subprogressions, or F11's conditional
+      prefix into a proof of the unresolved progression.
 
 ## Promotion rule
 

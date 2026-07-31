@@ -1,5 +1,39 @@
 # Changelog
 
+## 1.4.0 — 2026-07-31
+
+This release adds one bounded number-theory application and executable
+evidence fixture without changing the BSC core framework:
+
+- audited the first nontrivial layer of Ansari's published
+  recursive-sufficiency induction and proved
+  $F_1\setminus F_2=(36\mathbb N_0+27)\cup(36\mathbb N_0+31)$;
+- retained an exact smaller-merge certificate for the $31$-class and kept
+  the $27$-class and the original $F_n$ induction unresolved;
+- proved an unconditional parity-prefix recursively-sufficient family with
+  exponentially vanishing density;
+- proved the safety-net lemma and a nested ternary-spine replacement without
+  restoring the printed empty-interval claim;
+- added the $2^{71}$-conditioned $V_m$ family and $W_m$ family for $m\ge2$,
+  exact $V_{173}$ residue count, and exact CRT density factor $5/9$ in that
+  range;
+- added Fixture F11 with a frozen 4,826,862-byte, 52,686-row certificate,
+  exact arbitrary-precision row replay, and exhaustive enumeration of all
+  1,388,888,889 compatible candidates in the declared interval;
+- proved the conditional strong-induction extension from $2^{71}$ through
+  $2^{71}+10^{10}$, while explicitly not replaying or inheriting authority
+  from the external base computation;
+- withheld the proposed ghost-cylinder and $1/243$ claims because they were
+  unnecessary to the retained result and lacked a separate symbolic gate;
+- added claim-local source, prior-art, provenance, licensing, falsifier,
+  notation, and negative-regression boundaries; and
+- kept v1.3.0 and every earlier release immutable.
+
+Published at GitHub tag `v1.4.0`. The Zenodo concept DOI
+`10.5281/zenodo.21541160` identifies the deposited version family. The v1.4.0
+version DOI assigned after the tagged bytes were built is recorded on the
+GitHub release page.
+
 ## 1.3.0 — 2026-07-30
 
 The release adds operational-channel, energy-port, and electromagnetic
@@ -89,8 +123,7 @@ evidence layers without changing the eight-field BSC morphism:
 
 Published at GitHub tag `v1.3.0`. The Zenodo concept DOI
 `10.5281/zenodo.21541160` identifies the deposited version family. The v1.3.0
-version DOI assigned after the tagged bytes were built is recorded on the
-GitHub release page. The immutable v1.2.0 version DOI
+version DOI is `10.5281/zenodo.21713285`. The immutable v1.2.0 version DOI
 `10.5281/zenodo.21711341` remains unchanged.
 
 ## 1.2.0 — 2026-07-30

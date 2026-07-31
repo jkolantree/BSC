@@ -1,0 +1,31 @@
+{
+  "base": 2361183241434822606848,
+  "certificate": {
+    "bytes": 4826862,
+    "path": "w_10b.tsv",
+    "records": 52686,
+    "sha256": "88df1573d49511a4bc93fab35f85d3feb1cade2d40b5444ee88ae42699aa5250"
+  },
+  "claim_id": "BSC-FIX-11",
+  "depth": 173,
+  "environment": {
+    "arithmetic": "CPython arbitrary-precision integers",
+    "implementation": "CPython",
+    "version": "3.12.13"
+  },
+  "fixture_id": "F11-COLLATZ-RECURSIVE-SIEVE",
+  "g_n_residues_mod_36": [
+    3,
+    7,
+    15,
+    19,
+    27
+  ],
+  "range_length": 10000000000,
+  "shortcut_map": "T(n)=n/2 for even n; T(n)=(3n+1)/2 for odd n",
+  "threshold": {
+    "odd_count_coefficient": 485,
+    "prefix_length_coefficient": 306
+  },
+  "v173_residue_count": 113556863454847668033678912559844765797703296469
+}

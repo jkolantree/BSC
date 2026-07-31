@@ -9,6 +9,9 @@ The repository uses two licenses:
   figures, tables, and other human-readable documentation.
 - **MIT** covers Python code, JSON Schema, machine-readable fixture tooling,
   workflow files, and the Makefile.
+- **CC BY 4.0** also covers the retained F11 tabular certificate as a
+  machine-generated factual dataset. Its provenance and exact bytes are
+  separately pinned; the submitted C/C++ sources are not redistributed.
 
 The retained execution receipt is distributed with the fixture tooling under
 the MIT License. `CITATION.cff` and `.zenodo.json` are factual metadata and may
@@ -20,6 +23,7 @@ be copied as needed to cite or deposit the work.
 |---|---|
 | `paper/**`, `synopsis/**`, `ledgers/**`, `revision/**`, `provenance/**`, `*.md` | CC BY 4.0 |
 | `fixtures/**/*.py`, `fixtures/**/*.json`, `tools/**`, `tests/**` | MIT |
+| `fixtures/**/*.tsv` | CC BY 4.0 |
 | `.github/**`, `Makefile` | MIT |
 | `CITATION.cff`, `.zenodo.json`, `MANIFEST.sha256` | Factual metadata; copying for citation, deposit, and verification is permitted |
 

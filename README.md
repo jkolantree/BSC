@@ -4,16 +4,16 @@
 
 **J. Tree · Independent researcher**
 
-**Latest released version:** v1.3.0 · 30 July 2026.
+**Latest released version:** v1.4.0 · 31 July 2026.
 
-**Repository state:** version 1.3.0 release.
+**Repository state:** version 1.4.0 release.
 
-**Release status:** v1.3.0 is a foundational preprint with mathematical
+**Release status:** v1.4.0 is a foundational preprint with mathematical
 framework, audit artifacts, and explicit claim boundaries; not peer reviewed.
 
 **Canonical repository:** https://github.com/jkolantree/BSC
 
-**Version record:** https://github.com/jkolantree/BSC/releases/tag/v1.3.0
+**Version record:** https://github.com/jkolantree/BSC/releases/tag/v1.4.0
 
 **Zenodo concept DOI (all deposited versions):**
 https://doi.org/10.5281/zenodo.21541160
@@ -41,6 +41,7 @@ The unit of evaluation is not the universe. It is one claimed transfer.
 | Framework module | [Operational channel core](framework/Operational_Channel_Core.md) | Inspect fixed-interface mixed classical/quantum propagation, no-resurrection, driven and strong-coupling energy boundaries, energy-port gluing, typed efficiencies, Bernoulli encoding, semantic alignment, and the 1/137 boundary |
 | Framework module | [Electromagnetic evidence bridge](framework/Electromagnetic_Evidence_Bridge.md) | Inspect gauge descent, sources and flux, boundary power, calibrated scattering, inverse scope, coupling normalization, metrology, RG flow, and aperiodic geometry-to-field descent |
 | Application crosswalk | [Four July 2026 experiments](applications/Operational_Channel_Crosswalk_2026.md) | Compare hybrid photons, a driven plasmonic time crystal, Hiroshima alloy evidence, and a microwave probabilistic-bit processor without conflating their physics |
+| Number-theory application | [Collatz recursive sufficiency](applications/Collatz_Recursive_Sufficiency_Audit.md) | Inspect the exact induction defect, replacement RS sieves, conditional finite certificate, and blocked universal claims |
 | Status audit | [Claim-status ledger](ledgers/Claim_Status_Ledger.md) | Separate mathematical verdict from support and other readiness coordinates |
 | Source audit | [Revision memorandum](revision/Revision_Memorandum.md) | See every material repair and unresolved source conflict |
 | Release audit | [v1.0.0 audit report](AUDIT_REPORT_v1.0.0.md) | See what survived, what failed, and what v1.0.1 repaired |
@@ -91,6 +92,8 @@ BSC is not presented as:
   hadron dynamics;
 - a proof of the Riemann Hypothesis, an independent physical origin for it, or
   a demonstrated end-to-end quantum advantage;
+- a proof of the Collatz conjecture or an official verification-frontier
+  announcement;
 - a universal law of persistence;
 - a claim that every boundary determines an interior;
 - a single total error score;
@@ -118,9 +121,9 @@ recurrence, or duality earns the right to support a target claim.
   reports, inverse authority, coupling normalization, and metrology.
 - A two-page technical synopsis and field-specific reader map.
 - A symbol and notation ledger, claim-status ledger, and revision memorandum.
-- Ten exact mathematical fixtures in version 1.2.0; immutable v1.1.0 contains
-  nine and immutable v1.0.1 contains eight.
-- Two executable fixtures, F8 and F10, with deterministic CPython 3.12.13
+- Eleven exact mathematical fixtures; immutable v1.3.0 and v1.2.0 contain
+  ten, immutable v1.1.0 contains nine, and immutable v1.0.1 contains eight.
+- Three executable fixtures, F8, F10, and F11, with deterministic CPython 3.12.13
   receipts.
 - Fail-closed checkers for those receipts and their parsed JSON Schemas, with
   independent semantic recomputation and negative regression tests.
@@ -134,7 +137,9 @@ but no separate execution receipts. F9 checks only the finite engineered
 zeta–coherence identity; it does not execute the application-level analytic
 transfer and is not an NMR-data replay. F10 executes only its declared exact
 finite recurrence; it is not empirical or physical validation of a surrogate
-model. No proof-assistant artifact is included.
+model. F11 executes exact row replay and complete candidate enumeration, but
+its finite-prefix conclusion remains conditional on the external $2^{71}$
+base that BSC did not replay. No proof-assistant artifact is included.
 
 ## How to evaluate the contribution
 
@@ -349,6 +354,29 @@ one specific finite geometry-to-fabricated-sample-to-diffraction chain; it
 does not establish a universal
 band gap, nonreciprocity, or a route to $1/137$.
 
+## Collatz recursive-sufficiency application
+
+Version 1.4.0 audits the first nontrivial layer of Ansari's 2025
+recursive-sufficiency induction. Exact residue expansion gives
+
+```math
+F_1\setminus F_2
+=(36\mathbb N_0+27)\cup(36\mathbb N_0+31).
+```
+
+The $31$-class has an explicit merge to a smaller integer; the
+$36k+27$ class remains unresolved. The release proves an unconditional
+parity-prefix RS family with exponentially vanishing density, a safety-net
+ternary-spine replacement, and a sharper $2^{71}$-conditioned
+$W_{173}$ sieve with exact density.
+
+Executable Fixture F11 replays all 52,686 retained first-descent rows and
+exhaustively tests all 1,388,888,889 compatible candidates in the
+ten-billion-wide interval. Strong induction gives a conditional extension
+through $2^{71}+10^{10}$. BSC did not replay the external base campaign;
+the result is not an official computational record, a repair of the original
+$F_n$ induction, or a proof of the Collatz conjecture.
+
 ## Current status boundary
 
 | Object | Verdict | Math support | Empirical | Computational | Transfer |
@@ -368,6 +396,7 @@ band gap, nonreciprocity, or a route to $1/137$.
 | Fixture F8 | True fixture result | Proved counterexample | N/A | One exact receipt | Fixture-local |
 | Fixture F9: zeta–DQPT scope audit | True fixture result | Finite identity proved; application-level scaling and contour theorems are not fixture executions | N/A | Unexecuted | Fixture-local |
 | Fixture F10: coupled-surrogate host dependence | True fixture result | Equal standalone error yields different exact host-relative tolerance disposition under two stable recurrences | N/A | One exact receipt | Fixture-local |
+| Fixture F11: Collatz recursive-sufficiency repair | True implication; conditional support | Exact induction defect, replacement sieve arithmetic, exhaustive interval enumeration, and first-descent replay | N/A | One exact receipt; external base not replayed | Fixture-local |
 | Finite-resolution observation decides exact zero | False | Query fails operational descent when zero and nonzero amplitudes are confusable | N/A | Unexecuted | Blocked |
 | Finite evidence entails limiting DQPT exclusivity or RH | False | Limit, zero-census, and universal quantifier are not discharged | Single study | Unexecuted | Blocked |
 | End-to-end quantum advantage | Open | Conditional resource comparison only | Untested | Unexecuted | Blocked |
@@ -384,15 +413,19 @@ From the repository root:
 ```bash
 python3 fixtures/F08_sqrt_square_sign/check_fixture.py
 python3 fixtures/F10_coupled_surrogate/check_fixture.py
+python3 fixtures/F11_collatz_recursive_sieve/check_fixture.py
 ```
 
-Neither checker overwrites its retained receipt. Each parses the shipped
-schema, validates exact types and constants, verifies bound identities,
-independently recomputes the declared mathematics, runs its generator in a
-temporary location, and requires byte-identical output. Negative tests retain
-the two F8 mutants that the v1.0.0 checker incorrectly accepted and add stale
-host, altered-horizon, false-tolerance-disposition, decimal-substitution, and
-overwrite controls for F10.
+No checker overwrites its retained receipt. F8 and F10 parse their shipped
+schemas, independently recompute their declared mathematics, run their
+generators in temporary locations, and require byte-identical output. F11's
+routine gate replays every retained row and identity; its publication-only
+`--full-scan` mode repeats the complete candidate enumeration. Negative tests
+retain the two F8 mutants that the v1.0.0 checker incorrectly accepted, add
+stale-host, altered-horizon, false-tolerance-disposition,
+decimal-substitution, and overwrite controls for F10, and reject changed
+certificate bytes, false completeness, nested schema errors, self-hash-policy
+changes, and overwrite attempts for F11.
 
 For the full local verification sequence:
 
@@ -411,7 +444,7 @@ framework/    reusable scale, simulation, operational-channel, and electromagnet
 applications/ source-bound domain crosswalks
 synopsis/     two-page synopsis, source, and reader map
 ledgers/      claim status and notation
-fixtures/     mathematical fixtures plus executable F8 and F10 receipts
+fixtures/     mathematical fixtures plus executable F8, F10, and F11 receipts
 revision/     explicit definition repairs and unresolved obligations
 provenance/   supplied-corpus identity records
 tools/        complete-set manifest and release verification
@@ -421,14 +454,16 @@ tests/        positive and negative release-gate regressions
 ## Citation, disclosure, and licensing
 
 Machine-readable citation metadata is in [CITATION.cff](CITATION.cff).
-Version 1.3.0 is published in the immutable
-[GitHub release record](https://github.com/jkolantree/BSC/releases/tag/v1.3.0).
+Version 1.4.0 is published in the immutable
+[GitHub release record](https://github.com/jkolantree/BSC/releases/tag/v1.4.0).
 The concept DOI
 [10.5281/zenodo.21541160](https://doi.org/10.5281/zenodo.21541160)
 identifies all deposited versions and resolves to the latest Zenodo deposit.
-The v1.3.0 version DOI is assigned after the immutable tagged bytes are built
-and is recorded on the GitHub release page. The immutable v1.2.0 version DOI
-is [10.5281/zenodo.21711341](https://doi.org/10.5281/zenodo.21711341). The
+The v1.4.0 version DOI is assigned after the immutable tagged bytes are built
+and is recorded on the GitHub release page. The immutable v1.3.0 version DOI
+is [10.5281/zenodo.21713285](https://doi.org/10.5281/zenodo.21713285). The
+immutable v1.2.0 version DOI is
+[10.5281/zenodo.21711341](https://doi.org/10.5281/zenodo.21711341). The
 immutable v1.1.0 version DOI is
 [10.5281/zenodo.21710743](https://doi.org/10.5281/zenodo.21710743).
 The immutable v1.0.1 DOI is
@@ -443,6 +478,7 @@ independent peer review.
 Paper and documentation are licensed under
 [CC BY 4.0](LICENSES/paper-and-documentation.txt). Code and machine-readable
 fixture tooling are licensed under the [MIT License](LICENSES/code.txt).
+The F11 tabular certificate is licensed as factual data under CC BY 4.0.
 The supplied internal source corpus is not redistributed by this repository.
 The [license map](LICENSES/README.md) also records the historical clarification
 for commits preceding the explicit dual-license notice.

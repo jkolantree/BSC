@@ -17,6 +17,7 @@ body:
         - F8 — exact regression receipt
         - F9 — zeta-DQPT scope audit
         - F10 — coupled-surrogate receipt
+        - F11 — Collatz recursive-sufficiency receipt
     validations:
       required: true
   - type: textarea

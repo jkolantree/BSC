@@ -1,0 +1,317 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Exact deterministic receipt for the F11 Collatz recursive-sufficiency audit and conditional finite-prefix certificate.",
+  "properties": {
+    "arithmetic_model": {
+      "const": "CPython arbitrary-precision integer arithmetic"
+    },
+    "certificate": {
+      "additionalProperties": false,
+      "properties": {
+        "bytes": {
+          "const": 4826862
+        },
+        "candidate_offsets_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "first_offset": {
+          "const": 104303
+        },
+        "last_offset": {
+          "const": 9999886847
+        },
+        "max_peak": {
+          "const": 1432075179170128856197670708120
+        },
+        "max_steps_to_descent": {
+          "const": 438
+        },
+        "records": {
+          "const": 52686
+        },
+        "sha256": {
+          "const": "88df1573d49511a4bc93fab35f85d3feb1cade2d40b5444ee88ae42699aa5250"
+        }
+      },
+      "required": [
+        "bytes",
+        "candidate_offsets_sha256",
+        "first_offset",
+        "last_offset",
+        "max_peak",
+        "max_steps_to_descent",
+        "records",
+        "sha256"
+      ],
+      "type": "object"
+    },
+    "claim": {
+      "const": "conditional on the declared external 2^71 base, the exact W_173 enumeration and first-descent table extend convergence through 2^71+10^10"
+    },
+    "claim_id": {
+      "const": "BSC-FIX-11"
+    },
+    "completeness": {
+      "additionalProperties": false,
+      "properties": {
+        "candidate_offsets_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "enumerated_g_candidates": {
+          "const": 1388888889
+        },
+        "enumeration": {
+          "const": "all G-compatible offsets in (0,10000000000] were tested against the exact V173 prefix inequalities"
+        },
+        "full_scan": {
+          "const": true
+        },
+        "retained_candidates": {
+          "const": 52686
+        }
+      },
+      "required": [
+        "candidate_offsets_sha256",
+        "enumerated_g_candidates",
+        "enumeration",
+        "full_scan",
+        "retained_candidates"
+      ],
+      "type": "object"
+    },
+    "environment": {
+      "additionalProperties": false,
+      "properties": {
+        "arithmetic": {
+          "const": "CPython arbitrary-precision integers"
+        },
+        "implementation": {
+          "const": "CPython"
+        },
+        "version": {
+          "const": "3.12.13"
+        }
+      },
+      "required": [
+        "arithmetic",
+        "implementation",
+        "version"
+      ],
+      "type": "object"
+    },
+    "evidence_identity": {
+      "additionalProperties": false,
+      "properties": {
+        "analysis": {
+          "additionalProperties": false,
+          "properties": {
+            "analysis_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "checker_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "generator_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "schema_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "serialization": {
+              "const": "UTF-8 JSON, two-space indentation, sorted keys, LF terminator"
+            }
+          },
+          "required": [
+            "analysis_sha256",
+            "checker_sha256",
+            "generator_sha256",
+            "schema_sha256",
+            "serialization"
+          ],
+          "type": "object"
+        },
+        "contract": {
+          "additionalProperties": false,
+          "properties": {
+            "claim": {
+              "const": "conditional on the declared external 2^71 base, the exact W_173 enumeration and first-descent table extend convergence through 2^71+10^10"
+            },
+            "claim_id": {
+              "const": "BSC-FIX-11"
+            },
+            "contract_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "fixture_id": {
+              "const": "F11-COLLATZ-RECURSIVE-SIEVE"
+            },
+            "input_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            }
+          },
+          "required": [
+            "claim",
+            "claim_id",
+            "contract_sha256",
+            "fixture_id",
+            "input_sha256"
+          ],
+          "type": "object"
+        },
+        "data": {
+          "additionalProperties": false,
+          "properties": {
+            "certificate_sha256": {
+              "const": "88df1573d49511a4bc93fab35f85d3feb1cade2d40b5444ee88ae42699aa5250"
+            },
+            "data_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "provenance_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            }
+          },
+          "required": [
+            "certificate_sha256",
+            "data_sha256",
+            "provenance_sha256"
+          ],
+          "type": "object"
+        },
+        "environment": {
+          "additionalProperties": false,
+          "properties": {
+            "arithmetic": {
+              "const": "CPython arbitrary-precision integers"
+            },
+            "environment_sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "implementation": {
+              "const": "CPython"
+            },
+            "version": {
+              "const": "3.12.13"
+            }
+          },
+          "required": [
+            "arithmetic",
+            "environment_sha256",
+            "implementation",
+            "version"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "analysis",
+        "contract",
+        "data",
+        "environment"
+      ],
+      "type": "object"
+    },
+    "fixture_id": {
+      "const": "F11-COLLATZ-RECURSIVE-SIEVE"
+    },
+    "mathematics": {
+      "additionalProperties": false,
+      "properties": {
+        "base": {
+          "const": 2361183241434822606848
+        },
+        "conditional_prefix_end": {
+          "const": 2361183241444822606848
+        },
+        "depth": {
+          "const": 173
+        },
+        "first_defect_residues_mod_36": {
+          "const": [
+            27,
+            31
+          ]
+        },
+        "g_residues_mod_36": {
+          "const": [
+            3,
+            7,
+            15,
+            19,
+            27
+          ]
+        },
+        "threshold_exact_inequality": {
+          "const": true
+        },
+        "v173_residue_count": {
+          "const": 113556863454847668033678912559844765797703296469
+        },
+        "w173_density_denominator": {
+          "const": 107753592717132810353321275346506114473192594528534528
+        },
+        "w173_density_numerator": {
+          "const": 567784317274238340168394562799223828988516482345
+        }
+      },
+      "required": [
+        "base",
+        "conditional_prefix_end",
+        "depth",
+        "first_defect_residues_mod_36",
+        "g_residues_mod_36",
+        "threshold_exact_inequality",
+        "v173_residue_count",
+        "w173_density_denominator",
+        "w173_density_numerator"
+      ],
+      "type": "object"
+    },
+    "nonclaims": {
+      "const": [
+        "not a proof of the Collatz conjecture",
+        "not an independent replay of the external n<2^71 verification",
+        "not a proof that the original ternary F_n family is recursively sufficient",
+        "not an official verification-frontier announcement"
+      ]
+    },
+    "receipt_schema": {
+      "const": "bsc-deterministic-receipt/5"
+    },
+    "result": {
+      "const": "conditional_prefix_extension_certificate_verified"
+    },
+    "self_hash_policy": {
+      "const": "the receipt does not hash itself; MANIFEST.sha256 binds the retained receipt externally"
+    }
+  },
+  "required": [
+    "arithmetic_model",
+    "certificate",
+    "claim",
+    "claim_id",
+    "completeness",
+    "environment",
+    "evidence_identity",
+    "fixture_id",
+    "mathematics",
+    "nonclaims",
+    "receipt_schema",
+    "result",
+    "self_hash_policy"
+  ],
+  "title": "BSC F11 deterministic receipt",
+  "type": "object"
+}

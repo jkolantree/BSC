@@ -6,12 +6,13 @@ from pathlib import Path
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parent.parent
-RELEASE_VERSION = "1.3.0"
-RELEASE_DATE = "2026-07-30"
-RELEASE_URL = "https://github.com/jkolantree/BSC/releases/tag/v1.3.0"
+RELEASE_VERSION = "1.4.0"
+RELEASE_DATE = "2026-07-31"
+RELEASE_URL = "https://github.com/jkolantree/BSC/releases/tag/v1.4.0"
 CONCEPT_DOI = "10.5281/zenodo.21541160"
-PRIOR_RELEASE_VERSION_DOI = "10.5281/zenodo.21711341"
-PRIOR_RELEASE_2_VERSION_DOI = "10.5281/zenodo.21710743"
+PRIOR_RELEASE_VERSION_DOI = "10.5281/zenodo.21713285"
+PRIOR_RELEASE_2_VERSION_DOI = "10.5281/zenodo.21711341"
+PRIOR_RELEASE_3_VERSION_DOI = "10.5281/zenodo.21710743"
 PRIOR_VERSION_DOI = "10.5281/zenodo.21541561"
 
 
@@ -26,10 +27,10 @@ class ReleaseMetadataTests(unittest.TestCase):
 
     def test_release_version_is_consistent_on_active_surfaces(self) -> None:
         expected_fragments = {
-            "README.md": "Latest released version:** v1.3.0",
+            "README.md": "Latest released version:** v1.4.0",
             "CITATION.cff": f'version: "{RELEASE_VERSION}"',
             ".zenodo.json": f'"version": "{RELEASE_VERSION}"',
-            "CHANGELOG.md": "## 1.3.0",
+            "CHANGELOG.md": "## 1.4.0",
             "framework/Operational_Channel_Core.md": (
                 "part of the released `1.3.0` framework"
             ),
@@ -40,13 +41,13 @@ class ReleaseMetadataTests(unittest.TestCase):
                 "part of the released `1.2.0` framework"
             ),
             "fixtures/README.md": (
-                "Version 1.3.0 retains the ten exact reference fixtures"
+                "Version 1.4.0 contains eleven exact reference fixtures"
             ),
             "paper/source/On_Boundaries_of_Evidence.tex": (
                 rf"\newcommand{{\BSCVersion}}{{{RELEASE_VERSION}}}"
             ),
             "synopsis/Technical_Synopsis.md": (
-                "Repository state:** version 1.3.0 release"
+                "Repository state:** version 1.4.0 release"
             ),
             "synopsis/source/Technical_Synopsis.tex": (
                 rf"\newcommand{{\BSCVersion}}{{{RELEASE_VERSION}}}"
@@ -83,6 +84,8 @@ class ReleaseMetadataTests(unittest.TestCase):
                 self.assertIn(PRIOR_RELEASE_VERSION_DOI, text)
             with self.subTest(path=relative, doi=PRIOR_RELEASE_2_VERSION_DOI):
                 self.assertIn(PRIOR_RELEASE_2_VERSION_DOI, text)
+            with self.subTest(path=relative, doi=PRIOR_RELEASE_3_VERSION_DOI):
+                self.assertIn(PRIOR_RELEASE_3_VERSION_DOI, text)
             with self.subTest(path=relative, doi=PRIOR_VERSION_DOI):
                 self.assertIn(PRIOR_VERSION_DOI, text)
 
@@ -96,7 +99,7 @@ class ReleaseMetadataTests(unittest.TestCase):
         _, separator, preferred = citation.partition("preferred-citation:")
         self.assertTrue(separator)
         self.assertIn(f'url: "{RELEASE_URL}"', preferred)
-        self.assertIn("Version 1.3.0 preprint", preferred)
+        self.assertIn("Version 1.4.0 preprint", preferred)
         self.assertNotIn(PRIOR_RELEASE_VERSION_DOI, preferred)
 
     def test_zenodo_metadata_requests_new_version_without_inventing_doi(
@@ -112,21 +115,31 @@ class ReleaseMetadataTests(unittest.TestCase):
     def test_release_fixture_inventory_is_explicit(self) -> None:
         fixture_index = self.read("fixtures/README.md")
         self.assertIn(
-            "Version 1.3.0 retains the ten exact reference fixtures",
+            "Version 1.4.0 contains eleven exact reference fixtures",
             fixture_index,
         )
-        self.assertIn("F8 and F10 are executable in version 1.3.0", fixture_index)
+        self.assertIn(
+            "F8, F10, and F11 are executable in version 1.4.0",
+            fixture_index,
+        )
         self.assertIn("F10_coupled_surrogate", fixture_index)
+        self.assertIn("F11_collatz_recursive_sieve", fixture_index)
 
     def test_page_counts_are_consistent(self) -> None:
-        self.assertIn("PAPER_PAGES ?= 71", self.read("Makefile"))
+        self.assertIn("PAPER_PAGES ?= 75", self.read("Makefile"))
         self.assertIn(
-            'parser.add_argument("--paper-pages", type=int, default=71)',
+            'parser.add_argument("--paper-pages", type=int, default=75)',
             self.read("tools/verify_build.py"),
         )
         self.assertIn(
-            "The build gate requires a 71-page paper",
+            "The build gate requires a 75-page paper",
             self.read("REPRODUCING.md"),
+        )
+        self.assertIn("SOURCE_DATE_EPOCH ?= 1785456000", self.read("Makefile"))
+        self.assertIn("export SOURCE_DATE_EPOCH", self.read("Makefile"))
+        self.assertIn(
+            "DEFAULT_SOURCE_DATE_EPOCH = 1785456000",
+            self.read("tools/build_archives.py"),
         )
 
     def test_active_surfaces_have_no_release_development_markers(self) -> None:
@@ -149,10 +162,10 @@ class ReleaseMetadataTests(unittest.TestCase):
             "synopsis/source/Technical_Synopsis.tex",
         )
         forbidden = (
-            "1.3.0-dev",
-            "unreleased 1.3.0",
-            "development version 1.3.0",
-            "1.3.0 development tree",
+            "1.4.0-dev",
+            "unreleased 1.4.0",
+            "development version 1.4.0",
+            "1.4.0 development tree",
         )
         for relative in active_surfaces:
             text = self.read(relative).lower()
@@ -162,12 +175,19 @@ class ReleaseMetadataTests(unittest.TestCase):
 
     def test_recorded_release_pdf_hashes_match_tracked_bytes(self) -> None:
         reproducing = self.read("REPRODUCING.md")
+        _, marker, active_release = reproducing.partition(
+            "## Release v1.4.0 render"
+        )
+        self.assertTrue(marker, "missing active v1.4.0 PDF record")
+        active_release = active_release.partition(
+            "## Refresh and verify the release tree"
+        )[0]
         for relative in (
             "paper/On_Boundaries_of_Evidence.pdf",
             "synopsis/Technical_Synopsis.pdf",
         ):
             with self.subTest(path=relative):
-                self.assertIn(f"`{self.sha256(relative)}`", reproducing)
+                self.assertIn(f"`{self.sha256(relative)}`", active_release)
 
 
 if __name__ == "__main__":
