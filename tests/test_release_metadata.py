@@ -142,6 +142,10 @@ class ReleaseMetadataTests(unittest.TestCase):
             self.read("tools/build_archives.py"),
         )
 
+    def test_f11_certificate_has_canonical_checkout_eol(self) -> None:
+        attributes = self.read(".gitattributes").splitlines()
+        self.assertIn("*.tsv text eol=lf", attributes)
+
     def test_active_surfaces_have_no_release_development_markers(self) -> None:
         active_surfaces = (
             "README.md",
