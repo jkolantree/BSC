@@ -376,8 +376,11 @@ promotion from the conditional finite prefix to universal convergence.
 - The progression $36\mathbb N_0+27$ remains unresolved.
 - The claimed automatic extension to $4\cdot3^{44}+2$ is not restored.
 - A proposed binary ghost-cylinder obstruction and a proposed recursive
-  $1/243$-subprogression were not needed for the retained result and were
-  withheld pending separate symbolic review.
+  $1/243$-subprogression were not needed for the retained v1.4.0 result and
+  were withheld from that release. Their later, separately scoped symbolic
+  review is recorded in the post-release
+  [affine-certificate calculus](Collatz_Affine_Certificate_Calculus.md); it
+  does not change F11 or resolve the full $36\mathbb N_0+27$ progression.
 - No novelty is claimed for parity-vector coding, density-one stopping-time
   results, or sufficient-set methods generally.
 

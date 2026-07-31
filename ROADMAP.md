@@ -215,10 +215,19 @@ v1.2.0, v1.1.0, v1.0.1, or v1.0.0 release records.
      theorem as execution evidence for the device.
 
 10. **Collatz $36k+27$ adaptive certificate tree**
-    - Build a well-founded exact residue tree or prove a scoped obstruction
-      for a declared class of trees.
-    - Machine-check every affine edge, integrality condition, positivity
-      condition, and coverage statement.
+    - Retain the proved obstruction to finite binary-cylinder covers with one
+      fixed uniformly admissible one-turn affine path per leaf; it does not
+      obstruct mixed refinement, multi-turn paths, or an infinite
+      well-founded tree.
+    - Use the exact $8748t+6219$ certificate as one checked leaf, not as
+      evidence for the other 242 ternary parameter classes.
+    - Build an eventual-zero-complete mixed $2$-adic and $3$-adic residue tree
+      or prove a well-founded rank for every ordinary unresolved branch.
+    - Machine-check every affine edge, intermediate congruence, coefficient
+      integrality condition, positivity condition, intercept descent, and
+      coverage statement.
+    - Before citing depth-28/30/32 catalogs, retain their complete TSVs,
+      parameters, manifest, miner, independent replay, and negative fixtures.
     - Do not promote density, finite subprogressions, or F11's conditional
       prefix into a proof of the unresolved progression.
 

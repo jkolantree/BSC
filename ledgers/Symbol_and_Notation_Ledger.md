@@ -336,8 +336,9 @@ the global BSC system or morphism records.
 
 ## Collatz recursive-sufficiency case-study notation
 
-These symbols are local to the version 1.4.0 number-theory application. They
-do not redefine the global BSC transport, target, time, or system symbols.
+These symbols are local to the version 1.4.0 number-theory application and
+its post-release affine-certificate module. They do not redefine the global
+BSC transport, target, time, or system symbols.
 
 | Symbol | Type or codomain | Meaning and constraints |
 |---|---|---|
@@ -352,6 +353,14 @@ do not redefine the global BSC transport, target, time, or system symbols.
 | $G$ | five residue classes modulo 36 | $3,7,15,19,27\pmod {36}$, obtained from $F_1$ after removing the explicitly recursive $31$ class. |
 | $W_m$ | periodic subset modulo $9\cdot2^m$, $m\ge2$ | $G\cap V_m$. Its recursively-sufficient status inherits the declared $B_0$ condition; the $m\ge2$ scope is required for the displayed $5/9$ CRT density factor. |
 | $H_{n,m}$ | periodic recursively-sufficient set | $F_n\cup(F_1\cap S_m)$ for the declared RS safety-net family $S_m\subset4\mathbb N_0+3$. It retains the ternary spine without promoting $F_n$. |
+| $\sim_T,K_T,K_T^\star$ | equivalence relation and subsets of $\mathbb N$ | Tail-merging equivalence, the least-member merge kernel, and $K_T\setminus\lbrace1\rbrace$. Under the local RS definition, kernel containment must be paired with properness. |
+| $\tau_0,\tau_1,\rho_0,\rho_1$ | local partial affine edge maps | Forward even/odd shortcut edges and inverse-even/inverse-odd edges. A certificate separately checks parity, the $2\pmod3$ inverse-odd condition, integrality, positivity, and endpoint descent. These names avoid collision with Ansari's $F_n$. |
+| $C(A,B)$ | arithmetic cylinder | $\lbrace At+B:t\in\mathbb N_0\rbrace$ with $A,B>0$. A proof-carrying cylinder includes every intermediate affine pair, not just a residue or slope. |
+| $s,e,c,b,r$ | $s,e,c,b\in\mathbb N_0$ and $r=c-s\in\mathbb Z$ | Forward odd, forward even, inverse-odd, inverse-even, and net inverse-odd counts for a one-turn affine path. Their forward, reverse, and combined critical ratios are separately typed. |
+| $\gamma,\lambda,D$ | real log-slope quantities | $\gamma=\log_2(3/2)$, $\lambda=A'/A=2^{b-e}(2/3)^r$, and $D=-\log_2\lambda=e+\gamma r-b$. They describe coefficient drift only, not physical energy or certificate success. |
+| $v_p(A)$ | nonnegative integer for $A\ne0$ | $p$-adic valuation of an affine coefficient. Endpoint coefficient integrality requires both $v_3(A)-r\ge0$ and $v_2(A)+b-e+r\ge0$; intermediate path gates remain separate. |
+| $g_R,k_\star$ | binary residue and $2$-adic boundary point | For $R\ge1$, $g_R\equiv-7\mkern3mu9^{-1}\pmod {2^R}$; set $g_0=0$. The limit $k_\star=-7/9$ indexes the scoped ghost-cylinder obstruction and is not an ordinary nonnegative parameter. |
+| $\mathfrak B_p$ | prefix-free family of cylinders in base $p$ | Arithmetic certificate bar for canonical digits read least-significant first. It proves an ordinary progression only when every eventually-zero digit sequence meets a leaf and every leaf carries a checked affine certificate. Haar measure alone is not completeness. |
 
 ## Sheaf, interface, and symmetry notation
 

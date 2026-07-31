@@ -1,5 +1,27 @@
 # Changelog
 
+## Post-v1.4.0 affine-certificate application note — 2026-07-31
+
+This main-branch update adds separately scoped number-theory mathematics. It
+is not a new release or Zenodo deposit and does not change the v1.4.0 paper,
+PDFs, tag, assets, metadata, or Fixture F11:
+
+- characterized recursive-sufficiency obligations by the least-member merge
+  kernel while retaining the required proper-set clause;
+- proved the exact uniform affine descent criterion $A'\le A$ and $B'<B$,
+  including equal-slope descent and a strict-slope/intercept counterexample;
+- separated forward, reverse, and combined critical lines and replaced
+  physical-energy terminology with a claim-local log-slope balance;
+- added exact $2$-adic and $3$-adic coefficient screens and the strict
+  floor-plus-one ternary-depth threshold, while keeping them necessary rather
+  than sufficient for a certificate;
+- proved a narrow ghost-cylinder obstruction to finite binary-cylinder
+  covers with one fixed one-turn affine path per leaf;
+- proved the recursive subprogression $8748\mathbb N_0+6219$ from its full
+  affine witness, without promoting the parent $36\mathbb N_0+27$ class; and
+- blocked the proposed depth-28/30/32 catalog claims because no catalogs,
+  catalog manifest, miners, or independent replay program were supplied.
+
 ## 1.4.0 — 2026-07-31
 
 This release adds one bounded number-theory application and executable

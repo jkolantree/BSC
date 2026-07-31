@@ -1806,3 +1806,42 @@ or electromagnetic theorem changes. The update is limited to the
 number-theory application, F11, claim and notation ledgers, paper, synopsis,
 tests, metadata, and release artifacts. Version 1.3.0 and every earlier tag,
 asset, and Zenodo record remain immutable.
+
+## Post-v1.4.0: affine-certificate symbolic review
+
+The v1.4.0 release correctly withheld a proposed ghost-cylinder obstruction
+and one $1/243$ subprogression pending a separate gate. That gate was later
+run against a broader working note. The review retained useful mathematics
+but rejected four overpromotions in the working note:
+
+1. coefficient contraction is not uniform affine descent; the exact
+   criterion is $A'\le A$ together with $B'<B$;
+2. a strict ternary-depth inequality requires floor-plus-one at its boundary;
+3. merge-kernel containment characterizes RS only together with the adopted
+   proper-set requirement; and
+4. forward, reverse-suffix, and combined critical lines have different count
+   types and cannot be collapsed into one ratio.
+
+The resulting
+[affine-certificate application](../applications/Collatz_Affine_Certificate_Calculus.md)
+proves:
+
+- the merge-kernel characterization with properness;
+- the exact affine descent theorem, including equal-slope certificates and a
+  slope-only counterexample;
+- exact $2$-adic and $3$-adic coefficient screens, a slope-only valuation
+  capacity, and the corrected strict depth threshold;
+- a no-go theorem for finite binary-cylinder covers with one fixed uniform
+  one-turn affine path per leaf; and
+- the exact recursive progression $8748\mathbb N_0+6219$, ending at
+  $8192t+5823$ after the declared merge path.
+
+The scope remains narrow. The parent $36\mathbb N_0+27$ progression,
+Ansari's $F_2$, and Collatz remain unresolved. The artifacts retained in this
+repository update did not contain the proposed depth-28/30/32 catalogs,
+catalog manifest, miners, or independent replay program, so their aggregate
+prose was not promoted to computational evidence. The downloaded ten-billion
+table was byte-identical to F11 and supplied no new evidence.
+
+This is a main-branch application note, not a revision of the immutable
+v1.4.0 paper, PDFs, tag, assets, metadata, Fixture F11, or Zenodo deposit.

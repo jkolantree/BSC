@@ -6,7 +6,8 @@
 
 **Latest released version:** v1.4.0 · 31 July 2026.
 
-**Repository state:** version 1.4.0 release.
+**Repository state:** immutable version 1.4.0 release plus explicitly marked
+post-release presentation and application notes on `main`.
 
 **Release status:** v1.4.0 is a foundational preprint with mathematical
 framework, audit artifacts, and explicit claim boundaries; not peer reviewed.
@@ -42,6 +43,7 @@ The unit of evaluation is not the universe. It is one claimed transfer.
 | Framework module | [Electromagnetic evidence bridge](framework/Electromagnetic_Evidence_Bridge.md) | Inspect gauge descent, sources and flux, boundary power, calibrated scattering, inverse scope, coupling normalization, metrology, RG flow, and aperiodic geometry-to-field descent |
 | Application crosswalk | [Four July 2026 experiments](applications/Operational_Channel_Crosswalk_2026.md) | Compare hybrid photons, a driven plasmonic time crystal, Hiroshima alloy evidence, and a microwave probabilistic-bit processor without conflating their physics |
 | Number-theory application | [Collatz recursive sufficiency](applications/Collatz_Recursive_Sufficiency_Audit.md) | Inspect the exact induction defect, replacement RS sieves, conditional finite certificate, and blocked universal claims |
+| Number-theory calculus | [Collatz affine certificates](applications/Collatz_Affine_Certificate_Calculus.md) | Inspect merge kernels, exact affine descent, valuation screens, a scoped one-turn binary-cylinder obstruction, and one proved recursive subprogression |
 | Status audit | [Claim-status ledger](ledgers/Claim_Status_Ledger.md) | Separate mathematical verdict from support and other readiness coordinates |
 | Source audit | [Revision memorandum](revision/Revision_Memorandum.md) | See every material repair and unresolved source conflict |
 | Release audit | [v1.0.0 audit report](AUDIT_REPORT_v1.0.0.md) | See what survived, what failed, and what v1.0.1 repaired |
@@ -376,6 +378,16 @@ through $2^{71}+10^{10}$. BSC did not replay the external base campaign;
 the result is not an official computational record, a repair of the original
 $F_n$ induction, or a proof of the Collatz conjecture.
 
+The post-v1.4.0
+[affine-certificate calculus](applications/Collatz_Affine_Certificate_Calculus.md)
+adds a separately reviewed merge-kernel characterization, the exact uniform
+affine descent criterion, typed log-slope and valuation screens, a narrow
+no-go theorem for finite binary-cylinder proofs that assign one fixed
+one-turn path to each leaf, and an exact certificate for
+$8748\mathbb N_0+6219$. The full $36k+27$ class remains unresolved. Proposed
+depth-28/30/32 catalogs are not promoted because the catalogs, manifest,
+miners, and independent replay program were not supplied to the repository.
+
 ## Current status boundary
 
 | Object | Verdict | Math support | Empirical | Computational | Transfer |
@@ -396,6 +408,7 @@ $F_n$ induction, or a proof of the Collatz conjecture.
 | Fixture F9: zeta–DQPT scope audit | True fixture result | Finite identity proved; application-level scaling and contour theorems are not fixture executions | N/A | Unexecuted | Fixture-local |
 | Fixture F10: coupled-surrogate host dependence | True fixture result | Equal standalone error yields different exact host-relative tolerance disposition under two stable recurrences | N/A | One exact receipt | Fixture-local |
 | Fixture F11: Collatz recursive-sufficiency repair | True implication; conditional support | Exact induction defect, replacement sieve arithmetic, exhaustive interval enumeration, and first-descent replay | N/A | One exact receipt; external base not replayed | Fixture-local |
+| Collatz affine-certificate calculus | True within its declared path classes | Merge-kernel, affine-descent, valuation-screen, one-turn ghost-cylinder, and one-subprogression results proved; arithmetic-bar completeness remains open | N/A | Exact symbolic regressions; no catalog execution | Bounded |
 | Finite-resolution observation decides exact zero | False | Query fails operational descent when zero and nonzero amplitudes are confusable | N/A | Unexecuted | Blocked |
 | Finite evidence entails limiting DQPT exclusivity or RH | False | Limit, zero-census, and universal quantifier are not discharged | Single study | Unexecuted | Blocked |
 | End-to-end quantum advantage | Open | Conditional resource comparison only | Untested | Unexecuted | Blocked |
