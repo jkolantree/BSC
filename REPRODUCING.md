@@ -81,7 +81,7 @@ above, with `SOURCE_DATE_EPOCH=1785369600`.
 - paper: 71 pages, SHA-256
   `a45469c2f3695de54b5b3498c1d46445caa34b9623c1cad07c7a0cc9517576ed`;
 - synopsis: two pages, SHA-256
-  `1dcf9a2130a3d8c59226808bff3215df44f290d3423189c587fa8f8ed6741540`;
+  `dff9888788039d60906a13846c2fde49fad11b8bab65af884f30e8e343126b50`;
 - all four final logs contain no unresolved citations or references, missing
   glyphs, overfull/underfull boxes, package/class/font warnings, or fatal
   errors;
