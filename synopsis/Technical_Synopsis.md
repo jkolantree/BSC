@@ -4,9 +4,9 @@
 
 **J. Tree · Independent researcher**
 
-**Repository state:** version 1.2.0 release, dated 30 July 2026.
+**Repository state:** version 1.3.0 release, dated 30 July 2026.
 
-**Version record:** https://github.com/jkolantree/BSC/releases/tag/v1.2.0
+**Version record:** https://github.com/jkolantree/BSC/releases/tag/v1.3.0
 
 **Zenodo concept DOI:** https://doi.org/10.5281/zenodo.21541160
 
@@ -138,6 +138,117 @@ finite recurrence, not empirical or physical validation. Established V&V/UQ
 and finite-horizon coupling work remain prior art; BSC claims only the typed
 integration, evidence-transfer rule, and local demotion behavior.
 
+Version 1.3.0 adds a restricted operational-channel core for fixed
+compatible preparation-to-report pipelines. Classical laws use total
+variation, quantum states use trace distance, POVMs form the
+quantum-to-classical boundary, and every local defect must cover implemented
+reachable inputs. The propagated report error obeys
+
+$$
+E_m\le
+\sum_{k=0}^{m}\varepsilon_k
+\prod_{j=k+1}^{m}\eta_j.
+$$
+
+Unconditioned downstream channels cannot resurrect lost distinguishability;
+normalization on a successful postselected branch is nonlinear and can
+amplify it. A uniform forward-report defect gives two-sided containment of
+compatible inverse sets after radius enlargement. An exact phase-sign
+counterexample shows that unit spectral-intensity overlap need not imply
+quantum-state closeness. The same module proves a finite-dimensional driven
+open-system energy identity; finite energy-port gluing with exact component
+and seam residual localization; and denominator-typed count, energy, and
+conditioned efficiencies. Global energy closure does not certify local seams,
+and strong-coupling interaction energy must remain explicit. The module also
+proves a sufficient-count and finite-sample zero-error obstruction for scalar
+iid Bernoulli encoders and a single-permutation criterion for same-entity
+relation alignment. It also proves that generic
+channel form cannot determine the electromagnetic fine-structure constant:
+1/137 needs a physical and metrological bridge. These results do not close the
+full eight-field quantum composition claim BSC-QOP-03.
+
+The [electromagnetic completion](../framework/Electromagnetic_Evidence_Bridge.md)
+makes that bridge explicit (BSC-EM-01 through BSC-EM-11). It types the route
+from bundle and gauge class through Maxwell
+sources, constitutive response, boundary ports, instrument report, and
+inference. Gauge descent, holonomy, source compatibility, Poynting balance,
+passive scattering, inverse-problem scope, field normalization, flux
+quantization, revised-SI metrology, and renormalization-group transport remain
+different obligations. They do not become one microscopic theory.
+
+For a power-normalized, closed-port passive model,
+$S^\dagger S\preceq I$. If a simultaneous calibration certificate gives
+$\|\widehat S-S\|_2\le\varepsilon$, then
+$\sigma_{\max}(\widehat S)-\varepsilon>1$ falsifies that declared passive
+model, $\sigma_{\max}(\widehat S)+\varepsilon\le1$ certifies contractivity on
+the declared configuration and band, and the remaining interval is
+inconclusive. An observed deficit may instead be power transferred to hidden
+ports. The causal passive pair
+
+$$
+S_0(\omega)=r,
+\qquad
+S_\tau(\omega)=r e^{-i\omega\tau},
+\qquad
+0<r\le1,
+$$
+
+has the same power response, $|S_0(\omega)|^2=|S_\tau(\omega)|^2=r^2$, but
+different phase and delay. Magnitude-only data therefore do not identify a
+coherent waveform. A finite measured scattering matrix likewise does not
+become a full Maxwell boundary operator or select a unique constitutive
+interior without the applicable calibration, coefficient class, quotient,
+uniqueness, and stability theorem.
+
+At low energy the revised SI gives the exact relations
+
+$$
+\alpha
+=
+\frac{e^2}{4\pi\varepsilon_0\hbar c}
+=
+\frac{\mu_0ce^2}{2h}
+=
+\frac{Z_0}{2R_{\mathrm K}},
+\qquad
+\mu_0=\alpha\frac{2h}{ce^2}.
+$$
+
+Fixed $e,h,c$ therefore do not fix $\alpha$; the measured uncertainty is
+carried by $\alpha$ and hence by $\mu_0$. Field rescaling preserves
+$q_i^2/Z$, Chern or Dirac quantization constrains a charge-flux product, and
+Ward identities constrain matching, but none selects the remaining
+dimensionless coupling. The equation
+$\mu\,d\alpha/d\mu=\beta(\alpha)$ transports a supplied boundary value
+$\alpha(\mu_0)=\alpha_0$ across a declared scheme, scale, threshold, and
+particle content. No theorem in BSC derives or predicts
+$\alpha^{-1}=137.035\,999\,177(21)$.
+
+BSC-EM-11 adds the selector-and-materialization boundary for aperiodic
+geometry. The Hat is an aperiodic union of eight kites from the periodic
+deltoidal-trihexagonal carrier grid, while the Spectre supplies a distinct
+strictly chiral tiling theorem. If a coefficient field $\kappa$ faithfully
+encodes a tiling partition $P$ so that
+$\tau_v\kappa=\kappa\Rightarrow\tau_vP=P$, then
+$\operatorname{Stab}_{\mathrm{tr}}(\kappa)\subseteq
+\operatorname{Stab}_{\mathrm{tr}}(P)$. Without that hypothesis, a constant or
+carrier-periodic material map erases the aperiodicity. Published Hat
+point-scatterer diffraction is correspondingly periodic despite the
+aperiodic tiling. The 2026 centroid-selected SiN experiment supplies
+single-study evidence along one specific finite
+geometry-to-fabricated-sample-to-report chain and observes chiral diffraction;
+it does not close the full Maxwell, calibration, or uncertainty obligations
+and does not establish a universal band gap, nonreciprocity, or a coupling
+value.
+
+The first crosswalk applies the core to atom–quantum-dot two-photon
+interference, a driven plasmonic photonic time crystal, a blast-forged
+multicomponent alloy, and a microwave probabilistic-bit processor. It retains
+the reported local measurements while blocking, respectively, unexecuted
+network protocols, pump-free gain, unique historical reconstruction, and
+lossless/security/semantic promotion. This is a unification of evidentiary
+form, not of microscopic laws.
+
 Version 1.1.0 adds certified normalized-scale
 profiles $L_N=A_N/Z_N$. A diverging normalizer can collapse the raw limit
 without creating finite zeros, while logarithmic rates split exactly into
@@ -176,10 +287,11 @@ temperature, or an independent physical origin.
 
 | Layer | Content | Status in this paper |
 |---|---|---|
+| Electromagnetic evidence bridge | Gauge and bundle theory; Maxwell source laws and Poynting balance; passive scattering and calibration; scoped electromagnetic inversion; Chern/Dirac quantization; revised-SI and coupling metrology; Ward identities and RG flow; aperiodic tilings and point diffraction | The physical mathematics is imported. BSC adds the typed route, exact nonidentifiability tests, three-valued calibrated passivity disposition, pure-delay phase no-go, aperiodic selector/materialization descent, and local demotion when a coupling boundary value or other bridge coordinate is absent. It does not derive or predict $\alpha$. |
 | Established imports | Markov kernels and operational quotients; Blackwell–Le Cam comparison; boundary trace and Calderón-type response; Koopman operators and stated learnability limits; periodic homogenization; sheaf descent; structured cospans; non-invertible defects; proof checking | Imported under their published or preprint hypotheses. These ingredients are not claimed as new BSC discoveries. |
-| Paper-level consequences | Quotient and exact-decision descent; repaired restricted-pullback composition; paired state–observable probability preservation; defect, deficiency, and deterministic residual propagation; simulation-evidence typing, compatibility-bounded deployment, and coupled-surrogate prefix propagation; normalized-scale rate decomposition and covariance; singular-set and slice visibility; analytic zero and multiplicity transfer; the zeta-specific alternating-tail bound, pointwise exponent/rate split, ambient and fixed-$\beta$ singular sets, bounded contour count, and local root drift; persistence certification; generic decorated-cospan composition; readiness-cap propagation; the block from winding to physical charge | Proved locally under the manuscript's stated assumptions. The canonical BSC decoration functor and full quantum-morphism composition remain open. No empirical status is inherited. |
+| Paper-level consequences | Quotient and exact-decision descent; repaired restricted-pullback composition; paired state–observable probability preservation; defect, deficiency, and deterministic residual propagation; simulation-evidence typing, compatibility-bounded deployment, and coupled-surrogate prefix propagation; fixed-interface operational-channel error propagation, no downstream resurrection, nonlinear-postselection and spectral-marginal counterexamples, robust inverse-set enclosure, driven open-system energy accounting, energy-port residual localization, denominator-typed efficiency, scalar Bernoulli information/zero-error bounds, and same-identity relation alignment; normalized-scale rate decomposition and covariance; singular-set and slice visibility; analytic zero and multiplicity transfer; the zeta-specific alternating-tail bound, pointwise exponent/rate split, ambient and fixed-$\beta$ singular sets, bounded contour count, and local root drift; persistence certification; generic decorated-cospan composition; readiness-cap propagation; the blocks from winding to physical charge and from channel form to $\alpha$ | Proved locally under the manuscript's stated assumptions. The canonical BSC decoration functor and full quantum-morphism composition remain open. No empirical status is inherited. |
 | Reference fixtures | Ten examples covering winding, inverse ambiguity, directed deficiency, Koopman pollution, quantum-reference-frame descent, sheaf obstruction, off-shell residual, exact counterexample retention, zeta–DQPT scope separation, and stable-host surrogate dependence | Fixtures 1–7 and 9 have exact mathematical derivations but no separate execution receipts. Fixtures 8 and 10 have deterministic CPython receipts. Immutable v1.1.0 contains Fixtures 1–9; immutable v1.0.1 contains Fixtures 1–8. |
-| Open status | Universal persistence, generic empirical validation, nonlinear stochastic residual composition, full quantum-morphism composition (BSC-QOP-03), instrument-uncertain reconstruction, QRF quotient characterization, learnability-aware recurrence, physical charge bridges, end-to-end zeta-algorithm advantage, temperature/origin bridges, and a machine-checked BSC kernel | Conjectural, untested, unexecuted, blocked, or open as individually recorded. |
+| Open status | Universal persistence, generic empirical validation, nonlinear stochastic residual composition, full quantum-morphism composition (BSC-QOP-03), instrument-uncertain reconstruction, QRF quotient characterization, learnability-aware recurrence, faithfulness of operational report envelopes under added interventions, non-iid hardware rate-distortion, physical charge bridges, end-to-end zeta-algorithm advantage, temperature/origin bridges, and a machine-checked BSC kernel | Conjectural, untested, unexecuted, blocked, or open as individually recorded. |
 
 The fixtures (§16) compute a torus winding class $(2,-3)$ while
 blocking electric charge without a physical bridge; exhibit two distinct

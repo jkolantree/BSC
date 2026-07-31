@@ -1,6 +1,6 @@
 \documentclass[10pt,a4paper,twocolumn]{extarticle}
 
-\usepackage[left=18mm,right=18mm,top=16mm,bottom=16mm,columnsep=8mm,headheight=12pt]{geometry}
+\usepackage[left=18mm,right=18mm,top=15mm,bottom=15mm,columnsep=8mm,headheight=12pt]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage{mathpazo}
 \usepackage[scaled=0.92]{helvet}
@@ -16,7 +16,7 @@
 
 \definecolor{inkblue}{RGB}{23,55,78}
 \definecolor{rulegray}{RGB}{105,112,118}
-\newcommand{\BSCVersion}{1.2.0}
+\newcommand{\BSCVersion}{1.3.0}
 \newcommand{\BSCDOI}{Concept DOI 10.5281/zenodo.21541160}
 \hypersetup{
   colorlinks=true,
@@ -24,7 +24,7 @@
   urlcolor=inkblue,
   pdftitle={On Boundaries of Evidence --- Technical Synopsis},
   pdfauthor={J. Tree},
-  pdfsubject={Version 1.2.0; released 30 July 2026; Boundary-State Calculus},
+  pdfsubject={Version 1.3.0 release; Boundary-State Calculus},
   pdfkeywords={Boundary-State Calculus, scientific transfer, evidence, admissibility}
 }
 \pagestyle{fancy}
@@ -32,14 +32,14 @@
 \fancyhead[L]{\footnotesize\textsc{On Boundaries of Evidence --- Technical Synopsis}}
 \fancyhead[R]{\footnotesize\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
-\linespread{0.96}
+\linespread{0.94}
 \setlength{\parindent}{1em}
-\setlength{\parskip}{0.1em}
+\setlength{\parskip}{0.05em}
 \setlist{nosep,leftmargin=1.4em}
 \newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
 \sloppy
 \raggedbottom
-\addtolength{\textheight}{3pt}
+\addtolength{\textheight}{6pt}
 \hbadness=10000
 \vfuzz=3pt
 
@@ -119,43 +119,56 @@ instrument, reference frame, clock, resources, and boundary conditions.
 execution artifacts, hashes, open obligations, and status.
 
 For a declared claim, admissibility requires a well-formed and evaluated
-record, certified upper enclosures within every applicable tolerance, true
-hard gates, and adequate readiness.  An enclosure that straddles a tolerance
-is inconclusive: it blocks certification but does not prove a violation.
-These coordinates do not collapse into one score.  Equation residual,
-observation defect, statistical deficiency, quotient loss, and viability
-failure occupy different spaces and obey different propagation laws (\S8).
-A missing carrier or undefined observable pullback is a blocked
-transfer, not a small numerical error.
+record, within-tolerance upper enclosures, true hard gates, and adequate
+readiness.  A straddled tolerance is inconclusive, not a proved violation.
+Residual, observation, deficiency, quotient-loss, and viability coordinates
+remain typed separately (\S8); a missing carrier or pullback is blocked, not
+a small error.
 
 \textbf{Simulation evidence.}
-The version 1.2.0 profile separates statistical simulation, numerical execution,
-and surrogate deployment.  It records intended use, typed losses and gates,
-estimator/oracle semantics on a joint law, source-to-loss propagation, proxy
-proofs, factored identity, and compatibility reserves.  If
+The v1.2.0 profile separates statistical, numerical, and surrogate evidence
+while binding intended use, typed losses and gates, joint-law semantics,
+factored identity, and compatibility reserves.  If
 \(\ell^1_j\le\ell^0_j+\rho_j\), admission requires
 \(U^0_j+\rho_j\le\tau_j\), without recounting uncertainty in \(U^0_j\).
-Zero failure probability is not determinism without pointwise bounds.
-The prefix theorem propagates surrogate error through host and horizon.
+Its fixed-interface corollary uses trace distance, total variation, and a
+POVM boundary: processing cannot resurrect lost distinctions, and normalized
+postselection needs a separate bound.  Energy ports localize residuals, while
+yields and efficiencies retain denominators and failures.  Bernoulli
+information, one-identity alignment, and four July 2026 probes remain
+source-bound; neither \(137\) nor full quantum closure follows.
+
+\textbf{Electromagnetic evidence.}
+The \href{../framework/Electromagnetic_Evidence_Bridge.md}
+{electromagnetic evidence bridge}
+(BSC-EM-01--BSC-EM-11) keeps gauge, Maxwell, constitutive, port, inverse,
+coupling, and metrological claims separate.  If
+\(\lVert\widehat S-S\rVert_2\le\varepsilon\) for a power-normalized report,
+\(\sigma_{\max}(\widehat S)-\varepsilon>1\) falsifies that model,
+\(\sigma_{\max}(\widehat S)+\varepsilon\le1\) certifies contractivity on the
+declared band, and the middle case is inconclusive.  The passive pair
+\(S_0(\omega)=r\), \(S_\tau(\omega)=r e^{-i\omega\tau}\) has equal power but
+different delay.  Field rescaling and flux quantization do not select the
+coupling; revised SI gives \(\mu_0=\alpha\frac{2h}{ce^2}\), while RG flow still
+needs a scheme, scale, thresholds, particle content, and boundary value.
+For patterned media, translation-faithful materialization gives
+\(\operatorname{Stab}_{\rm tr}(\kappa)\subseteq
+\operatorname{Stab}_{\rm tr}(P)\); otherwise the selector may erase the
+tiling.  Periodic Hat point diffraction and the 2026 centroid-SiN chiral
+experiment keep aperiodicity sample- and report-local.
+No BSC theorem derives or predicts \(\alpha^{-1}=137.035\,999\,177(21)\).
 
 \section*{Composition and persistence}
 
 For compatible partial stochastic transfers, state kernels compose only on
-points whose intermediate law is supported in the next domain; observable
-pullbacks then compose in reverse through the corresponding restricted
-pullback.  Observation defects have a
-contraction-weighted bound; directed deficiencies satisfy a triangle
-inequality; deterministic equation residuals propagate only with a compatible
-equation-space map (\S7.1; \S15).  Incompatible clocks,
-interfaces, resources, or boundary conditions make the composite undefined.
-
-Persistence is defined through induced path laws (\S9).
-Endpoint return is insufficient.  Every required prefix must remain within
-operational-identity, viability, residual, deficiency, and certificate
-budgets.  ``A persistent object is a recursively maintained finite
-boundary-state'' is therefore a target-relative organizing principle.  Its
-promotion to a universal physical law remains conjectural, untested, and
-unexecuted.
+supported intermediate laws; observable pullbacks compose in reverse.
+Observation defects have a contraction-weighted bound, deficiencies a
+triangle inequality, and equation residuals require a compatible equation
+map (\S7.1; \S15).  Incompatible interfaces make composition undefined.
+Persistence is a prefix property of induced path laws (\S9), with identity,
+viability, residual, deficiency, and certificate budgets.  Recursive
+boundary-state maintenance is a target-relative principle, not an established
+universal physical law.
 
 \section*{Provenance and status}
 
@@ -170,7 +183,9 @@ proof checking.  These are not claimed as new BSC discoveries.
 quotient and exact-decision descent; paired state--observable probability
 preservation; defect, deficiency, and deterministic residual propagation;
 simulation-evidence typing, compatibility-bounded deployment, and
-coupled-surrogate propagation;
+coupled-surrogate and fixed-interface operational-channel propagation;
+no-resurrection, energy-port and efficiency, Bernoulli-information, and
+same-identity corollaries;
 normalized-scale rate decomposition and covariance; singular-set and slice
 visibility; analytic zero transfer; the zeta-specific tail, pointwise
 exponent/rate split, ambient and fixed-\(\beta\) singular sets, contour count,
@@ -183,8 +198,8 @@ empirical validation, stochastic residuals, closure under composition for the
 full quantum variant (BSC-QOP-03), reconstruction with instrument uncertainty,
 QRF descent, certified recurrence, a coherent decoration functor for BSC,
 physical charge bridges, a complete analysis of quantum advantage for zeta
-algorithms, temperature and origin bridges, and a machine-checked kernel.  Their
-statuses remain conjectural, untested, unexecuted, blocked, or open.
+algorithms, temperature and origin bridges, and a machine-checked kernel.
+Their statuses remain conjectural, untested, unexecuted, blocked, or open.
 \end{itemize}
 
 \section*{Ten fixtures}

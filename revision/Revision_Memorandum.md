@@ -3,13 +3,14 @@
 ## Purpose
 
 This memorandum records every material repair made while constructing and
-auditing *On Boundaries of Evidence* through published version 1.2.0. The
-latest published version is v1.2.0, dated 30 July 2026, with immutable GitHub
-release record `https://github.com/jkolantree/BSC/releases/tag/v1.2.0` and
-Zenodo concept DOI `10.5281/zenodo.21541160`. A v1.2.0 version DOI assigned
-after deposit is recorded on the GitHub release page. The immutable v1.1.0
-version DOI is `10.5281/zenodo.21710743`; the immutable v1.0.1 version DOI
-remains `10.5281/zenodo.21541561`. This memorandum is separate from the manuscript
+auditing *On Boundaries of Evidence* through published version 1.3.0, dated
+30 July 2026, with immutable GitHub release record
+`https://github.com/jkolantree/BSC/releases/tag/v1.3.0` and Zenodo concept DOI
+`10.5281/zenodo.21541160`. The v1.3.0 version DOI assigned after the tagged
+bytes were built is recorded on the GitHub release page. The immutable
+v1.2.0 version DOI is `10.5281/zenodo.21711341`; the immutable v1.1.0 version
+DOI is `10.5281/zenodo.21710743`; the immutable v1.0.1 version DOI remains
+`10.5281/zenodo.21541561`. This memorandum is separate from the manuscript
 so that the paper can stand as a coherent formal work while the source lineage
 remains inspectable. Repairs are classified as:
 
@@ -1402,3 +1403,361 @@ target coordinate types, identity factors, joint event, horizon, domain,
 gates, and tolerances.
 The Riemann-hypothesis and DQPT verdicts recorded in version 1.1.0 remain
 unchanged.
+
+## 24. Version 1.3.0 operational-channel refinement
+
+### Architectural gap
+
+The prior framework already had Markov-kernel composition, paired quantum
+state/observable transport, operational quotients, total-variation defects,
+prefix error propagation, and claim-relative simulation evidence. It did not
+state one bounded theorem for a mixed classical/quantum
+preparation-to-measurement-to-report pipeline. That omission encouraged two
+opposite errors:
+
+1. physical systems with similar report diagrams could be rhetorically
+   identified despite different microscopic laws; and
+2. ordinary channel contractivity could be overpromoted to the still-open
+   closure of the full eight-field quantum BSC morphism.
+
+### Adopted fixed-interface repair
+
+The new operational report envelope binds a parameter family, preparation,
+fixed typed stages, controls, measurement, terminal report laws, and a
+certificate. Classical interfaces use total variation; finite-dimensional
+quantum interfaces use
+
+$$
+D_{\mathrm{tr}}(\rho,\sigma)
+=
+\frac12\lVert\rho-\sigma\rVert_1.
+$$
+
+For ideal and implemented stages, the local defect
+
+$$
+d_k(\widehat T_k\widehat z,T_k\widehat z)\le\varepsilon_k
+$$
+
+must hold on the **implemented** reachable set or a proved envelope containing
+it. An ideal-only reachable set is insufficient because the triangle
+inequality evaluates the defect at the implemented input. With ideal-stage
+contraction $\eta_k$,
+
+$$
+E_m
+\le
+\sum_{k=0}^{m}
+\varepsilon_k
+\prod_{j=k+1}^{m}\eta_j.
+$$
+
+Classical Dobrushin contraction and quantum trace-distance contractivity may
+supply $\eta_k$. A strict quantum contraction is not automatic. A changed
+measurement or report is another stage and needs its own defect.
+
+This is BSC-CHN-01, a state/report-law consequence of existing BSC-SIM-03 and
+data processing. It does not prove composition of partial domains, observable
+pullbacks, equation residuals, deficiencies, completions, or certificate
+witnesses. BSC-QOP-03 remains open.
+
+### Added exact consequences
+
+The version 1.3.0 module adds separately scoped results:
+
+- **No downstream resurrection:** Markov, CPTP, POVM, and report channels
+  cannot increase the relevant distinguishability. Deterministic inverse
+  claims are therefore evaluated on
+  $\mathcal I_\varepsilon(y)=\{\theta:d(F(\theta),y)\le\varepsilon\}$.
+- **Postselection boundary:** a complete success/failure instrument is
+  contractive, while normalization on a successful branch is nonlinear and
+  can amplify trace distance. Success probability and conditioning error are
+  separate certificate coordinates.
+- **Robust inverse enclosure:** a uniform forward-report defect $B$ gives
+  $\mathcal I_F(y,\delta)\subseteq\mathcal I_G(y,\delta+B)$ and the converse
+  inclusion after swapping $F,G$. This is not parameter-space stability
+  without inverse regularity.
+- **Spectral-marginal no-go:** two orthogonal pure photon states with opposite
+  relative phase have identical spectral intensities. Unit intensity overlap
+  therefore does not certify equality of full quantum states.
+- **Driven energy accounting:** for
+  $\dot\rho=-i[H,\rho]/\hbar+\mathcal D_t(\rho)$,
+
+  $$
+  \dot E
+  =
+  \operatorname{Tr}(\rho\dot H)
+  +
+  \operatorname{Tr}(H\mathcal D_t(\rho)).
+  $$
+
+  The labels depend on the declared system/bath split and energy zero.
+  Measurements, resets, coupling energy, and output fields need additional
+  terms.
+- **Energy-port residual localization:** a finite additive port diagram obeys
+
+  $$
+  R_G=\sum_vr_v+\sum_eg_e.
+  $$
+
+  Exact components and opposite-orientation seams therefore glue to the
+  external balance, with pointwise and integrated absolute bounds. The
+  converse is false: cancelling component or seam errors can give
+  $R_G=0$. Coupling or interface energy must be retained as a component,
+  and strong-coupling interaction energy cannot be silently discarded.
+- **Denominator-typed efficiency:** count yield, energy efficiency, and
+  conditioned efficiency remain different quantities. Stage efficiencies
+  telescope only when consecutive ratios use the identical intermediate
+  extensive quantity, boundary, interval, cohort, weighting, and evidence
+  identity. A probability sink is not an energy port without an energy
+  bridge.
+- **Scalar Bernoulli encoding:** under the conditional-iid model,
+  $K=\sum_iY_i$ is sufficient and
+  $I(X;Y^N)=I(X;K)\le\log_2(N+1)$. For a uniform 8-bit input, $N\ge255$ is
+  necessary but not sufficient for exact decoding. In fact, 256 scalar
+  Bernoulli laws cannot have pairwise disjoint finite-sample supports, so
+  zero-error recovery is impossible for every finite $N$ in this model.
+- **Semantic alignment:** if both relation axes denote the same entities, one
+  identity map, under $P_{\phi(i),i}=1$, requires
+  $S=PCP^{\mathsf T}$. Independent row and column maps
+  certify only $S=PCQ^{\mathsf T}$ and are valid without further proof only
+  for separately typed roles.
+
+### Four-source crosswalk
+
+The source-bound application note records:
+
+- Kim et al.'s warm-cesium/quantum-dot two-photon interference as a tested
+  tuned and post-selected compatibility result, not a completed hybrid
+  network or full-state equality certificate;
+- Guo et al.'s plasmonic photonic time crystal as an externally driven Floquet
+  experiment whose pump remains in the energy ledger and whose lasing and
+  correlated-plasmon extensions remain predictions; its effective-mass change
+  is model-inferred, and the bosonic energy model needs truncation or domain
+  control;
+- Bindi et al.'s grain-local diffraction and composition as direct material
+  evidence from a purposive selection funnel, with neither prevalence nor a
+  unique formation history inherited; and
+- Govind, Raigoza, and Apsel's microwave features and probabilistic bits as a
+  measured hardware channel whose cached image demo, repeated-bit rate,
+  semantic alignment, iid law, and security status remain separate claims.
+
+BSC has not replayed any of the four hardware experiments, raw datasets,
+spectroscopic or crystallographic fits, classifier training, or image
+reconstruction.
+
+### The 1/137 boundary
+
+The operational-envelope axioms contain no equation fixing the
+fine-structure constant. They admit typed physical completions with different
+couplings and generally different induced channels, so no numerical value
+follows from the axioms alone. Noninjectivity over one fixed report envelope
+has not been exhibited and is not asserted. A derivation of
+$\alpha^{-1}\approx137.036$ requires a typed electromagnetic model,
+normalization and renormalization conventions, a dimensionless prediction,
+and metrological comparison. A recurrence of 137 in a fit, graph, or scale is
+not a bridge.
+
+### Prior-art and originality boundary
+
+Quantum networks, Markov/CPTP/POVM data processing, Dobrushin and trace-distance
+contractivity, sufficient statistics, Hoeffding bounds, graph matching,
+open-system energy accounting, boundary port-Hamiltonian systems, and CODATA
+metrology are prior art. The
+BSC-specific addition is their claim-relative integration with implemented
+reachable sets, evidence identity, physical completion, decision descent, and
+local demotion. It is a unification of evidentiary form, not a unified field
+theory.
+
+## 25. Version 1.3.0 electromagnetic evidence bridge
+
+### Remaining physical-completion gap
+
+The operational report envelope blocked a derivation of the fine-structure
+constant because abstract channel form contains no equation fixing an
+electromagnetic interaction strength. That negative result was correct but
+did not yet expose the exact layers at which electromagnetic evidence enters:
+bundle and gauge, local field equations, constitutive response, boundary
+ports, calibrated instrument report, inverse theorem, coupling normalization,
+renormalization, and metrology.
+
+### Adopted typed completion
+
+The version 1.3.0 bridge introduces the companion record
+
+$$
+\mathsf{EMC}
+=
+\left(
+M,g,P,[\mathcal A],\mathcal F,\mathcal H,\mathcal J,
+\mathcal C,\mathcal B,\mathcal M,\mathcal R,
+\mathsf{Cert}_{\mathrm{EM}}
+\right).
+$$
+
+It is a physical completion of the existing operational report envelope, not
+a ninth morphism field. The local Maxwell equations
+
+$$
+d\mathcal F=0,
+\qquad
+d\mathcal H=\mathcal J
+$$
+
+do not choose a constitutive law, topology, boundary condition, instrument,
+or coupling. Each remains an independently typed certificate coordinate.
+
+### Exact bridge claims and no-go results
+
+The claim ledger adds BSC-EM-01 through BSC-EM-11:
+
+1. **Gauge descent (EM-01):** a connection-level report is physical exactly
+   when constant on the declared gauge orbits.
+2. **Holonomy (EM-02):** on suitable nontrivial topology, equal curvature can
+   coexist with different gauge-invariant closed-loop holonomy.
+3. **Sources and flux (EM-03):** a smooth global solution of
+   $d\mathcal H=\mathcal J$ requires $d\mathcal J=0$ and makes
+   $\mathcal J$ exact; singular and open systems need relative or
+   distributional typing. Local source-free laws and tangential power traces
+   do not select a normal topological-flux sector.
+4. **Poynting balance (EM-04):** time-independent symmetric positive
+   constitutive tensors separate stored field energy, outward boundary power,
+   and work on current. Modulation and dispersion add pump or material-state
+   obligations. Static curved geometry changes measures rather than supplying
+   energy; moving boundaries and time-dependent metrics require their
+   transport terms. A relativistic energy current is conserved only after
+   the included total stress-energy and Killing or asymptotic charge
+   construction are declared.
+5. **Passive scattering (EM-05):** a complete power-normalized passive report
+   is contractive in its declared metric. Hidden ports, reference planes,
+   impedance, basis, de-embedding, bandwidth, stored energy, and simultaneous
+   calibration uncertainty remain in the report identity.
+6. **Phase no-go (EM-06):** $r$ and $re^{-i\omega\tau}$ have identical power
+   but different phase and delay, so magnitude-only data cannot license a
+   coherent time-domain claim.
+7. **Field normalization (EM-07):** under $A'=\lambda A$, the bare
+   coefficients change while $q^2/Z$ is invariant. Gauge form does not select
+   that invariant's value.
+8. **Flux-product quantization (EM-08):** Chern/Dirac integrality constrains
+   $\frac{q}{2\pi\hbar}\int_\Sigma F_{\mathrm{phys}}$, not $q$, $Z$,
+   $q^2/Z$, or $\alpha$ separately.
+9. **Revised-SI metrology (EM-09):** exact $e,h,c$ imply
+   $\mu_0=\alpha\,2h/(ce^2)$; the obsolete pre-2019 exact value of $\mu_0$
+   cannot be recycled as independent evidence for $\alpha$.
+10. **RG boundary-value no-go (EM-10):** the equation
+
+    $$
+    \mu\frac{dg}{d\mu}=\beta(g)
+    $$
+
+    transports a supplied coupling between scales but does not determine its
+    boundary value. The exact case $\beta\equiv0$ admits every constant
+    $g(\mu)=g_0$; for nonzero $\beta$, an integration constant remains.
+    Scheme, thresholds, matching, truncation, and scale are additional
+    certificate coordinates.
+11. **Aperiodic materialization descent (EM-11):** a tiling predicate becomes
+    a field or scattering predicate only when it is constant over the
+    selector-and-materialization fiber. If a coefficient field $\kappa$
+    faithfully encodes a tiling partition $P$ in the sense
+    $\tau_v\kappa=\kappa\Rightarrow\tau_vP=P$, then
+    $\operatorname{Stab}_{\mathrm{tr}}(\kappa)\subseteq
+    \operatorname{Stab}_{\mathrm{tr}}(P)$. Constant coefficient fields and
+    lattice-periodic coefficient fields materializing only the unlabeled
+    carrier grid are exact counterexamples to an unconditional transfer.
+
+Maxwell boundary inversion is retained as theorem-local rather than assigned
+a universal EM claim: every promotion names the forward problem, coefficient
+class, gauge or diffeomorphism quotient, full or partial data, frequency or
+time regime, calibration bridge, uniqueness theorem, stability class, and
+target identified set. A finite S-parameter matrix is not automatically the
+full boundary-response operator.
+
+### Binary-width and polygon screen
+
+Version 1.3.0 also tests a proposed arithmetic route through
+$2^{31}-1$, $2^{32}-1$, the Year 2038 signed-integer boundary, and the
+constructible regular $65\,537$-gon. The exact positive result is that
+$\operatorname{ord}_{137}(2)=68$, so the rational $1/137$ has a 68-bit
+repetend. The exact negative results are
+
+$$
+2^{31}-1\equiv16,\qquad
+2^{32}-1\equiv33,\qquad
+65\,537\equiv51
+\pmod{137},
+$$
+
+and the real cyclotomic degree for the regular $137$-gon is
+$(137-1)/2=68$, not a power of two. These facts explain a real base-two
+connection while blocking promotion to a physical identification. The
+measured low-energy constant is not exactly $1/137$, and the integer
+relations supply no action, normalization, RG boundary condition, or
+metrological equation for $\alpha$.
+
+### Einstein monotile and diffraction screen
+
+The Hat theorem is routed through the electromagnetic bridge rather than
+through numerical analogy. The Hat is a union of eight kites in the periodic
+$[3.4.6.4]$ Laves, or deltoidal-trihexagonal, tiling and nevertheless forces
+an aperiodic partition into Hats. The later Spectre construction separately
+forces homochiral nonperiodic tilings. These statements concern planar
+translations, reflections, and hierarchical supertiles; they are not
+Maxwell, reciprocity, or constitutive theorems.
+
+The adopted physical chain is
+
+$$
+P\longrightarrow C_{\rm sel}(P)=X_N
+\longrightarrow\Phi_{\rm mat}(X_N)
+\longrightarrow\mathcal P_{\lambda,p}
+\longrightarrow Y.
+$$
+
+It distinguishes an infinite tiling, a finite point/edge/interior selector,
+physical scale and material contrast, the electromagnetic forward problem,
+and the calibrated report. This distinction is forced by a concrete
+published counterexample: the Hat tiling is aperiodic while its vertex
+point-scatterer diffraction is two-periodic because the selected vertices
+inherit an underlying periodic hexagonal net. Spectre point diffraction is
+instead nonperiodic and chiral. Reciprocal-space periodicity therefore does
+not report real-space aperiodicity without the selection and observation map.
+
+The 2026 Nature Communications experiment instantiates one such chain by
+selecting centroids of an $H_6$ Hat approximant, fabricating $372\,100$ holes
+in a $350\,\mathrm{nm}$ SiN film, and measuring sharp Bragg peaks whose
+positions were insensitive to illumination position, mirror-reversing
+pinwheel patterns, and helicity-dependent intensity. Its declared scalar
+model is
+
+$$
+F_N(k_x,k_y)=
+\sum_{j=1}^N e^{2\pi i(k_xx_j+k_yy_j)},
+\qquad I_N=|F_N|^2,
+$$
+
+with a golden-ratio/Fibonacci-inflation-derived orientation
+
+$$
+\theta_{\rm chiral}
+=
+\arccos\!\left(\frac{3(1+\sqrt5)/2-1}{4}\right)
+\approx15.52^\circ.
+$$
+
+The publication supplies single-study evidence along that finite
+geometry-to-fabricated-sample-to-report chain. It does not close the full
+Maxwell, calibration, or uncertainty obligations and does not establish a
+universal band gap, localization, nonreciprocity, or a coupling value. Eight
+kites, golden-ratio/Fibonacci inflation geometry, and sixfold intensity
+symmetry do not provide a map to $\alpha$ or $1/137$.
+
+### Status and release boundary
+
+These are symbolic claims with no local hardware execution. The
+2026 monotile optical report is one experimental study and was not replayed
+here. The framework changes do not derive
+$\alpha^{-1}\approx137.036$, quantize the full electromagnetic
+field, prove a material model, execute a calibrated scattering experiment, or
+establish a unified field theory. They belong only to the `1.3.0`
+manuscript, framework, synopsis, ledgers, and regression suite. The immutable
+v1.2.0 release, tag, GitHub assets, and Zenodo deposit remain unchanged.

@@ -1,5 +1,98 @@
 # Changelog
 
+## 1.3.0 — 2026-07-30
+
+The release adds operational-channel, energy-port, and electromagnetic
+evidence layers without changing the eight-field BSC morphism:
+
+- defined the operational report envelope from parameter and preparation
+  through driven stages, measurement, reporting, and decision;
+- proved a contraction-weighted product-sum bound for compatible
+  ideal/implemented classical, quantum, measurement, and report stages, with
+  local defects required on implemented reachable inputs;
+- retained the one-half trace-distance normalization at the
+  quantum-to-classical boundary and made changed measurements or report rules
+  separate defective stages;
+- proved that downstream Markov, CPTP, POVM, and report channels cannot
+  resurrect lost distinguishability, and tied inverse claims to identified
+  sets;
+- separated complete success/failure instruments from nonlinear normalized
+  postselection and retained success probability as a certified coordinate;
+- proved two-sided enlargement of deterministic inverse compatible sets under
+  a uniform forward-report defect;
+- gave an exact pair of orthogonal photon states with identical spectral
+  intensities, blocking promotion from unit marginal overlap to quantum-state
+  identity;
+- proved the finite-dimensional driven open-system energy identity while
+  retaining pump work, system/bath split, energy gauge, reset, measurement,
+  output-field, bosonic truncation, and operator-domain obligations;
+- proved finite additive energy-port gluing with exact localization of the
+  assembled residual into component and seam residuals, explicit interface
+  storage, and pointwise and integrated absolute bounds;
+- separated count yields, energy efficiencies, and conditioned efficiencies,
+  permitting stage-ratio telescoping only across the identical intermediate
+  extensive quantity and evidence identity;
+- proved that the count of conditionally iid scalar Bernoulli outputs is
+  sufficient, carries at most $\log_2(N+1)$ input bits, and cannot provide
+  finite-$N$ zero-error decoding of 256 symbols;
+- made the raw repeated-bit rate explicit as $8/N$ for an 8-bit input and
+  separated finite-channel learnability from cryptographic security;
+- proved that same-entity relation alignment requires one conjugating
+  permutation, while independent row/column fits certify only a weaker
+  two-role relation;
+- proved that generic operational-channel form cannot determine the
+  fine-structure constant, so a numerological 1/137 identification is blocked
+  without a typed electromagnetic and metrological bridge;
+- added that electromagnetic bridge as a typed completion separating bundle
+  and gauge, field equations, constitutive response, boundary ports,
+  instrument report, and inference;
+- proved gauge-orbit report descent, the equal-curvature/different-holonomy
+  counterexample, smooth-source compatibility, local-law/global-flux
+  separation, and Poynting balance with modulation and dispersion boundaries;
+- proved passive scattering contraction only in a declared calibrated power
+  metric with complete port accounting, retained hidden-port ambiguity, and
+  added an exact magnitude-only phase/delay counterexample;
+- kept Maxwell boundary inversion local to its forward problem, coefficient
+  class, quotient, data coverage, frequency regime, calibration, uniqueness,
+  and stability theorem;
+- proved that field normalization preserves $q^2/Z$, that Chern/Dirac
+  integrality constrains a charge-flux product rather than $\alpha$, and that
+  revised-SI definitions make $\mu_0$ depend on measured $\alpha$ rather than
+  deriving it;
+- proved that an RG equation requires a boundary value and therefore cannot
+  derive low-energy $\alpha$ from its beta function alone, with
+  $\beta\equiv0$ as an exact nonuniqueness counterexample;
+- screened the proposed 16-, 31-, and 32-bit/Fermat-number route to 137:
+  $1/137$ has binary period 68, but the cutoff integers have nonzero residues
+  modulo 137, the regular 137-gon is not constructible, and none of these
+  arithmetic facts supplies a map to the measured electromagnetic coupling;
+- added BSC-EM-11 for aperiodic geometry-to-field descent: a tiling predicate
+  transfers only across a declared selector and materialization fiber, while
+  translation-faithful coefficients satisfy
+  $\operatorname{Stab}_{\mathrm{tr}}(\kappa)\subseteq
+  \operatorname{Stab}_{\mathrm{tr}}(P)$;
+- separated the Hat's eight-kite deltoidal-trihexagonal construction, the
+  Spectre's strictly chiral tiling theorem, scalar point diffraction, and the
+  2026 centroid-selected SiN experiment; periodic Hat diffraction is retained
+  as a concrete block on inferring reciprocal-space periodicity from
+  real-space aperiodicity alone, while BSC-EM-OBS-01 records the single-study
+  report separately from the present-proof authority of BSC-EM-11;
+- added a primary-source crosswalk for hybrid atom–quantum-dot interference,
+  a driven plasmonic photonic time crystal, Hiroshima blast-forged alloy
+  evidence, and integrated microwave probabilistic bits;
+- added exact regression tests for rational defect propagation, classical
+  contraction, inverse-set enclosure, spectral-marginal and postselection
+  counterexamples, Bernoulli support/rate boundaries, same-identity alignment,
+  primary-source routing, unique claim identifiers, translation-faithful
+  materialization, and finite point-scatterer structure factors; and
+- kept full quantum-morphism closure BSC-QOP-03 open.
+
+Published at GitHub tag `v1.3.0`. The Zenodo concept DOI
+`10.5281/zenodo.21541160` identifies the deposited version family. The v1.3.0
+version DOI assigned after the tagged bytes were built is recorded on the
+GitHub release page. The immutable v1.2.0 version DOI
+`10.5281/zenodo.21711341` remains unchanged.
+
 ## 1.2.0 — 2026-07-30
 
 The mathematical framework gains a simulation-evidence layer without changing
@@ -33,10 +126,10 @@ the eight-field BSC morphism:
 - preserved every v1.1.0 Riemann/DQPT mathematical and physical verdict.
 
 Published at GitHub tag `v1.2.0`. The Zenodo concept DOI
-`10.5281/zenodo.21541160` identifies the deposited version family; any
-version-specific DOI assigned after deposit is recorded on the GitHub release
-page rather than anticipated in these tagged bytes. The immutable v1.1.0 tag
-and version DOI `10.5281/zenodo.21710743` remain unchanged.
+`10.5281/zenodo.21541160` identifies the deposited version family. The v1.2.0
+version DOI assigned after the tagged bytes were built is
+`10.5281/zenodo.21711341`. The immutable v1.1.0 tag and version DOI
+`10.5281/zenodo.21710743` remain unchanged.
 
 ## 1.1.0 — 2026-07-30
 

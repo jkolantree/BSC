@@ -1,22 +1,23 @@
-# Reproducing release 1.2.0
+# Reproducing version 1.3.0
 
 ## Scope
 
-The manuscript and synopsis can be rebuilt from their shipped
-LaTeX sources. Fixtures F8 and F10 can be reproduced byte-for-byte in the
-pinned Python environment. Fixture F9 is a mathematical and documentary case
-study and has no execution receipt. The release record is
-`https://github.com/jkolantree/BSC/releases/tag/v1.2.0`. The Zenodo concept DOI
-for the deposited version family is `10.5281/zenodo.21541160`; a
-version-specific DOI assigned after deposit is recorded on the GitHub release
-page rather than anticipated in these bytes. Immutable v1.1.0 remains
-available at DOI `10.5281/zenodo.21710743`, and immutable v1.0.1 remains
-available at DOI `10.5281/zenodo.21541561`.
-Fresh PDF builds are not claimed to be byte-identical because PDF timestamps
+The release manuscript and synopsis can be rebuilt from their shipped LaTeX
+sources. Fixtures F8 and F10 can be reproduced byte-for-byte in the pinned
+Python environment. Fixture F9 is a mathematical and documentary case study
+and has no execution receipt. The immutable release record is
+`https://github.com/jkolantree/BSC/releases/tag/v1.3.0`. The Zenodo concept DOI
+for the deposited version family is `10.5281/zenodo.21541160`; the v1.3.0
+version DOI assigned after the tagged bytes were built is recorded on the
+GitHub release page. Immutable v1.2.0 remains available at DOI
+`10.5281/zenodo.21711341`, immutable v1.1.0 at DOI
+`10.5281/zenodo.21710743`, and immutable v1.0.1 at DOI
+`10.5281/zenodo.21541561`.
+Fresh PDF builds are not generally claimed to be byte-identical because PDF timestamps
 and trailer identifiers may vary. Reproduction of the paper means matching
 content, pagination, references, and visual layout.
 
-## Canonical release-gate environment
+## Canonical verification environment
 
 - TeX Live 2023/Debian
 - pdfTeX 1.40.25
@@ -42,7 +43,7 @@ This independent render check does not replace the canonical `make ci` release
 gate above. GitHub Actions runs that gate for pull requests, `main`, and
 version tags.
 
-These hashes describe the immutable v1.1.0 release, not the current v1.2.0
+These hashes describe the immutable v1.1.0 release, not the current v1.3.0
 release PDFs.
 
 ## Release v1.2.0 render
@@ -66,6 +67,38 @@ Accessibility limitation: both PDFs report `Tagged: no`. The inspected paper
 fonts embed ToUnicode maps except CMSY10 and CMEX10, so mathematical-symbol
 extraction remains tool-dependent even though ordinary text extraction is
 available. No tagged-PDF or universal screen-reader claim is made.
+
+## Release v1.3.0 render
+
+The tracked release PDFs include the operational-channel core, the
+electromagnetic evidence bridge, the four July 2026 source probes, the exact
+binary/constructibility screen, and the Einstein-monotile
+selector/materialization result. They were compiled with the same official
+Tectonic 0.16.9 Windows MSVC archive and cached dependency bundle recorded
+above, with `SOURCE_DATE_EPOCH=1785369600`.
+
+- two independent clean output directories produced byte-identical PDFs;
+- paper: 71 pages, SHA-256
+  `a45469c2f3695de54b5b3498c1d46445caa34b9623c1cad07c7a0cc9517576ed`;
+- synopsis: two pages, SHA-256
+  `dff9888788039d60906a13846c2fde49fad11b8bab65af884f30e8e343126b50`;
+- all four final logs contain no unresolved citations or references, missing
+  glyphs, overfull/underfull boxes, package/class/font warnings, or fatal
+  errors;
+- the full 71-page release render was inspected as contact sheets; the title,
+  energy-port theorem, electromagnetic scope gates, final references, and
+  both synopsis pages were inspected at larger scale with no clipping or
+  overlap.
+
+The host emitted `Fontconfig error: Cannot load default config file: No such
+file: (null)` after each otherwise successful Tectonic run. This external
+environment message is retained here rather than silently promoted to a clean
+controller claim; the two output pairs were nevertheless byte-identical, the
+TeX logs passed the declared warning scan, and the affected pages rendered
+without missing glyphs.
+
+These tracked bytes are the v1.3.0 release record. Earlier release hashes
+remain immutable in their own tags and deposits.
 
 ## Refresh and verify the release tree
 
@@ -104,7 +137,7 @@ identities, independently recomputes the exact mathematics, refuses to
 overwrite the retained receipt, runs the generator in an isolated location,
 and requires byte-identical output.
 
-## Run the release-gate tests
+## Run the verification tests
 
 ```bash
 python3 -m unittest discover -s tests -v
@@ -138,7 +171,7 @@ build/paper/On_Boundaries_of_Evidence.pdf
 ```
 
 The final LaTeX log must contain no unresolved citations or references, missing
-glyphs, overfull boxes, or fatal errors. The expected page count is 56.
+glyphs, overfull boxes, or fatal errors. The expected page count is 69.
 
 ## Build the synopsis
 
@@ -171,7 +204,7 @@ For the full gate, including both document builds, run:
 make ci
 ```
 
-The build gate requires a 56-page paper and two-page synopsis, one final PDF
+The build gate requires a 71-page paper and two-page synopsis, one final PDF
 record per log, and no unresolved reference, citation, font, glyph, box, or
 fatal TeX warning.
 
@@ -181,13 +214,13 @@ With a verified manifest, build the complete-release and manuscript-source
 archives:
 
 ```bash
-make dist VERSION=1.2.0 SOURCE_DATE_EPOCH=1785369600
+make dist VERSION=1.3.0 SOURCE_DATE_EPOCH=1785369600
 ```
 
 Run the archive builder again in a separate empty output directory and require
-the two runs to be byte-identical. The builder re-verifies the manifest,
-rejects unsafe member paths, normalizes ZIP metadata to the release epoch, and
-refuses to overwrite an existing archive.
+the two runs to be byte-identical before uploading them as release assets. The
+builder re-verifies the manifest, rejects unsafe member paths, normalizes ZIP
+metadata to the release epoch, and refuses to overwrite an existing archive.
 
 ## Source corpus boundary
 

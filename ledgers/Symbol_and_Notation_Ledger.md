@@ -1,14 +1,18 @@
 # Symbol and Notation Ledger
 
-The released baseline for this normative ledger is version 1.2.0 of *On
+The released version for this normative ledger is 1.3.0 of *On
 Boundaries of Evidence*, released 30 July 2026 at
-`https://github.com/jkolantree/BSC/releases/tag/v1.2.0`. The Zenodo concept DOI
-is `10.5281/zenodo.21541160`; a v1.2.0 version DOI assigned after deposit is
-recorded on the GitHub release page. The immutable v1.1.0 version DOI is
+`https://github.com/jkolantree/BSC/releases/tag/v1.3.0`. The Zenodo concept DOI
+is `10.5281/zenodo.21541160`; the v1.3.0 version DOI assigned after the tagged
+bytes were built is recorded on the GitHub release page. The immutable v1.2.0
+version DOI is `10.5281/zenodo.21711341`; the immutable v1.1.0 version DOI is
 `10.5281/zenodo.21710743`, and the immutable v1.0.1 version DOI remains
 `10.5281/zenodo.21541561`. A symbol has no meaning outside the row or local
 declaration that types
 it. Local specializations are permitted only when their scope is explicit.
+
+The operational-channel and electromagnetic symbols below are released in
+version `1.3.0`.
 
 ## Global conventions
 
@@ -239,6 +243,55 @@ typed uses of the word "simulation."
 | $\iota$ | factored evidence identity | $(\iota_{\mathrm{cand}},\iota_{\mathrm{data}},\iota_{\mathrm{analysis}},\iota_{\mathrm{env}},\iota_{\mathrm{contract}})$. Evidence transfers exactly only across every identity factor on which it depends; a changed identity needs theorem-class applicability or a certified compatibility morphism. A genuinely absent factor uses a typed not-applicable value rather than being omitted. |
 | $\Phi_k,\widehat\Phi_k$ | reference and surrogate-coupled host maps | $\Phi_k(x)=F_k(x,g_k(x))$ and $\widehat\Phi_k(x)=F_k(x,\widehat g_k(x))$ on a certified reachable domain. |
 | $E_k,L_k,b_k$ | nonnegative state error, host amplification, and one-step injection | If $E_{k+1}\le L_kE_k+b_k$, then the existing prefix theorem gives the finite-horizon product-sum bound. Average standalone RMSE does not establish a uniform reachable-domain $b_k$. |
+
+## Operational report channels
+
+These are `1.3.0` certificate and application symbols. They describe a
+fixed typed preparation-to-report pipeline and do not add a ninth BSC morphism
+field or prove the open full quantum composition claim BSC-QOP-03.
+
+| Symbol | Type or codomain | Meaning and constraints |
+|---|---|---|
+| $\mathsf{ORE}$ | operational report envelope | $(\Theta,\{z_0(\theta)\},\{T_k\}_{k=1}^m,Z,\{P_\theta^Z\},\mathsf{Cert}_{\mathrm{ORE}})$. It binds preparation, fixed interfaces, controls, dynamics, measurement, report, and the induced classical statistical experiment. Common envelope form does not identify microscopic physics. |
+| $z_k,\widehat z_k$ | ideal and implemented state or law | Quantum interfaces carry density operators; classical interfaces carry probability laws. Memory, feedback, clock, and history variables must be included in the state if they affect a Markov-stage claim. |
+| $d_k$ | total variation or trace distance | Interface metric declared by type. Quantum trace distance is $D_{\mathrm{tr}}(\rho,\sigma)=\frac12\lVert\rho-\sigma\rVert_1$; the factor $1/2$ is retained at a measurement boundary. |
+| $\widehat{\mathcal R}_k$ | implemented reachable set or certified superset | Every stage defect is evaluated on implemented reachable inputs. An ideal-only reachable set does not control the first term of the propagation proof. |
+| $\varepsilon_k,\eta_k,E_k$ | local defect, ideal-stage contraction, and propagated discrepancy | $d_k(\widehat T_k\widehat z,T_k\widehat z)\le\varepsilon_k$ on $\widehat{\mathcal R}_{k-1}$ and $d_k(T_k\widehat z,T_kz)\le\eta_kd_{k-1}(\widehat z,z)$. Then $E_m\le\sum_{k=0}^m\varepsilon_k\prod_{j=k+1}^m\eta_j$. Strict quantum contraction requires a separate theorem. |
+| $\mathcal I_\varepsilon(y)$ | identified set in parameter space | $\{\theta:d(F(\theta),y)\le\varepsilon\}$. A target property is exactly report-identifiable only when constant on the applicable identified set; at zero error this is fiber constancy. |
+| $\mathcal D_t$ | declared open-system generator term | In $\dot\rho=-i[H,\rho]/\hbar+\mathcal D_t(\rho)$, the decomposition must generate physical trace-preserving evolution and fix a system/bath split and energy zero. |
+| $E(t)$ | scalar system-energy expectation | $\operatorname{Tr}[\rho(t)H(t)]$, with $\dot E=\operatorname{Tr}(\rho\dot H)+\operatorname{Tr}(H\mathcal D_t(\rho))$. Measurements, resets, coupling energy, and fields outside the reduced state need additional ledger terms. |
+| $U_v,b_v,p_h$ | stored energy, non-port supply, and inward half-edge power | In a finite energy-port diagram, $\dot U_v=b_v+\sum_{h\in H_v}p_h+r_v$. A non-port supply represents an excluded pump, bath, reservoir, or moving support; it is not energy creation. All quantities share a declared clock and rate convention. |
+| $r_v,g_e,R_G$ | component, seam, and assembled energy residuals | $r_v=\dot U_v-b_v-\sum_hp_h$, $g_e=p_h+p_{\bar h}$, and $R_G=d(\sum_vU_v)/dt-\sum_vb_v-\sum_{h\in H_{\mathrm{ext}}}p_h$. BSC-ENE-02 gives $R_G=\sum_vr_v+\sum_eg_e$. Global zero does not certify the local terms. |
+| $\eta_E,\Phi_N,\eta_{\mathrm{all}}$ | energy efficiency, count yield, and end-to-end conditioned efficiency | $\eta_E=E_{\mathrm{useful,out}}/E_{\mathrm{charged,in}}$ is differently typed from a count yield. $\eta_{\mathrm{all}}$ retains the success indicator rather than normalizing away failures. Stage ratios telescope only across the identical intermediate extensive quantity and evidence identity. |
+| $q_x$ | Bernoulli bias conditional on input $x$ | Used only under the declared scalar conditionally-iid model $Y_i\mid X=x\sim\operatorname{Bernoulli}(q_x)$. Hardware variability does not establish iid sampling. |
+| $K=\sum_{i=1}^NY_i$ | sufficient count in $\{0,\ldots,N\}$ | Under the scalar conditionally-iid model, $I(X;Y^N)=I(X;K)\le\log_2(N+1)$. For 256 labels, zero-error finite-$N$ decoding is impossible because the laws cannot be mutually singular. |
+| $\mathcal C_N$ | raw-bit compression factor | $8/N$ for an 8-bit input represented by $N$ output bits. $N=1$ is nominal 8:1 lossy coding; $N\ge8$ is not raw-bit compression. |
+| $C,S,P,Q$ | source/target relation matrices and permutation matrices | Under the convention $P_{\phi(i),i}=1$, one same-entity alignment requires $S=PCP^{\mathsf T}$. Independent row/column alignment $S=PCQ^{\mathsf T}$ is weaker and applies naturally only to separately typed roles. |
+| $\alpha$ | dimensionless fine-structure constant | Low-energy electromagnetic coupling $e^2/(4\pi\varepsilon_0\hbar c)$. Operational channel topology does not determine its value; a physical and metrological bridge is required. In the revised SI, exact $e,h,c$ imply $\mu_0=\alpha\,2h/(ce^2)$ rather than fixing $\alpha$. |
+
+## Electromagnetic evidence bridge
+
+These are local `1.3.0` symbols for the electromagnetic completion of an
+operational report envelope. They neither add a field to the BSC morphism nor
+derive a unified microscopic theory or the numerical value of $\alpha$.
+
+| Symbol | Type or codomain | Meaning and constraints |
+|---|---|---|
+| $\mathsf{EMC}$ | typed electromagnetic completion record | $(M,g,P,[\mathcal A],\mathcal F,\mathcal H,\mathcal J,\mathcal C,\mathcal B,\mathcal M,\mathcal R,\mathsf{Cert}_{\mathrm{EM}})$. It binds geometry, bundle and gauge, fields and sources, constitutive response, boundary ports, instrument, report, and certificate. |
+| $\mathscr A(P),\mathscr G(P),[\mathcal A]$ | admissible connections, declared gauge group, and gauge class | A connection-level report is physical only if constant on $\mathscr G(P)$-orbits. The local symbol $\mathcal A$ here is a connection and is distinct from the experiment admission rule. |
+| $\mathcal F,\mathcal H,\mathcal J$ | curvature two-form, excitation two-form, and current three-form | $d\mathcal F=0$ and $d\mathcal H=\mathcal J$. A smooth global solution implies $d\mathcal J=0$ and exactness of $\mathcal J$; singular or open-boundary models require separately typed distributional or relative forms. |
+| $\operatorname{Hol}_\gamma(\mathcal A)$ | element of $U(1)$ | In a single trivialization, closed-loop holonomy is $\exp(i\oint_\gamma\mathcal A)$; a nontrivial bundle also requires its patch transitions. Equal curvature need not imply equal holonomy on nontrivial topology. Open-path phase is not gauge invariant without endpoint or compensating data. |
+| $u_{\mathrm{EM}},S_{\mathrm{Poynt}}$ | energy density and Poynting vector | $u_{\mathrm{EM}}=(E\cdot D+H\cdot B)/2$ and $S_{\mathrm{Poynt}}=E\times H$ under a time-independent symmetric positive constitutive law. Modulated or dispersive media need additional pump or material-state terms. |
+| $\mathcal U,\mathcal F,\mathcal Q$ | spatial energy-density, flux, and supply forms | On a fixed oriented spatial manifold, $\partial_t\mathcal U+d\mathcal F=\mathcal Q$. Curvature changes measures and divergence, not the source ledger. Time-dependent metrics and moving boundaries require volume-deformation and Reynolds-transport terms. |
+| $J_\xi^a$ | stress-energy current associated with $\xi$ | $J_\xi^a=-T^a{}_b\xi^b$ obeys $\nabla_aJ_\xi^a=-f_b\xi^b-T^{ab}\nabla_{(a}\xi_{b)}$ for $f^b=\nabla_aT^{ab}$. Conservation requires the total included stress-energy and a Killing field, or a separately declared asymptotic or quasi-local charge. |
+| $S(\omega),W$ | scattering matrix and positive power metric | Passivity gives $S^\dagger W S\preceq W$ only for the declared port basis, reference plane, normalization, band, hidden-port completion, calibration, and stored-energy state. The symbol $S(\omega)$ is local and is not a BSC system object. |
+| $\Lambda_{\varepsilon,\mu}$ | Maxwell boundary-response operator | Maps a declared tangential electric trace space to a declared tangential magnetic trace space for one well-posed forward problem. A finite measured S-parameter matrix is not automatically the full operator. Inverse authority is theorem-, coefficient-class-, gauge-, and data-local. |
+| $Z,q,q^2/Z$ | positive field kinetic coefficient, matter coupling, and normalization invariant | Under $A'=\lambda A$, $Z'=Z/\lambda^2$ and $q'=q/\lambda$ while $q^2/Z$ is unchanged. A fixed representation and canonical normalization may remove the coordinate freedom but do not derive the invariant's value. |
+| $\mathcal A=(q/\hbar)A_{\mathrm{phys}}$ | dimensionless matter connection | First-Chern integrality constrains $\frac{q}{2\pi\hbar}\int_\Sigma F_{\mathrm{phys}}\in\mathbb Z$ for the declared bundle and closed two-cycle. It constrains a charge-flux product, not $\alpha$ separately. |
+| $g(\mu),\beta(g),g(\mu_0)$ | running coupling, beta function, and boundary value | $\mu\,dg/d\mu=\beta(g)$ transports a supplied coupling between scales. It does not determine a numerical trajectory without a boundary value; scheme, matching thresholds, truncation, and scale are part of the certificate. |
+| $P,\kappa,\operatorname{Stab}_{\mathrm{tr}}$ | tiling partition, electromagnetic coefficient field, and translation stabilizer | Translation-faithful materialization means $\tau_v\kappa=\kappa\Rightarrow\tau_vP=P$, hence $\operatorname{Stab}_{\mathrm{tr}}(\kappa)\subseteq\operatorname{Stab}_{\mathrm{tr}}(P)$. It transfers only absence of translation symmetry, not a spectrum, band gap, chirality, or device property. The local $P$ here is a tiling partition, not a preparation kernel or permutation matrix. |
+| $C_{\mathrm{sel}},\Phi_{\mathrm{mat}},X_N$ | geometry selector, materialization map, and finite approximant | $C_{\mathrm{sel}}$ chooses tile interiors, edges, vertices, centroids, or another finite point set; $\Phi_{\mathrm{mat}}$ adds scale, thickness, constitutive dispersion, loss, substrate, and interfaces. An infinite tiling theorem does not identify a fabricated finite device without these maps. |
+| $F_N(k_x,k_y),I_N$ | scalar point-scatterer amplitude and intensity | $F_N=\sum_{j=1}^N\exp(2\pi i(k_xx_j+k_yy_j))$ and $I_N=|F_N|^2$ for the declared identical-point model. This is not a full Maxwell solution for finite scatterers; selector, weights, form factor, phase, illumination, and calibration remain typed. |
 
 ## Certified normalized-scale profiles
 
