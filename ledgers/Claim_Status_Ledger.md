@@ -1,17 +1,19 @@
 # Claim-Status Ledger
 
-The released version for this ledger is 1.3.0 of *On Boundaries of
-Evidence*, released 30 July 2026 at
-`https://github.com/jkolantree/BSC/releases/tag/v1.3.0`. The Zenodo concept DOI
-is `10.5281/zenodo.21541160`; the v1.3.0 version DOI assigned after the tagged
-bytes were built is recorded on the GitHub release page. The immutable v1.2.0
-version DOI is `10.5281/zenodo.21711341`; the immutable v1.1.0 version DOI is
+The released version for this ledger is 1.4.0 of *On Boundaries of
+Evidence*, released 31 July 2026 at
+`https://github.com/jkolantree/BSC/releases/tag/v1.4.0`. The Zenodo concept DOI
+is `10.5281/zenodo.21541160`; the v1.4.0 version DOI assigned after the tagged
+bytes were built is recorded on the GitHub release page. The immutable v1.3.0
+version DOI is `10.5281/zenodo.21713285`; the immutable v1.2.0 version DOI is
+`10.5281/zenodo.21711341`; the immutable v1.1.0 version DOI is
 `10.5281/zenodo.21710743`, and the immutable v1.0.1 version DOI remains
 `10.5281/zenodo.21541561`. This is a status record, not a substitute for
 proofs, sources, or receipts. A materially repaired or restricted proposition
 receives a new identifier; the superseded row remains visible.
 
-Version `1.3.0` rows do not inherit empirical authority from cited studies.
+Version `1.4.0` rows do not inherit empirical authority from cited studies or
+computational authority from an external verified prefix.
 
 ## Status vocabulary
 
@@ -143,6 +145,13 @@ reformulation.
 | BSC-ZDQ-04 | Wei et al. report a five-qubit NMR proof of principle whose polynomial-fit locations, where both measured coherence components approached zero at $\beta_{\mathrm{eff}}=1/2$, agree with the first five known zero ordinates and whose $\beta_{\mathrm{eff}}=0.3$ control shows no discernible zeros. | N/A | N/A | single study | unexecuted | verified publication | local only | Source-report row only. The finite-size coherence was nonzero; BSC has not replayed the data, fitting, calibration, or hardware execution, and the inspected source was an unedited article-in-press version. |
 | BSC-ZDQ-05 | Finite experimental and simulated agreement entails thermodynamic exclusivity and the unrestricted Riemann Hypothesis. | false | proved | single study | unexecuted | present proof | blocked | Finite windows and selected known zeros discharge neither the required limiting nonanalyticity nor the universal zero census and RH quantifier. |
 | BSC-ZDQ-06 | The reported quantum construction establishes an end-to-end quantum advantage for RH verification over the best applicable classical methods. | open | conditional | untested | unexecuted | verified publication | local only | The published bound compares stated $\lvert t\rvert$ scaling with direct Riemann–Siegel evaluation under precision, sampling, and state-preparation assumptions and acknowledges faster classical methods; no broader comparator or hardware advantage is inherited. |
+| BSC-CRS-01 | In Ansari's declared family, $F_1\setminus F_2=(36\mathbb N_0+27)\cup(36\mathbb N_0+31)$; the $31$ class has the displayed exact smaller merge, so the printed first induction step leaves the $27$ class as its missing obligation. | true | proved | N/A | exact receipt | present proof | bounded | Version 1.4.0. Exact residue enumeration and affine edge identities. This is BSC's audit verdict, not a journal-issued corrigendum and not a proof that $36k+27$ is recursive. |
+| BSC-CRS-02 | $U_m=\{n:7s_j(n)>4j,\ 1\le j\le m\}$ is a nested periodic recursively-sufficient family with exponentially vanishing density. | true | proved | N/A | unexecuted | present proof | certified | Version 1.4.0. Uses the exact shortcut-map prefix bound and the classical parity-vector bijection and binomial entropy estimate. It is a replacement sieve, not a novelty claim for parity methods. |
+| BSC-CRS-03 | If $B,S$ are recursively sufficient and $A\subseteq B$, then $A\cup(B\cap S)$ is recursively sufficient; consequently the declared $H_{j,j}$ gives a nested zero-density ternary-spine replacement. | true | proved | N/A | unexecuted | present proof | certified | Version 1.4.0. The general density bound needs no independence assumption; the sharper displayed identity requires the declared power-of-two-period CRT hypothesis. The safety-net term can occupy the original ternary gap. |
+| BSC-CRS-04 | Conditional on convergence through $B_0=2^{71}$, the prefix sets $V_m=\{n:485s_j(n)>306j,\ 1\le j\le m\}$ are recursively sufficient. | true | conditional | N/A | exact receipt | present proof | bounded | Version 1.4.0. The exact inequality $(3B_0+1)^{306}<2^{485}B_0^{306}$ and the parity-prefix argument are checked. BSC did not replay the external base computation. |
+| BSC-CRS-05 | For $G=\{3,7,15,19,27\}\pmod {36}$ and $W_m=G\cap V_m$ with $m\ge2$, $W_m$ is recursively sufficient and $d(W_m)=\frac59d(V_m)$; the exact $V_{173}$ count is $113556863454847668033678912559844765797703296469$. | true | conditional | N/A | exact receipt | present proof | bounded | Version 1.4.0. The restriction $m\ge2$ is required for $V_m\subseteq3\pmod4$. RS status inherits the external-base condition through $V_m$; the count and CRT density are exact. At $m=173$, the elimination is approximately $99.999473071567307508\%$. |
+| BSC-CRS-06 | If every positive integer at most $2^{71}$ converges and the F11 exact computation is correct, then every positive integer at most $2^{71}+10^{10}$ converges. | true | conditional | N/A | exact receipt | present proof | local only | Version 1.4.0. Strong induction uses recursive sufficiency outside $W_{173}$ and a retained first descent inside it. The receipt exhausts 1,388,888,889 compatible candidates and replays 52,686 rows. This is not an official record or a universal proof. |
+| BSC-CRS-07 | Ansari's original $F_n$ is recursively sufficient for every $n\ge2$, including the full $36\mathbb N_0+27$ progression at the first step. | open | none | N/A | unexecuted | verified publication | blocked | The inspected printed induction does not prove the missing progression. A separate exact proof or accepted correction is required. |
 
 ## Fixture ledger
 
@@ -158,6 +167,7 @@ reformulation.
 | BSC-FIX-08 | $x=-1$ refutes $\forall x\in\mathbb R,\sqrt{x^2}=x$. | true | proved | exact receipt | `counterexample_confirmed`; schema and independent semantic checks pass | Any regression accepting the universal identity. |
 | BSC-FIX-09 | The declared finite engineered zeta–coherence identity holds exactly, while the fixture supplies no execution of the application-level scaling, contour, experiment, complexity, temperature, origin, or RH claims. | true | proved | unexecuted | Exact finite identity retained; all broader theorem and source-report claims remain in the application rows above rather than inheriting fixture execution. | A phase, sign, normalization, or arithmetic mismatch, or any promotion from the documentary fixture to an unexecuted descendant claim. |
 | BSC-FIX-10 | With the same exact standalone interface error $1/100$ and horizon 10, stable HOST-A ($a=1/2$) remains within tolerance $1/20$ at exact maximum error $1023/51200$, while stable HOST-B ($a=9/10$) first violates that tolerance at step 7 and reaches $6513215599/100000000000$. | true | proved | exact receipt | `host_relative_tolerance_disposition_confirmed`; schema, factored identity, complete exact trajectories, tolerance disposition, and byte-reproduction checks pass | Version 1.2.0. The receipt binds the finite recurrence claim, exact reference and surrogate definitions and trajectories, horizon, tolerance, runtime, canonical artifacts, and candidate/analysis/environment/contract identity mappings; data identity is typed not applicable. It proves one loss-coordinate disposition, not full BSC admissibility. Any identity mismatch, arithmetic or prefix change, decimal substitution, or promotion to an untested simulator or physical system invalidates transfer. |
+| BSC-FIX-11 | The corrected first residue layer, exact $V_{173}/W_{173}$ arithmetic, exhaustive ten-billion-interval candidate set, and all retained first descents match the frozen Collatz certificate. | true | conditional | exact receipt | `conditional_prefix_extension_certificate_verified`; exact row replay and complete candidate enumeration pass | Version 1.4.0. The 4,826,862-byte table has SHA-256 `88df1573d49511a4bc93fab35f85d3feb1cade2d40b5444ee88ae42699aa5250`; 52,686 retained rows exactly match an exhaustive scan of 1,388,888,889 compatible candidates. The finite extension remains conditional on the separately sourced $2^{71}$ base. Any hash, row, membership, endpoint, threshold, completeness, or base-identity mismatch invalidates transfer. |
 
 ## Mechanical, empirical, and release claims
 

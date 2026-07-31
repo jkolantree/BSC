@@ -1,7 +1,8 @@
 # Source availability
 
 The public release includes the complete paper source, bibliography, audit
-ledgers, revision memorandum, and executable Fixture F8 artifacts.
+ledgers, revision memorandum, executable Fixtures F8, F10, and F11, and the
+F11 tabular first-descent certificate.
 
 The twelve internal BSC corpus documents from which the manuscript's notation
 lineage and repair history were reconstructed are not redistributed here.

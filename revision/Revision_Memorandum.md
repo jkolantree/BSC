@@ -3,13 +3,14 @@
 ## Purpose
 
 This memorandum records every material repair made while constructing and
-auditing *On Boundaries of Evidence* through published version 1.3.0, dated
-30 July 2026, with immutable GitHub release record
-`https://github.com/jkolantree/BSC/releases/tag/v1.3.0` and Zenodo concept DOI
-`10.5281/zenodo.21541160`. The v1.3.0 version DOI assigned after the tagged
+auditing *On Boundaries of Evidence* through published version 1.4.0, dated
+31 July 2026, with immutable GitHub release record
+`https://github.com/jkolantree/BSC/releases/tag/v1.4.0` and Zenodo concept DOI
+`10.5281/zenodo.21541160`. The v1.4.0 version DOI assigned after the tagged
 bytes were built is recorded on the GitHub release page. The immutable
-v1.2.0 version DOI is `10.5281/zenodo.21711341`; the immutable v1.1.0 version
-DOI is `10.5281/zenodo.21710743`; the immutable v1.0.1 version DOI remains
+v1.3.0 version DOI is `10.5281/zenodo.21713285`; the immutable v1.2.0 version
+DOI is `10.5281/zenodo.21711341`; the immutable v1.1.0 version DOI is
+`10.5281/zenodo.21710743`; the immutable v1.0.1 version DOI remains
 `10.5281/zenodo.21541561`. This memorandum is separate from the manuscript
 so that the paper can stand as a coherent formal work while the source lineage
 remains inspectable. Repairs are classified as:
@@ -1761,3 +1762,66 @@ field, prove a material model, execute a calibrated scattering experiment, or
 establish a unified field theory. They belong only to the `1.3.0`
 manuscript, framework, synopsis, ledgers, and regression suite. The immutable
 v1.2.0 release, tag, GitHub assets, and Zenodo deposit remain unchanged.
+
+## Version 1.4.0: Collatz recursive-sufficiency correction and certificate
+
+### Source defect and mathematical repair
+
+The release audits Mohammad Ansari's 2025 recursive-sufficiency induction
+against the published definitions. Exact residue expansion gives
+
+```math
+F_1\setminus F_2
+=(36\mathbb N_0+27)\cup(36\mathbb N_0+31).
+```
+
+The $31$-class has an explicit exact merge to $32k+27<36k+31$; the
+$27$-class remains unresolved. The release therefore does not restore the
+printed induction, the original $F_n$ claim, or the claimed
+$4\cdot3^{44}+2$ jump.
+
+The retained replacement consists of:
+
+- an unconditional parity-prefix RS family $U_m$ with exponentially
+  vanishing density;
+- the safety-net lemma $A\cup(B\cap S)$ for $A\subseteq B$ and RS
+  $B,S$, giving a ternary-spine family without promoting $F_n$;
+- a $2^{71}$-conditioned family $V_m$;
+- the refined $W_m=G\cap V_m$ for $m\ge2$, with exact density
+  $d(W_m)=\frac59d(V_m)$ in that range; and
+- an explicit preservation of the classical parity-vector, stopping-time,
+  density, and sufficient-set prior-art boundary.
+
+The proposed ghost-cylinder theorem and $1/243$ subprogression were not
+needed for this repair and were withheld pending separate symbolic review.
+
+### Executed exact fixture F11
+
+Fixture F11 retains a 4,826,862-byte, 52,686-row first-descent table with
+SHA-256
+`88df1573d49511a4bc93fab35f85d3feb1cade2d40b5444ee88ae42699aa5250`.
+The routine checker independently replays every row with arbitrary-precision
+integers. The publication gate additionally exhausts all 1,388,888,889
+$G$-compatible offsets in the ten-billion-wide interval and requires the
+candidate set to match exactly.
+
+Strong induction then gives the exact implication
+
+```math
+\bigl[\text{convergence through }2^{71}\bigr]
+\Longrightarrow
+\bigl[\text{convergence through }2^{71}+10^{10}\bigr],
+```
+
+conditional on the retained computation. BSC did not replay the external
+$2^{71}$ campaign. The result is an unreviewed claim-local
+computer-assisted extension, not an official frontier announcement or a
+Collatz proof.
+
+### Framework and release boundary
+
+No BSC core morphism, defect algebra, simulation profile, operational channel,
+or electromagnetic theorem changes. The update is limited to the
+number-theory application, F11, claim and notation ledgers, paper, synopsis,
+tests, metadata, and release artifacts. Version 1.3.0 and every earlier tag,
+asset, and Zenodo record remain immutable.

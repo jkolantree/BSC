@@ -33,7 +33,7 @@
   urlcolor=inkblue,
   pdftitle={On Boundaries of Evidence --- Boundary-State Calculus for Typed Observation, Admissible Transfer, and Falsifiable Persistence},
   pdfauthor={J. Tree},
-  pdfsubject={Version 1.3.0 release; a typed audit calculus for scientific transfers},
+  pdfsubject={Version 1.4.0 release; a typed audit calculus for scientific transfers},
   pdfkeywords={Boundary-State Calculus, scientific transfer, evidence, admissibility, information loss, claim status}
 }
 \urlstyle{same}
@@ -93,14 +93,14 @@
 \newcommand{\Lip}{\operatorname{Lip}}
 \newcommand{\push}{_{\#}}
 \newcommand{\blank}{\text{--}}
-\newcommand{\BSCVersion}{1.3.0}
+\newcommand{\BSCVersion}{1.4.0}
 \newcommand{\BSCDOI}{Concept DOI 10.5281/zenodo.21541160}
 
 \title{\vspace{-1.3cm}\textbf{On Boundaries of Evidence}\\[0.3em]
 \Large--- Boundary-State Calculus for Typed Observation,\\
 Admissible Transfer, and Falsifiable Persistence}
 \author{J. Tree\\[-0.15em]\small Independent researcher}
-\date{30 July 2026\\[0.25em]\small Version \BSCVersion\quad\textbullet\quad
+\date{31 July 2026\\[0.25em]\small Version \BSCVersion\quad\textbullet\quad
 \BSCDOI}
 
 \begin{document}
@@ -146,7 +146,7 @@ bridge derived from a gauge structure, action, current, anomaly, boundary
 condition, or measurement protocol.  A claim-local mathematical verdict,
 five readiness coordinates, and a proof-dependency graph prevent local
 success from promoting unrelated claims.
-Ten exact fixtures expose both admissible transfers and hard obstructions,
+Eleven exact fixtures expose both admissible transfers and hard obstructions,
 including deterministic receipts for a permanent regression counterexample
 and stable-host surrogate dependence.  The resulting formalism treats
 persistence as an operational organizing principle:
@@ -361,6 +361,8 @@ Fixture F9 finite zeta identity & true & proved & N/A & unexecuted & present pro
 bounded\\
 Fixture F10 host-relative surrogate tolerance & true & proved & N/A &
 exact receipt & present proof & local only\\
+Fixture F11 conditional Collatz-prefix extension & true & conditional &
+N/A & exact receipt & present proof & local only\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -4021,6 +4023,58 @@ A different host or horizon is a new claim identity and must be recomputed or
 covered by a certified compatibility map.
 \end{fixture}
 
+\begin{fixture}[Executable Collatz recursive-sufficiency repair]
+\label{fix:collatz-repair}
+\textbf{Inputs and types.}
+Use the shortcut map \(T(n)=n/2\) for even \(n\) and
+\(T(n)=(3n+1)/2\) for odd \(n\).  Let \(s_j(n)\) count odd terms in the
+first \(j\) shortcut steps, put \(B_0=2^{71}\), and define
+\[
+ V_{173}=\{n:485s_j(n)>306j\text{ for }1\le j\le173\}.
+\]
+Let \(G\) be the union of the residue classes
+\(3,7,15,19,27\pmod {36}\), and put \(W_{173}=G\cap V_{173}\).
+The external base claim is that every positive integer below \(B_0\)
+converges; BSC does not replay that computation.
+
+\textbf{Claimed result.}
+The Lemma 3.1 induction on pp.\ 476--477 audited in
+\cref{sec:collatz-repair} omits the two classes \(27,31\pmod {36}\);
+the \(31\)-class has an exact smaller merge while the \(27\)-class remains
+unresolved.  Conditional on the external base, \(W_{173}\) is recursively
+sufficient.  The exact count
+\(\nu_{173}=|V_{173}\bmod2^{173}|\) is
+\texttt{\seqsplit{113556863454847668033678912559844765797703296469}}, and
+\[
+ d(W_{173})=\frac59\frac{\nu_{173}}{2^{173}}.
+\]
+The retained table contains every member of
+\(W_{173}\cap(B_0,B_0+10^{10}]\) and an exact first descent for each one.
+Strong induction then extends the conditional prefix through
+\(B_0+10^{10}\).
+
+\textbf{Mechanical test.}
+The 4,826,862-byte table in
+\path{fixtures/F11_collatz_recursive_sieve/} has SHA-256
+\texttt{\seqsplit{88df1573d49511a4bc93fab35f85d3feb1cade2d40b5444ee88ae42699aa5250}}.
+Its 52,686 rows are replayed with arbitrary-precision integers.  The retained
+full-scan receipt records an exhaustive test of all 1,388,888,889
+\(G\)-compatible offsets in the interval; the publication gate repeats that
+enumeration independently and requires identical offsets.
+
+\textbf{Expected certificate.}
+BSC-CRS-01 and the sieve arithmetic are true with proved support; the F11
+computation has an exact CPython 3.12.13 receipt; the finite extension is
+conditional on the separately sourced \(2^{71}\) base.
+
+\textbf{Failure and demotion.}
+Any omitted or extra offset, row-replay error, threshold or endpoint change,
+artifact-hash mismatch, or external-base mismatch withdraws the affected
+computational transfer.  None of the fixture evidence proves the universal
+Collatz conjecture, the original ternary induction, or the unresolved
+\(36k+27\) progression.
+\end{fixture}
+
 \section{Application boundaries: holography, QCD, primordial-field theory,
 engineered arithmetic dynamics, and learned models}\label{sec:applications}
 
@@ -4606,6 +4660,127 @@ the status of RH itself remains open.  The existing BSC morphism, quotient,
 scale-certificate and status machinery is sufficient for this audit; no new
 foundational primitive is inferred.
 
+\clearpage
+\subsection{Collatz recursive sufficiency: correction and conditional
+certificate}\label{sec:collatz-repair}
+
+For the shortcut Collatz map, call \(n>1\) recursive when its orbit merges
+with that of a smaller positive integer, and call \(F\) recursively sufficient
+(RS) when \(F\subsetneq\mathbb N\) and every integer outside \(F\) is
+recursive.  Ansari's proposed
+ternary family \citep{ansari2025recursive} is
+\[
+ F_n=\bigcup_{a_0,\ldots,a_{n-1}\in\{0,1\}}
+ \left(4\cdot3^n\mathbb N_0+
+ 4\sum_{i=0}^{n-1}a_i3^i+3\right).
+\]
+Direct residue expansion gives
+\[
+ F_1\setminus F_2
+ =(36\mathbb N_0+27)\cup(36\mathbb N_0+31).
+\]
+For \(x=36k+31\), the exact undirected functional-graph path
+\[
+ x\longleftrightarrow2x
+ \longleftrightarrow\frac{4x-1}{3}
+ \longleftrightarrow\frac{8x-5}{9}=32k+27<x
+\]
+certifies recursion.  Thus the printed induction's first nontrivial step is
+equivalent to the still-undischarged claim that every \(36k+27\) is
+recursive.  BSC-CRS-01 is this exact defect statement, not a declaration
+that the journal has issued a corrigendum.
+
+A replacement does not need that missing claim.  If \(s_j(n)\) counts odd
+terms in the first \(j\) shortcut steps, define
+\[
+ U_m=\{n:7s_j(n)>4j\text{ for every }1\le j\le m\}.
+\]
+If a prefix fails and no earlier iterate is below \(n\), every odd shortcut
+factor is at most \(5/3\), whence
+\[
+ \frac{T^j(n)}n\le
+ \frac{(10/3)^{s_j(n)}}{2^j}
+ \le
+ \left(\frac{10^4}{2^7 3^4}\right)^{j/7}<1.
+\]
+Therefore each \(U_m\) is RS.  The parity-vector bijection makes it periodic
+modulo \(2^m\); the standard binomial entropy bound gives
+\[
+ d(U_m)\le2^{-m(1-H_2(4/7))}\longrightarrow0.
+\]
+Here \(d\) is natural density for the periodic sets in question and
+\(H_2(p)=-p\log_2p-(1-p)\log_2(1-p)\) is binary entropy.
+Parity vectors and stopping-time density methods are classical
+\citep{terras1976stopping,lagarias1985three,monks2013sufficient,
+rozier2026paradoxical}; no broad method-priority claim is made.
+
+The ternary spine can also be retained without promoting \(F_n\).  If \(B,S\)
+are RS and \(A\subseteq B\), then \(A\cup(B\cap S)\) is RS because its
+complement is the union of a subset of \(\mathbb N\setminus S\) with
+\(\mathbb N\setminus B\), while the constructed set remains a proper subset
+of \(B\).  Taking
+\[
+ H_{n,m}=F_n\cup(F_1\cap S_m)
+\]
+for a decreasing periodic RS family \(S_m\subset4\mathbb N_0+3\) gives the
+general bound
+\[
+ d(H_{n,m})\le
+ \frac14\left(\frac23\right)^n+d(S_m).
+\]
+Thus the diagonal \(H_{j,j}\) is a nested zero-density RS replacement.  When
+\(S_m\) has a power-of-two period, as \(U_m\) does, the ternary coordinate is
+independent and Chinese remaindering sharpens the bound to
+\[
+ d(H_{n,m})=
+ \frac14\left(\frac23\right)^n+\frac23d(S_m)
+ -\left(\frac23\right)^n d(S_m).
+\]
+This identity is not asserted for arbitrary periods sharing a factor with
+\(3^n\).  In either case, the safety-net term can occupy the printed ternary
+gap.
+
+For a sharper finite sieve, use \(B_0=2^{71}\) and the externally reported
+verified prefix \citep{barina2025verification}.  The exact inequality
+\[
+ (3B_0+1)^{306}<2^{485}B_0^{306}
+\]
+shows, by the same prefix argument, that
+\[
+ V_m=\{n:485s_j(n)>306j\text{ for every }1\le j\le m\}
+\]
+is RS conditional on that base.  The exact parity-word recurrence gives
+\[
+ |V_{173}\bmod2^{173}|=\nu_{173},
+\]
+where
+\(\nu_{173}=\)
+\texttt{\seqsplit{113556863454847668033678912559844765797703296469}}.
+Removing the already recursive \(31\pmod {36}\) class from \(F_1\) gives the
+RS set \(G=\{3,7,15,19,27\}\pmod {36}\).  Since intersections of RS sets are
+RS and \(V_m\subset3\pmod4\) for \(m\ge2\), Chinese remaindering yields
+\[
+ W_m=G\cap V_m,\qquad d(W_m)=\frac59d(V_m)
+ \quad(m\ge2).
+\]
+Thus \(W_{173}\) has density
+\(5.269284326924912742\ldots\times10^{-6}\).
+
+Fixture F11 independently enumerates all 1,388,888,889 compatible candidates
+in \((B_0,B_0+10^{10}]\), reproduces exactly 52,686 retained offsets, and
+checks an exact forward descent for every retained integer.  Strong induction
+therefore proves BSC-CRS-06:
+\[
+ \bigl[\text{all }n\le B_0\text{ converge}\bigr]
+ \Longrightarrow
+ \bigl[\text{all }n\le B_0+10^{10}\text{ converge}\bigr],
+\]
+conditional on the retained exact computation.  BSC has not replayed the
+external base campaign, so this is a claim-local computer-assisted extension,
+not an official record or a universal proof.  The fuller derivation, source
+identity and rejected promotions are in
+\texttt{applications/Collatz\_Recursive\_Sufficiency\_Audit.md}.
+
 \subsection{Four July 2026 operational-channel probes}
 \label{sec:channel-probes}
 
@@ -4801,6 +4976,11 @@ pinned convention, certified implementation residual above budget, or a
 certified bounded zero-count disagreement & only the affected BSC-ZDQ node is
 demoted; exact-zero and RH promotion are blocked & unaffected finite algebra,
 limit-qualified analysis, or local empirical report remains separately typed\\
+Collatz finite-prefix certificate & omitted or extra \(W_{173}\) candidate,
+wrong first descent, changed threshold or endpoint, artifact-hash mismatch,
+or unsupported \(2^{71}\) base & affected BSC-CRS/F11 computational transfer
+withdrawn & the exact induction defect and independently proved sieve
+statements remain separately typed\\
 Operational report channel & an implemented trajectory leaves the certified
 reachable set, an interface changes, or a local defect/contraction bound fails
 & end-to-end BSC-CHN-01 certificate withdrawn & unaffected stage measurements
@@ -4880,6 +5060,15 @@ precision-matched end-to-end quantum and best applicable classical costs.
 The target is a bounded statement \({\rm RH}(T)\), not unrestricted RH.
 \end{openproblem}
 
+\begin{openproblem}[Adaptive certificate tree for the \(36k+27\) class]
+Construct a well-founded exact residue tree whose leaves carry affine
+functional-graph paths from every \(36k+27\) to a smaller positive integer,
+or prove a precise obstruction for a declared class of such trees.  Every
+division, positivity condition and coverage claim must be machine checked.
+A finite-density sieve or a collection of successful subprogressions does
+not discharge the universal class.
+\end{openproblem}
+
 \begin{openproblem}[Physical topology-to-charge bridges]
 For any proposed carrier, derive \(\chi\) from a complete action/gauge/current
 or measurement structure and test anomaly, boundary, quantization, and
@@ -4948,7 +5137,9 @@ exponent and rate split, ambient and fixed-line singular sets, contour count,
 and local root drift; compatibility reserves admit a deployment only when its
 frozen enclosure plus certified change remains within every claim tolerance;
 coupled-surrogate error inherits host sensitivity and horizon rather than
-standalone accuracy alone; and
+standalone accuracy alone; a corrected Collatz residue audit separates a
+proved zero-density recursively-sufficient replacement from one conditional
+finite computation and one unresolved progression; and
 topology alone does not select electric charge.  The fixtures make these
 statements vulnerable to exact tests.
 

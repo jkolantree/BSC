@@ -1,18 +1,19 @@
 # Symbol and Notation Ledger
 
-The released version for this normative ledger is 1.3.0 of *On
-Boundaries of Evidence*, released 30 July 2026 at
-`https://github.com/jkolantree/BSC/releases/tag/v1.3.0`. The Zenodo concept DOI
-is `10.5281/zenodo.21541160`; the v1.3.0 version DOI assigned after the tagged
-bytes were built is recorded on the GitHub release page. The immutable v1.2.0
-version DOI is `10.5281/zenodo.21711341`; the immutable v1.1.0 version DOI is
+The released version for this normative ledger is 1.4.0 of *On
+Boundaries of Evidence*, released 31 July 2026 at
+`https://github.com/jkolantree/BSC/releases/tag/v1.4.0`. The Zenodo concept DOI
+is `10.5281/zenodo.21541160`; the v1.4.0 version DOI assigned after the tagged
+bytes were built is recorded on the GitHub release page. The immutable v1.3.0
+version DOI is `10.5281/zenodo.21713285`; the immutable v1.2.0 version DOI is
+`10.5281/zenodo.21711341`; the immutable v1.1.0 version DOI is
 `10.5281/zenodo.21710743`, and the immutable v1.0.1 version DOI remains
 `10.5281/zenodo.21541561`. A symbol has no meaning outside the row or local
 declaration that types
 it. Local specializations are permitted only when their scope is explicit.
 
-The operational-channel and electromagnetic symbols below are released in
-version `1.3.0`.
+The operational-channel and electromagnetic symbols below remain the
+version `1.3.0` additions.
 
 ## Global conventions
 
@@ -333,6 +334,25 @@ the global BSC system or morphism records.
 | $\mathcal F_{1,N}(s),\mathcal F_1(s)$ | finite-size rate and pointwise limit when defined | For $N=2^d$, $\mathcal F_{1,N}=-d^{-1}\log\lvert\mathcal L_N\rvert=(\log 2)\alpha_N$. On the open critical strip, the proved pointwise limit is $(1-\operatorname{Re}(s))\log 2$ off the zeta-zero set and $\log 2$ on it, so its discontinuity set is exactly that zero set. The jump at $s_0$ is $\operatorname{Re}(s_0)\log 2$. This does not supply uniform near-zero convergence or a finite-size empirical singularity. |
 | $\iota_\beta(t)=\beta+it$ | continuous real-time slice into the critical strip | The sliced rate is discontinuous exactly at ordinates $t$ for which $\zeta(\beta+it)=0$, with jump $\beta\log 2$. This is an ideal pointwise-limit statement, not an experimental singularity certificate. |
 
+## Collatz recursive-sufficiency case-study notation
+
+These symbols are local to the version 1.4.0 number-theory application. They
+do not redefine the global BSC transport, target, time, or system symbols.
+
+| Symbol | Type or codomain | Meaning and constraints |
+|---|---|---|
+| $T:\mathbb N\to\mathbb N$ | shortcut Collatz map | $T(n)=n/2$ for even $n$ and $T(n)=(3n+1)/2$ for odd $n$. This local $T$ is not a BSC state-transport field. |
+| $s_j(n)$ | integer in $\{0,\ldots,j\}$ | Number of odd terms among $n,T(n),\ldots,T^{j-1}(n)$. Its length-$m$ vector is determined by $n\bmod2^m$. |
+| $d(A)$ | number in $[0,1]$ | Natural density of the periodic set $A$ in the Collatz application. |
+| $H_2(p)$ | number in $[0,1]$ | Binary entropy $-p\log_2p-(1-p)\log_2(1-p)$, with the continuous endpoint convention. |
+| $F_n$ | periodic subset of $\mathbb N$ | Ansari's declared ternary family. The audit proves the first missing layer but does not prove $F_n$ recursively sufficient for $n\ge2$. |
+| $U_m$ | periodic subset modulo $2^m$ | Unconditional prefix sieve $\{n:7s_j(n)>4j,\ 1\le j\le m\}$. Its complement has an exact descent prefix. |
+| $B_0$ | positive integer | External verified-base boundary $2^{71}$. BSC does not replay the computation below it; its role in BSC-CRS-04–06 is conditional. |
+| $V_m$ | periodic subset modulo $2^m$ | Cutoff-conditioned prefix sieve $\{n:485s_j(n)>306j,\ 1\le j\le m\}$. |
+| $G$ | five residue classes modulo 36 | $3,7,15,19,27\pmod {36}$, obtained from $F_1$ after removing the explicitly recursive $31$ class. |
+| $W_m$ | periodic subset modulo $9\cdot2^m$, $m\ge2$ | $G\cap V_m$. Its recursively-sufficient status inherits the declared $B_0$ condition; the $m\ge2$ scope is required for the displayed $5/9$ CRT density factor. |
+| $H_{n,m}$ | periodic recursively-sufficient set | $F_n\cup(F_1\cap S_m)$ for the declared RS safety-net family $S_m\subset4\mathbb N_0+3$. It retains the ternary spine without promoting $F_n$. |
+
 ## Sheaf, interface, and symmetry notation
 
 | Symbol | Type or codomain | Meaning and constraints |
@@ -391,3 +411,4 @@ the global BSC system or morphism records.
 | cohomology vs path defect | “Cohomology” appears only with a coefficient complex and differential; otherwise use naturality/path defect. |
 | persistence exit bound vs zeta parameter | $\beta_i$ is a one-step exit-event bound; $\beta$ or $\beta_{\mathrm{eff}}$ is the locally declared real part/effective inverse-temperature parameter in the zeta–DQPT case study. |
 | interface apex vs zeta truncation | $N$ is a structured-cospan apex inside §12.1 and a positive truncation integer only inside the zeta–DQPT case study. |
+| state transport vs shortcut Collatz map | $T_{\ell m}$ is a BSC state transport; unadorned $T$ denotes the shortcut Collatz map only inside the BSC-CRS/F11 application. |

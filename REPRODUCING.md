@@ -1,15 +1,17 @@
-# Reproducing version 1.3.0
+# Reproducing version 1.4.0
 
 ## Scope
 
 The release manuscript and synopsis can be rebuilt from their shipped LaTeX
-sources. Fixtures F8 and F10 can be reproduced byte-for-byte in the pinned
-Python environment. Fixture F9 is a mathematical and documentary case study
-and has no execution receipt. The immutable release record is
-`https://github.com/jkolantree/BSC/releases/tag/v1.3.0`. The Zenodo concept DOI
-for the deposited version family is `10.5281/zenodo.21541160`; the v1.3.0
-version DOI assigned after the tagged bytes were built is recorded on the
-GitHub release page. Immutable v1.2.0 remains available at DOI
+sources. Fixtures F8 and F10 can be reproduced byte-for-byte, and Fixture F11
+can be replayed and fully re-enumerated, in the pinned Python environment.
+Fixture F9 is a mathematical and documentary case study and has no execution
+receipt. The immutable release record is
+`https://github.com/jkolantree/BSC/releases/tag/v1.4.0`. The Zenodo concept DOI
+for the deposited version family is `10.5281/zenodo.21541160`; the v1.4.0
+version DOI is assigned only after publication and is recorded on the GitHub
+release page. Immutable v1.3.0 remains available at DOI
+`10.5281/zenodo.21713285`, immutable v1.2.0 at DOI
 `10.5281/zenodo.21711341`, immutable v1.1.0 at DOI
 `10.5281/zenodo.21710743`, and immutable v1.0.1 at DOI
 `10.5281/zenodo.21541561`.
@@ -43,7 +45,7 @@ This independent render check does not replace the canonical `make ci` release
 gate above. GitHub Actions runs that gate for pull requests, `main`, and
 version tags.
 
-These hashes describe the immutable v1.1.0 release, not the current v1.3.0
+These hashes describe the immutable v1.1.0 release, not the current v1.4.0
 release PDFs.
 
 ## Release v1.2.0 render
@@ -100,6 +102,37 @@ without missing glyphs.
 These tracked bytes are the v1.3.0 release record. Earlier release hashes
 remain immutable in their own tags and deposits.
 
+## Release v1.4.0 render
+
+The tracked release PDFs add the corrected Collatz recursive-sufficiency
+audit, its exact full-scan receipt, and the associated claim-status and
+provenance boundaries. They were compiled with Tectonic 0.16.9 and its cached
+dependency bundle, with `SOURCE_DATE_EPOCH=1785456000`.
+
+- two independent clean output directories produced byte-identical PDFs;
+- paper: 75 pages, SHA-256
+  `08a5fd3fa6c061d681606b09ae8b93b681b0c148fda70cdce8df70adc387e1ab`;
+- synopsis: two pages, SHA-256
+  `4f5ba34ec1cbfbe203ada362b64624007b0558a0857919ea6fdee0cf71594f18`;
+- all four final logs contain no unresolved citations or references, missing
+  glyphs, overfull/underfull boxes, package/class/font warnings, or fatal
+  errors;
+- all 75 paper pages were inspected as contact sheets, the Collatz transition
+  pages were inspected at larger scale, and both synopsis pages were
+  inspected at full resolution with no clipping, overlap, or unreadable
+  tables.
+
+The host emitted `Fontconfig error: Cannot load default config file: No such
+file: (null)` after each otherwise successful Tectonic run. This external
+environment message is retained as a controller limitation: both output pairs
+were nevertheless byte-identical, the TeX logs passed the declared warning
+scan, and the rendered pages contained no missing glyphs.
+
+Accessibility limitation: both PDFs report `Tagged: no`; this release does not
+claim tagged-PDF or universal screen-reader conformance.
+
+These tracked bytes are the v1.4.0 release record.
+
 ## Refresh and verify the release tree
 
 After an intentional source change, regenerate the complete-set manifest:
@@ -123,19 +156,39 @@ special, and hash-mismatched payload paths. The manifest omits itself.
 ```bash
 python3 fixtures/F08_sqrt_square_sign/check_fixture.py
 python3 fixtures/F10_coupled_surrogate/check_fixture.py
+python3 fixtures/F11_collatz_recursive_sieve/check_fixture.py
+```
+
+Expected terminal lines:
+
+```text
+F8-SQRT-SQUARE-SIGN: PASS
+F10-COUPLED-SURROGATE: PASS
+F11-COLLATZ-RECURSIVE-SIEVE: PASS
+```
+
+Each check parses and validates its shipped JSON Schema and verifies the bound
+artifact identities and exact mathematics. F8 and F10 also run their
+generators in isolated locations and require byte-identical output. F11's
+routine check replays all 52,686 retained rows, recomputes its exact dynamic
+program and density arithmetic, and verifies the retained full-scan receipt;
+it does not silently repeat the ten-billion enumeration.
+
+For the publication-only F11 completeness gate, run:
+
+```bash
+python3 fixtures/F11_collatz_recursive_sieve/check_fixture.py --full-scan
 ```
 
 Expected terminal line:
 
 ```text
-F8-SQRT-SQUARE-SIGN: PASS
-F10-COUPLED-SURROGATE: PASS
+F11-COLLATZ-RECURSIVE-SIEVE: FULL-SCAN PASS
 ```
 
-Each check parses and validates its shipped JSON Schema, verifies bound
-identities, independently recomputes the exact mathematics, refuses to
-overwrite the retained receipt, runs the generator in an isolated location,
-and requires byte-identical output.
+This tests all 1,388,888,889 compatible candidates and requires exact equality
+with the retained ordered offset set. It takes several minutes and is also
+run by the GitHub workflow on version tags.
 
 ## Run the verification tests
 
@@ -146,8 +199,12 @@ python3 -m unittest discover -s tests -v
 The suite retains one schema-invalid F8 mutant and one false-arithmetic F8
 mutant. It also rejects F10 mutants with stale host identity, altered horizon,
 false tolerance disposition, decimal substitution for an exact rational, and
-attempted receipt overwrite. All must fail. It checks that F9 remains documentary and
-unexecuted,
+attempted receipt overwrite. F11 tests reject changed table bytes, false
+completeness, wrong nested schema types, a changed self-hash policy, and
+attempted receipt overwrite. All must fail. Cheap arithmetic regressions also
+recompute the first $F_1\setminus F_2$ residue layer, the exact $31$-class
+path, and the fact that the $5/9$ density factor begins at depth two. It
+checks that F9 remains documentary and unexecuted,
 that the application and central ledger expose the same claim-local
 BSC-ZDQ identifier roster, that the primary citation and core scope-boundary
 language remain present, and that no F9 receipt is shipped. These are
@@ -171,7 +228,7 @@ build/paper/On_Boundaries_of_Evidence.pdf
 ```
 
 The final LaTeX log must contain no unresolved citations or references, missing
-glyphs, overfull boxes, or fatal errors. The expected page count is 69.
+glyphs, overfull boxes, or fatal errors. The expected page count is 75.
 
 ## Build the synopsis
 
@@ -193,10 +250,10 @@ The expected page count is 2.
 make verify
 ```
 
-This checks the complete release inventory, both retained executable fixtures,
-negative regressions, and build-verifier tests. Building the PDFs is a separate
-target because a full TeX installation is larger than the minimal verification
-environment.
+This checks the complete release inventory, all three retained executable
+fixtures, negative regressions, and build-verifier tests. Building the PDFs is
+a separate target because a full TeX installation is larger than the minimal
+verification environment.
 
 For the full gate, including both document builds, run:
 
@@ -204,7 +261,7 @@ For the full gate, including both document builds, run:
 make ci
 ```
 
-The build gate requires a 71-page paper and two-page synopsis, one final PDF
+The build gate requires a 75-page paper and two-page synopsis, one final PDF
 record per log, and no unresolved reference, citation, font, glyph, box, or
 fatal TeX warning.
 
@@ -214,7 +271,7 @@ With a verified manifest, build the complete-release and manuscript-source
 archives:
 
 ```bash
-make dist VERSION=1.3.0 SOURCE_DATE_EPOCH=1785369600
+make dist VERSION=1.4.0 SOURCE_DATE_EPOCH=1785456000
 ```
 
 Run the archive builder again in a separate empty output directory and require

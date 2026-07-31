@@ -1,13 +1,13 @@
 cff-version: 1.2.0
-message: "If you use this work, cite Version 1.3.0 using the release record below."
+message: "If you use this work, cite Version 1.4.0 using the release record below."
 title: "On Boundaries of Evidence — Boundary-State Calculus for Typed Observation, Admissible Transfer, and Falsifiable Persistence"
 type: dataset
 authors:
   - family-names: "Tree"
     given-names: "J."
     affiliation: "Independent researcher"
-version: "1.3.0"
-date-released: 2026-07-30
+version: "1.4.0"
+date-released: 2026-07-31
 license:
   - CC-BY-4.0
   - MIT
@@ -16,8 +16,8 @@ identifiers:
     value: "10.5281/zenodo.21541160"
     description: "Zenodo concept DOI for all versions"
 repository-code: "https://github.com/jkolantree/BSC"
-repository-artifact: "https://github.com/jkolantree/BSC/releases/tag/v1.3.0"
-url: "https://github.com/jkolantree/BSC/releases/tag/v1.3.0"
+repository-artifact: "https://github.com/jkolantree/BSC/releases/tag/v1.4.0"
+url: "https://github.com/jkolantree/BSC/releases/tag/v1.4.0"
 keywords:
   - "Boundary-State Calculus"
   - "scientific transfer"
@@ -37,17 +37,20 @@ keywords:
   - "energy ports"
   - "electromagnetic evidence"
   - "gauge theory"
+  - "Collatz conjecture"
+  - "recursive sufficiency"
+  - "computational number theory"
 abstract: >-
   A foundational preprint proposing a typed mathematical audit calculus for
-  claims that move between scientific descriptions. Version 1.3.0 adds a
-  fixed-interface operational report envelope, residual-localized energy-port
-  gluing, denominator-typed efficiency, and an electromagnetic evidence
-  bridge separating gauge, constitutive, boundary-port, instrument, inverse,
-  coupling, and metrological authority. It retains the version 1.2.0
-  simulation-evidence framework and the exact host-relative surrogate
-  counterexample. The package contains the paper, editable source, a two-page
-  synopsis, ledgers, ten exact mathematical fixtures, and two deterministic
-  execution receipts. Paper and human-readable documentation are CC BY 4.0;
+  claims that move between scientific descriptions. Version 1.4.0 adds a
+  bounded audit of a published Collatz recursive-sufficiency induction,
+  proves replacement zero-density recursively-sufficient sieves, and retains
+  an exact full-enumeration and first-descent receipt for a conditional finite
+  prefix extension. It does not change the core BSC framework or claim a
+  Collatz proof. The package contains the paper, editable source, a two-page
+  synopsis, ledgers, eleven exact mathematical fixtures, and three
+  deterministic execution receipts. Paper, human-readable documentation, and
+  the F11 factual tabular certificate are CC BY 4.0;
   code, workflows, JSON Schema, and machine-readable fixture tooling are MIT
   licensed according to the repository license map.
 preferred-citation:
@@ -58,5 +61,5 @@ preferred-citation:
       given-names: "J."
       affiliation: "Independent researcher"
   year: 2026
-  url: "https://github.com/jkolantree/BSC/releases/tag/v1.3.0"
-  notes: "Version 1.3.0 preprint; not peer reviewed; Zenodo concept DOI 10.5281/zenodo.21541160"
+  url: "https://github.com/jkolantree/BSC/releases/tag/v1.4.0"
+  notes: "Version 1.4.0 preprint; not peer reviewed; Zenodo concept DOI 10.5281/zenodo.21541160"

@@ -1,0 +1,84 @@
+{
+  "arithmetic_model": "CPython arbitrary-precision integer arithmetic",
+  "certificate": {
+    "bytes": 4826862,
+    "candidate_offsets_sha256": "fd3a0d1757f28ee9b64f53a86a87ed6331ebbd5eb385d4f168ed7cc887fbde7c",
+    "first_offset": 104303,
+    "last_offset": 9999886847,
+    "max_peak": 1432075179170128856197670708120,
+    "max_steps_to_descent": 438,
+    "records": 52686,
+    "sha256": "88df1573d49511a4bc93fab35f85d3feb1cade2d40b5444ee88ae42699aa5250"
+  },
+  "claim": "conditional on the declared external 2^71 base, the exact W_173 enumeration and first-descent table extend convergence through 2^71+10^10",
+  "claim_id": "BSC-FIX-11",
+  "completeness": {
+    "candidate_offsets_sha256": "fd3a0d1757f28ee9b64f53a86a87ed6331ebbd5eb385d4f168ed7cc887fbde7c",
+    "enumerated_g_candidates": 1388888889,
+    "enumeration": "all G-compatible offsets in (0,10000000000] were tested against the exact V173 prefix inequalities",
+    "full_scan": true,
+    "retained_candidates": 52686
+  },
+  "environment": {
+    "arithmetic": "CPython arbitrary-precision integers",
+    "implementation": "CPython",
+    "version": "3.12.13"
+  },
+  "evidence_identity": {
+    "analysis": {
+      "analysis_sha256": "79f14de733cceecd9cb936a5cf9864b411a0b3dd6819989065b219eea81fb151",
+      "checker_sha256": "3c0b6302d93f340635a4ff12a4b2f7b800a9fc18ba75a867e97715e0b4c88394",
+      "generator_sha256": "473f15997a9d403bf539133810dfe724534ee41cacb5c3c5a2d07bce6b450380",
+      "schema_sha256": "2a6f1a3ac6f36eeef92ce424160a2762c49adf841edb6b4cf6e3c02478545429",
+      "serialization": "UTF-8 JSON, two-space indentation, sorted keys, LF terminator"
+    },
+    "contract": {
+      "claim": "conditional on the declared external 2^71 base, the exact W_173 enumeration and first-descent table extend convergence through 2^71+10^10",
+      "claim_id": "BSC-FIX-11",
+      "contract_sha256": "ce6bebada9dc7b28f4dc12b4aa3c18e5866d002ac4f49926aaadedb4880f1c02",
+      "fixture_id": "F11-COLLATZ-RECURSIVE-SIEVE",
+      "input_sha256": "e5fbf381e05b771adf8ea19bb502083cb541bb109868c5c50e816e817822f922"
+    },
+    "data": {
+      "certificate_sha256": "88df1573d49511a4bc93fab35f85d3feb1cade2d40b5444ee88ae42699aa5250",
+      "data_sha256": "17600f6ee9458f3d28d7184044e4477f3e06d521c2938d55f7a807811f3872e1",
+      "provenance_sha256": "7dcb14565653160a29f0eb12c989e0993a1d45eb37776af7ff97a999728f96de"
+    },
+    "environment": {
+      "arithmetic": "CPython arbitrary-precision integers",
+      "environment_sha256": "186a0bb4df445dd2387fefdcaeb7957407b23244888884a55adf4e4fe5a008ca",
+      "implementation": "CPython",
+      "version": "3.12.13"
+    }
+  },
+  "fixture_id": "F11-COLLATZ-RECURSIVE-SIEVE",
+  "mathematics": {
+    "base": 2361183241434822606848,
+    "conditional_prefix_end": 2361183241444822606848,
+    "depth": 173,
+    "first_defect_residues_mod_36": [
+      27,
+      31
+    ],
+    "g_residues_mod_36": [
+      3,
+      7,
+      15,
+      19,
+      27
+    ],
+    "threshold_exact_inequality": true,
+    "v173_residue_count": 113556863454847668033678912559844765797703296469,
+    "w173_density_denominator": 107753592717132810353321275346506114473192594528534528,
+    "w173_density_numerator": 567784317274238340168394562799223828988516482345
+  },
+  "nonclaims": [
+    "not a proof of the Collatz conjecture",
+    "not an independent replay of the external n<2^71 verification",
+    "not a proof that the original ternary F_n family is recursively sufficient",
+    "not an official verification-frontier announcement"
+  ],
+  "receipt_schema": "bsc-deterministic-receipt/5",
+  "result": "conditional_prefix_extension_certificate_verified",
+  "self_hash_policy": "the receipt does not hash itself; MANIFEST.sha256 binds the retained receipt externally"
+}

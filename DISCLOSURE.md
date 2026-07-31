@@ -23,10 +23,13 @@ endorsed this work. The exact boundary between symbolic derivation, source
 verification, computation, and open obligation is recorded in the
 [claim-status ledger](ledgers/Claim_Status_Ledger.md).
 
-In version 1.2.0, Fixtures F8 and F10 have retained
+In version 1.4.0, Fixtures F8, F10, and F11 have retained
 execution receipts. F10 verifies only its declared exact finite recurrence;
 its result is one loss-coordinate tolerance disposition, not full BSC
-admissibility or empirical or physical validation of a surrogate model. The
+admissibility or empirical or physical validation of a surrogate model. F11
+replays its exact table and exhaustively enumerates its declared interval, but
+does not replay the external $2^{71}$ base and does not prove the Collatz
+conjecture. The
 remaining eight fixtures—F1–F7 and F9—are mathematical derivations in the
 manuscript and are computationally unexecuted unless and until separate
 executable artifacts and receipts are added. Immutable v1.1.0 contains only

@@ -1,0 +1,37 @@
+{
+  "disposition": {
+    "DEEP_REPAIR_NOTE.md": "not redistributed; mathematical claims independently audited",
+    "collatz_ansari_repair.zip": "not redistributed; relevant claims independently audited",
+    "w_10b.tsv": "retained as the machine-generated candidate certificate and independently verified",
+    "w_10b_direct_summary.txt": "not redistributed; summary independently recomputed",
+    "w_scan.cpp": "not redistributed; superseded by the BSC CPython enumerator",
+    "w_scan_chunk.c": "not redistributed; superseded by the BSC CPython enumerator"
+  },
+  "source_artifacts": {
+    "DEEP_REPAIR_NOTE.md": {
+      "bytes": 11976,
+      "sha256": "fa7d64c3e93b6378e90b0701915363d68a7ccf2855a7da936c4ff8e4c1020c41"
+    },
+    "collatz_ansari_repair.zip": {
+      "bytes": 4475,
+      "sha256": "85277822f63f450295e6c551f77ef6e25aa715becc397b6890dc59216f92f06c"
+    },
+    "w_10b.tsv": {
+      "bytes": 4826862,
+      "sha256": "88df1573d49511a4bc93fab35f85d3feb1cade2d40b5444ee88ae42699aa5250"
+    },
+    "w_10b_direct_summary.txt": {
+      "bytes": 239,
+      "sha256": "5667b05803a5032180fb794bc567afc492f219060f2ec4d85736a4c66eae59f8"
+    },
+    "w_scan.cpp": {
+      "bytes": 4491,
+      "sha256": "402235edd17a07b5e4596c7ffc2076a43fe3366c1d943eefcf63e823f520e29b"
+    },
+    "w_scan_chunk.c": {
+      "bytes": 3357,
+      "sha256": "c19c395e0967973634fd0aa6f42aac3855b0284cbaabbfdb199e332ffa1658dd"
+    }
+  },
+  "status_date": "2026-07-31"
+}
