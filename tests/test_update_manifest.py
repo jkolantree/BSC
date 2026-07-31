@@ -46,6 +46,46 @@ class ManifestUpdaterTests(unittest.TestCase):
             self.assertIn("./README.md", rendered)
             self.assertNotIn("artifact.pdf", rendered)
 
+    def test_render_is_invariant_across_git_root_representations(self) -> None:
+        rendered: list[str] = []
+        for representation in ("directory", "file", "absent"):
+            with self.subTest(representation=representation):
+                with tempfile.TemporaryDirectory(
+                    prefix="bsc-manifest-update-test-"
+                ) as temporary:
+                    root = Path(temporary)
+                    (root / "README.md").write_bytes(b"release\n")
+                    if representation == "directory":
+                        (root / ".git").mkdir()
+                        (root / ".git" / "HEAD").write_text(
+                            "ref: refs/heads/main\n", encoding="utf-8"
+                        )
+                    elif representation == "file":
+                        (root / ".git").write_text(
+                            "gitdir: ../repo/.git/worktrees/linked\n",
+                            encoding="utf-8",
+                        )
+                    rendered.append(render_manifest(root))
+        self.assertEqual(rendered, [rendered[0]] * 3)
+        self.assertNotIn(".git", rendered[0])
+
+    def test_update_removes_a_stale_root_git_manifest_entry(self) -> None:
+        with tempfile.TemporaryDirectory(
+            prefix="bsc-manifest-update-test-"
+        ) as temporary:
+            root = Path(temporary)
+            (root / "README.md").write_bytes(b"release\n")
+            (root / ".git").write_text(
+                "gitdir: ../repo/.git/worktrees/linked\n", encoding="utf-8"
+            )
+            manifest = root / "MANIFEST.sha256"
+            manifest.write_text(
+                f"{'0' * 64}  ./.git\n", encoding="utf-8", newline="\n"
+            )
+            self.assertEqual(update_manifest(root, manifest), 1)
+            self.assertEqual(set(parse_manifest(manifest)), {"README.md"})
+            self.assertEqual(verify_manifest(root, manifest), [])
+
 
 if __name__ == "__main__":
     unittest.main()

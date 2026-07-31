@@ -21,7 +21,6 @@ from pathlib import Path, PurePosixPath
 MANIFEST_NAME = "MANIFEST.sha256"
 MANIFEST_LINE = re.compile(r"^([0-9a-f]{64})  (\./[^\r\n]+)$")
 EXCLUDED_DIRECTORY_NAMES = {
-    ".git",
     ".pytest_cache",
     "__pycache__",
     "build",
@@ -33,6 +32,16 @@ FORBIDDEN_PAYLOAD_ROOTS = {"tmp"}
 
 class ManifestError(ValueError):
     """Raised for an invalid or incomplete release manifest."""
+
+
+def is_excluded_release_file(relative: str) -> bool:
+    """Return whether a normalized root-relative file is generated metadata."""
+    pure = PurePosixPath(relative)
+    if pure.parts in {(MANIFEST_NAME,), (".git",)}:
+        return True
+    if any(part in EXCLUDED_DIRECTORY_NAMES for part in pure.parts[:-1]):
+        return True
+    return pure.suffix in EXCLUDED_FILE_SUFFIXES
 
 
 @dataclass(frozen=True)
@@ -65,6 +74,8 @@ def normalize_manifest_path(raw_path: str) -> str:
         raise ManifestError(f"manifest path is not normalized: {raw_path!r}")
     if pure.name == MANIFEST_NAME and len(pure.parts) == 1:
         raise ManifestError(f"{MANIFEST_NAME} must not hash itself")
+    if pure.parts == (".git",):
+        raise ManifestError("root .git metadata must not appear in the manifest")
     return path
 
 
@@ -102,40 +113,41 @@ def inventory_release_files(root: Path) -> dict[str, Path]:
     if not root.is_dir():
         raise ManifestError(f"release root is not a directory: {root}")
 
+    def walk_error(error: OSError) -> None:
+        raise ManifestError(f"cannot scan release payload: {error}") from error
+
     inventory: dict[str, Path] = {}
     for directory, directory_names, file_names in os.walk(
-        root, topdown=True, followlinks=False
+        root, topdown=True, followlinks=False, onerror=walk_error
     ):
         current = Path(directory)
 
         retained_directories: list[str] = []
         for name in sorted(directory_names):
             candidate = current / name
-            if name in EXCLUDED_DIRECTORY_NAMES:
-                continue
+            relative = candidate.relative_to(root).as_posix()
             mode = candidate.lstat().st_mode
+            if candidate.is_junction():
+                raise ManifestError(
+                    f"release payload contains a directory junction: {relative}"
+                )
             if stat.S_ISLNK(mode):
-                relative = candidate.relative_to(root).as_posix()
                 raise ManifestError(
                     f"release payload contains a directory symlink: {relative}"
                 )
             if not stat.S_ISDIR(mode):
-                relative = candidate.relative_to(root).as_posix()
                 raise ManifestError(
                     f"release payload contains a special directory entry: "
                     f"{relative}"
                 )
+            if relative == ".git" or name in EXCLUDED_DIRECTORY_NAMES:
+                continue
             retained_directories.append(name)
         directory_names[:] = retained_directories
 
         for name in sorted(file_names):
             candidate = current / name
             relative = candidate.relative_to(root).as_posix()
-            if relative == MANIFEST_NAME:
-                continue
-            if candidate.suffix in EXCLUDED_FILE_SUFFIXES:
-                continue
-
             mode = candidate.lstat().st_mode
             if stat.S_ISLNK(mode):
                 raise ManifestError(
@@ -145,6 +157,8 @@ def inventory_release_files(root: Path) -> dict[str, Path]:
                 raise ManifestError(
                     f"release payload contains a special file: {relative}"
                 )
+            if is_excluded_release_file(relative):
+                continue
             normalized = normalize_manifest_path(f"./{relative}")
             inventory[normalized] = candidate
     return inventory
