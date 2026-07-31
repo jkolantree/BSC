@@ -7,9 +7,11 @@ from pathlib import Path
 
 REPOSITORY_ROOT = Path(__file__).resolve().parent.parent
 RELEASE_VERSION = "1.2.0"
+DEVELOPMENT_VERSION = "1.3.0-dev"
 RELEASE_DATE = "2026-07-30"
 RELEASE_URL = "https://github.com/jkolantree/BSC/releases/tag/v1.2.0"
 CONCEPT_DOI = "10.5281/zenodo.21541160"
+RELEASE_VERSION_DOI = "10.5281/zenodo.21711341"
 PRIOR_RELEASE_VERSION_DOI = "10.5281/zenodo.21710743"
 PRIOR_VERSION_DOI = "10.5281/zenodo.21541561"
 
@@ -21,12 +23,15 @@ class ReleaseMetadataTests(unittest.TestCase):
     def sha256(self, relative: str) -> str:
         return hashlib.sha256((REPOSITORY_ROOT / relative).read_bytes()).hexdigest()
 
-    def test_release_version_is_consistent_on_active_surfaces(self) -> None:
+    def test_release_and_development_versions_are_separated(self) -> None:
         expected_fragments = {
             "README.md": "Latest released version:** v1.2.0",
             "CITATION.cff": f'version: "{RELEASE_VERSION}"',
             ".zenodo.json": f'"version": "{RELEASE_VERSION}"',
             "CHANGELOG.md": "## 1.2.0",
+            "framework/Operational_Channel_Core.md": (
+                f"version `{DEVELOPMENT_VERSION}`"
+            ),
             "framework/Simulation_Evidence_Profile.md": (
                 "part of the released `1.2.0` framework"
             ),
@@ -34,17 +39,17 @@ class ReleaseMetadataTests(unittest.TestCase):
                 "Version 1.2.0 defines ten exact reference fixtures"
             ),
             "paper/source/On_Boundaries_of_Evidence.tex": (
-                rf"\newcommand{{\BSCVersion}}{{{RELEASE_VERSION}}}"
+                rf"\newcommand{{\BSCVersion}}{{{DEVELOPMENT_VERSION}}}"
             ),
             "synopsis/Technical_Synopsis.md": (
-                "Repository state:** version 1.2.0 release"
+                f"Repository state:** version {DEVELOPMENT_VERSION}"
             ),
             "synopsis/source/Technical_Synopsis.tex": (
-                rf"\newcommand{{\BSCVersion}}{{{RELEASE_VERSION}}}"
+                rf"\newcommand{{\BSCVersion}}{{{DEVELOPMENT_VERSION}}}"
             ),
-            "Makefile": f"VERSION ?= {RELEASE_VERSION}",
+            "Makefile": f"VERSION ?= {DEVELOPMENT_VERSION}",
             "tools/build_archives.py": (
-                f'DEFAULT_VERSION = "{RELEASE_VERSION}"'
+                f'DEFAULT_VERSION = "{DEVELOPMENT_VERSION}"'
             ),
         }
         for relative, fragment in expected_fragments.items():
@@ -65,12 +70,13 @@ class ReleaseMetadataTests(unittest.TestCase):
                     text,
                 )
                 self.assertNotIn(PRIOR_VERSION_DOI, text)
-                self.assertNotIn("unreleased development", text.lower())
+                self.assertIn(DEVELOPMENT_VERSION, text)
 
     def test_prior_release_doi_provenance_remains_visible(self) -> None:
         for relative in ("README.md", "CHANGELOG.md", "REPRODUCING.md"):
             with self.subTest(path=relative):
                 text = self.read(relative)
+                self.assertIn(RELEASE_VERSION_DOI, text)
                 self.assertIn(PRIOR_RELEASE_VERSION_DOI, text)
                 self.assertIn(PRIOR_VERSION_DOI, text)
 
@@ -79,7 +85,7 @@ class ReleaseMetadataTests(unittest.TestCase):
         self.assertIn(f"date-released: {RELEASE_DATE}", citation)
         self.assertIn(f'value: "{CONCEPT_DOI}"', citation)
         self.assertIn(f'repository-artifact: "{RELEASE_URL}"', citation)
-        self.assertNotIn("1.2.0-dev", citation)
+        self.assertNotIn(DEVELOPMENT_VERSION, citation)
         self.assertNotIn("unreleased development draft", citation.lower())
         _, separator, preferred = citation.partition("preferred-citation:")
         self.assertTrue(separator)
@@ -93,7 +99,7 @@ class ReleaseMetadataTests(unittest.TestCase):
         self.assertIn(f'"publication_date": "{RELEASE_DATE}"', metadata)
         self.assertIn(f'"identifier": "{RELEASE_URL}"', metadata)
         self.assertNotIn("/releases/tag/v1.0.1", metadata)
-        self.assertNotIn("1.2.0-dev", metadata)
+        self.assertNotIn(DEVELOPMENT_VERSION, metadata)
         self.assertNotIn("unreleased", metadata.lower())
 
     def test_release_fixture_inventory_is_explicit(self) -> None:
@@ -106,27 +112,33 @@ class ReleaseMetadataTests(unittest.TestCase):
         self.assertIn("F10_coupled_surrogate", fixture_index)
 
     def test_page_counts_are_consistent(self) -> None:
-        self.assertIn("PAPER_PAGES ?= 56", self.read("Makefile"))
+        self.assertIn("PAPER_PAGES ?= 63", self.read("Makefile"))
         self.assertIn(
-            'parser.add_argument("--paper-pages", type=int, default=56)',
+            'parser.add_argument("--paper-pages", type=int, default=63)',
             self.read("tools/verify_build.py"),
         )
         self.assertIn(
-            "The expected page count is 56.",
+            "The expected page count is 63.",
             self.read("REPRODUCING.md"),
         )
 
-    def test_active_surfaces_have_no_development_release_markers(self) -> None:
-        active_surfaces = (
-            "README.md",
-            "CHANGELOG.md",
-            "REPRODUCING.md",
-            "ROADMAP.md",
+    def test_release_metadata_has_no_development_markers(self) -> None:
+        release_metadata = (
             "CITATION.cff",
             ".zenodo.json",
-            "applications/Riemann_DQPT_Transfer.md",
-            "framework/Simulation_Evidence_Profile.md",
-            "fixtures/README.md",
+        )
+        for relative in release_metadata:
+            text = self.read(relative).lower()
+            with self.subTest(path=relative):
+                self.assertNotIn(DEVELOPMENT_VERSION, text)
+                self.assertNotIn("unreleased", text)
+
+    def test_development_surfaces_are_explicit(self) -> None:
+        development_surfaces = (
+            "README.md",
+            "CHANGELOG.md",
+            "ROADMAP.md",
+            "framework/Operational_Channel_Core.md",
             "ledgers/Claim_Status_Ledger.md",
             "ledgers/Symbol_and_Notation_Ledger.md",
             "revision/Revision_Memorandum.md",
@@ -135,18 +147,9 @@ class ReleaseMetadataTests(unittest.TestCase):
             "paper/source/On_Boundaries_of_Evidence.tex",
             "synopsis/source/Technical_Synopsis.tex",
         )
-        forbidden = (
-            "unreleased",
-            "1.2.0-dev",
-            "unreleased 1.2.0",
-            "current unreleased",
-            "development branch",
-        )
-        for relative in active_surfaces:
-            text = self.read(relative).lower()
-            for marker in forbidden:
-                with self.subTest(path=relative, marker=marker):
-                    self.assertNotIn(marker, text)
+        for relative in development_surfaces:
+            with self.subTest(path=relative):
+                self.assertIn(DEVELOPMENT_VERSION, self.read(relative))
 
     def test_recorded_release_pdf_hashes_match_tracked_bytes(self) -> None:
         reproducing = self.read("REPRODUCING.md")

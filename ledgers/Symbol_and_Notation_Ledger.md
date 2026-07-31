@@ -3,12 +3,15 @@
 The released baseline for this normative ledger is version 1.2.0 of *On
 Boundaries of Evidence*, released 30 July 2026 at
 `https://github.com/jkolantree/BSC/releases/tag/v1.2.0`. The Zenodo concept DOI
-is `10.5281/zenodo.21541160`; a v1.2.0 version DOI assigned after deposit is
-recorded on the GitHub release page. The immutable v1.1.0 version DOI is
+is `10.5281/zenodo.21541160`; the v1.2.0 version DOI assigned after the tagged
+bytes were built is `10.5281/zenodo.21711341`. The immutable v1.1.0 version DOI is
 `10.5281/zenodo.21710743`, and the immutable v1.0.1 version DOI remains
 `10.5281/zenodo.21541561`. A symbol has no meaning outside the row or local
 declaration that types
 it. Local specializations are permitted only when their scope is explicit.
+
+The current working tree is `1.3.0-dev`. Its operational-channel symbols below
+do not modify the immutable v1.2.0 release record.
 
 ## Global conventions
 
@@ -239,6 +242,28 @@ typed uses of the word "simulation."
 | $\iota$ | factored evidence identity | $(\iota_{\mathrm{cand}},\iota_{\mathrm{data}},\iota_{\mathrm{analysis}},\iota_{\mathrm{env}},\iota_{\mathrm{contract}})$. Evidence transfers exactly only across every identity factor on which it depends; a changed identity needs theorem-class applicability or a certified compatibility morphism. A genuinely absent factor uses a typed not-applicable value rather than being omitted. |
 | $\Phi_k,\widehat\Phi_k$ | reference and surrogate-coupled host maps | $\Phi_k(x)=F_k(x,g_k(x))$ and $\widehat\Phi_k(x)=F_k(x,\widehat g_k(x))$ on a certified reachable domain. |
 | $E_k,L_k,b_k$ | nonnegative state error, host amplification, and one-step injection | If $E_{k+1}\le L_kE_k+b_k$, then the existing prefix theorem gives the finite-horizon product-sum bound. Average standalone RMSE does not establish a uniform reachable-domain $b_k$. |
+
+## Operational report channels
+
+These are `1.3.0-dev` certificate and application symbols. They describe a
+fixed typed preparation-to-report pipeline and do not add a ninth BSC morphism
+field or prove the open full quantum composition claim BSC-QOP-03.
+
+| Symbol | Type or codomain | Meaning and constraints |
+|---|---|---|
+| $\mathsf{ORE}$ | operational report envelope | $(\Theta,\{z_0(\theta)\},\{T_k\}_{k=1}^m,Z,\{P_\theta^Z\},\mathsf{Cert}_{\mathrm{ORE}})$. It binds preparation, fixed interfaces, controls, dynamics, measurement, report, and the induced classical statistical experiment. Common envelope form does not identify microscopic physics. |
+| $z_k,\widehat z_k$ | ideal and implemented state or law | Quantum interfaces carry density operators; classical interfaces carry probability laws. Memory, feedback, clock, and history variables must be included in the state if they affect a Markov-stage claim. |
+| $d_k$ | total variation or trace distance | Interface metric declared by type. Quantum trace distance is $D_{\mathrm{tr}}(\rho,\sigma)=\frac12\lVert\rho-\sigma\rVert_1$; the factor $1/2$ is retained at a measurement boundary. |
+| $\widehat{\mathcal R}_k$ | implemented reachable set or certified superset | Every stage defect is evaluated on implemented reachable inputs. An ideal-only reachable set does not control the first term of the propagation proof. |
+| $\varepsilon_k,\eta_k,E_k$ | local defect, ideal-stage contraction, and propagated discrepancy | $d_k(\widehat T_k\widehat z,T_k\widehat z)\le\varepsilon_k$ on $\widehat{\mathcal R}_{k-1}$ and $d_k(T_k\widehat z,T_kz)\le\eta_kd_{k-1}(\widehat z,z)$. Then $E_m\le\sum_{k=0}^m\varepsilon_k\prod_{j=k+1}^m\eta_j$. Strict quantum contraction requires a separate theorem. |
+| $\mathcal I_\varepsilon(y)$ | identified set in parameter space | $\{\theta:d(F(\theta),y)\le\varepsilon\}$. A target property is exactly report-identifiable only when constant on the applicable identified set; at zero error this is fiber constancy. |
+| $\mathcal D_t$ | declared open-system generator term | In $\dot\rho=-i[H,\rho]/\hbar+\mathcal D_t(\rho)$, the decomposition must generate physical trace-preserving evolution and fix a system/bath split and energy zero. |
+| $E(t)$ | scalar system-energy expectation | $\operatorname{Tr}[\rho(t)H(t)]$, with $\dot E=\operatorname{Tr}(\rho\dot H)+\operatorname{Tr}(H\mathcal D_t(\rho))$. Measurements, resets, coupling energy, and fields outside the reduced state need additional ledger terms. |
+| $q_x$ | Bernoulli bias conditional on input $x$ | Used only under the declared scalar conditionally-iid model $Y_i\mid X=x\sim\operatorname{Bernoulli}(q_x)$. Hardware variability does not establish iid sampling. |
+| $K=\sum_{i=1}^NY_i$ | sufficient count in $\{0,\ldots,N\}$ | Under the scalar conditionally-iid model, $I(X;Y^N)=I(X;K)\le\log_2(N+1)$. For 256 labels, zero-error finite-$N$ decoding is impossible because the laws cannot be mutually singular. |
+| $\mathcal C_N$ | raw-bit compression factor | $8/N$ for an 8-bit input represented by $N$ output bits. $N=1$ is nominal 8:1 lossy coding; $N\ge8$ is not raw-bit compression. |
+| $C,S,P,Q$ | source/target relation matrices and permutation matrices | Under the convention $P_{\phi(i),i}=1$, one same-entity alignment requires $S=PCP^{\mathsf T}$. Independent row/column alignment $S=PCQ^{\mathsf T}$ is weaker and applies naturally only to separately typed roles. |
+| $\alpha$ | dimensionless fine-structure constant | Low-energy electromagnetic coupling $e^2/(4\pi\varepsilon_0\hbar c)$. Operational channel topology does not determine its value; a physical and metrological bridge is required. |
 
 ## Certified normalized-scale profiles
 

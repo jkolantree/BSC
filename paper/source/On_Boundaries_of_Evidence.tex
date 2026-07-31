@@ -33,7 +33,7 @@
   urlcolor=inkblue,
   pdftitle={On Boundaries of Evidence --- Boundary-State Calculus for Typed Observation, Admissible Transfer, and Falsifiable Persistence},
   pdfauthor={J. Tree},
-  pdfsubject={Version 1.2.0; released 30 July 2026; a typed audit calculus for scientific transfers},
+  pdfsubject={Development version 1.3.0-dev; latest released version 1.2.0; a typed audit calculus for scientific transfers},
   pdfkeywords={Boundary-State Calculus, scientific transfer, evidence, admissibility, information loss, claim status}
 }
 \urlstyle{same}
@@ -93,14 +93,14 @@
 \newcommand{\Lip}{\operatorname{Lip}}
 \newcommand{\push}{_{\#}}
 \newcommand{\blank}{\text{--}}
-\newcommand{\BSCVersion}{1.2.0}
+\newcommand{\BSCVersion}{1.3.0-dev}
 \newcommand{\BSCDOI}{Concept DOI 10.5281/zenodo.21541160}
 
 \title{\vspace{-1.3cm}\textbf{On Boundaries of Evidence}\\[0.3em]
 \Large--- Boundary-State Calculus for Typed Observation,\\
 Admissible Transfer, and Falsifiable Persistence}
 \author{J. Tree\\[-0.15em]\small Independent researcher}
-\date{30 July 2026\\[0.25em]\small Version \BSCVersion\quad\textbullet\quad
+\date{30 July 2026\\[0.25em]\small Development version \BSCVersion\quad\textbullet\quad
 \BSCDOI}
 
 \begin{document}
@@ -131,6 +131,13 @@ singularities, contour-certified analytic transfer, and exact-decision bounds.
 It also defines a claim-relative simulation-evidence profile with typed loss
 coordinates, hard gates, joint statistical coverage, factored evidence
 identity, compatibility reserves, and finite-horizon surrogate propagation.
+For fixed compatible classical/quantum preparation-to-report pipelines, an
+operational-channel core propagates implemented reachable-set defects through
+Markov kernels, CPTP channels, measurements, and reporting.  It proves
+downstream non-resurrection, a driven open-system energy identity, conditional
+Bernoulli information and zero-error bounds, and a single-identity relation
+alignment criterion.  These are report-level consequences, not a unified
+microscopic theory, and they do not close the open full quantum BSC morphism.
 It
 separates topological charge from physical charge by requiring an explicit
 bridge derived from a gauge structure, action, current, anomaly, boundary
@@ -261,6 +268,8 @@ reconstruction relation, selected extension & distinct boundary operators;
 their domains are not interchangeable\\
 \(\mathfrak M_{\ell m}\) & typed morphism record & state/observable transfer,
 loss, defects, completion, and certificate\\
+\(\mathsf{ORE}\) & operational report envelope & fixed typed preparation,
+drive, measurement, report-law, decision, and certificate chain\\
 \(\delta(\mathsf E,\mathsf F)\) & number in \([0,1]\) & directed deficiency:
 ability of experiment \(\mathsf E\) to simulate \(\mathsf F\)\\
 \(\Cert\) & finite structured record & assumptions, tolerances, hashes,
@@ -327,6 +336,10 @@ Normalized scale-profile calculus & true & proved & N/A & unexecuted &
 present proof & certified\\
 Simulation evidence profile and deployment admission & true & proved & N/A &
 unexecuted & present proof & bounded\\
+Fixed-interface operational report-channel bound & true & proved & N/A &
+unexecuted & present proof & bounded\\
+Channel form alone determines \(\alpha^{-1}\approx137\) & false & proved &
+N/A & unexecuted & present proof & blocked\\
 Zeta tail, rate, slice, contour, and local-root results & true & proved & N/A &
 unexecuted & present proof & bounded\\
 Universal persistence principle & open & conjectural & untested & unexecuted &
@@ -2538,6 +2551,365 @@ joint coverage, factored evidence identity, compatibility record, readiness
 caps, and prefix-admissibility rule.  No solver improvement, surrogate
 accuracy gain, speedup, or empirical validation is claimed by this profile.
 
+\subsection{Operational report-channel core}
+\label{sec:operational-channel}
+
+A second certificate refinement applies when heterogeneous physical systems
+are compared only at a common report boundary.  The shared structure is
+\[
+\theta\longmapsto\mathsf{Prep}_\theta
+\longmapsto\mathsf{Drive}_\theta
+\longmapsto\mathsf{Measure}_\theta
+\longmapsto\mathsf{Report}_\theta
+\longmapsto c_\theta .
+\]
+It does not identify microscopic dynamics.  It makes preparation, drive,
+measurement, reporting and decision into separately falsifiable interfaces.
+
+\begin{definition}[Operational report envelope]\label{def:ore}
+Let \(\Theta\) be a parameter or intervention space.  An operational report
+envelope is
+\[
+\mathsf{ORE}
+=
+\left(
+\Theta,\{z_0(\theta)\}_{\theta\in\Theta},
+\{T_k\}_{k=1}^{m},Z,\{P_\theta^Z\}_{\theta\in\Theta},
+\Cert_{\rm ORE}
+\right).
+\]
+Each \(z_k\) is a classical law or finite-dimensional density operator.
+Classical stages are Markov kernels, quantum stages are CPTP maps,
+quantum-to-classical stages are declared POVM channels, and the terminal
+\(P_\theta^Z\) is a classical report law.  Every control, clock, memory,
+domain, measurement, report rule and evidence identity on which the claim
+depends belongs in the certificate or augmented state.
+\end{definition}
+
+Write \(d_k=d_{\rm TV}\) on a classical interface and
+\[
+d_k=D_{\rm tr},\qquad
+D_{\rm tr}(\rho,\sigma)=\frac12\lVert\rho-\sigma\rVert_1,
+\]
+on a quantum interface.  Let \(T_k,\widehat T_k\) be ideal and implemented
+stages with the same typed interfaces, and put
+\[
+z_k=T_kz_{k-1},\qquad
+\widehat z_k=\widehat T_k\widehat z_{k-1},\qquad
+E_k=d_k(\widehat z_k,z_k).
+\]
+
+\begin{theorem}[Compatible fixed-interface channel bound]
+\label{thm:channel-core}
+Suppose
+\[
+d_0(\widehat z_0,z_0)\le\varepsilon_0.
+\]
+For every stage \(k\), let \(\widehat{\mathcal R}_{k-1}\) contain every
+implemented reachable input under the declared preparation, controls,
+horizon and prior defects.  Assume
+\[
+d_k(\widehat T_k\widehat z,T_k\widehat z)\le\varepsilon_k
+\quad
+\text{for every }\widehat z\in\widehat{\mathcal R}_{k-1},
+\]
+and, on every reachable ideal/implemented pair,
+\[
+d_k(T_k\widehat z,T_kz)
+\le\eta_kd_{k-1}(\widehat z,z).
+\]
+Then
+\[
+E_k\le\varepsilon_k+\eta_kE_{k-1}
+\]
+and
+\begin{equation}\label{eq:channel-core}
+\boxed{
+E_m\le
+\sum_{k=0}^{m}\varepsilon_k
+\prod_{j=k+1}^{m}\eta_j
+}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+At the implemented input \(\widehat z_{k-1}\), the triangle inequality gives
+\[
+\begin{aligned}
+E_k
+&\le
+d_k(\widehat T_k\widehat z_{k-1},T_k\widehat z_{k-1})\\
+&\quad+
+d_k(T_k\widehat z_{k-1},T_kz_{k-1})
+\le\varepsilon_k+\eta_kE_{k-1}.
+\end{aligned}
+\]
+Iterating gives \eqref{eq:channel-core}, with empty product \(1\).
+\end{proof}
+
+Since both metrics are at most \(1\), the right-hand side of
+\eqref{eq:channel-core} may be clipped at \(1\).  Estimated
+\(\varepsilon_k\) or \(\eta_k\) require a declared confidence event and
+simultaneous-coverage rule; the recurrence itself creates no coverage.
+
+A local defect certified only on the ideal reachable set is insufficient:
+the first term in the proof is evaluated at an implemented reachable input.
+For Markov kernels, a Dobrushin coefficient can supply \(\eta_k\).  CPTP
+trace-distance contractivity supplies \(\eta_k\le1\); strict quantum
+contraction requires a separate global or restricted theorem.  For a fixed
+POVM \(\mathcal M\),
+\[
+d_{\rm TV}(\mathcal M(\rho),\mathcal M(\sigma))
+\le D_{\rm tr}(\rho,\sigma),
+\]
+and subsequent report kernels contract total variation.  A changed
+measurement or report is another defective stage.  A complete heralding
+instrument retaining success and failure is CPTP, but normalization on the
+successful branch is nonlinear and may amplify distinguishability.  A
+conditioned report therefore needs a separate conditioning bound and a
+certified positive lower bound on success probability.
+
+Theorem~\ref{thm:channel-core} is ledger claim BSC-CHN-01.  It is a
+fixed-interface state/law corollary of BSC-SIM-03 and data processing.  It
+does not compose partial domains, observable pullbacks, equation residuals,
+deficiencies, completions or certificate witnesses in the full eight-field
+record.  In particular it does not resolve BSC-QOP-03.
+
+\begin{proposition}[No downstream resurrection and identified sets]
+\label{prop:no-resurrection}
+Classical report kernels and CPTP channels cannot increase total-variation or
+trace-distance distinguishability.  Consequently, if two parameters induce
+the same terminal report law, no decoder using only that report can
+distinguish them.  For a deterministic forward report \(F:\Theta\to Y\),
+\[
+\mathcal I_\varepsilon(y)
+=
+\{\theta:d_Y(F(\theta),y)\le\varepsilon\}
+\]
+is the identified set.  An exact target property \(q\) is licensed by that
+report only when it is constant on the applicable identified set; at zero
+error this is precisely constancy on fibers of \(F\).  For a declared center
+rule \(c:Y\to Q\), a radius-\(\tau\) claim additionally requires
+\[
+\sup_{\theta\in\mathcal I_\varepsilon(y)}
+d_Q(q(\theta),c(y))\le\tau.
+\]
+If the center may instead be chosen after fixing the identified set, the
+exact condition is the corresponding infimum over \(c\in Q\).  Diameter at
+most \(2\tau\) is necessary but not sufficient in a general metric space.
+\end{proposition}
+\begin{proof}
+The contraction statements are the classical and quantum data-processing
+inequalities.  Equality of terminal laws gives zero distinguishability.
+Constancy on \(F\)-fibers is equivalent to the existence of a factorization
+\(q=\bar q\circ F\), as in \cref{prop:decisiondescent}.
+\end{proof}
+This is ledger claim BSC-CHN-02.
+
+\begin{proposition}[Forward error encloses compatible inverse sets]
+\label{prop:inverse-enclosure}
+Let deterministic actual and ideal reports \(F,G:\Theta\to Y\) obey
+\(\sup_\theta d_Y(F(\theta),G(\theta))\le B\), and put
+\[
+\mathcal I_F(y,\delta)=\{\theta:d_Y(F(\theta),y)\le\delta\}.
+\]
+Then
+\[
+\boxed{
+\mathcal I_F(y,\delta)\subseteq\mathcal I_G(y,\delta+B),
+\qquad
+\mathcal I_G(y,\delta)\subseteq\mathcal I_F(y,\delta+B)
+}.
+\]
+\end{proposition}
+\begin{proof}
+For \(\theta\in\mathcal I_F(y,\delta)\), the triangle inequality gives
+\[
+d_Y(G(\theta),y)
+\le d_Y(G(\theta),F(\theta))+d_Y(F(\theta),y)
+\le B+\delta.
+\]
+Interchanging \(F\) and \(G\) proves the other inclusion.
+\end{proof}
+This is BSC-CHN-03.  It supplies no parameter-space Hausdorff stability or
+small parameter error without inverse regularity.  A target must be constant,
+or satisfy its declared enclosing-radius condition, on the applicable
+enlarged set.  Sampling uncertainty is added to \(\delta\) under a separate
+coverage statement.
+
+\begin{proposition}[Marginal agreement and conditioned amplification]
+\label{prop:qph-boundary}
+Let \(\lvert\omega_1\rangle,\lvert\omega_2\rangle\) be orthogonal modes and
+\[
+\lvert\psi\rangle
+=\frac{\lvert\omega_1\rangle+\lvert\omega_2\rangle}{\sqrt2},
+\qquad
+\lvert\phi\rangle
+=\frac{\lvert\omega_1\rangle-\lvert\omega_2\rangle}{\sqrt2}.
+\]
+Their spectral-intensity laws are identical, hence their intensity-overlap
+score is \(1\), but
+\[
+\langle\psi\mid\phi\rangle=0,
+\qquad
+D_{\rm tr}
+(\lvert\psi\rangle\langle\psi\rvert,
+ \lvert\phi\rangle\langle\phi\rvert)=1.
+\]
+Moreover, let
+\[
+\rho=\tfrac12
+(\lvert0\rangle\langle0\rvert+\lvert1\rangle\langle1\rvert),
+\qquad
+\sigma=\tfrac12
+(\lvert0\rangle\langle0\rvert+\lvert2\rangle\langle2\rvert).
+\]
+Although \(D_{\rm tr}(\rho,\sigma)=1/2\), filtering onto
+\(\operatorname{span}\{\lvert1\rangle,\lvert2\rangle\}\) and normalizing on success yields
+orthogonal conditional states and distance \(1\).
+\end{proposition}
+\begin{proof}
+Both assertions follow by direct evaluation in the displayed orthonormal
+bases.  The complete filter instrument including failure remains CPTP; only
+the normalized successful branch amplifies the distance.
+\end{proof}
+The first counterexample is BSC-QPH-02: equality of one measured marginal
+does not license equality or closeness of the full quantum state.
+
+\begin{proposition}[Driven open-system energy identity]
+\label{prop:open-energy}
+Let a finite-dimensional differentiable open-system model satisfy
+\[
+\dot\rho
+=-\frac{i}{\hbar}[H(t),\rho]+\mathcal D_t(\rho),
+\qquad
+E(t)=\Tr[\rho(t)H(t)],
+\]
+with a physical trace-preserving total generator and fixed energy zero.  Then
+\begin{equation}\label{eq:open-energy}
+\boxed{
+\dot E
+=\Tr(\rho\dot H)+\Tr\!\left(H\mathcal D_t(\rho)\right)
+}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Differentiate \(\Tr(\rho H)\).  Cyclicity gives
+\(\Tr([H,\rho]H)=0\), leaving \eqref{eq:open-energy}.
+\end{proof}
+
+The two terms are conventionally drive/work power and dissipative energy flow
+under a fixed system--bath split.  That split is not unique under strong
+coupling, feedback, Lamb-shift conventions or non-Markovian reduction; a
+time-dependent additive energy gauge changes the apparent work term.
+Dissipation can cool, heat or preserve energy.  Measurements, resets, jumps,
+coupling energy and output fields require additional ledger terms.  Thus a
+periodic drive can supply parametric gain without violating conservation, but
+\eqref{eq:open-energy} proves no experiment-specific gain.
+For a full bosonic cavity, direct use additionally requires a controlled
+finite-dimensional truncation or trace-class and domain hypotheses that
+justify differentiation and cyclicity.
+This is ledger claim BSC-ENE-01.
+
+\begin{theorem}[Scalar Bernoulli information and zero-error boundary]
+\label{thm:bernoulli-encoding}
+Let \(X\) be an input symbol and, conditional on \(X=x\), suppose
+\[
+Y_1,\ldots,Y_N\mathrel{\overset{\rm iid}{\sim}}
+\operatorname{Bernoulli}(q_x),
+\qquad K=\sum_{i=1}^{N}Y_i .
+\]
+Then \(K\) is sufficient and
+\[
+I(X;Y^N)=I(X;K)\le H(K)\le\log_2(N+1).
+\]
+For uniform \(X\) on 256 symbols, \(N\ge255\) is necessary for exact
+decoding.  It is not sufficient: zero-error recovery of 256 symbols is
+impossible for every finite \(N\) under this scalar conditionally-iid model.
+\end{theorem}
+\begin{proof}
+For any binary string \(y\) of Hamming weight \(k\),
+\[
+\Pr(Y^N=y\mid X=x)=q_x^k(1-q_x)^{N-k}.
+\]
+The conditional likelihood depends on \(y\) only through \(K\), and the
+conditional law of \(Y^N\) given \(K\) is independent of \(x\).  Since \(K\)
+is also a function of \(Y^N\), the mutual informations agree, and \(K\) has
+at most \(N+1\) values.  Eight bits therefore require \(N+1\ge256\).
+For finite \(N\), every \(q_x\in(0,1)\) has full count support
+\(\{0,\ldots,N\}\), while \(q_x=0,1\) supply only the two endpoint singleton
+supports.  The 256 laws cannot be mutually singular, so
+\cref{prop:decisiondescent} blocks exact decoding.
+\end{proof}
+The sufficient-statistic statement is BSC-ENC-01 and the finite-sample
+zero-error obstruction is BSC-ENC-02.
+
+The raw record contains \(N\) output bits per 8-bit input, so its nominal
+raw-output factor is \(8/N\).  Only \(N<8\) is compression by raw output-bit
+count.  The wire cost is \(N\) bits only when every draw is transmitted;
+cached or receiver-local sampling has a different communications ledger.  A
+sufficient count can be stored in \(\lceil\log_2(N+1)\rceil\) bits, but that
+compresses the repeated output, not the original symbol, and does not remove
+the zero-error obstruction.  If \(M\) biases are independently queried \(n\) times,
+Hoeffding's inequality gives the standard learnability bound
+\[
+\Prob\!\left\{\max_x|\widehat q_x-q_x|>\varepsilon\right\}
+\le2M\exp(-2n\varepsilon^2).
+\]
+This is BSC-ENC-03.  Query learnability is not a cryptographic security
+analysis.
+
+\begin{proposition}[Single-identity relation alignment]
+\label{prop:single-alignment}
+If square relation matrices \(C\) and \(S\) describe the same entity type in
+both argument positions, use the convention \(P_{\phi(i),i}=1\) for the
+permutation matrix of the identity bijection \(\phi\).  Exact alignment then
+requires
+\[
+S=PCP^{\mathsf T}.
+\]
+Independent row and column fits certify only
+\(S=PCQ^{\mathsf T}\), which is strictly weaker in general.
+\end{proposition}
+\begin{proof}
+Let \(C=I\) and let \(S=R\ne I\) be a permutation matrix.  The independent
+choice \(P=R,Q=I\) fits exactly, whereas
+\(PIP^{\mathsf T}=I\) for every \(P\).  Thus no one-identity conjugation fit
+exists.
+\end{proof}
+
+Approximate one-identity alignment is generally a graph-matching or quadratic
+assignment problem.  Two independent maps remain legitimate for separately
+typed row and column entities.  Automorphisms can also leave the identity
+nonunique.  This is BSC-SEM-01.
+
+Finally, this report-channel form does not determine a fundamental coupling.
+For example, the low-energy electromagnetic fine-structure constant is
+\[
+\alpha=\frac{e^2}{4\pi\varepsilon_0\hbar c},
+\qquad
+\alpha^{-1}=137.035\,999\,177(21)
+\]
+in the 2022 CODATA adjustment \citep{mohr2025codata}.  The
+operational-envelope axioms contain no equation fixing \(\alpha\) and admit
+typed physical completions with different coupling values and, generally,
+different induced channels.  Hence no universal numerical value follows from
+those axioms alone.  Noninjectivity over one fixed report envelope would
+require a separately exhibited pair of operationally equivalent completions
+and is not asserted here.  A derivation needs a typed electromagnetic action
+or Hamiltonian, normalization and renormalization conventions, a
+dimensionless prediction and metrological comparison.  Recurrence of the
+integer \(137\) in a graph size, fit or scale is not such a bridge.  This
+no-go is claim BSC-UNI-01.
+
+Quantum networks and combs are prior art \citep{chiribella2009}.  Dobrushin
+contraction, trace-norm contractivity, sufficient statistics, concentration
+bounds, open-system energy bookkeeping, and quadratic-assignment hardness are
+separately established results
+\citep{dobrushin1956,perezgarcia2006,fisher1922,hoeffding1963,alicki1979,sahnigonzalez1976}.
+The BSC contribution is their claim-relative integration with implemented
+reachable sets, evidence identity, demotion and explicit non-transfer to the
+full quantum morphism.
+
 \subsection{Corpus inheritance and local demotion}
 
 The prior reconstruction treated a hash-identified internal corpus as evidence
@@ -3695,6 +4067,128 @@ the status of RH itself remains open.  The existing BSC morphism, quotient,
 scale-certificate and status machinery is sufficient for this audit; no new
 foundational primitive is inferred.
 
+\subsection{Four July 2026 operational-channel probes}
+\label{sec:channel-probes}
+
+Four contemporary studies stress different boundaries of
+\cref{sec:operational-channel}.  They do not support one shared microscopic
+law.  They support a common audit of preparation, driven evolution,
+measurement, report and decision.  The fuller source crosswalk is retained in
+\texttt{applications/Operational\_Channel\_Crosswalk\_2026.md}.
+
+\begingroup
+\small
+\begin{longtable}{L{0.16\textwidth}L{0.38\textwidth}L{0.36\textwidth}}
+\caption{Source-local operational-channel probes.}
+\label{tab:channel-probes}\\
+\toprule
+Source & Report actually produced & Promotion not inherited\\
+\midrule
+\endfirsthead
+\toprule
+Source & Report actually produced & Promotion not inherited\\
+\midrule
+\endhead
+Hybrid photons \citep{kim2026hybrid} &
+Herald-conditioned, time-resolved coincidence data, measured spectral
+overlap and raw/model-corrected two-photon-interference visibility. &
+Bell-state measurement, entanglement swapping, teleportation, memory
+integration or scalable hybrid network.\\
+Plasmonic PTC \citep{guo2026ptc} &
+THz reflectivity and phase spectroscopy interpreted through a driven Floquet
+model, including exceptional-point mode coalescence and reported loss
+reduction. &
+Autonomous spontaneous time-crystal order, observed lasing, measured
+entangled plasmons or gain without pump-energy accounting.\\
+Hiroshima alloy \citep{bindi2026alloy} &
+Single-crystal diffraction and microprobe composition on extracted
+micrometre grains, including one newly assigned ordered phase. &
+A unique pressure--temperature--composition--time path, bulk prevalence,
+material properties or a manufacturing protocol.\\
+Microwave neuron \citep{govind2026microwave} &
+Measured broadband features, fitted token association and thresholded
+input-dependent stochastic bits; the image example samples a finite cache. &
+Lossless \(8{:}1\) coding, iid deployment bits, intrinsic semantics,
+cryptographic security or a live end-to-end image link.\\
+\bottomrule
+\end{longtable}
+\endgroup
+
+For the hybrid-source experiment, a warm \(^{133}\mathrm{Cs}\) SFWM signal at
+\(917.48\,\mathrm{nm}\) is matched to an InAs/GaAs quantum-dot source.  The
+reported spectral overlap is \(0.88\pm0.01\), explicitly an upper bound on
+full indistinguishability when other degrees of freedom are not already
+certified equal.  The heterogeneous-source interference has raw visibility
+\(0.41\), a reported threefold rate \(1.07\pm0.14\,\mathrm{Hz}\), and
+deconvolved visibility \(0.65\pm0.14\).  Heralding, an \(80\,\mathrm{ps}\)
+selection window, detector response, source-rate imbalance and multiphoton
+contributions belong to the report channel.  This is a substantive
+heterogeneous-interface result, not an execution of a network protocol and
+not evidence for BSC-QOP-03.  ``Without spectral modification'' does not mean
+without tuning or selection: the emitter was thermally tuned and the report
+was herald-conditioned.  \Cref{prop:qph-boundary} shows exactly why equal
+spectral intensities, even at overlap \(1\), would not certify equal photon
+states.  The complete success/failure instrument and the normalized
+successful subensemble must also remain distinct.
+
+The plasmonic experiment is an externally driven Floquet system.  It reports
+near-unity sub-cycle modulation, transition through an exceptional point and
+more than \(50\%\) loss reduction.  The source's effective-mass statement is
+about a model-inferred driven carrier effective-mass change, with a fitted
+coupling fraction and leading-order material approximation; it is not
+rewritten here as an unqualified vacuum-rest-mass claim.  Predicted plasmonic
+lasing and correlated-plasmon extensions remain predictions.
+\Cref{prop:open-energy} retains the drive term; it does not independently
+replay the spectroscopy or Floquet fit, and the full bosonic cavity requires
+the additional truncation or domain hypotheses stated there.
+
+The Hiroshima study inspected 34 author-supplied debris specimens and
+purposively extracted four roughly \(8\)--\(10\,\mu\mathrm m\) grains from one
+Fe--Cr-bearing inclusion.  Three were
+ordinary body-centred-cubic \(\alpha\)-Fe.  One was assigned an ordered
+AlAu4-type derivative of \(\beta\)-Mn (also rendered AuAl4-type in the
+source), space group \(P2_13\), with lattice
+parameter \(6.2666(5)\,\text{\AA}\) and a measured
+Fe--Cr--Si--Ni--Mo--Mn--Al--P composition.  These observations support the
+grain-local structure and chemistry, not a prevalence estimate.  Formation by blast-mixed vapor
+condensation and rapid quenching is a source-supported historical inference;
+without an injective kinetic forward map, the terminal record defines an
+identified set rather than one certified history.
+
+The microwave chip was fabricated in \(45\,\mathrm{nm}\) RFSOI CMOS.  The
+token study uses 125 physical tokens, 15,500 ordered distinct pairs and a
+supervised classifier on 34 features.  Its association matrix is therefore
+conditional on the labels, split, feature construction and classifier.
+The probabilistic-bit study repeats all 256 8-bit patterns 300 times; a
+free-running oscillator supplies phase sensitivity, which does not by itself
+establish iid deployment bits.  The image demonstration draws from a cache of
+those outcomes.  One output bit per 8-bit pixel is nominal \(8{:}1\) lossy
+coding.  With \(N\) draws the honest raw-bit factor is \(8/N\), so \(N\ge8\)
+is not compression by bit count even when averaging improves PSNR.
+
+If the scalar conditionally-iid Bernoulli model applies, then at 300 samples
+per input
+\[
+\Prob\!\left\{\max_x|\widehat q_x-q_x|>\varepsilon\right\}
+\le512e^{-600\varepsilon^2}.
+\]
+The simultaneous \(95\%\) radius supplied by this conservative bound is about
+\(0.1241\).  Two symmetric empirical confidence intervals supplied by this
+bound are disjoint only when the estimated biases differ by more than
+\(0.2482\).
+\Cref{thm:bernoulli-encoding} also blocks finite-sample zero-error recovery of
+all 256 symbols under that scalar model.  None of this is a security theorem.
+If both axes of a reported association matrix denote the same tokens,
+\cref{prop:single-alignment} additionally requires one shared permutation,
+not independent row and column relabelings.
+
+The common result is therefore evidentiary, not ontological: source
+compatibility is observable-relative; periodic order needs a drive ledger;
+terminal matter does not uniquely recover history; and distortion, semantics
+and security are different channel claims.  None of the four sources derives
+the fine-structure constant or gives evidential force to a numerological
+\(1/137\) identification.
+
 \subsection{Learned models}
 
 A neural operator, dynamic mode model, or surrogate is a fitted transport with
@@ -3768,6 +4262,18 @@ pinned convention, certified implementation residual above budget, or a
 certified bounded zero-count disagreement & only the affected BSC-ZDQ node is
 demoted; exact-zero and RH promotion are blocked & unaffected finite algebra,
 limit-qualified analysis, or local empirical report remains separately typed\\
+Operational report channel & an implemented trajectory leaves the certified
+reachable set, an interface changes, or a local defect/contraction bound fails
+& end-to-end BSC-CHN-01 certificate withdrawn & unaffected stage measurements
+and source-local report remain\\
+Probabilistic encoder & iid/stationarity rejected, repeated bits omitted from
+rate, or different same-entity row/column identities required & affected
+information, compression, or semantic promotion withdrawn & measured lossy
+hardware channel remains local\\
+Fundamental constant from channel form & two admissible physical completions
+share the report envelope but carry different coupling values & derivation
+from \(\mathsf{ORE}\) refuted & a separately typed electromagnetic derivation
+may still be attempted\\
 Numerical verification & irreproducible build, hash mismatch, or tolerance
 failure & computational axis failed & mathematical statement unaffected unless
 execution was its only support\\
@@ -3841,6 +4347,24 @@ or measurement structure and test anomaly, boundary, quantization, and
 normalization conditions.  A no-go result is as valuable as a construction.
 \end{openproblem}
 
+\begin{openproblem}[Faithfulness of operational report envelopes]
+Let a declared class of physical completions map to operational report
+envelopes under a specified intervention family.  Characterize the fibers of
+this map, determine which additional interventions make a target property
+constant on each fiber, and quantify the smallest reachable-set defect that
+preserves the resulting decision.  Treat classical, quantum and mixed
+measurement stages without assuming closure of the full BSC quantum morphism.
+\end{openproblem}
+
+\begin{openproblem}[Non-iid physical encoders and energy-aware rate distortion]
+For a hardware stochastic encoder with phase memory, drift and finite
+bandwidth, estimate the dependent joint output laws, identify minimal
+sufficient statistics when they exist, and derive a total-energy,
+total-latency and total-bit rate--distortion frontier.  Compare semantic
+alignment only through a single identity map when both relation axes share an
+entity type.  Keep security as a separate threat-model claim.
+\end{openproblem}
+
 \begin{openproblem}[Machine-checked BSC kernel]
 Formalize the claim-local verdict type, readiness lattices and caps, finite experiment
 deficiency fixture, parity-gluing obstruction, and morphism chain inequalities
@@ -3848,10 +4372,11 @@ in a declared proof assistant.  Pin the environment and retain accepted proof
 objects and build receipts.
 \end{openproblem}
 
-The highest-leverage order is: quotient and observable descent; morphism
-composition with equation-space residuals; prefix persistence; instrumented
-boundary stability; then domain-specific physical bridges.  This order attacks
-hard obstructions before expensive deployment.
+The highest-leverage order is: quotient and observable descent; faithfulness
+of report envelopes under added interventions; morphism composition with
+equation-space residuals; prefix persistence; instrumented boundary
+stability; then domain-specific physical bridges.  This order attacks hard
+obstructions before expensive deployment.
 
 \section{Conclusion}\label{sec:conclusion}
 
@@ -3872,7 +4397,13 @@ dependency readiness caps are monotone; normalized scale rates split into
 normalizer and carrier exponents; continuous branch gaps expose exceptional
 boundaries while parameter slices may hide them; strict holomorphic contour
 margins transfer zero counts and local multiplicity; exact finite-label
-decoding requires separated observation laws; alternating Dirichlet
+decoding requires separated observation laws; compatible fixed-interface
+report channels propagate implemented reachable-set defects with
+contraction weights; downstream channels cannot resurrect lost distinctions;
+driven open-system energy separates explicit drive from reduced dissipative
+flow; scalar Bernoulli repetition has a sufficient count and a finite-sample
+zero-error obstruction; one-identity relation alignment requires one shared
+permutation; alternating Dirichlet
 truncations instantiate these results with an explicit tail, pointwise
 exponent and rate split, ambient and fixed-line singular sets, contour count,
 and local root drift; compatibility reserves admit a deployment only when its

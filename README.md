@@ -6,7 +6,8 @@
 
 **Latest released version:** v1.2.0 · 30 July 2026.
 
-**Repository state:** version 1.2.0 release.
+**Repository state:** version 1.3.0-dev development tree based on the immutable
+v1.2.0 release.
 
 **Release status:** v1.2.0 is a foundational preprint with mathematical
 framework, audit artifacts, and explicit claim boundaries; not peer reviewed.
@@ -17,6 +18,9 @@ framework, audit artifacts, and explicit claim boundaries; not peer reviewed.
 
 **Zenodo concept DOI (all deposited versions):**
 https://doi.org/10.5281/zenodo.21541160
+
+**Zenodo v1.2.0 version DOI:**
+https://doi.org/10.5281/zenodo.21711341
 
 Scientific claims often fail in the crossing between two otherwise valid
 descriptions. Boundary-State Calculus (BSC) treats that crossing as a typed,
@@ -38,6 +42,8 @@ The unit of evaluation is not the universe. It is one claimed transfer.
 | Full review | [Complete paper](paper/On_Boundaries_of_Evidence.pdf) | Inspect definitions, proofs, fixtures, applications, and references |
 | Framework module | [Normalized scale profiles](framework/Normalized_Scale_Profiles.md) | Inspect the reusable finite-family, rate, singularity, zero-transfer, and decision mathematics |
 | Framework module | [Simulation evidence profiles](framework/Simulation_Evidence_Profile.md) | Inspect intended-use records, statistical evidence, compatibility reserves, and coupled-surrogate propagation |
+| Framework module | [Operational channel core](framework/Operational_Channel_Core.md) | Inspect fixed-interface mixed classical/quantum propagation, no-resurrection, driven energy, Bernoulli encoding, semantic alignment, and the 1/137 boundary |
+| Application crosswalk | [Four July 2026 experiments](applications/Operational_Channel_Crosswalk_2026.md) | Compare hybrid photons, a driven plasmonic time crystal, Hiroshima alloy evidence, and a microwave probabilistic-bit processor without conflating their physics |
 | Status audit | [Claim-status ledger](ledgers/Claim_Status_Ledger.md) | Separate mathematical verdict from support and other readiness coordinates |
 | Source audit | [Revision memorandum](revision/Revision_Memorandum.md) | See every material repair and unresolved source conflict |
 | Release audit | [v1.0.0 audit report](AUDIT_REPORT_v1.0.0.md) | See what survived, what failed, and what v1.0.1 repaired |
@@ -106,7 +112,10 @@ recurrence, or duality earns the right to support a target claim.
   singular-set and slice visibility, analytic zero transfer, and
   exact-decision bounds; and for claim-relative simulation evidence,
   statistical coverage, factored identity, compatibility-bounded deployment,
-  and coupled-surrogate propagation.
+  and coupled-surrogate propagation; and for fixed compatible
+  preparation-to-report channels, implemented-reachable-set error
+  propagation, data processing, energy accounting, probabilistic encoding,
+  and relation alignment.
 - A two-page technical synopsis and field-specific reader map.
 - A symbol and notation ledger, claim-status ledger, and revision memorandum.
 - Ten exact mathematical fixtures in version 1.2.0; immutable v1.1.0 contains
@@ -221,6 +230,72 @@ validation, or a general surrogate guarantee. The V&V disciplines and
 finite-horizon coupling mechanism are prior art; BSC's narrower contribution
 is their typed integration, transfer authority, and local demotion semantics.
 
+## Operational-channel framework
+
+Version 1.3.0-dev adds a restricted preparation-to-report layer:
+
+```math
+\theta
+\longrightarrow
+\mathsf{Prep}
+\longrightarrow
+\mathsf{Drive}
+\longrightarrow
+\mathsf{Measure}
+\longrightarrow
+\mathsf{Report}
+\longrightarrow
+\mathsf{Decision}.
+```
+
+Classical interfaces use total variation, quantum interfaces use trace
+distance, and POVMs form a declared quantum-to-classical boundary. For fixed
+compatible ideal and implemented stages, local defects must cover the
+**implemented** reachable set. If those defects are $\varepsilon_k$ and the
+ideal-stage contractions are $\eta_k$, then
+
+```math
+E_m
+\le
+\sum_{k=0}^{m}
+\varepsilon_k
+\prod_{j=k+1}^{m}\eta_j.
+```
+
+This propagates state or report-law discrepancy only. It does not compose the
+full BSC morphism and does not resolve BSC-QOP-03.
+
+The same module proves:
+
+- downstream Markov, CPTP, measurement, and report channels cannot resurrect
+  lost distinguishability; a complete postselection instrument is
+  contractive, but normalizing on success can amplify distance;
+- a uniform forward-report defect $B$ gives two-sided containment of actual
+  and ideal compatible parameter sets after enlarging the radius by $B$;
+- identical spectral-intensity laws can belong to orthogonal photon states,
+  so unit marginal overlap does not certify quantum identity;
+- a driven open quantum system satisfies
+  $\dot E=\operatorname{Tr}(\rho\dot H)+
+  \operatorname{Tr}(H\mathcal D_t(\rho))$ under its declared split and
+  finite-dimensional or separately justified domain assumptions;
+- conditionally iid scalar Bernoulli repetitions have sufficient count
+  $K=\sum_iY_i$ and at most $\log_2(N+1)$ bits of input information;
+- 256 scalar Bernoulli labels cannot be recovered with zero error for any
+  finite $N$ under that model;
+- under $P_{\phi(i),i}=1$, one same-entity relation alignment requires
+  $S=PCP^{\mathsf T}$, not independent row and column permutations; and
+- generic channel form cannot derive the electromagnetic fine-structure
+  constant. The approximate 1/137 value needs a typed QED and metrological
+  bridge.
+
+The first application crosswalk binds four primary publications: hybrid
+atom–quantum-dot two-photon interference, a driven plasmonic photonic time
+crystal, a Hiroshima blast-forged multicomponent alloy, and an integrated
+microwave probabilistic-bit processor. The commonality is evidentiary form,
+not a claim that these systems share one microscopic law. No hardware,
+spectroscopy, crystallography, classifier, or raw-data analysis was replayed
+by BSC.
+
 ## Current status boundary
 
 | Object | Verdict | Math support | Empirical | Computational | Transfer |
@@ -228,6 +303,9 @@ is their typed integration, transfer authority, and local demotion semantics.
 | Repaired partial stochastic composite | True | Proved under stated support and completion hypotheses | N/A | Symbolic, unexecuted | Bounded |
 | Normalized-scale profile theorems | True | Normalization collapse, additive rates, covariance, singular support, slice visibility, and analytic zero transfer proved | N/A | Unexecuted | Certified |
 | Simulation-evidence profile | True | Typed source-to-loss propagation, joint coverage obligations, factored identity, compatibility-bounded deployment, and coupled-surrogate propagation proved | N/A | Unexecuted | Bounded |
+| Operational fixed-interface channel core | True | Implemented-reachable-set product-sum propagation and classical/quantum no-resurrection proved | N/A | Unexecuted | Bounded |
+| Driven energy, scalar Bernoulli, and semantic-alignment consequences | True | Exact symbolic proofs under declared finite-dimensional, iid, and same-entity hypotheses | N/A | Unexecuted | Bounded |
+| Channel form determines $\alpha^{-1}\approx137$ | False | Physical completions with the same channel form can carry different couplings | N/A | Unexecuted | Blocked |
 | Exact finite-label observation decoding | True | Measurable-partition criterion and total-variation lower bound proved | N/A | Unexecuted | Certified |
 | Generic decorated-cospan theorem | True | Proved under the assumed lax-monoidal functor | N/A | Unexecuted | Bounded |
 | Canonical BSC-specific decoration functor | Open | Conditional schema only | N/A | Unexecuted | Blocked |
@@ -275,7 +353,8 @@ commands.
 
 ```text
 paper/        manuscript PDF and editable source
-framework/    reusable normalized-scale and simulation-evidence mathematics
+framework/    reusable normalized-scale, simulation-evidence, and operational-channel mathematics
+applications/ source-bound domain crosswalks
 synopsis/     two-page synopsis, source, and reader map
 ledgers/      claim status and notation
 fixtures/     mathematical fixtures plus executable F8 and F10 receipts
@@ -293,9 +372,9 @@ Version 1.2.0 is published in the immutable
 The concept DOI
 [10.5281/zenodo.21541160](https://doi.org/10.5281/zenodo.21541160)
 identifies all deposited versions and resolves to the latest Zenodo deposit.
-Any v1.2.0 version DOI assigned after deposit is recorded on the GitHub release
-page rather than anticipated in these tagged bytes. The immutable v1.1.0
-version DOI is
+The v1.2.0 version DOI, assigned after the immutable tagged bytes were built,
+is [10.5281/zenodo.21711341](https://doi.org/10.5281/zenodo.21711341). The
+immutable v1.1.0 version DOI is
 [10.5281/zenodo.21710743](https://doi.org/10.5281/zenodo.21710743).
 The immutable v1.0.1 DOI is
 [10.5281/zenodo.21541561](https://doi.org/10.5281/zenodo.21541561), and the

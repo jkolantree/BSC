@@ -1,6 +1,6 @@
 \documentclass[10pt,a4paper,twocolumn]{extarticle}
 
-\usepackage[left=18mm,right=18mm,top=16mm,bottom=16mm,columnsep=8mm,headheight=12pt]{geometry}
+\usepackage[left=18mm,right=18mm,top=15mm,bottom=15mm,columnsep=8mm,headheight=12pt]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage{mathpazo}
 \usepackage[scaled=0.92]{helvet}
@@ -16,7 +16,7 @@
 
 \definecolor{inkblue}{RGB}{23,55,78}
 \definecolor{rulegray}{RGB}{105,112,118}
-\newcommand{\BSCVersion}{1.2.0}
+\newcommand{\BSCVersion}{1.3.0-dev}
 \newcommand{\BSCDOI}{Concept DOI 10.5281/zenodo.21541160}
 \hypersetup{
   colorlinks=true,
@@ -24,7 +24,7 @@
   urlcolor=inkblue,
   pdftitle={On Boundaries of Evidence --- Technical Synopsis},
   pdfauthor={J. Tree},
-  pdfsubject={Version 1.2.0; released 30 July 2026; Boundary-State Calculus},
+  pdfsubject={Development version 1.3.0-dev; latest released version 1.2.0; Boundary-State Calculus},
   pdfkeywords={Boundary-State Calculus, scientific transfer, evidence, admissibility}
 }
 \pagestyle{fancy}
@@ -32,14 +32,14 @@
 \fancyhead[L]{\footnotesize\textsc{On Boundaries of Evidence --- Technical Synopsis}}
 \fancyhead[R]{\footnotesize\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
-\linespread{0.96}
+\linespread{0.94}
 \setlength{\parindent}{1em}
-\setlength{\parskip}{0.1em}
+\setlength{\parskip}{0.05em}
 \setlist{nosep,leftmargin=1.4em}
 \newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
 \sloppy
 \raggedbottom
-\addtolength{\textheight}{3pt}
+\addtolength{\textheight}{6pt}
 \hbadness=10000
 \vfuzz=3pt
 
@@ -52,7 +52,7 @@
 Admissible Transfer, and Falsifiable Persistence}\\
 \vspace{0.45em}
 {\small J. Tree \(\cdot\) Independent researcher \(\cdot\) 30 July 2026}\\
-{\footnotesize Version \BSCVersion
+{\footnotesize Development version \BSCVersion
 \(\cdot\) \BSCDOI}\\
 \vspace{0.55em}
 \end{center}
@@ -136,7 +136,13 @@ proofs, factored identity, and compatibility reserves.  If
 \(\ell^1_j\le\ell^0_j+\rho_j\), admission requires
 \(U^0_j+\rho_j\le\tau_j\), without recounting uncertainty in \(U^0_j\).
 Zero failure probability is not determinism without pointwise bounds.
-The prefix theorem propagates surrogate error through host and horizon.
+The prefix theorem propagates surrogate error through host and horizon.  Its
+fixed-interface quantum/classical corollary uses trace distance, total
+variation, and a POVM boundary; downstream processing cannot resurrect lost
+distinctions, while normalized postselection needs a separate bound.  Further
+corollaries audit driven energy, scalar Bernoulli
+information, and one-identity alignment.  Four July 2026 studies are
+source-bound probes: neither \(137\) nor full quantum closure follows.
 
 \section*{Composition and persistence}
 
@@ -170,7 +176,9 @@ proof checking.  These are not claimed as new BSC discoveries.
 quotient and exact-decision descent; paired state--observable probability
 preservation; defect, deficiency, and deterministic residual propagation;
 simulation-evidence typing, compatibility-bounded deployment, and
-coupled-surrogate propagation;
+coupled-surrogate and fixed-interface operational-channel propagation;
+no-resurrection, driven-energy, Bernoulli-information, and same-identity
+corollaries;
 normalized-scale rate decomposition and covariance; singular-set and slice
 visibility; analytic zero transfer; the zeta-specific tail, pointwise
 exponent/rate split, ambient and fixed-\(\beta\) singular sets, contour count,

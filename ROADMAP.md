@@ -61,6 +61,31 @@ release or its version DOI.
 Release v1.2.0 is dated 30 July 2026 and does not alter the immutable v1.1.0,
 v1.0.1, or v1.0.0 release records.
 
+## Implemented in 1.3.0-dev
+
+- Added a fixed-interface operational report envelope spanning classical laws,
+  finite-dimensional quantum states, POVM measurements, report kernels, and
+  decisions.
+- Proved contraction-weighted propagation from defects certified on
+  implemented reachable inputs; retained BSC-QOP-03 as open because this does
+  not compose the full eight-field quantum morphism.
+- Added no-resurrection, nonlinear-postselection, robust inverse-set
+  enclosure, and spectral-marginal counterexamples.
+- Added exact driven open-system energy accounting with explicit pump,
+  system/bath-split, energy-gauge, measurement, reset, coupling, and
+  output-field scope boundaries, plus finite-dimensional/truncation/domain
+  requirements for bosonic use.
+- Added scalar conditional-iid Bernoulli sufficient-statistic,
+  information-capacity, finite-sample zero-error, raw-bit-rate, and
+  query-learnability results.
+- Added the one-permutation same-entity relation-alignment theorem.
+- Proved that channel form alone cannot derive the fine-structure constant;
+  1/137 remains blocked without a physical and metrological bridge.
+- Added a primary-source crosswalk for four July 2026 experiments without
+  claiming common microscopic dynamics or replaying their data and hardware.
+
+This is development work, not a release or deposit.
+
 ## Highest-leverage next work
 
 1. **External adversarial reading**
@@ -92,9 +117,24 @@ v1.0.1, or v1.0.0 release records.
      completions, and equation-space semantics for the quantum variant.
    - Prove closure and propagation of observable, naturality, deficiency, and
      residual coordinates, or keep composition explicitly restricted to the
-     already proved variants. This is ledger claim BSC-QOP-03.
+   already proved variants. This is ledger claim BSC-QOP-03.
 
-6. **Domain-specific scientific tests**
+6. **Operational-envelope faithfulness**
+   - For one public physical model class, characterize which physical
+     completions induce the same report laws under a frozen intervention set.
+   - Add interventions until the target property is constant on the resulting
+     fibers, or retain the non-identifiability result.
+   - Prove implemented reachable-set defect bounds for the entire
+     preparation-to-report chain.
+
+7. **Non-iid hardware rate distortion**
+   - Replace scalar iid assumptions with measured dependent output laws,
+     drift, phase memory, total energy, latency, and bit count.
+   - Use one identity permutation for same-entity relation alignment.
+   - Keep semantic utility, lossy compression, and cryptographic security as
+     separate claims.
+
+8. **Domain-specific scientific tests**
    - Apply the simulation-evidence profile to one frozen simulator deployment
      with public inputs, a claim-local tolerance vector, and a compatibility
      record; do not promote F10 beyond its exact recurrence.

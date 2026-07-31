@@ -1,5 +1,54 @@
 # Changelog
 
+## 1.3.0-dev — unreleased
+
+The development tree adds an operational-channel layer without changing the
+eight-field BSC morphism or the immutable v1.2.0 release:
+
+- defined the operational report envelope from parameter and preparation
+  through driven stages, measurement, reporting, and decision;
+- proved a contraction-weighted product-sum bound for compatible
+  ideal/implemented classical, quantum, measurement, and report stages, with
+  local defects required on implemented reachable inputs;
+- retained the one-half trace-distance normalization at the
+  quantum-to-classical boundary and made changed measurements or report rules
+  separate defective stages;
+- proved that downstream Markov, CPTP, POVM, and report channels cannot
+  resurrect lost distinguishability, and tied inverse claims to identified
+  sets;
+- separated complete success/failure instruments from nonlinear normalized
+  postselection and retained success probability as a certified coordinate;
+- proved two-sided enlargement of deterministic inverse compatible sets under
+  a uniform forward-report defect;
+- gave an exact pair of orthogonal photon states with identical spectral
+  intensities, blocking promotion from unit marginal overlap to quantum-state
+  identity;
+- proved the finite-dimensional driven open-system energy identity while
+  retaining pump work, system/bath split, energy gauge, reset, measurement,
+  output-field, bosonic truncation, and operator-domain obligations;
+- proved that the count of conditionally iid scalar Bernoulli outputs is
+  sufficient, carries at most $\log_2(N+1)$ input bits, and cannot provide
+  finite-$N$ zero-error decoding of 256 symbols;
+- made the raw repeated-bit rate explicit as $8/N$ for an 8-bit input and
+  separated finite-channel learnability from cryptographic security;
+- proved that same-entity relation alignment requires one conjugating
+  permutation, while independent row/column fits certify only a weaker
+  two-role relation;
+- proved that generic operational-channel form cannot determine the
+  fine-structure constant, so a numerological 1/137 identification is blocked
+  without a typed electromagnetic and metrological bridge;
+- added a primary-source crosswalk for hybrid atom–quantum-dot interference,
+  a driven plasmonic photonic time crystal, Hiroshima blast-forged alloy
+  evidence, and integrated microwave probabilistic bits;
+- added exact regression tests for rational defect propagation, classical
+  contraction, inverse-set enclosure, spectral-marginal and postselection
+  counterexamples, Bernoulli support/rate boundaries, same-identity alignment,
+  primary-source routing, and unique claim identifiers; and
+- kept full quantum-morphism closure BSC-QOP-03 open.
+
+This development entry is not a publication. The latest immutable release
+remains v1.2.0.
+
 ## 1.2.0 — 2026-07-30
 
 The mathematical framework gains a simulation-evidence layer without changing
@@ -33,10 +82,10 @@ the eight-field BSC morphism:
 - preserved every v1.1.0 Riemann/DQPT mathematical and physical verdict.
 
 Published at GitHub tag `v1.2.0`. The Zenodo concept DOI
-`10.5281/zenodo.21541160` identifies the deposited version family; any
-version-specific DOI assigned after deposit is recorded on the GitHub release
-page rather than anticipated in these tagged bytes. The immutable v1.1.0 tag
-and version DOI `10.5281/zenodo.21710743` remain unchanged.
+`10.5281/zenodo.21541160` identifies the deposited version family. The v1.2.0
+version DOI assigned after the tagged bytes were built is
+`10.5281/zenodo.21711341`. The immutable v1.1.0 tag and version DOI
+`10.5281/zenodo.21710743` remain unchanged.
 
 ## 1.1.0 — 2026-07-30
 

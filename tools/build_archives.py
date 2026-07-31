@@ -29,7 +29,7 @@ except ModuleNotFoundError:
     )
 
 
-DEFAULT_VERSION = "1.2.0"
+DEFAULT_VERSION = "1.3.0-dev"
 DEFAULT_SOURCE_DATE_EPOCH = 1785369600
 VERSION_PATTERN = re.compile(r"^[0-9A-Za-z][0-9A-Za-z._-]*$")
 SOURCE_ARCHIVE_MEMBERS = (

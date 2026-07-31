@@ -4,7 +4,8 @@
 
 **J. Tree · Independent researcher**
 
-**Repository state:** version 1.2.0 release, dated 30 July 2026.
+**Repository state:** version 1.3.0-dev development tree; latest immutable
+release v1.2.0, dated 30 July 2026.
 
 **Version record:** https://github.com/jkolantree/BSC/releases/tag/v1.2.0
 
@@ -138,6 +139,39 @@ finite recurrence, not empirical or physical validation. Established V&V/UQ
 and finite-horizon coupling work remain prior art; BSC claims only the typed
 integration, evidence-transfer rule, and local demotion behavior.
 
+Version 1.3.0-dev adds a restricted operational-channel core for fixed
+compatible preparation-to-report pipelines. Classical laws use total
+variation, quantum states use trace distance, POVMs form the
+quantum-to-classical boundary, and every local defect must cover implemented
+reachable inputs. The propagated report error obeys
+
+$$
+E_m\le
+\sum_{k=0}^{m}\varepsilon_k
+\prod_{j=k+1}^{m}\eta_j.
+$$
+
+Unconditioned downstream channels cannot resurrect lost distinguishability;
+normalization on a successful postselected branch is nonlinear and can
+amplify it. A uniform forward-report defect gives two-sided containment of
+compatible inverse sets after radius enlargement. An exact phase-sign
+counterexample shows that unit spectral-intensity overlap need not imply
+quantum-state closeness. The same module proves a finite-dimensional driven
+open-system energy identity, a sufficient-count and finite-sample zero-error
+obstruction for scalar iid Bernoulli encoders, and a single-permutation
+criterion for same-entity relation alignment. It also proves that generic
+channel form cannot determine the electromagnetic fine-structure constant:
+1/137 needs a physical and metrological bridge. These results do not close the
+full eight-field quantum composition claim BSC-QOP-03.
+
+The first crosswalk applies the core to atom–quantum-dot two-photon
+interference, a driven plasmonic photonic time crystal, a blast-forged
+multicomponent alloy, and a microwave probabilistic-bit processor. It retains
+the reported local measurements while blocking, respectively, unexecuted
+network protocols, pump-free gain, unique historical reconstruction, and
+lossless/security/semantic promotion. This is a unification of evidentiary
+form, not of microscopic laws.
+
 Version 1.1.0 adds certified normalized-scale
 profiles $L_N=A_N/Z_N$. A diverging normalizer can collapse the raw limit
 without creating finite zeros, while logarithmic rates split exactly into
@@ -177,9 +211,9 @@ temperature, or an independent physical origin.
 | Layer | Content | Status in this paper |
 |---|---|---|
 | Established imports | Markov kernels and operational quotients; Blackwell–Le Cam comparison; boundary trace and Calderón-type response; Koopman operators and stated learnability limits; periodic homogenization; sheaf descent; structured cospans; non-invertible defects; proof checking | Imported under their published or preprint hypotheses. These ingredients are not claimed as new BSC discoveries. |
-| Paper-level consequences | Quotient and exact-decision descent; repaired restricted-pullback composition; paired state–observable probability preservation; defect, deficiency, and deterministic residual propagation; simulation-evidence typing, compatibility-bounded deployment, and coupled-surrogate prefix propagation; normalized-scale rate decomposition and covariance; singular-set and slice visibility; analytic zero and multiplicity transfer; the zeta-specific alternating-tail bound, pointwise exponent/rate split, ambient and fixed-$\beta$ singular sets, bounded contour count, and local root drift; persistence certification; generic decorated-cospan composition; readiness-cap propagation; the block from winding to physical charge | Proved locally under the manuscript's stated assumptions. The canonical BSC decoration functor and full quantum-morphism composition remain open. No empirical status is inherited. |
+| Paper-level consequences | Quotient and exact-decision descent; repaired restricted-pullback composition; paired state–observable probability preservation; defect, deficiency, and deterministic residual propagation; simulation-evidence typing, compatibility-bounded deployment, and coupled-surrogate prefix propagation; fixed-interface operational-channel error propagation, no downstream resurrection, nonlinear-postselection and spectral-marginal counterexamples, robust inverse-set enclosure, driven open-system energy accounting, scalar Bernoulli information/zero-error bounds, and same-identity relation alignment; normalized-scale rate decomposition and covariance; singular-set and slice visibility; analytic zero and multiplicity transfer; the zeta-specific alternating-tail bound, pointwise exponent/rate split, ambient and fixed-$\beta$ singular sets, bounded contour count, and local root drift; persistence certification; generic decorated-cospan composition; readiness-cap propagation; the blocks from winding to physical charge and from channel form to $\alpha$ | Proved locally under the manuscript's stated assumptions. The canonical BSC decoration functor and full quantum-morphism composition remain open. No empirical status is inherited. |
 | Reference fixtures | Ten examples covering winding, inverse ambiguity, directed deficiency, Koopman pollution, quantum-reference-frame descent, sheaf obstruction, off-shell residual, exact counterexample retention, zeta–DQPT scope separation, and stable-host surrogate dependence | Fixtures 1–7 and 9 have exact mathematical derivations but no separate execution receipts. Fixtures 8 and 10 have deterministic CPython receipts. Immutable v1.1.0 contains Fixtures 1–9; immutable v1.0.1 contains Fixtures 1–8. |
-| Open status | Universal persistence, generic empirical validation, nonlinear stochastic residual composition, full quantum-morphism composition (BSC-QOP-03), instrument-uncertain reconstruction, QRF quotient characterization, learnability-aware recurrence, physical charge bridges, end-to-end zeta-algorithm advantage, temperature/origin bridges, and a machine-checked BSC kernel | Conjectural, untested, unexecuted, blocked, or open as individually recorded. |
+| Open status | Universal persistence, generic empirical validation, nonlinear stochastic residual composition, full quantum-morphism composition (BSC-QOP-03), instrument-uncertain reconstruction, QRF quotient characterization, learnability-aware recurrence, faithfulness of operational report envelopes under added interventions, non-iid hardware rate-distortion, physical charge bridges, end-to-end zeta-algorithm advantage, temperature/origin bridges, and a machine-checked BSC kernel | Conjectural, untested, unexecuted, blocked, or open as individually recorded. |
 
 The fixtures (§16) compute a torus winding class $(2,-3)$ while
 blocking electric charge without a physical bridge; exhibit two distinct
