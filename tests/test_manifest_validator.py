@@ -4,8 +4,14 @@ import hashlib
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
-from tools.verify_manifest import ManifestError, parse_manifest, verify_manifest
+from tools.verify_manifest import (
+    ManifestError,
+    inventory_release_files,
+    parse_manifest,
+    verify_manifest,
+)
 
 
 def digest(data: bytes) -> str:
@@ -100,6 +106,78 @@ class ManifestValidatorTests(unittest.TestCase):
             verify_manifest(root, root / "MANIFEST.sha256"),
             [],
         )
+
+    def test_root_git_directory_is_excluded(self) -> None:
+        temporary, root = self.make_release({"README.md": b"release\n"})
+        self.addCleanup(temporary.cleanup)
+        (root / ".git").mkdir()
+        (root / ".git" / "HEAD").write_text("ref: refs/heads/main\n")
+        self.assertEqual(verify_manifest(root, root / "MANIFEST.sha256"), [])
+        self.assertEqual(set(inventory_release_files(root)), {"README.md"})
+
+    def test_root_git_indirection_file_is_excluded(self) -> None:
+        temporary, root = self.make_release({"README.md": b"release\n"})
+        self.addCleanup(temporary.cleanup)
+        (root / ".git").write_text("gitdir: ../repo/.git/worktrees/linked\n")
+        self.assertEqual(verify_manifest(root, root / "MANIFEST.sha256"), [])
+        self.assertEqual(set(inventory_release_files(root)), {"README.md"})
+
+    def test_manifest_cannot_admit_root_git_metadata(self) -> None:
+        temporary, root = self.make_release({"README.md": b"release\n"})
+        self.addCleanup(temporary.cleanup)
+        manifest = root / "MANIFEST.sha256"
+        manifest.write_text(
+            manifest.read_text(encoding="utf-8")
+            + f"{digest(b'gitdir: elsewhere\n')}  ./.git\n",
+            encoding="utf-8",
+        )
+        with self.assertRaisesRegex(ManifestError, "root .git metadata"):
+            parse_manifest(manifest)
+
+    def test_nested_git_file_is_not_root_metadata(self) -> None:
+        temporary, root = self.make_release({"README.md": b"release\n"})
+        self.addCleanup(temporary.cleanup)
+        (root / "nested").mkdir()
+        (root / "nested" / ".git").write_text("payload\n")
+        errors = verify_manifest(root, root / "MANIFEST.sha256")
+        self.assertTrue(
+            any("payload files missing from manifest: nested/.git" in e for e in errors)
+        )
+
+    def test_nested_git_directory_is_not_silently_excluded(self) -> None:
+        temporary, root = self.make_release({"README.md": b"release\n"})
+        self.addCleanup(temporary.cleanup)
+        (root / "nested" / ".git").mkdir(parents=True)
+        (root / "nested" / ".git" / "data").write_text("payload\n")
+        errors = verify_manifest(root, root / "MANIFEST.sha256")
+        self.assertTrue(
+            any(
+                "payload files missing from manifest: nested/.git/data" in e
+                for e in errors
+            )
+        )
+
+    def test_directory_scan_errors_fail_closed(self) -> None:
+        temporary, root = self.make_release({"README.md": b"release\n"})
+        self.addCleanup(temporary.cleanup)
+
+        def denied_walk(*args: object, **kwargs: object):
+            onerror = kwargs["onerror"]
+            assert callable(onerror)
+            onerror(PermissionError("denied fixture"))
+            yield  # pragma: no cover
+
+        with mock.patch("tools.verify_manifest.os.walk", side_effect=denied_walk):
+            with self.assertRaisesRegex(ManifestError, "cannot scan release payload"):
+                inventory_release_files(root)
+
+    def test_directory_junctions_fail_closed(self) -> None:
+        temporary, root = self.make_release({"README.md": b"release\n"})
+        self.addCleanup(temporary.cleanup)
+        (root / "linked").mkdir()
+        with mock.patch.object(Path, "is_junction", return_value=True):
+            with self.assertRaisesRegex(ManifestError, "directory junction"):
+                inventory_release_files(root)
 
     def test_tmp_staging_directory_is_rejected(self) -> None:
         temporary, root = self.make_release({"README.md": b"release\n"})

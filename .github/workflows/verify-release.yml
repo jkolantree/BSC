@@ -28,6 +28,8 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
+          fetch-depth: 0
+          fetch-tags: true
           persist-credentials: false
 
       - name: Set up CPython 3.12.13
@@ -35,8 +37,32 @@ jobs:
         with:
           python-version: "3.12.13"
 
-      - name: Run integrity and regression gates
+      - name: Run inventory, integrity, and regression gates
         run: make verify
+
+      - name: Verify an active release candidate on the exact checkout
+        if: ${{ !startsWith(github.ref, 'refs/tags/v') }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          version="$(python -c 'import json; print(json.load(open("release/release-spec.json", encoding="utf-8"))["intended_version"] or "")')"
+          if [[ -n "${version}" ]]; then
+            python tools/build_archives.py \
+              --candidate-version "${version}" \
+              --output-directory "${RUNNER_TEMP}/bsc-release-candidate"
+            make fixture-full
+          fi
+
+      - name: Verify final archive authority for a version tag
+        if: startsWith(github.ref, 'refs/tags/v')
+        shell: bash
+        run: |
+          set -euo pipefail
+          version="${GITHUB_REF_NAME#v}"
+          test -n "${version}"
+          python tools/build_archives.py \
+            --release-version "${version}" \
+            --output-directory "${RUNNER_TEMP}/bsc-release-authority"
 
       - name: Repeat the complete F11 enumeration for a release tag
         if: startsWith(github.ref, 'refs/tags/v')
@@ -49,6 +75,8 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
+          fetch-depth: 0
+          fetch-tags: true
           persist-credentials: false
 
       - name: Set up CPython 3.12.13

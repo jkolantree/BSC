@@ -267,17 +267,68 @@ fatal TeX warning.
 
 ## Build deterministic release archives
 
-With a verified manifest, build the complete-release and manuscript-source
-archives:
+Archive authority is explicit and fail-closed. A clean committed development
+tree can produce only commit-named development artifacts:
 
 ```bash
-make dist VERSION=1.4.0 SOURCE_DATE_EPOCH=1785456000
+make dist-development
 ```
 
-Run the archive builder again in a separate empty output directory and require
-the two runs to be byte-identical before uploading them as release assets. The
-builder re-verifies the manifest, rejects unsafe member paths, normalizes ZIP
-metadata to the release epoch, and refuses to overwrite an existing archive.
+Before a candidate build, set `intended_version` and `build_epoch` in
+`release/release-spec.json`, regenerate the manifest, and commit that frozen
+tree. Fetch the complete tag set before relying on the intended tag's absence.
+Rebuild and check the PDFs with `SOURCE_DATE_EPOCH` set to the tracked
+`build_epoch`; the ordinary development build derives its epoch from `HEAD`.
+The intended tag must not yet exist. Then run:
+
+```bash
+make dist-candidate RELEASE_VERSION=1.5.0
+```
+
+Candidate filenames contain both `candidate` and the source commit identity.
+Their internal archive roots use the prospective final version so their ZIP
+bytes can be compared with the later final build.
+
+A final filename can be produced only when the explicit version matches the
+tracked specification and an annotated `vVERSION` tag directly names `HEAD`.
+The tag's peeled commit and tree must also match `HEAD`:
+
+```bash
+make dist-release RELEASE_VERSION=1.5.0
+```
+
+Every mode re-verifies the canonical root `MANIFEST.sha256`, refuses an
+external manifest or an output inside the payload, validates the constructed
+ZIP inventories, and refuses to overwrite outputs. Run a build twice in
+separate empty output directories and require the corresponding ZIP hashes to
+match before any authorized publication.
+
+The builder writes a deterministic detached `*_Identity.json` record last.
+It binds the mode, version, build epoch, commit, tree, annotated tag object
+(for final releases), manifest digest, and both archive digests. The record is
+kept under `dist/`, outside the tracked manifest and both release archives, so
+it does not create a hash cycle. Verify it in the unchanged source checkout:
+
+```bash
+python3 tools/release_identity.py --identity dist/EXACT_Identity.json
+```
+
+The tracked release specification deliberately contains intent only; it does
+not claim its own commit or tree hash.
+
+## Verify inventory across Git materializations
+
+To compare a normal checkout, a linked worktree, and an extracted `git
+archive` of the exact same clean commit, run:
+
+```bash
+python3 tools/verify_inventory_contexts.py
+```
+
+All three surfaces must verify the same manifest and produce identical
+path-to-SHA-256 inventory maps. Root `.git` metadata is excluded whether it is
+a directory or a linked-worktree indirection file; nested `.git`-named payload
+is not silently excluded.
 
 ## Source corpus boundary
 
