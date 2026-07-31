@@ -37,13 +37,48 @@ eight-field BSC morphism or the immutable v1.2.0 release:
 - proved that generic operational-channel form cannot determine the
   fine-structure constant, so a numerological 1/137 identification is blocked
   without a typed electromagnetic and metrological bridge;
+- added that electromagnetic bridge as a typed completion separating bundle
+  and gauge, field equations, constitutive response, boundary ports,
+  instrument report, and inference;
+- proved gauge-orbit report descent, the equal-curvature/different-holonomy
+  counterexample, smooth-source compatibility, local-law/global-flux
+  separation, and Poynting balance with modulation and dispersion boundaries;
+- proved passive scattering contraction only in a declared calibrated power
+  metric with complete port accounting, retained hidden-port ambiguity, and
+  added an exact magnitude-only phase/delay counterexample;
+- kept Maxwell boundary inversion local to its forward problem, coefficient
+  class, quotient, data coverage, frequency regime, calibration, uniqueness,
+  and stability theorem;
+- proved that field normalization preserves $q^2/Z$, that Chern/Dirac
+  integrality constrains a charge-flux product rather than $\alpha$, and that
+  revised-SI definitions make $\mu_0$ depend on measured $\alpha$ rather than
+  deriving it;
+- proved that an RG equation requires a boundary value and therefore cannot
+  derive low-energy $\alpha$ from its beta function alone, with
+  $\beta\equiv0$ as an exact nonuniqueness counterexample;
+- screened the proposed 16-, 31-, and 32-bit/Fermat-number route to 137:
+  $1/137$ has binary period 68, but the cutoff integers have nonzero residues
+  modulo 137, the regular 137-gon is not constructible, and none of these
+  arithmetic facts supplies a map to the measured electromagnetic coupling;
+- added BSC-EM-11 for aperiodic geometry-to-field descent: a tiling predicate
+  transfers only across a declared selector and materialization fiber, while
+  translation-faithful coefficients satisfy
+  $\operatorname{Stab}_{\mathrm{tr}}(\kappa)\subseteq
+  \operatorname{Stab}_{\mathrm{tr}}(P)$;
+- separated the Hat's eight-kite deltoidal-trihexagonal construction, the
+  Spectre's strictly chiral tiling theorem, scalar point diffraction, and the
+  2026 centroid-selected SiN experiment; periodic Hat diffraction is retained
+  as a concrete block on inferring reciprocal-space periodicity from
+  real-space aperiodicity alone, while BSC-EM-OBS-01 records the single-study
+  report separately from the present-proof authority of BSC-EM-11;
 - added a primary-source crosswalk for hybrid atom–quantum-dot interference,
   a driven plasmonic photonic time crystal, Hiroshima blast-forged alloy
   evidence, and integrated microwave probabilistic bits;
 - added exact regression tests for rational defect propagation, classical
   contraction, inverse-set enclosure, spectral-marginal and postselection
   counterexamples, Bernoulli support/rate boundaries, same-identity alignment,
-  primary-source routing, and unique claim identifiers; and
+  primary-source routing, unique claim identifiers, translation-faithful
+  materialization, and finite point-scatterer structure factors; and
 - kept full quantum-morphism closure BSC-QOP-03 open.
 
 This development entry is not a publication. The latest immutable release

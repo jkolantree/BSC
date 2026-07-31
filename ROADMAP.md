@@ -81,6 +81,27 @@ v1.0.1, or v1.0.0 release records.
 - Added the one-permutation same-entity relation-alignment theorem.
 - Proved that channel form alone cannot derive the fine-structure constant;
   1/137 remains blocked without a physical and metrological bridge.
+- Added a typed electromagnetic completion of the operational report envelope:
+  bundle and gauge, field/excitation/source forms, constitutive response,
+  boundary ports, calibrated instruments, reports, and certificates remain
+  separate layers.
+- Proved gauge-orbit report descent, equal-curvature/different-holonomy
+  nonidentifiability, smooth-source compatibility, topological flux-sector
+  separation, and Poynting balance with explicit pump/material qualifications.
+- Added calibrated passive-scattering contraction with hidden-port and
+  operator-norm uncertainty boundaries, plus an exact magnitude-only
+  phase/delay counterexample.
+- Kept Maxwell inversion theorem local to its forward problem, coefficient
+  class, gauge or diffeomorphism quotient, data coverage, and stability
+  theorem; a finite S-parameter report is not promoted to a full boundary
+  operator.
+- Proved the invariant field-normalization ratio $q^2/Z$, showed that
+  Chern/Dirac quantization constrains a charge-flux product rather than
+  $\alpha$, and recorded the revised-SI metrological direction from measured
+  $\alpha$ to uncertain $\mu_0$.
+- Added the RG boundary-value no-go: $\mu\,dg/d\mu=\beta(g)$ transports a
+  supplied coupling but does not determine it without $g(\mu_0)$; the exact
+  case $\beta\equiv0$ admits every constant.
 - Added a primary-source crosswalk for four July 2026 experiments without
   claiming common microscopic dynamics or replaying their data and hardware.
 
@@ -144,6 +165,24 @@ This is development work, not a release or deposit.
      computational or empirical readiness.
    - Determine whether the BSC record changes an inspectable scientific
      decision beyond the documentary scope demotions already identified.
+
+9. **Electromagnetic executable and formal checks**
+   - Bind one calibrated vector-network-analyzer fixture to a weighted
+     passivity inequality with reference-plane, hidden-port, and simultaneous
+     uncertainty records.
+   - Formalize gauge descent, the flat-holonomy counterexample, field
+     normalization, and the RG boundary-value no-go in a proof assistant.
+   - Build two independent metrological evidence graphs for $\alpha$ without
+     treating definitional constants, theory inputs, or correlated nuisance
+     quantities as independent measurements.
+   - Add a time-domain passive dispersive-material theorem with an explicit
+     auxiliary state and storage functional before making such an energy
+     claim executable.
+   - Freeze one Hat or Spectre finite approximant, point selector, mirrored
+     control, fabrication map, scalar structure factor, full-wave model,
+     illumination, polarization, and calibrated diffraction report. Compare
+     only observables shared by those layers; do not treat an infinite tiling
+     theorem as execution evidence for the device.
 
 ## Promotion rule
 

@@ -112,13 +112,13 @@ class ReleaseMetadataTests(unittest.TestCase):
         self.assertIn("F10_coupled_surrogate", fixture_index)
 
     def test_page_counts_are_consistent(self) -> None:
-        self.assertIn("PAPER_PAGES ?= 63", self.read("Makefile"))
+        self.assertIn("PAPER_PAGES ?= 69", self.read("Makefile"))
         self.assertIn(
-            'parser.add_argument("--paper-pages", type=int, default=63)',
+            'parser.add_argument("--paper-pages", type=int, default=69)',
             self.read("tools/verify_build.py"),
         )
         self.assertIn(
-            "The expected page count is 63.",
+            "The expected page count is 69.",
             self.read("REPRODUCING.md"),
         )
 

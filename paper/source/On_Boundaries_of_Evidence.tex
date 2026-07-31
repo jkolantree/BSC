@@ -2910,6 +2910,367 @@ The BSC contribution is their claim-relative integration with implemented
 reachable sets, evidence identity, demotion and explicit non-transfer to the
 full quantum morphism.
 
+\subsection{Electromagnetic evidence bridge}
+\label{sec:em-bridge}
+
+This section gives a typed electromagnetic completion of the operational
+channel core.  Its ingredients are standard results in gauge theory,
+electromagnetism, network theory, metrology and renormalized quantum
+electrodynamics.  The BSC contribution is only their placement on explicit
+evidence boundaries.  In particular, the bridge sharpens BSC-UNI-01; it does
+not derive a value of \(\alpha\), identify a microscopic ontology, or propose
+a unified theory.
+
+\paragraph{\textbf{BSC-EM-01}---Gauge descent.}
+Let \(\mathcal A(P)\) be the space of connections on a principal bundle \(P\)
+and let \(\mathcal G(P)\) act by gauge transformations.  A report
+\(R:\mathcal A(P)\to\mathcal Y\) is physically gauge invariant exactly when
+it is constant on gauge orbits.  Equivalently, there is a unique map
+\(\overline R\) such that
+\[
+R=\overline R\circ\pi,
+\qquad
+\pi:\mathcal A(P)\longrightarrow\mathcal A(P)/\mathcal G(P).
+\]
+This is the universal property of the quotient.  Curvature and closed-loop
+Wilson holonomy descend in this sense (for a non-Abelian connection, the
+holonomy conjugacy class or a traced Wilson loop descends).  An open-path
+phase does not descend without typed endpoint states or a boundary
+trivialization.
+
+\paragraph{\textbf{BSC-EM-02}---Curvature does not determine global
+holonomy.}
+On \(S^1\times N\), let \(\phi\) be the angular coordinate and take the
+dimensionless Abelian connections
+\[
+a_\vartheta=\vartheta\,d\phi.
+\]
+Every member has \(da_\vartheta=0\), whereas its loop holonomy is
+\(\exp(2\pi i\vartheta)\).  Integer shifts of \(\vartheta\) are gauge
+equivalent, but distinct classes in \(\mathbb R/\mathbb Z\) have the same
+curvature and different holonomy.  Thus local field-strength evidence cannot
+by itself support a global phase claim.  The physical observability of this
+distinction is the content of the Aharonov--Bohm effect
+\citep{aharonovbohm1959}.
+
+\paragraph{\textbf{BSC-EM-03}---Source compatibility.}
+In differential-form notation, Maxwell's equations include
+\[
+d\mathcal F=0,
+\qquad
+d\mathcal G=\mathcal J.
+\]
+Consequently,
+\[
+d\mathcal J=d^2\mathcal G=0.
+\]
+Charge conservation is therefore a necessary compatibility condition for a
+globally smooth excitation \(\mathcal G\); where such a global
+\(\mathcal G\) exists, \(\mathcal J\) is also exact.  This implication does
+not reconstruct \(\mathcal G\), fix constitutive data, or remove topological
+sectors.  Singular sources, material interfaces and open boundaries require
+the corresponding distributional or relative-cohomology statement.
+
+\paragraph{\textbf{BSC-EM-04}---Energy balance.}
+For time-independent, symmetric, positive constitutive tensors
+\(\mathbf D=\boldsymbol\varepsilon\mathbf E\) and
+\(\mathbf B=\boldsymbol\mu\mathbf H\), define
+\[
+u=\frac12(\mathbf E\mathbin{\cdot}\mathbf D+
+          \mathbf H\mathbin{\cdot}\mathbf B),
+\qquad
+\mathbf S=\mathbf E\times\mathbf H.
+\]
+The curl equations and
+\(\nabla\mathbin{\cdot}(\mathbf E\times\mathbf H)
+ =\mathbf H\mathbin{\cdot}(\nabla\times\mathbf E)
+ -\mathbf E\mathbin{\cdot}(\nabla\times\mathbf H)\)
+give Poynting's theorem \citep{poynting1884},
+\[
+\partial_tu+\nabla\mathbin{\cdot}\mathbf S
+  =-\mathbf J\mathbin{\cdot}\mathbf E,
+\]
+and hence, for a fixed region \(V\),
+\[
+\frac{d}{dt}\int_Vu\,dV+
+\int_{\partial V}\mathbf S\mathbin{\cdot}\mathbf n\,dA
+=-\int_V\mathbf J\mathbin{\cdot}\mathbf E\,dV.
+\]
+Temporal modulation, dispersion or active media require the omitted
+pump, material-state or storage channels to be restored before this balance
+is used as an audit equation.
+
+\paragraph{\textbf{BSC-EM-05}---Passive scattering and hidden ports.}
+For a linear time-invariant network with power-normalized propagating-port
+amplitudes \(\mathbf b=S(\omega)\mathbf a\), no internal source and no release
+of initially stored energy, passivity gives
+\[
+\|S\mathbf a\|_2^2\leq\|\mathbf a\|_2^2
+\quad\hbox{for every \(\mathbf a\)}
+\quad\Longleftrightarrow\quad
+S^\dagger S\preceq I .
+\]
+For non-power-normalized coordinates, the typed form is
+\(S^\dagger W S\preceq W\) with the appropriate positive power metric
+\(W\) \citep{kurokawa1965,markswilliams1992}.  If a complete lossless
+scattering operator is partitioned into observed and hidden ports,
+\[
+U=
+\begin{pmatrix}
+S_{oo}&S_{oh}\\
+S_{ho}&S_{hh}
+\end{pmatrix},
+\qquad U^\dagger U=I,
+\]
+then
+\[
+I-S_{oo}^\dagger S_{oo}=S_{ho}^\dagger S_{ho}.
+\]
+An observed power deficit can therefore represent unmeasured radiation,
+higher modes or other hidden ports as well as absorption.  It does not type
+the loss mechanism by itself.  Calibration uncertainty must also cross the
+boundary: if
+\(\|\widehat S-S\|_2\leq\epsilon\), then
+\[
+\sigma_{\max}(\widehat S)+\epsilon\leq1
+\]
+certifies contraction, while
+\(\sigma_{\max}(\widehat S)-\epsilon>1\) falsifies the declared passive
+model.  The interval between these tests is inconclusive.
+
+\paragraph{\textbf{BSC-EM-06}---Magnitude does not determine phase.}
+Under
+\(\widehat x(\omega)=\int_{\mathbb R}x(t)e^{-i\omega t}\,dt\), take
+\[
+S_0(\omega)=r,
+\qquad
+S_\tau(\omega)=r e^{-i\omega\tau},
+\qquad
+0<r\leq1,\quad\tau>0.
+\]
+Both are causal passive responses and satisfy
+\(\lvert S_0\rvert^2=\lvert S_\tau\rvert^2=r^2\), but their phases, group
+delays and impulse responses \(r\delta(t)\) and
+\(r\delta(t-\tau)\) differ.  Magnitude-only data therefore do not license
+phase, delay or time-waveform claims unless phase is measured or a separately
+verified theorem supplies conditions such as minimum phase and known delay.
+
+Inverse claims are theorem-local.  A boundary operator such as
+\[
+\Lambda_{\varepsilon,\mu}:
+\operatorname{tr}_t\mathbf E\longmapsto
+\operatorname{tr}_t\mathbf H
+\]
+has meaning only after the forward problem, coefficient class, geometry,
+gauge or diffeomorphism quotient, frequency set, trace spaces and full or
+partial data are fixed.  A finite measured scattering matrix is not
+automatically the full boundary operator.  Maxwell uniqueness results such
+as \citet{kenigsalouhlmann2011} establish conclusions under their stated
+geometric, regularity and data hypotheses; they do not provide a universal
+finite-band reconstruction of an arbitrary interior.  At finite energy on a
+Lipschitz domain, tangential fields belong to the paired
+\(H(\operatorname{curl})\) trace spaces rather than automatically being
+pointwise boundary vectors \citep{buffacostabelsheen2002}.
+
+\paragraph{\textbf{BSC-EM-07}---Field-normalization quotient.}
+In rationalized units with \(\hbar=c=1\), consider
+\[
+\mathcal S_{Z,\{q_i\},J}
+={}-\frac Z4\int F_{\mu\nu}F^{\mu\nu}\,d^4x
++ \sum_i\mathcal S_i[\psi_i,d+iq_iA]
+- \int J_{\rm ext}^{\mu}A_\mu\,d^4x .
+\]
+Each matter action uses the displayed covariant derivative, so the expression
+also covers interactions whose dependence on \(A\) is not merely linear.
+For any \(\lambda>0\), the change \(A'=\lambda A\) rewrites the same action
+with
+\[
+Z'=\frac Z{\lambda^2},
+\qquad
+q_i'=\frac{q_i}{\lambda},
+\qquad
+J_{\rm ext}'=\frac{J_{\rm ext}}{\lambda}.
+\]
+Thus the normalization-invariant couplings are
+\[
+g_i=\frac{q_i}{\sqrt Z},
+\qquad
+\alpha_i=\frac{q_i^2}{4\pi Z},
+\]
+together with charge ratios.  Substitution proves the invariance directly.
+Canonical field normalization sets a coordinate convention; gauge invariance
+and that convention do not select a numerical \(\alpha_i\).  If a primitive
+charge \(q_0\) and integers \(Q_i\) give \(q_i=Q_iq_0\), then
+\(\alpha_i=Q_i^2\alpha_0\), so the lattice fixes ratios but still leaves one
+dimensionless boundary value.
+
+\paragraph{\textbf{BSC-EM-08}---Flux-product quantization.}
+For a species whose quantum phase is defined by the dimensionless connection
+\(\mathcal A_i=(q_i/\hbar)A_{\rm phys}\), a closed two-cycle \(\Sigma\)
+satisfies the first-Chern integrality condition
+\[
+\frac1{2\pi}\int_\Sigma d\mathcal A_i
+=\frac{q_i}{2\pi\hbar}\int_\Sigma F_{\rm phys}
+\in\mathbb Z .
+\]
+This is a quantization of a charge--flux product, or equivalently of
+normalized holonomy.  It does not determine \(q_i\), \(Z\), or
+\(\alpha_i=q_i^2/(4\pi Z)\) separately.  Dirac's monopole argument is the
+canonical physical instance \citep{dirac1931}.
+
+\paragraph{\textbf{BSC-EM-09}---Revised-SI metrology.}
+At zero momentum transfer,
+\[
+\alpha(0)
+=\frac{e^2}{4\pi\varepsilon_0\hbar c}
+=\frac{\mu_0ce^2}{2h}
+=\frac{Z_0}{2R_{\rm K}},
+\qquad
+R_{\rm K}=\frac h{e^2}.
+\]
+In the revised SI, the numerical values of \(h\), \(e\) and \(c\) are fixed,
+and the exact relation
+\[
+\mu_0=\frac{2h\,\alpha(0)}{ce^2}
+\]
+means that \(\mu_0\) inherits the experimental uncertainty of
+\(\alpha(0)\); the former exact value
+\(4\pi\times10^{-7}\ {\rm N\,A^{-2}}\) cannot be reused as independent
+evidence for \(\alpha\) \citep{bipm2019ampere,mohr2025codata}.  A genuine
+measurement bridge must name the observable and theory map.  Atom-recoil
+determinations use, for an atom \(X\),
+\[
+\alpha^2
+=\frac{2R_\infty}{c}\,
+ \frac{A_{\rm r}(X)}{A_{\rm r}(e)}\,
+ \frac h{m_X},
+\]
+as in \citet{morel2020alpha}.  An electron-magnetic-moment determination
+instead inverts a QED prediction for the measured anomaly
+\citep{fan2023moment}; a value obtained that way cannot then be counted as an
+independent test of the same theoretical terms.  The 2026 atomic-hydrogen
+comparison likewise uses independently determined \(\alpha\) and mass ratios
+as inputs to its bound-state-QED prediction; it is a stringent theory test,
+not an independent derivation of \(\alpha\)
+\citep{maisenbacher2026hydrogen}.
+
+\paragraph{\textbf{BSC-EM-10}---Renormalization requires a boundary value.}
+The on-shell coupling is \(\alpha_{\rm OS}\equiv\alpha(0)\), while a
+scheme-dependent running coupling may be written
+\[
+\overline\alpha(\mu)=\frac{\overline e^{\,2}(\mu)}{4\pi},
+\qquad
+\mu\frac{d\overline e}{d\mu}=\beta(\overline e).
+\]
+The Ward--Takahashi identity constrains charge, vertex and field
+renormalization factors, but it does not supply their numerical boundary
+value \citep{ward1950,takahashi1957}.  Likewise, a renormalization-group
+equation transports a supplied value between scales; it does not create that
+value \citep{gellmannlow1954}.  Every running-coupling claim must therefore
+name the scheme, scale, threshold matching and observable.  Atomic
+calculations normally use \(\alpha(0)\) together with explicit radiative
+corrections; replacing it naively by a running \(\alpha(\omega)\) can double
+count those corrections.
+
+\paragraph{Binary-width and constructibility screen.}
+The nearby integer patterns are exact but do not supply the missing physical
+map:
+\[
+\begin{gathered}
+2^{31}-1=2\,147\,483\,647,\qquad
+2^{32}-1=3\cdot5\cdot17\cdot257\cdot65\,537,\\
+65\,537=2^{16}+1.
+\end{gathered}
+\]
+The first is the legacy signed-32-bit timestamp ceiling behind the Year 2038
+problem \citep{opengroup2024epoch}; the latter factorization by distinct Fermat
+primes explains the associated constructible regular polygons.  For the prime
+\(137\),
+\[
+\operatorname{ord}_{137}(2)=68,\qquad
+2^{31}-1\equiv16,\quad
+2^{32}-1\equiv33,\quad
+65\,537\equiv51\pmod{137}.
+\]
+Thus the binary expansion of the rational \(1/137\) has period \(68\), but
+none of the displayed cutoff integers is divisible by \(137\).  Moreover, the
+regular \(137\)-gon is not straightedge-and-compass constructible because
+\((137-1)/2=68\) is not a power of two, unlike
+\((65\,537-1)/2=2^{15}\) \citep{wantzel1837}.  These are arithmetic and
+representation facts.  They neither identify the measured
+\(\alpha^{-1}=137.035\,999\,177(21)\) with \(137\) nor define a map to the
+invariant coupling \(q_i^2/(4\pi Z)\).
+
+\paragraph{\textbf{BSC-EM-11}---Aperiodic geometry-to-field descent.}
+The Hat is an aperiodic monotile made from eight kites of the
+\([3.4.6.4]\) Laves tiling, the deltoidal-trihexagonal dual of the
+\((3.4.6.4)\) rhombitrihexagonal tiling
+\citep{smith2024hat}.  The periodic carrier kite grid and its aperiodic
+partition into Hats are distinct structures.  Every Hat tiling mixes
+reflected and unreflected tiles; the later Spectre construction instead gives
+strictly chiral aperiodic monotiles \citep{smith2024spectre}.  These are
+theorems about planar tilings and admitted isometries, not Maxwell spectra.
+
+Let \(P\) be such a tiling partition and
+\(\kappa=(\varepsilon,\mu,\sigma,\ldots)\) a physical coefficient field.  A
+translation-faithful materialization satisfies
+\[
+\tau_v\kappa=\kappa\Longrightarrow\tau_vP=P,
+\qquad
+\operatorname{Stab}_{\rm tr}(\kappa)
+\subseteq\operatorname{Stab}_{\rm tr}(P).
+\]
+Thus aperiodicity transfers to \(\kappa\) under this explicit hypothesis.
+Without it, constant coefficient fields and lattice-periodic coefficient
+fields materializing only the unlabeled carrier grid are exact
+counterexamples.  Even faithful transfer
+establishes no band gap, localization, topological phase, optical activity,
+nonreciprocity, or device performance.  A physical claim must bind
+\[
+P\xrightarrow{\,C_{\rm sel}\,}X_N
+\xrightarrow{\,\Phi_{\rm mat}\,}
+(\varepsilon,\mu,\sigma,\Omega,\mathcal B)
+\xrightarrow{\,\mathcal P_{\lambda,p}\,}Y,
+\]
+including the finite approximant, selector, scale, thickness, dispersion,
+loss, boundaries, illumination, polarization, calibration, and report.
+
+For identical point scatterers \(X_N=\{(x_j,y_j)\}_{j=1}^N\), the conditional
+scalar model is
+\[
+F_N(k_x,k_y)=
+\sum_{j=1}^N e^{2\pi i(k_xx_j+k_yy_j)},
+\qquad I_N=|F_N|^2.
+\]
+It is not a full-wave solution.  Indeed, point diffraction from the
+aperiodic Hat-vertex set can be two-periodic because of its underlying
+hexagonal net, whereas Spectre vertex and centroid diffraction is
+nonperiodic with chiral sixfold point symmetry
+\citep{kaplan2024hatdiffraction,kaplan2024spectrediffraction}.
+Real-space aperiodicity therefore neither implies nor contradicts
+reciprocal-space periodicity without a selector and observation model.
+
+Moritake \emph{et al.} selected Hat centroids, fabricated an \(H_6\)
+approximant as \(372\,100\) holes in a \(350\,{\rm nm}\) SiN film, and
+observed sharp Bragg peaks whose positions were insensitive to illumination
+position, mirror-reversing pinwheel diffraction, and helicity-dependent
+intensity \citep{moritake2026diffraction}.  For their declared
+golden-ratio/Fibonacci inflation geometry,
+\[
+\phi=\frac{1+\sqrt5}{2},
+\qquad
+\theta_{\rm chiral}
+=\arccos\!\left(\frac{3\phi-1}{4}\right)
+\approx15.52^\circ .
+\]
+This instantiates a specific geometry-to-fabricated-sample-to-report chain; it
+does not close the full Maxwell, calibration, or uncertainty obligations and
+does not prove the electromagnetic response of every Hat realization.  The
+source-local observation record is \texttt{BSC-EM-OBS-01}; it is not the proof
+authority for BSC-EM-11.  The eight kites, golden-ratio/Fibonacci inflation
+geometry, and sixfold intensity symmetry also supply no map to
+\(q_i^2/(4\pi Z)\), no RG boundary value, and no derivation of \(1/137\).
+
 \subsection{Corpus inheritance and local demotion}
 
 The prior reconstruction treated a hash-identified internal corpus as evidence

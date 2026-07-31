@@ -43,6 +43,7 @@ The unit of evaluation is not the universe. It is one claimed transfer.
 | Framework module | [Normalized scale profiles](framework/Normalized_Scale_Profiles.md) | Inspect the reusable finite-family, rate, singularity, zero-transfer, and decision mathematics |
 | Framework module | [Simulation evidence profiles](framework/Simulation_Evidence_Profile.md) | Inspect intended-use records, statistical evidence, compatibility reserves, and coupled-surrogate propagation |
 | Framework module | [Operational channel core](framework/Operational_Channel_Core.md) | Inspect fixed-interface mixed classical/quantum propagation, no-resurrection, driven energy, Bernoulli encoding, semantic alignment, and the 1/137 boundary |
+| Framework module | [Electromagnetic evidence bridge](framework/Electromagnetic_Evidence_Bridge.md) | Inspect gauge descent, sources and flux, boundary power, calibrated scattering, inverse scope, coupling normalization, metrology, RG flow, and aperiodic geometry-to-field descent |
 | Application crosswalk | [Four July 2026 experiments](applications/Operational_Channel_Crosswalk_2026.md) | Compare hybrid photons, a driven plasmonic time crystal, Hiroshima alloy evidence, and a microwave probabilistic-bit processor without conflating their physics |
 | Status audit | [Claim-status ledger](ledgers/Claim_Status_Ledger.md) | Separate mathematical verdict from support and other readiness coordinates |
 | Source audit | [Revision memorandum](revision/Revision_Memorandum.md) | See every material repair and unresolved source conflict |
@@ -115,7 +116,9 @@ recurrence, or duality earns the right to support a target claim.
   and coupled-surrogate propagation; and for fixed compatible
   preparation-to-report channels, implemented-reachable-set error
   propagation, data processing, energy accounting, probabilistic encoding,
-  and relation alignment.
+  and relation alignment; and an electromagnetic completion separating gauge,
+  local Maxwell laws, constitutive response, boundary ports, calibrated
+  reports, inverse authority, coupling normalization, and metrology.
 - A two-page technical synopsis and field-specific reader map.
 - A symbol and notation ledger, claim-status ledger, and revision memorandum.
 - Ten exact mathematical fixtures in version 1.2.0; immutable v1.1.0 contains
@@ -296,6 +299,49 @@ not a claim that these systems share one microscopic law. No hardware,
 spectroscopy, crystallography, classifier, or raw-data analysis was replayed
 by BSC.
 
+## Electromagnetic evidence bridge
+
+The development bridge instantiates the operational report envelope as
+
+```math
+\mathsf{EMC}
+=
+(M,g,P,[\mathcal A],\mathcal F,\mathcal H,\mathcal J,
+\mathcal C,\mathcal B,\mathcal M,\mathcal R,\mathsf{Cert}_{\mathrm{EM}}).
+```
+
+It proves gauge descent and the curvature/holonomy distinction; source
+compatibility and topological-flux boundaries; Poynting balance with explicit
+boundary, pump, material, and loss accounting; passive scattering only in a
+declared calibrated power metric; a magnitude-only phase/delay no-go; and
+field-normalization and charge-flux invariants. Maxwell boundary inversion
+remains theorem-, coefficient-class-, gauge-, frequency-, and data-local.
+
+The bridge sharpens rather than reverses the 1/137 boundary. Revised-SI
+definitions move uncertainty into $\mu_0$ through
+$\mu_0=\alpha\,2h/(ce^2)$; they do not derive $\alpha$. Likewise,
+$\mu\,dg/d\mu=\beta(g)$ transports a supplied coupling between scales but
+does not determine its boundary value. The exact counterexample
+$\beta\equiv0$ admits every constant coupling.
+
+A separate arithmetic screen records the genuine relation
+$\operatorname{ord}_{137}(2)=68$, so $1/137$ has a 68-bit repetend. It also
+shows that $2^{31}-1$, $2^{32}-1$, and $65\,537$ are not divisible by 137
+and that the regular 137-gon is not straightedge-and-compass constructible.
+Those binary and Fermat-number facts do not identify the measured $\alpha$.
+
+The Einstein-monotile crosswalk adds BSC-EM-11. The Hat is an aperiodic union
+of eight kites from the periodic deltoidal-trihexagonal carrier grid, but a
+tiling theorem is not yet a material or Maxwell model. Translation
+aperiodicity transfers to a coefficient field only under a declared faithful
+materialization. A selector can instead erase the tiling or retain only its
+periodic carrier: peer-reviewed Hat point diffraction is a concrete case in
+which an aperiodic real-space tiling has a periodic reciprocal-space report.
+The 2026 centroid-selected SiN experiment supplies single-study evidence along
+one specific finite geometry-to-fabricated-sample-to-diffraction chain; it
+does not establish a universal
+band gap, nonreciprocity, or a route to $1/137$.
+
 ## Current status boundary
 
 | Object | Verdict | Math support | Empirical | Computational | Transfer |
@@ -305,7 +351,8 @@ by BSC.
 | Simulation-evidence profile | True | Typed source-to-loss propagation, joint coverage obligations, factored identity, compatibility-bounded deployment, and coupled-surrogate propagation proved | N/A | Unexecuted | Bounded |
 | Operational fixed-interface channel core | True | Implemented-reachable-set product-sum propagation and classical/quantum no-resurrection proved | N/A | Unexecuted | Bounded |
 | Driven energy, scalar Bernoulli, and semantic-alignment consequences | True | Exact symbolic proofs under declared finite-dimensional, iid, and same-entity hypotheses | N/A | Unexecuted | Bounded |
-| Channel form determines $\alpha^{-1}\approx137$ | False | Physical completions with the same channel form can carry different couplings | N/A | Unexecuted | Blocked |
+| Electromagnetic evidence bridge | True under its declared local hypotheses | Gauge/source, Poynting, passive-scattering, phase, normalization, flux-product, revised-SI, RG boundary-value, and aperiodic materialization-descent results proved; inverse and spectral claims remain theorem local | One experimental study; not replayed | Unexecuted | Bounded |
+| Channel form determines $\alpha^{-1}\approx137$ | False | The abstract envelope axioms contain no equation fixing a coupling; no operationally equivalent pair is asserted | N/A | Unexecuted | Blocked |
 | Exact finite-label observation decoding | True | Measurable-partition criterion and total-variation lower bound proved | N/A | Unexecuted | Certified |
 | Generic decorated-cospan theorem | True | Proved under the assumed lax-monoidal functor | N/A | Unexecuted | Bounded |
 | Canonical BSC-specific decoration functor | Open | Conditional schema only | N/A | Unexecuted | Blocked |
@@ -353,7 +400,7 @@ commands.
 
 ```text
 paper/        manuscript PDF and editable source
-framework/    reusable normalized-scale, simulation-evidence, and operational-channel mathematics
+framework/    reusable scale, simulation, operational-channel, and electromagnetic-bridge mathematics
 applications/ source-bound domain crosswalks
 synopsis/     two-page synopsis, source, and reader map
 ledgers/      claim status and notation

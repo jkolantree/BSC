@@ -1550,3 +1550,192 @@ BSC-specific addition is their claim-relative integration with implemented
 reachable sets, evidence identity, physical completion, decision descent, and
 local demotion. It is a unification of evidentiary form, not a unified field
 theory.
+
+## 25. Version 1.3.0-dev electromagnetic evidence bridge
+
+### Remaining physical-completion gap
+
+The operational report envelope blocked a derivation of the fine-structure
+constant because abstract channel form contains no equation fixing an
+electromagnetic interaction strength. That negative result was correct but
+did not yet expose the exact layers at which electromagnetic evidence enters:
+bundle and gauge, local field equations, constitutive response, boundary
+ports, calibrated instrument report, inverse theorem, coupling normalization,
+renormalization, and metrology.
+
+### Adopted typed completion
+
+The development bridge introduces the companion record
+
+$$
+\mathsf{EMC}
+=
+\left(
+M,g,P,[\mathcal A],\mathcal F,\mathcal H,\mathcal J,
+\mathcal C,\mathcal B,\mathcal M,\mathcal R,
+\mathsf{Cert}_{\mathrm{EM}}
+\right).
+$$
+
+It is a physical completion of the existing operational report envelope, not
+a ninth morphism field. The local Maxwell equations
+
+$$
+d\mathcal F=0,
+\qquad
+d\mathcal H=\mathcal J
+$$
+
+do not choose a constitutive law, topology, boundary condition, instrument,
+or coupling. Each remains an independently typed certificate coordinate.
+
+### Exact bridge claims and no-go results
+
+The claim ledger adds BSC-EM-01 through BSC-EM-11:
+
+1. **Gauge descent (EM-01):** a connection-level report is physical exactly
+   when constant on the declared gauge orbits.
+2. **Holonomy (EM-02):** on suitable nontrivial topology, equal curvature can
+   coexist with different gauge-invariant closed-loop holonomy.
+3. **Sources and flux (EM-03):** a smooth global solution of
+   $d\mathcal H=\mathcal J$ requires $d\mathcal J=0$ and makes
+   $\mathcal J$ exact; singular and open systems need relative or
+   distributional typing. Local source-free laws and tangential power traces
+   do not select a normal topological-flux sector.
+4. **Poynting balance (EM-04):** time-independent symmetric positive
+   constitutive tensors separate stored field energy, outward boundary power,
+   and work on current. Modulation and dispersion add pump or material-state
+   obligations.
+5. **Passive scattering (EM-05):** a complete power-normalized passive report
+   is contractive in its declared metric. Hidden ports, reference planes,
+   impedance, basis, de-embedding, bandwidth, stored energy, and simultaneous
+   calibration uncertainty remain in the report identity.
+6. **Phase no-go (EM-06):** $r$ and $re^{-i\omega\tau}$ have identical power
+   but different phase and delay, so magnitude-only data cannot license a
+   coherent time-domain claim.
+7. **Field normalization (EM-07):** under $A'=\lambda A$, the bare
+   coefficients change while $q^2/Z$ is invariant. Gauge form does not select
+   that invariant's value.
+8. **Flux-product quantization (EM-08):** Chern/Dirac integrality constrains
+   $\frac{q}{2\pi\hbar}\int_\Sigma F_{\mathrm{phys}}$, not $q$, $Z$,
+   $q^2/Z$, or $\alpha$ separately.
+9. **Revised-SI metrology (EM-09):** exact $e,h,c$ imply
+   $\mu_0=\alpha\,2h/(ce^2)$; the obsolete pre-2019 exact value of $\mu_0$
+   cannot be recycled as independent evidence for $\alpha$.
+10. **RG boundary-value no-go (EM-10):** the equation
+
+    $$
+    \mu\frac{dg}{d\mu}=\beta(g)
+    $$
+
+    transports a supplied coupling between scales but does not determine its
+    boundary value. The exact case $\beta\equiv0$ admits every constant
+    $g(\mu)=g_0$; for nonzero $\beta$, an integration constant remains.
+    Scheme, thresholds, matching, truncation, and scale are additional
+    certificate coordinates.
+11. **Aperiodic materialization descent (EM-11):** a tiling predicate becomes
+    a field or scattering predicate only when it is constant over the
+    selector-and-materialization fiber. If a coefficient field $\kappa$
+    faithfully encodes a tiling partition $P$ in the sense
+    $\tau_v\kappa=\kappa\Rightarrow\tau_vP=P$, then
+    $\operatorname{Stab}_{\mathrm{tr}}(\kappa)\subseteq
+    \operatorname{Stab}_{\mathrm{tr}}(P)$. Constant coefficient fields and
+    lattice-periodic coefficient fields materializing only the unlabeled
+    carrier grid are exact counterexamples to an unconditional transfer.
+
+Maxwell boundary inversion is retained as theorem-local rather than assigned
+a universal EM claim: every promotion names the forward problem, coefficient
+class, gauge or diffeomorphism quotient, full or partial data, frequency or
+time regime, calibration bridge, uniqueness theorem, stability class, and
+target identified set. A finite S-parameter matrix is not automatically the
+full boundary-response operator.
+
+### Binary-width and polygon screen
+
+The development update also tests a proposed arithmetic route through
+$2^{31}-1$, $2^{32}-1$, the Year 2038 signed-integer boundary, and the
+constructible regular $65\,537$-gon. The exact positive result is that
+$\operatorname{ord}_{137}(2)=68$, so the rational $1/137$ has a 68-bit
+repetend. The exact negative results are
+
+$$
+2^{31}-1\equiv16,\qquad
+2^{32}-1\equiv33,\qquad
+65\,537\equiv51
+\pmod{137},
+$$
+
+and the real cyclotomic degree for the regular $137$-gon is
+$(137-1)/2=68$, not a power of two. These facts explain a real base-two
+connection while blocking promotion to a physical identification. The
+measured low-energy constant is not exactly $1/137$, and the integer
+relations supply no action, normalization, RG boundary condition, or
+metrological equation for $\alpha$.
+
+### Einstein monotile and diffraction screen
+
+The Hat theorem is routed through the electromagnetic bridge rather than
+through numerical analogy. The Hat is a union of eight kites in the periodic
+$[3.4.6.4]$ Laves, or deltoidal-trihexagonal, tiling and nevertheless forces
+an aperiodic partition into Hats. The later Spectre construction separately
+forces homochiral nonperiodic tilings. These statements concern planar
+translations, reflections, and hierarchical supertiles; they are not
+Maxwell, reciprocity, or constitutive theorems.
+
+The adopted physical chain is
+
+$$
+P\longrightarrow C_{\rm sel}(P)=X_N
+\longrightarrow\Phi_{\rm mat}(X_N)
+\longrightarrow\mathcal P_{\lambda,p}
+\longrightarrow Y.
+$$
+
+It distinguishes an infinite tiling, a finite point/edge/interior selector,
+physical scale and material contrast, the electromagnetic forward problem,
+and the calibrated report. This distinction is forced by a concrete
+published counterexample: the Hat tiling is aperiodic while its vertex
+point-scatterer diffraction is two-periodic because the selected vertices
+inherit an underlying periodic hexagonal net. Spectre point diffraction is
+instead nonperiodic and chiral. Reciprocal-space periodicity therefore does
+not report real-space aperiodicity without the selection and observation map.
+
+The 2026 Nature Communications experiment instantiates one such chain by
+selecting centroids of an $H_6$ Hat approximant, fabricating $372\,100$ holes
+in a $350\,\mathrm{nm}$ SiN film, and measuring sharp Bragg peaks whose
+positions were insensitive to illumination position, mirror-reversing
+pinwheel patterns, and helicity-dependent intensity. Its declared scalar
+model is
+
+$$
+F_N(k_x,k_y)=
+\sum_{j=1}^N e^{2\pi i(k_xx_j+k_yy_j)},
+\qquad I_N=|F_N|^2,
+$$
+
+with a golden-ratio/Fibonacci-inflation-derived orientation
+
+$$
+\theta_{\rm chiral}
+=
+\arccos\!\left(\frac{3(1+\sqrt5)/2-1}{4}\right)
+\approx15.52^\circ.
+$$
+
+The publication supplies single-study evidence along that finite
+geometry-to-fabricated-sample-to-report chain. It does not close the full
+Maxwell, calibration, or uncertainty obligations and does not establish a
+universal band gap, localization, nonreciprocity, or a coupling value. Eight
+kites, golden-ratio/Fibonacci inflation geometry, and sixfold intensity
+symmetry do not provide a map to $\alpha$ or $1/137$.
+
+### Status and release boundary
+
+These are symbolic development claims with no local hardware execution. The
+2026 monotile optical report is one experimental study and was not replayed
+here. The framework changes do not derive
+$\alpha^{-1}\approx137.036$, quantize the full electromagnetic
+field, prove a material model, execute a calibrated scattering experiment, or
+establish a unified field theory. They belong only to the `1.3.0-dev`
+manuscript, framework, synopsis, ledgers, and regression suite. The immutable
+v1.2.0 release, tag, GitHub assets, and Zenodo deposit remain unchanged.

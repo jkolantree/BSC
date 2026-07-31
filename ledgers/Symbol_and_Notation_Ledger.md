@@ -263,7 +263,29 @@ field or prove the open full quantum composition claim BSC-QOP-03.
 | $K=\sum_{i=1}^NY_i$ | sufficient count in $\{0,\ldots,N\}$ | Under the scalar conditionally-iid model, $I(X;Y^N)=I(X;K)\le\log_2(N+1)$. For 256 labels, zero-error finite-$N$ decoding is impossible because the laws cannot be mutually singular. |
 | $\mathcal C_N$ | raw-bit compression factor | $8/N$ for an 8-bit input represented by $N$ output bits. $N=1$ is nominal 8:1 lossy coding; $N\ge8$ is not raw-bit compression. |
 | $C,S,P,Q$ | source/target relation matrices and permutation matrices | Under the convention $P_{\phi(i),i}=1$, one same-entity alignment requires $S=PCP^{\mathsf T}$. Independent row/column alignment $S=PCQ^{\mathsf T}$ is weaker and applies naturally only to separately typed roles. |
-| $\alpha$ | dimensionless fine-structure constant | Low-energy electromagnetic coupling $e^2/(4\pi\varepsilon_0\hbar c)$. Operational channel topology does not determine its value; a physical and metrological bridge is required. |
+| $\alpha$ | dimensionless fine-structure constant | Low-energy electromagnetic coupling $e^2/(4\pi\varepsilon_0\hbar c)$. Operational channel topology does not determine its value; a physical and metrological bridge is required. In the revised SI, exact $e,h,c$ imply $\mu_0=\alpha\,2h/(ce^2)$ rather than fixing $\alpha$. |
+
+## Electromagnetic evidence bridge
+
+These are local `1.3.0-dev` symbols for the electromagnetic completion of an
+operational report envelope. They neither add a field to the BSC morphism nor
+derive a unified microscopic theory or the numerical value of $\alpha$.
+
+| Symbol | Type or codomain | Meaning and constraints |
+|---|---|---|
+| $\mathsf{EMC}$ | typed electromagnetic completion record | $(M,g,P,[\mathcal A],\mathcal F,\mathcal H,\mathcal J,\mathcal C,\mathcal B,\mathcal M,\mathcal R,\mathsf{Cert}_{\mathrm{EM}})$. It binds geometry, bundle and gauge, fields and sources, constitutive response, boundary ports, instrument, report, and certificate. |
+| $\mathscr A(P),\mathscr G(P),[\mathcal A]$ | admissible connections, declared gauge group, and gauge class | A connection-level report is physical only if constant on $\mathscr G(P)$-orbits. The local symbol $\mathcal A$ here is a connection and is distinct from the experiment admission rule. |
+| $\mathcal F,\mathcal H,\mathcal J$ | curvature two-form, excitation two-form, and current three-form | $d\mathcal F=0$ and $d\mathcal H=\mathcal J$. A smooth global solution implies $d\mathcal J=0$ and exactness of $\mathcal J$; singular or open-boundary models require separately typed distributional or relative forms. |
+| $\operatorname{Hol}_\gamma(\mathcal A)$ | element of $U(1)$ | In a single trivialization, closed-loop holonomy is $\exp(i\oint_\gamma\mathcal A)$; a nontrivial bundle also requires its patch transitions. Equal curvature need not imply equal holonomy on nontrivial topology. Open-path phase is not gauge invariant without endpoint or compensating data. |
+| $u_{\mathrm{EM}},S_{\mathrm{Poynt}}$ | energy density and Poynting vector | $u_{\mathrm{EM}}=(E\cdot D+H\cdot B)/2$ and $S_{\mathrm{Poynt}}=E\times H$ under a time-independent symmetric positive constitutive law. Modulated or dispersive media need additional pump or material-state terms. |
+| $S(\omega),W$ | scattering matrix and positive power metric | Passivity gives $S^\dagger W S\preceq W$ only for the declared port basis, reference plane, normalization, band, hidden-port completion, calibration, and stored-energy state. The symbol $S(\omega)$ is local and is not a BSC system object. |
+| $\Lambda_{\varepsilon,\mu}$ | Maxwell boundary-response operator | Maps a declared tangential electric trace space to a declared tangential magnetic trace space for one well-posed forward problem. A finite measured S-parameter matrix is not automatically the full operator. Inverse authority is theorem-, coefficient-class-, gauge-, and data-local. |
+| $Z,q,q^2/Z$ | positive field kinetic coefficient, matter coupling, and normalization invariant | Under $A'=\lambda A$, $Z'=Z/\lambda^2$ and $q'=q/\lambda$ while $q^2/Z$ is unchanged. A fixed representation and canonical normalization may remove the coordinate freedom but do not derive the invariant's value. |
+| $\mathcal A=(q/\hbar)A_{\mathrm{phys}}$ | dimensionless matter connection | First-Chern integrality constrains $\frac{q}{2\pi\hbar}\int_\Sigma F_{\mathrm{phys}}\in\mathbb Z$ for the declared bundle and closed two-cycle. It constrains a charge-flux product, not $\alpha$ separately. |
+| $g(\mu),\beta(g),g(\mu_0)$ | running coupling, beta function, and boundary value | $\mu\,dg/d\mu=\beta(g)$ transports a supplied coupling between scales. It does not determine a numerical trajectory without a boundary value; scheme, matching thresholds, truncation, and scale are part of the certificate. |
+| $P,\kappa,\operatorname{Stab}_{\mathrm{tr}}$ | tiling partition, electromagnetic coefficient field, and translation stabilizer | Translation-faithful materialization means $\tau_v\kappa=\kappa\Rightarrow\tau_vP=P$, hence $\operatorname{Stab}_{\mathrm{tr}}(\kappa)\subseteq\operatorname{Stab}_{\mathrm{tr}}(P)$. It transfers only absence of translation symmetry, not a spectrum, band gap, chirality, or device property. The local $P$ here is a tiling partition, not a preparation kernel or permutation matrix. |
+| $C_{\mathrm{sel}},\Phi_{\mathrm{mat}},X_N$ | geometry selector, materialization map, and finite approximant | $C_{\mathrm{sel}}$ chooses tile interiors, edges, vertices, centroids, or another finite point set; $\Phi_{\mathrm{mat}}$ adds scale, thickness, constitutive dispersion, loss, substrate, and interfaces. An infinite tiling theorem does not identify a fabricated finite device without these maps. |
+| $F_N(k_x,k_y),I_N$ | scalar point-scatterer amplitude and intensity | $F_N=\sum_{j=1}^N\exp(2\pi i(k_xx_j+k_yy_j))$ and $I_N=|F_N|^2$ for the declared identical-point model. This is not a full Maxwell solution for finite scatterers; selector, weights, form factor, phase, illumination, and calibration remain typed. |
 
 ## Certified normalized-scale profiles
 

@@ -70,24 +70,32 @@ available. No tagged-PDF or universal screen-reader claim is made.
 
 ## Development 1.3.0-dev render
 
-The tracked development PDFs include the operational-channel core and the four
-July 2026 source probes. They were compiled with the same official Tectonic
-0.16.9 Windows MSVC archive and cached dependency bundle recorded above, with
-`SOURCE_DATE_EPOCH=1785369600`.
+The tracked development PDFs include the operational-channel core, the
+electromagnetic evidence bridge, the four July 2026 source probes, the exact
+binary/constructibility screen, and the Einstein-monotile
+selector/materialization result. They were compiled with the same official
+Tectonic 0.16.9 Windows MSVC archive and cached dependency bundle recorded
+above, with `SOURCE_DATE_EPOCH=1785369600`.
 
 - two independent clean output directories produced byte-identical PDFs;
-- paper: 63 pages, SHA-256
-  `00b546e4c537b6ab8dd06cb2c4ec36c891705603eabfd1f713bc19e139610fb7`;
+- paper: 69 pages, SHA-256
+  `fc2c2869ad07e2278131fa3a7a38160aa03342408b1cf7878fc869aa2553117a`;
 - synopsis: two pages, SHA-256
-  `fe55205c431611c03d19ce2e8a4d66f2c7bc45ee43727d9ebe50bb9aa5628756`;
+  `cf3b8af28c8d020d91f491f9e52deadaf24948b604d41cbbdcc91d0670bb55be`;
 - all four final logs contain no unresolved citations or references, missing
   glyphs, overfull/underfull boxes, package/class/font warnings, or fatal
   errors;
-- all 63 paper pages were inspected as rendered contact sheets, with the
-  operational-channel theorem, identified-set correction, energy identity,
-  Bernoulli and semantic-alignment results, fine-structure-constant boundary,
-  application crosswalk, reference pages, and both synopsis pages inspected at
-  larger scale.
+- the full 69-page development render was inspected as contact sheets; after
+  the final source-precision corrections, changed paper pages 40--41 and both
+  synopsis pages were re-rendered and inspected at larger scale with no
+  clipping or overlap.
+
+The host emitted `Fontconfig error: Cannot load default config file: No such
+file: (null)` after each otherwise successful Tectonic run. This external
+environment message is retained here rather than silently promoted to a clean
+controller claim; the two output pairs were nevertheless byte-identical, the
+TeX logs passed the declared warning scan, and the affected pages rendered
+without missing glyphs.
 
 These bytes are a development candidate, not a GitHub release or Zenodo
 deposit. The v1.2.0 hashes above remain the immutable release record.
@@ -163,7 +171,7 @@ build/paper/On_Boundaries_of_Evidence.pdf
 ```
 
 The final LaTeX log must contain no unresolved citations or references, missing
-glyphs, overfull boxes, or fatal errors. The expected page count is 63.
+glyphs, overfull boxes, or fatal errors. The expected page count is 69.
 
 ## Build the synopsis
 
@@ -196,7 +204,7 @@ For the full gate, including both document builds, run:
 make ci
 ```
 
-The build gate requires a 63-page paper and two-page synopsis, one final PDF
+The build gate requires a 69-page paper and two-page synopsis, one final PDF
 record per log, and no unresolved reference, citation, font, glyph, box, or
 fatal TeX warning.
 
