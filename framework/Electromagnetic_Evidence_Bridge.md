@@ -43,7 +43,7 @@ unified field theory.
 
 An electromagnetic completion of an operational report envelope is a record
 
-$$
+```math
 \mathsf{EMC}
 =
 \left(
@@ -51,7 +51,7 @@ M,g,P,[\mathcal A],\mathcal F,\mathcal H,\mathcal J,
 \mathcal C,\mathcal B,\mathcal M,\mathcal R,
 \mathsf{Cert}_{\mathrm{EM}}
 \right).
-$$
+```
 
 Its coordinates are:
 
@@ -89,28 +89,28 @@ $$
 whereas a material may require a tensorial, nonlinear, history-dependent,
 spatially nonlocal, or temporally dispersive map
 
-$$
+```math
 \mathcal H(t)
 =
-\mathcal C\!\left[
-\{\mathcal F(s):s\le t\},
+\mathcal C\mkern-3mu \left[
+\lbrace\mathcal F(s):s\le t\rbrace,
 \xi(t)
 \right].
-$$
+```
 
 Here $\xi$ is a declared material state. Suppressing $\xi$ or the history
 while invoking a memoryless material theorem is a type error.
 
 The terminal electromagnetic report law is
 
-$$
+```math
 P_\theta^Z
 =
-\mathcal R_\#
-\mathcal M_\#
-\operatorname{Sol}_{\mathsf{EMC}}
+\mathcal R_\sharp
+\mathcal M_\sharp
+\mathrm{Sol}_{\mathsf{EMC}}
 \bigl(\mathsf{Prep}(\theta),\mathsf{Control}(\theta)\bigr).
-$$
+```
 
 This map, not a diagram of field lines by itself, is the object that enters
 the operational report envelope.
@@ -158,17 +158,17 @@ physical observable merely because the gauge was convenient.
 
 Curvature and closed-loop holonomy are gauge invariant:
 
-$$
+```math
 \mathcal F_A
 \longmapsto
 \mathcal F_A,
 \qquad
-\operatorname{Hol}_\gamma(A)
+\mathrm{Hol}_\gamma(A)
 =
-\exp\!\left(i\oint_\gamma A\right)
+\exp\mkern-3mu \left(i\oint_\gamma A\right)
 \quad
 \text{for closed }\gamma.
-$$
+```
 
 An open-path phase is not gauge invariant without endpoint matter states or
 another compensating boundary record.
@@ -201,13 +201,13 @@ $dh=0$. They are not related by a single-valued $U(1)$ gauge transformation,
 and some closed loop $\gamma$ satisfies
 
 $$
-\exp\!\left(i\oint_\gamma(A+h)\right)
+\exp\mkern-3mu \left(i\oint_\gamma(A+h)\right)
 \ne
-\exp\!\left(i\oint_\gamma A\right).
+\exp\mkern-3mu \left(i\oint_\gamma A\right).
 $$
 
 For the explicit cylinder factor $M=S^1\times N$, the flat connections
-$A_\vartheta=\vartheta\,d\phi$ all have zero curvature, while their holonomy
+$A_\vartheta=\vartheta\mkern3mu d\phi$ all have zero curvature, while their holonomy
 around $S^1$ is $\exp(2\pi i\vartheta)$; only integer shifts of $\vartheta$
 are gauge equivalent. $\square$
 
@@ -256,19 +256,19 @@ $$
 
 and every fixed spatial region $V$ obeys
 
-$$
+```math
 \frac d{dt}\int_V\rho
 =
 -\int_{\partial V}j.
-$$
+```
 
 For every admissible three-chain $V$, Stokes' theorem gives
 
-$$
+```math
 \int_{\partial V}\mathcal H
 =
 \int_V\mathcal J.
-$$
+```
 
 This is a typed Gauss-law bridge from a declared boundary flux to the enclosed
 charge represented by $\mathcal J$. It does not reconstruct the interior
@@ -301,7 +301,7 @@ flux.
 Let
 
 $$
-\Omega=\{x\in\mathbb R^3:a<|x|<b\}.
+\Omega=\lbrace x\in\mathbb R^3:a<\lVert x\rVert<b\rbrace.
 $$
 
 For every $q\in\mathbb R$, the static field
@@ -309,7 +309,7 @@ For every $q\in\mathbb R$, the static field
 $$
 E_q=0,
 \qquad
-B_q=\frac{q}{4\pi|x|^3}x,
+B_q=\frac{q}{4\pi\lVert x\rVert^3}x,
 \qquad
 H_q=\mu^{-1}B_q
 $$
@@ -317,7 +317,7 @@ $$
 satisfies the source-free local Maxwell equations on $\Omega$, while
 
 $$
-\int_{S_r^2}B_q\mathbin{\cdot}n\,dA=q
+\int_{S_r^2}B_q\mathbin{\cdot}n\mkern3mu dA=q
 \qquad
 (a<r<b).
 $$
@@ -362,13 +362,13 @@ where $\varepsilon$ and $\mu$ are time-independent, symmetric, and positive.
 
 With
 
-$$
+```math
 u
 =
 \frac12(E\mathbin{\cdot}D+H\mathbin{\cdot}B),
 \qquad
 S=E\times H,
-$$
+```
 
 one has
 
@@ -378,23 +378,23 @@ $$
 
 and therefore
 
-$$
-\frac{d}{dt}\int_\Omega u\,dx
+```math
+\frac{d}{dt}\int_\Omega u\mkern3mu dx
 =
--\int_{\partial\Omega}S\mathbin{\cdot}n\,dA
--\int_\Omega J\mathbin{\cdot}E\,dx.
-$$
+-\int_{\partial\Omega}S\mathbin{\cdot}n\mkern3mu dA
+-\int_\Omega J\mathbin{\cdot}E\mkern3mu dx.
+```
 
 #### Proof
 
 Use
 
-$$
+```math
 \nabla\mathbin{\cdot}(E\times H)
 =
 H\mathbin{\cdot}(\nabla\times E)
 -E\mathbin{\cdot}(\nabla\times H)
-$$
+```
 
 and substitute Maxwell's equations. Symmetry and time independence of
 $\varepsilon,\mu$ identify the two field terms with $\partial_tu$. Integrate
@@ -408,13 +408,13 @@ that convention belongs in the certificate.
 If $\varepsilon(t)$ or $\mu(t)$ is externally modulated, the same calculation
 using the instantaneous expression for $u$ gives
 
-$$
+```math
 \partial_tu+\nabla\mathbin{\cdot}S
 =
 -J\mathbin{\cdot}E
 -\frac12E\mathbin{\cdot}\dot\varepsilon E
 -\frac12H\mathbin{\cdot}\dot\mu H.
-$$
+```
 
 The last two terms are exchange with the modulated material or pump. Omitting
 them can manufacture apparent gain. For temporally dispersive media,
@@ -455,11 +455,11 @@ Maxwell solutions.
 The fixed-geometry and fixed-region hypotheses are substantive. If
 $g=g(t)$, then
 
-$$
+```math
 \partial_t(dV_g)
 =
-\frac12\operatorname{tr}_g(\dot g)\,dV_g.
-$$
+\frac12\mathrm{tr}_g(\dot g)\mkern3mu dV_g.
+```
 
 Omitting the corresponding volume-deformation contribution can create a
 false residual. A moving boundary likewise requires Reynolds transport and
@@ -476,26 +476,26 @@ $$
 
 Then
 
-$$
+```math
 \boxed{
 \nabla_aJ_\xi^a
 =
 -f_b\xi^b
 -T^{ab}\nabla_{(a}\xi_{b)}
 }.
-$$
+```
 
 Thus a conserved total stress-energy tensor and a Killing field give a
 conserved energy current. In general the source and deformation terms remain:
 
-$$
-\int_{\partial\mathcal V}J_\xi^a\,d\Sigma_a
+```math
+\int_{\partial\mathcal V}J_\xi^a\mkern3mu d\Sigma_a
 =
 \int_{\mathcal V}
 \left(
 -f_b\xi^b-T^{ab}\nabla_{(a}\xi_{b)}
 \right)dV.
-$$
+```
 
 Timelike seams cancel only with opposite directed hypersurface orientation;
 a null boundary uses its directed surface element rather than a unit normal.
@@ -682,14 +682,14 @@ operator may be written schematically as
 
 $$
 \Lambda_{\varepsilon,\mu}:
-\operatorname{tr}_{\!t}E
+\mathrm{tr}_{\mkern-3mu t}E
 \longmapsto
-\operatorname{tr}_{\!t}H.
+\mathrm{tr}_{\mkern-3mu t}H.
 $$
 
 For finite-energy fields on a Lipschitz domain, these tangential traces are
-generally elements of the appropriate $H(\operatorname{curl})$ trace spaces
-(commonly represented by $H^{-1/2}(\operatorname{div}_\Gamma,\Gamma)$ and
+generally elements of the appropriate $H(\mathrm{curl})$ trace spaces
+(commonly represented by $H^{-1/2}(\mathrm{div}_\Gamma,\Gamma)$ and
 its paired companion), not pointwise boundary vectors. Boundary power is then
 a continuous dual pairing. Replacing that pairing by an $L^2$ surface
 integral requires the extra regularity that makes the replacement valid.
@@ -748,14 +748,14 @@ A valid inverse promotion must identify:
 
 In rationalized natural units, consider the local action family
 
-$$
-\mathcal S_{Z,\{q_i\}}[A,\{\psi_i\},J]
+```math
+\mathcal S_{Z,\lbrace q_i\rbrace}[A,\lbrace\psi_i\rbrace,J]
 =
--\frac Z4\int F_{\mu\nu}F^{\mu\nu}\,dV
+-\frac Z4\int F_{\mu\nu}F^{\mu\nu}\mkern3mu dV
 +\sum_i
-\mathcal S_i\!\left[\psi_i,d+iq_iA\right]
--\int J^\mu A_\mu\,dV,
-$$
+\mathcal S_i\mkern-3mu \left[\psi_i,d+iq_iA\right]
+-\int J^\mu A_\mu\mkern3mu dV,
+```
 
 with $Z>0$. For every $\lambda>0$, the coordinate change
 
@@ -776,7 +776,7 @@ $$
 Thus $Z$, the $q_i$, and the components of the external current separately
 depend on field normalization, while
 
-$$
+```math
 \frac{q_i'}{\sqrt{Z'}}
 =
 \frac{q_i}{\sqrt Z},
@@ -788,7 +788,7 @@ $$
 \alpha_i
 :=
 \frac{q_i^2}{4\pi Z}
-$$
+```
 
 are invariant whenever the displayed ratios are defined.
 
@@ -816,7 +816,7 @@ different interaction strengths.
 In a convention where a charged world line acquires the phase
 
 $$
-\exp\!\left(
+\exp\mkern-3mu \left(
 \frac{iq}{\hbar}\int A_{\mathrm{phys}}
 \right),
 $$
@@ -861,7 +861,7 @@ does not by itself derive the fine-structure constant.
 
 At low energy in SI units,
 
-$$
+```math
 \alpha
 =
 \frac{e^2}{4\pi\varepsilon_0\hbar c}
@@ -869,7 +869,7 @@ $$
 \frac{\mu_0ce^2}{2h}
 =
 \frac{Z_0}{2R_{\mathrm K}},
-$$
+```
 
 where $Z_0=\mu_0c$ is the vacuum impedance and
 $R_{\mathrm K}=h/e^2$ is the von Klitzing constant. Since the 2019 SI fixes
@@ -884,7 +884,7 @@ relative standard uncertainty is inherited from $\alpha$. Substituting the
 pre-2019 exact value
 
 $$
-\mu_0=4\pi\times10^{-7}\ {\rm N\,A^{-2}}
+\mu_0=4\pi\times10^{-7}\ {\rm N\mkern3mu A^{-2}}
 $$
 
 to claim a derivation of $\alpha$ would reuse an obsolete definitional
@@ -897,13 +897,13 @@ $\alpha$.
 One real experimental bridge uses atom recoil. For an atom $X$, the declared
 relation is
 
-$$
+```math
 \alpha^2
 =
 \frac{2R_\infty}{c}
 \frac{A_{\mathrm r}(X)}{A_{\mathrm r}(e)}
 \frac h{m_X}.
-$$
+```
 
 An atom-interferometric estimate of $h/m_X$, together with mass ratios,
 $R_\infty$, calibration, corrections, and a joint uncertainty model, induces
@@ -917,7 +917,7 @@ Conversely, inserting an independently measured $\alpha$ turns the same
 comparison into a QED test. Evidence authority depends on which quantities
 are inputs and which are targets.
 
-The 2026 atomic-hydrogen $2S$--$6P$ result is an example of the latter
+The 2026 atomic-hydrogen $2S$ to $6P$ result is an example of the latter
 direction: it uses independently determined $\alpha$ and mass ratios among
 the inputs to a bound-state-QED prediction. Agreement does not become an
 independent derivation of $\alpha$ merely because the spectrum is
@@ -926,7 +926,7 @@ electromagnetic.
 The current low-energy value recorded by the 2022 CODATA adjustment remains
 
 $$
-\alpha^{-1}=137.035\,999\,177(21).
+\alpha^{-1}=137.035\mkern3mu 999\mkern3mu 177(21).
 $$
 
 No theorem in this module predicts that number.
@@ -962,20 +962,20 @@ $\alpha(\mu)\equiv\alpha_0$; the differential equation does not select one.
 For example, in a mass-independent perturbative regime with $N_f$ active
 unit-charge Dirac fermions,
 
-$$
+```math
 \mu\frac{d\alpha}{d\mu}
 =
 \frac{2N_f}{3\pi}\alpha^2+O(\alpha^3),
-$$
+```
 
 so the leading-order solution contains the undetermined integration constant
 
-$$
+```math
 \frac1{\alpha(\mu)}
 =
 \frac1{\alpha(\mu_0)}
 -\frac{2N_f}{3\pi}\log\frac{\mu}{\mu_0}.
-$$
+```
 
 This last display is the solution of the stated one-loop truncation.
 Higher-order terms, thresholds, and scheme changes modify the flow and
@@ -995,10 +995,10 @@ Several striking integers share an exact base-two origin:
 
 $$
 \begin{aligned}
-2^{31}-1&=2\,147\,483\,647,\\
-2^{32}-1&=4\,294\,967\,295\\
-&=3\cdot5\cdot17\cdot257\cdot65\,537,\\
-65\,537&=2^{16}+1.
+2^{31}-1&=2\mkern3mu 147\mkern3mu 483\mkern3mu 647,\\
+2^{32}-1&=4\mkern3mu 294\mkern3mu 967\mkern3mu 295\\
+&=3\cdot5\cdot17\cdot257\cdot65\mkern3mu 537,\\
+65\mkern3mu 537&=2^{16}+1.
 \end{aligned}
 $$
 
@@ -1007,7 +1007,7 @@ Legacy signed 32-bit Unix timestamps reach that representation boundary in
 2038. The second is the maximum unsigned 32-bit integer and is the product of
 the five known Fermat primes. The last is the fifth known Fermat prime. These
 facts explain both the computing cutoffs and the straightedge-and-compass
-constructibility of the regular $65\,537$-gon and of the regular
+constructibility of the regular $65\mkern3mu 537$-gon and of the regular
 $(2^{32}-1)$-gon.
 
 There is one exact base-two fact about the integer $137$. Repeated squaring
@@ -1025,7 +1025,7 @@ $$
 Also $2^4\not\equiv1\pmod{137}$. It follows that
 
 $$
-\operatorname{ord}_{137}(2)=68.
+\mathrm{ord}_{137}(2)=68.
 $$
 
 Therefore the base-two expansion of the rational number $1/137$ has period
@@ -1037,16 +1037,16 @@ $$
 \begin{aligned}
 2^{31}-1&\equiv16\pmod{137},\\
 2^{32}-1&\equiv33\pmod{137},\\
-65\,537&\equiv51\pmod{137}.
+65\mkern3mu 537&\equiv51\pmod{137}.
 \end{aligned}
 $$
 
 The geometric comparison points in the same direction. A regular prime
-$p$-gon is constructible only when $p-1$ is a power of two. For $p=65\,537$,
+$p$-gon is constructible only when $p-1$ is a power of two. For $p=65\mkern3mu 537$,
 the real cyclotomic degree is
 
 $$
-\frac{65\,537-1}{2}=2^{15},
+\frac{65\mkern3mu 537-1}{2}=2^{15},
 $$
 
 whereas for $p=137$ it is
@@ -1062,7 +1062,7 @@ Most importantly, the low-energy electromagnetic constant is not exactly
 $1/137$. The CODATA value
 
 $$
-\alpha^{-1}=137.035\,999\,177(21)
+\alpha^{-1}=137.035\mkern3mu 999\mkern3mu 177(21)
 $$
 
 differs from $137$ by about $263$ parts per million in the corresponding
@@ -1091,7 +1091,7 @@ observable constructed from it.
 
 The later chiral theorem sharpens the isometry boundary. Every Hat tiling
 mixes reflected and unreflected copies. The equilateral relative
-$\operatorname{Tile}(1,1)$ is weakly chiral when reflections are forbidden,
+$\mathrm{Tile}(1,1)$ is weakly chiral when reflections are forbidden,
 and suitable edge modifications give Spectres whose admitted tilings are
 strictly chiral and nonperiodic even when reflections are allowed. Thus
 ``one tile'', ``one orientation class'', ``no translation'', and ``no mirror
@@ -1102,11 +1102,11 @@ full materialization chain
 
 $$
 \mathscr T_{\mathrm{ap}}
-\xrightarrow{\,C_{\mathrm{sel}}\,}
+\xrightarrow{\mkern3mu C_{\mathrm{sel}}\mkern3mu }
 X_N
-\xrightarrow{\,\Phi_{\mathrm{mat}}\,}
+\xrightarrow{\mkern3mu \Phi_{\mathrm{mat}}\mkern3mu }
 (\varepsilon,\mu,\sigma,\Omega,\mathcal B)
-\xrightarrow{\,\mathcal P_{\lambda,p}\,}
+\xrightarrow{\mkern3mu \mathcal P_{\lambda,p}\mkern3mu }
 Y.
 $$
 
@@ -1124,13 +1124,13 @@ admissible materializations of a tiling and let
 $R(\mathscr T,m)$ be the resulting report. A report predicate $Q$ descends
 from the tiling alone only if
 
-$$
-Q\!\left(R(\mathscr T,m_1)\right)
+```math
+Q\mkern-3mu \left(R(\mathscr T,m_1)\right)
 =
-Q\!\left(R(\mathscr T,m_2)\right)
+Q\mkern-3mu \left(R(\mathscr T,m_2)\right)
 \qquad
 \text{for all }m_1,m_2\in\mathcal M(\mathscr T).
-$$
+```
 
 The condition fails in the unconstrained class. One admissible map can erase
 the tiling by assigning the same homogeneous $(\varepsilon,\mu,\sigma)$
@@ -1154,9 +1154,9 @@ $$
 Then, immediately,
 
 $$
-\operatorname{Stab}_{\mathrm{tr}}(\kappa)
+\mathrm{Stab}_{\mathrm{tr}}(\kappa)
 \subseteq
-\operatorname{Stab}_{\mathrm{tr}}(P).
+\mathrm{Stab}_{\mathrm{tr}}(P).
 $$
 
 If $P$ is aperiodic, a translation-faithful $\kappa$ has no nonzero
@@ -1170,16 +1170,16 @@ phase, optical activity, circular dichroism, nonreciprocity, or device
 performance.
 
 For a declared finite set of identical point scatterers
-$X_N=\{(x_j,y_j)\}_{j=1}^N$, the scalar kinematic model is
+$X_N=\lbrace(x_j,y_j)\rbrace_{j=1}^N$, the scalar kinematic model is
 
-$$
+```math
 F_N(k_x,k_y)
 =
 \sum_{j=1}^N
-\exp\!\left(2\pi i(k_xx_j+k_yy_j)\right),
+\exp\mkern-3mu \left(2\pi i(k_xx_j+k_yy_j)\right),
 \qquad
 I_N=|F_N|^2.
-$$
+```
 
 This formula is a conditional structure-factor model, not the full Maxwell
 solution for finite holes in a dispersive slab. It already shows that the
@@ -1194,21 +1194,21 @@ negations of one another.
 
 Moritake, Takiguchi, Aihara, and Notomi provide the corresponding 2026
 experimental bridge. They selected the centroids of an $H_6$ Hat approximant,
-fabricated $372\,100$ circular holes in a $350\,\mathrm{nm}$ SiN film, and
+fabricated $372\mkern3mu 100$ circular holes in a $350\mkern3mu \mathrm{nm}$ SiN film, and
 reported sharp Bragg peaks whose positions were insensitive to illumination
 position, mirror-reversing pinwheel diffraction, and helicity-dependent
 intensity. Their point model uses the displayed $F_N$, while finite hole size
 explains a reported high-wavevector envelope absent from the delta-scatterer
 calculation. For their golden-ratio/Fibonacci inflation geometry,
 
-$$
+```math
 \phi=\frac{1+\sqrt5}{2},
 \qquad
 \theta_{\mathrm{chiral}}
 =
-\arccos\!\left(\frac{3\phi-1}{4}\right)
+\arccos\mkern-3mu \left(\frac{3\phi-1}{4}\right)
 \approx15.52^\circ.
-$$
+```
 
 This supplies measured-and-modelled evidence along a
 geometry-to-fabricated-sample-to-report chain for the stated selector,
@@ -1332,7 +1332,7 @@ authoritative sources include:
   *Journal of Research of the National Institute of Standards and Technology*
   97, 533--562 (1992).
 - A. Buffa, M. Costabel, and D. Sheen,
-  [On traces for $H(\operatorname{curl},\Omega)$ in Lipschitz domains](https://doi.org/10.1016/S0022-247X(02)00455-9),
+  [On traces for $`H(\mathrm{curl},\Omega)`$ in Lipschitz domains](https://doi.org/10.1016/S0022-247X(02)00455-9),
   *Journal of Mathematical Analysis and Applications* 276, 845--867
   (2002).
 - C. E. Kenig, M. Salo, and G. Uhlmann,

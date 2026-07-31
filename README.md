@@ -180,9 +180,9 @@ manufacture an infinite-system state or a physical phase transition from a
 finite family.
 
 The zeta instance proves the declared finite alternating-sum identity, an
-explicit local-uniform tail bound, the fixed-$s$ decay-exponent split between
+explicit local-uniform tail bound, the fixed $s$ decay-exponent split between
 zeros and nonzeros, the corresponding pointwise free-energy values and exact
-rate-singularity set for $N=2^d$, the exact fixed-$\beta$ real-time
+rate-singularity set for $N=2^d$, the exact fixed $\beta$ real-time
 singularity slice, a sharp local finite-root drift, and a bounded zero-count
 transfer conditional on a certified whole-contour separation. Confining every
 rate singularity to the critical line is an exact re-encoding of RH, not a
@@ -280,8 +280,7 @@ The same module proves:
 - identical spectral-intensity laws can belong to orthogonal photon states,
   so unit marginal overlap does not certify quantum identity;
 - a driven open quantum system satisfies
-  $\dot E=\operatorname{Tr}(\rho\dot H)+
-  \operatorname{Tr}(H\mathcal D_t(\rho))$ under its declared split and
+  $\dot E=\mathrm{Tr}(\rho\dot H)+\mathrm{Tr}(H\mathcal D_t(\rho))$ under its declared split and
   finite-dimensional or separately justified domain assumptions;
 - finite additive energy-port diagrams satisfy
   $R_G=\sum_vr_v+\sum_eg_e$, so interface storage must be explicit and a
@@ -331,14 +330,14 @@ bulk terms.
 
 The bridge sharpens rather than reverses the 1/137 boundary. Revised-SI
 definitions move uncertainty into $\mu_0$ through
-$\mu_0=\alpha\,2h/(ce^2)$; they do not derive $\alpha$. Likewise,
-$\mu\,dg/d\mu=\beta(g)$ transports a supplied coupling between scales but
+$\mu_0=\alpha\mkern3mu 2h/(ce^2)$; they do not derive $\alpha$. Likewise,
+$\mu\mkern3mu dg/d\mu=\beta(g)$ transports a supplied coupling between scales but
 does not determine its boundary value. The exact counterexample
 $\beta\equiv0$ admits every constant coupling.
 
 A separate arithmetic screen records the genuine relation
-$\operatorname{ord}_{137}(2)=68$, so $1/137$ has a 68-bit repetend. It also
-shows that $2^{31}-1$, $2^{32}-1$, and $65\,537$ are not divisible by 137
+$\mathrm{ord}_{137}(2)=68$, so $1/137$ has a 68-bit repetend. It also
+shows that $2^{31}-1$, $2^{32}-1$, and $65\mkern3mu 537$ are not divisible by 137
 and that the regular 137-gon is not straightedge-and-compass constructible.
 Those binary and Fermat-number facts do not identify the measured $\alpha$.
 

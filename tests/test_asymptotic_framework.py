@@ -184,8 +184,8 @@ class AsymptoticFrameworkTests(unittest.TestCase):
         self.assertIn(r"\lambda_N=\logN", normalized)
         self.assertIn("BSC-SCL-05b", application)
         self.assertIn("BSC-SCL-07b", application)
-        self.assertIn("fixed-$\\beta$ real-time slice", application)
-        self.assertIn(r"\{\log2\}", normalized)
+        self.assertIn("fixed $\\beta$ real-time slice", application)
+        self.assertIn(r"\lbrace\log2\rbrace", normalized)
 
     def test_framework_does_not_assert_an_infinite_system(self) -> None:
         module = self.read("framework/Normalized_Scale_Profiles.md").lower()

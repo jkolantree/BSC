@@ -9,11 +9,13 @@
 - **Receipt:** none.
 
 This directory specifies an exact finite arithmetic check for the identity
+
 $$
   L_N(\beta_{\mathrm{eff}},t)
   =-\frac{S_N(\beta_{\mathrm{eff}}+it)}
           {Z_N(\beta_{\mathrm{eff}})}.
 $$
+
 Here $S_N=\eta_N=\sum_{n=1}^N(-1)^{n-1}n^{-s}$.
 It does not claim to reproduce the Nature Communications experiment, locate a
 Riemann zero, exhibit a DQPT, or verify RH.
@@ -21,7 +23,7 @@ Riemann zero, exhibit a DQPT, or verify RH.
 It exercises BSC-ZDQ-01 only. The core framework proves the general
 normalized-scale, decision, and analytic-transfer theorems, while the
 surrounding application proves their eta/zeta-specific hypotheses. These JSON
-files execute neither layer: they do not execute the fixed-$s$ scaling limit,
+files execute neither layer: they do not execute the fixed $s$ scaling limit,
 the real-time slice, a contour census, or a stochastic decision test. In
 particular, the fixture supplies no evidence for the comparator-local resource
 claim BSC-ZDQ-06.
@@ -29,13 +31,17 @@ claim BSC-ZDQ-06.
 ## Input
 
 [`input.json`](input.json) declares
+
 $$
   N=4,\qquad\beta_{\mathrm{eff}}=1,\qquad t=0,
 $$
+
 with the source phase convention
+
 $$
   (-1)^n=(-1,+1,-1,+1).
 $$
+
 At $t=0$, all evolution factors are $1$, so every expected result is a
 rational number. No floating-point approximation or convention for
 $\log(1)$ is needed.
@@ -43,19 +49,26 @@ $\log(1)$ is needed.
 ## Expected exact derivation
 
 The partition function is
+
 $$
   Z_4(1)=1+\frac12+\frac13+\frac14=\frac{25}{12}.
 $$
+
 The truncated eta value $S_4=\eta_4$ is
+
 $$
   \eta_4(1)=1-\frac12+\frac13-\frac14=\frac{7}{12}.
 $$
+
 The source-convention signed numerator is
+
 $$
   -1+\frac12-\frac13+\frac14=-\frac{7}{12}
   =-\eta_4(1).
 $$
+
 Therefore
+
 $$
   L_4(1,0)
   =\frac{-7/12}{25/12}
@@ -69,14 +82,18 @@ fractions as numerator/denominator pairs.
 
 The input also declares a negative control in which only the fourth phase is
 flipped:
+
 $$
   (-1,+1,-1,-1).
 $$
+
 Its signed numerator and normalized coherence are
+
 $$
   -1+\frac12-\frac13-\frac14=-\frac{13}{12},
   \qquad L_{\rm control}=-\frac{13}{25}.
 $$
+
 This differs from $-7/25$ by $6/25$ in absolute value. Any future checker
 must reject the control as an implementation of BSC-ZDQ-01 even though it is
 internally arithmetically consistent.

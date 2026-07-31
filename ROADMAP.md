@@ -24,8 +24,8 @@ This file records completed and planned work. Items under “Completed in
   exact-decision bounds.
 - Instantiated the layer with the engineered zeta–DQPT correspondence as its
   first domain-specific case.
-- Preserved the exact finite alternating-sum identity, fixed-$s$ scaling and
-  pointwise and fixed-$\beta$ rate-singularity results,
+- Preserved the exact finite alternating-sum identity, fixed $s$ scaling and
+  pointwise and fixed $\beta$ rate-singularity results,
   multiplicity-dependent local zero drift, local-uniform tail bound, and
   conditional contour zero-count transfer while
   separating them from
@@ -106,7 +106,7 @@ v1.0.1, or v1.0.0 release records.
   Chern/Dirac quantization constrains a charge-flux product rather than
   $\alpha$, and recorded the revised-SI metrological direction from measured
   $\alpha$ to uncertain $\mu_0$.
-- Added the RG boundary-value no-go: $\mu\,dg/d\mu=\beta(g)$ transports a
+- Added the RG boundary-value no-go: $\mu\mkern3mu dg/d\mu=\beta(g)$ transports a
   supplied coupling but does not determine it without $g(\mu_0)$; the exact
   case $\beta\equiv0$ admits every constant.
 - Added a primary-source crosswalk for four July 2026 experiments without
