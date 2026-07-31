@@ -53,7 +53,7 @@ gauge class, regularity assumptions, data regime, and stability theorem.
 
 The central added object is the typed transfer record (§7):
 
-$$
+```math
 \mathfrak M_{\ell\to m}
 =
 \left(
@@ -66,7 +66,7 @@ R_{\ell m},
 C_{\ell m},
 \mathsf{Cert}_{\ell m}
 \right).
-$$
+```
 
 Here $T_{\ell m}$ transports states, while $T_{\ell m}^{\sharp}$ pulls
 target observables in the reverse direction. $K_{\ell m}$ is an observation
@@ -90,7 +90,7 @@ makes it inadmissible for that claim.
 
 For compatible partial stochastic transfers, state kernels compose forward on
 the support-compatible domain
-$D_{\ell n}=\{x\in D_{\ell m}:T_{\ell m}(x,D_{mn})=1\}$. Observable
+$D_{\ell n}=\lbrace x\in D_{\ell m}:T_{\ell m}(x,D_{mn})=1\rbrace$. Observable
 pullbacks compose in reverse through the restricted map
 $T_{\ell m}^{\sharp\mid D_{mn}}:B_b(D_{mn})\to B_b(D_{\ell n})$. Observation defects obey
 a contraction-weighted bound, directed deficiencies obey a triangle
@@ -121,7 +121,7 @@ provenance. Statistical simulation between experiments, computational
 simulation, and surrogate deployment remain distinct.
 
 If the propagated frozen loss obeys $\ell^0_{c,j}\le U^0_{c,j}$ and a certified change
-obeys $\ell^{\rm dep}_{c,j}\le\ell^0_{c,j}+\rho_{c,j}$, deployment is admitted
+obeys $`\ell^{\rm dep}_{c,j}\le\ell^0_{c,j}+\rho_{c,j}`$, deployment is admitted
 only when $U^0_{c,j}+\rho_{c,j}\le\tau_{c,j}$ for every required coordinate,
 all hard gates are true, and readiness is adequate. Estimator uncertainty
 already inside $U^0_{c,j}$ is not counted again; deployment-change uncertainty
@@ -178,7 +178,7 @@ different obligations. They do not become one microscopic theory.
 
 For a power-normalized, closed-port passive model,
 $S^\dagger S\preceq I$. If a simultaneous calibration certificate gives
-$\|\widehat S-S\|_2\le\varepsilon$, then
+$\lVert \widehat S-S\rVert_2\le\varepsilon$, then
 $\sigma_{\max}(\widehat S)-\varepsilon>1$ falsifies that declared passive
 model, $\sigma_{\max}(\widehat S)+\varepsilon\le1$ certifies contractivity on
 the declared configuration and band, and the remaining interval is
@@ -202,7 +202,7 @@ uniqueness, and stability theorem.
 
 At low energy the revised SI gives the exact relations
 
-$$
+```math
 \alpha
 =
 \frac{e^2}{4\pi\varepsilon_0\hbar c}
@@ -212,17 +212,17 @@ $$
 \frac{Z_0}{2R_{\mathrm K}},
 \qquad
 \mu_0=\alpha\frac{2h}{ce^2}.
-$$
+```
 
 Fixed $e,h,c$ therefore do not fix $\alpha$; the measured uncertainty is
 carried by $\alpha$ and hence by $\mu_0$. Field rescaling preserves
 $q_i^2/Z$, Chern or Dirac quantization constrains a charge-flux product, and
 Ward identities constrain matching, but none selects the remaining
 dimensionless coupling. The equation
-$\mu\,d\alpha/d\mu=\beta(\alpha)$ transports a supplied boundary value
+$\mu\mkern3mu d\alpha/d\mu=\beta(\alpha)$ transports a supplied boundary value
 $\alpha(\mu_0)=\alpha_0$ across a declared scheme, scale, threshold, and
 particle content. No theorem in BSC derives or predicts
-$\alpha^{-1}=137.035\,999\,177(21)$.
+$\alpha^{-1}=137.035\mkern3mu 999\mkern3mu 177(21)$.
 
 BSC-EM-11 adds the selector-and-materialization boundary for aperiodic
 geometry. The Hat is an aperiodic union of eight kites from the periodic
@@ -230,8 +230,7 @@ deltoidal-trihexagonal carrier grid, while the Spectre supplies a distinct
 strictly chiral tiling theorem. If a coefficient field $\kappa$ faithfully
 encodes a tiling partition $P$ so that
 $\tau_v\kappa=\kappa\Rightarrow\tau_vP=P$, then
-$\operatorname{Stab}_{\mathrm{tr}}(\kappa)\subseteq
-\operatorname{Stab}_{\mathrm{tr}}(P)$. Without that hypothesis, a constant or
+$`\mathrm{Stab}_{\mathrm{tr}}(\kappa)\subseteq\mathrm{Stab}_{\mathrm{tr}}(P)`$. Without that hypothesis, a constant or
 carrier-periodic material map erases the aperiodicity. Published Hat
 point-scatterer diffraction is correspondingly periodic despite the
 aperiodic tiling. The 2026 centroid-selected SiN experiment supplies
@@ -263,17 +262,16 @@ total-variation lower bound when they overlap.
 
 The zeta–DQPT construction is the first substantial instance. It proves the
 declared finite identity
-$Z_N(\beta_{\rm eff})\mathcal L_N(\beta_{\rm eff},t)
-=-S_N(\beta_{\rm eff}+it)$, local-uniform alternating-tail control, and a
-fixed-$s$ decay exponent that separates eta zeros from nonzeros. For
+$Z_N(\beta_{\rm eff})\mathcal L_N(\beta_{\rm eff},t)=-S_N(\beta_{\rm eff}+it)$, local-uniform alternating-tail control, and a
+fixed $s$ decay exponent that separates eta zeros from nonzeros. For
 $N=2^d$ this recovers the source's pointwise free-energy values
-$(1-\operatorname{Re}(s))\log 2$ off the zero set and $\log 2$ on it. The
+$(1-\mathrm{Re}(s))\log 2$ off the zero set and $\log 2$ on it. The
 rate discontinuities are therefore exactly the zeta zeros, with jump
-$\operatorname{Re}(s_0)\log 2$ at $s_0$; confining all of them to the
+$\mathrm{Re}(s_0)\log 2$ at $s_0$; confining all of them to the
 critical line is equivalent to, rather than a proof of, RH. Near a fixed zero
 of multiplicity $m$, the $m$ roots of the finite partial sum localize at scale
-$N^{-\operatorname{Re}(s_0)/m}$; a simple root has an explicit signed leading
-displacement. On each fixed-$\beta$ real-time slice, the rate
+$N^{-\mathrm{Re}(s_0)/m}$; a simple root has an explicit signed leading
+displacement. On each fixed $\beta$ real-time slice, the rate
 discontinuities are exactly the ordinates of zeros on that line. The instance
 also proves a bounded Rouché zero-count transfer conditional on certified
 whole-contour separation.
@@ -289,7 +287,7 @@ temperature, or an independent physical origin.
 |---|---|---|
 | Electromagnetic evidence bridge | Gauge and bundle theory; Maxwell source laws and Poynting balance; passive scattering and calibration; scoped electromagnetic inversion; Chern/Dirac quantization; revised-SI and coupling metrology; Ward identities and RG flow; aperiodic tilings and point diffraction | The physical mathematics is imported. BSC adds the typed route, exact nonidentifiability tests, three-valued calibrated passivity disposition, pure-delay phase no-go, aperiodic selector/materialization descent, and local demotion when a coupling boundary value or other bridge coordinate is absent. It does not derive or predict $\alpha$. |
 | Established imports | Markov kernels and operational quotients; Blackwell–Le Cam comparison; boundary trace and Calderón-type response; Koopman operators and stated learnability limits; periodic homogenization; sheaf descent; structured cospans; non-invertible defects; proof checking | Imported under their published or preprint hypotheses. These ingredients are not claimed as new BSC discoveries. |
-| Paper-level consequences | Quotient and exact-decision descent; repaired restricted-pullback composition; paired state–observable probability preservation; defect, deficiency, and deterministic residual propagation; simulation-evidence typing, compatibility-bounded deployment, and coupled-surrogate prefix propagation; fixed-interface operational-channel error propagation, no downstream resurrection, nonlinear-postselection and spectral-marginal counterexamples, robust inverse-set enclosure, driven open-system energy accounting, energy-port residual localization, denominator-typed efficiency, scalar Bernoulli information/zero-error bounds, and same-identity relation alignment; normalized-scale rate decomposition and covariance; singular-set and slice visibility; analytic zero and multiplicity transfer; the zeta-specific alternating-tail bound, pointwise exponent/rate split, ambient and fixed-$\beta$ singular sets, bounded contour count, and local root drift; persistence certification; generic decorated-cospan composition; readiness-cap propagation; the blocks from winding to physical charge and from channel form to $\alpha$ | Proved locally under the manuscript's stated assumptions. The canonical BSC decoration functor and full quantum-morphism composition remain open. No empirical status is inherited. |
+| Paper-level consequences | Quotient and exact-decision descent; repaired restricted-pullback composition; paired state–observable probability preservation; defect, deficiency, and deterministic residual propagation; simulation-evidence typing, compatibility-bounded deployment, and coupled-surrogate prefix propagation; fixed-interface operational-channel error propagation, no downstream resurrection, nonlinear-postselection and spectral-marginal counterexamples, robust inverse-set enclosure, driven open-system energy accounting, energy-port residual localization, denominator-typed efficiency, scalar Bernoulli information/zero-error bounds, and same-identity relation alignment; normalized-scale rate decomposition and covariance; singular-set and slice visibility; analytic zero and multiplicity transfer; the zeta-specific alternating-tail bound, pointwise exponent/rate split, ambient and fixed $\beta$ singular sets, bounded contour count, and local root drift; persistence certification; generic decorated-cospan composition; readiness-cap propagation; the blocks from winding to physical charge and from channel form to $\alpha$ | Proved locally under the manuscript's stated assumptions. The canonical BSC decoration functor and full quantum-morphism composition remain open. No empirical status is inherited. |
 | Reference fixtures | Eleven examples covering winding, inverse ambiguity, directed deficiency, Koopman pollution, quantum-reference-frame descent, sheaf obstruction, off-shell residual, exact counterexample retention, zeta–DQPT scope separation, stable-host surrogate dependence, and a Collatz recursive-sufficiency repair | Fixtures 1–7 and 9 have exact mathematical derivations but no separate execution receipts. Fixtures 8, 10, and 11 have deterministic CPython receipts. F11's finite extension remains conditional on the separately sourced $2^{71}$ base. Immutable v1.1.0 contains Fixtures 1–9; immutable v1.0.1 contains Fixtures 1–8. |
 | Open status | Universal persistence, generic empirical validation, nonlinear stochastic residual composition, full quantum-morphism composition (BSC-QOP-03), instrument-uncertain reconstruction, QRF quotient characterization, learnability-aware recurrence, faithfulness of operational report envelopes under added interventions, non-iid hardware rate-distortion, physical charge bridges, end-to-end zeta-algorithm advantage, temperature/origin bridges, and a machine-checked BSC kernel | Conjectural, untested, unexecuted, blocked, or open as individually recorded. |
 

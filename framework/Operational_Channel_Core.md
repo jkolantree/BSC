@@ -57,18 +57,10 @@ where $P_\theta^Z$ is a classical law on the terminal report space $Z$. Every
 interface carries one of the following declared types.
 
 1. A classical interface carries probability laws and total variation
-
-   $$
-   d_{\mathrm{TV}}(P,Q)=\sup_A|P(A)-Q(A)|.
-   $$
+   $d_{\mathrm{TV}}(P,Q)=\sup_A|P(A)-Q(A)|$.
 
 2. A finite-dimensional quantum interface carries density operators and trace
-   distance
-
-   $$
-   D_{\mathrm{tr}}(\rho,\sigma)
-   =\frac12\lVert\rho-\sigma\rVert_1.
-   $$
+   distance $D_{\mathrm{tr}}(\rho,\sigma)=\frac12\lVert\rho-\sigma\rVert_1$.
 
 3. A quantum-to-classical interface is a declared POVM measurement channel.
 4. A classical-to-quantum interface is a declared preparation channel.
@@ -83,25 +75,25 @@ memoryless theorem is invoked.
 
 The family
 
-$$
+```math
 \mathsf{ORE}
 =
 \left(
 \Theta,
-\{z_0(\theta)\}_{\theta\in\Theta},
-\{T_k\}_{k=1}^m,
+\lbrace z_0(\theta)\rbrace_{\theta\in\Theta},
+\lbrace T_k\rbrace_{k=1}^m,
 Z,
-\{P_\theta^Z\}_{\theta\in\Theta},
+\lbrace P_\theta^Z\rbrace_{\theta\in\Theta},
 \mathsf{Cert}_{\mathrm{ORE}}
 \right)
-$$
+```
 
 is an operational report envelope when every interface, control, domain,
 measurement, report rule, and evidence identity is declared. It induces the
 classical statistical experiment
 
 $$
-\mathsf E_Z=\{P_\theta^Z:\theta\in\Theta\}.
+\mathsf E_Z=\lbrace P_\theta^Z:\theta\in\Theta\rbrace.
 $$
 
 The envelope does not identify two physical mechanisms. It says only that
@@ -130,25 +122,14 @@ declared preparation, control, horizon, and prior-stage defects.
 Assume:
 
 1. the initial discrepancy obeys
-
-   $$
-   d_0(\widehat z_0,z_0)\le\varepsilon_0;
-   $$
+   $d_0(\widehat z_0,z_0)\le\varepsilon_0$;
 
 2. for every implemented reachable input
    $\widehat z\in\widehat{\mathcal R}_{k-1}$,
-
-   $$
-   d_k(\widehat T_k\widehat z,T_k\widehat z)
-   \le\varepsilon_k;
-   $$
+   $d_k(\widehat T_k\widehat z,T_k\widehat z)\le\varepsilon_k$;
 
 3. for every reachable ideal/implemented pair $(z,\widehat z)$,
-
-   $$
-   d_k(T_k\widehat z,T_kz)
-   \le\eta_k d_{k-1}(\widehat z,z).
-   $$
+   $d_k(T_k\widehat z,T_kz)\le\eta_k d_{k-1}(\widehat z,z)$.
 
 Then
 
@@ -196,12 +177,12 @@ certificate may use the sharper enclosure
 $$
 E_m
 \le
-\min\left\{
+\min\left\lbrace
 1,
 \sum_{k=0}^{m}
 \varepsilon_k
 \prod_{j=k+1}^{m}\eta_j
-\right\}.
+\right\rbrace.
 $$
 
 If any $\varepsilon_k$ or $\eta_k$ is estimated rather than proved
@@ -289,11 +270,11 @@ does not replace this condition.
 For a deterministic forward report $F:\Theta\to Y$, observation $y$, metric
 $d_Y$, and certified error radius $\varepsilon$, define
 
-$$
+```math
 \mathcal I_\varepsilon(y)
 =
-\{\theta\in\Theta:d_Y(F(\theta),y)\le\varepsilon\}.
-$$
+\lbrace\theta\in\Theta:d_Y(F(\theta),y)\le\varepsilon\rbrace.
+```
 
 For a target property $q:\Theta\to Q$, an exact claim $q(\theta)=q_0$ is
 licensed by this report only if $q$ is constant on
@@ -331,11 +312,11 @@ $$
 
 For
 
-$$
+```math
 \mathcal I_F(y,\delta)
 =
-\{\theta:d_Y(F(\theta),y)\le\delta\},
-$$
+\lbrace\theta:d_Y(F(\theta),y)\le\delta\rbrace,
+```
 
 and the analogous set $\mathcal I_G(y,\delta)$,
 
@@ -377,7 +358,7 @@ statement; it is not created or absorbed by $B$.
 
 Let $|\omega_1\rangle,|\omega_2\rangle$ be orthogonal modes and define
 
-$$
+```math
 |\psi\rangle
 =
 \frac{|\omega_1\rangle+|\omega_2\rangle}{\sqrt2},
@@ -385,7 +366,7 @@ $$
 |\phi\rangle
 =
 \frac{|\omega_1\rangle-|\omega_2\rangle}{\sqrt2}.
-$$
+```
 
 The two pure states have identical spectral-intensity laws and hence unit
 intensity-overlap score, but
@@ -410,7 +391,7 @@ BSC-QPH-02.
 
 Let
 
-$$
+```math
 \rho
 =
 \frac12
@@ -424,10 +405,10 @@ $$
 \left(
 |0\rangle\langle0|+|2\rangle\langle2|
 \right).
-$$
+```
 
 Then $D_{\mathrm{tr}}(\rho,\sigma)=1/2$. Filter onto
-$\operatorname{span}\{|1\rangle,|2\rangle\}$ and normalize on success. The
+$\mathrm{span}\lbrace|1\rangle,|2\rangle\rbrace$ and normalize on success. The
 conditional states are $|1\rangle\langle1|$ and $|2\rangle\langle2|$, whose
 trace distance is $1$. The complete instrument, including failure, remains
 contractive; the amplification is introduced by conditioning.
@@ -436,41 +417,41 @@ contractive; the amplification is introduced by conditioning.
 
 Let a finite-dimensional open quantum system obey
 
-$$
+```math
 \dot\rho(t)
 =
 -\frac{i}{\hbar}[H(t),\rho(t)]
 +\mathcal D_t(\rho(t)),
-$$
+```
 
 where the total generator defines physical trace-preserving evolution. Fix an
 energy zero and define
 
 $$
-E(t)=\operatorname{Tr}[\rho(t)H(t)].
+E(t)=\mathrm{Tr}[\rho(t)H(t)].
 $$
 
 ### Proposition 4.1 (Driven open-system energy identity)
 
 If $\rho$ and $H$ are differentiable, then
 
-$$
+```math
 \boxed{
 \dot E(t)
 =
-\operatorname{Tr}[\rho(t)\dot H(t)]
+\mathrm{Tr}[\rho(t)\dot H(t)]
 +
-\operatorname{Tr}[H(t)\mathcal D_t(\rho(t))]
+\mathrm{Tr}[H(t)\mathcal D_t(\rho(t))]
 }.
-$$
+```
 
 #### Proof
 
-Differentiate $\operatorname{Tr}(\rho H)$. The Hamiltonian commutator
+Differentiate $\mathrm{Tr}(\rho H)$. The Hamiltonian commutator
 contributes
 
 $$
--\frac{i}{\hbar}\operatorname{Tr}([H,\rho]H)=0
+-\frac{i}{\hbar}\mathrm{Tr}([H,\rho]H)=0
 $$
 
 by cyclicity of trace. The two displayed terms remain. $\square$
@@ -504,14 +485,14 @@ $b_v\in L^1([t_0,t_1])$ a declared non-port supply rate that is positive
 into $v$, and $H_v$ a finite set of port half-edges with inward powers
 $p_h\in L^1([t_0,t_1])$. Define the component residual
 
-$$
+```math
 r_v
 =
 \dot U_v-b_v-\sum_{h\in H_v}p_h.
-$$
+```
 
 A gluing is a partial matching $\mathcal M$ of disjoint half-edges. For a
-matched seam $e=\{h,\bar h\}\in\mathcal M$, define
+matched seam $e=\lbrace h,\bar h\rbrace\in\mathcal M$, define
 
 $$
 g_e=p_h+p_{\bar h}.
@@ -520,13 +501,13 @@ $$
 Unmatched half-edges form the external set $H_{\mathrm{ext}}$. The assembled
 global residual is
 
-$$
+```math
 R_G
 =
 \frac{d}{dt}\sum_{v\in V}U_v
 -\sum_{v\in V}b_v
 -\sum_{h\in H_{\mathrm{ext}}}p_h.
-$$
+```
 
 The diagram is physically admissible only under an additive storage
 decomposition. Coupling energy, interface storage, a material sheet, or an
@@ -542,7 +523,7 @@ conversion certificate.
 
 For every typed finite energy-port diagram,
 
-$$
+```math
 \boxed{
 R_G
 =
@@ -550,18 +531,18 @@ R_G
 +
 \sum_{e\in\mathcal M}g_e
 }
-$$
+```
 
 almost everywhere. Consequently, exact component balances and exact seam
 matching imply
 
-$$
+```math
 \frac{d}{dt}\sum_{v\in V}U_v
 =
 \sum_{v\in V}b_v
 +
 \sum_{h\in H_{\mathrm{ext}}}p_h.
-$$
+```
 
 If $|r_v|\le\varepsilon_v$ and $|g_e|\le\delta_e$, then
 
@@ -575,7 +556,7 @@ $$
 
 and
 
-$$
+```math
 \left|
 \Delta U_G
 -
@@ -585,24 +566,24 @@ $$
 \right)dt
 \right|
 \le
-\sum_v\int_{t_0}^{t_1}|r_v|\,dt
+\sum_v\int_{t_0}^{t_1}|r_v|\mkern3mu dt
 +
-\sum_e\int_{t_0}^{t_1}|g_e|\,dt.
-$$
+\sum_e\int_{t_0}^{t_1}|g_e|\mkern3mu dt.
+```
 
 #### Proof
 
 Summing the component residuals partitions the half-edge powers into
 unmatched ports and matched pairs:
 
-$$
+```math
 \sum_vr_v
 =
-R_G-\sum_{e=\{h,\bar h\}\in\mathcal M}
+R_G-\sum_{e=\lbrace h,\bar h\rbrace\in\mathcal M}
 (p_h+p_{\bar h})
 =
 R_G-\sum_eg_e.
-$$
+```
 
 Rearrangement proves the identity. The pointwise and integrated bounds follow
 from the triangle inequality and absolute continuity. $\square$
@@ -617,26 +598,26 @@ The term $b_v$ is not energy creation. It represents exchange with a drive,
 pump, bath, reservoir, moving support, or other component excluded from the
 displayed graph. If that system enters scope, $b_v$ must become a matched
 port. Proposition 4.1 is a one-component reduced-model instance, but calling
-$\operatorname{Tr}(H\mathcal D_t(\rho))$ a literal heat or bath current
+$\mathrm{Tr}(H\mathcal D_t(\rho))$ a literal heat or bath current
 requires a declared microscopic system-bath split. At strong coupling,
 interaction energy must be retained. For example, if
 
-$$
+```math
 H_{\mathrm{tot}}(t)
 =
 H_S(t)+\sum_\nu H_\nu+V(t)
-$$
+```
 
 and the $H_\nu$ are time independent, then with
 $J_E^{(\nu)}=-d\langle H_\nu\rangle/dt$,
 
-$$
+```math
 \frac{d}{dt}\langle H_S+V\rangle
 =
 \left\langle\partial_t(H_S+V)\right\rangle
 +
 \sum_\nu J_E^{(\nu)}.
-$$
+```
 
 Suppressing $V$ is licensed only by an approximation whose error is part of
 the certificate.
@@ -645,13 +626,13 @@ the certificate.
 
 For one boundary, interval, clock, and evidence identity, define
 
-$$
+```math
 \eta_E
 =
 \frac{E_{\mathrm{useful,out}}}{E_{\mathrm{charged,in}}},
 \qquad
 E_{\mathrm{charged,in}}>0.
-$$
+```
 
 All external drive energy and any decrease of initially stored energy used to
 produce the output must be charged. A count yield
@@ -665,7 +646,7 @@ charges, transferred excitations, and chemical products are different
 denominators and numerators. For a success event $S$, the end-to-end quantity
 is
 
-$$
+```math
 \eta_{\mathrm{all}}
 =
 \frac{
@@ -673,7 +654,7 @@ $$
 }{
 \mathbb E[E_{\mathrm{charged,in}}]
 },
-$$
+```
 
 not the efficiency of the normalized successful subensemble alone.
 
@@ -717,7 +698,7 @@ Let $X$ be an input symbol and suppose that, conditional on $X=x$,
 $$
 Y_1,\ldots,Y_N
 \mathrel{\overset{\mathrm{iid}}{\sim}}
-\operatorname{Bernoulli}(q_x),
+\mathrm{Bernoulli}(q_x),
 \qquad
 K=\sum_{i=1}^NY_i.
 $$
@@ -760,14 +741,14 @@ of 256 input symbols is impossible for every finite $N$.
 
 For every $q_x\in(0,1)$, the law of $K$ has positive mass at every
 $k=0,\ldots,N$. The endpoint parameters $q_x=0$ and $q_x=1$ have singleton
-supports $\{0\}$ and $\{N\}$. Hence at most two conditional laws can have
+supports $\lbrace0\rbrace$ and $\lbrace N\rbrace$. Hence at most two conditional laws can have
 pairwise disjoint supports. The 256 different labels required for exact
 decoding cannot satisfy the measurable-partition condition of BSC-QUO-03.
 $\square$
 
 Distinct interior values of $q_x$ can permit an error probability tending to
 zero as $N\to\infty$ under additional separation assumptions. That is not
-finite-$N$ lossless coding.
+finite $N$ lossless coding.
 
 The raw record contains $N$ output bits per 8-bit input symbol. Its nominal
 raw-output factor is therefore
@@ -790,9 +771,9 @@ For $M$ input symbols, estimate each $q_x$ by $n$ independent samples. Then
 Hoeffding's inequality and a union bound give
 
 $$
-\Pr\left\{
+\Pr\left\lbrace
 \max_x|\widehat q_x-q_x|>\varepsilon
-\right\}
+\right\rbrace
 \le
 2M\exp(-2n\varepsilon^2).
 $$
@@ -857,17 +838,17 @@ declared.
 
 The low-energy fine-structure constant is
 
-$$
+```math
 \alpha
 =
 \frac{e^2}{4\pi\varepsilon_0\hbar c},
 \qquad
 \alpha^{-1}\approx137.036.
-$$
+```
 
 It is a dimensionless electromagnetic coupling, not a generic channel
 invariant. The 2022 CODATA recommended value is
-$\alpha^{-1}=137.035\,999\,177(21)$.
+$\alpha^{-1}=137.035\mkern3mu 999\mkern3mu 177(21)$.
 
 ### Proposition 7.1 (Channel form does not determine a coupling constant)
 
@@ -903,7 +884,7 @@ The central claim identifiers are:
 | BSC-ENE-02 | A typed finite energy-port gluing has global residual $R_G=\sum_vr_v+\sum_eg_e$, with pointwise and integrated absolute bounds. | Additive storage and compatible same-clock ports are required; global closure does not certify local seams or full state gluing. |
 | BSC-ENE-03 | Count yield, energy efficiency, and conditioned efficiency remain differently typed; compatible stage efficiencies telescope only across the identical intermediate extensive quantity. | Ratio algebra supplies no empirical efficiency, port completeness, or passivity. |
 | BSC-ENC-01 | The Bernoulli count is sufficient and carries at most $\log_2(N+1)$ bits. | Conditional-iid scalar channel only. |
-| BSC-ENC-02 | A 256-symbol scalar Bernoulli encoder has no finite-$N$ zero-error decoder. | Does not preclude lossy or asymptotically reliable coding. |
+| BSC-ENC-02 | A 256-symbol scalar Bernoulli encoder has no finite $N$ zero-error decoder. | Does not preclude lossy or asymptotically reliable coding. |
 | BSC-ENC-03 | A finite vector of Bernoulli biases is uniformly query-learnable under the declared sampling model. | Learnability is not a security analysis. |
 | BSC-SEM-01 | A single entity identity requires conjugation $S=PCP^{\mathsf T}$; independent row/column fits are weaker. | Bipartite relations may legitimately use two maps. |
 | BSC-UNI-01 | Operational channel form alone does not determine $\alpha$. | A typed electromagnetic completion remains necessary. |
@@ -924,7 +905,7 @@ references, separated by subject, include:
   *Theory of Probability and Its Applications* 1, 65--80 (1956).
 - D. Perez-Garcia, M. M. Wolf, D. Petz, and M. B. Ruskai,
   [Contractivity of positive and trace-preserving maps under
-  $L_p$ norms](https://doi.org/10.1063/1.2218675),
+  $`L_p`$ norms](https://doi.org/10.1063/1.2218675),
   *Journal of Mathematical Physics* 47, 083506 (2006).
 - R. A. Fisher,
   [On the mathematical foundations of theoretical

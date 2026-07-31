@@ -63,10 +63,10 @@ five questions in each field:
 ### Source-bound record
 
 The atomic source uses spontaneous four-wave mixing in a warm
-$^{133}\mathrm{Cs}$ ensemble at $105\,^\circ\mathrm C$. The reported signal
-and idler wavelengths are $917.48\,\mathrm{nm}$ and $852.35\,\mathrm{nm}$.
+$^{133}\mathrm{Cs}$ ensemble at $105\mkern3mu ^\circ\mathrm C$. The reported signal
+and idler wavelengths are $917.48\mkern3mu \mathrm{nm}$ and $852.35\mkern3mu \mathrm{nm}$.
 The InAs/GaAs quantum-dot emission is thermally tuned to the atomic transition
-at $12.4\,\mathrm K$. The article's phrase “without spectral modification”
+at $12.4\mkern3mu \mathrm K$. The article's phrase “without spectral modification”
 therefore means no post-emission narrowband filter or frequency converter; it
 does not mean that emitter tuning, heralding, or temporal selection was absent.
 
@@ -80,14 +80,14 @@ The paper explicitly treats this as an upper bound on full photon
 indistinguishability because polarization, temporal, spatial, and other
 degrees of freedom must also match. In the heterogeneous-source TPI
 measurement, the reported raw visibility is $0.41$, the threefold rate is
-$1.07\pm0.14\,\mathrm{Hz}$, and a detector-resolution deconvolution gives
+$1.07\pm0.14\mkern3mu \mathrm{Hz}$, and a detector-resolution deconvolution gives
 $0.65\pm0.14$.
 
 ### BSC interpretation
 
 The relevant quantum state is not certified by one spectral scalar. The
-actual report channel includes heralding, an $80\,\mathrm{ps}$ selection
-window, detector jitter, $40\,\mathrm{ps}$ bins, source-rate imbalance,
+actual report channel includes heralding, an $80\mkern3mu \mathrm{ps}$ selection
+window, detector jitter, $40\mkern3mu \mathrm{ps}$ bins, source-rate imbalance,
 multi-photon contamination, and a deconvolution model. Accordingly:
 
 - spectral overlap is one observable coordinate, not equality of quantum
@@ -108,7 +108,7 @@ close BSC-QOP-03 and does not by itself execute a hybrid network protocol.
 The exact BSC-QPH-02 counterexample makes the marginal boundary sharp. For
 orthogonal frequency modes, define
 
-$$
+```math
 |\psi\rangle
 =
 \frac{|\omega_1\rangle+|\omega_2\rangle}{\sqrt2},
@@ -116,7 +116,7 @@ $$
 |\phi\rangle
 =
 \frac{|\omega_1\rangle-|\omega_2\rangle}{\sqrt2}.
-$$
+```
 
 The spectral intensities are identical, so their intensity-overlap score is
 $1$, while $\langle\psi|\phi\rangle=0$ and the pure-state trace distance is
@@ -127,16 +127,16 @@ the completion ledger.
 
 ### Source-bound record
 
-The reported device is an Au/$\mathrm{Si_3N_4}$/InSb plasmonic cavity array
-with $41\,\mu\mathrm m$ stripes, $16\,\mu\mathrm m$ gaps, $57\,\mu\mathrm m$
-period, and an equilibrium resonance near $0.77\,\mathrm{THz}$. The open
-preprint reports a drive near $0.69\,\mathrm{THz}$ at roughly
-$40\,\mathrm{kV\,cm^{-1}}$ at room temperature. The publication reports
+The reported device is an Au / $\mathrm{Si_3N_4}$ / InSb plasmonic cavity array
+with $41\mkern3mu \mu\mathrm m$ stripes, $16\mkern3mu \mu\mathrm m$ gaps, $57\mkern3mu \mu\mathrm m$
+period, and an equilibrium resonance near $0.77\mkern3mu \mathrm{THz}$. The open
+preprint reports a drive near $0.69\mkern3mu \mathrm{THz}$ at roughly
+$40\mkern3mu \mathrm{kV\mkern3mu cm^{-1}}$ at room temperature. The publication reports
 near-unity coherent sub-cycle modulation, a transition through an exceptional
-point at which two Floquet modes coalesce, and more than $50\%$ reduction of
+point at which two Floquet modes coalesce, and more than $50$% reduction of
 plasmonic loss in the driven regime.
 
-The source's roughly $80\%$ effective-mass modulation is model-inferred, using
+The source's roughly $80$% effective-mass modulation is model-inferred, using
 a fitted coupling fraction and leading-order Kane-band approximation. It
 concerns the driven carrier effective mass relative to its material baseline.
 It must not be rewritten as an unqualified claim that an electron acquired
@@ -149,22 +149,22 @@ theoretical modeling, not the reported measurement.
 
 For a reduced driven open-system model,
 
-$$
+```math
 \dot\rho
 =
 -\frac{i}{\hbar}[H(t),\rho]
 +\mathcal D_t(\rho),
-$$
+```
 
 BSC-ENE-01 requires
 
-$$
-\frac{d}{dt}\operatorname{Tr}[\rho H]
+```math
+\frac{d}{dt}\mathrm{Tr}[\rho H]
 =
-\operatorname{Tr}[\rho\dot H]
+\mathrm{Tr}[\rho\dot H]
 +
-\operatorname{Tr}[H\mathcal D_t(\rho)].
-$$
+\mathrm{Tr}[H\mathcal D_t(\rho)].
+```
 
 Within the declared reduced model, the first term is the modulation-power
 term. Equality to laboratory pump power requires a calibrated bridge among
@@ -191,11 +191,11 @@ an autonomous many-body system.
 
 The study inspected 34 roughly equal-sized, author-supplied Hiroshima debris
 specimens. One contained several Fe-Cr grains; four promising grains of
-roughly $8$--$10\,\mu\mathrm m$ were purposively selected for single-crystal
+roughly $8$ to $10\mkern3mu \mu\mathrm m$ were purposively selected for single-crystal
 X-ray diffraction. Three were ordinary body-centered-cubic $\alpha$-Fe. The
 fourth was assigned an ordered AlAu4-type derivative of $\beta$-Mn (also
 rendered AuAl4-type in the article) with space group $P2_13$ and lattice
-parameter $6.2666(5)\,\text{\AA}$.
+parameter $6.2666(5)$ Å.
 
 Four electron-microprobe points on that grain give the reported mean weight
 percentages
@@ -217,11 +217,11 @@ Let $\theta$ encode a candidate pressure-temperature-composition-time history
 and let $F(\theta)$ be the predicted terminal grain record. For measured
 record $y$ and declared discrepancy $\varepsilon$,
 
-$$
+```math
 \mathcal I_\varepsilon(y)
 =
-\{\theta:d(F(\theta),y)\le\varepsilon\}.
-$$
+\lbrace\theta:d(F(\theta),y)\le\varepsilon\rbrace.
+```
 
 The observations establish a unique history only if the target historical
 property is constant on this identified set. The source does not provide an
@@ -238,10 +238,10 @@ manufacturing.
 
 ### Source-bound record
 
-The reported chip was fabricated in $45\,\mathrm{nm}$ GlobalFoundries RFSOI
+The reported chip was fabricated in $45\mkern3mu \mathrm{nm}$ GlobalFoundries RFSOI
 CMOS. Its coupled microwave paths transform low-frequency token controls into
-features spanning approximately $10$--$13\,\mathrm{GHz}$, mixed to a
-$0$--$3\,\mathrm{GHz}$ measurement band.
+features spanning approximately $10$ to $13\mkern3mu \mathrm{GHz}$, mixed to a
+$0$ to $3\mkern3mu \mathrm{GHz}$ measurement band.
 
 For the token-association demonstration, 125 physical tokens generate
 15,500 ordered distinct pairs. A supervised linear classifier acts on 34
@@ -249,7 +249,7 @@ measured features. The resulting association matrix is therefore conditional
 on the feature construction, training split, labels, and classifier.
 
 In the probabilistic-bit mode, each of the 256 8-bit input patterns was
-repeated 300 times. Two thresholded samples at $625\,\mathrm{MS\,s^{-1}}$
+repeated 300 times. Two thresholded samples at $625\mkern3mu \mathrm{MS\mkern3mu s^{-1}}$
 produce the reported Static and Dynamic bits. Relative phase against a
 free-running oscillator contributes variability. The source does not by this
 fact establish a deployment law of independent uniform phases or
@@ -268,7 +268,7 @@ If the repeated output is genuinely
 $$
 Y_i\mid X=x
 \mathrel{\overset{\mathrm{iid}}{\sim}}
-\operatorname{Bernoulli}(q_x),
+\mathrm{Bernoulli}(q_x),
 $$
 
 then BSC-ENC-01 gives
@@ -299,9 +299,9 @@ actually sent, the wire rate as a separate coordinate.
 Under independent sampling, with $\widehat q_x$ the observed frequency,
 
 $$
-\Pr\left\{
+\Pr\left\lbrace
 \max_x|\widehat q_x-q_x|>\varepsilon
-\right\}
+\right\rbrace
 \le512e^{-600\varepsilon^2}.
 $$
 
@@ -359,7 +359,7 @@ theory.
 The low-energy electromagnetic coupling has 2022 CODATA value
 
 $$
-\alpha^{-1}=137.035\,999\,177(21).
+\alpha^{-1}=137.035\mkern3mu 999\mkern3mu 177(21).
 $$
 
 None of the four studies derives that value, and the operational-channel core

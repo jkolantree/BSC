@@ -188,7 +188,7 @@ class ElectromagneticEvidenceBridgeTests(unittest.TestCase):
         )
         ledger = compact_math(self.read("ledgers/Claim_Status_Ledger.md"))
         self.assertIn(
-            compact_math(r"\mu_0=\alpha\,2h/(ce^2)"),
+            compact_math(r"\mu_0=\alpha\mkern3mu 2h/(ce^2)"),
             ledger,
         )
 
@@ -245,10 +245,14 @@ class ElectromagneticEvidenceBridgeTests(unittest.TestCase):
     def test_binary_and_constructibility_screen_is_exact(self) -> None:
         framework = self.read("framework/Electromagnetic_Evidence_Bridge.md")
         paper = self.read("paper/source/On_Boundaries_of_Evidence.tex")
+        expected_orders = {
+            "framework": r"\mathrm{ord}_{137}(2)=68",
+            "paper": r"\operatorname{ord}_{137}(2)=68",
+        }
         for surface, text in (("framework", framework), ("paper", paper)):
             with self.subTest(surface=surface):
                 self.assertIn(
-                    compact_math(r"\operatorname{ord}_{137}(2)=68"),
+                    compact_math(expected_orders[surface]),
                     compact_math(text),
                 )
 
@@ -275,6 +279,18 @@ class ElectromagneticEvidenceBridgeTests(unittest.TestCase):
     def test_aperiodic_materialization_descent_is_typed_and_exact(self) -> None:
         framework = self.read("framework/Electromagnetic_Evidence_Bridge.md")
         paper = self.read("paper/source/On_Boundaries_of_Evidence.tex")
+        expected_stabilizers = {
+            "framework": (
+                r"\mathrm{Stab}_{\mathrm{tr}}(\kappa)"
+                r"\subseteq"
+                r"\mathrm{Stab}_{\mathrm{tr}}(P)"
+            ),
+            "paper": (
+                r"\operatorname{Stab}_{\mathrm{tr}}(\kappa)"
+                r"\subseteq"
+                r"\operatorname{Stab}_{\mathrm{tr}}(P)"
+            ),
+        }
         for surface, text in (("framework", framework), ("paper", paper)):
             with self.subTest(surface=surface):
                 prose = plain_prose(text)
@@ -300,11 +316,7 @@ class ElectromagneticEvidenceBridgeTests(unittest.TestCase):
                 self.assertIn("BSC-EM-11", text)
                 self.assertIn("BSC-EM-OBS-01", text)
                 self.assertIn(
-                    compact_math(
-                        r"\operatorname{Stab}_{\mathrm{tr}}(\kappa)"
-                        r"\subseteq"
-                        r"\operatorname{Stab}_{\mathrm{tr}}(P)"
-                    ),
+                    compact_math(expected_stabilizers[surface]),
                     compact_math(text),
                 )
 

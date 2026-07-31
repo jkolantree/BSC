@@ -212,7 +212,7 @@ integration regressions, not a semantic proof that every status vector and
 theorem hypothesis agrees across every prose surface.
 The scale-framework tests also recompute finite sanity witnesses for rate
 addition, total-variation and lower-margin bounds, one certified eta-tail
-enclosure, and the two fixed-$s$ exponent branches. They are regression tests,
+enclosure, and the two fixed $s$ exponent branches. They are regression tests,
 not proofs of the limiting theorems or executions of F9.
 
 ## Build the paper

@@ -47,11 +47,11 @@ No conclusion may move between these meanings merely because each is called
 Let $c$ be a declared scientific or engineering claim. Its intended-use
 record is
 
-$$
+```math
 \mathcal U_c
 =
 (D_c,H_c,Q_c,\pi_c,\mathsf{BC}_c,\mathsf{Units}_c,\tau_c).
-$$
+```
 
 Here $D_c$ is the operating domain, $H_c$ is the time or iteration
 horizon, $Q_c$ is the quantity of interest, $\pi_c$ is the intervention or
@@ -64,7 +64,7 @@ claim-local tolerances.
 For claim $c$ and evidence identity $\iota$, a simulation-evidence profile
 is the record
 
-$$
+```math
 \mathsf{SEC}_{c,\iota}
 =
 \left(
@@ -72,13 +72,13 @@ $$
 I_c^{\ell},
 J_c^{\ell},
 J_c^{g},
-\{\mathsf E_{c,i}\}_{i\in I_c^{\ell}},
-\{g_{c,k}\}_{k\in J_c^{g}},
+\lbrace\mathsf E_{c,i}\rbrace_{i\in I_c^{\ell}},
+\lbrace g_{c,k}\rbrace_{k\in J_c^{g}},
 \Phi_c,
 \boldsymbol\rho_c,
 \mathsf{Prov}_{c,\iota}
 \right).
-$$
+```
 
 The fields have the following types.
 
@@ -87,30 +87,21 @@ The fields have the following types.
   BSC loss vector used by the claim.
 - $J_c^{g}$ is the finite set of Boolean hard gates used by the claim.
 - $\mathsf E_{c,i}$ is the evidence record for source coordinate $i$.
-- $g_{c,k}\in\{\mathsf{true},\mathsf{false},\mathsf{unevaluated}\}$ is a hard
+- $g_{c,k}\in\lbrace\mathsf{true},\mathsf{false},\mathsf{unevaluated}\rbrace$ is a hard
   gate.
 - For each $i\in I_c^\ell$, $(V_{c,i},\preceq_{c,i})$ is an ordered source
   value space with declared units. For each $j\in J_c^\ell$,
   $(W_{c,j},\le_{c,j})$ is the ordered value space and units of that BSC loss
   coordinate. Put
-
-  $$
-  \mathcal V_c=\prod_{i\in I_c^\ell}V_{c,i},
-  \qquad
-  \mathcal W_c=\prod_{j\in J_c^\ell}W_{c,j}.
-  $$
+  $`\mathcal V_c=\prod_{i\in I_c^\ell}V_{c,i},\qquad
+  \mathcal W_c=\prod_{j\in J_c^\ell}W_{c,j}`$.
 
 - $\Phi_c:\mathcal V_c\to\mathcal W_c$ is a declared monotone,
   unit-respecting propagation map, with a proved relation
-
-  $$
-  \boldsymbol\ell_c^0
-  \le_{\mathcal W_c}
-  \Phi_c(\boldsymbol\eta_c)
-  $$
-
-  from the vector of source estimands $\boldsymbol\eta_c$ to the applicable
-  frozen-state BSC loss vector $\boldsymbol\ell_c^0$.
+  $`\boldsymbol\ell_c^0\le_{\mathcal W_c}
+  \Phi_c(\boldsymbol\eta_c)`$ from the vector of source estimands
+  $\boldsymbol\eta_c$ to the applicable frozen-state BSC loss vector
+  $\boldsymbol\ell_c^0$.
 - $\boldsymbol\rho_c$ is a certified compatibility reserve for transport
   in $\mathcal W_c$ from the frozen evaluation state to the declared
   deployment state.
@@ -160,7 +151,7 @@ of interface error.
 
 For a source evidence coordinate $i\in I_c^\ell$, define
 
-$$
+```math
 \mathsf E_{c,i}
 =
 \left(
@@ -174,7 +165,7 @@ n_{c,i},
 \varepsilon^{\mathrm{opt}}_{c,i},
 \Psi_{c,i}
 \right).
-$$
+```
 
 The fields mean:
 
@@ -187,7 +178,7 @@ The fields mean:
 - $\widehat\eta_{c,i}$ is the estimator or deterministic evaluator.
 - $n_{c,i}$ is the sample or query count and allocation.
 - $\alpha_{c,i}$ is the declared coverage-failure probability.
-- $[L^{\mathrm{src}}_{c,i},U^{\mathrm{src}}_{c,i}]$ is a confidence or
+- $`[L^{\mathrm{src}}_{c,i},U^{\mathrm{src}}_{c,i}]`$ is a confidence or
   pointwise deterministic enclosure in $V_{c,i}$.
 - $\varepsilon^{\mathrm{opt}}_{c,i}$ is a certified optimization gap when
   the estimand contains an infimum, supremum, or fitted optimization.
@@ -207,15 +198,15 @@ observation-and-analysis probability space
 $(\Omega_c,\mathcal F_c,\mathbb P_c)$. Random interval endpoints are
 $\mathcal F_c$-measurable. The profile records the joint source event
 
-$$
+```math
 \mathcal C_c^{\mathrm{src}}
 =
 \bigcap_{i\in I_c^{\ell}}
-\left\{
+\left\lbrace
 \eta_{c,i}\in
 [L^{\mathrm{src}}_{c,i},U^{\mathrm{src}}_{c,i}]
-\right\}
-$$
+\right\rbrace
+```
 
 and a justified bound
 
@@ -228,7 +219,7 @@ Without a stronger dependence argument, the union-bound justification
 requires every marginal guarantee
 
 $$
-\mathbb P_c\!\left(
+\mathbb P_c\mkern-3mu \left(
 \eta_{c,i}\notin
 [L^{\mathrm{src}}_{c,i},U^{\mathrm{src}}_{c,i}]
 \right)
@@ -248,7 +239,7 @@ evaluation.
 
 Put
 
-$$
+```math
 \boldsymbol U_c^{\mathrm{src}}
 =
 (U^{\mathrm{src}}_{c,i})_{i\in I_c^\ell},
@@ -258,7 +249,7 @@ $$
 \Phi_c(\boldsymbol U_c^{\mathrm{src}})
 =
 (U^0_{c,j})_{j\in J_c^\ell}.
-$$
+```
 
 On $\mathcal C_c^{\mathrm{src}}$, monotonicity and the proved propagation
 relation give the typed target-coordinate enclosure
@@ -274,25 +265,25 @@ $$
 ### Statistical deficiency is not implemented-channel error
 
 For experiments
-$\mathsf E=\{P_\theta:\theta\in\Theta\}$ and
-$\mathsf F=\{Q_\theta:\theta\in\Theta\}$, directed total-variation
+$\mathsf E=\lbrace P_\theta:\theta\in\Theta\rbrace$ and
+$\mathsf F=\lbrace Q_\theta:\theta\in\Theta\rbrace$, directed total-variation
 deficiency is
 
-$$
+```math
 \delta(\mathsf E,\mathsf F)
 =
 \inf_K\sup_{\theta\in\Theta}
 \lVert KP_\theta-Q_\theta\rVert_{\mathrm{TV}}.
-$$
+```
 
 For one implemented channel $K_0$, its error is
 
-$$
+```math
 e(K_0)
 =
 \sup_{\theta\in\Theta}
 \lVert K_0P_\theta-Q_\theta\rVert_{\mathrm{TV}},
-$$
+```
 
 and therefore
 
@@ -343,7 +334,7 @@ by itself imply small total variation. The same caution applies to MMD or a
 learned discriminator unless a valid transfer theorem is supplied.
 
 The obstruction persists at the experiment level. Let
-$\Theta=\{-1,+1\}$,
+$\Theta=\lbrace-1,+1\rbrace$,
 
 $$
 P_{-1}=P_{+1}=\delta_0,
@@ -414,22 +405,14 @@ Assume:
 1. the frozen and deployment profiles are well formed for claim $c$, with
    the declared intended use and evidence identities bound;
 2. on a joint event $\mathcal C_c^{\mathrm{dep}}$ with
-   $\Pr(\mathcal C_c^{\mathrm{dep}})\ge1-\alpha_c$,
-
-   $$
-   \ell^0_{c,j}\le U^0_{c,j}
-   \quad\text{and}\quad
-   \ell^1_{c,j}\le\ell^0_{c,j}+\rho_{c,j}
-   $$
-
-   for every $j\in J_c^\ell$;
+   $\Pr(\mathcal C_c^{\mathrm{dep}})\ge1-\alpha_c$, both
+   $\ell^0_{c,j}\le U^0_{c,j}$ and
+   $\ell^1_{c,j}\le\ell^0_{c,j}+\rho_{c,j}$ hold for every
+   $j\in J_c^\ell$;
 3. every required deployment gate is certified true;
 4. every required readiness coordinate transfers or is freshly established;
-5. for every numeric coordinate,
-
-   $$
-   U^0_{c,j}+\rho_{c,j}\le\tau_{c,j}.
-   $$
+5. every numeric coordinate satisfies
+   $U^0_{c,j}+\rho_{c,j}\le\tau_{c,j}$.
 
 Then the deployment profile is admissible for $c$ on
 $\mathcal C_c^{\mathrm{dep}}$, an event with probability at least
@@ -456,11 +439,11 @@ $$
 Every coordinate of the existing BSC loss vector is nonnegative. Therefore,
 on the same event,
 
-$$
+```math
 I^1_{c,j}
 =
 [0,U^0_{c,j}+\rho_{c,j}]
-$$
+```
 
 is a proved deployment enclosure containing $\ell^1_{c,j}$, so the
 deployment profile is evaluated for $c$. The well-formedness, gate, and
@@ -473,11 +456,11 @@ the event and give the deterministic specialization. $\square$
 
 Define the remaining deployment slack
 
-$$
+```math
 s_{c,j}
 =
 \tau_{c,j}-(U^0_{c,j}+\rho_{c,j}).
-$$
+```
 
 - $s_{c,j}>0$ certifies tolerance to additional loss up to that amount in
   the same coordinate and under the same gates.
@@ -495,7 +478,7 @@ bound above tolerance, or a qualified measurement establishing it.
 
 The evidence identity is
 
-$$
+```math
 \iota
 =
 (\iota_{\mathrm{cand}},
@@ -503,7 +486,7 @@ $$
   \iota_{\mathrm{analysis}},
   \iota_{\mathrm{env}},
   \iota_{\mathrm{contract}}).
-$$
+```
 
 The factors identify:
 

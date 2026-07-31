@@ -68,7 +68,7 @@ evidence layers without changing the eight-field BSC morphism:
   extensive quantity and evidence identity;
 - proved that the count of conditionally iid scalar Bernoulli outputs is
   sufficient, carries at most $\log_2(N+1)$ input bits, and cannot provide
-  finite-$N$ zero-error decoding of 256 symbols;
+  finite $N$ zero-error decoding of 256 symbols;
 - made the raw repeated-bit rate explicit as $8/N$ for an 8-bit input and
   separated finite-channel learnability from cryptographic security;
 - proved that same-entity relation alignment requires one conjugating
@@ -103,8 +103,7 @@ evidence layers without changing the eight-field BSC morphism:
 - added BSC-EM-11 for aperiodic geometry-to-field descent: a tiling predicate
   transfers only across a declared selector and materialization fiber, while
   translation-faithful coefficients satisfy
-  $\operatorname{Stab}_{\mathrm{tr}}(\kappa)\subseteq
-  \operatorname{Stab}_{\mathrm{tr}}(P)$;
+  $`\mathrm{Stab}_{\mathrm{tr}}(\kappa)\subseteq\mathrm{Stab}_{\mathrm{tr}}(P)`$;
 - separated the Hat's eight-kite deltoidal-trihexagonal construction, the
   Spectre's strictly chiral tiling theorem, scalar point diffraction, and the
   2026 centroid-selected SiN experiment; periodic Hat diffraction is retained
@@ -180,8 +179,8 @@ The mathematical framework and its first zeta–DQPT instance were extended:
 - added a DQPT interpretation certificate separating a mathematical
   singularity from a physical infinite-system phase claim;
 - added exact, separate claim records for the finite engineered
-  alternating-sum identity, fixed-$s$ decay-exponent discriminator and its
-  pointwise and fixed-$\beta$ free-energy-rate and singularity-set
+  alternating-sum identity, fixed $s$ decay-exponent discriminator and its
+  pointwise and fixed $\beta$ free-energy-rate and singularity-set
   consequences,
   multiplicity-dependent finite-root localization, and the
   local-uniform/conditional-contour analytic transfer;

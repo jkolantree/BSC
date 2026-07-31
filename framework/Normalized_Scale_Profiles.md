@@ -20,15 +20,15 @@ finite systems rather than a new morphism variant. Its record declares
 $$
 \mathfrak A=
 \left(
-I,P,\{\lambda_i,\mathsf S_i,\mathsf{Cert}_i,
-\mathfrak M_{ij},A_i,Z_i,L_i,\mathsf O_i\}
+I,P,\lbrace\lambda_i,\mathsf S_i,\mathsf{Cert}_i,
+\mathfrak M_{ij},A_i,Z_i,L_i,\mathsf O_i\rbrace
 \right).
 $$
 
 Here $I$ is a directed scale index, $P$ is one common topological parameter
 space, $\lambda_i\to\infty$ is a dimensionless logarithmic size gauge,
-$(\mathsf S_i,\mathsf{Cert}_i)$ is a certified finite BSC system,
-$\mathfrak M_{ij}$ is an interscale comparison or a declared comparison
+$`(\mathsf S_i,\mathsf{Cert}_i)`$ is a certified finite BSC system,
+$`\mathfrak M_{ij}`$ is an interscale comparison or a declared comparison
 defect, $A_i$ is the ideal carrier, $Z_i$ is a nonzero normalizer,
 $L_i=A_i/Z_i$ is the ideal normalized observable, and
 $\mathsf O_i$ is the observation or estimator law. The ideal scalar and its
@@ -45,7 +45,7 @@ $\lambda_N\to\infty$. A **normalized scale profile** consists of functions
 
 $$
 A_N:X\to\mathbb C,\qquad
-Z_N:X\to\mathbb C\setminus\{0\},\qquad
+Z_N:X\to\mathbb C\setminus\lbrace0\rbrace,\qquad
 L_N=\frac{A_N}{Z_N},
 $$
 
@@ -83,7 +83,7 @@ $$
 then $\sup_K|L_N|\to0$. At every finite $N$,
 
 $$
-\{x:L_N(x)=0\}=\{x:A_N(x)=0\}.
+\lbrace x:L_N(x)=0\rbrace=\lbrace x:A_N(x)=0\rbrace.
 $$
 
 #### Proof
@@ -174,12 +174,12 @@ rate values themselves agree.
 
 The finite identity
 
-$$
+```math
 -\frac{\log|\widetilde L_N|}{\lambda_N}
 =
 -\frac{\log|L_N|}{\lambda_N}
 -\frac{\log|c_N|}{\lambda_N}
-$$
+```
 
 gives the limit formula. Adding or subtracting a continuous finite function
 does not change the discontinuity set.
@@ -242,11 +242,11 @@ $$
 Then
 
 $$
-\operatorname{Disc}(\mathcal R)=\partial\Sigma.
+\mathrm{Disc}(\mathcal R)=\partial\Sigma.
 $$
 
 If $\Sigma$ has empty interior, then
-$\operatorname{Disc}(\mathcal R)=\Sigma$. In particular, when $X$ is a
+$\mathrm{Disc}(\mathcal R)=\Sigma$. In particular, when $X$ is a
 domain in $\mathbb C$, this conclusion applies when $\Sigma$ is the zero set
 of a holomorphic function that is not identically zero on any connected
 component.
@@ -269,9 +269,9 @@ present in $\gamma$ need not encode $\Sigma$.
 
 ### Proposition BSC-QUO-03a (decision descent through a scalar)
 
-Let $R:X\to Y$ and $q_\Sigma=\mathbf1_\Sigma:X\to\{0,1\}$ be measurable. The
+Let $R:X\to Y$ and $q_\Sigma=\mathbf1_\Sigma:X\to\lbrace0,1\rbrace$ be measurable. The
 membership query descends through $R$ by a measurable decision
-$d:Y\to\{0,1\}$ exactly when there is a measurable $B\subseteq Y$ such that
+$d:Y\to\lbrace0,1\rbrace$ exactly when there is a measurable $B\subseteq Y$ such that
 
 $$
 \Sigma=R^{-1}(B).
@@ -282,11 +282,11 @@ exact decision can descend through $R$.
 
 #### Proof
 
-If $q_\Sigma=d\circ R$, take $B=d^{-1}(\{1\})$. Conversely, if
+If $q_\Sigma=d\circ R$, take $B=d^{-1}(\lbrace1\rbrace)$. Conversely, if
 $\Sigma=R^{-1}(B)$, the indicator $d=\mathbf1_B$ gives the factorization.
 
 A rate-discontinuity theorem alone does not guarantee this factorization.
-For example, with $X=[-2,2]$, $\Sigma=\{0\}$,
+For example, with $X=[-2,2]$, $\Sigma=\lbrace0\rbrace$,
 $\gamma(x)=x^2$, and $\rho=1$, the exceptional rate at $0$ equals the
 background rate at $x=\pm1$. A BSC rate profile must therefore record both
 its singular set and the decision query it is claimed to support.
@@ -297,9 +297,9 @@ Let $\iota:Q\to X$ be continuous. For every
 $\mathcal R:X\to\mathbb R$,
 
 $$
-\operatorname{Disc}(\mathcal R\circ\iota)
+\mathrm{Disc}(\mathcal R\circ\iota)
 \subseteq
-\iota^{-1}\!\left(\operatorname{Disc}(\mathcal R)\right).
+\iota^{-1}\mkern-3mu \left(\mathrm{Disc}(\mathcal R)\right).
 $$
 
 Equality requires an additional visibility hypothesis: every branch
@@ -396,7 +396,7 @@ $O:X\rightsquigarrow Y$ be an observation kernel on a standard Borel output
 space. A measurable decoder $d:Y\to Q$ is exact when
 
 $$
-O\bigl(x,d^{-1}(\{q(x)\})\bigr)=1
+O\bigl(x,d^{-1}(\lbrace q(x)\rbrace)\bigr)=1
 \quad\text{for every }x\in X.
 $$
 
@@ -420,7 +420,7 @@ $$
 
 #### Proof
 
-The fibers $B_a=d^{-1}(\{a\})$ of an exact decoder form the required
+The fibers $B_a=d^{-1}(\lbrace a\rbrace)$ of an exact decoder form the required
 partition. Conversely, the declared partition defines the decoder. Different
 labels concentrate their laws on disjoint partition cells and are therefore
 mutually singular. For the binary statement, a decision region $B$ has equal
@@ -469,30 +469,30 @@ For the engineered alternating-sum construction, take
 $$
 \lambda_N=\log N,\qquad
 A_N(s)=-S_N(s),\qquad
-Z_N(s)=Z_N(\operatorname{Re}s),\qquad
+Z_N(s)=Z_N(\mathrm{Re}s),\qquad
 L_N(s)=\mathcal L_N(s).
 $$
 
 On the open critical strip, the application proves
 
 $$
-\gamma(s)=1-\operatorname{Re}s,\qquad
+\gamma(s)=1-\mathrm{Re}s,\qquad
 \kappa(s)=
 \begin{cases}
 0,&\eta(s)\ne0,\\
-\operatorname{Re}s,&\eta(s)=0.
+\mathrm{Re}s,&\eta(s)=0.
 \end{cases}
 $$
 
-Hence the general rate is $1-\operatorname{Re}s$ off the eta-zero set and
+Hence the general rate is $1-\mathrm{Re}s$ off the eta-zero set and
 $1$ on it. Under the source convention $N=2^d$, multiplication by $\log2$
 gives the physical free-energy rate. The ideal limiting rate does support the
-exact query through the Borel decision cell $\{1\}$, equivalently
-$\{\log2\}$ after physical rescaling. A finite-resolution experiment does not
+exact query through the Borel decision cell $\lbrace1\rbrace$, equivalently
+$\lbrace\log2\rbrace$ after physical rescaling. A finite-resolution experiment does not
 thereby obtain the exact limiting rate.
 
 The application's alternating-tail bound instantiates BSC-SCL-07a, and its
 shrinking-circle estimate instantiates BSC-SCL-07b with
-$r_N=C N^{-\operatorname{Re}(s_0)/m}$. Those analytic statements concern the
+$r_N=C N^{-\mathrm{Re}(s_0)/m}$. Those analytic statements concern the
 holomorphic carrier $S_N$. They do not convert finite measured minima into
 exact zeros or into an unrestricted Riemann Hypothesis decision.

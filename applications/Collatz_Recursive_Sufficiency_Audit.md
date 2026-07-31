@@ -60,7 +60,7 @@ Ansari defines
 
 ```math
 F_n=
-\bigcup_{a_0,\ldots,a_{n-1}\in\{0,1\}}
+\bigcup_{a_0,\ldots,a_{n-1}\in\lbrace0,1\rbrace}
 \left(
 4\cdot3^n\mathbb N_0+
 4\sum_{i=0}^{n-1}a_i3^i+3
@@ -76,8 +76,8 @@ F_1\setminus F_2
 ```
 
 not the single progression needed by the printed induction. Indeed,
-$F_1\bmod36=\{3,7,15,19,27,31\}$ and
-$F_2\bmod36=\{3,7,15,19\}$.
+$F_1\bmod36=\lbrace3,7,15,19,27,31\rbrace$ and
+$F_2\bmod36=\lbrace3,7,15,19\rbrace$.
 
 For $x=36k+31$, the undirected functional graph contains
 
@@ -109,7 +109,7 @@ For $m\ge1$, define
 
 ```math
 U_m=
-\{n\ge1:7s_j(n)>4j\text{ for every }1\le j\le m\}.
+\lbrace n\ge1:7s_j(n)>4j\text{ for every }1\le j\le m\rbrace.
 ```
 
 ### Proposition BSC-CRS-02
@@ -130,7 +130,7 @@ $1/2$. Hence
 \le
 \frac{(10/3)^{s_j(n)}}{2^j}
 \le
-\left(\frac{10^4}{2^7\,3^4}\right)^{j/7}<1.
+\left(\frac{10^4}{2^7\mkern3mu 3^4}\right)^{j/7}<1.
 ```
 
 Thus every element of the complement is recursive.
@@ -225,7 +225,7 @@ $B_0$ itself is a power of two. Define
 
 ```math
 V_m=
-\{n\ge1:485s_j(n)>306j\text{ for every }1\le j\le m\}.
+\lbrace n\ge1:485s_j(n)>306j\text{ for every }1\le j\le m\rbrace.
 ```
 
 The exact integer inequality
@@ -263,7 +263,7 @@ The exact dynamic program
 ```math
 A_{0,0}=1,\qquad
 A_{j,s}=
-\mathbf1_{\{485s>306j\}}
+\mathbf1_{\lbrace485s>306j\rbrace}
 \bigl(A_{j-1,s}+A_{j-1,s-1}\bigr)
 ```
 
@@ -300,7 +300,7 @@ d(W_{173})
 ```
 
 an elimination percentage of
-$99.999473071567307508\ldots\%$. This is BSC-CRS-05. The density is an exact
+$99.999473071567307508\ldots$%. This is BSC-CRS-05. The density is an exact
 periodic residue count, not a probabilistic convergence claim.
 
 ## 6. Conditional ten-billion finite extension
