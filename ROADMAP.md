@@ -61,7 +61,7 @@ release or its version DOI.
 Release v1.2.0 is dated 30 July 2026 and does not alter the immutable v1.1.0,
 v1.0.1, or v1.0.0 release records.
 
-## Implemented in 1.3.0-dev
+## Implemented in 1.3.0
 
 - Added a fixed-interface operational report envelope spanning classical laws,
   finite-dimensional quantum states, POVM measurements, report kernels, and
@@ -75,6 +75,13 @@ v1.0.1, or v1.0.0 release records.
   system/bath-split, energy-gauge, measurement, reset, coupling, and
   output-field scope boundaries, plus finite-dimensional/truncation/domain
   requirements for bosonic use.
+- Added finite energy-port gluing with component and seam residual
+  localization, interface-storage repair, absolute integral bounds, static
+  geometric and stationary-relativistic scope gates, and an explicit
+  non-converse from global closure to local correctness.
+- Separated count yields, energy efficiencies, and postselected efficiencies;
+  stage ratios telescope only when the intermediate extensive quantity,
+  boundary, interval, and evidence identity are unchanged.
 - Added scalar conditional-iid Bernoulli sufficient-statistic,
   information-capacity, finite-sample zero-error, raw-bit-rate, and
   query-learnability results.
@@ -105,7 +112,8 @@ v1.0.1, or v1.0.0 release records.
 - Added a primary-source crosswalk for four July 2026 experiments without
   claiming common microscopic dynamics or replaying their data and hardware.
 
-This is development work, not a release or deposit.
+Release v1.3.0 is dated 30 July 2026 and does not alter the immutable v1.2.0,
+v1.1.0, v1.0.1, or v1.0.0 release records.
 
 ## Highest-leverage next work
 

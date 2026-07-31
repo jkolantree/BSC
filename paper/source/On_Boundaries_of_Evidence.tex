@@ -33,7 +33,7 @@
   urlcolor=inkblue,
   pdftitle={On Boundaries of Evidence --- Boundary-State Calculus for Typed Observation, Admissible Transfer, and Falsifiable Persistence},
   pdfauthor={J. Tree},
-  pdfsubject={Development version 1.3.0-dev; latest released version 1.2.0; a typed audit calculus for scientific transfers},
+  pdfsubject={Version 1.3.0 release; a typed audit calculus for scientific transfers},
   pdfkeywords={Boundary-State Calculus, scientific transfer, evidence, admissibility, information loss, claim status}
 }
 \urlstyle{same}
@@ -93,14 +93,14 @@
 \newcommand{\Lip}{\operatorname{Lip}}
 \newcommand{\push}{_{\#}}
 \newcommand{\blank}{\text{--}}
-\newcommand{\BSCVersion}{1.3.0-dev}
+\newcommand{\BSCVersion}{1.3.0}
 \newcommand{\BSCDOI}{Concept DOI 10.5281/zenodo.21541160}
 
 \title{\vspace{-1.3cm}\textbf{On Boundaries of Evidence}\\[0.3em]
 \Large--- Boundary-State Calculus for Typed Observation,\\
 Admissible Transfer, and Falsifiable Persistence}
 \author{J. Tree\\[-0.15em]\small Independent researcher}
-\date{30 July 2026\\[0.25em]\small Development version \BSCVersion\quad\textbullet\quad
+\date{30 July 2026\\[0.25em]\small Version \BSCVersion\quad\textbullet\quad
 \BSCDOI}
 
 \begin{document}
@@ -134,10 +134,12 @@ identity, compatibility reserves, and finite-horizon surrogate propagation.
 For fixed compatible classical/quantum preparation-to-report pipelines, an
 operational-channel core propagates implemented reachable-set defects through
 Markov kernels, CPTP channels, measurements, and reporting.  It proves
-downstream non-resurrection, a driven open-system energy identity, conditional
-Bernoulli information and zero-error bounds, and a single-identity relation
-alignment criterion.  These are report-level consequences, not a unified
-microscopic theory, and they do not close the open full quantum BSC morphism.
+downstream non-resurrection, a driven open-system energy identity, exact
+component-and-seam localization for finite energy-port residuals,
+denominator-typed efficiencies, conditional Bernoulli information and
+zero-error bounds, and a single-identity relation alignment criterion.  These
+are report-level consequences, not a unified microscopic theory, and they do
+not close the open full quantum BSC morphism.
 It
 separates topological charge from physical charge by requiring an explicit
 bridge derived from a gauge structure, action, current, anomaly, boundary
@@ -2810,6 +2812,150 @@ finite-dimensional truncation or trace-class and domain hypotheses that
 justify differentiation and cyclicity.
 This is ledger claim BSC-ENE-01.
 
+\begin{definition}[Typed finite energy-port diagram]
+\label{def:energy-port}
+Let \(V\) be a finite component set.  Each \(v\in V\) has absolutely
+continuous stored energy \(U_v\), an integrable non-port supply \(b_v\)
+positive inward, and a finite set \(H_v\) of port half-edges with integrable
+inward powers \(p_h\).  Put
+\[
+r_v=\dot U_v-b_v-\sum_{h\in H_v}p_h.
+\]
+A gluing is a partial matching \(\mathcal M_E\) of disjoint half-edges.  For
+\(e=\{h,\bar h\}\in\mathcal M_E\), put
+\[
+g_e=p_h+p_{\bar h}.
+\]
+The unmatched half-edges form \(H_{\rm ext}\), and the assembled residual is
+\[
+R_G
+=
+\frac d{dt}\sum_{v\in V}U_v
+-\sum_{v\in V}b_v
+-\sum_{h\in H_{\rm ext}}p_h .
+\]
+Storage must be additive: omitted coupling energy, interface storage,
+material sheets or loss channels are components or external ports.  A
+matched pair must share carrier, unit, clock and rate convention, reference
+cut, time window, bandwidth, calibration and evidence identity, with
+opposite orientation.
+\end{definition}
+
+\begin{theorem}[Energy-port gluing and residual localization]
+\label{thm:energy-port}
+Every diagram in \cref{def:energy-port} obeys
+\begin{equation}\label{eq:energy-port}
+\boxed{
+R_G=\sum_{v\in V}r_v+\sum_{e\in\mathcal M_E}g_e
+}
+\end{equation}
+almost everywhere.  If
+\(\lvert r_v\rvert\le\varepsilon_v\) and
+\(\lvert g_e\rvert\le\delta_e\), then
+\[
+\lvert R_G\rvert
+\le\sum_v\varepsilon_v+\sum_e\delta_e,
+\]
+and
+\[
+\left|
+\Delta U_G-\int_{t_0}^{t_1}
+\left(\sum_vb_v+\sum_{h\in H_{\rm ext}}p_h\right)dt
+\right|
+\le
+\sum_v\int_{t_0}^{t_1}|r_v|\,dt
++
+\sum_e\int_{t_0}^{t_1}|g_e|\,dt .
+\]
+\end{theorem}
+\begin{proof}
+Sum the component residuals.  Their half-edge sum partitions into unmatched
+ports and matched pairs, so
+\[
+\sum_vr_v=R_G-\sum_{e=\{h,\bar h\}}(p_h+p_{\bar h})
+=R_G-\sum_eg_e .
+\]
+Rearrangement and the triangle inequality give the claims.
+\end{proof}
+
+This is BSC-ENE-02.  Its non-converse prevents a common laundering step:
+\(R_G=0\) does not imply that any particular \(r_v\) or \(g_e\) vanishes.
+Global closure therefore does not certify local seams, component dynamics,
+state continuity or PDE gluing.  A supply \(b_v\) records exchange with an
+excluded drive, pump, bath, reservoir or moving support; it is not creation
+of energy.  If that system enters scope, the supply becomes a matched port.
+This is established boundary energy-flow algebra
+\citep{vanderschaft2002}; the BSC addition is its typed evidence identity,
+residual localization and fail-closed disposition.
+
+At strong quantum coupling the interaction energy cannot be silently
+discarded.  If
+\[
+H_{\rm tot}(t)=H_S(t)+\sum_\nu H_\nu+V(t)
+\]
+with time-independent \(H_\nu\), then for
+\(J_E^{(\nu)}=-d\langle H_\nu\rangle/dt\),
+\[
+\frac d{dt}\langle H_S+V\rangle
+=
+\left\langle\partial_t(H_S+V)\right\rangle
++
+\sum_\nu J_E^{(\nu)} .
+\]
+Suppressing \(V\) requires a certified approximation.  Charge, particle or
+excitation-number current is not thereby an energy current; that
+identification needs a Hamiltonian or chemical-potential bridge.
+
+\begin{proposition}[Denominator-typed efficiency]
+\label{prop:typed-efficiency}
+For one boundary, interval, clock and evidence identity, let
+\[
+\eta_E
+=
+\frac{E_{\rm useful,out}}{E_{\rm charged,in}},
+\qquad E_{\rm charged,in}>0.
+\]
+All external drive energy and any decrease of initially stored energy used to
+produce the output must be charged.  A count yield
+\[
+\Phi_N
+=
+\frac{N_{\rm declared\ event}}{N_{\rm declared\ input}}
+\]
+is not an energy efficiency.  For a success event \(S\), the end-to-end
+quantity is
+\[
+\eta_{\rm all}
+=
+\frac{\E[\mathbf 1_SE_{\rm useful,out}]}
+{\E[E_{\rm charged,in}]},
+\]
+not a ratio computed only on the normalized successful branch.
+
+If \(E_0,\ldots,E_m>0\) are the same typed extensive quantity at consecutive
+interfaces, under one boundary chain, interval, cohort, weighting and
+evidence identity, then
+\[
+\eta_k=\frac{E_k}{E_{k-1}}
+\quad\Longrightarrow\quad
+\prod_{k=1}^m\eta_k=\frac{E_m}{E_0}.
+\]
+\end{proposition}
+\begin{proof}
+The last statement is exact cancellation of every intermediate \(E_k\).
+Changing its type or evidence identity removes that cancellation.  The other
+statements are definitions with their required denominators.
+\end{proof}
+
+This is BSC-ENE-03.  Incident and absorbed photons, transferred excitations,
+collected charges and chemical products define different yields.  A
+probability sink is not an energy port without an energy per event or sink
+Hamiltonian.  Current and chemical product energy are not independent useful
+outputs when the current is the charge ledger that produces the product.
+For a declared passive boundary, a point estimate \(\eta_E>1\) first tests
+port completeness, released storage, valuation and uncertainty; it proves
+violation only when an exact value or lower bound excludes \(1\).
+
 \begin{theorem}[Scalar Bernoulli information and zero-error boundary]
 \label{thm:bernoulli-encoding}
 Let \(X\) be an input symbol and, conditional on \(X=x\), suppose
@@ -2999,6 +3145,38 @@ and hence, for a fixed region \(V\),
 Temporal modulation, dispersion or active media require the omitted
 pump, material-state or storage channels to be restored before this balance
 is used as an audit equation.
+
+\paragraph{Geometric and spacetime scope of the energy ports.}
+On a fixed oriented spatial manifold, the coordinate-free balance
+\[
+\partial_t\mathcal U+d\mathcal F=\mathcal Q
+\]
+induces
+\[
+U_v=\int_{\Omega_v}\mathcal U,\qquad
+b_v=\int_{\Omega_v}\mathcal Q,\qquad
+p_{v,\Gamma}=-\int_\Gamma\mathcal F.
+\]
+Opposite induced orientations cancel a shared interface flux under
+\cref{thm:energy-port}.  Curvature changes volume and boundary measures, not
+the gluing algebra and not the source term.  A time-dependent metric adds
+\(\partial_t(dV_g)=\tfrac12\operatorname{tr}_g(\dot g)dV_g\); a moving
+region requires Reynolds transport and the relative flux
+\((\mathbf S-u\mathbf v_{\partial V})\mathbin{\cdot}\mathbf n\).
+
+Relativistically, for symmetric \(T^{ab}\),
+\(f^b=\nabla_aT^{ab}\), and \(J_\xi^a=-T^a{}_b\xi^b\),
+\[
+\nabla_aJ_\xi^a
+=-f_b\xi^b-T^{ab}\nabla_{(a}\xi_{b)}.
+\]
+Only a conserved total stress-energy tensor together with a Killing field
+removes both bulk terms.  Null boundaries use a directed surface element,
+not a unit normal.  In nonstationary general relativity, any ADM, Bondi or
+quasi-local energy claim must name its boundary construction and
+normalization; there is no universal local gravitational stress-energy
+tensor.  These are scope gates for BSC-ENE-02, not an inference from geometry
+to an energy source.
 
 \paragraph{\textbf{BSC-EM-05}---Passive scattering and hidden ports.}
 For a linear time-invariant network with power-normalized propagating-port

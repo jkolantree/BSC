@@ -40,6 +40,8 @@ class OperationalChannelCoreTests(unittest.TestCase):
             "BSC-CHN-03",
             "BSC-QPH-02",
             "BSC-ENE-01",
+            "BSC-ENE-02",
+            "BSC-ENE-03",
             "BSC-ENC-01",
             "BSC-ENC-02",
             "BSC-ENC-03",
@@ -55,6 +57,107 @@ class OperationalChannelCoreTests(unittest.TestCase):
             for identifier in identifiers:
                 with self.subTest(path=relative, identifier=identifier):
                     self.assertIn(identifier, text)
+
+    def test_energy_port_gluing_localizes_exact_rational_residuals(
+        self,
+    ) -> None:
+        def residual(
+            dot_energy: Fraction,
+            supply: Fraction,
+            ports: tuple[Fraction, ...],
+        ) -> Fraction:
+            return dot_energy - supply - sum(ports)
+
+        r_a = residual(Fraction(4), Fraction(10), (Fraction(-6),))
+        r_b = residual(
+            Fraction(4),
+            Fraction(0),
+            (Fraction(6), Fraction(-2)),
+        )
+        seam = Fraction(-6) + Fraction(6)
+        global_residual = (
+            Fraction(4 + 4) - Fraction(10) - Fraction(-2)
+        )
+        self.assertEqual((r_a, r_b, seam, global_residual), (0, 0, 0, 0))
+        self.assertEqual(global_residual, r_a + r_b + seam)
+
+        r_b_missing = residual(
+            Fraction(3),
+            Fraction(0),
+            (Fraction(5), Fraction(-2)),
+        )
+        missing_seam = Fraction(-6) + Fraction(5)
+        missing_global = (
+            Fraction(4 + 3) - Fraction(10) - Fraction(-2)
+        )
+        self.assertEqual((r_a, r_b_missing), (0, 0))
+        self.assertEqual(missing_seam, -1)
+        self.assertEqual(missing_global, -1)
+        self.assertEqual(missing_global, r_a + r_b_missing + missing_seam)
+
+        r_interface = residual(
+            Fraction(1),
+            Fraction(0),
+            (Fraction(6), Fraction(-5)),
+        )
+        seam_a_i = Fraction(-6) + Fraction(6)
+        seam_i_b = Fraction(-5) + Fraction(5)
+        repaired_global = (
+            Fraction(4 + 1 + 3) - Fraction(10) - Fraction(-2)
+        )
+        self.assertEqual((r_interface, seam_a_i, seam_i_b), (0, 0, 0))
+        self.assertEqual(repaired_global, 0)
+
+        cancelling_seams = (Fraction(1), Fraction(-1))
+        self.assertEqual(sum(cancelling_seams), 0)
+        self.assertTrue(all(value != 0 for value in cancelling_seams))
+
+    def test_energy_yields_keep_denominators_and_failures_typed(self) -> None:
+        incident = Fraction(100)
+        absorbed = Fraction(50)
+        events = Fraction(40)
+        self.assertEqual(events / incident, Fraction(2, 5))
+        self.assertEqual(events / absorbed, Fraction(4, 5))
+        self.assertNotEqual(events / incident, events / absorbed)
+
+        success_probability = Fraction(1, 100)
+        conditional_output = Fraction(1)
+        input_per_attempt = Fraction(1)
+        unconditional_efficiency = (
+            success_probability * conditional_output / input_per_attempt
+        )
+        self.assertEqual(unconditional_efficiency, Fraction(1, 100))
+        self.assertNotEqual(unconditional_efficiency, conditional_output)
+
+        stages = (Fraction(4, 5), Fraction(3, 4), Fraction(1, 2))
+        self.assertEqual(math.prod(stages), Fraction(3, 10))
+
+    def test_energy_port_scope_gates_are_public_and_fail_closed(self) -> None:
+        core = self.read("framework/Operational_Channel_Core.md")
+        electromagnetic = self.read(
+            "framework/Electromagnetic_Evidence_Bridge.md"
+        )
+        manuscript = self.read("paper/source/On_Boundaries_of_Evidence.tex")
+        for fragment in (
+            "global conservation residual therefore does not certify local seams",
+            "Coordinate-time power, proper-time power",
+            "interaction energy must be retained",
+            "probability sink",
+            "not an energy port",
+        ):
+            with self.subTest(surface="core", fragment=fragment):
+                self.assertIn(fragment, core)
+        for fragment in (
+            "moving boundary",
+            "Killing field",
+            "directed surface element",
+            "no universal local gravitational",
+        ):
+            with self.subTest(surface="electromagnetic", fragment=fragment):
+                self.assertIn(fragment, electromagnetic)
+        for fragment in ("BSC-ENE-02", "BSC-ENE-03"):
+            with self.subTest(surface="manuscript", fragment=fragment):
+                self.assertIn(fragment, manuscript)
 
     def test_pipeline_bound_uses_implemented_reachable_inputs(self) -> None:
         core = self.read("framework/Operational_Channel_Core.md")
@@ -246,6 +349,8 @@ class OperationalChannelCoreTests(unittest.TestCase):
                 "BSC-CHN-03",
                 "BSC-QPH-02",
                 "BSC-ENE-01",
+                "BSC-ENE-02",
+                "BSC-ENE-03",
                 "BSC-ENC-01",
                 "BSC-ENC-02",
                 "BSC-ENC-03",

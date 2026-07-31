@@ -1,17 +1,17 @@
-# Reproducing development version 1.3.0-dev
+# Reproducing version 1.3.0
 
 ## Scope
 
-The current development manuscript and synopsis can be rebuilt from their
-shipped LaTeX sources. Fixtures F8 and F10 can be reproduced byte-for-byte in
-the pinned Python environment. Fixture F9 is a mathematical and documentary
-case study and has no execution receipt. This working tree is not a release or
-Zenodo deposit. The latest immutable release record is
-`https://github.com/jkolantree/BSC/releases/tag/v1.2.0`. The Zenodo concept DOI
-for the deposited version family is `10.5281/zenodo.21541160`; the v1.2.0
-version DOI assigned after the tagged bytes were built is
-`10.5281/zenodo.21711341`. Immutable v1.1.0 remains available at DOI
-`10.5281/zenodo.21710743`, and immutable v1.0.1 remains available at DOI
+The release manuscript and synopsis can be rebuilt from their shipped LaTeX
+sources. Fixtures F8 and F10 can be reproduced byte-for-byte in the pinned
+Python environment. Fixture F9 is a mathematical and documentary case study
+and has no execution receipt. The immutable release record is
+`https://github.com/jkolantree/BSC/releases/tag/v1.3.0`. The Zenodo concept DOI
+for the deposited version family is `10.5281/zenodo.21541160`; the v1.3.0
+version DOI assigned after the tagged bytes were built is recorded on the
+GitHub release page. Immutable v1.2.0 remains available at DOI
+`10.5281/zenodo.21711341`, immutable v1.1.0 at DOI
+`10.5281/zenodo.21710743`, and immutable v1.0.1 at DOI
 `10.5281/zenodo.21541561`.
 Fresh PDF builds are not generally claimed to be byte-identical because PDF timestamps
 and trailer identifiers may vary. Reproduction of the paper means matching
@@ -43,7 +43,7 @@ This independent render check does not replace the canonical `make ci` release
 gate above. GitHub Actions runs that gate for pull requests, `main`, and
 version tags.
 
-These hashes describe the immutable v1.1.0 release, not the current v1.2.0
+These hashes describe the immutable v1.1.0 release, not the current v1.3.0
 release PDFs.
 
 ## Release v1.2.0 render
@@ -68,9 +68,9 @@ fonts embed ToUnicode maps except CMSY10 and CMEX10, so mathematical-symbol
 extraction remains tool-dependent even though ordinary text extraction is
 available. No tagged-PDF or universal screen-reader claim is made.
 
-## Development 1.3.0-dev render
+## Release v1.3.0 render
 
-The tracked development PDFs include the operational-channel core, the
+The tracked release PDFs include the operational-channel core, the
 electromagnetic evidence bridge, the four July 2026 source probes, the exact
 binary/constructibility screen, and the Einstein-monotile
 selector/materialization result. They were compiled with the same official
@@ -78,17 +78,17 @@ Tectonic 0.16.9 Windows MSVC archive and cached dependency bundle recorded
 above, with `SOURCE_DATE_EPOCH=1785369600`.
 
 - two independent clean output directories produced byte-identical PDFs;
-- paper: 69 pages, SHA-256
-  `fc2c2869ad07e2278131fa3a7a38160aa03342408b1cf7878fc869aa2553117a`;
+- paper: 71 pages, SHA-256
+  `a45469c2f3695de54b5b3498c1d46445caa34b9623c1cad07c7a0cc9517576ed`;
 - synopsis: two pages, SHA-256
-  `cf3b8af28c8d020d91f491f9e52deadaf24948b604d41cbbdcc91d0670bb55be`;
+  `1dcf9a2130a3d8c59226808bff3215df44f290d3423189c587fa8f8ed6741540`;
 - all four final logs contain no unresolved citations or references, missing
   glyphs, overfull/underfull boxes, package/class/font warnings, or fatal
   errors;
-- the full 69-page development render was inspected as contact sheets; after
-  the final source-precision corrections, changed paper pages 40--41 and both
-  synopsis pages were re-rendered and inspected at larger scale with no
-  clipping or overlap.
+- the full 71-page release render was inspected as contact sheets; the title,
+  energy-port theorem, electromagnetic scope gates, final references, and
+  both synopsis pages were inspected at larger scale with no clipping or
+  overlap.
 
 The host emitted `Fontconfig error: Cannot load default config file: No such
 file: (null)` after each otherwise successful Tectonic run. This external
@@ -97,10 +97,10 @@ controller claim; the two output pairs were nevertheless byte-identical, the
 TeX logs passed the declared warning scan, and the affected pages rendered
 without missing glyphs.
 
-These bytes are a development candidate, not a GitHub release or Zenodo
-deposit. The v1.2.0 hashes above remain the immutable release record.
+These tracked bytes are the v1.3.0 release record. Earlier release hashes
+remain immutable in their own tags and deposits.
 
-## Refresh and verify the development tree
+## Refresh and verify the release tree
 
 After an intentional source change, regenerate the complete-set manifest:
 
@@ -204,24 +204,23 @@ For the full gate, including both document builds, run:
 make ci
 ```
 
-The build gate requires a 69-page paper and two-page synopsis, one final PDF
+The build gate requires a 71-page paper and two-page synopsis, one final PDF
 record per log, and no unresolved reference, citation, font, glyph, box, or
 fatal TeX warning.
 
-## Build deterministic development archives
+## Build deterministic release archives
 
 With a verified manifest, build the complete-release and manuscript-source
 archives:
 
 ```bash
-make dist VERSION=1.3.0-dev SOURCE_DATE_EPOCH=1785369600
+make dist VERSION=1.3.0 SOURCE_DATE_EPOCH=1785369600
 ```
 
-These archives are candidates for review, not published release assets. Run
-the archive builder again in a separate empty output directory and require
-the two runs to be byte-identical. The builder re-verifies the manifest,
-rejects unsafe member paths, normalizes ZIP metadata to the release epoch, and
-refuses to overwrite an existing archive.
+Run the archive builder again in a separate empty output directory and require
+the two runs to be byte-identical before uploading them as release assets. The
+builder re-verifies the manifest, rejects unsafe member paths, normalizes ZIP
+metadata to the release epoch, and refuses to overwrite an existing archive.
 
 ## Source corpus boundary
 

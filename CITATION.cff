@@ -1,12 +1,12 @@
 cff-version: 1.2.0
-message: "If you use this work, cite Version 1.2.0 using the release record below."
+message: "If you use this work, cite Version 1.3.0 using the release record below."
 title: "On Boundaries of Evidence — Boundary-State Calculus for Typed Observation, Admissible Transfer, and Falsifiable Persistence"
 type: dataset
 authors:
   - family-names: "Tree"
     given-names: "J."
     affiliation: "Independent researcher"
-version: "1.2.0"
+version: "1.3.0"
 date-released: 2026-07-30
 license:
   - CC-BY-4.0
@@ -16,8 +16,8 @@ identifiers:
     value: "10.5281/zenodo.21541160"
     description: "Zenodo concept DOI for all versions"
 repository-code: "https://github.com/jkolantree/BSC"
-repository-artifact: "https://github.com/jkolantree/BSC/releases/tag/v1.2.0"
-url: "https://github.com/jkolantree/BSC/releases/tag/v1.2.0"
+repository-artifact: "https://github.com/jkolantree/BSC/releases/tag/v1.3.0"
+url: "https://github.com/jkolantree/BSC/releases/tag/v1.3.0"
 keywords:
   - "Boundary-State Calculus"
   - "scientific transfer"
@@ -33,18 +33,23 @@ keywords:
   - "simulation evidence"
   - "surrogate models"
   - "verification and validation"
+  - "operational channels"
+  - "energy ports"
+  - "electromagnetic evidence"
+  - "gauge theory"
 abstract: >-
   A foundational preprint proposing a typed mathematical audit calculus for
-  claims that move between scientific descriptions. Version 1.2.0 adds a
-  claim-relative simulation-evidence profile, separates statistical,
-  computational, and surrogate meanings of simulation, proves
-  compatibility-bounded deployment and coupled-surrogate propagation, and
-  supplies an exact host-relative counterexample. The package contains the
-  paper, editable source, a two-page synopsis, ledgers, ten exact mathematical
-  fixtures, and two deterministic execution receipts. Paper and human-readable
-  documentation are CC BY 4.0; code, workflows, JSON Schema, and
-  machine-readable fixture tooling are MIT licensed according to the repository
-  license map.
+  claims that move between scientific descriptions. Version 1.3.0 adds a
+  fixed-interface operational report envelope, residual-localized energy-port
+  gluing, denominator-typed efficiency, and an electromagnetic evidence
+  bridge separating gauge, constitutive, boundary-port, instrument, inverse,
+  coupling, and metrological authority. It retains the version 1.2.0
+  simulation-evidence framework and the exact host-relative surrogate
+  counterexample. The package contains the paper, editable source, a two-page
+  synopsis, ledgers, ten exact mathematical fixtures, and two deterministic
+  execution receipts. Paper and human-readable documentation are CC BY 4.0;
+  code, workflows, JSON Schema, and machine-readable fixture tooling are MIT
+  licensed according to the repository license map.
 preferred-citation:
   type: article
   title: "On Boundaries of Evidence — Boundary-State Calculus for Typed Observation, Admissible Transfer, and Falsifiable Persistence"
@@ -53,5 +58,5 @@ preferred-citation:
       given-names: "J."
       affiliation: "Independent researcher"
   year: 2026
-  url: "https://github.com/jkolantree/BSC/releases/tag/v1.2.0"
-  notes: "Version 1.2.0 preprint; not peer reviewed; Zenodo concept DOI 10.5281/zenodo.21541160"
+  url: "https://github.com/jkolantree/BSC/releases/tag/v1.3.0"
+  notes: "Version 1.3.0 preprint; not peer reviewed; Zenodo concept DOI 10.5281/zenodo.21541160"

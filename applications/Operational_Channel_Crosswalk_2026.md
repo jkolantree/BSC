@@ -2,7 +2,7 @@
 
 ## Status
 
-This is a source-bound application note for the `1.3.0-dev` mathematical
+This is a source-bound application note for the `1.3.0` mathematical
 framework. It applies
 [the operational channel core](../framework/Operational_Channel_Core.md) to
 four recent publications. It is not an independent laboratory replay, raw-data
@@ -166,7 +166,10 @@ $$
 \operatorname{Tr}[H\mathcal D_t(\rho)].
 $$
 
-The first term records power supplied by the modulation. Emergent gain and
+Within the declared reduced model, the first term is the modulation-power
+term. Equality to laboratory pump power requires a calibrated bridge among
+the fitted Hamiltonian, incident pump field, switching work, material
+absorption, and unobserved output ports. Emergent gain and
 reduced loss are therefore not conservation paradoxes. A complete energy
 claim would additionally bind pump energy, reflected and transmitted fields,
 material absorption, bath exchange, and any switching work on a common

@@ -2,8 +2,7 @@
 
 ## Status and scope
 
-This is a development module for version `1.3.0-dev`. The latest immutable
-release remains v1.2.0.
+This module is part of the released `1.3.0` framework.
 
 The module supplies a common mathematical envelope for heterogeneous
 experiments:
@@ -29,9 +28,11 @@ the same typed pipeline while retaining entirely different physical dynamics.
 
 The channel theory, data-processing inequalities, trace-distance
 contractivity, sufficient statistics, and open-system energy balance used
-below are established mathematics. The BSC contribution is narrower: it binds
-those results to reachable-set defects, report-relative decisions, evidence
-identity, claim-local status, and explicit demotion rules.
+below, together with boundary energy-flow algebra, are established
+mathematics. The BSC contribution is narrower: it binds those results to
+reachable-set defects, report-relative decisions, component and seam
+residuals, denominator identity, evidence identity, claim-local status, and
+explicit demotion rules.
 
 This module does **not** prove closure of the full eight-field quantum BSC
 morphism. Claim BSC-QOP-03 remains open.
@@ -495,6 +496,220 @@ requires either a declared finite-dimensional truncation with controlled
 error or trace-class and domain hypotheses sufficient to justify the
 differentiation and cyclic trace steps.
 
+### Definition 4.2 (Typed finite energy-port diagram)
+
+Let $V$ be a finite set of components. For each $v\in V$, let
+$U_v:[t_0,t_1]\to\mathbb R$ be absolutely continuous stored energy,
+$b_v\in L^1([t_0,t_1])$ a declared non-port supply rate that is positive
+into $v$, and $H_v$ a finite set of port half-edges with inward powers
+$p_h\in L^1([t_0,t_1])$. Define the component residual
+
+$$
+r_v
+=
+\dot U_v-b_v-\sum_{h\in H_v}p_h.
+$$
+
+A gluing is a partial matching $\mathcal M$ of disjoint half-edges. For a
+matched seam $e=\{h,\bar h\}\in\mathcal M$, define
+
+$$
+g_e=p_h+p_{\bar h}.
+$$
+
+Unmatched half-edges form the external set $H_{\mathrm{ext}}$. The assembled
+global residual is
+
+$$
+R_G
+=
+\frac{d}{dt}\sum_{v\in V}U_v
+-\sum_{v\in V}b_v
+-\sum_{h\in H_{\mathrm{ext}}}p_h.
+$$
+
+The diagram is physically admissible only under an additive storage
+decomposition. Coupling energy, interface storage, a material sheet, or an
+unresolved loss omitted by $\sum_vU_v$ must be promoted to its own component
+or retained as an external port. Matched half-edges must share the same
+carrier, unit, clock and rate convention, reference cut or plane, time
+window, bandwidth, calibration, and evidence identity, with opposite
+orientation. Coordinate-time power, proper-time power, band-averaged power,
+and instantaneous broadband power are not interchangeable without a
+conversion certificate.
+
+### Theorem 4.3 (Energy-port gluing and residual localization)
+
+For every typed finite energy-port diagram,
+
+$$
+\boxed{
+R_G
+=
+\sum_{v\in V}r_v
++
+\sum_{e\in\mathcal M}g_e
+}
+$$
+
+almost everywhere. Consequently, exact component balances and exact seam
+matching imply
+
+$$
+\frac{d}{dt}\sum_{v\in V}U_v
+=
+\sum_{v\in V}b_v
++
+\sum_{h\in H_{\mathrm{ext}}}p_h.
+$$
+
+If $|r_v|\le\varepsilon_v$ and $|g_e|\le\delta_e$, then
+
+$$
+|R_G|
+\le
+\sum_{v\in V}\varepsilon_v
++
+\sum_{e\in\mathcal M}\delta_e,
+$$
+
+and
+
+$$
+\left|
+\Delta U_G
+-
+\int_{t_0}^{t_1}
+\left(
+\sum_vb_v+\sum_{h\in H_{\mathrm{ext}}}p_h
+\right)dt
+\right|
+\le
+\sum_v\int_{t_0}^{t_1}|r_v|\,dt
++
+\sum_e\int_{t_0}^{t_1}|g_e|\,dt.
+$$
+
+#### Proof
+
+Summing the component residuals partitions the half-edge powers into
+unmatched ports and matched pairs:
+
+$$
+\sum_vr_v
+=
+R_G-\sum_{e=\{h,\bar h\}\in\mathcal M}
+(p_h+p_{\bar h})
+=
+R_G-\sum_eg_e.
+$$
+
+Rearrangement proves the identity. The pointwise and integrated bounds follow
+from the triangle inequality and absolute continuity. $\square$
+
+This is BSC-ENE-02. Its non-converse is essential: $R_G=0$ does not imply
+$r_v=0$ or $g_e=0$ separately. Local component and seam errors can cancel.
+A global conservation residual therefore does not certify local seams,
+component dynamics, state continuity, Maxwell trace compatibility, or PDE
+well-posedness.
+
+The term $b_v$ is not energy creation. It represents exchange with a drive,
+pump, bath, reservoir, moving support, or other component excluded from the
+displayed graph. If that system enters scope, $b_v$ must become a matched
+port. Proposition 4.1 is a one-component reduced-model instance, but calling
+$\operatorname{Tr}(H\mathcal D_t(\rho))$ a literal heat or bath current
+requires a declared microscopic system-bath split. At strong coupling,
+interaction energy must be retained. For example, if
+
+$$
+H_{\mathrm{tot}}(t)
+=
+H_S(t)+\sum_\nu H_\nu+V(t)
+$$
+
+and the $H_\nu$ are time independent, then with
+$J_E^{(\nu)}=-d\langle H_\nu\rangle/dt$,
+
+$$
+\frac{d}{dt}\langle H_S+V\rangle
+=
+\left\langle\partial_t(H_S+V)\right\rangle
++
+\sum_\nu J_E^{(\nu)}.
+$$
+
+Suppressing $V$ is licensed only by an approximation whose error is part of
+the certificate.
+
+### Definition 4.4 (Denominator-typed yield and efficiency)
+
+For one boundary, interval, clock, and evidence identity, define
+
+$$
+\eta_E
+=
+\frac{E_{\mathrm{useful,out}}}{E_{\mathrm{charged,in}}},
+\qquad
+E_{\mathrm{charged,in}}>0.
+$$
+
+All external drive energy and any decrease of initially stored energy used to
+produce the output must be charged. A count yield
+
+$$
+\Phi_N=\frac{N_{\mathrm{declared\ event}}}{N_{\mathrm{declared\ input}}}
+$$
+
+is not an energy efficiency. Incident photons, absorbed photons, collected
+charges, transferred excitations, and chemical products are different
+denominators and numerators. For a success event $S$, the end-to-end quantity
+is
+
+$$
+\eta_{\mathrm{all}}
+=
+\frac{
+\mathbb E[\mathbf 1_S E_{\mathrm{useful,out}}]
+}{
+\mathbb E[E_{\mathrm{charged,in}}]
+},
+$$
+
+not the efficiency of the normalized successful subensemble alone.
+
+### Proposition 4.5 (Typed efficiency telescoping)
+
+If $E_0,\ldots,E_m$ are positive values of the same typed extensive quantity
+at consecutive interfaces, with one boundary chain, interval, cohort,
+spectral weighting, and evidence identity, and
+
+$$
+\eta_k=\frac{E_k}{E_{k-1}},
+$$
+
+then
+
+$$
+\prod_{k=1}^m\eta_k=\frac{E_m}{E_0}.
+$$
+
+#### Proof
+
+Every intermediate $E_k$ cancels once in the numerator and once in the
+denominator. $\square$
+
+This is BSC-ENE-03. Changing the intermediate quantity, boundary, interval,
+conditioning event, or evidence identity removes the cancellation and
+therefore the inference. Current and chemical product energy cannot both be
+counted as independent useful outputs when the current is the charge ledger
+that produces that product. Likewise, a probability sink is not an energy port
+unless an energy per event or sink Hamiltonian is supplied.
+
+For a declared passive boundary, $\eta_E>1$ is evidence of incomplete ports,
+released stored energy, inconsistent valuation, or uncertainty before it is
+evidence of anomalous production. A point estimate above one establishes
+violation only when its uncertainty interval or a lower bound excludes one.
+
 ## 5. Scalar Bernoulli encoders
 
 Let $X$ be an input symbol and suppose that, conditional on $X=x$,
@@ -685,6 +900,8 @@ The central claim identifiers are:
 | BSC-CHN-03 | A uniform deterministic forward-report error gives the two enlarged identified-set containments of Proposition 3.3. | No inverse stability without additional regularity; sampling error is separate. |
 | BSC-QPH-02 | Identical spectral intensities, even with unit overlap, need not imply close quantum states. | Relative phase and unmeasured modes remain completion variables. |
 | BSC-ENE-01 | The driven open-system energy identity of Proposition 4.1. | Accounting under a declared split; no experiment-specific gain is inherited. |
+| BSC-ENE-02 | A typed finite energy-port gluing has global residual $R_G=\sum_vr_v+\sum_eg_e$, with pointwise and integrated absolute bounds. | Additive storage and compatible same-clock ports are required; global closure does not certify local seams or full state gluing. |
+| BSC-ENE-03 | Count yield, energy efficiency, and conditioned efficiency remain differently typed; compatible stage efficiencies telescope only across the identical intermediate extensive quantity. | Ratio algebra supplies no empirical efficiency, port completeness, or passivity. |
 | BSC-ENC-01 | The Bernoulli count is sufficient and carries at most $\log_2(N+1)$ bits. | Conditional-iid scalar channel only. |
 | BSC-ENC-02 | A 256-symbol scalar Bernoulli encoder has no finite-$N$ zero-error decoder. | Does not preclude lossy or asymptotically reliable coding. |
 | BSC-ENC-03 | A finite vector of Bernoulli biases is uniformly query-learnable under the declared sampling model. | Learnability is not a security analysis. |
@@ -695,8 +912,9 @@ The central claim identifiers are:
 
 Statistical experiments and garblings, Dobrushin contraction, trace-distance
 contractivity, POVM data processing, quantum networks, sufficient statistics,
-Hoeffding bounds, graph matching, and open-system energy accounting are not
-BSC inventions. Relevant primary references, separated by subject, include:
+Hoeffding bounds, graph matching, open-system energy accounting, and
+boundary port-Hamiltonian theory are not BSC inventions. Relevant primary
+references, separated by subject, include:
 
 - G. Chiribella, G. M. D'Ariano, and P. Perinotti,
   [Theoretical framework for quantum networks](https://doi.org/10.1103/PhysRevA.80.022339),
@@ -721,6 +939,10 @@ BSC inventions. Relevant primary references, separated by subject, include:
   [The quantum open system as a model of the heat
   engine](https://doi.org/10.1088/0305-4470/12/5/007),
   *Journal of Physics A* 12, L103--L107 (1979).
+- A. J. van der Schaft and B. M. Maschke,
+  [Hamiltonian formulation of distributed-parameter systems with boundary
+  energy flow](https://doi.org/10.1016/S0393-0440(01)00083-3),
+  *Journal of Geometry and Physics* 42, 166--194 (2002).
 - S. Sahni and T. Gonzalez,
   [P-complete approximation problems](https://doi.org/10.1145/321958.321975),
   *Journal of the ACM* 23, 555--565 (1976).
@@ -729,7 +951,7 @@ BSC inventions. Relevant primary references, separated by subject, include:
   2022](https://doi.org/10.1103/RevModPhys.97.025002),
   *Reviews of Modern Physics* 97, 025002 (2025).
 
-The development claim is the claim-relative integration: the implemented
+The BSC claim is the claim-relative integration: the implemented
 reachable-set obligation, mixed quantum/classical report boundary,
 non-resurrection rule, evidence and control identity, bit-rate and semantic
 alignment audits, and explicit refusal to infer a shared physical law from a

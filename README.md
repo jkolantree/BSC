@@ -4,23 +4,19 @@
 
 **J. Tree · Independent researcher**
 
-**Latest released version:** v1.2.0 · 30 July 2026.
+**Latest released version:** v1.3.0 · 30 July 2026.
 
-**Repository state:** version 1.3.0-dev development tree based on the immutable
-v1.2.0 release.
+**Repository state:** version 1.3.0 release.
 
-**Release status:** v1.2.0 is a foundational preprint with mathematical
+**Release status:** v1.3.0 is a foundational preprint with mathematical
 framework, audit artifacts, and explicit claim boundaries; not peer reviewed.
 
 **Canonical repository:** https://github.com/jkolantree/BSC
 
-**Version record:** https://github.com/jkolantree/BSC/releases/tag/v1.2.0
+**Version record:** https://github.com/jkolantree/BSC/releases/tag/v1.3.0
 
 **Zenodo concept DOI (all deposited versions):**
 https://doi.org/10.5281/zenodo.21541160
-
-**Zenodo v1.2.0 version DOI:**
-https://doi.org/10.5281/zenodo.21711341
 
 Scientific claims often fail in the crossing between two otherwise valid
 descriptions. Boundary-State Calculus (BSC) treats that crossing as a typed,
@@ -42,7 +38,7 @@ The unit of evaluation is not the universe. It is one claimed transfer.
 | Full review | [Complete paper](paper/On_Boundaries_of_Evidence.pdf) | Inspect definitions, proofs, fixtures, applications, and references |
 | Framework module | [Normalized scale profiles](framework/Normalized_Scale_Profiles.md) | Inspect the reusable finite-family, rate, singularity, zero-transfer, and decision mathematics |
 | Framework module | [Simulation evidence profiles](framework/Simulation_Evidence_Profile.md) | Inspect intended-use records, statistical evidence, compatibility reserves, and coupled-surrogate propagation |
-| Framework module | [Operational channel core](framework/Operational_Channel_Core.md) | Inspect fixed-interface mixed classical/quantum propagation, no-resurrection, driven energy, Bernoulli encoding, semantic alignment, and the 1/137 boundary |
+| Framework module | [Operational channel core](framework/Operational_Channel_Core.md) | Inspect fixed-interface mixed classical/quantum propagation, no-resurrection, driven and strong-coupling energy boundaries, energy-port gluing, typed efficiencies, Bernoulli encoding, semantic alignment, and the 1/137 boundary |
 | Framework module | [Electromagnetic evidence bridge](framework/Electromagnetic_Evidence_Bridge.md) | Inspect gauge descent, sources and flux, boundary power, calibrated scattering, inverse scope, coupling normalization, metrology, RG flow, and aperiodic geometry-to-field descent |
 | Application crosswalk | [Four July 2026 experiments](applications/Operational_Channel_Crosswalk_2026.md) | Compare hybrid photons, a driven plasmonic time crystal, Hiroshima alloy evidence, and a microwave probabilistic-bit processor without conflating their physics |
 | Status audit | [Claim-status ledger](ledgers/Claim_Status_Ledger.md) | Separate mathematical verdict from support and other readiness coordinates |
@@ -115,8 +111,9 @@ recurrence, or duality earns the right to support a target claim.
   statistical coverage, factored identity, compatibility-bounded deployment,
   and coupled-surrogate propagation; and for fixed compatible
   preparation-to-report channels, implemented-reachable-set error
-  propagation, data processing, energy accounting, probabilistic encoding,
-  and relation alignment; and an electromagnetic completion separating gauge,
+  propagation, data processing, residual-localized energy-port gluing,
+  denominator-typed efficiency, probabilistic encoding, and relation
+  alignment; and an electromagnetic completion separating gauge,
   local Maxwell laws, constitutive response, boundary ports, calibrated
   reports, inverse authority, coupling normalization, and metrology.
 - A two-page technical synopsis and field-specific reader map.
@@ -235,7 +232,7 @@ is their typed integration, transfer authority, and local demotion semantics.
 
 ## Operational-channel framework
 
-Version 1.3.0-dev adds a restricted preparation-to-report layer:
+Version 1.3.0 adds a restricted preparation-to-report layer:
 
 ```math
 \theta
@@ -281,6 +278,12 @@ The same module proves:
   $\dot E=\operatorname{Tr}(\rho\dot H)+
   \operatorname{Tr}(H\mathcal D_t(\rho))$ under its declared split and
   finite-dimensional or separately justified domain assumptions;
+- finite additive energy-port diagrams satisfy
+  $R_G=\sum_vr_v+\sum_eg_e$, so interface storage must be explicit and a
+  globally closed residual cannot certify locally defective seams;
+- count yields, energy efficiencies, and conditioned efficiencies remain
+  differently typed, and stage ratios telescope only across the identical
+  intermediate quantity and evidence identity;
 - conditionally iid scalar Bernoulli repetitions have sufficient count
   $K=\sum_iY_i$ and at most $\log_2(N+1)$ bits of input information;
 - 256 scalar Bernoulli labels cannot be recovered with zero error for any
@@ -301,7 +304,7 @@ by BSC.
 
 ## Electromagnetic evidence bridge
 
-The development bridge instantiates the operational report envelope as
+The electromagnetic bridge instantiates the operational report envelope as
 
 ```math
 \mathsf{EMC}
@@ -316,6 +319,10 @@ boundary, pump, material, and loss accounting; passive scattering only in a
 declared calibrated power metric; a magnitude-only phase/delay no-go; and
 field-normalization and charge-flux invariants. Maxwell boundary inversion
 remains theorem-, coefficient-class-, gauge-, frequency-, and data-local.
+Static curved-space fluxes instantiate the same energy-port theorem through
+metric volume and boundary forms; moving boundaries, time-dependent metrics,
+and non-Killing relativistic currents require their additional transport or
+bulk terms.
 
 The bridge sharpens rather than reverses the 1/137 boundary. Revised-SI
 definitions move uncertainty into $\mu_0$ through
@@ -414,12 +421,13 @@ tests/        positive and negative release-gate regressions
 ## Citation, disclosure, and licensing
 
 Machine-readable citation metadata is in [CITATION.cff](CITATION.cff).
-Version 1.2.0 is published in the immutable
-[GitHub release record](https://github.com/jkolantree/BSC/releases/tag/v1.2.0).
+Version 1.3.0 is published in the immutable
+[GitHub release record](https://github.com/jkolantree/BSC/releases/tag/v1.3.0).
 The concept DOI
 [10.5281/zenodo.21541160](https://doi.org/10.5281/zenodo.21541160)
 identifies all deposited versions and resolves to the latest Zenodo deposit.
-The v1.2.0 version DOI, assigned after the immutable tagged bytes were built,
+The v1.3.0 version DOI is assigned after the immutable tagged bytes are built
+and is recorded on the GitHub release page. The immutable v1.2.0 version DOI
 is [10.5281/zenodo.21711341](https://doi.org/10.5281/zenodo.21711341). The
 immutable v1.1.0 version DOI is
 [10.5281/zenodo.21710743](https://doi.org/10.5281/zenodo.21710743).

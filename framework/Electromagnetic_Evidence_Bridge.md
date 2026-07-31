@@ -2,8 +2,7 @@
 
 ## Status and scope
 
-This is a development module for version `1.3.0-dev`. The latest immutable
-release remains v1.2.0.
+This module is part of the released `1.3.0` framework.
 
 The purpose of this module is to supply the electromagnetic completion that
 the operational-channel core deliberately left open. It separates six layers:
@@ -422,6 +421,91 @@ them can manufacture apparent gain. For temporally dispersive media,
 $D(t)$ and $B(t)$ depend on field history; a positive instantaneous quadratic
 $u$ is not automatic. A material-state realization, passivity theorem, or
 other stored-energy construction is then required.
+
+### 4.2 Metric and spacetime port instantiations
+
+BSC-ENE-02 applies without choosing Euclidean coordinates. On a fixed
+oriented spatial manifold, write energy density as a top form
+$\mathcal U_v$, energy flux as a codimension-one form $\mathcal F_v$, and
+supply as a top form $\mathcal Q_v$:
+
+$$
+\partial_t\mathcal U_v+d\mathcal F_v=\mathcal Q_v.
+$$
+
+For a fixed Lipschitz region $\Omega_v$ and an oriented boundary piece
+$\Gamma\subset\partial\Omega_v$,
+
+$$
+U_v=\int_{\Omega_v}\mathcal U_v,
+\qquad
+b_v=\int_{\Omega_v}\mathcal Q_v,
+\qquad
+p_{v,\Gamma}=-\int_\Gamma\mathcal F_v.
+$$
+
+The last sign makes power positive inward. Opposite induced orientations on
+a shared interface give seam cancellation when the same physical flux trace
+is used on both sides. Curvature changes the metric volume and boundary
+measures and the divergence operator; it creates no source term. Integrated
+scalar power matching is sufficient only for the scalar energy ledger. It
+does not prove continuity of the full electromagnetic traces or glue two
+Maxwell solutions.
+
+The fixed-geometry and fixed-region hypotheses are substantive. If
+$g=g(t)$, then
+
+$$
+\partial_t(dV_g)
+=
+\frac12\operatorname{tr}_g(\dot g)\,dV_g.
+$$
+
+Omitting the corresponding volume-deformation contribution can create a
+false residual. A moving boundary likewise requires Reynolds transport and
+the relative flux $(S-u v_{\partial\Omega})\mathbin{\cdot}n$. A static-domain
+certificate is inapplicable until those terms are included.
+
+For a relativistic port statement, let $T^{ab}$ be the symmetric
+stress-energy tensor included in scope, let
+$f^b=\nabla_aT^{ab}$, and let
+
+$$
+J_\xi^a=-T^a{}_b\xi^b.
+$$
+
+Then
+
+$$
+\boxed{
+\nabla_aJ_\xi^a
+=
+-f_b\xi^b
+-T^{ab}\nabla_{(a}\xi_{b)}
+}.
+$$
+
+Thus a conserved total stress-energy tensor and a Killing field give a
+conserved energy current. In general the source and deformation terms remain:
+
+$$
+\int_{\partial\mathcal V}J_\xi^a\,d\Sigma_a
+=
+\int_{\mathcal V}
+\left(
+-f_b\xi^b-T^{ab}\nabla_{(a}\xi_{b)}
+\right)dV.
+$$
+
+Timelike seams cancel only with opposite directed hypersurface orientation;
+a null boundary uses its directed surface element rather than a unit normal.
+The electromagnetic $T^{ab}$ alone need not be conserved in matter because
+Lorentz work transfers energy to the material stress-energy. In a
+nonstationary spacetime there need not be a global Killing energy, and
+dynamical general relativity supplies no universal local gravitational
+stress-energy tensor. Any ADM, Bondi, or quasi-local energy claim must name
+its asymptotic or boundary construction and normalization. These are scope
+conditions for BSC-ENE-02, not a new electromagnetic claim identifier.
 
 ## 5. Calibrated ports and scattering reports
 

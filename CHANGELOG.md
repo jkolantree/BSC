@@ -1,9 +1,9 @@
 # Changelog
 
-## 1.3.0-dev — unreleased
+## 1.3.0 — 2026-07-30
 
-The development tree adds an operational-channel layer without changing the
-eight-field BSC morphism or the immutable v1.2.0 release:
+The release adds operational-channel, energy-port, and electromagnetic
+evidence layers without changing the eight-field BSC morphism:
 
 - defined the operational report envelope from parameter and preparation
   through driven stages, measurement, reporting, and decision;
@@ -26,6 +26,12 @@ eight-field BSC morphism or the immutable v1.2.0 release:
 - proved the finite-dimensional driven open-system energy identity while
   retaining pump work, system/bath split, energy gauge, reset, measurement,
   output-field, bosonic truncation, and operator-domain obligations;
+- proved finite additive energy-port gluing with exact localization of the
+  assembled residual into component and seam residuals, explicit interface
+  storage, and pointwise and integrated absolute bounds;
+- separated count yields, energy efficiencies, and conditioned efficiencies,
+  permitting stage-ratio telescoping only across the identical intermediate
+  extensive quantity and evidence identity;
 - proved that the count of conditionally iid scalar Bernoulli outputs is
   sufficient, carries at most $\log_2(N+1)$ input bits, and cannot provide
   finite-$N$ zero-error decoding of 256 symbols;
@@ -81,8 +87,11 @@ eight-field BSC morphism or the immutable v1.2.0 release:
   materialization, and finite point-scatterer structure factors; and
 - kept full quantum-morphism closure BSC-QOP-03 open.
 
-This development entry is not a publication. The latest immutable release
-remains v1.2.0.
+Published at GitHub tag `v1.3.0`. The Zenodo concept DOI
+`10.5281/zenodo.21541160` identifies the deposited version family. The v1.3.0
+version DOI assigned after the tagged bytes were built is recorded on the
+GitHub release page. The immutable v1.2.0 version DOI
+`10.5281/zenodo.21711341` remains unchanged.
 
 ## 1.2.0 — 2026-07-30
 

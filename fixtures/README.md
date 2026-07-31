@@ -1,8 +1,8 @@
 # Fixtures
 
-Version 1.2.0 defines ten exact reference fixtures. Immutable v1.1.0 remains
-the nine-fixture record, and immutable v1.0.1 remains the
-historical eight-fixture record.
+Version 1.3.0 retains the ten exact reference fixtures introduced through
+v1.2.0. Immutable v1.1.0 remains the nine-fixture record, and immutable
+v1.0.1 remains the historical eight-fixture record.
 
 | Fixture | Subject | Current computational status |
 |---|---|---|
@@ -17,7 +17,7 @@ historical eight-fixture record.
 | F9 | Finite zeta–coherence identity with blocked unsupported promotions | Unexecuted documentary and mathematical audit |
 | F10 | Equal standalone surrogate error in two stable coupled hosts | Exact retained CPython receipt |
 
-F8 and F10 are executable in version 1.2.0. F9 has no raw-data
+F8 and F10 are executable in version 1.3.0. F9 has no raw-data
 replay, fitting execution, hardware receipt, or complexity benchmark. Each
 executable fixture directory includes:
 

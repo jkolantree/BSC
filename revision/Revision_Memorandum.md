@@ -3,14 +3,14 @@
 ## Purpose
 
 This memorandum records every material repair made while constructing and
-auditing *On Boundaries of Evidence* through published version 1.2.0 and the
-current `1.3.0-dev` development tree. The latest published version is v1.2.0,
-dated 30 July 2026, with immutable GitHub
-release record `https://github.com/jkolantree/BSC/releases/tag/v1.2.0` and
-Zenodo concept DOI `10.5281/zenodo.21541160`. The v1.2.0 version DOI assigned
-after the tagged bytes were built is `10.5281/zenodo.21711341`. The immutable
-v1.1.0 version DOI is `10.5281/zenodo.21710743`; the immutable v1.0.1 version
-DOI remains `10.5281/zenodo.21541561`. This memorandum is separate from the manuscript
+auditing *On Boundaries of Evidence* through published version 1.3.0, dated
+30 July 2026, with immutable GitHub release record
+`https://github.com/jkolantree/BSC/releases/tag/v1.3.0` and Zenodo concept DOI
+`10.5281/zenodo.21541160`. The v1.3.0 version DOI assigned after the tagged
+bytes were built is recorded on the GitHub release page. The immutable
+v1.2.0 version DOI is `10.5281/zenodo.21711341`; the immutable v1.1.0 version
+DOI is `10.5281/zenodo.21710743`; the immutable v1.0.1 version DOI remains
+`10.5281/zenodo.21541561`. This memorandum is separate from the manuscript
 so that the paper can stand as a coherent formal work while the source lineage
 remains inspectable. Repairs are classified as:
 
@@ -1404,7 +1404,7 @@ gates, and tolerances.
 The Riemann-hypothesis and DQPT verdicts recorded in version 1.1.0 remain
 unchanged.
 
-## 24. Version 1.3.0-dev operational-channel refinement
+## 24. Version 1.3.0 operational-channel refinement
 
 ### Architectural gap
 
@@ -1463,7 +1463,7 @@ witnesses. BSC-QOP-03 remains open.
 
 ### Added exact consequences
 
-The development module adds separately scoped results:
+The version 1.3.0 module adds separately scoped results:
 
 - **No downstream resurrection:** Markov, CPTP, POVM, and report channels
   cannot increase the relevant distinguishability. Deterministic inverse
@@ -1494,6 +1494,23 @@ The development module adds separately scoped results:
   The labels depend on the declared system/bath split and energy zero.
   Measurements, resets, coupling energy, and output fields need additional
   terms.
+- **Energy-port residual localization:** a finite additive port diagram obeys
+
+  $$
+  R_G=\sum_vr_v+\sum_eg_e.
+  $$
+
+  Exact components and opposite-orientation seams therefore glue to the
+  external balance, with pointwise and integrated absolute bounds. The
+  converse is false: cancelling component or seam errors can give
+  $R_G=0$. Coupling or interface energy must be retained as a component,
+  and strong-coupling interaction energy cannot be silently discarded.
+- **Denominator-typed efficiency:** count yield, energy efficiency, and
+  conditioned efficiency remain different quantities. Stage efficiencies
+  telescope only when consecutive ratios use the identical intermediate
+  extensive quantity, boundary, interval, cohort, weighting, and evidence
+  identity. A probability sink is not an energy port without an energy
+  bridge.
 - **Scalar Bernoulli encoding:** under the conditional-iid model,
   $K=\sum_iY_i$ is sufficient and
   $I(X;Y^N)=I(X;K)\le\log_2(N+1)$. For a uniform 8-bit input, $N\ge255$ is
@@ -1545,13 +1562,14 @@ not a bridge.
 
 Quantum networks, Markov/CPTP/POVM data processing, Dobrushin and trace-distance
 contractivity, sufficient statistics, Hoeffding bounds, graph matching,
-open-system energy accounting, and CODATA metrology are prior art. The
+open-system energy accounting, boundary port-Hamiltonian systems, and CODATA
+metrology are prior art. The
 BSC-specific addition is their claim-relative integration with implemented
 reachable sets, evidence identity, physical completion, decision descent, and
 local demotion. It is a unification of evidentiary form, not a unified field
 theory.
 
-## 25. Version 1.3.0-dev electromagnetic evidence bridge
+## 25. Version 1.3.0 electromagnetic evidence bridge
 
 ### Remaining physical-completion gap
 
@@ -1565,7 +1583,7 @@ renormalization, and metrology.
 
 ### Adopted typed completion
 
-The development bridge introduces the companion record
+The version 1.3.0 bridge introduces the companion record
 
 $$
 \mathsf{EMC}
@@ -1605,7 +1623,11 @@ The claim ledger adds BSC-EM-01 through BSC-EM-11:
 4. **Poynting balance (EM-04):** time-independent symmetric positive
    constitutive tensors separate stored field energy, outward boundary power,
    and work on current. Modulation and dispersion add pump or material-state
-   obligations.
+   obligations. Static curved geometry changes measures rather than supplying
+   energy; moving boundaries and time-dependent metrics require their
+   transport terms. A relativistic energy current is conserved only after
+   the included total stress-energy and Killing or asymptotic charge
+   construction are declared.
 5. **Passive scattering (EM-05):** a complete power-normalized passive report
    is contractive in its declared metric. Hidden ports, reference planes,
    impedance, basis, de-embedding, bandwidth, stored energy, and simultaneous
@@ -1652,7 +1674,7 @@ full boundary-response operator.
 
 ### Binary-width and polygon screen
 
-The development update also tests a proposed arithmetic route through
+Version 1.3.0 also tests a proposed arithmetic route through
 $2^{31}-1$, $2^{32}-1$, the Year 2038 signed-integer boundary, and the
 constructible regular $65\,537$-gon. The exact positive result is that
 $\operatorname{ord}_{137}(2)=68$, so the rational $1/137$ has a 68-bit
@@ -1731,11 +1753,11 @@ symmetry do not provide a map to $\alpha$ or $1/137$.
 
 ### Status and release boundary
 
-These are symbolic development claims with no local hardware execution. The
+These are symbolic claims with no local hardware execution. The
 2026 monotile optical report is one experimental study and was not replayed
 here. The framework changes do not derive
 $\alpha^{-1}\approx137.036$, quantize the full electromagnetic
 field, prove a material model, execute a calibrated scattering experiment, or
-establish a unified field theory. They belong only to the `1.3.0-dev`
+establish a unified field theory. They belong only to the `1.3.0`
 manuscript, framework, synopsis, ledgers, and regression suite. The immutable
 v1.2.0 release, tag, GitHub assets, and Zenodo deposit remain unchanged.

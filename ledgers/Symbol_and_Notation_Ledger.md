@@ -1,17 +1,18 @@
 # Symbol and Notation Ledger
 
-The released baseline for this normative ledger is version 1.2.0 of *On
+The released version for this normative ledger is 1.3.0 of *On
 Boundaries of Evidence*, released 30 July 2026 at
-`https://github.com/jkolantree/BSC/releases/tag/v1.2.0`. The Zenodo concept DOI
-is `10.5281/zenodo.21541160`; the v1.2.0 version DOI assigned after the tagged
-bytes were built is `10.5281/zenodo.21711341`. The immutable v1.1.0 version DOI is
+`https://github.com/jkolantree/BSC/releases/tag/v1.3.0`. The Zenodo concept DOI
+is `10.5281/zenodo.21541160`; the v1.3.0 version DOI assigned after the tagged
+bytes were built is recorded on the GitHub release page. The immutable v1.2.0
+version DOI is `10.5281/zenodo.21711341`; the immutable v1.1.0 version DOI is
 `10.5281/zenodo.21710743`, and the immutable v1.0.1 version DOI remains
 `10.5281/zenodo.21541561`. A symbol has no meaning outside the row or local
 declaration that types
 it. Local specializations are permitted only when their scope is explicit.
 
-The current working tree is `1.3.0-dev`. Its operational-channel symbols below
-do not modify the immutable v1.2.0 release record.
+The operational-channel and electromagnetic symbols below are released in
+version `1.3.0`.
 
 ## Global conventions
 
@@ -245,7 +246,7 @@ typed uses of the word "simulation."
 
 ## Operational report channels
 
-These are `1.3.0-dev` certificate and application symbols. They describe a
+These are `1.3.0` certificate and application symbols. They describe a
 fixed typed preparation-to-report pipeline and do not add a ninth BSC morphism
 field or prove the open full quantum composition claim BSC-QOP-03.
 
@@ -259,6 +260,9 @@ field or prove the open full quantum composition claim BSC-QOP-03.
 | $\mathcal I_\varepsilon(y)$ | identified set in parameter space | $\{\theta:d(F(\theta),y)\le\varepsilon\}$. A target property is exactly report-identifiable only when constant on the applicable identified set; at zero error this is fiber constancy. |
 | $\mathcal D_t$ | declared open-system generator term | In $\dot\rho=-i[H,\rho]/\hbar+\mathcal D_t(\rho)$, the decomposition must generate physical trace-preserving evolution and fix a system/bath split and energy zero. |
 | $E(t)$ | scalar system-energy expectation | $\operatorname{Tr}[\rho(t)H(t)]$, with $\dot E=\operatorname{Tr}(\rho\dot H)+\operatorname{Tr}(H\mathcal D_t(\rho))$. Measurements, resets, coupling energy, and fields outside the reduced state need additional ledger terms. |
+| $U_v,b_v,p_h$ | stored energy, non-port supply, and inward half-edge power | In a finite energy-port diagram, $\dot U_v=b_v+\sum_{h\in H_v}p_h+r_v$. A non-port supply represents an excluded pump, bath, reservoir, or moving support; it is not energy creation. All quantities share a declared clock and rate convention. |
+| $r_v,g_e,R_G$ | component, seam, and assembled energy residuals | $r_v=\dot U_v-b_v-\sum_hp_h$, $g_e=p_h+p_{\bar h}$, and $R_G=d(\sum_vU_v)/dt-\sum_vb_v-\sum_{h\in H_{\mathrm{ext}}}p_h$. BSC-ENE-02 gives $R_G=\sum_vr_v+\sum_eg_e$. Global zero does not certify the local terms. |
+| $\eta_E,\Phi_N,\eta_{\mathrm{all}}$ | energy efficiency, count yield, and end-to-end conditioned efficiency | $\eta_E=E_{\mathrm{useful,out}}/E_{\mathrm{charged,in}}$ is differently typed from a count yield. $\eta_{\mathrm{all}}$ retains the success indicator rather than normalizing away failures. Stage ratios telescope only across the identical intermediate extensive quantity and evidence identity. |
 | $q_x$ | Bernoulli bias conditional on input $x$ | Used only under the declared scalar conditionally-iid model $Y_i\mid X=x\sim\operatorname{Bernoulli}(q_x)$. Hardware variability does not establish iid sampling. |
 | $K=\sum_{i=1}^NY_i$ | sufficient count in $\{0,\ldots,N\}$ | Under the scalar conditionally-iid model, $I(X;Y^N)=I(X;K)\le\log_2(N+1)$. For 256 labels, zero-error finite-$N$ decoding is impossible because the laws cannot be mutually singular. |
 | $\mathcal C_N$ | raw-bit compression factor | $8/N$ for an 8-bit input represented by $N$ output bits. $N=1$ is nominal 8:1 lossy coding; $N\ge8$ is not raw-bit compression. |
@@ -267,7 +271,7 @@ field or prove the open full quantum composition claim BSC-QOP-03.
 
 ## Electromagnetic evidence bridge
 
-These are local `1.3.0-dev` symbols for the electromagnetic completion of an
+These are local `1.3.0` symbols for the electromagnetic completion of an
 operational report envelope. They neither add a field to the BSC morphism nor
 derive a unified microscopic theory or the numerical value of $\alpha$.
 
@@ -278,6 +282,8 @@ derive a unified microscopic theory or the numerical value of $\alpha$.
 | $\mathcal F,\mathcal H,\mathcal J$ | curvature two-form, excitation two-form, and current three-form | $d\mathcal F=0$ and $d\mathcal H=\mathcal J$. A smooth global solution implies $d\mathcal J=0$ and exactness of $\mathcal J$; singular or open-boundary models require separately typed distributional or relative forms. |
 | $\operatorname{Hol}_\gamma(\mathcal A)$ | element of $U(1)$ | In a single trivialization, closed-loop holonomy is $\exp(i\oint_\gamma\mathcal A)$; a nontrivial bundle also requires its patch transitions. Equal curvature need not imply equal holonomy on nontrivial topology. Open-path phase is not gauge invariant without endpoint or compensating data. |
 | $u_{\mathrm{EM}},S_{\mathrm{Poynt}}$ | energy density and Poynting vector | $u_{\mathrm{EM}}=(E\cdot D+H\cdot B)/2$ and $S_{\mathrm{Poynt}}=E\times H$ under a time-independent symmetric positive constitutive law. Modulated or dispersive media need additional pump or material-state terms. |
+| $\mathcal U,\mathcal F,\mathcal Q$ | spatial energy-density, flux, and supply forms | On a fixed oriented spatial manifold, $\partial_t\mathcal U+d\mathcal F=\mathcal Q$. Curvature changes measures and divergence, not the source ledger. Time-dependent metrics and moving boundaries require volume-deformation and Reynolds-transport terms. |
+| $J_\xi^a$ | stress-energy current associated with $\xi$ | $J_\xi^a=-T^a{}_b\xi^b$ obeys $\nabla_aJ_\xi^a=-f_b\xi^b-T^{ab}\nabla_{(a}\xi_{b)}$ for $f^b=\nabla_aT^{ab}$. Conservation requires the total included stress-energy and a Killing field, or a separately declared asymptotic or quasi-local charge. |
 | $S(\omega),W$ | scattering matrix and positive power metric | Passivity gives $S^\dagger W S\preceq W$ only for the declared port basis, reference plane, normalization, band, hidden-port completion, calibration, and stored-energy state. The symbol $S(\omega)$ is local and is not a BSC system object. |
 | $\Lambda_{\varepsilon,\mu}$ | Maxwell boundary-response operator | Maps a declared tangential electric trace space to a declared tangential magnetic trace space for one well-posed forward problem. A finite measured S-parameter matrix is not automatically the full operator. Inverse authority is theorem-, coefficient-class-, gauge-, and data-local. |
 | $Z,q,q^2/Z$ | positive field kinetic coefficient, matter coupling, and normalization invariant | Under $A'=\lambda A$, $Z'=Z/\lambda^2$ and $q'=q/\lambda$ while $q^2/Z$ is unchanged. A fixed representation and canonical normalization may remove the coordinate freedom but do not derive the invariant's value. |
