@@ -1,5 +1,28 @@
 # Changelog
 
+## Post-v1.4.0 electrostatic critical-point transfer — 2026-07-31
+
+This main-branch application is an independent mathematical reconstruction,
+not a new release or a replay of an absent historical computation:
+
+- allocated `BSC-ECP-01` through `BSC-ECP-05` without reusing a claim or
+  fixture namespace;
+- added quantitative $C^2$ local Morse transfer, the normalization-sign rule,
+  and the exterior-gradient and no-escape boundaries for exact counts;
+- supplied the positive-source exclusion step needed before generic regular
+  zeros can be promoted to a finite roster;
+- proved a four-charge, pairwise-unequal, sufficiently small positive $\varepsilon$
+  construction with at least nine critical points;
+- independently reconstructed the exact 21-point limit-polynomial roster,
+  three remote points, and the five-charge at-least-24 theorem;
+- recorded the derivative-controlled pair-insertion gate and its
+  $3+2m$ source / $4+20m$ point lower bound; and
+- added exact symbolic regressions while retaining historical scripts and
+  receipts as `NOT_SUPPLIED` and `NOT_REPLAYED`.
+
+No F13, roadmap item, paper, PDF, release, tag, DOI, Zenodo record, release
+metadata, electromagnetic claim, or formal-kernel claim is changed.
+
 ## Post-v1.4.0 exact-Q derived-holonomy fixture — 2026-07-31
 
 This main-branch development adds an independently reconstructed finite

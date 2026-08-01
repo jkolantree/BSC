@@ -42,6 +42,7 @@ The unit of evaluation is not the universe. It is one claimed transfer.
 | Framework module | [Operational channel core](framework/Operational_Channel_Core.md) | Inspect fixed-interface mixed classical/quantum propagation, no-resurrection, driven and strong-coupling energy boundaries, energy-port gluing, typed efficiencies, Bernoulli encoding, semantic alignment, and the 1/137 boundary |
 | Framework module | [Electromagnetic evidence bridge](framework/Electromagnetic_Evidence_Bridge.md) | Inspect gauge descent, sources and flux, boundary power, calibrated scattering, inverse scope, coupling normalization, metrology, RG flow, and aperiodic geometry-to-field descent |
 | Framework module | [Exact rational derived-holonomy certificates](framework/Derived_Holonomy_Certificates.md) | Inspect the post-v1.4.0 exact-Q homotopy/left-null certificate and its evidence boundary |
+| Mathematical-physics application | [Electrostatic critical-point transfer](applications/Electrostatic_Critical_Point_Transfer.md) | Inspect quantitative critical-point transfer, positive-source compactness, the four-charge at-least-nine construction, and the bounded five-charge reconstruction |
 | Application crosswalk | [Four July 2026 experiments](applications/Operational_Channel_Crosswalk_2026.md) | Compare hybrid photons, a driven plasmonic time crystal, Hiroshima alloy evidence, and a microwave probabilistic-bit processor without conflating their physics |
 | Number-theory application | [Collatz recursive sufficiency](applications/Collatz_Recursive_Sufficiency_Audit.md) | Inspect the exact induction defect, replacement RS sieves, conditional finite certificate, and blocked universal claims |
 | Number-theory calculus | [Collatz affine certificates](applications/Collatz_Affine_Certificate_Calculus.md) | Inspect merge kernels, exact affine descent, valuation screens, a scoped one-turn binary-cylinder obstruction, and one proved recursive subprogression |
@@ -361,6 +362,32 @@ one specific finite geometry-to-fabricated-sample-to-diffraction chain; it
 does not establish a universal
 band gap, nonreciprocity, or a route to $1/137$.
 
+## Electrostatic critical-point transfer
+
+The post-v1.4.0
+[electrostatic application](applications/Electrostatic_Critical_Point_Transfer.md)
+allocates `BSC-ECP-01` through `BSC-ECP-05`. It records quantitative $C^2$
+transfer for isolated Morse points, the normalization-sign index rule, and the
+extra exterior-gradient and no-escape evidence needed before a local roster
+can become an exact compact or global count. Its positive-source completion
+adds uniform source exclusion before compact regular zeros are called finite;
+genericity remains existential.
+
+For fixed $c>4/9$ and sufficiently small positive $\varepsilon$, the
+triangle-plus-apex construction retains six Morse-Bott split points and three
+remote points. A subsequent generic strength perturbation gives four
+pairwise-unequal positive charges with a finite Morse set containing at least
+nine points. This is not exactly nine, not a four-charge maximum, novelty, or
+priority claim, and not a stable-trap result.
+
+The same module independently reconstructs the five-charge theorem as an
+exact 21-point limit-polynomial roster plus three persistent remote points,
+and states the derivative-controlled pair-insertion gate. It is
+`NOT_REPLAYED`: there is no historical script or receipt, no interval
+certificate at $\varepsilon=1/6$, no exact finite-parameter total, no explicit
+generic perturbation or robustness radius, and no transfer from point charges
+to finite-size distributions.
+
 ## Collatz recursive-sufficiency application
 
 Version 1.4.0 audits the first nontrivial layer of Ansari's 2025
@@ -404,6 +431,7 @@ miners, and independent replay program were not supplied to the repository.
 | Operational fixed-interface channel core | True | Implemented-reachable-set product-sum propagation and classical/quantum no-resurrection proved | N/A | Unexecuted | Bounded |
 | Driven energy, scalar Bernoulli, and semantic-alignment consequences | True | Exact symbolic proofs under declared finite-dimensional, iid, and same-entity hypotheses | N/A | Unexecuted | Bounded |
 | Electromagnetic evidence bridge | True under its declared local hypotheses | Gauge/source, Poynting, passive-scattering, phase, normalization, flux-product, revised-SI, RG boundary-value, and aperiodic materialization-descent results proved; inverse and spectral claims remain theorem local | One experimental study; not replayed | Unexecuted | Bounded |
+| Electrostatic critical-point transfer | True under its declared point-source, scale, compactness, and derivative-control hypotheses | Quantitative local transfer, source-exclusion completion, a four-charge at-least-nine theorem, and an independently reconstructed five-charge at-least-24 theorem | N/A | Exact symbolic regressions; historical computations not replayed and no finite-parameter interval certificate | Bounded |
 | Channel form determines $\alpha^{-1}\approx137$ | False | The abstract envelope axioms contain no equation fixing a coupling; no operationally equivalent pair is asserted | N/A | Unexecuted | Blocked |
 | Exact finite-label observation decoding | True | Measurable-partition criterion and total-variation lower bound proved | N/A | Unexecuted | Certified |
 | Generic decorated-cospan theorem | True | Proved under the assumed lax-monoidal functor | N/A | Unexecuted | Bounded |
