@@ -1,0 +1,165 @@
+{
+  "cases": [
+    {
+      "case_id": "contractible_identity",
+      "f": {
+        "components": [
+          {
+            "columns": 1,
+            "entries": [
+              [
+                {
+                  "denominator": 1,
+                  "numerator": 1
+                }
+              ]
+            ],
+            "rows": 1
+          },
+          {
+            "columns": 1,
+            "entries": [
+              [
+                {
+                  "denominator": 1,
+                  "numerator": 1
+                }
+              ]
+            ],
+            "rows": 1
+          }
+        ]
+      },
+      "g": {
+        "components": [
+          {
+            "columns": 1,
+            "entries": [
+              [
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "rows": 1
+          },
+          {
+            "columns": 1,
+            "entries": [
+              [
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "rows": 1
+          }
+        ]
+      },
+      "source": {
+        "differentials": [
+          {
+            "columns": 1,
+            "entries": [
+              [
+                {
+                  "denominator": 1,
+                  "numerator": 1
+                }
+              ]
+            ],
+            "rows": 1
+          }
+        ],
+        "dimensions": [
+          1,
+          1
+        ],
+        "maximum_degree": 1,
+        "minimum_degree": 0
+      },
+      "target": {
+        "differentials": [
+          {
+            "columns": 1,
+            "entries": [
+              [
+                {
+                  "denominator": 1,
+                  "numerator": 1
+                }
+              ]
+            ],
+            "rows": 1
+          }
+        ],
+        "dimensions": [
+          1,
+          1
+        ],
+        "maximum_degree": 1,
+        "minimum_degree": 0
+      }
+    },
+    {
+      "case_id": "homology_visible_obstruction",
+      "f": {
+        "components": [
+          {
+            "columns": 1,
+            "entries": [
+              [
+                {
+                  "denominator": 1,
+                  "numerator": 1
+                }
+              ]
+            ],
+            "rows": 1
+          }
+        ]
+      },
+      "g": {
+        "components": [
+          {
+            "columns": 1,
+            "entries": [
+              [
+                {
+                  "denominator": 1,
+                  "numerator": 0
+                }
+              ]
+            ],
+            "rows": 1
+          }
+        ]
+      },
+      "source": {
+        "differentials": [],
+        "dimensions": [
+          1
+        ],
+        "maximum_degree": 0,
+        "minimum_degree": 0
+      },
+      "target": {
+        "differentials": [],
+        "dimensions": [
+          1
+        ],
+        "maximum_degree": 0,
+        "minimum_degree": 0
+      }
+    }
+  ],
+  "claim_id": "BSC-DHC-01",
+  "evidence_status": "independent_reconstruction",
+  "field": "Q",
+  "fixture_claim_id": "BSC-FIX-12",
+  "fixture_id": "F12-DERIVED-HOLONOMY-Q",
+  "historical_replay_status": "NOT_REPLAYED",
+  "schema": "bsc-derived-holonomy-input/1"
+}

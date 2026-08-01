@@ -15,6 +15,12 @@ release page. Immutable v1.3.0 remains available at DOI
 `10.5281/zenodo.21711341`, immutable v1.1.0 at DOI
 `10.5281/zenodo.21710743`, and immutable v1.0.1 at DOI
 `10.5281/zenodo.21541561`.
+
+Post-v1.4.0 development on `main` additionally includes Fixture F12, an
+independently reconstructed derived-holonomy certificate over $\mathbb Q$.
+It does not change the immutable v1.4.0 release, paper, PDFs, tags, DOI, or
+eleven-fixture record.
+
 Fresh PDF builds are not generally claimed to be byte-identical because PDF timestamps
 and trailer identifiers may vary. Reproduction of the paper means matching
 content, pagination, references, and visual layout.
@@ -157,6 +163,7 @@ special, and hash-mismatched payload paths. The manifest omits itself.
 python3 fixtures/F08_sqrt_square_sign/check_fixture.py
 python3 fixtures/F10_coupled_surrogate/check_fixture.py
 python3 fixtures/F11_collatz_recursive_sieve/check_fixture.py
+python3 fixtures/F12_derived_holonomy_q/check_fixture.py
 ```
 
 Expected terminal lines:
@@ -165,11 +172,14 @@ Expected terminal lines:
 F8-SQRT-SQUARE-SIGN: PASS
 F10-COUPLED-SURROGATE: PASS
 F11-COLLATZ-RECURSIVE-SIEVE: PASS
+F12-DERIVED-HOLONOMY-Q: PASS: 2 exact certificates
 ```
 
-Each check parses and validates its shipped JSON Schema and verifies the bound
-artifact identities and exact mathematics. F8 and F10 also run their
-generators in isolated locations and require byte-identical output. F11's
+Each check parses its shipped JSON Schema and verifies the bound artifact
+identities and exact mathematics. F8, F10, and F12 also run their generators
+in isolated locations and require byte-identical output. F12's checker is
+code-independent from its generator and reconstructs every homotopy or
+left-null equation. F11's
 routine check replays all 52,686 retained rows, recomputes its exact dynamic
 program and density arithmetic, and verifies the retained full-scan receipt;
 it does not silently repeat the ten-billion enumeration.
@@ -201,7 +211,13 @@ mutant. It also rejects F10 mutants with stale host identity, altered horizon,
 false tolerance disposition, decimal substitution for an exact rational, and
 attempted receipt overwrite. F11 tests reject changed table bytes, false
 completeness, wrong nested schema types, a changed self-hash policy, and
-attempted receipt overwrite. All must fail. Cheap arithmetic regressions also
+attempted receipt overwrite. F12 tests reject invalid complexes and chain
+maps, noncanonical or non-rational scalars, arbitrary fields, identifier
+collisions, evidence promotion, altered systems, swapped or tampered
+witnesses, wrong input binding, nondeterministic bytes, and attempted
+overwrite. Its exhaustive scalar regression checks 153 valid ordered
+chain-map pairs: 81 homotopic and 72 obstructed, with zero mismatch against an
+independent homology criterion. All negative cases must fail. Cheap arithmetic regressions also
 recompute the first $F_1\setminus F_2$ residue layer, the exact $31$-class
 path, and the fact that the $5/9$ density factor begins at depth two. It
 checks that F9 remains documentary and unexecuted,

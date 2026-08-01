@@ -1,0 +1,131 @@
+{
+  "arithmetic_model": "fractions.Fraction exact rational arithmetic over Q",
+  "certificate_schema": "bsc-derived-holonomy-certificate/1",
+  "claim_id": "BSC-DHC-01",
+  "evidence_status": "independent_reconstruction",
+  "fixture_claim_id": "BSC-FIX-12",
+  "fixture_id": "F12-DERIVED-HOLONOMY-Q",
+  "generator_sha256": "bb7f03d41d42dd9acb50b6d9eeeb064fb6c81fb8718c0824eb3ff21586c875fa",
+  "historical_replay_status": "NOT_REPLAYED",
+  "input_sha256": "ba71e0b198693abc9bb16fbac61de08cd3ef8e6526a1ecbad26c31c22c7d3cf9",
+  "provenance_sha256": "1dd3ed7f55442efaa2d0a80f7f3315885fee2bbccc3281e4eb4378e81a8e0d73",
+  "results": [
+    {
+      "case_id": "contractible_identity",
+      "case_sha256": "c1f2c353a1dde7c238e638aebe9726f4f3eba57b10b85f3ad7181ab857637e46",
+      "certificate": {
+        "homotopy": [
+          {
+            "degree": 0,
+            "matrix": {
+              "columns": 1,
+              "entries": [
+                [
+                  {
+                    "denominator": 1,
+                    "numerator": 1
+                  }
+                ]
+              ],
+              "rows": 1
+            }
+          }
+        ]
+      },
+      "certificate_type": "homotopy",
+      "status": "pass",
+      "system": {
+        "coefficient_matrix": {
+          "columns": 1,
+          "entries": [
+            [
+              {
+                "denominator": 1,
+                "numerator": 1
+              }
+            ],
+            [
+              {
+                "denominator": 1,
+                "numerator": 1
+              }
+            ]
+          ],
+          "rows": 2
+        },
+        "column_coordinates": [
+          {
+            "column": 0,
+            "degree": 0,
+            "row": 0
+          }
+        ],
+        "omega": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          }
+        ],
+        "row_coordinates": [
+          {
+            "column": 0,
+            "degree": 0,
+            "row": 0
+          },
+          {
+            "column": 0,
+            "degree": 1,
+            "row": 0
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "homology_visible_obstruction",
+      "case_sha256": "68e617fd9896c87ed21b24fbe352595a97b11a397b644bfb242f549ac5b28d5e",
+      "certificate": {
+        "left_null_pairing": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "left_null_witness": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          }
+        ]
+      },
+      "certificate_type": "left_null",
+      "status": "fail",
+      "system": {
+        "coefficient_matrix": {
+          "columns": 0,
+          "entries": [
+            []
+          ],
+          "rows": 1
+        },
+        "column_coordinates": [],
+        "omega": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          }
+        ],
+        "row_coordinates": [
+          {
+            "column": 0,
+            "degree": 0,
+            "row": 0
+          }
+        ]
+      }
+    }
+  ],
+  "schema_sha256": "2a7c387033a3f94dcbaba18ff72ac9e72b04bfbfed74056dce68c6c022fc203e",
+  "serialization": "UTF-8 JSON, two-space indentation, sorted keys, LF terminator"
+}

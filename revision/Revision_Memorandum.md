@@ -1845,3 +1845,33 @@ table was byte-identical to F11 and supplied no new evidence.
 
 This is a main-branch application note, not a revision of the immutable
 v1.4.0 paper, PDFs, tag, assets, metadata, Fixture F11, or Zenodo deposit.
+
+## Post-v1.4.0: exact-Q derived-holonomy certificate
+
+The later source-admission audit identified one bounded implementation
+candidate: decide finite derived holonomy by exact linear algebra over
+$\mathbb Q$. The admitted implementation is an independent reconstruction,
+not a replay of the absent historical script or receipts.
+
+Claim `BSC-DHC-01` fixes homological grading and constructs
+$A\mathbf h=\boldsymbol\omega$ from validated bounded chain complexes and two
+validated chain maps. A solution records exact homotopy matrices. An
+inconsistent transformed row records a normalized witness with
+$y^TA=0$ and $y^T\boldsymbol\omega=1$. The independent checker rebuilds the
+complexes, maps, system, and equations without importing the generator.
+
+Post-release Fixture F12 retains one nonzero raw difference on the
+contractible two-term identity complex and one degree-zero homology-visible
+obstruction. The first yields $A=(1,1)^T$ and $h_0=1$; the second yields a
+$1\times0$ system and $y=1$. Exact regressions cover non-square matrices,
+deterministic free variables, row-operation witnesses, adversarial artifact
+mutations, and all 153 valid ordered scalar two-term chain-map pairs over
+`{-1, 0, 1}`, with 81 homotopic, 72 obstructed, and zero mismatch against the
+independent scalar homology criterion.
+
+The fixture is `independent_reconstruction` evidence and remains
+`NOT_REPLAYED`, not mechanically replayed or kernel verified. It establishes
+neither an arbitrary-ring theorem nor a sparse-scaling claim and is unrelated
+to electromagnetic Wilson holonomy. The immutable v1.4.0 eleven-fixture
+release and the existing Collatz, electrostatic, electromagnetic, and
+formal-kernel sequence remain unchanged.
