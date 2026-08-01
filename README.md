@@ -41,6 +41,7 @@ The unit of evaluation is not the universe. It is one claimed transfer.
 | Framework module | [Simulation evidence profiles](framework/Simulation_Evidence_Profile.md) | Inspect intended-use records, statistical evidence, compatibility reserves, and coupled-surrogate propagation |
 | Framework module | [Operational channel core](framework/Operational_Channel_Core.md) | Inspect fixed-interface mixed classical/quantum propagation, no-resurrection, driven and strong-coupling energy boundaries, energy-port gluing, typed efficiencies, Bernoulli encoding, semantic alignment, and the 1/137 boundary |
 | Framework module | [Electromagnetic evidence bridge](framework/Electromagnetic_Evidence_Bridge.md) | Inspect gauge descent, sources and flux, boundary power, calibrated scattering, inverse scope, coupling normalization, metrology, RG flow, and aperiodic geometry-to-field descent |
+| Framework module | [Lorentz auxiliary-state passivity](framework/Lorentz_Auxiliary_State_Passivity.md) | Inspect the post-v1.4.0 scalar storage theorem, explicit coefficient-modulation pump, coupled energy balance, and exact F13 certificate boundary |
 | Framework module | [Exact rational derived-holonomy certificates](framework/Derived_Holonomy_Certificates.md) | Inspect the post-v1.4.0 exact-Q homotopy/left-null certificate and its evidence boundary |
 | Mathematical-physics application | [Electrostatic critical-point transfer](applications/Electrostatic_Critical_Point_Transfer.md) | Inspect quantitative critical-point transfer, positive-source compactness, the four-charge at-least-nine construction, and the bounded five-charge reconstruction |
 | Source-admission crosswalk | [ASTRA dual-rent audit](applications/ASTRA_Dual_Rent_Crosswalk.md) | Inspect corrected physical-change and diagnostic-gain semantics, exact countermodels, static reservoir degeneracy, source identities, and preserved verification failures |
@@ -130,13 +131,18 @@ recurrence, or duality earns the right to support a target claim.
   prior and typed physical/report outcomes, proves two finite independence
   countermodels and a sole-sink static degeneracy, and preserves the supplied
   verifier and numerical contradictions as non-promotions.
+- A post-v1.4.0 scalar Lorentz auxiliary-state theorem with exact rational
+  symbolic and finite-ledger checks for storage, damping, boundary power, and
+  coefficient-modulation pump accounting.
 - A two-page technical synopsis and field-specific reader map.
 - A symbol and notation ledger, claim-status ledger, and revision memorandum.
 - Eleven exact mathematical fixtures in immutable v1.4.0; immutable v1.3.0
   and v1.2.0 contain ten, immutable v1.1.0 contains nine, and immutable
-  v1.0.1 contains eight. Post-release `main` additionally contains F12.
+  v1.0.1 contains eight. Post-release `main` additionally contains F12 and
+  F13.
 - Three executable fixtures, F8, F10, and F11, in immutable v1.4.0, plus the
-  post-release F12 exact-Q certificate, with deterministic CPython receipts.
+  post-release F12 exact-Q and F13 Lorentz-passivity certificates, with
+  deterministic CPython receipts.
 - Fail-closed checkers for those receipts and their parsed JSON Schemas, with
   independent semantic recomputation and negative regression tests.
 - Reproduction instructions, release metadata, licenses, source-availability
@@ -152,8 +158,10 @@ finite recurrence; it is not empirical or physical validation of a surrogate
 model. F11 executes exact row replay and complete candidate enumeration, but
 its finite-prefix conclusion remains conditional on the external $2^{71}$
 base that BSC did not replay. F12 is an independent exact-Q reconstruction;
-the absent historical script remains `NOT_REPLAYED`. No proof-assistant
-artifact is included.
+the absent historical script remains `NOT_REPLAYED`. F13 independently checks
+one scalar auxiliary-state identity and four finite energy ledgers; it is not
+a continuous Maxwell execution or physical material calibration. No
+proof-assistant artifact is included.
 
 ## How to evaluate the contribution
 
@@ -474,6 +482,7 @@ miners, and independent replay program were not supplied to the repository.
 | Fixture F10: coupled-surrogate host dependence | True fixture result | Equal standalone error yields different exact host-relative tolerance disposition under two stable recurrences | N/A | One exact receipt | Fixture-local |
 | Fixture F11: Collatz recursive-sufficiency repair | True implication; conditional support | Exact induction defect, replacement sieve arithmetic, exhaustive interval enumeration, and first-descent replay | N/A | One exact receipt; external base not replayed | Fixture-local |
 | Fixture F12: exact-Q derived holonomy | True fixture result | Exact chain-homotopy pass or normalized left-null obstruction under BSC-DHC-01 | N/A | One independent-reconstruction receipt; historical script not replayed | Fixture-local |
+| Fixture F13: Lorentz auxiliary-state passivity | True fixture result | Exact symbolic storage and coupled-balance cancellation plus four rational energy ledgers under BSC-EM-12 | N/A | One independent-reconstruction receipt; not a PDE or historical replay | Fixture-local |
 | Collatz affine-certificate calculus | True within its declared path classes | Merge-kernel, affine-descent, valuation-screen, one-turn ghost-cylinder, and one-subprogression results proved; arithmetic-bar completeness remains open | N/A | Exact symbolic regressions; no catalog execution | Bounded |
 | Finite-resolution observation decides exact zero | False | Query fails operational descent when zero and nonzero amplitudes are confusable | N/A | Unexecuted | Blocked |
 | Finite evidence entails limiting DQPT exclusivity or RH | False | Limit, zero-census, and universal quantifier are not discharged | Single study | Unexecuted | Blocked |
@@ -493,6 +502,7 @@ python3 fixtures/F08_sqrt_square_sign/check_fixture.py
 python3 fixtures/F10_coupled_surrogate/check_fixture.py
 python3 fixtures/F11_collatz_recursive_sieve/check_fixture.py
 python3 fixtures/F12_derived_holonomy_q/check_fixture.py
+python3 fixtures/F13_lorentz_auxiliary_passivity/check_fixture.py
 ```
 
 No checker overwrites its retained receipt. F8 and F10 parse their shipped
@@ -507,7 +517,10 @@ certificate bytes, false completeness, nested schema errors, self-hash-policy
 changes, and overwrite attempts for F11. F12 rejects malformed complexes,
 non-chain maps, noncanonical rationals, arbitrary fields, tampered pass/fail
 witnesses, input substitution, evidence promotion, namespace collisions, and
-nondeterministic bytes.
+nondeterministic bytes. F13 rejects nonpositive storage parameters, negative
+damping promoted as passive, classification errors, missing or sign-flipped
+pump terms, Maxwell and port-sign errors, noncanonical JSON, identity changes,
+sample-to-theorem promotion, namespace collisions, and receipt overwrite.
 
 For the full local verification sequence:
 
@@ -522,11 +535,11 @@ commands.
 
 ```text
 paper/        manuscript PDF and editable source
-framework/    reusable scale, simulation, channel, electromagnetic, and exact-Q certificate mathematics
+framework/    reusable scale, simulation, channel, electromagnetic, Lorentz-storage, and exact-Q certificate mathematics
 applications/ source-bound domain crosswalks
 synopsis/     two-page synopsis, source, and reader map
 ledgers/      claim status and notation
-fixtures/     mathematical fixtures plus executable F8, F10, F11, and post-release F12 receipts
+fixtures/     mathematical fixtures plus executable F8, F10, F11, and post-release F12/F13 receipts
 revision/     explicit definition repairs and unresolved obligations
 provenance/   supplied-corpus identity records
 tools/        complete-set manifest and release verification

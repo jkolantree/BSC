@@ -1996,3 +1996,70 @@ No package prose, figures, code, or data are redistributed. The stale v0.2
 license notice inside the v0.3 package is not treated as authorization for new
 material. No roadmap, paper, PDF, release, tag, DOI, Zenodo record, workflow,
 ruleset, setting, or empirical status changes.
+
+## Post-v1.4.0: Lorentz auxiliary-state passivity certificate
+
+Roadmap item 9 withheld executable dispersive-material energy claims until an
+explicit auxiliary state and storage theorem were supplied. The bounded
+repair allocates `BSC-EM-12` without changing the immutable v1.4.0 paper or
+its synchronized `BSC-EM-01` through `BSC-EM-11` roster.
+
+For the scalar state
+
+```math
+\dot P=V,
+\qquad
+\dot V=aE-\gamma V-bP,
+```
+
+with fixed $a>0$, $b>0$, and $\gamma\ge0$, the positive storage
+$W=(V^2+bP^2)/(2a)$ obeys
+
+```math
+\dot W=EV-\frac{\gamma V^2}{a}.
+```
+
+The proof explicitly assumes that the background electromagnetic storage
+excludes this polarization state and that its Maxwell balance contains the
+polarization-current work $-EV$. Adding the two identities cancels the
+internal exchange and leaves boundary flux, free-current work, and damping
+loss. The integrated statement uses a fixed domain and positive-outward flux;
+inward port power is its negative.
+
+When $a$ or $b$ varies, the retained signed pump is
+
+```math
+q_{\mathrm{pump}}
+=\frac{\dot bP^2}{2a}
+-\frac{\dot a(V^2+bP^2)}{2a^2}.
+```
+
+It appears with a plus sign on the right-hand side of the coupled balance and
+gives an augmented supply $EV+q_{\mathrm{pump}}$. Passivity relative to the
+$EV$ port alone needs a separate pointwise or integrated control on the pump,
+such as $q_{\mathrm{pump}}\le0$; recording the pump alone is insufficient.
+Negative $\gamma$ is active antidamping; positive $\gamma$ does not imply
+strict pointwise loss at states with $V=0$.
+
+Post-release Fixture F13 independently checks the denominator-cleared fixed
+and varying identities in a sparse polynomial ring over $\mathbb Q$. It also
+retains four finite exact ledgers: one dissipative, one lossless, one with only
+$\dot b\ne0$, and one with only $\dot a\ne0$. Separate modulation cases prevent
+the pump contributions from cancelling accidentally. Each ledger uses a
+declared spatially uniform normalized cell, and its direct chain-rule storage
+rate is checked against the balance-side rate. The checker does not import the
+generator, reconstructs every rational result, validates a closed JSON Schema,
+binds the framework, input, code, schema, and provenance bytes, and requires
+byte-identical regeneration plus refusal to overwrite.
+
+This is `independent_reconstruction` evidence and remains `NOT_REPLAYED`, not
+mechanically replayed and not kernel verified. Rational fixture values do not
+calibrate physical $\varepsilon_0\omega_p^2$, material energy, or a continuous
+trajectory. The result supplies no Maxwell existence theorem, anisotropic or
+general causal-susceptibility theorem, empirical validation, device
+efficiency, magnetic switching, memory performance, novelty, or priority
+authority. No external source prose, figure, table, code, or data is reused.
+
+The update addresses only roadmap item 9's auxiliary-state/storage bullet. It
+does not edit or reorder the roadmap and does not absorb any other scientific
+or formal-kernel milestone.

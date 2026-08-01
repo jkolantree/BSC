@@ -1,0 +1,447 @@
+{
+  "$defs": {
+    "integrated_balance": {
+      "additionalProperties": false,
+      "properties": {
+        "coupled_residual": {
+          "$ref": "#/$defs/rational"
+        },
+        "em_energy_rate": {
+          "$ref": "#/$defs/rational"
+        },
+        "free_current_work": {
+          "$ref": "#/$defs/rational"
+        },
+        "inward_port_power": {
+          "$ref": "#/$defs/rational"
+        },
+        "inward_port_residual": {
+          "$ref": "#/$defs/rational"
+        },
+        "loss": {
+          "$ref": "#/$defs/rational"
+        },
+        "material_energy": {
+          "$ref": "#/$defs/rational"
+        },
+        "material_energy_rate": {
+          "$ref": "#/$defs/rational"
+        },
+        "maxwell_residual": {
+          "$ref": "#/$defs/rational"
+        },
+        "outward_flux": {
+          "$ref": "#/$defs/rational"
+        },
+        "polarization_work": {
+          "$ref": "#/$defs/rational"
+        },
+        "pump": {
+          "$ref": "#/$defs/rational"
+        },
+        "spatial_measure": {
+          "$ref": "#/$defs/rational"
+        },
+        "total_energy_rate": {
+          "$ref": "#/$defs/rational"
+        }
+      },
+      "required": [
+        "coupled_residual",
+        "em_energy_rate",
+        "free_current_work",
+        "inward_port_power",
+        "inward_port_residual",
+        "loss",
+        "material_energy",
+        "material_energy_rate",
+        "maxwell_residual",
+        "outward_flux",
+        "polarization_work",
+        "pump",
+        "spatial_measure",
+        "total_energy_rate"
+      ],
+      "type": "object"
+    },
+    "material": {
+      "additionalProperties": false,
+      "properties": {
+        "loss_rate": {
+          "$ref": "#/$defs/rational"
+        },
+        "material_residual": {
+          "$ref": "#/$defs/rational"
+        },
+        "polarization_power": {
+          "$ref": "#/$defs/rational"
+        },
+        "pump_rate": {
+          "$ref": "#/$defs/rational"
+        },
+        "storage": {
+          "$ref": "#/$defs/rational"
+        },
+        "storage_rate": {
+          "$ref": "#/$defs/rational"
+        },
+        "storage_rate_balance": {
+          "$ref": "#/$defs/rational"
+        }
+      },
+      "required": [
+        "loss_rate",
+        "material_residual",
+        "polarization_power",
+        "pump_rate",
+        "storage",
+        "storage_rate",
+        "storage_rate_balance"
+      ],
+      "type": "object"
+    },
+    "monomial_factor": {
+      "additionalProperties": false,
+      "properties": {
+        "exponent": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "variable": {
+          "enum": [
+            "a",
+            "b",
+            "gamma",
+            "a_dot",
+            "b_dot",
+            "P",
+            "V",
+            "E",
+            "J_free",
+            "u_dot",
+            "div_S"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "exponent",
+        "variable"
+      ],
+      "type": "object"
+    },
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "a": {
+          "$ref": "#/$defs/rational"
+        },
+        "a_dot": {
+          "$ref": "#/$defs/rational"
+        },
+        "b": {
+          "$ref": "#/$defs/rational"
+        },
+        "b_dot": {
+          "$ref": "#/$defs/rational"
+        },
+        "gamma": {
+          "$ref": "#/$defs/rational"
+        }
+      },
+      "required": [
+        "a",
+        "a_dot",
+        "b",
+        "b_dot",
+        "gamma"
+      ],
+      "type": "object"
+    },
+    "rational": {
+      "additionalProperties": false,
+      "properties": {
+        "denominator": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "numerator": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "denominator",
+        "numerator"
+      ],
+      "type": "object"
+    },
+    "result": {
+      "additionalProperties": false,
+      "properties": {
+        "case_id": {
+          "type": "string"
+        },
+        "case_sha256": {
+          "type": "string"
+        },
+        "classification": {
+          "enum": [
+            "passive_dissipative",
+            "passive_lossless",
+            "pump_accounted_dissipative",
+            "pump_accounted_lossless"
+          ],
+          "type": "string"
+        },
+        "integrated_balance": {
+          "$ref": "#/$defs/integrated_balance"
+        },
+        "material": {
+          "$ref": "#/$defs/material"
+        },
+        "parameter_mode": {
+          "enum": [
+            "fixed",
+            "time_varying"
+          ],
+          "type": "string"
+        },
+        "parameters": {
+          "$ref": "#/$defs/parameters"
+        },
+        "state": {
+          "$ref": "#/$defs/state"
+        }
+      },
+      "required": [
+        "case_id",
+        "case_sha256",
+        "classification",
+        "integrated_balance",
+        "material",
+        "parameter_mode",
+        "parameters",
+        "state"
+      ],
+      "type": "object"
+    },
+    "state": {
+      "additionalProperties": false,
+      "properties": {
+        "e": {
+          "$ref": "#/$defs/rational"
+        },
+        "j_free": {
+          "$ref": "#/$defs/rational"
+        },
+        "p": {
+          "$ref": "#/$defs/rational"
+        },
+        "p_dot": {
+          "$ref": "#/$defs/rational"
+        },
+        "v": {
+          "$ref": "#/$defs/rational"
+        },
+        "v_dot": {
+          "$ref": "#/$defs/rational"
+        }
+      },
+      "required": [
+        "e",
+        "j_free",
+        "p",
+        "p_dot",
+        "v",
+        "v_dot"
+      ],
+      "type": "object"
+    },
+    "term": {
+      "additionalProperties": false,
+      "properties": {
+        "coefficient": {
+          "$ref": "#/$defs/rational"
+        },
+        "monomial": {
+          "items": {
+            "$ref": "#/$defs/monomial_factor"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "coefficient",
+        "monomial"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "urn:bsc:fixture:f13:lorentz-auxiliary-passivity:receipt:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "arithmetic_model": {
+      "const": "fractions.Fraction and sparse polynomial arithmetic over Q",
+      "type": "string"
+    },
+    "checker_sha256": {
+      "type": "string"
+    },
+    "claim_id": {
+      "const": "BSC-EM-12",
+      "type": "string"
+    },
+    "evidence_status": {
+      "const": "independent_reconstruction",
+      "type": "string"
+    },
+    "fixture_claim_id": {
+      "const": "BSC-FIX-13",
+      "type": "string"
+    },
+    "fixture_id": {
+      "const": "F13-LORENTZ-AUXILIARY-PASSIVITY",
+      "type": "string"
+    },
+    "fixture_scope": {
+      "const": "exact_symbolic_identity_and_finite_energy_ledgers_not_continuous_pde_execution",
+      "type": "string"
+    },
+    "framework_sha256": {
+      "type": "string"
+    },
+    "generator_sha256": {
+      "type": "string"
+    },
+    "historical_replay_status": {
+      "const": "NOT_REPLAYED",
+      "type": "string"
+    },
+    "input_sha256": {
+      "type": "string"
+    },
+    "provenance_sha256": {
+      "type": "string"
+    },
+    "results": {
+      "items": {
+        "$ref": "#/$defs/result"
+      },
+      "maxItems": 4,
+      "minItems": 4,
+      "type": "array"
+    },
+    "schema": {
+      "const": "bsc-lorentz-passivity-receipt/1",
+      "type": "string"
+    },
+    "schema_sha256": {
+      "type": "string"
+    },
+    "serialization": {
+      "const": "UTF-8 JSON, two-space indentation, sorted keys, LF terminator",
+      "type": "string"
+    },
+    "spatial_profile": {
+      "const": "uniform_normalized_cell",
+      "type": "string"
+    },
+    "symbolic_proof": {
+      "additionalProperties": false,
+      "properties": {
+        "fixed_coupled_residual_terms": {
+          "items": {
+            "$ref": "#/$defs/term"
+          },
+          "type": "array"
+        },
+        "fixed_denominator_clear": {
+          "const": "a",
+          "type": "string"
+        },
+        "fixed_material_residual_terms": {
+          "items": {
+            "$ref": "#/$defs/term"
+          },
+          "type": "array"
+        },
+        "maxwell_premise_residual_terms": {
+          "items": {
+            "$ref": "#/$defs/term"
+          },
+          "type": "array"
+        },
+        "ring": {
+          "const": "Q[a,b,gamma,a_dot,b_dot,P,V,E,J_free,u_dot,div_S]",
+          "type": "string"
+        },
+        "sampling_used": {
+          "const": false,
+          "type": "boolean"
+        },
+        "varying_coupled_residual_terms": {
+          "items": {
+            "$ref": "#/$defs/term"
+          },
+          "type": "array"
+        },
+        "varying_denominator_clear": {
+          "const": "2*a^2",
+          "type": "string"
+        },
+        "varying_material_residual_terms": {
+          "items": {
+            "$ref": "#/$defs/term"
+          },
+          "type": "array"
+        },
+        "varying_pump_scaled_numerator_terms": {
+          "items": {
+            "$ref": "#/$defs/term"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "fixed_coupled_residual_terms",
+        "fixed_denominator_clear",
+        "fixed_material_residual_terms",
+        "maxwell_premise_residual_terms",
+        "ring",
+        "sampling_used",
+        "varying_coupled_residual_terms",
+        "varying_denominator_clear",
+        "varying_material_residual_terms",
+        "varying_pump_scaled_numerator_terms"
+      ],
+      "type": "object"
+    },
+    "theorem_scope": {
+      "const": "real_scalar_isotropic_fixed_domain_conditional_identity",
+      "type": "string"
+    }
+  },
+  "required": [
+    "arithmetic_model",
+    "checker_sha256",
+    "claim_id",
+    "evidence_status",
+    "fixture_claim_id",
+    "fixture_id",
+    "fixture_scope",
+    "framework_sha256",
+    "generator_sha256",
+    "historical_replay_status",
+    "input_sha256",
+    "provenance_sha256",
+    "results",
+    "schema",
+    "schema_sha256",
+    "serialization",
+    "spatial_profile",
+    "symbolic_proof",
+    "theorem_scope"
+  ],
+  "type": "object"
+}

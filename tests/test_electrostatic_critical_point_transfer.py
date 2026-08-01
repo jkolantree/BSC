@@ -703,7 +703,7 @@ class ElectrostaticCriticalPointTransferTests(unittest.TestCase):
         release_spec = json.loads(self.text("release/release-spec.json"))
         self.assertIsNone(release_spec["intended_version"])
         self.assertIsNone(release_spec["build_epoch"])
-        self.assertNotIn("BSC-FIX-13", ledger)
+        self.assertNotIn("BSC-FIX-13", note)
         self.assertNotIn("BSC-ECP-", self.text("ROADMAP.md"))
 
         vocabulary = {

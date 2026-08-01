@@ -23,6 +23,31 @@ or endorsing the package as a whole:
 No claim or fixture identifier, roadmap item, paper, PDF, release, tag, DOI,
 Zenodo record, workflow, ruleset, setting, or empirical status is changed.
 
+## Post-v1.4.0 Lorentz auxiliary-state passivity fixture — 2026-08-01
+
+This main-branch development is an independent exact-rational reconstruction
+under electromagnetic roadmap item 9, not a release or source-paper replay:
+
+- allocated `BSC-EM-12`, `BSC-FIX-13`, and
+  `F13-LORENTZ-AUXILIARY-PASSIVITY` without extending the immutable released
+  `BSC-EM-01` through `BSC-EM-11` roster;
+- proved the scalar fixed-parameter auxiliary-storage identity and its coupled
+  Maxwell/material energy balance under the explicit background-storage and
+  polarization-current split;
+- retained the full signed pump term for time-varying oscillator coefficients;
+- added denominator-cleared sparse-polynomial checks over $\mathbb Q$, four
+  exact uniform-cell energy ledgers with direct chain-rule checks, a
+  code-independent checker, deterministic receipt regeneration, and
+  adversarial identity and scope tests; and
+- kept normalized rational examples separate from physical calibration,
+  continuous PDE execution, general dispersive passivity, historical replay,
+  mechanical replay, and kernel verification.
+
+No paper, PDF, released electromagnetic theorem, existing fixture, roadmap
+ordering, application, release, tag, DOI, Zenodo record, ruleset, setting,
+device-efficiency claim, switching claim, memory claim, novelty claim, or
+priority claim is changed.
+
 ## Post-v1.4.0 electrostatic critical-point transfer — 2026-07-31
 
 This main-branch application is an independent mathematical reconstruction,
