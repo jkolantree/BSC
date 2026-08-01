@@ -1,0 +1,19 @@
+{
+  "classification": "independent_reconstruction",
+  "historical_replay_status": "NOT_REPLAYED",
+  "kernel_verification_status": "not_kernel_verified",
+  "mechanical_replay_status": "not_mechanically_replayed",
+  "source_documents": [
+    {
+      "filename": "Derived_Witnessed_Descent_and_Atomic_Spectral_Complexity.md",
+      "role": "provenance_only",
+      "sha256": "a2bc92f94d3b53eecc379432c0eab9d7992797078ed1fb408b37ed3768795300"
+    },
+    {
+      "filename": "Formal_Verification_and_Prime_Block_Obstruction.md",
+      "role": "provenance_only",
+      "sha256": "ba27ed31bc3c5c2f45a559acd2bbaaacfaf1968e61a63750943dfc1899953211"
+    }
+  ],
+  "source_redistribution": "not_included; authorization not established"
+}

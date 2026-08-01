@@ -1,0 +1,298 @@
+{
+  "$defs": {
+    "coordinate": {
+      "additionalProperties": false,
+      "properties": {
+        "column": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "degree": {
+          "type": "integer"
+        },
+        "row": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "column",
+        "degree",
+        "row"
+      ],
+      "type": "object"
+    },
+    "fail_result": {
+      "additionalProperties": false,
+      "properties": {
+        "case_id": {
+          "pattern": "^[a-z0-9_]+$",
+          "type": "string"
+        },
+        "case_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "certificate": {
+          "$ref": "#/$defs/left_null_certificate"
+        },
+        "certificate_type": {
+          "const": "left_null"
+        },
+        "status": {
+          "const": "fail"
+        },
+        "system": {
+          "$ref": "#/$defs/system"
+        }
+      },
+      "required": [
+        "case_id",
+        "case_sha256",
+        "certificate",
+        "certificate_type",
+        "status",
+        "system"
+      ],
+      "type": "object"
+    },
+    "homotopy_certificate": {
+      "additionalProperties": false,
+      "properties": {
+        "homotopy": {
+          "items": {
+            "$ref": "#/$defs/homotopy_component"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "homotopy"
+      ],
+      "type": "object"
+    },
+    "homotopy_component": {
+      "additionalProperties": false,
+      "properties": {
+        "degree": {
+          "type": "integer"
+        },
+        "matrix": {
+          "$ref": "#/$defs/matrix"
+        }
+      },
+      "required": [
+        "degree",
+        "matrix"
+      ],
+      "type": "object"
+    },
+    "left_null_certificate": {
+      "additionalProperties": false,
+      "properties": {
+        "left_null_pairing": {
+          "$ref": "#/$defs/rational"
+        },
+        "left_null_witness": {
+          "items": {
+            "$ref": "#/$defs/rational"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "left_null_pairing",
+        "left_null_witness"
+      ],
+      "type": "object"
+    },
+    "matrix": {
+      "additionalProperties": false,
+      "properties": {
+        "columns": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "entries": {
+          "items": {
+            "items": {
+              "$ref": "#/$defs/rational"
+            },
+            "type": "array"
+          },
+          "type": "array"
+        },
+        "rows": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "columns",
+        "entries",
+        "rows"
+      ],
+      "type": "object"
+    },
+    "pass_result": {
+      "additionalProperties": false,
+      "properties": {
+        "case_id": {
+          "pattern": "^[a-z0-9_]+$",
+          "type": "string"
+        },
+        "case_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "certificate": {
+          "$ref": "#/$defs/homotopy_certificate"
+        },
+        "certificate_type": {
+          "const": "homotopy"
+        },
+        "status": {
+          "const": "pass"
+        },
+        "system": {
+          "$ref": "#/$defs/system"
+        }
+      },
+      "required": [
+        "case_id",
+        "case_sha256",
+        "certificate",
+        "certificate_type",
+        "status",
+        "system"
+      ],
+      "type": "object"
+    },
+    "rational": {
+      "additionalProperties": false,
+      "properties": {
+        "denominator": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "numerator": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "denominator",
+        "numerator"
+      ],
+      "type": "object"
+    },
+    "system": {
+      "additionalProperties": false,
+      "properties": {
+        "coefficient_matrix": {
+          "$ref": "#/$defs/matrix"
+        },
+        "column_coordinates": {
+          "items": {
+            "$ref": "#/$defs/coordinate"
+          },
+          "type": "array"
+        },
+        "omega": {
+          "items": {
+            "$ref": "#/$defs/rational"
+          },
+          "type": "array"
+        },
+        "row_coordinates": {
+          "items": {
+            "$ref": "#/$defs/coordinate"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "coefficient_matrix",
+        "column_coordinates",
+        "omega",
+        "row_coordinates"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "urn:bsc:fixture:f12:derived-holonomy-q:receipt:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "arithmetic_model": {
+      "const": "fractions.Fraction exact rational arithmetic over Q"
+    },
+    "certificate_schema": {
+      "const": "bsc-derived-holonomy-certificate/1"
+    },
+    "claim_id": {
+      "const": "BSC-DHC-01"
+    },
+    "evidence_status": {
+      "const": "independent_reconstruction"
+    },
+    "fixture_claim_id": {
+      "const": "BSC-FIX-12"
+    },
+    "fixture_id": {
+      "const": "F12-DERIVED-HOLONOMY-Q"
+    },
+    "generator_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "historical_replay_status": {
+      "const": "NOT_REPLAYED"
+    },
+    "input_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "provenance_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "results": {
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/$defs/pass_result"
+          },
+          {
+            "$ref": "#/$defs/fail_result"
+          }
+        ]
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "schema_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "serialization": {
+      "const": "UTF-8 JSON, two-space indentation, sorted keys, LF terminator"
+    }
+  },
+  "required": [
+    "arithmetic_model",
+    "certificate_schema",
+    "claim_id",
+    "evidence_status",
+    "fixture_claim_id",
+    "fixture_id",
+    "generator_sha256",
+    "historical_replay_status",
+    "input_sha256",
+    "provenance_sha256",
+    "results",
+    "schema_sha256",
+    "serialization"
+  ],
+  "title": "BSC F12 exact-Q derived-holonomy certificate",
+  "type": "object"
+}

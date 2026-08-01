@@ -1,5 +1,22 @@
 # Changelog
 
+## Post-v1.4.0 exact-Q derived-holonomy fixture — 2026-07-31
+
+This main-branch development adds an independently reconstructed finite
+rational certificate without changing any release, paper, PDF, tag, DOI,
+Zenodo record, or existing scientific-work sequence:
+
+- allocated `BSC-DHC-01`, `BSC-FIX-12`, and
+  `F12-DERIVED-HOLONOMY-Q` without reusing an existing namespace;
+- validated finite bounded chain complexes and chain maps over $\mathbb Q$;
+- constructed the exact system $A\mathbf h=\boldsymbol\omega$ and emitted
+  either homotopy matrices or a normalized exact left-null obstruction;
+- added a code-independent checker, canonical input binding, byte-identical
+  regeneration, adversarial negative tests, a non-square regression, and an
+  exhaustive 153-case scalar comparison with zero homology mismatches; and
+- recorded the supplied notes as provenance only, with their absent historical
+  script and receipts retained as `NOT_REPLAYED` and no kernel-proof claim.
+
 ## Post-v1.4.0 affine-certificate application note — 2026-07-31
 
 This main-branch update adds separately scoped number-theory mathematics. It

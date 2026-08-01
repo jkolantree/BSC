@@ -41,6 +41,7 @@ The unit of evaluation is not the universe. It is one claimed transfer.
 | Framework module | [Simulation evidence profiles](framework/Simulation_Evidence_Profile.md) | Inspect intended-use records, statistical evidence, compatibility reserves, and coupled-surrogate propagation |
 | Framework module | [Operational channel core](framework/Operational_Channel_Core.md) | Inspect fixed-interface mixed classical/quantum propagation, no-resurrection, driven and strong-coupling energy boundaries, energy-port gluing, typed efficiencies, Bernoulli encoding, semantic alignment, and the 1/137 boundary |
 | Framework module | [Electromagnetic evidence bridge](framework/Electromagnetic_Evidence_Bridge.md) | Inspect gauge descent, sources and flux, boundary power, calibrated scattering, inverse scope, coupling normalization, metrology, RG flow, and aperiodic geometry-to-field descent |
+| Framework module | [Exact rational derived-holonomy certificates](framework/Derived_Holonomy_Certificates.md) | Inspect the post-v1.4.0 exact-Q homotopy/left-null certificate and its evidence boundary |
 | Application crosswalk | [Four July 2026 experiments](applications/Operational_Channel_Crosswalk_2026.md) | Compare hybrid photons, a driven plasmonic time crystal, Hiroshima alloy evidence, and a microwave probabilistic-bit processor without conflating their physics |
 | Number-theory application | [Collatz recursive sufficiency](applications/Collatz_Recursive_Sufficiency_Audit.md) | Inspect the exact induction defect, replacement RS sieves, conditional finite certificate, and blocked universal claims |
 | Number-theory calculus | [Collatz affine certificates](applications/Collatz_Affine_Certificate_Calculus.md) | Inspect merge kernels, exact affine descent, valuation screens, a scoped one-turn binary-cylinder obstruction, and one proved recursive subprogression |
@@ -121,12 +122,15 @@ recurrence, or duality earns the right to support a target claim.
   alignment; and an electromagnetic completion separating gauge,
   local Maxwell laws, constitutive response, boundary ports, calibrated
   reports, inverse authority, coupling normalization, and metrology.
+- A post-v1.4.0 exact rational derived-holonomy certificate that returns either
+  a chain homotopy or a normalized left-null obstruction over $\mathbb Q$.
 - A two-page technical synopsis and field-specific reader map.
 - A symbol and notation ledger, claim-status ledger, and revision memorandum.
-- Eleven exact mathematical fixtures; immutable v1.3.0 and v1.2.0 contain
-  ten, immutable v1.1.0 contains nine, and immutable v1.0.1 contains eight.
-- Three executable fixtures, F8, F10, and F11, with deterministic CPython 3.12.13
-  receipts.
+- Eleven exact mathematical fixtures in immutable v1.4.0; immutable v1.3.0
+  and v1.2.0 contain ten, immutable v1.1.0 contains nine, and immutable
+  v1.0.1 contains eight. Post-release `main` additionally contains F12.
+- Three executable fixtures, F8, F10, and F11, in immutable v1.4.0, plus the
+  post-release F12 exact-Q certificate, with deterministic CPython receipts.
 - Fail-closed checkers for those receipts and their parsed JSON Schemas, with
   independent semantic recomputation and negative regression tests.
 - Reproduction instructions, release metadata, licenses, source-availability
@@ -141,7 +145,9 @@ transfer and is not an NMR-data replay. F10 executes only its declared exact
 finite recurrence; it is not empirical or physical validation of a surrogate
 model. F11 executes exact row replay and complete candidate enumeration, but
 its finite-prefix conclusion remains conditional on the external $2^{71}$
-base that BSC did not replay. No proof-assistant artifact is included.
+base that BSC did not replay. F12 is an independent exact-Q reconstruction;
+the absent historical script remains `NOT_REPLAYED`. No proof-assistant
+artifact is included.
 
 ## How to evaluate the contribution
 
@@ -408,6 +414,7 @@ miners, and independent replay program were not supplied to the repository.
 | Fixture F9: zeta–DQPT scope audit | True fixture result | Finite identity proved; application-level scaling and contour theorems are not fixture executions | N/A | Unexecuted | Fixture-local |
 | Fixture F10: coupled-surrogate host dependence | True fixture result | Equal standalone error yields different exact host-relative tolerance disposition under two stable recurrences | N/A | One exact receipt | Fixture-local |
 | Fixture F11: Collatz recursive-sufficiency repair | True implication; conditional support | Exact induction defect, replacement sieve arithmetic, exhaustive interval enumeration, and first-descent replay | N/A | One exact receipt; external base not replayed | Fixture-local |
+| Fixture F12: exact-Q derived holonomy | True fixture result | Exact chain-homotopy pass or normalized left-null obstruction under BSC-DHC-01 | N/A | One independent-reconstruction receipt; historical script not replayed | Fixture-local |
 | Collatz affine-certificate calculus | True within its declared path classes | Merge-kernel, affine-descent, valuation-screen, one-turn ghost-cylinder, and one-subprogression results proved; arithmetic-bar completeness remains open | N/A | Exact symbolic regressions; no catalog execution | Bounded |
 | Finite-resolution observation decides exact zero | False | Query fails operational descent when zero and nonzero amplitudes are confusable | N/A | Unexecuted | Blocked |
 | Finite evidence entails limiting DQPT exclusivity or RH | False | Limit, zero-census, and universal quantifier are not discharged | Single study | Unexecuted | Blocked |
@@ -426,6 +433,7 @@ From the repository root:
 python3 fixtures/F08_sqrt_square_sign/check_fixture.py
 python3 fixtures/F10_coupled_surrogate/check_fixture.py
 python3 fixtures/F11_collatz_recursive_sieve/check_fixture.py
+python3 fixtures/F12_derived_holonomy_q/check_fixture.py
 ```
 
 No checker overwrites its retained receipt. F8 and F10 parse their shipped
@@ -437,7 +445,10 @@ retain the two F8 mutants that the v1.0.0 checker incorrectly accepted, add
 stale-host, altered-horizon, false-tolerance-disposition,
 decimal-substitution, and overwrite controls for F10, and reject changed
 certificate bytes, false completeness, nested schema errors, self-hash-policy
-changes, and overwrite attempts for F11.
+changes, and overwrite attempts for F11. F12 rejects malformed complexes,
+non-chain maps, noncanonical rationals, arbitrary fields, tampered pass/fail
+witnesses, input substitution, evidence promotion, namespace collisions, and
+nondeterministic bytes.
 
 For the full local verification sequence:
 
@@ -452,11 +463,11 @@ commands.
 
 ```text
 paper/        manuscript PDF and editable source
-framework/    reusable scale, simulation, operational-channel, and electromagnetic-bridge mathematics
+framework/    reusable scale, simulation, channel, electromagnetic, and exact-Q certificate mathematics
 applications/ source-bound domain crosswalks
 synopsis/     two-page synopsis, source, and reader map
 ledgers/      claim status and notation
-fixtures/     mathematical fixtures plus executable F8, F10, and F11 receipts
+fixtures/     mathematical fixtures plus executable F8, F10, F11, and post-release F12 receipts
 revision/     explicit definition repairs and unresolved obligations
 provenance/   supplied-corpus identity records
 tools/        complete-set manifest and release verification
