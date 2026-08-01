@@ -1875,3 +1875,54 @@ neither an arbitrary-ring theorem nor a sparse-scaling claim and is unrelated
 to electromagnetic Wilson holonomy. The immutable v1.4.0 eleven-fixture
 release and the existing Collatz, electrostatic, electromagnetic, and
 formal-kernel sequence remain unchanged.
+
+## Post-v1.4.0: electrostatic critical-point transfer
+
+The source-admission audit retained two version-and-hash-identified arXiv
+records: Arathoon, Ball, and Kvalheim's arXiv:2607.27197v1 and the
+Edelsbrunner, Fillmore, and Oliveira arXiv:2501.05315v2 manuscript associated
+with DOI 10.1112/plms.70163. The arXiv records declare CC BY 4.0. The Wiley
+version-of-record bytes were `NOT_OBTAINED`, and no historical script,
+notebook, or receipt was supplied. The resulting application is therefore
+fresh prose and an `independent_reconstruction`, with the source computation
+retained as `NOT_REPLAYED`.
+
+The first repair makes local critical-point transfer quantitative. It records
+the spatial and potential scales, the normalization sign, bounded open convex
+isolating domains, boundary-gradient margins, and averaged-Hessian margins.
+An exterior gradient gap is required before the local points form an exact
+roster on a compact set. A global count additionally requires compact
+containment and no escape. The Morse-Bott reduction retains $C^3$ control,
+while isolated Morse transfer uses $C^2$ control.
+
+The second repair closes the positive-source compactness gap. Convex-hull
+containment does not by itself exclude accumulation at singular sites, so
+uniform source-exclusion balls are established before regular zeros on a
+compact set are called finite. Parametric transversality then provides only
+an existential generic strength perturbation, not a named perturbation,
+radius, or probability.
+
+The admitted application proves three bounded lower-bound results. For fixed
+$c>4/9$ and sufficiently small positive $\varepsilon$, a triangle-plus-apex
+family gives six Morse-Bott split points and three persistent remote points;
+generic strength cleanup produces four pairwise-unequal positive charges with
+a finite Morse set containing at least nine points. The five-charge family
+with $q_\varepsilon=\frac34\varepsilon^3-\frac5{32}\varepsilon^5$ has an
+exact, exhaustive 21-point limit-polynomial roster plus the three remote
+points, yielding at least 24 for sufficiently small $\varepsilon$. Finally,
+the explicit axial-pair cancellation and derivative gate supports the
+conditional source count $3+2m$ and point lower bound $4+20m$.
+
+Exact regressions check both normalization signs, triangle moments, the
+strict $c>4/9$ threshold, six-way split, remote-root isolation,
+source-exclusion and affine-spanning witnesses, the complete 21-point roster
+and its 10/11 index totals, pair-insertion coefficients and positivity, and
+the rational strength at $\varepsilon=1/6$. That last identity is not a root
+certificate.
+
+No exact finite-parameter total, explicit generic perturbation, robustness
+radius, stable-trap result, finite-size-source transfer, four-charge maximum,
+novelty, or priority claim is promoted. No F13, roadmap item, release, paper,
+PDF, tag, DOI, Zenodo record, release metadata, electromagnetic claim, or
+formal-kernel claim is changed. F12 derived holonomy remains unrelated to
+electromagnetic Wilson holonomy.
