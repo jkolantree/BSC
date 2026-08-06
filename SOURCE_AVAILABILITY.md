@@ -13,12 +13,21 @@ and SHA-256 hashes are recorded in
 the original
 [hash ledger](provenance/Supplied_Source_SHA256.txt).
 
+The same provenance tables also contain six nonredistributed ASTRA v0.3 audit
+records: three PDFs, the source ZIP, its checksum sidecar, and its verification
+note. Those records were supplied for a post-release citation-only crosswalk.
+They are not part of the twelve-document internal BSC corpus, are not included
+in this repository, and do not transfer the ASTRA package's scientific or
+licensing authority into BSC.
+
 Consequences:
 
 - The release fixes the identity of the supplied corpus used for this paper.
 - Readers can inspect every imported public citation through the bibliography.
 - Readers cannot independently replay internal corpus-lineage claims from this
   repository alone.
+- Readers likewise cannot replay the ASTRA source-admission audit from this
+  repository alone; its six hashes identify external supplied bytes.
 - Statements that reproduce the supplied tuple lineage are therefore
   transcriptions from hash-identified internal sources, not independently
   certified public-source facts.

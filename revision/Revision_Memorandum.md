@@ -1926,3 +1926,73 @@ novelty, or priority claim is promoted. No F13, roadmap item, release, paper,
 PDF, tag, DOI, Zenodo record, release metadata, electromagnetic claim, or
 formal-kernel claim is changed. F12 derived holonomy remains unrelated to
 electromagnetic Wilson holonomy.
+
+## Post-v1.4.0: ASTRA dual-rent source-admission crosswalk
+
+The supplied ASTRA v0.3 family was audited as six frozen outer byte records.
+Its archive has a sound internal identity boundary: 333 safe regular-file
+members, an exact 331-file payload manifest, and an exact 332-row checksum
+inventory. The three separately supplied PDFs are byte-identical to archive
+members and are aliases rather than independent evidence. The archive itself,
+its checksums, generated reports, tests, ledgers, figures, and retained logs
+descend from one source root.
+
+The audit did not accept the package's overall verification status. Its main
+verifier writes PASS dispositions without converting failed booleans into
+assertions or a failing process status, accepts self-entered source-support
+labels, and reads a retained `27 passed` log rather than invoking the test
+runner. A fresh disposable run of the bundled suite did pass all 27 tests, but
+the package supplies no dependency lock and the execution remains
+harness-local rather than an independent validation of 80 claims.
+
+The source-admission crosswalk retains one useful distinction after a type
+repair. For one fixed candidate space and prior, it compares
+
+```math
+R_{\mathrm{dyn}}
+=\sum_kp(k)d_{\mathrm{phys}}(\sigma_1^k,\sigma_0^k)
+```
+
+on a common physical outcome space with
+
+```math
+R_{\mathrm{epi}}
+=I_{P_1}(K;Y)-I_{P_0}(K;Y)
+```
+
+on a declared report space. Two exact fair-bit examples prove that changed
+diagnostic access can have zero dynamical rent and that a common physical
+change can have zero epistemic rent. BSC-CHN-02 remains controlling: a common
+passive Markov, CPTP, measurement, or report channel cannot create
+distinguishability. Any conditioned gain must retain the complete instrument,
+success probability, yield, throughput, and resource boundary.
+
+The classical branch uses candidate-conditioned laws and total variation. The
+quantum branch instead uses density operators, trace distance, and report laws
+induced by a declared instrument or POVM; density operators are not inserted
+into a classical joint-law formula.
+
+The note also derives one model-local identity. In a finite conservative
+linear reservoir with one external sink,
+
+```math
+C\dot T=-LT-\lambda e_se_s^TT+b
+```
+
+implies $T_s=(\mathbf1^Tb)/\lambda$ at equilibrium. Static surface data are
+therefore topology-degenerate under those hypotheses. No frequency-domain
+topology result is admitted: the technical supplement's reported grid optima
+conflict with its canonical JSON values.
+
+The exact three-variable Keller determinant and rational collision survived
+independent symbolic reproduction, as did the declared odd-prime reductions.
+That is the strongest later implementation candidate, but this crosswalk
+allocates no claim or fixture. It must follow the existing electromagnetic
+fixture sequence and use the next available identifiers. Prime-difference
+scans, experimental and quantum cases, archaeology, origin narratives, and
+broad local-to-global language are not promoted.
+
+No package prose, figures, code, or data are redistributed. The stale v0.2
+license notice inside the v0.3 package is not treated as authorization for new
+material. No roadmap, paper, PDF, release, tag, DOI, Zenodo record, workflow,
+ruleset, setting, or empirical status changes.
