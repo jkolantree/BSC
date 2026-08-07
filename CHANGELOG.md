@@ -1,5 +1,32 @@
 # Changelog
 
+## Post-v1.4.0 independent $C(13,6,3)$ research artifact — 2026-08-07
+
+This main-branch candidate records a separately scoped combinatorics result;
+it is not a BSC claim, fixture, release, or formal proof:
+
+- supplied an explicit 20-block family on 13 points whose 6-subsets cover
+  exactly 284 of the 286 triples, with exact leave, degree, pair, triple, and
+  block-intersection inventories;
+- compared it with the checked public 21-block cover through a transparent
+  three-block-for-two-block exchange and exhaustively verified every
+  one-block deletion from that source;
+- proved, conditional on a 20-cover existing, that its point degrees must have
+  one of three forms and that some block must contain at least 10 private
+  triples;
+- mechanically replayed the finite 49-state, 10-profile arithmetic reduction
+  used by that rigidity proof and retained a deterministic verification
+  receipt with adversarial negative tests; and
+- froze public-record, normalized construction, and provenance hashes while
+  keeping the absence of a matching public construction search result
+  distinct from a novelty or priority claim.
+
+The artifact does not produce a 20-cover and does not establish
+$C(13,6,3)=21$, optimality of 284 covered triples, best-known status, absolute
+novelty, priority, or kernel verification. No paper, PDF, roadmap, claim
+ledger, fixture namespace, release, tag, DOI, Zenodo record, workflow,
+ruleset, or setting is changed.
+
 ## Post-v1.4.0 ASTRA dual-rent source-admission crosswalk — 2026-08-06
 
 This main-branch note audits the supplied ASTRA v0.3 package without importing

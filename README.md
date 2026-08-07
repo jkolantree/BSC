@@ -48,6 +48,7 @@ The unit of evaluation is not the universe. It is one claimed transfer.
 | Application crosswalk | [Four July 2026 experiments](applications/Operational_Channel_Crosswalk_2026.md) | Compare hybrid photons, a driven plasmonic time crystal, Hiroshima alloy evidence, and a microwave probabilistic-bit processor without conflating their physics |
 | Number-theory application | [Collatz recursive sufficiency](applications/Collatz_Recursive_Sufficiency_Audit.md) | Inspect the exact induction defect, replacement RS sieves, conditional finite certificate, and blocked universal claims |
 | Number-theory calculus | [Collatz affine certificates](applications/Collatz_Affine_Certificate_Calculus.md) | Inspect merge kernels, exact affine descent, valuation screens, a scoped one-turn binary-cylinder obstruction, and one proved recursive subprogression |
+| Independent combinatorics research | [C(13,6,3) covering construction and rigidity](research/C13_6_3_covering/README.md) | Inspect a 20-block construction covering 284 of 286 triples and a conditional arithmetic rigidity theorem for any hypothetical 20-cover |
 | Status audit | [Claim-status ledger](ledgers/Claim_Status_Ledger.md) | Separate mathematical verdict from support and other readiness coordinates |
 | Source audit | [Revision memorandum](revision/Revision_Memorandum.md) | See every material repair and unresolved source conflict |
 | Release audit | [v1.0.0 audit report](AUDIT_REPORT_v1.0.0.md) | See what survived, what failed, and what v1.0.1 repaired |
@@ -134,6 +135,10 @@ recurrence, or duality earns the right to support a target claim.
 - A post-v1.4.0 scalar Lorentz auxiliary-state theorem with exact rational
   symbolic and finite-ledger checks for storage, damping, boundary power, and
   coefficient-modulation pump accounting.
+- An independent $C(13,6,3)$ research artifact containing a 20-block family
+  that covers exactly 284 of 286 triples, plus a hand-checked conditional
+  rigidity theorem and mechanically replayed finite arithmetic. It does not
+  establish a 20-cover, $C(13,6,3)=21$, optimality, or priority.
 - A two-page technical synopsis and field-specific reader map.
 - A symbol and notation ledger, claim-status ledger, and revision memorandum.
 - Eleven exact mathematical fixtures in immutable v1.4.0; immutable v1.3.0
@@ -522,6 +527,20 @@ damping promoted as passive, classification errors, missing or sign-flipped
 pump terms, Maxwell and port-sign errors, noncanonical JSON, identity changes,
 sample-to-theorem promotion, namespace collisions, and receipt overwrite.
 
+The independent combinatorics artifact has its own checker and unit tests; it
+is not a BSC fixture and does not extend the claim-status ledger:
+
+```bash
+python3 research/C13_6_3_covering/verify_c13_covering.py
+python3 -m unittest tests.test_c13_covering -v
+```
+
+The checker reconstructs the coverage, leave, incidence histograms, source
+comparison, and the finite arithmetic used by the conditional rigidity proof.
+Its retained receipt is deterministic. The proof itself is hand checked, not
+kernel verified, and the checked public record still leaves the covering
+number between 20 and 21.
+
 For the full local verification sequence:
 
 ```bash
@@ -542,6 +561,7 @@ ledgers/      claim status and notation
 fixtures/     mathematical fixtures plus executable F8, F10, F11, and post-release F12/F13 receipts
 revision/     explicit definition repairs and unresolved obligations
 provenance/   supplied-corpus identity records
+research/     independent research outside the BSC claim and fixture namespaces
 tools/        complete-set manifest and release verification
 tests/        positive and negative release-gate regressions
 ```
