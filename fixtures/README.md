@@ -5,8 +5,8 @@ v1.2.0 remain the ten-fixture records, immutable v1.1.0 remains the
 nine-fixture record, and immutable v1.0.1 remains the historical
 eight-fixture record.
 
-Post-v1.4.0 development on `main` adds F12 without changing any released
-fixture record.
+Post-v1.4.0 development on `main` adds F12 and F13 without changing any
+released fixture record.
 
 | Fixture | Subject | Current computational status |
 |---|---|---|
@@ -22,14 +22,16 @@ fixture record.
 | F10 | Equal standalone surrogate error in two stable coupled hosts | Exact retained CPython receipt |
 | F11 | Collatz recursive-sufficiency correction and conditional finite-prefix extension | Exact retained CPython receipt; external base remains conditional |
 | F12 | Exact rational derived-holonomy pass or obstruction over $\mathbb Q$ | Post-v1.4.0 independent-reconstruction receipt |
+| F13 | Scalar Lorentz auxiliary-state storage, damping, pump, and coupled energy balance | Post-v1.4.0 independent-reconstruction receipt |
 
-F8, F10, and F11 are executable in version 1.4.0. Post-release F12 is also
-executable on `main`. F9 has no raw-data replay, fitting execution, hardware
-receipt, or complexity benchmark. Each executable fixture directory includes
-a retained receipt, generator, JSON Schema, and fail-closed checker. F8, F10,
-and F12 run their generators in temporary locations and require byte-identical
-output without overwriting the reference receipt. F11 instead separates a
-routine exact replay from its several-minute complete-enumeration gate:
+F8, F10, and F11 are executable in version 1.4.0. Post-release F12 and F13 are
+also executable on `main`. F9 has no raw-data replay, fitting execution,
+hardware receipt, or complexity benchmark. Each executable fixture directory
+includes a retained receipt, generator, JSON Schema, and fail-closed checker.
+F8, F10, F12, and F13 run their generators in temporary locations and require
+byte-identical output without overwriting the reference receipt. F11 instead
+separates a routine exact replay from its several-minute complete-enumeration
+gate:
 
 Run from the repository root:
 
@@ -38,6 +40,7 @@ python3 fixtures/F08_sqrt_square_sign/check_fixture.py
 python3 fixtures/F10_coupled_surrogate/check_fixture.py
 python3 fixtures/F11_collatz_recursive_sieve/check_fixture.py
 python3 fixtures/F12_derived_holonomy_q/check_fixture.py
+python3 fixtures/F13_lorentz_auxiliary_passivity/check_fixture.py
 ```
 
 F10 uses exact rational arithmetic with the same interface error in two stable
@@ -58,3 +61,10 @@ chain maps, then emits either homotopy matrices or a normalized left-null
 obstruction. Its independent checker reconstructs every equation and retains
 the absent historical script as `NOT_REPLAYED`. It is not a proof-assistant
 kernel result or evidence for an arbitrary-ring generalization.
+
+F13 checks a scalar Lorentz auxiliary-state storage theorem by exact
+denominator-cleared sparse-polynomial cancellation and four rational energy
+ledgers. It keeps background field storage, polarization exchange, free-current
+work, damping, boundary flux, and coefficient-modulation pump terms distinct.
+The finite ledgers are not continuous Maxwell executions, physical material
+calibrations, source-paper replays, or general dispersive-medium proofs.

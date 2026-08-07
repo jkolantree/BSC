@@ -294,6 +294,20 @@ derive a unified microscopic theory or the numerical value of $\alpha$.
 | $C_{\mathrm{sel}},\Phi_{\mathrm{mat}},X_N$ | geometry selector, materialization map, and finite approximant | $C_{\mathrm{sel}}$ chooses tile interiors, edges, vertices, centroids, or another finite point set; $\Phi_{\mathrm{mat}}$ adds scale, thickness, constitutive dispersion, loss, substrate, and interfaces. An infinite tiling theorem does not identify a fabricated finite device without these maps. |
 | $F_N(k_x,k_y),I_N$ | scalar point-scatterer amplitude and intensity | $F_N=\sum_{j=1}^N\exp(2\pi i(k_xx_j+k_yy_j))$ and $I_N=\lvert F_N\rvert^2$ for the declared identical-point model. This is not a full Maxwell solution for finite scatterers; selector, weights, form factor, phase, illumination, and calibration remain typed. |
 
+## Post-v1.4.0 Lorentz auxiliary-state symbols
+
+These symbols are local to BSC-EM-12 and F13. They do not alter the released
+electromagnetic notation or identify normalized rational fixture parameters
+with calibrated SI material constants.
+
+| Symbol | Type or codomain | Meaning and constraints |
+|---|---|---|
+| $P,V$ | real scalar polarization coordinate and its time derivative | $V=\dot P$ in the declared Lorentz auxiliary state. This local $P$ is not a principal bundle, tiling partition, preparation kernel, or permutation matrix; $V$ is not an admissible-region symbol. |
+| $a,b,\gamma$ | real local oscillator coefficients | $a=\varepsilon_0\omega_p^2>0$, $b=\omega_0^2>0$, and $\gamma\ge0$ inside BSC-EM-12. These are not BSC scale labels, scattering amplitudes, or Collatz slope data. Rational fixture values are normalized exact inputs, not empirical claims. |
+| $W$ | nonnegative auxiliary material storage density | $W=(V^2+bP^2)/(2a)$. This local $W$ is not the scattering power metric. The background field storage must exclude the same polarization energy. |
+| $D_{\mathrm{loss}}$ | nonnegative material loss density rate | $\gamma V^2/a$. For $\gamma>0$ it can still vanish at $V=0$, so strict pointwise decay is not claimed. |
+| $q_{\mathrm{pump}}$ | signed coefficient-modulation power density | $\dot bP^2/(2a)-\dot a(V^2+bP^2)/(2a^2)$. It is an explicit pump/extraction channel, not dissipation or energy creation. |
+
 ## Certified normalized-scale profiles
 
 These are reusable framework symbols. They do not add a ninth field to the

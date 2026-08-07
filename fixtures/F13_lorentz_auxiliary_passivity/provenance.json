@@ -1,0 +1,22 @@
+{
+  "blocked_promotions": [
+    "absolute_physical_energy",
+    "device_efficiency",
+    "empirical_validation",
+    "historical_replay",
+    "kernel_verification",
+    "magnetic_switching",
+    "mechanical_replay",
+    "memory_performance",
+    "novelty",
+    "priority"
+  ],
+  "classification": "independent_reconstruction",
+  "external_code_or_data_reuse": "none",
+  "external_source_dependency": "none",
+  "historical_replay_status": "NOT_REPLAYED",
+  "kernel_verification_status": "not_kernel_verified",
+  "mechanical_replay_status": "not_mechanically_replayed",
+  "roadmap_scope": "item_9_auxiliary_state_storage_bullet_only",
+  "source_redistribution": "none"
+}

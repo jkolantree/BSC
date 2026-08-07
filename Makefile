@@ -29,6 +29,7 @@ fixture:
 	$(PYTHON) fixtures/F10_coupled_surrogate/check_fixture.py
 	$(PYTHON) fixtures/F11_collatz_recursive_sieve/check_fixture.py
 	$(PYTHON) fixtures/F12_derived_holonomy_q/check_fixture.py
+	$(PYTHON) fixtures/F13_lorentz_auxiliary_passivity/check_fixture.py
 
 fixture-full: fixture
 	$(PYTHON) fixtures/F11_collatz_recursive_sieve/check_fixture.py --full-scan

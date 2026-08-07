@@ -1,0 +1,658 @@
+{
+  "arithmetic_model": "fractions.Fraction and sparse polynomial arithmetic over Q",
+  "checker_sha256": "993e838da8be67ae3ff767c0e677ae4108a0ecb621277f1a47dfdfd2632ebf59",
+  "claim_id": "BSC-EM-12",
+  "evidence_status": "independent_reconstruction",
+  "fixture_claim_id": "BSC-FIX-13",
+  "fixture_id": "F13-LORENTZ-AUXILIARY-PASSIVITY",
+  "fixture_scope": "exact_symbolic_identity_and_finite_energy_ledgers_not_continuous_pde_execution",
+  "framework_sha256": "6cea78a283f2c3d608e08287681167d579b7ce5772d0bb8d8671cfb7e56e9a25",
+  "generator_sha256": "be752fd2fba4ccfefccf895946fa37e1bd687a9ad4de6dc9d322285ff0c441e2",
+  "historical_replay_status": "NOT_REPLAYED",
+  "input_sha256": "20edb065c0c9d5f5742304be78d5e977027560a436589be5b9037d7c29f7323e",
+  "provenance_sha256": "f7240c741bcf5ad0809b703b830548d3f69900da628ab672e4bfeb49591dec28",
+  "results": [
+    {
+      "case_id": "fixed_dissipative",
+      "case_sha256": "573356d331ed804c4448e343003ea97049b366c0c541cc5a2b476f1b14689688",
+      "classification": "passive_dissipative",
+      "integrated_balance": {
+        "coupled_residual": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "em_energy_rate": {
+          "denominator": 1,
+          "numerator": -40
+        },
+        "free_current_work": {
+          "denominator": 1,
+          "numerator": 35
+        },
+        "inward_port_power": {
+          "denominator": 1,
+          "numerator": 5
+        },
+        "inward_port_residual": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "loss": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "material_energy": {
+          "denominator": 4,
+          "numerator": 7
+        },
+        "material_energy_rate": {
+          "denominator": 1,
+          "numerator": 8
+        },
+        "maxwell_residual": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "outward_flux": {
+          "denominator": 1,
+          "numerator": -5
+        },
+        "polarization_work": {
+          "denominator": 1,
+          "numerator": 10
+        },
+        "pump": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "spatial_measure": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "total_energy_rate": {
+          "denominator": 1,
+          "numerator": -32
+        }
+      },
+      "material": {
+        "loss_rate": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "material_residual": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "polarization_power": {
+          "denominator": 1,
+          "numerator": 10
+        },
+        "pump_rate": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "storage": {
+          "denominator": 4,
+          "numerator": 7
+        },
+        "storage_rate": {
+          "denominator": 1,
+          "numerator": 8
+        },
+        "storage_rate_balance": {
+          "denominator": 1,
+          "numerator": 8
+        }
+      },
+      "parameter_mode": "fixed",
+      "parameters": {
+        "a": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "a_dot": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "b": {
+          "denominator": 1,
+          "numerator": 3
+        },
+        "b_dot": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "gamma": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "state": {
+        "e": {
+          "denominator": 1,
+          "numerator": 5
+        },
+        "j_free": {
+          "denominator": 1,
+          "numerator": 7
+        },
+        "p": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "p_dot": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "v": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "v_dot": {
+          "denominator": 1,
+          "numerator": 5
+        }
+      }
+    },
+    {
+      "case_id": "fixed_lossless",
+      "case_sha256": "19f59fa6fea603c32657b6d3b7d9a21d1bb92e09fe60c532665520fa3bf5afd2",
+      "classification": "passive_lossless",
+      "integrated_balance": {
+        "coupled_residual": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "em_energy_rate": {
+          "denominator": 1,
+          "numerator": 27
+        },
+        "free_current_work": {
+          "denominator": 1,
+          "numerator": -8
+        },
+        "inward_port_power": {
+          "denominator": 1,
+          "numerator": -5
+        },
+        "inward_port_residual": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "loss": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "material_energy": {
+          "denominator": 3,
+          "numerator": 11
+        },
+        "material_energy_rate": {
+          "denominator": 1,
+          "numerator": -24
+        },
+        "maxwell_residual": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "outward_flux": {
+          "denominator": 1,
+          "numerator": 5
+        },
+        "polarization_work": {
+          "denominator": 1,
+          "numerator": -24
+        },
+        "pump": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "spatial_measure": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "total_energy_rate": {
+          "denominator": 1,
+          "numerator": 3
+        }
+      },
+      "material": {
+        "loss_rate": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "material_residual": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "polarization_power": {
+          "denominator": 1,
+          "numerator": -12
+        },
+        "pump_rate": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "storage": {
+          "denominator": 6,
+          "numerator": 11
+        },
+        "storage_rate": {
+          "denominator": 1,
+          "numerator": -12
+        },
+        "storage_rate_balance": {
+          "denominator": 1,
+          "numerator": -12
+        }
+      },
+      "parameter_mode": "fixed",
+      "parameters": {
+        "a": {
+          "denominator": 1,
+          "numerator": 3
+        },
+        "a_dot": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "b": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "b_dot": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "gamma": {
+          "denominator": 1,
+          "numerator": 0
+        }
+      },
+      "state": {
+        "e": {
+          "denominator": 1,
+          "numerator": 4
+        },
+        "j_free": {
+          "denominator": 1,
+          "numerator": -1
+        },
+        "p": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "p_dot": {
+          "denominator": 1,
+          "numerator": -3
+        },
+        "v": {
+          "denominator": 1,
+          "numerator": -3
+        },
+        "v_dot": {
+          "denominator": 1,
+          "numerator": 10
+        }
+      }
+    },
+    {
+      "case_id": "varying_b_pump",
+      "case_sha256": "60e895be0912b484f73473a19cdee1072ae0e7a2a434fee2167b231313e13660",
+      "classification": "pump_accounted_dissipative",
+      "integrated_balance": {
+        "coupled_residual": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "em_energy_rate": {
+          "denominator": 1,
+          "numerator": -40
+        },
+        "free_current_work": {
+          "denominator": 1,
+          "numerator": 35
+        },
+        "inward_port_power": {
+          "denominator": 1,
+          "numerator": 5
+        },
+        "inward_port_residual": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "loss": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "material_energy": {
+          "denominator": 4,
+          "numerator": 7
+        },
+        "material_energy_rate": {
+          "denominator": 1,
+          "numerator": 9
+        },
+        "maxwell_residual": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "outward_flux": {
+          "denominator": 1,
+          "numerator": -5
+        },
+        "polarization_work": {
+          "denominator": 1,
+          "numerator": 10
+        },
+        "pump": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "spatial_measure": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "total_energy_rate": {
+          "denominator": 1,
+          "numerator": -31
+        }
+      },
+      "material": {
+        "loss_rate": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "material_residual": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "polarization_power": {
+          "denominator": 1,
+          "numerator": 10
+        },
+        "pump_rate": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "storage": {
+          "denominator": 4,
+          "numerator": 7
+        },
+        "storage_rate": {
+          "denominator": 1,
+          "numerator": 9
+        },
+        "storage_rate_balance": {
+          "denominator": 1,
+          "numerator": 9
+        }
+      },
+      "parameter_mode": "time_varying",
+      "parameters": {
+        "a": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "a_dot": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "b": {
+          "denominator": 1,
+          "numerator": 3
+        },
+        "b_dot": {
+          "denominator": 1,
+          "numerator": 4
+        },
+        "gamma": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "state": {
+        "e": {
+          "denominator": 1,
+          "numerator": 5
+        },
+        "j_free": {
+          "denominator": 1,
+          "numerator": 7
+        },
+        "p": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "p_dot": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "v": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "v_dot": {
+          "denominator": 1,
+          "numerator": 5
+        }
+      }
+    },
+    {
+      "case_id": "varying_a_pump",
+      "case_sha256": "3832ef89231975f7416f7a9b3b935c848ecbe3e4af697e3cb88c89c8123047b8",
+      "classification": "pump_accounted_dissipative",
+      "integrated_balance": {
+        "coupled_residual": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "em_energy_rate": {
+          "denominator": 1,
+          "numerator": -40
+        },
+        "free_current_work": {
+          "denominator": 1,
+          "numerator": 35
+        },
+        "inward_port_power": {
+          "denominator": 1,
+          "numerator": 5
+        },
+        "inward_port_residual": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "loss": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "material_energy": {
+          "denominator": 4,
+          "numerator": 7
+        },
+        "material_energy_rate": {
+          "denominator": 4,
+          "numerator": 25
+        },
+        "maxwell_residual": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "outward_flux": {
+          "denominator": 1,
+          "numerator": -5
+        },
+        "polarization_work": {
+          "denominator": 1,
+          "numerator": 10
+        },
+        "pump": {
+          "denominator": 4,
+          "numerator": -7
+        },
+        "spatial_measure": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "total_energy_rate": {
+          "denominator": 4,
+          "numerator": -135
+        }
+      },
+      "material": {
+        "loss_rate": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "material_residual": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "polarization_power": {
+          "denominator": 1,
+          "numerator": 10
+        },
+        "pump_rate": {
+          "denominator": 4,
+          "numerator": -7
+        },
+        "storage": {
+          "denominator": 4,
+          "numerator": 7
+        },
+        "storage_rate": {
+          "denominator": 4,
+          "numerator": 25
+        },
+        "storage_rate_balance": {
+          "denominator": 4,
+          "numerator": 25
+        }
+      },
+      "parameter_mode": "time_varying",
+      "parameters": {
+        "a": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "a_dot": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "b": {
+          "denominator": 1,
+          "numerator": 3
+        },
+        "b_dot": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "gamma": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "state": {
+        "e": {
+          "denominator": 1,
+          "numerator": 5
+        },
+        "j_free": {
+          "denominator": 1,
+          "numerator": 7
+        },
+        "p": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "p_dot": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "v": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "v_dot": {
+          "denominator": 1,
+          "numerator": 5
+        }
+      }
+    }
+  ],
+  "schema": "bsc-lorentz-passivity-receipt/1",
+  "schema_sha256": "d986b17cb09d763deb7c566a14b663d59d67f1e9392aaaeefaf88734900da2bc",
+  "serialization": "UTF-8 JSON, two-space indentation, sorted keys, LF terminator",
+  "spatial_profile": "uniform_normalized_cell",
+  "symbolic_proof": {
+    "fixed_coupled_residual_terms": [],
+    "fixed_denominator_clear": "a",
+    "fixed_material_residual_terms": [],
+    "maxwell_premise_residual_terms": [],
+    "ring": "Q[a,b,gamma,a_dot,b_dot,P,V,E,J_free,u_dot,div_S]",
+    "sampling_used": false,
+    "varying_coupled_residual_terms": [],
+    "varying_denominator_clear": "2*a^2",
+    "varying_material_residual_terms": [],
+    "varying_pump_scaled_numerator_terms": [
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": -1
+        },
+        "monomial": [
+          {
+            "exponent": 1,
+            "variable": "a_dot"
+          },
+          {
+            "exponent": 2,
+            "variable": "V"
+          }
+        ]
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": -1
+        },
+        "monomial": [
+          {
+            "exponent": 1,
+            "variable": "b"
+          },
+          {
+            "exponent": 1,
+            "variable": "a_dot"
+          },
+          {
+            "exponent": 2,
+            "variable": "P"
+          }
+        ]
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "monomial": [
+          {
+            "exponent": 1,
+            "variable": "a"
+          },
+          {
+            "exponent": 1,
+            "variable": "b_dot"
+          },
+          {
+            "exponent": 2,
+            "variable": "P"
+          }
+        ]
+      }
+    ]
+  },
+  "theorem_scope": "real_scalar_isotropic_fixed_domain_conditional_identity"
+}
