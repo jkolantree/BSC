@@ -154,6 +154,12 @@ formula. An UNSAT claim from it additionally requires an independently reviewed
 theorem-to-CNF bridge. The conservative negative path is an unstrengthened CNF
 proof plus the direct OPB cross-check.
 
+The companion
+[`Q26_Symmetry_Parity_Profile_Reduction.md`](Q26_Symmetry_Parity_Profile_Reduction.md)
+makes the occupied-line quotient explicit: 156 coarse parity-profile shells,
+tightened to 142 by Weakley's Lemma 6. These shells form an exhaustive
+structural over-cover, not a list of queen placements or solved SAT instances.
+
 ## Decisive evidence
 
 ### Positive branch
@@ -163,7 +169,8 @@ A SAT model is discovery output. Promotion requires:
 1. decode only primary square variables;
 2. reject duplicates, out-of-range coordinates, or more than thirteen queens;
 3. recompute domination of all 676 squares without consulting the formula; and
-4. obtain byte-identical agreement from both independent witness checkers.
+4. obtain identical normalized coordinates and coverage results from both
+   independent witness checkers.
 
 A valid thirteen-queen list and the established lower bound prove
 $\gamma(Q_{26})=13$. No SAT proof trace is needed once the finite coordinate
@@ -202,6 +209,7 @@ variants. Bounded CaDiCaL runs reached 500,000 or 1,000,000 conflicts without a
 model or an UNSAT result. A MapleChrono probe reached its wall-time cap, and the
 available Windows Kissat binding exited before returning a status. Every one of
 these outcomes is `UNKNOWN`; none is evidence that thirteen queens do not exist.
+These are unretained engineering observations, not mechanically replayed runs.
 
 This establishes a genuine engineering boundary: the next serious negative run
 is a proof-producing, hash-frozen cube-and-conquer campaign, not a longer
@@ -211,8 +219,9 @@ discovery because any candidate is cheap to verify.
 ## Locally normalized fourteen-queen upper-bound witness
 
 [`Q26_queen_domination_known_14.json`](Q26_queen_domination_known_14.json) is a
-normalized JSON transcription of the coordinates in the linked OEIS witness;
-it is not claimed to preserve the source text's bytes. Its coordinates are
+normalized JSON transcription of the coordinates in Dmitry Kamenetsky's linked
+OEIS companion file; it is not claimed to preserve the source text's bytes. Its
+coordinates are
 
 $$
 \begin{aligned}

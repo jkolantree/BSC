@@ -1,5 +1,24 @@
 # Changelog
 
+## Post-v1.4.0 Q26 symmetry-parity shell reduction - 2026-08-07
+
+This development publishes a reproducible structural quotient for the open
+thirteen-queen decision on the $26\times26$ board:
+
+- derived and mechanically reproduced that every hypothetical thirteen-queen
+  dominator maps into one of $16+91+49=156$ canonical occupied-line
+  parity-profile shells;
+- applied Weakley's empty-line parity lemma to tighten the over-cover to
+  $15+78+49=142$ shells;
+- retained a dependency-free generator, complete canonical JSON roster, and
+  positive and fail-closed regression tests; and
+- preserved the decisive scope boundary: shells are neither queen placements
+  nor SAT instances, no shell is proved unsatisfiable, and the supported status
+  remains $13\leq\gamma(Q_{26})\leq14$.
+
+No BSC claim or fixture identifier, roadmap order, paper, PDF, release, tag,
+DOI, Zenodo record, workflow, ruleset, setting, or solver result is changed.
+
 ## Post-v1.4.0 Q26 queen-domination attack — 2026-08-06
 
 This development adds an exact, independently reconstructed attack package for
