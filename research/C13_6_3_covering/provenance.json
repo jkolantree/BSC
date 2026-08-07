@@ -1,0 +1,58 @@
+{
+  "artifact_id": "C13-COV-01",
+  "blocked_promotions": [
+    "C(13,6,3)=21",
+    "284 is an optimal 20-block partial coverage value",
+    "284 is a best-known 20-block partial coverage value",
+    "absolute historical priority",
+    "kernel-verified proof",
+    "formal proof"
+  ],
+  "construction_identity": {
+    "bytes": 277,
+    "serialization": "blocks in tracked order; one ASCII space between integers; LF after every block",
+    "sha256": "7306ee18f5181f2ff3afb7054ceec9bded0fc4424a1f842644c1afbf64f83582"
+  },
+  "evidence_status": {
+    "construction": "independently_reproduced",
+    "rigidity_arithmetic": "mechanically_replayed",
+    "rigidity_proof": "hand_checked",
+    "unresolved_covering_number": "open_in_checked_public_record"
+  },
+  "novelty_search": {
+    "checked_through": "2026-08-07",
+    "result": "no matching public record located",
+    "scope": "indexed literature, exact-family and leave searches, the archived La Jolla data, its named successor, and partial-cover literature",
+    "warning": "This is not proof of optimality, best-known status, or historical priority; private, commercial, and unindexed computations may exist."
+  },
+  "schema": "c13-covering-provenance-v1",
+  "source": {
+    "database": "La Jolla Covering Repository",
+    "method": "Random Greedy Covering",
+    "normalized_block_inventory": {
+      "bytes": 291,
+      "serialization": "blocks in displayed order; one ASCII space between integers; LF after every block",
+      "sha256": "76f4ce2b6b42391f49bd83708d820ae38eb67939d7a7a5c3427a2cbbed4a2e7d"
+    },
+    "reported_bound": "20 <= C(13,6,3) <= 21",
+    "retrieved_on": "2026-08-07",
+    "retrieved_page_observation": {
+      "bytes": 588,
+      "sha256": "3787a61edb56d92ffcedcaafe787891ed2943d78bc5eabfa6b6b947e073e4778",
+      "warning": "Retrieval identity only; the normalized block inventory is the mathematical input."
+    },
+    "url": "https://ljcr.dmgordon.org/cover/show_cover.php?k=6&t=3&v=13",
+    "zenodo_index": {
+      "coverdata_bytes": 8319503,
+      "coverdata_md5_from_record": "b2c626b07f216aac830d344eff5ad523",
+      "coverdata_sha256_observed": "9e7da3710921066b10234fdc95379a18df3a7d3ae0f8a08ae188ea6bbca92f87",
+      "entry": {
+        "key": "C(13,6,3)",
+        "low_bd": 20,
+        "size": 21
+      },
+      "record_id": 19735294,
+      "version": "1.2"
+    }
+  }
+}

@@ -21,14 +21,24 @@ be copied as needed to cite or deposit the work.
 
 | Paths | License |
 |---|---|
-| `paper/**`, `synopsis/**`, `ledgers/**`, `revision/**`, `provenance/**`, `*.md` | CC BY 4.0 |
-| `fixtures/**/*.py`, `fixtures/**/*.json`, `tools/**`, `tests/**` | MIT |
+| `paper/**`, `synopsis/**`, `ledgers/**`, `revision/**`, `provenance/**`, `research/**/*.json`, `*.md` | CC BY 4.0 |
+| `fixtures/**/*.py`, `fixtures/**/*.json`, `research/**/*.py`, `tools/**`, `tests/**` | MIT |
 | `fixtures/**/*.tsv` | CC BY 4.0 |
 | `.github/**`, `Makefile` | MIT |
 | `CITATION.cff`, `.zenodo.json`, `MANIFEST.sha256` | Factual metadata; copying for citation, deposit, and verification is permitted |
 
 If a path falls into more than one row, the more specific row governs. The
 complete license texts are `paper-and-documentation.txt` and `code.txt`.
+
+`research/C13_6_3_covering/construction.json` includes a normalized extract
+of the 21-block $C(13,6,3)$ inventory from Daniel M. Gordon's *La Jolla
+Coverings Repository*, version 1.2, DOI
+[`10.5281/zenodo.19735294`](https://doi.org/10.5281/zenodo.19735294), licensed
+under CC BY 4.0. Its representation was changed to integer arrays and limited
+to the cited entry; the source blocks were not mathematically altered. The
+independently reconstructed 20-block family is separately identified in the
+same file. The CC BY 4.0 row governs all research JSON to preserve that source
+license boundary.
 
 The twelve internal source documents listed in `provenance/` are not included
 and receive no license through this repository.
