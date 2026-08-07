@@ -276,8 +276,8 @@ The expected page count is 2.
 make verify
 ```
 
-This checks the complete release inventory, all three retained executable
-fixtures, negative regressions, and build-verifier tests. Building the PDFs is
+This checks the complete release inventory, all retained executable fixtures,
+negative regressions, and build-verifier tests. Building the PDFs is
 a separate target because a full TeX installation is larger than the minimal
 verification environment.
 
