@@ -1,5 +1,28 @@
 # Changelog
 
+## Post-v1.4.0 ASTRA dual-rent source-admission crosswalk — 2026-08-06
+
+This main-branch note audits the supplied ASTRA v0.3 package without importing
+or endorsing the package as a whole:
+
+- froze six supplied source hashes and independently verified the archive's
+  safe 333-member inventory, 331-file payload manifest, and 332 checksum rows;
+- reconstructed dual rent with one candidate prior, candidate-conditioned
+  physical outcomes, terminal report laws, and separate resource accounting;
+- supplied exact finite countermodels separating physical change from
+  diagnostic gain and retained BSC-CHN-02's no-passive-resurrection boundary;
+- proved the exact sole-sink static reservoir identity under its finite linear
+  hypotheses;
+- preserved the package verifier's hardcoded-PASS behavior, the SPPT
+  narrative/JSON numerical contradiction, missing environment lock, stale
+  license notice, and other evidence-independence defects as non-promotions;
+  and
+- deferred the independently reproduced Keller result until after the existing
+  electromagnetic fixture sequence.
+
+No claim or fixture identifier, roadmap item, paper, PDF, release, tag, DOI,
+Zenodo record, workflow, ruleset, setting, or empirical status is changed.
+
 ## Post-v1.4.0 electrostatic critical-point transfer — 2026-07-31
 
 This main-branch application is an independent mathematical reconstruction,

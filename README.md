@@ -43,6 +43,7 @@ The unit of evaluation is not the universe. It is one claimed transfer.
 | Framework module | [Electromagnetic evidence bridge](framework/Electromagnetic_Evidence_Bridge.md) | Inspect gauge descent, sources and flux, boundary power, calibrated scattering, inverse scope, coupling normalization, metrology, RG flow, and aperiodic geometry-to-field descent |
 | Framework module | [Exact rational derived-holonomy certificates](framework/Derived_Holonomy_Certificates.md) | Inspect the post-v1.4.0 exact-Q homotopy/left-null certificate and its evidence boundary |
 | Mathematical-physics application | [Electrostatic critical-point transfer](applications/Electrostatic_Critical_Point_Transfer.md) | Inspect quantitative critical-point transfer, positive-source compactness, the four-charge at-least-nine construction, and the bounded five-charge reconstruction |
+| Source-admission crosswalk | [ASTRA dual-rent audit](applications/ASTRA_Dual_Rent_Crosswalk.md) | Inspect corrected physical-change and diagnostic-gain semantics, exact countermodels, static reservoir degeneracy, source identities, and preserved verification failures |
 | Application crosswalk | [Four July 2026 experiments](applications/Operational_Channel_Crosswalk_2026.md) | Compare hybrid photons, a driven plasmonic time crystal, Hiroshima alloy evidence, and a microwave probabilistic-bit processor without conflating their physics |
 | Number-theory application | [Collatz recursive sufficiency](applications/Collatz_Recursive_Sufficiency_Audit.md) | Inspect the exact induction defect, replacement RS sieves, conditional finite certificate, and blocked universal claims |
 | Number-theory calculus | [Collatz affine certificates](applications/Collatz_Affine_Certificate_Calculus.md) | Inspect merge kernels, exact affine descent, valuation screens, a scoped one-turn binary-cylinder obstruction, and one proved recursive subprogression |
@@ -125,6 +126,10 @@ recurrence, or duality earns the right to support a target claim.
   reports, inverse authority, coupling normalization, and metrology.
 - A post-v1.4.0 exact rational derived-holonomy certificate that returns either
   a chain homotopy or a normalized left-null obstruction over $\mathbb Q$.
+- A post-v1.4.0 ASTRA source-admission crosswalk that gives dual rent a common
+  prior and typed physical/report outcomes, proves two finite independence
+  countermodels and a sole-sink static degeneracy, and preserves the supplied
+  verifier and numerical contradictions as non-promotions.
 - A two-page technical synopsis and field-specific reader map.
 - A symbol and notation ledger, claim-status ledger, and revision memorandum.
 - Eleven exact mathematical fixtures in immutable v1.4.0; immutable v1.3.0
@@ -315,6 +320,31 @@ not a claim that these systems share one microscopic law. No hardware,
 spectroscopy, crystallography, classifier, or raw-data analysis was replayed
 by BSC.
 
+## ASTRA dual-rent source-admission crosswalk
+
+The post-v1.4.0
+[ASTRA crosswalk](applications/ASTRA_Dual_Rent_Crosswalk.md) treats the supplied
+v0.3 package as a source family, not as independent validation. It freezes six
+outer hashes, independently checks the package inventory, and separates
+physical future $W$ from terminal report $Y$. A common candidate prior is
+required before comparing
+$R_{\mathrm{dyn}}=\sum_kp(k)d_{\mathrm{phys}}(\sigma_1^k,\sigma_0^k)$ and
+$R_{\mathrm{epi}}=I_{P_1}(K;Y)-I_{P_0}(K;Y)$.
+
+Two exact fair-bit examples show that diagnostic access can increase without
+physical change and physical change can occur without diagnostic gain. The
+crosswalk also derives the model-local sole-sink identity
+$T_s=(\mathbf1^Tb)/\lambda$. Existing BSC-CHN-02 remains decisive: a common
+passive downstream channel cannot create information, and conditioned gains
+must retain the complete instrument and success probability.
+
+The note allocates no new claim or fixture. It withholds the package's SPPT
+frequency result because the narrative and canonical JSON disagree, treats
+the package verifier as source asserted rather than fail closed, and leaves
+the Keller, prime-difference, experimental, quantum, archaeological, and
+origin lanes unpromoted. The strongest exact Keller candidate is deferred
+until after the existing electromagnetic fixture sequence.
+
 ## Electromagnetic evidence bridge
 
 The electromagnetic bridge instantiates the operational report envelope as
@@ -431,6 +461,7 @@ miners, and independent replay program were not supplied to the repository.
 | Operational fixed-interface channel core | True | Implemented-reachable-set product-sum propagation and classical/quantum no-resurrection proved | N/A | Unexecuted | Bounded |
 | Driven energy, scalar Bernoulli, and semantic-alignment consequences | True | Exact symbolic proofs under declared finite-dimensional, iid, and same-entity hypotheses | N/A | Unexecuted | Bounded |
 | Electromagnetic evidence bridge | True under its declared local hypotheses | Gauge/source, Poynting, passive-scattering, phase, normalization, flux-product, revised-SI, RG boundary-value, and aperiodic materialization-descent results proved; inverse and spectral claims remain theorem local | One experimental study; not replayed | Unexecuted | Bounded |
+| ASTRA dual-rent source-admission crosswalk | Citation-only terminology with exact finite reconstructions | Common-prior dual-rent typing, two independence countermodels, and sole-sink static degeneracy; no new BSC claim identifier | Source package only; experiments not replayed | 27 bundled tests rerun in an unpinned environment; verifier defects and SPPT contradiction preserved | Local only |
 | Electrostatic critical-point transfer | True under its declared point-source, scale, compactness, and derivative-control hypotheses | Quantitative local transfer, source-exclusion completion, a four-charge at-least-nine theorem, and an independently reconstructed five-charge at-least-24 theorem | N/A | Exact symbolic regressions; historical computations not replayed and no finite-parameter interval certificate | Bounded |
 | Channel form determines $\alpha^{-1}\approx137$ | False | The abstract envelope axioms contain no equation fixing a coupling; no operationally equivalent pair is asserted | N/A | Unexecuted | Blocked |
 | Exact finite-label observation decoding | True | Measurable-partition criterion and total-variation lower bound proved | N/A | Unexecuted | Certified |
