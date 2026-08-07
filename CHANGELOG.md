@@ -1,5 +1,27 @@
 # Changelog
 
+## Post-v1.4.0 Q26 queen-domination attack — 2026-08-06
+
+This development adds an exact, independently reconstructed attack package for
+the unresolved 13-versus-14 queen-domination decision on a $26\times26$
+board:
+
+- retained and independently checked the public 14-queen upper-bound witness;
+- added separate direct-neighbourhood and line-incidence CNFs plus a compact
+  direct OPB semantic-audit lane;
+- added deterministic Hilbert ordering, optional $D_4$ lex leaders, the sound
+  $4k$ active-line bound, and explicitly scoped Weakley-derived Q26 discovery
+  constraints;
+- exhaustively checked the independent encodings, cardinality circuits,
+  symmetry relations, strict parsing, and fail-closed witness mutations on
+  finite regression domains; and
+- classified every bounded $Q_{26}$ solver run as `UNKNOWN`, requiring a checked
+  coordinate witness for SAT or a retained and independently replayed proof for
+  UNSAT.
+
+No exact value, claim identifier, fixture identifier, paper, PDF, release, tag,
+DOI, Zenodo record, roadmap order, workflow, ruleset, or setting is changed.
+
 ## Post-v1.4.0 ASTRA dual-rent source-admission crosswalk — 2026-08-06
 
 This main-branch note audits the supplied ASTRA v0.3 package without importing
