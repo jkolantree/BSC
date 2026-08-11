@@ -30,18 +30,35 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Build the Q26 proof with the patched Lean toolchain
+      - name: Set up the patched Lean toolchain and mathlib cache
         uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9 # v1.5.0
         with:
           lake-package-directory: formal/q26_grid_annihilator
           auto-config: false
-          build: true
+          build: false
           test: false
           lint: false
           leanchecker: false
           nanoda: false
           use-mathlib-cache: true
           use-github-cache: false
+
+      - name: Build the Q26 proof with a bounded heartbeat
+        working-directory: formal/q26_grid_annihilator
+        timeout-minutes: 50
+        shell: bash
+        run: |
+          set -euo pipefail
+          lake build &
+          build_pid=$!
+          trap 'kill "$build_pid" 2>/dev/null || true' EXIT
+          while kill -0 "$build_pid" 2>/dev/null; do
+            sleep 60
+            if kill -0 "$build_pid" 2>/dev/null; then
+              echo "::notice::Q26 Lean build is still running (pid $build_pid)"
+            fi
+          done
+          wait "$build_pid"
 
       - name: Replay the theorem through the patched Lean kernel
         working-directory: formal/q26_grid_annihilator

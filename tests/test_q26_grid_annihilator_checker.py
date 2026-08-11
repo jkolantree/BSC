@@ -18,6 +18,15 @@ import q26_grid_annihilator_checker as GRID  # noqa: E402
 
 
 class Q26GridAnnihilatorCheckerTests(unittest.TestCase):
+    def test_patched_lean_ci_uses_a_bounded_heartbeat_build(self) -> None:
+        workflow = (ROOT / ".github" / "workflows" / "verify-release.yml").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("build: false", workflow)
+        self.assertIn("Build the Q26 proof with a bounded heartbeat", workflow)
+        self.assertIn("timeout-minutes: 50", workflow)
+        self.assertIn("Q26 Lean build is still running", workflow)
+
     def test_patched_lean_validation_receipt_binds_full_project_projection(self) -> None:
         source_manifest = ROOT / "applications" / "Q26_lean_4_32_2_source_sha256.txt"
         receipt_path = ROOT / "applications" / "Q26_lean_4_32_2_validation.json"
