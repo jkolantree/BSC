@@ -25,7 +25,14 @@ class Q26GridAnnihilatorCheckerTests(unittest.TestCase):
         self.assertIn("build: false", workflow)
         self.assertIn("Build the Q26 proof with a bounded heartbeat", workflow)
         self.assertIn("timeout-minutes: 50", workflow)
-        self.assertIn("Q26 Lean build is still running", workflow)
+        self.assertIn("subprocess.Popen(command)", workflow)
+        self.assertNotIn("lake build &", workflow)
+        for target in (
+            "+Q26GridAnnihilator.Shadow",
+            "+Q26GridAnnihilator.BichromaticRecipe",
+            "+Q26GridAnnihilator.MonochromaticRecipe",
+        ):
+            self.assertIn(target, workflow)
 
     def test_patched_lean_validation_receipt_binds_full_project_projection(self) -> None:
         source_manifest = ROOT / "applications" / "Q26_lean_4_32_2_source_sha256.txt"
