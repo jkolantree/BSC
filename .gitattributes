@@ -6,13 +6,16 @@
 *.csv text eol=lf
 *.tsv text eol=lf
 *.json text eol=lf
+*.lean text eol=lf
 *.md text eol=lf
 *.py text eol=lf
 *.tex text eol=lf
+*.toml text eol=lf
 *.txt text eol=lf
 *.yml text eol=lf
 Makefile text eol=lf
 MANIFEST.sha256 text eol=lf
 LICENSE text eol=lf
+lean-toolchain text eol=lf
 *.pdf binary
 *.zip binary
