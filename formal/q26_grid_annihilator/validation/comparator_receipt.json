@@ -1,0 +1,49 @@
+{
+  "schema": "bsc.q26-lean-comparator-receipt.v1",
+  "status": "DUAL_KERNEL_ACCEPTED",
+  "source_projection_manifest_sha256": "4c30cd20aa29c88e090fbb65538b096de8e87ce6a5f36bf97b544f345838726a",
+  "lean": {
+    "version": "4.32.2",
+    "commit": "f3b06c705e6c85f5314019d5d3baab0fec5b580c",
+    "release_archive_sha256": "fb97c65730b22927951dadae964f06b2b0e6cfb2cc60f3abe26d8c99f27aa02b"
+  },
+  "mathlib_commit": "905b95818eb32af7874a58b427f50c1711a5e96c",
+  "verifiers": {
+    "landrun": {
+      "source_commit": "5ed4a3db3a4ad930d577215c6b9abaa19df7f99f",
+      "binary_sha256": "7336cc5bee32dc4fd47755eb2cc19a846c63f7abc1484bd0594a39eb8a2811de"
+    },
+    "lean4export": {
+      "source_commit": "4e7915201d3f9f04470d9eae002fa695f7cdc589",
+      "binary_sha256": "d5a4291fa53476cfd3de4ef225e4021bd82c4dee1731320c128585b098cc7db9"
+    },
+    "comparator": {
+      "source_commit": "71b52ec29e06d4b7d882726553b1ceb99a2499e0",
+      "binary_sha256": "67c9282dcda8bf769e0170adaf292d99620cf5efa7a27247853128d5755748d2"
+    },
+    "nanoda": {
+      "source_commit": "68d5ca9db226849b41a6fff59d796ff19d0a8840",
+      "binary_sha256": "5961e745c13cfe99106cad19d4cd59cecc8568645865e05b88d2d5b8384f1c7c"
+    }
+  },
+  "challenge_sha256": "58de64fc29e959623892ecd62221874b88ee03c8a0e3f4b891295d49a3f9f55e",
+  "config_sha256": "6d936584b49bfee564ffea01f05feeed4152f9cb8e99af580e6cb583c2927eef",
+  "comparator_log_sha256": "711914828799ca70bdf2d867cc0bf4ebe72d9118659dec1943b08fb43120310e",
+  "runtime": {
+    "wall": "15min 33.380s",
+    "cpu": "19min 44.794s",
+    "peak_memory": "21.9G",
+    "swap": "0B"
+  },
+  "checks": {
+    "challenge_build": "PASS_1595_JOBS_TRANSCRIPT",
+    "solution_build": "PASS_8675_JOBS_TRANSCRIPT",
+    "landrun_outside_write": "DENIED",
+    "landrun_inside_dot_lake_write": "ALLOWED",
+    "nanoda": "ACCEPTED",
+    "lean_default_kernel": "ACCEPTED",
+    "statement_match_and_axiom_allowlist": "ACCEPTED",
+    "wsl_leanchecker_fresh": "TIMEOUT_10_MINUTES_NO_DIAGNOSTIC"
+  },
+  "root_cnf_status": "UNKNOWN_UNCHANGED"
+}

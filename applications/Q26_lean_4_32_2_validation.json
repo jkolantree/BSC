@@ -1,0 +1,94 @@
+{
+  "schema": "bsc.q26.lean-validation.v1",
+  "subject": {
+    "claim": "No set of exactly thirteen queens dominates the 26 by 26 board",
+    "theorem": "Q26GridAnnihilator.no_thirteen_queen_dominator",
+    "root_module": "Q26GridAnnihilator.Unconditional",
+    "project_path": "formal/q26_grid_annihilator",
+    "base_public_commit": "299ede821bb27647b5ef7c7c0e3df30a35ff8906",
+    "source_manifest": "applications/Q26_lean_4_32_2_source_sha256.txt",
+    "source_manifest_sha256": "b0c3f951b6d1d9f5c51a532329611454984ad9c37b747266efc2c016e12a8913",
+    "source_file_count": 29
+  },
+  "toolchain": {
+    "lean_toolchain": "leanprover/lean4:v4.32.2",
+    "lean_commit": "f3b06c705e6c85f5314019d5d3baab0fec5b580c",
+    "mathlib_commit": "905b95818eb32af7874a58b427f50c1711a5e96c"
+  },
+  "checks": [
+    {
+      "id": "windows_lake_build",
+      "argv": ["lake", "build"],
+      "status": "PASS",
+      "exit_code": 0,
+      "completed_jobs": 8679,
+      "total_jobs": 8679
+    },
+    {
+      "id": "windows_axiom_audit",
+      "argv": ["lake", "env", "lean", "Q26GridAnnihilator/AxiomAudit.lean"],
+      "status": "PASS",
+      "exit_code": 0,
+      "theorem_axioms": ["propext", "Classical.choice", "Quot.sound"],
+      "exact_shadow_stats_axioms": []
+    },
+    {
+      "id": "windows_leanchecker_module",
+      "argv": ["lake", "env", "leanchecker", "Q26GridAnnihilator.Unconditional"],
+      "scope": "target module using existing imported oleans",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "id": "windows_leanchecker_fresh",
+      "argv": ["lake", "env", "leanchecker", "--fresh", "Q26GridAnnihilator.Unconditional"],
+      "scope": "fresh transitive import closure replay",
+      "status": "NOT_CHECKED",
+      "termination": "TIMEOUT",
+      "timeout_limit_seconds": 900,
+      "exit_code": null,
+      "diagnostics": []
+    },
+    {
+      "id": "linux_comparator_nanoda",
+      "status": "PASS",
+      "exit_code": 0,
+      "sandbox": "landrun under systemd-run with RestrictAddressFamilies excluding AF_UNIX",
+      "challenge_module": "Q26GridAnnihilator.TrustedChallenge",
+      "solution_module": "Q26GridAnnihilator.Unconditional",
+      "theorem_names": ["Q26GridAnnihilator.no_thirteen_queen_dominator"],
+      "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
+      "nanoda_enabled": true,
+      "terminal_results": [
+        "Nanoda kernel accepts the solution",
+        "Lean default kernel accepts the solution",
+        "Your solution is okay!"
+      ],
+      "service_runtime_seconds": 933.38,
+      "cpu_seconds": 1184.794,
+      "memory_peak": "21.9G",
+      "swap_peak": "0B",
+      "log_sha256": "711914828799ca70bdf2d867cc0bf4ebe72d9118659dec1943b08fb43120310e",
+      "receipt_path": "formal/q26_grid_annihilator/validation/comparator_receipt.json",
+      "transcript_path": "formal/q26_grid_annihilator/validation/evidence/comparator-q26.txt",
+      "reproduction_script": "formal/q26_grid_annihilator/validation/reproduce-on-ubuntu.sh"
+    }
+  ],
+  "external_checker_pins": {
+    "landrun_source": "5ed4a3db3a4ad930d577215c6b9abaa19df7f99f",
+    "lean4export_source": "4e7915201d3f9f04470d9eae002fa695f7cdc589",
+    "comparator_source": "71b52ec29e06d4b7d882726553b1ceb99a2499e0",
+    "nanoda_source": "68d5ca9db226849b41a6fff59d796ff19d0a8840",
+    "landrun_binary_sha256": "7336cc5bee32dc4fd47755eb2cc19a846c63f7abc1484bd0594a39eb8a2811de",
+    "lean4export_binary_sha256": "d5a4291fa53476cfd3de4ef225e4021bd82c4dee1731320c128585b098cc7db9",
+    "comparator_binary_sha256": "67c9282dcda8bf769e0170adaf292d99620cf5efa7a27247853128d5755748d2",
+    "nanoda_binary_sha256": "5961e745c13cfe99106cad19d4cd59cecc8568645865e05b88d2d5b8384f1c7c",
+    "trusted_challenge_sha256": "58de64fc29e959623892ecd62221874b88ee03c8a0e3f4b891295d49a3f9f55e",
+    "comparator_config_sha256": "6d936584b49bfee564ffea01f05feeed4152f9cb8e99af580e6cb583c2927eef"
+  },
+  "authority": {
+    "exact_cardinality_thirteen": "EXTERNALLY_CHECKED",
+    "gamma_q26_equals_fourteen": "COMPOSITE_CONSEQUENCE_WITH_CITED_LOWER_BOUND_AND_CHECKED_WITNESS",
+    "root_cnf_status": "UNKNOWN_UNCHANGED"
+  }
+}

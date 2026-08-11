@@ -21,6 +21,36 @@ env:
   PYTHONHASHSEED: "0"
 
 jobs:
+  q26-lean-proof:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+
+      - name: Build the Q26 proof with the patched Lean toolchain
+        uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9 # v1.5.0
+        with:
+          lake-package-directory: formal/q26_grid_annihilator
+          auto-config: false
+          build: true
+          test: false
+          lint: false
+          leanchecker: false
+          nanoda: false
+          use-mathlib-cache: true
+          use-github-cache: false
+
+      - name: Replay the theorem through the patched Lean kernel
+        working-directory: formal/q26_grid_annihilator
+        run: lake env leanchecker Q26GridAnnihilator.Unconditional
+
+      - name: Print the theorem axiom boundary
+        working-directory: formal/q26_grid_annihilator
+        run: lake env lean Q26GridAnnihilator/AxiomAudit.lean
+
   verify:
     runs-on: ubuntu-24.04
     timeout-minutes: 30
