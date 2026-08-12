@@ -21,6 +21,65 @@ env:
   PYTHONHASHSEED: "0"
 
 jobs:
+  q26-lean-proof:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+
+      - name: Set up the patched Lean toolchain and mathlib cache
+        uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9 # v1.5.0
+        with:
+          lake-package-directory: formal/q26_grid_annihilator
+          auto-config: false
+          build: false
+          test: false
+          lint: false
+          leanchecker: false
+          nanoda: false
+          use-mathlib-cache: true
+          use-github-cache: false
+
+      - name: Build the Q26 proof with a bounded heartbeat
+        working-directory: formal/q26_grid_annihilator
+        timeout-minutes: 50
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import subprocess
+
+          commands = (
+              ("lake", "build", "+Q26GridAnnihilator.Shadow"),
+              ("lake", "build", "+Q26GridAnnihilator.BichromaticRecipe"),
+              ("lake", "build", "+Q26GridAnnihilator.MonochromaticRecipe"),
+              ("lake", "build"),
+          )
+          for command in commands:
+              label = " ".join(command)
+              print(f"::group::{label}", flush=True)
+              process = subprocess.Popen(command)
+              while True:
+                  try:
+                      return_code = process.wait(timeout=60)
+                      break
+                  except subprocess.TimeoutExpired:
+                      print(f"::notice::{label} is still running", flush=True)
+              print("::endgroup::", flush=True)
+              if return_code != 0:
+                  raise SystemExit(return_code)
+          PY
+
+      - name: Replay the theorem through the patched Lean kernel
+        working-directory: formal/q26_grid_annihilator
+        run: lake env leanchecker Q26GridAnnihilator.Unconditional
+
+      - name: Print the theorem axiom boundary
+        working-directory: formal/q26_grid_annihilator
+        run: lake env lean Q26GridAnnihilator/AxiomAudit.lean
+
   verify:
     runs-on: ubuntu-24.04
     timeout-minutes: 30

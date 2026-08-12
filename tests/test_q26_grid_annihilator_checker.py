@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import copy
+import hashlib
 import inspect
+import json
 import sys
 import unittest
 from pathlib import Path
@@ -16,6 +18,117 @@ import q26_grid_annihilator_checker as GRID  # noqa: E402
 
 
 class Q26GridAnnihilatorCheckerTests(unittest.TestCase):
+    def test_patched_lean_ci_uses_a_bounded_heartbeat_build(self) -> None:
+        workflow = (ROOT / ".github" / "workflows" / "verify-release.yml").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("build: false", workflow)
+        self.assertIn("Build the Q26 proof with a bounded heartbeat", workflow)
+        self.assertIn("timeout-minutes: 50", workflow)
+        self.assertIn("subprocess.Popen(command)", workflow)
+        self.assertNotIn("lake build &", workflow)
+        for target in (
+            "+Q26GridAnnihilator.Shadow",
+            "+Q26GridAnnihilator.BichromaticRecipe",
+            "+Q26GridAnnihilator.MonochromaticRecipe",
+        ):
+            self.assertIn(target, workflow)
+
+    def test_patched_lean_validation_receipt_binds_full_project_projection(self) -> None:
+        source_manifest = ROOT / "applications" / "Q26_lean_4_32_2_source_sha256.txt"
+        receipt_path = ROOT / "applications" / "Q26_lean_4_32_2_validation.json"
+        project = ROOT / "formal" / "q26_grid_annihilator"
+        receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+        manifest_bytes = source_manifest.read_bytes()
+        self.assertEqual(
+            hashlib.sha256(manifest_bytes).hexdigest(),
+            receipt["subject"]["source_manifest_sha256"],
+        )
+        lines = manifest_bytes.decode("utf-8").splitlines()
+        self.assertEqual(len(lines), receipt["subject"]["source_file_count"])
+        seen: set[str] = set()
+        for line in lines:
+            digest, separator, relative = line.partition("  ")
+            self.assertEqual(separator, "  ")
+            self.assertEqual(len(digest), 64)
+            self.assertNotIn(relative, seen)
+            seen.add(relative)
+            target = (project / relative).resolve()
+            self.assertTrue(target.is_relative_to(project.resolve()))
+            self.assertTrue(target.is_file())
+            self.assertEqual(hashlib.sha256(target.read_bytes()).hexdigest(), digest)
+        expected = {
+            "Q26GridAnnihilator.lean",
+            "lake-manifest.json",
+            "lakefile.toml",
+            "lean-toolchain",
+        }
+        expected.update(
+            path.relative_to(project).as_posix()
+            for path in (project / "Q26GridAnnihilator").rglob("*.lean")
+        )
+        self.assertEqual(seen, expected)
+        self.assertEqual(
+            receipt["authority"],
+            {
+                "exact_cardinality_thirteen": "EXTERNALLY_CHECKED",
+                "gamma_q26_equals_fourteen": (
+                    "COMPOSITE_CONSEQUENCE_WITH_CITED_LOWER_BOUND_AND_CHECKED_WITNESS"
+                ),
+                "root_cnf_status": "UNKNOWN_UNCHANGED",
+            },
+        )
+        checks = {item["id"]: item for item in receipt["checks"]}
+        self.assertEqual(checks["linux_comparator_nanoda"]["status"], "PASS")
+        self.assertTrue(checks["linux_comparator_nanoda"]["nanoda_enabled"])
+        self.assertEqual(
+            checks["linux_comparator_nanoda"]["permitted_axioms"],
+            ["propext", "Quot.sound", "Classical.choice"],
+        )
+        self.assertEqual(checks["windows_leanchecker_fresh"]["status"], "NOT_CHECKED")
+        self.assertEqual(checks["windows_leanchecker_fresh"]["termination"], "TIMEOUT")
+        self.assertEqual(
+            checks["windows_leanchecker_fresh"]["timeout_limit_seconds"], 900
+        )
+        external = checks["linux_comparator_nanoda"]
+        comparator_receipt_path = ROOT / external["receipt_path"]
+        comparator_receipt = json.loads(
+            comparator_receipt_path.read_text(encoding="utf-8")
+        )
+        transcript = ROOT / external["transcript_path"]
+        self.assertEqual(
+            hashlib.sha256(transcript.read_bytes()).hexdigest(),
+            comparator_receipt["comparator_log_sha256"],
+        )
+        validation_dir = comparator_receipt_path.parent
+        for filename, key in (
+            ("TrustedChallenge.lean", "challenge_sha256"),
+            ("comparator-config.json", "config_sha256"),
+        ):
+            self.assertEqual(
+                hashlib.sha256((validation_dir / filename).read_bytes()).hexdigest(),
+                comparator_receipt[key],
+            )
+        projection = validation_dir / "evidence" / "lean-source-projection-sha256.txt"
+        self.assertEqual(
+            hashlib.sha256(projection.read_bytes()).hexdigest(),
+            comparator_receipt["source_projection_manifest_sha256"],
+        )
+        self.assertEqual(comparator_receipt["status"], "DUAL_KERNEL_ACCEPTED")
+        self.assertEqual(
+            comparator_receipt["checks"]["wsl_leanchecker_fresh"],
+            "TIMEOUT_10_MINUTES_NO_DIAGNOSTIC",
+        )
+        self.assertEqual(
+            comparator_receipt["checks"]["challenge_build"],
+            "PASS_1595_JOBS_TRANSCRIPT",
+        )
+        self.assertEqual(
+            comparator_receipt["checks"]["solution_build"],
+            "PASS_8675_JOBS_TRANSCRIPT",
+        )
+        self.assertEqual(comparator_receipt["root_cnf_status"], "UNKNOWN_UNCHANGED")
+
     def test_checker_is_independent_of_existing_profile_tools(self) -> None:
         source = inspect.getsource(GRID)
         self.assertNotIn("q26_symmetry_profiles", source)

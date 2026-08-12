@@ -1,0 +1,13 @@
+{
+  "challenge_module": "Q26GridAnnihilator.TrustedChallenge",
+  "solution_module": "Q26GridAnnihilator.Unconditional",
+  "theorem_names": [
+    "Q26GridAnnihilator.no_thirteen_queen_dominator"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

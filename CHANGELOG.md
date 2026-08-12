@@ -1,5 +1,27 @@
 # Changelog
 
+## Post-v1.4.0 Q26 patched-kernel validation - 2026-08-11
+
+This follow-up hardens the published exact-cardinality Q26 theorem after a
+[kernel soundness defect](https://lean-lang.org/doc/reference/latest/releases/v4.32.2/)
+was identified in the original Lean 4.32.1 trust base:
+
+- moved the complete tracked project to Lean 4.32.2 and its direct mathlib
+  4.32.2 child release;
+- required a patched-kernel replay of the unrestricted theorem;
+- added public CI for the full Lean build, patched-kernel module replay, and
+  explicit axiom audit;
+- recorded a pinned, sandboxed comparator run in which both Lean 4.32.2 and
+  the independently implemented nanoda kernel accepted the exact theorem; and
+- clarified that the kernel theorem excludes exactly thirteen queens, while
+  $\gamma(Q_{26})=14$ additionally uses Weakley's cited lower bound and the
+  independently checked fourteen-queen witness.
+
+The exact unrestricted root-CNF certificate status remains `UNKNOWN`; no
+solver receipt is promoted by this theorem or validation update.
+This correction does not allege that the Q26 sources exploited the defect; it
+removes Lean 4.32.1 from the validation path.
+
 ## Post-v1.4.0 Q26 symmetry-parity shell reduction - 2026-08-07
 
 This development publishes a reproducible structural quotient for the open

@@ -34,7 +34,8 @@ The retained one-based fourteen-queen witness is
 
 Direct independent witness checks confirm that these queens dominate all 676
 squares, so $`\gamma(Q_{26})\le14`$. Weakley's bound below gives
-$`\gamma(Q_{26})\ge13`$. Thus the established interval is
+$`\gamma(Q_{26})\ge13`$. Before the exact-cardinality obstruction developed
+below, these two facts gave the preliminary interval
 
 ```math
 13\le\gamma(Q_{26})\le14.
@@ -55,8 +56,10 @@ Q26GridAnnihilator.no_thirteen_queen_dominator :
 Here *unrestricted* means that no color split, line inventory, canonical
 profile, symmetry representative, or Weakley realization is assumed of the
 hypothetical thirteen-queen set. Section 11 summarizes this formal route.
-Combined with the cited lower bound and the retained fourteen-queen witness,
-the mathematical conclusion is $`\gamma(Q_{26})=14`$.
+This kernel-checked theorem is the exact-cardinality statement above, not by
+itself a theorem about every smaller cardinality. Combined with Weakley's
+cited lower bound and the independently checked fourteen-queen witness, the
+mathematical conclusion is $`\gamma(Q_{26})=14`$.
 
 This mathematical theorem is separate from certified computation for the
 repository's exact unrestricted Q26 root CNF. No independently replayed proof
@@ -73,7 +76,7 @@ ratios, and the resulting valuation contradictions. It does not check the
 Lean theorem, certify the exact root CNF, or independently prove the cited
 results of Weakley or Alon.
 
-A pinned Lean 4.32.1 project now checks the board/color geometry, the
+A pinned Lean 4.32.2 project now checks the board/color geometry, the
 arbitrary-cardinality occurrence-polynomial obstruction, the exact finite
 shadow classification, both bichromatic obstruction recipes, all four
 monochromatic orientations, and the omitted-diagonal endpoint shell. It also
@@ -83,7 +86,25 @@ retains the earlier five-profile development:
 cd formal/q26_grid_annihilator
 lake build
 lake env lean Q26GridAnnihilator/AxiomAudit.lean
+lake env leanchecker Q26GridAnnihilator.Unconditional
 ```
+
+The `leanchecker` command is a replay by the patched Lean kernel, not an
+independent checker implementation. Public CI builds the tracked project,
+runs that module replay, and prints the axiom audit. The Git commit
+plus `MANIFEST.sha256` bind every local module in the imported proof closure;
+a hash of `Unconditional.lean` alone would not do so.
+
+A separate [validation receipt](Q26_lean_4_32_2_validation.json) records a
+pinned, landrun-sandboxed Comparator execution with only `propext`,
+`Quot.sound`, and `Classical.choice` permitted. Both Lean 4.32.2 and the
+independently implemented nanoda kernel accepted the exact theorem statement.
+The accompanying [source projection](Q26_lean_4_32_2_source_sha256.txt) binds
+all 26 proof-project Lean files (the theorem sources and audit modules) and
+the three project/dependency pin files. The verifier-controlled challenge is
+bound separately by its hash in the Comparator receipt. The receipt also
+preserves, rather than hiding, the separate 900-second local
+`leanchecker --fresh` timeout.
 
 The earlier theorem `no_weakley_canonical_realization` remains available as a
 formalization of Sections 2--10. The principal unrestricted theorem is now

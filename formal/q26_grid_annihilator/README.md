@@ -34,8 +34,8 @@ does not promote that CNF receipt to UNSAT.
 
 ## Reproducible environment
 
-- Lean: `leanprover/lean4:v4.32.1`
-- Mathlib: `520045ab14e26149ee970e2e617ca04b09bde5d6`
+- Lean: `leanprover/lean4:v4.32.2`
+- Mathlib: `905b95818eb32af7874a58b427f50c1711a5e96c`
 - The generated `lake-manifest.json` records the full dependency closure.
 
 With the pinned toolchain available:
@@ -45,10 +45,32 @@ lake update
 lake exe cache get
 lake build
 lake env lean Q26GridAnnihilator/AxiomAudit.lean
+lake env leanchecker Q26GridAnnihilator.Unconditional
 ```
 
-The final command reports `[propext, Classical.choice, Quot.sound]` for the
+`AxiomAudit.lean` reports `[propext, Classical.choice, Quot.sound]` for the
 unrestricted theorem and its algebraic/geometric chain. Exact finite roster
-computations such as `exact_shadow_stats` report no axioms. The project
-sources use no `sorry`, `admit`, project-defined `axiom`, `native_decide`, or
-unlimited heartbeat setting.
+computations such as `exact_shadow_stats` report no axioms. `leanchecker`
+replays the target module through the patched Lean 4.32.2 kernel; it is a
+second Lean-kernel replay, not an independent checker implementation.
+
+The repository CI builds the tracked project, runs the patched-kernel module
+replay, and prints the axiom audit. This CI path does not claim an independent
+checker implementation. The imported proof sources use no `sorry`, `admit`,
+project-defined `axiom`, `native_decide`, or unlimited heartbeat setting. (The
+separate verifier-controlled challenge is documented below.) The tracked
+commit and `MANIFEST.sha256`, rather than the hash of
+`Unconditional.lean` alone, bind the complete local import closure.
+
+The separate [external validation receipt](../../applications/Q26_lean_4_32_2_validation.json)
+records a pinned, landrun-sandboxed Comparator run with nanoda enabled. Both
+the Lean 4.32.2 kernel and the independently implemented nanoda kernel accepted
+the theorem while permitting only `propext`, `Quot.sound`, and
+`Classical.choice`. Its [source projection](../../applications/Q26_lean_4_32_2_source_sha256.txt)
+binds all 26 proof-project Lean files (the theorem sources and audit modules)
+plus `lean-toolchain`, `lakefile.toml`, and `lake-manifest.json`. The separate
+verifier-controlled challenge is bound by its hash in the Comparator receipt;
+the receipt also records the distinct local `leanchecker --fresh` timeout as
+`NOT_CHECKED`, not as a pass. The compact [Comparator bundle](validation/README.md)
+retains the trusted challenge, configuration, transcript, and reproduction
+script.
