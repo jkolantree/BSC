@@ -13,7 +13,7 @@ from pathlib import Path
 
 
 LEGACY_DELIMITER = re.compile(r"\\(?:\(|\)|\[|\])")
-# GitHub's deployed client rejects these TeX control words.
+# GitHub's deployed client rejects or misrenders these TeX control words.
 GITHUB_FORBIDDEN_COMMANDS = (
     "DeclareMathOperator",
     "DeclarePairedDelimiters",
@@ -28,6 +28,7 @@ GITHUB_FORBIDDEN_COMMANDS = (
     "operatorname",
     "phantom",
     "renewtagform",
+    "tag",
     "unicode",
     "vphantom",
 )

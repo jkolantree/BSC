@@ -33,6 +33,44 @@ class Q26GridAnnihilatorCheckerTests(unittest.TestCase):
             "+Q26GridAnnihilator.MonochromaticRecipe",
         ):
             self.assertIn(target, workflow)
+        self.assertIn(
+            "Replay the definitive theorem through the patched Lean kernel",
+            workflow,
+        )
+        self.assertIn(
+            "lake env leanchecker Q26GridAnnihilator.Definitive",
+            workflow,
+        )
+        self.assertNotIn(
+            "lake env leanchecker Q26GridAnnihilator.Unconditional",
+            workflow,
+        )
+        root_module = (
+            ROOT
+            / "formal"
+            / "q26_grid_annihilator"
+            / "Q26GridAnnihilator.lean"
+        ).read_text(encoding="utf-8")
+        definitive = (
+            ROOT
+            / "formal"
+            / "q26_grid_annihilator"
+            / "Q26GridAnnihilator"
+            / "Definitive.lean"
+        ).read_text(encoding="utf-8")
+        axiom_audit = (
+            ROOT
+            / "formal"
+            / "q26_grid_annihilator"
+            / "Q26GridAnnihilator"
+            / "AxiomAudit.lean"
+        ).read_text(encoding="utf-8")
+        self.assertIn("import Q26GridAnnihilator.Definitive", root_module)
+        self.assertIn("theorem q26_domination_exact", definitive)
+        self.assertIn(
+            "#print axioms Q26GridAnnihilator.q26_domination_exact",
+            axiom_audit,
+        )
 
     def test_patched_lean_validation_receipt_binds_full_project_projection(self) -> None:
         source_manifest = ROOT / "applications" / "Q26_lean_4_32_2_source_sha256.txt"
@@ -72,26 +110,36 @@ class Q26GridAnnihilatorCheckerTests(unittest.TestCase):
             receipt["authority"],
             {
                 "exact_cardinality_thirteen": "EXTERNALLY_CHECKED",
-                "gamma_q26_equals_fourteen": (
-                    "COMPOSITE_CONSEQUENCE_WITH_CITED_LOWER_BOUND_AND_CHECKED_WITNESS"
-                ),
+                "gamma_q26_equals_fourteen": "EXTERNALLY_CHECKED_DIRECT_THEOREM",
                 "root_cnf_status": "UNKNOWN_UNCHANGED",
             },
         )
-        checks = {item["id"]: item for item in receipt["checks"]}
-        self.assertEqual(checks["linux_comparator_nanoda"]["status"], "PASS")
-        self.assertTrue(checks["linux_comparator_nanoda"]["nanoda_enabled"])
+        local_checks = {item["id"]: item for item in receipt["local_checks"]}
+        historical = local_checks[
+            "historical_wsl_leanchecker_fresh_prior_one_theorem"
+        ]
+        self.assertEqual(historical["status"], "HISTORICAL_TIMEOUT")
+        self.assertIn("not evidence for current Definitive bytes", historical["scope"])
+        external = receipt["external_check"]
+        self.assertEqual(external["status"], "PASS")
+        self.assertTrue(external["nanoda_enabled"])
+        self.assertEqual(external["solution_module"], "Q26GridAnnihilator.Definitive")
         self.assertEqual(
-            checks["linux_comparator_nanoda"]["permitted_axioms"],
+            external["theorem_names"],
+            [
+                "Q26GridAnnihilator.no_thirteen_queen_dominator",
+                "Q26GridAnnihilator.q26_domination_exact",
+            ],
+        )
+        self.assertEqual(
+            external["permitted_axioms"],
             ["propext", "Quot.sound", "Classical.choice"],
         )
-        self.assertEqual(checks["windows_leanchecker_fresh"]["status"], "NOT_CHECKED")
-        self.assertEqual(checks["windows_leanchecker_fresh"]["termination"], "TIMEOUT")
-        self.assertEqual(
-            checks["windows_leanchecker_fresh"]["timeout_limit_seconds"], 900
-        )
-        external = checks["linux_comparator_nanoda"]
         comparator_receipt_path = ROOT / external["receipt_path"]
+        self.assertEqual(
+            hashlib.sha256(comparator_receipt_path.read_bytes()).hexdigest(),
+            external["receipt_sha256"],
+        )
         comparator_receipt = json.loads(
             comparator_receipt_path.read_text(encoding="utf-8")
         )
@@ -99,6 +147,16 @@ class Q26GridAnnihilatorCheckerTests(unittest.TestCase):
         self.assertEqual(
             hashlib.sha256(transcript.read_bytes()).hexdigest(),
             comparator_receipt["comparator_log_sha256"],
+        )
+        external_run_transcript = ROOT / external["external_run_transcript_path"]
+        self.assertEqual(
+            hashlib.sha256(external_run_transcript.read_bytes()).hexdigest(),
+            comparator_receipt["external_run_log_sha256"],
+        )
+        reproducer = ROOT / external["reproduction_script"]
+        self.assertEqual(
+            hashlib.sha256(reproducer.read_bytes()).hexdigest(),
+            external["reproduction_script_sha256"],
         )
         validation_dir = comparator_receipt_path.parent
         for filename, key in (
@@ -114,18 +172,51 @@ class Q26GridAnnihilatorCheckerTests(unittest.TestCase):
             hashlib.sha256(projection.read_bytes()).hexdigest(),
             comparator_receipt["source_projection_manifest_sha256"],
         )
+        projection_lines = projection.read_text(encoding="utf-8").splitlines()
+        self.assertEqual(len(projection_lines), 27)
+        for line in projection_lines:
+            digest, separator, relative = line.partition("  ")
+            self.assertEqual(separator, "  ")
+            target = project / relative
+            self.assertTrue(target.is_file())
+            self.assertEqual(hashlib.sha256(target.read_bytes()).hexdigest(), digest)
+        challenge_source = (validation_dir / "TrustedChallenge.lean").read_text(
+            encoding="utf-8"
+        )
+        self.assertNotIn("import Q26GridAnnihilator", challenge_source)
+        for declaration in (
+            "abbrev Line := Fin 26",
+            "abbrev Square := Line × Line",
+            "def coord",
+            "def DiagonalAttack",
+            "def Attacks",
+            "def Dominates",
+            "theorem no_thirteen_queen_dominator",
+            "theorem q26_domination_exact",
+        ):
+            self.assertIn(declaration, challenge_source)
+        comparator_config = json.loads(
+            (validation_dir / "comparator-config.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual(
+            comparator_config["theorem_names"], comparator_receipt["theorem_names"]
+        )
+        self.assertTrue(comparator_config["enable_nanoda"])
+        self.assertEqual(
+            comparator_receipt["schema"], "bsc.q26-lean-comparator-receipt.v2"
+        )
         self.assertEqual(comparator_receipt["status"], "DUAL_KERNEL_ACCEPTED")
         self.assertEqual(
-            comparator_receipt["checks"]["wsl_leanchecker_fresh"],
-            "TIMEOUT_10_MINUTES_NO_DIAGNOSTIC",
+            comparator_receipt["checks"]["local_leanchecker_fresh_historical"],
+            "TIMEOUT_10_MINUTES_NO_DIAGNOSTIC_PRIOR_ONE_THEOREM_RUN",
         )
         self.assertEqual(
             comparator_receipt["checks"]["challenge_build"],
-            "PASS_1595_JOBS_TRANSCRIPT",
+            "PASS_608_JOBS_TRANSCRIPT",
         )
         self.assertEqual(
             comparator_receipt["checks"]["solution_build"],
-            "PASS_8675_JOBS_TRANSCRIPT",
+            "PASS_8676_JOBS_TRANSCRIPT",
         )
         self.assertEqual(comparator_receipt["root_cnf_status"], "UNKNOWN_UNCHANGED")
 

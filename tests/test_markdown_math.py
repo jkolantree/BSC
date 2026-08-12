@@ -182,6 +182,30 @@ class MarkdownMathTests(unittest.TestCase):
                 [f"\\{command}" for command in GITHUB_FORBIDDEN_COMMANDS],
             )
 
+    def test_github_tag_is_rejected_in_fenced_and_protected_math(self) -> None:
+        with tempfile.TemporaryDirectory(
+            prefix="bsc-markdown-math-"
+        ) as temporary:
+            root = Path(temporary)
+            (root / "broken.md").write_text(
+                "```math\n"
+                "x=y \\tag{1}\n"
+                "```\n\n"
+                "$`u=v \\tag{2}`$\n",
+                encoding="utf-8",
+            )
+            (root / "safe.md").write_text(
+                "```math\n"
+                "x=y \\qquad\\text{(1)}\n"
+                "```\n",
+                encoding="utf-8",
+            )
+            findings = scan_markdown(root)
+            self.assertEqual(
+                [(finding.path, finding.token) for finding in findings],
+                [("broken.md", r"\tag"), ("broken.md", r"\tag")],
+            )
+
     def test_brace_control_words_require_a_separator(self) -> None:
         with tempfile.TemporaryDirectory(
             prefix="bsc-markdown-math-"

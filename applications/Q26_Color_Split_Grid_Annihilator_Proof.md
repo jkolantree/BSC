@@ -34,8 +34,8 @@ The retained one-based fourteen-queen witness is
 
 Direct independent witness checks confirm that these queens dominate all 676
 squares, so $`\gamma(Q_{26})\le14`$. Weakley's bound below gives
-$`\gamma(Q_{26})\ge13`$. Before the exact-cardinality obstruction developed
-below, these two facts gave the preliminary interval
+$`\gamma(Q_{26})\ge13`$. Before the formal closures developed below, these two
+facts gave the preliminary interval
 
 ```math
 13\le\gamma(Q_{26})\le14.
@@ -45,8 +45,7 @@ The witness supplies no negative evidence about thirteen queens. Sections
 2--10 retain the earlier human-readable five-profile argument. That route is
 explicitly conditional on the cited Weakley consequences in Section 2.
 
-Separately, the Lean project now proves the unrestricted thirteen-queen
-theorem
+Separately, the Lean project proves the unrestricted thirteen-queen theorem
 
 ```text
 Q26GridAnnihilator.no_thirteen_queen_dominator :
@@ -56,10 +55,19 @@ Q26GridAnnihilator.no_thirteen_queen_dominator :
 Here *unrestricted* means that no color split, line inventory, canonical
 profile, symmetry representative, or Weakley realization is assumed of the
 hypothetical thirteen-queen set. Section 11 summarizes this formal route.
-This kernel-checked theorem is the exact-cardinality statement above, not by
-itself a theorem about every smaller cardinality. Combined with Weakley's
-cited lower bound and the independently checked fourteen-queen witness, the
-mathematical conclusion is $`\gamma(Q_{26})=14`$.
+`Definitive.lean` additionally checks the retained witness and upgrades the
+exact-cardinality obstruction by finite padding and domination monotonicity:
+
+```text
+Q26GridAnnihilator.q26_domination_exact :
+  (∃ queens : Finset Square, Dominates queens ∧ queens.card = 14) ∧
+    ∀ queens : Finset Square, Dominates queens → 14 ≤ queens.card
+```
+
+This direct theorem proves both existence at fourteen and the exclusion of
+every smaller dominator. Thus the formal conclusion
+$`\gamma(Q_{26})=14`$ no longer depends on Weakley's lower bound or an
+external witness check.
 
 This mathematical theorem is separate from certified computation for the
 repository's exact unrestricted Q26 root CNF. No independently replayed proof
@@ -86,30 +94,39 @@ retains the earlier five-profile development:
 cd formal/q26_grid_annihilator
 lake build
 lake env lean Q26GridAnnihilator/AxiomAudit.lean
-lake env leanchecker Q26GridAnnihilator.Unconditional
+lake env leanchecker Q26GridAnnihilator.Definitive
 ```
 
 The `leanchecker` command is a replay by the patched Lean kernel, not an
 independent checker implementation. Public CI builds the tracked project,
-runs that module replay, and prints the axiom audit. The Git commit
-plus `MANIFEST.sha256` bind every local module in the imported proof closure;
-a hash of `Unconditional.lean` alone would not do so.
+runs that module replay, and prints the axiom audit. The Git commit plus
+`MANIFEST.sha256`, rather than a hash of one theorem module alone, are the
+complete imported-proof-closure boundary.
 
-A separate [validation receipt](Q26_lean_4_32_2_validation.json) records a
-pinned, landrun-sandboxed Comparator execution with only `propext`,
-`Quot.sound`, and `Classical.choice` permitted. Both Lean 4.32.2 and the
-independently implemented nanoda kernel accepted the exact theorem statement.
-The accompanying [source projection](Q26_lean_4_32_2_source_sha256.txt) binds
-all 26 proof-project Lean files (the theorem sources and audit modules) and
-the three project/dependency pin files. The verifier-controlled challenge is
-bound separately by its hash in the Comparator receipt. The receipt also
-preserves, rather than hiding, the separate 900-second local
-`leanchecker --fresh` timeout.
+A v2 [validation receipt](Q26_lean_4_32_2_validation.json) records a pinned,
+landrun-sandboxed Comparator execution with only `propext`, `Quot.sound`, and
+`Classical.choice` permitted. Its self-contained verifier-controlled challenge
+defines the Q26 board semantics without importing the solution and states both
+`no_thirteen_queen_dominator` and `q26_domination_exact`. The Lean 4.32.2
+kernel and the independently implemented nanoda kernel accepted both theorem
+statements.
+
+The Comparator
+[source projection](../formal/q26_grid_annihilator/validation/evidence/lean-source-projection-sha256.txt)
+binds 27 Lean files. The application-level
+[source manifest](Q26_lean_4_32_2_source_sha256.txt) adds `lean-toolchain`,
+`lakefile.toml`, and `lake-manifest.json`, for 30 entries in all. The retained
+external run took 922.842 seconds and peaked at 21.8 GB of memory. The bound
+challenge, configuration, transcripts, receipt, and pinned reproduction script
+are retained in the
+[Comparator bundle](../formal/q26_grid_annihilator/validation/README.md).
+This validation does not change the separate root-CNF status, which remains
+**UNKNOWN**.
 
 The earlier theorem `no_weakley_canonical_realization` remains available as a
-formalization of Sections 2--10. The principal unrestricted theorem is now
-`no_thirteen_queen_dominator`; it has no missing Weakley, profile, or symmetry
-bridge.
+formalization of Sections 2--10. The unrestricted obstruction
+`no_thirteen_queen_dominator` has no missing Weakley, profile, or symmetry
+bridge, and `q26_domination_exact` is the direct final verdict.
 
 ## 2. External theorem-level inputs
 
@@ -224,7 +241,7 @@ Because $`[26]`$ has thirteen indices of each parity,
 
 ```math
 (x_0,x_1,y_0,y_1)
-=(13-a,\ a+w_r,\ 13-b,\ b+w_c). \tag{3.1}
+=(13-a,\ a+w_r,\ 13-b,\ b+w_c). \qquad\text{(3.1)}
 ```
 
 If $`w_r=1`$, let $`\delta_r=1`$ when the duplicated occupied row is even and
@@ -235,7 +252,7 @@ are
 ```math
 E_r=a+\delta_r,
 \qquad
-E_c=b+\delta_c. \tag{3.2}
+E_c=b+\delta_c. \qquad\text{(3.2)}
 ```
 
 Let $`q_{ij}`$ count queens whose row index has parity $`i`$ and whose column
@@ -254,7 +271,7 @@ Together with the two incidence margins, this gives the unique table
 q_{00}&=\frac{E_r+E_c-7}{2}, &
 q_{01}&=\frac{E_r-E_c+7}{2},\\
 q_{10}&=\frac{E_c-E_r+7}{2}, &
-q_{11}&=\frac{19-E_r-E_c}{2}. \tag{3.3}
+q_{11}&=\frac{19-E_r-E_c}{2}. \qquad\text{(3.3)}
 \end{aligned}
 ```
 
@@ -279,7 +296,7 @@ and define the *occurrence polynomial*
 ```math
 F_p(U,V)=
 \prod_{t=1}^{k}(U-V-d_t)(U+V-s_t)
-\in\mathbb{Q}[U,V]. \tag{4.1}
+\in\mathbb{Q}[U,V]. \qquad\text{(4.1)}
 ```
 
 If $`i+j\equiv p\pmod2`$, then $`F_p`$ vanishes on
@@ -315,7 +332,7 @@ The highest-degree homogeneous part of (4.1) is
 &=(U-V)^k(U+V)^k\\
 &=(U^2-V^2)^k\\
 &=\sum_{j=0}^{k}(-1)^j\binom{k}{j}
-  U^{2(k-j)}V^{2j}. \tag{5.1}
+  U^{2(k-j)}V^{2j}. \qquad\text{(5.1)}
 \end{aligned}
 ```
 
@@ -328,7 +345,7 @@ $`j\in\{0,1,\ldots,k\}`$,
 ```math
 |A|\le2(k-j)
 \qquad\text{or}\qquad
-|B|\le2j. \tag{5.2}
+|B|\le2j. \qquad\text{(5.2)}
 ```
 
 #### Proof
@@ -362,7 +379,7 @@ $`a=|A|`$, $`b=|B|`$, and
 then
 
 ```math
-a+b\le2k+\epsilon(a)+\epsilon(b). \tag{5.3}
+a+b\le2k+\epsilon(a)+\epsilon(b). \qquad\text{(5.3)}
 ```
 
 Thus the bound is $`2k+2`$ for even-even sizes, $`2k+1`$ for mixed
@@ -376,7 +393,7 @@ polynomials
 ```math
 g_A(U)=\prod_{\alpha\in A}(U-\alpha),
 \qquad
-g_B(V)=\prod_{\beta\in B}(V-\beta). \tag{6.1}
+g_B(V)=\prod_{\beta\in B}(V-\beta). \qquad\text{(6.1)}
 ```
 
 Every polynomial has a unique remainder modulo $`(g_A,g_B)`$ whose separate
@@ -391,7 +408,7 @@ For coefficient bookkeeping, define the Lagrange functional
 
 ```math
 \Lambda_A(P)=
-\sum_{\alpha\in A}\frac{P(\alpha)}{g_A'(\alpha)}. \tag{6.2}
+\sum_{\alpha\in A}\frac{P(\alpha)}{g_A'(\alpha)}. \qquad\text{(6.2)}
 ```
 
 It extracts the coefficient of $`U^{a-1}`$ from the remainder of $`P`$ modulo
@@ -402,7 +419,7 @@ $`g_A`$. In particular,
 \qquad
 \Lambda_A(U^{a-1})=1,
 \qquad
-\Lambda_A(U^a)=\sum_{\alpha\in A}\alpha. \tag{6.3}
+\Lambda_A(U^a)=\sum_{\alpha\in A}\alpha. \qquad\text{(6.3)}
 ```
 
 Define $`\Lambda_B`$ analogously and apply the tensor functional
@@ -414,7 +431,7 @@ For the occurrence polynomial, write
 ```math
 R=\sum_{t=1}^{k}r_t,
 \qquad
-C=\sum_{t=1}^{k}c_t. \tag{6.4}
+C=\sum_{t=1}^{k}c_t. \qquad\text{(6.4)}
 ```
 
 Each paired factor expands as
@@ -430,7 +447,7 @@ Consequently the next homogeneous part after (5.1) is
 
 ```math
 (F_p)_{2k-1}
-=(-2RU+2CV)(U^2-V^2)^{k-1}. \tag{6.5}
+=(-2RU+2CV)(U^2-V^2)^{k-1}. \qquad\text{(6.5)}
 ```
 
 ### Lemma 6.1 (equality moment)
@@ -441,13 +458,13 @@ $`A\times B`$.
 1. If $`a`$ is even, $`b`$ is odd, and $`a+b=2k+1`$, then
 
 ```math
-aR=k\sum_{\alpha\in A}\alpha. \tag{6.6}
+aR=k\sum_{\alpha\in A}\alpha. \qquad\text{(6.6)}
 ```
 
 2. If $`a`$ is odd, $`b`$ is even, and $`a+b=2k+1`$, then
 
 ```math
-bC=k\sum_{\beta\in B}\beta. \tag{6.7}
+bC=k\sum_{\beta\in B}\beta. \qquad\text{(6.7)}
 ```
 
 3. If $`a,b`$ are even and $`a+b=2k+2`$, then both (6.6) and (6.7) hold.
@@ -476,7 +493,7 @@ Hence
 
 ```math
 \binom{k}{j}\sum A
-=2R\binom{k-1}{j}. \tag{6.8}
+=2R\binom{k-1}{j}. \qquad\text{(6.8)}
 ```
 
 Since
@@ -524,7 +541,7 @@ $`D_0`$:
 ```math
 X_0\times Y_0,
 \qquad
-X_1\times Y_1. \tag{7.1}
+X_1\times Y_1. \qquad\text{(7.1)}
 ```
 
 Also apply it to the two color-1 rectangles, covered by the seven queens in
@@ -533,7 +550,7 @@ $`D_1`$:
 ```math
 X_0\times Y_1,
 \qquad
-X_1\times Y_0. \tag{7.2}
+X_1\times Y_0. \qquad\text{(7.2)}
 ```
 
 Let
@@ -547,7 +564,7 @@ Adding the two $`k=6`$ inequalities for (7.1) gives
 ```math
 26+w_r+w_c
 =(x_0+x_1)+(y_0+y_1)
-\le24+E. \tag{7.3}
+\le24+E. \qquad\text{(7.3)}
 ```
 
 If $`w=0`$, the two corresponding empty-line counts sum to thirteen and have
@@ -571,7 +588,7 @@ half-turn $`(r,c)\mapsto(27-r,27-c)`$ swaps even and odd line indices and sends
 
 ```math
 (a,b)\longmapsto
-(13-w_r-a,\ 13-w_c-b). \tag{7.4}
+(13-w_r-a,\ 13-w_c-b). \qquad\text{(7.4)}
 ```
 
 When a direction has a duplicated line, it also sends
@@ -607,7 +624,7 @@ The first two rows make $`a+b=26-(x_0+y_0)`$ even, so (3.3) is not
 integral. The mixed rows leave exactly
 
 ```math
-(a,b)\in\{(5,8),(6,7),(7,6),(8,5)\}. \tag{7.5}
+(a,b)\in\{(5,8),(6,7),(7,6),(8,5)\}. \qquad\text{(7.5)}
 ```
 
 Transpose and half-turn reduce these to representatives
@@ -615,7 +632,7 @@ Transpose and half-turn reduce these to representatives
 ```math
 W_0(5,8),
 \qquad
-W_0(6,7). \tag{7.6}
+W_0(6,7). \qquad\text{(7.6)}
 ```
 
 ### Type $`W_1`$
@@ -644,7 +661,7 @@ Both cases give $`6\le x_0\le8`$. Since $`x_0`$ is even,
 $`x_0\in\{6,8\}`$, and the four raw pairs are
 
 ```math
-(a,b)\in\{(5,7),(5,8),(7,5),(7,6)\}. \tag{7.7}
+(a,b)\in\{(5,7),(5,8),(7,5),(7,6)\}. \qquad\text{(7.7)}
 ```
 
 The residual half-turn maps $`(a,b)`$ to $`(12-a,13-b)`$, leaving
@@ -652,7 +669,7 @@ The residual half-turn maps $`(a,b)`$ to $`(12-a,13-b)`$, leaving
 ```math
 W_1(5,7),
 \qquad
-W_1(5,8). \tag{7.8}
+W_1(5,8). \qquad\text{(7.8)}
 ```
 
 ### Type $`W_2`$
@@ -678,13 +695,13 @@ The cross bounds are
 so $`6\le x_0\le8`$. Since $`x_0`$ is even, the raw pairs are
 
 ```math
-(a,b)\in\{(5,7),(7,5)\}, \tag{7.9}
+(a,b)\in\{(5,7),(7,5)\}, \qquad\text{(7.9)}
 ```
 
 which form the single orbit represented by
 
 ```math
-W_2(5,7). \tag{7.10}
+W_2(5,7). \qquad\text{(7.10)}
 ```
 
 Thus the full coarse Weakley domain reduces directly to five representatives;
@@ -712,7 +729,7 @@ queen-parity table exists.
 Every feasible lift has
 
 ```math
-q_{00}=q_{11}=3. \tag{8.1}
+q_{00}=q_{11}=3. \qquad\text{(8.1)}
 ```
 
 Let
@@ -720,13 +737,13 @@ Let
 ```math
 R_0=\sum_{(r,c)\in D_0}r,
 \qquad
-R_1=\sum_{(r,c)\in D_1}r. \tag{8.2}
+R_1=\sum_{(r,c)\in D_1}r. \qquad\text{(8.2)}
 ```
 
 Only the $`q_{11}`$ queens of $`D_0`$ lie in odd-indexed rows. Therefore
 
 ```math
-R_0\equiv q_{11}\equiv1\pmod2. \tag{8.3}
+R_0\equiv q_{11}\equiv1\pmod2. \qquad\text{(8.3)}
 ```
 
 ## 9. The five contradictions
@@ -747,7 +764,7 @@ size six, gives
 ```math
 6R_0=6\sum_{x\in X_1}x,
 \qquad\text{hence}\qquad
-R_0=\sum_{x\in X_1}x. \tag{9.1}
+R_0=\sum_{x\in X_1}x. \qquad\text{(9.1)}
 ```
 
 The right side is the sum of six odd integers and is even. This contradicts
@@ -769,14 +786,14 @@ The color-0 rectangle $`X_0\times Y_0`$ has size $`8\times5`$. Lemma 6.1
 with $`k=6`$ gives
 
 ```math
-8R_0=6A_0. \tag{9.2}
+8R_0=6A_0. \qquad\text{(9.2)}
 ```
 
 The color-1 rectangle $`X_0\times Y_1`$ has size $`8\times8`$. Lemma 6.1
 with $`k=7`$ gives
 
 ```math
-8R_1=7A_0. \tag{9.3}
+8R_1=7A_0. \qquad\text{(9.3)}
 ```
 
 Since $`R_1,A_0`$ are integers and $`\gcd(7,8)=1`$, equation (9.3) implies
@@ -869,7 +886,7 @@ s_i=i+\pi(i).
 \qquad
 \sum_i s_i=182,
 \qquad
-\sum_i\bigl((d_i-1)^2+s_i^2\bigr)=3276. \tag{11.1}
+\sum_i\bigl((d_i-1)^2+s_i^2\bigr)=3276. \qquad\text{(11.1)}
 ```
 
    Also $`-11\le d_i\le13`$, and each of the two supports has at most
@@ -920,6 +937,19 @@ s_i=i+\pi(i).
      ¬ ∃ queens : Finset Square, Dominates queens ∧ queens.card = 13
    ```
 
+8. **Direct domination-number closure.** `Definitive.lean` checks that the
+   retained fourteen-queen witness dominates the board and has cardinality
+   fourteen. It proves that adding queens preserves domination, pads any
+   hypothetical dominator of cardinality at most thirteen to exactly thirteen
+   queens, and invokes `no_thirteen_queen_dominator`. Its direct exported
+   verdict is
+
+   ```text
+   q26_domination_exact :
+     (∃ queens : Finset Square, Dominates queens ∧ queens.card = 14) ∧
+       ∀ queens : Finset Square, Dominates queens → 14 ≤ queens.card
+   ```
+
 The root module imports this theorem. `AxiomAudit.lean` reports only Lean's
 standard `propext`, `Classical.choice`, and `Quot.sound`; the project uses no
 project-defined axiom, `sorry`, or admitted theorem for this closure.
@@ -928,10 +958,11 @@ project-defined axiom, `sorry`, or admitted theorem for this closure.
 
 Sections 2--10 remain a human-readable five-profile proof route whose stated
 starting reductions depend on Weakley's published results. Section 11 records
-a separate unrestricted Lean proof of the no-thirteen-queen theorem from the
-bare actual-board assumptions. The two routes share occurrence-polynomial and
-moment ideas, but the Lean theorem does not inherit the human route's Weakley
-dependency.
+a separate unrestricted Lean proof from the bare actual-board assumptions,
+then packages the explicit fourteen-queen witness and the lower bound for all
+dominating sets in `q26_domination_exact`. The two routes share
+occurrence-polynomial and moment ideas, but the Lean theorem does not inherit
+the human route's Weakley dependency.
 
 Neither route changes the evidence status of the repository's exact
 unrestricted root CNF. The existing root-CNF receipt remains **UNKNOWN**,
