@@ -72,9 +72,9 @@ jobs:
                   raise SystemExit(return_code)
           PY
 
-      - name: Replay the theorem through the patched Lean kernel
+      - name: Replay the definitive theorem through the patched Lean kernel
         working-directory: formal/q26_grid_annihilator
-        run: lake env leanchecker Q26GridAnnihilator.Unconditional
+        run: lake env leanchecker Q26GridAnnihilator.Definitive
 
       - name: Print the theorem axiom boundary
         working-directory: formal/q26_grid_annihilator

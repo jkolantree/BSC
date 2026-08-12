@@ -1,5 +1,29 @@
 # Changelog
 
+## Post-v1.4.0 definitive Q26 Lean theorem - 2026-08-11
+
+This follow-up adds a direct verdict theorem to the Q26 Lean project:
+
+- formalizes the retained fourteen-queen witness and checks both its exact
+  cardinality and domination of all 676 board squares;
+- upgrades the exact-cardinality-thirteen obstruction to a lower bound for
+  every dominating set by a monotonicity and finite-padding argument;
+- exports `Q26GridAnnihilator.q26_domination_exact`, which directly gives a
+  fourteen-queen dominator and proves that every dominator has at least
+  fourteen queens; and
+- changes public CI's patched-kernel replay target from `Unconditional` to
+  `Definitive`.
+
+Thus the final equality no longer depends on importing Weakley's lower bound
+or an external witness check. A v2 external receipt uses a self-contained
+challenge for both `no_thirteen_queen_dominator` and `q26_domination_exact`;
+the Lean 4.32.2 kernel and independently implemented nanoda kernel accepted
+both statements. Its projection binds 27 Lean files, while the application
+source manifest contains those files plus three project pins, for 30 entries.
+The retained run took 922.842 seconds and peaked at 21.8 GB. The unrestricted
+root-CNF certificate status remains `UNKNOWN`; this theorem is not an
+LRAT/DRAT replay receipt.
+
 ## Post-v1.4.0 Q26 patched-kernel validation - 2026-08-11
 
 This follow-up hardens the published exact-cardinality Q26 theorem after a

@@ -1,79 +1,101 @@
 {
-  "schema": "bsc.q26.lean-validation.v1",
+  "schema": "bsc.q26.lean-validation.v2",
   "subject": {
-    "claim": "No set of exactly thirteen queens dominates the 26 by 26 board",
-    "theorem": "Q26GridAnnihilator.no_thirteen_queen_dominator",
-    "root_module": "Q26GridAnnihilator.Unconditional",
+    "claim": "The ordinary queen domination number of the 26 by 26 board is exactly fourteen",
+    "theorem_names": [
+      "Q26GridAnnihilator.no_thirteen_queen_dominator",
+      "Q26GridAnnihilator.q26_domination_exact"
+    ],
+    "root_module": "Q26GridAnnihilator.Definitive",
     "project_path": "formal/q26_grid_annihilator",
-    "base_public_commit": "299ede821bb27647b5ef7c7c0e3df30a35ff8906",
+    "base_public_commit": "467b6237145ce93a11d7dda7fd305a75bef4a51a",
     "source_manifest": "applications/Q26_lean_4_32_2_source_sha256.txt",
-    "source_manifest_sha256": "b0c3f951b6d1d9f5c51a532329611454984ad9c37b747266efc2c016e12a8913",
-    "source_file_count": 29
+    "source_manifest_sha256": "19d39323b325e86df7ce2c7396cf76acdaac5408d0b2d3b6ef58eba71d65c599",
+    "source_file_count": 30,
+    "definitive_source_sha256": "d4c685996dd287c23f514dea0e54574303825f19bd287780ef1c309731fa3bf1"
   },
   "toolchain": {
     "lean_toolchain": "leanprover/lean4:v4.32.2",
     "lean_commit": "f3b06c705e6c85f5314019d5d3baab0fec5b580c",
     "mathlib_commit": "905b95818eb32af7874a58b427f50c1711a5e96c"
   },
-  "checks": [
+  "local_checks": [
     {
-      "id": "windows_lake_build",
-      "argv": ["lake", "build"],
+      "id": "windows_definitive_source_compile",
+      "scope": "direct Lean elaboration of the exact Definitive.lean source",
       "status": "PASS",
-      "exit_code": 0,
-      "completed_jobs": 8679,
-      "total_jobs": 8679
+      "wall_seconds": 21.269
+    },
+    {
+      "id": "windows_definitive_source_compile_independent",
+      "scope": "independent direct Lean elaboration of the same Definitive.lean bytes",
+      "status": "PASS",
+      "wall_seconds": 26.7
+    },
+    {
+      "id": "windows_definitive_object_compile",
+      "scope": "direct Lean compile of Definitive.lean to a fresh object output",
+      "status": "PASS",
+      "wall_seconds": 21.612
+    },
+    {
+      "id": "windows_root_module_compile",
+      "scope": "direct Lean compile of Q26GridAnnihilator.lean with Definitive imported",
+      "status": "PASS",
+      "wall_seconds": 18.261
     },
     {
       "id": "windows_axiom_audit",
-      "argv": ["lake", "env", "lean", "Q26GridAnnihilator/AxiomAudit.lean"],
+      "scope": "Q26GridAnnihilator.q26_domination_exact",
       "status": "PASS",
-      "exit_code": 0,
-      "theorem_axioms": ["propext", "Classical.choice", "Quot.sound"],
-      "exact_shadow_stats_axioms": []
+      "wall_seconds": 18.015,
+      "theorem_axioms": ["propext", "Classical.choice", "Quot.sound"]
     },
     {
-      "id": "windows_leanchecker_module",
-      "argv": ["lake", "env", "leanchecker", "Q26GridAnnihilator.Unconditional"],
-      "scope": "target module using existing imported oleans",
-      "status": "PASS",
-      "exit_code": 0
-    },
-    {
-      "id": "windows_leanchecker_fresh",
-      "argv": ["lake", "env", "leanchecker", "--fresh", "Q26GridAnnihilator.Unconditional"],
-      "scope": "fresh transitive import closure replay",
-      "status": "NOT_CHECKED",
-      "termination": "TIMEOUT",
-      "timeout_limit_seconds": 900,
-      "exit_code": null,
+      "id": "historical_wsl_leanchecker_fresh_prior_one_theorem",
+      "scope": "historical fresh replay attempt for the earlier Unconditional one-theorem source; not evidence for current Definitive bytes",
+      "status": "HISTORICAL_TIMEOUT",
+      "timeout_limit_seconds": 600,
       "diagnostics": []
-    },
-    {
-      "id": "linux_comparator_nanoda",
-      "status": "PASS",
-      "exit_code": 0,
-      "sandbox": "landrun under systemd-run with RestrictAddressFamilies excluding AF_UNIX",
-      "challenge_module": "Q26GridAnnihilator.TrustedChallenge",
-      "solution_module": "Q26GridAnnihilator.Unconditional",
-      "theorem_names": ["Q26GridAnnihilator.no_thirteen_queen_dominator"],
-      "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
-      "nanoda_enabled": true,
-      "terminal_results": [
-        "Nanoda kernel accepts the solution",
-        "Lean default kernel accepts the solution",
-        "Your solution is okay!"
-      ],
-      "service_runtime_seconds": 933.38,
-      "cpu_seconds": 1184.794,
-      "memory_peak": "21.9G",
-      "swap_peak": "0B",
-      "log_sha256": "711914828799ca70bdf2d867cc0bf4ebe72d9118659dec1943b08fb43120310e",
-      "receipt_path": "formal/q26_grid_annihilator/validation/comparator_receipt.json",
-      "transcript_path": "formal/q26_grid_annihilator/validation/evidence/comparator-q26.txt",
-      "reproduction_script": "formal/q26_grid_annihilator/validation/reproduce-on-ubuntu.sh"
     }
   ],
+  "external_check": {
+    "id": "linux_comparator_nanoda",
+    "status": "PASS",
+    "exit_code": 0,
+    "sandbox": "landrun under systemd-run with RestrictAddressFamilies excluding AF_UNIX",
+    "challenge_module": "Q26GridAnnihilator.TrustedChallenge",
+    "solution_module": "Q26GridAnnihilator.Definitive",
+    "theorem_names": [
+      "Q26GridAnnihilator.no_thirteen_queen_dominator",
+      "Q26GridAnnihilator.q26_domination_exact"
+    ],
+    "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
+    "nanoda_enabled": true,
+    "terminal_results": [
+      "Nanoda kernel accepts the solution",
+      "Lean default kernel accepts the solution",
+      "Your solution is okay!"
+    ],
+    "challenge_build_jobs": 608,
+    "solution_build_jobs": 8676,
+    "service_runtime_seconds": 922.842,
+    "cpu_seconds": 1169.182,
+    "memory_peak": "21.8G",
+    "swap_peak": "0B",
+    "source_unchanged_during_run": true,
+    "lean_source_projection_file_count": 27,
+    "lean_source_projection_sha256": "358f8fcdcea4ae5255f62cb399d57e9addafc8adc54e24f222ad3732a1c5b764",
+    "log_sha256": "dcbafc7b1460d6c80bd97a5ba9bcf01e61df485395d70a8cc3e6e42dceb0ea8b",
+    "external_run_log_sha256": "3f64723316a43b35c70559c95c9b3efb4af101f4631875b77f04893bb37d8125",
+    "receipt_path": "formal/q26_grid_annihilator/validation/comparator_receipt.json",
+    "receipt_sha256": "6985061fdb70939aeff2aa6c67a673c55a756972e3df26d0c471f589f343ea47",
+    "transcript_path": "formal/q26_grid_annihilator/validation/evidence/comparator-q26.txt",
+    "external_run_transcript_path": "formal/q26_grid_annihilator/validation/evidence/external-run-q26.txt",
+    "source_projection_path": "formal/q26_grid_annihilator/validation/evidence/lean-source-projection-sha256.txt",
+    "reproduction_script": "formal/q26_grid_annihilator/validation/reproduce-on-ubuntu.sh",
+    "reproduction_script_sha256": "6bccd21c40170e020179284f6c00f2387e4a3c93186011f52417483773f308b7"
+  },
   "external_checker_pins": {
     "landrun_source": "5ed4a3db3a4ad930d577215c6b9abaa19df7f99f",
     "lean4export_source": "4e7915201d3f9f04470d9eae002fa695f7cdc589",
@@ -82,13 +104,13 @@
     "landrun_binary_sha256": "7336cc5bee32dc4fd47755eb2cc19a846c63f7abc1484bd0594a39eb8a2811de",
     "lean4export_binary_sha256": "d5a4291fa53476cfd3de4ef225e4021bd82c4dee1731320c128585b098cc7db9",
     "comparator_binary_sha256": "67c9282dcda8bf769e0170adaf292d99620cf5efa7a27247853128d5755748d2",
-    "nanoda_binary_sha256": "5961e745c13cfe99106cad19d4cd59cecc8568645865e05b88d2d5b8384f1c7c",
-    "trusted_challenge_sha256": "58de64fc29e959623892ecd62221874b88ee03c8a0e3f4b891295d49a3f9f55e",
-    "comparator_config_sha256": "6d936584b49bfee564ffea01f05feeed4152f9cb8e99af580e6cb583c2927eef"
+    "nanoda_binary_sha256": "f1df9d253b030b068066b531906bcdae565a3adfe1a58fecf4982b981ff715ce",
+    "trusted_challenge_sha256": "8e57b02d00ce5d59244edf91cdff5396ff44a692efba535a49caaffd9401514c",
+    "comparator_config_sha256": "03aacc69c02f1a6edb56216de96aa2485f1e4adfd3c348cf7c1db6e4624c13b5"
   },
   "authority": {
     "exact_cardinality_thirteen": "EXTERNALLY_CHECKED",
-    "gamma_q26_equals_fourteen": "COMPOSITE_CONSEQUENCE_WITH_CITED_LOWER_BOUND_AND_CHECKED_WITNESS",
+    "gamma_q26_equals_fourteen": "EXTERNALLY_CHECKED_DIRECT_THEOREM",
     "root_cnf_status": "UNKNOWN_UNCHANGED"
   }
 }

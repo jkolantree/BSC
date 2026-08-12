@@ -1,22 +1,35 @@
-# External Q26 comparator receipt
+# External Q26 Comparator validation
 
-This directory preserves the independent validation referenced by the Q26
-proof note. `TrustedChallenge.lean` contains the verifier-controlled theorem
-statement and intentionally uses `sorry`; it is not imported by the proof and
-is not evidence for the solution. Comparator requires that challenge hole so
-it can compare the trusted statement with the separately compiled theorem in
-`Q26GridAnnihilator.Unconditional`.
+`TrustedChallenge.lean` is verifier-controlled and self-contained: it defines
+the 26 by 26 board, integer coordinates, queen attacks, and domination without
+importing any submitted Q26 module. Its two intentional `sorry` declarations
+state the exact-cardinality-13 obstruction and the direct domination-number-14
+result. The challenge is not imported by the solution and is not evidence for
+the solution. Comparator requires those challenge holes so it can compare the
+trusted declarations and statements with the separately compiled theorems in
+`Q26GridAnnihilator.Definitive`.
 
-The solution was checked with pinned Comparator and lean4export builds, the
-Lean 4.32.2 kernel, and the independently implemented nanoda kernel. Only
-`propext`, `Quot.sound`, and `Classical.choice` were permitted. See
-`comparator_receipt.json` for the scoped result and immutable identities,
-`evidence/comparator-q26.txt` for the transcript, and
-`reproduce-on-ubuntu.sh` for the fail-closed reproduction procedure.
+## Evidence boundary
 
-The reproduction requires substantial resources: the retained run took about
-16 minutes and peaked at 21.9 GB of memory. It verifies all pins and hashes,
-tests the landrun write boundary, and refuses a source projection that differs
-from the retained proof sources. By default it removes its large temporary
-tree after a successful run, retains failures for diagnosis, and honors
-`KEEP_WORK=1` when successful build state is deliberately needed.
+`comparator_receipt.json`, `evidence/comparator-q26.txt`, and
+`evidence/lean-source-projection-sha256.txt` bind the exact self-contained
+challenge, configuration, and 27-file Lean source projection accepted in the
+retained run. `evidence/external-run-q26.txt` additionally records the archive,
+tool-binary, sandbox, and source-invariance gates surrounding Comparator.
+
+The run used pinned Comparator and lean4export builds, the Lean 4.32.2 kernel,
+and the independently implemented nanoda kernel. Only `propext`, `Quot.sound`,
+and `Classical.choice` were permitted. Comparator built the 608-job challenge
+and the 8,676-job solution, matched both named statements, and both kernels
+accepted. The Comparator service took 15 minutes 22.842 seconds, consumed 19
+minutes 29.182 seconds of CPU, and peaked at 21.8 GB with no swap.
+
+`reproduce-on-ubuntu.sh` verifies pins and hashes, tests the landrun write
+boundary, and refuses a source projection that differs from the retained proof
+sources. Its nanoda build remaps the random work-root path so the pinned binary
+hash is reproducible. By default it removes its large temporary tree after
+success, retains failures for diagnosis, and honors `KEEP_WORK=1` when
+successful build state is deliberately needed.
+
+This validation is about the stated Lean theorems only. It does not change the
+separate root-CNF status, which remains `UNKNOWN` without a checked proof.

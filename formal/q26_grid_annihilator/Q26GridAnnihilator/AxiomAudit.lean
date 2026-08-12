@@ -19,3 +19,6 @@ theorems.  It is an audit entry point, not part of the default library target.
 #print axioms Q26GridAnnihilator.no_mono_core_covered
 #print axioms Q26GridAnnihilator.monochromatic_actualShadow_monoCoreCovered
 #print axioms Q26GridAnnihilator.no_thirteen_queen_dominator
+#print axioms Q26GridAnnihilator.fourteenQueenWitness_dominates
+#print axioms Q26GridAnnihilator.no_dominator_card_le_thirteen
+#print axioms Q26GridAnnihilator.q26_domination_exact

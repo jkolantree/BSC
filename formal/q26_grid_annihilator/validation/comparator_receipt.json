@@ -1,7 +1,14 @@
 {
-  "schema": "bsc.q26-lean-comparator-receipt.v1",
+  "schema": "bsc.q26-lean-comparator-receipt.v2",
   "status": "DUAL_KERNEL_ACCEPTED",
-  "source_projection_manifest_sha256": "4c30cd20aa29c88e090fbb65538b096de8e87ce6a5f36bf97b544f345838726a",
+  "scope": "self-contained Q26 board semantics and two named theorem statements",
+  "theorem_names": [
+    "Q26GridAnnihilator.no_thirteen_queen_dominator",
+    "Q26GridAnnihilator.q26_domination_exact"
+  ],
+  "source_projection_file_count": 27,
+  "source_projection_manifest_sha256": "358f8fcdcea4ae5255f62cb399d57e9addafc8adc54e24f222ad3732a1c5b764",
+  "source_unchanged_during_run": true,
   "lean": {
     "version": "4.32.2",
     "commit": "f3b06c705e6c85f5314019d5d3baab0fec5b580c",
@@ -23,27 +30,32 @@
     },
     "nanoda": {
       "source_commit": "68d5ca9db226849b41a6fff59d796ff19d0a8840",
-      "binary_sha256": "5961e745c13cfe99106cad19d4cd59cecc8568645865e05b88d2d5b8384f1c7c"
+      "source_date_epoch": 1772642132,
+      "rustflags": "--remap-path-prefix=$WORK=/q26-lean-trust",
+      "binary_sha256": "f1df9d253b030b068066b531906bcdae565a3adfe1a58fecf4982b981ff715ce"
     }
   },
-  "challenge_sha256": "58de64fc29e959623892ecd62221874b88ee03c8a0e3f4b891295d49a3f9f55e",
-  "config_sha256": "6d936584b49bfee564ffea01f05feeed4152f9cb8e99af580e6cb583c2927eef",
-  "comparator_log_sha256": "711914828799ca70bdf2d867cc0bf4ebe72d9118659dec1943b08fb43120310e",
+  "challenge_sha256": "8e57b02d00ce5d59244edf91cdff5396ff44a692efba535a49caaffd9401514c",
+  "config_sha256": "03aacc69c02f1a6edb56216de96aa2485f1e4adfd3c348cf7c1db6e4624c13b5",
+  "comparator_log_sha256": "dcbafc7b1460d6c80bd97a5ba9bcf01e61df485395d70a8cc3e6e42dceb0ea8b",
+  "external_run_log_sha256": "3f64723316a43b35c70559c95c9b3efb4af101f4631875b77f04893bb37d8125",
   "runtime": {
-    "wall": "15min 33.380s",
-    "cpu": "19min 44.794s",
-    "peak_memory": "21.9G",
+    "service_wall": "15min 22.842s",
+    "service_wall_seconds": 922.842,
+    "service_cpu": "19min 29.182s",
+    "service_cpu_seconds": 1169.182,
+    "peak_memory": "21.8G",
     "swap": "0B"
   },
   "checks": {
-    "challenge_build": "PASS_1595_JOBS_TRANSCRIPT",
-    "solution_build": "PASS_8675_JOBS_TRANSCRIPT",
+    "challenge_build": "PASS_608_JOBS_TRANSCRIPT",
+    "solution_build": "PASS_8676_JOBS_TRANSCRIPT",
     "landrun_outside_write": "DENIED",
     "landrun_inside_dot_lake_write": "ALLOWED",
     "nanoda": "ACCEPTED",
     "lean_default_kernel": "ACCEPTED",
     "statement_match_and_axiom_allowlist": "ACCEPTED",
-    "wsl_leanchecker_fresh": "TIMEOUT_10_MINUTES_NO_DIAGNOSTIC"
+    "local_leanchecker_fresh_historical": "TIMEOUT_10_MINUTES_NO_DIAGNOSTIC_PRIOR_ONE_THEOREM_RUN"
   },
   "root_cnf_status": "UNKNOWN_UNCHANGED"
 }

@@ -2,6 +2,14 @@
 
 ## Status and authority
 
+> **Historical-status notice (11 August 2026).** This note preserves the
+> bounded solver campaign as it stood on 6 August. The later Lean module
+> `Q26GridAnnihilator.Definitive` exports `q26_domination_exact`, directly
+> giving a fourteen-queen dominator and proving that every dominator has at
+> least fourteen queens. That theorem does not retroactively turn the exact
+> root-CNF track into a checked UNSAT result; the root-CNF status remains
+> **UNKNOWN**.
+
 This post-v1.4.0 application is a bounded **independent reconstruction** of a
 finite combinatorial decision problem. It is an attack package, not a solved
 case, a fixture, a release result, or a priority claim.

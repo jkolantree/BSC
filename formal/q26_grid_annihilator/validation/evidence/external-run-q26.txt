@@ -1,0 +1,203 @@
+work_dir=/tmp/q26-lean-trust-fl6cz5Ra
+/tmp/q26-lean-trust-fl6cz5Ra/log/host-source-before.txt: OK
+Q26GridAnnihilator/TrustedChallenge.lean: OK
+comparator-config.json: OK
+lakefile.toml: OK
+lake-manifest.json: OK
+lean-toolchain: OK
+/tmp/q26-lean-trust-fl6cz5Ra/go.tar.gz: OK
+/tmp/q26-lean-trust-fl6cz5Ra/lean.zip: OK
+      ("unpermitted_axiom_hard_error", true),
+go: downloading github.com/urfave/cli/v2 v2.27.6
+go: downloading github.com/landlock-lsm/go-landlock v0.0.0-20250303204525-1544bccde3a3
+go: downloading kernel.org/pub/linux/libs/security/libcap/psx v1.2.70
+go: downloading golang.org/x/sys v0.26.0
+go: downloading github.com/xrash/smetrics v0.0.0-20240521201337-686a1a2994c1
+go: downloading github.com/cpuguy83/go-md2man/v2 v2.0.5
+go: downloading github.com/russross/blackfriday/v2 v2.1.0
+    Updating crates.io index
+ Downloading crates ...
+  Downloaded autocfg v1.1.0
+  Downloaded num-integer v0.1.46
+  Downloaded equivalent v1.0.1
+  Downloaded indexmap v2.13.0
+  Downloaded semver v1.0.27
+  Downloaded num-bigint v0.4.4
+  Downloaded rand_core v0.6.4
+  Downloaded ppv-lite86 v0.2.17
+  Downloaded rustc-hash v1.1.0
+  Downloaded serde_core v1.0.228
+  Downloaded serde_derive v1.0.228
+  Downloaded proc-macro2 v1.0.103
+  Downloaded ryu v1.0.20
+  Downloaded rand_chacha v0.3.1
+  Downloaded rand v0.8.5
+  Downloaded serde v1.0.228
+  Downloaded memchr v2.7.6
+  Downloaded unicode-ident v1.0.12
+  Downloaded itoa v1.0.15
+  Downloaded serde_json v1.0.145
+  Downloaded libc v0.2.180
+  Downloaded syn v2.0.111
+  Downloaded quote v1.0.35
+  Downloaded cfg-if v1.0.0
+  Downloaded getrandom v0.2.11
+  Downloaded num-traits v0.2.17
+  Downloaded hashbrown v0.16.1
+   Compiling autocfg v1.1.0
+   Compiling proc-macro2 v1.0.103
+   Compiling unicode-ident v1.0.12
+   Compiling serde_core v1.0.228
+   Compiling serde v1.0.228
+   Compiling serde_json v1.0.145
+   Compiling equivalent v1.0.1
+   Compiling hashbrown v0.16.1
+   Compiling memchr v2.7.6
+   Compiling itoa v1.0.15
+   Compiling ryu v1.0.20
+   Compiling semver v1.0.27
+   Compiling rustc-hash v1.1.0
+   Compiling num-traits v0.2.17
+   Compiling num-bigint v0.4.4
+   Compiling indexmap v2.13.0
+   Compiling quote v1.0.35
+   Compiling syn v2.0.111
+   Compiling num-integer v0.1.46
+   Compiling serde_derive v1.0.228
+   Compiling nanoda_lib v0.4.6-beta (/tmp/q26-lean-trust-fl6cz5Ra/src/nanoda)
+    Finished `release` profile [optimized] target(s) in 20.90s
+✔ [2/6] Built Export (1.9s)
+✔ [3/6] Built Main (592ms)
+✔ [4/6] Built Main:c.o (120ms)
+✔ [5/6] Built Export:c.o (1.5s)
+✔ [6/6] Built lean4export:exe (650ms)
+Build completed successfully (6 jobs).
+info: lean4export: cloning https://github.com/leanprover/lean4export
+info: lean4export: checking out revision '048394e1afeeb52b0fa27bcf3f1ade2ff0f0ab6d'
+info: Lean4Checker: cloning https://github.com/leanprover/lean4checker
+info: Lean4Checker: checking out revision 'b7398199245524275543dec6113229c9bb4902e5'
+✔ [1/4] Built Comparator.Util (198ms)
+✔ [7/20] Built Comparator.Util:c.o (73ms)
+✔ [8/20] Built Lean4Checker.Replay (370ms)
+✔ [9/20] Built Export.Parse (898ms)
+✔ [10/20] Built Lean4Checker.Replay:c.o (330ms)
+✔ [11/20] Built Comparator.Axioms (325ms)
+✔ [12/20] Built Comparator.Axioms:c.o (184ms)
+✔ [13/20] Built Comparator.Compare (339ms)
+✔ [14/20] Built Comparator (191ms)
+✔ [15/20] Built Comparator.Compare:c.o (252ms)
+✔ [16/20] Built Comparator:c.o (34ms)
+✔ [17/20] Built Main (830ms)
+✔ [18/20] Built Export.Parse:c.o (2.0s)
+✔ [19/20] Built Main:c.o (374ms)
+✔ [20/20] Built comparator:exe (473ms)
+Build completed successfully (20 jobs).
+landrun: OK
+lean4export: OK
+comparator: OK
+nanoda_bin: OK
+info: mathlib: cloning https://github.com/leanprover-community/mathlib4.git
+info: mathlib: checking out revision '905b95818eb32af7874a58b427f50c1711a5e96c'
+info: toolchain not updated; already up-to-date
+info: plausible: cloning https://github.com/leanprover-community/plausible
+info: plausible: checking out revision 'e12c1910fe855cbfc38803cd4e55543906d5fa62'
+info: LeanSearchClient: cloning https://github.com/leanprover-community/LeanSearchClient
+info: LeanSearchClient: checking out revision 'c5d5b8fe6e5158def25cd28eb94e4141ad97c843'
+info: importGraph: cloning https://github.com/leanprover-community/import-graph
+info: importGraph: checking out revision '7e9612bf0b9ee66db3cb5b9988a35afc706f5a12'
+info: proofwidgets: cloning https://github.com/leanprover-community/ProofWidgets4
+info: proofwidgets: checking out revision '6e311e2a844da9b2cc3971187df2fe0066947b93'
+info: aesop: cloning https://github.com/leanprover-community/aesop
+info: aesop: checking out revision 'a7dbf0c63b694e47f425f3dcddbc0e178bb432d3'
+info: Qq: cloning https://github.com/leanprover-community/quote4
+info: Qq: checking out revision '38d591e778f100aec9762bb582f9c7f55f50e9dc'
+info: batteries: cloning https://github.com/leanprover-community/batteries
+info: batteries: checking out revision '023ce7d62a0531e22a5331e20b587817a80d49ff'
+info: Cli: cloning https://github.com/leanprover/lean4-cli
+info: Cli: checking out revision '88679d088c9720c27ebdf2ba4dafe17341747f94'
+info: mathlib: running post-update hooks
+✔ [1/5] Built Cache.Cli (205ms)
+✔ [2/5] Built Cache.Lean (238ms)
+✔ [6/26] Built Cache.Cli:c.o (73ms)
+✔ [7/26] Built Cache.Lean:c.o (86ms)
+✔ [8/26] Built Cache.Infra (251ms)
+✔ [9/26] Built Cache.Infra:c.o (129ms)
+✔ [10/26] Built Batteries.Tactic.OpenPrivate (561ms)
+✔ [11/26] Built Batteries.Tactic.OpenPrivate:c.o (687ms)
+✔ [12/26] Built Cache.IO (848ms)
+✔ [13/26] Built Cache.Hashing (526ms)
+✔ [14/26] Built Cache.Hashing:c.o (248ms)
+✔ [15/26] Built Cache.IO:c.o (902ms)
+✔ [16/26] Built Cache.Requests (1.2s)
+✔ [17/26] Built Cache.Marker (386ms)
+✔ [18/26] Built Cache.Marker:c.o (68ms)
+✔ [19/26] Built Cache.Query (467ms)
+✔ [20/26] Built Cache.Query:c.o (169ms)
+✔ [21/26] Built Cache.Warning (449ms)
+✔ [22/26] Built Cache.Warning:c.o (154ms)
+✔ [23/26] Built Cache.Requests:c.o (1.6s)
+✔ [24/26] Built Cache.Main (1.0s)
+✔ [25/26] Built Cache.Main:c.o (543ms)
+✔ [26/26] Built cache:exe (497ms)
+Current branch: HEAD
+Using cache from origin: (some leanprover-community/mathlib4)
+Decompressing 8638 already-cached file(s) (1 already decompressed)
+No files to download
+Decompressed 8638 already-cached file(s)
+Completed successfully in 11962 ms!
+Current branch: HEAD
+Using cache from origin: (some leanprover-community/mathlib4)
+No files to download
+Already decompressed 8639 file(s)
+touch: cannot touch '/tmp/q26-lean-trust-fl6cz5Ra/probe/outside': Permission denied
+Running as unit: run-p3057-i3343.service; invocation ID: 5c35008705e8497e8b2df796656d6cc8
+          Finished with result: success
+Main processes terminated with: code=exited, status=0/SUCCESS
+               Service runtime: 5ms
+             CPU time consumed: 3ms
+                   Memory peak: 1.7M (swap: 0B)
+Running as unit: run-p3064-i3350.service; invocation ID: 38f2975026984b3e87e82ab22642da02
+Building Q26GridAnnihilator.TrustedChallenge
+⚠ [608/608] Built Q26GridAnnihilator.TrustedChallenge (788ms)
+warning: Q26GridAnnihilator/TrustedChallenge.lean:30:8: declaration uses `sorry`
+warning: Q26GridAnnihilator/TrustedChallenge.lean:35:8: declaration uses `sorry`
+Build completed successfully (608 jobs).
+Exporting #[Nat, String, String.mk, Char, Char.ofNat, List, Quot, Quot.mk, Quot.lift, Quot.ind, Q26GridAnnihilator.no_thirteen_queen_dominator, Q26GridAnnihilator.q26_domination_exact, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList] from Q26GridAnnihilator.TrustedChallenge
+Building Q26GridAnnihilator.Definitive
+✔ [7168/7507] Built Q26GridAnnihilator.Basic (1.3s)
+✔ [8656/8676] Built Q26GridAnnihilator.Polynomial (1.2s)
+✔ [8657/8676] Built Q26GridAnnihilator.MonochromaticPermutation (3.6s)
+✔ [8658/8676] Built Q26GridAnnihilator.MonochromaticArithmetic (3.5s)
+✔ [8659/8676] Built Q26GridAnnihilator.OccurrenceAlgebra (4.9s)
+✔ [8660/8676] Built Q26GridAnnihilator.ArbitraryCardinality (1.4s)
+✔ [8661/8676] Built Q26GridAnnihilator.MomentAlgebra (1.5s)
+✔ [8662/8676] Built Q26GridAnnihilator.MonochromaticExtraction (3.3s)
+✔ [8663/8676] Built Q26GridAnnihilator.CoordinateSets (1.3s)
+✔ [8664/8676] Built Q26GridAnnihilator.GridMoment (2.3s)
+✔ [8665/8676] Built Q26GridAnnihilator.ColorBridge (1.4s)
+✔ [8666/8676] Built Q26GridAnnihilator.BoardParity (1.5s)
+✔ [8667/8676] Built Q26GridAnnihilator.MonochromaticEndpointBridge (6.6s)
+✔ [8668/8676] Built Q26GridAnnihilator.MonochromaticShell (6.2s)
+✔ [8669/8676] Built Q26GridAnnihilator.Shadow (176s)
+✔ [8670/8676] Built Q26GridAnnihilator.BoardShadow (3.3s)
+✔ [8671/8676] Built Q26GridAnnihilator.BichromaticRecipe (170s)
+✔ [8672/8676] Built Q26GridAnnihilator.MonochromaticRecipe (170s)
+✔ [8673/8676] Built Q26GridAnnihilator.BichromaticClosure (3.2s)
+✔ [8674/8676] Built Q26GridAnnihilator.MonochromaticBoardBridge (3.9s)
+✔ [8675/8676] Built Q26GridAnnihilator.Unconditional (3.0s)
+✔ [8676/8676] Built Q26GridAnnihilator.Definitive (5.6s)
+Build completed successfully (8676 jobs).
+Exporting #[Nat, String, String.mk, Char, Char.ofNat, List, Quot, Quot.mk, Quot.lift, Quot.ind, Q26GridAnnihilator.no_thirteen_queen_dominator, Q26GridAnnihilator.q26_domination_exact, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList] from Q26GridAnnihilator.Definitive
+Running nanoda kernel on solution
+Nanoda kernel accepts the solution
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!
+          Finished with result: success
+Main processes terminated with: code=exited, status=0/SUCCESS
+               Service runtime: 15min 22.842s
+             CPU time consumed: 19min 29.182s
+                   Memory peak: 21.8G (swap: 0B)
+Nanoda kernel accepts the solution
+Lean default kernel accepts the solution
+Your solution is okay!

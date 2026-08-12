@@ -2,6 +2,14 @@
 
 ## Status and authority
 
+> **Historical-status notice (11 August 2026).** This note preserves the
+> structural reduction as it stood on 7 August. The later Lean module
+> `Q26GridAnnihilator.Definitive` exports `q26_domination_exact`, directly
+> giving a fourteen-queen dominator and proving that every dominator has at
+> least fourteen queens. The shell roster remains a scoped historical
+> reduction, not the proof of that theorem, and the separate root-CNF status
+> remains **UNKNOWN**.
+
 Every hypothetical thirteen-queen dominator of $Q_{26}$ maps to one of 156
 canonical parity-profile shells, or 142 after applying Weakley's empty-line
 parity lemma. This note defines and reproduces that structural over-cover.
