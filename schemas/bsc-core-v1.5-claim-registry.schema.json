@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bsc:schema:core-v1.5-claim-registry:v1",
+  "$comment": "Structural validation only. Cross-reference, dependency, source-path, and evidence-identity checks require the repository package checker.",
+  "title": "BSC Core v1.5 claim registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "milestone",
+    "coverage",
+    "readiness_graph",
+    "package_artifacts",
+    "claims"
+  ],
+  "properties": {
+    "schema": {
+      "const": "bsc.core.v1.5.claim-registry.v1"
+    },
+    "milestone": {
+      "type": "string",
+      "minLength": 1
+    },
+    "coverage": {
+      "const": "selected-milestone-claims"
+    },
+    "readiness_graph": {
+      "type": "string",
+      "minLength": 1
+    },
+    "package_artifacts": {
+      "$ref": "#/$defs/pathList",
+      "minItems": 1
+    },
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "statement",
+          "verdict",
+          "authority_ceiling",
+          "dependencies",
+          "sources",
+          "evidence"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9]*(?:-[A-Z0-9]+)*$"
+          },
+          "statement": {
+            "type": "string",
+            "minLength": 1
+          },
+          "verdict": {
+            "enum": [
+              "N/A",
+              "false",
+              "ill-posed",
+              "open",
+              "true"
+            ]
+          },
+          "authority_ceiling": {
+            "type": "string",
+            "minLength": 1
+          },
+          "dependencies": {
+            "$ref": "#/$defs/idList"
+          },
+          "sources": {
+            "$ref": "#/$defs/pathList"
+          },
+          "evidence": {
+            "$ref": "#/$defs/pathList"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "idList": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Z][A-Z0-9]*(?:-[A-Z0-9]+)*$"
+      },
+      "uniqueItems": true
+    },
+    "pathList": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*$"
+      },
+      "uniqueItems": true
+    }
+  }
+}

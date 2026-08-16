@@ -12,8 +12,9 @@ version DOI is `10.5281/zenodo.21713285`; the immutable v1.2.0 version DOI is
 proofs, sources, or receipts. A materially repaired or restricted proposition
 receives a new identifier; the superseded row remains visible.
 
-Rows `BSC-ECP-01` through `BSC-ECP-05` are post-v1.4.0 main-branch
-additions. They are not contents of the immutable v1.4.0 paper, PDFs, tag,
+Rows explicitly described as post-v1.4.0—including the ECP, EM-12, DHC,
+Collatz-affine, Q26, and BSC Core v1.5 additions—are main-branch research
+records. They are not contents of the immutable v1.4.0 paper, PDFs, tag,
 release assets, or Zenodo deposit.
 
 Version `1.4.0` rows do not inherit empirical authority from cited studies or
@@ -170,6 +171,29 @@ reformulation.
 | BSC-CRS-12 | The progression $8748\mathbb N_0+6219$ is recursive via one forward odd step and reverse word `001010111111`, ending at $8192t+5823<8748t+6219$. | true | proved | N/A | executed | present proof | bounded | Post-v1.4.0 exact affine witness. Every inverse-odd congruence, positivity condition, merge identity, and the gap $556t+396$ are checked. This is one $1/243$-subprogression of $36\mathbb N_0+27$, not the whole class. |
 | BSC-CRS-13 | The proposed restricted depth-28, depth-30, and depth-32 certificate catalogs have the reported rows and pass complete independent affine replay. | open | none | N/A | unexecuted | unchecked | blocked | The artifacts retained in this repository update contain no catalog TSVs, catalog manifest, claimed miners, or independent replay program. Aggregate prose cannot certify row existence, affine admissibility, prefix-freeness, or agreement. F11's duplicate table is not new catalog evidence. |
 
+## Post-v1.4.0 BSC Core v1.5 selected claims
+
+This table is a human-readable view of the selected v1.5 milestone claims.
+The machine-readable registry freezes their full statements, dependencies,
+sources, evidence, and authority ceilings. Its readiness levels are
+curator-supplied premises; a package-checker PASS validates bytes and graph
+relationships, not the truth of those premises.
+Fixture claims BSC-FIX-14 and BSC-FIX-15 appear once in the fixture ledger
+immediately below rather than being duplicated here.
+
+| ID | Claim | Verdict | Math support | Empirical | Computational | Source | Transfer | Dependencies and demotion trigger |
+|---|---|---|---|---|---|---|---|---|
+| BSC-AIR-01 | AI-assisted evidence should freeze the target, separate generation from verification, classify independence, preserve failures, and promote only claim-local authority. | N/A | N/A | N/A | N/A | internal | local only | Normative certificate profile. Agent agreement, hashes, or a passing workflow do not independently validate a theorem, physical premise, novelty claim, or empirical result. |
+| BSC-CAT-01 | The full eight-field BSC transfer record has a coherent displayed/double-category construction with all laws and certificate equivalence proved. | open | none | N/A | unexecuted | internal | blocked | BSC-CAU-01 and BSC-RDY-01. A proposed architecture or generic cospan theorem is not the missing BSC-specific construction. |
+| BSC-CAU-01 | A causal-transfer certificate should separate observational, interventional, and counterfactual authority and retain assumptions, intervention maps, defects, and ceilings. | N/A | N/A | untested | unexecuted | internal | local only | BSC-IDN-01. It is a profile, not validation of a causal model, effect, or counterfactual. |
+| BSC-IDN-01 | Exact target identifiability is equivalent to report-kernel inclusion and unique factorization through attainable reports. | true | proved | N/A | N/A | present proof | certified | Kernel-checked set-theoretic theorem; no model truth, empirical adequacy, or novelty authority. |
+| BSC-IDN-02 | For finite completions, a selected heterogeneous report family identifies the target exactly when its distinguishing sets cover every target-separated ordered pair. | true | proved | N/A | N/A | present proof | certified | BSC-IDN-01. Kernel-checked cover equivalence, not weighted optimization or a complexity improvement. |
+| BSC-IDN-03 | In the finite natural-valued approximate model, adding reports or tightening tolerances cannot increase target oscillation. | true | proved | N/A | N/A | present proof | certified | BSC-IDN-01. Kernel-checked finite monotonicity only; real-valued and statistical extensions require separate hypotheses. |
+| BSC-NOV-01 | The joint v1.5 integration is mathematically novel. | open | none | N/A | unexecuted | internal | blocked | Bounded prior-art matrix only. Literature completeness, equivalence exclusion, novelty, and priority require external review. |
+| BSC-RDY-01 | A fixed active-axis readiness product inherits coordinatewise meet/GLB laws and top from its components, while verdict and execution outcome remain separate. | true | proved | N/A | N/A | present proof | certified | Kernel-checked within one applicability signature; no fake global meet across absent and applicable tags. |
+| BSC-RDY-02 | A finite heterogeneous monotone cyclic cap system has a greatest feasible fixed point below its initial assignment, reached by descending synchronous iteration. | true | proved | N/A | unexecuted | present proof | bounded | BSC-RDY-01. Human-proof-recorded theorem; not assigned the kernel authority of BSC-RDY-03, and not evidence grounding a cycle. |
+| BSC-RDY-03 | A homogeneous common-complete-lattice cyclic cap system has a greatest feasible fixed point; in the finite specialization, descending iteration from top stabilizes there. | true | proved | N/A | N/A | present proof | certified | BSC-RDY-01. Kernel-checked homogeneous theorem only; heterogeneous lattices and the DAG one-sweep corollary remain outside Lean. |
+
 ## Fixture ledger
 
 | ID | Fixture result | Verdict | Math support | Computational | Permanent expected output | Failure status |
@@ -187,6 +211,8 @@ reformulation.
 | BSC-FIX-11 | The corrected first residue layer, exact $V_{173}/W_{173}$ arithmetic, exhaustive ten-billion-interval candidate set, and all retained first descents match the frozen Collatz certificate. | true | conditional | exact receipt | `conditional_prefix_extension_certificate_verified`; exact row replay and complete candidate enumeration pass | Version 1.4.0. The 4,826,862-byte table has SHA-256 `88df1573d49511a4bc93fab35f85d3feb1cade2d40b5444ee88ae42699aa5250`; 52,686 retained rows exactly match an exhaustive scan of 1,388,888,889 compatible candidates. The finite extension remains conditional on the separately sourced $2^{71}$ base. Any hash, row, membership, endpoint, threshold, completeness, or base-identity mismatch invalidates transfer. |
 | BSC-FIX-12 | The retained exact-Q derived-holonomy cases produce one contractible pass certificate and one homology-visible left-null obstruction. | true | proved | exact receipt | $A=(1,1)^T$, $\boldsymbol\omega=(1,1)^T$, $h_0=1$ for the pass; a $1\times0$ system, $\boldsymbol\omega=(1)$, and $y=(1)$ for the obstruction | Post-v1.4.0 independent reconstruction under BSC-DHC-01. Any input, provenance, identifier, canonical-serialization, chain-map, system, homotopy, left-null, normalization, or byte-reproduction mismatch fails the fixture. `NOT_REPLAYED`; not kernel verified. |
 | BSC-FIX-13 | Four retained Lorentz auxiliary-state ledgers satisfy the exact material, Maxwell, coupled, and port-oriented energy identities, including separate $\dot a$ and $\dot b$ pump terms. | true | proved | exact receipt | Fixed dissipative and lossless cases plus isolated coefficient-modulation cases pass exact rational and symbolic checks | Post-v1.4.0 independent reconstruction under BSC-EM-12. Any coefficient sign, positivity, classification, pump, boundary orientation, input, framework, provenance, schema, code, identifier, canonical-serialization, or byte-reproduction mismatch fails. Finite ledgers are not continuous PDE executions. `NOT_REPLAYED`; not mechanically replayed or kernel verified. |
+| BSC-FIX-14 | All eight families in the declared four-state intervention model are evaluated exactly; minimum cost is 2 with two retained minimizers and tolerant-direct oscillation $3/2$. | true | proved | executed | `families=8`, `minimum_cost=2`, `minimizers=2`, exact rational oscillations | Post-v1.4.0 source-bound same-implementation replay with two internal mathematical criteria. Any model, metric, tolerance, cost, tie, rational, canonical-serialization, or evidence-binding mismatch fails. Not causal or empirical validation. |
+| BSC-FIX-15 | The declared cyclic readiness graph reaches its retained componentwise greatest feasible fixed point; exhaustive enumeration finds 84 feasible assignments. | true | proved | exact receipt | Canonical fixed point and exact feasible count 84 | Post-v1.4.0 source-bound exhaustive shared-model cross-check. Any axis, applicability, cap, verdict, graph, bound, canonical-serialization, or receipt mismatch fails. Not independent implementation or proof that circular evidence is grounded. |
 
 ## Mechanical, empirical, and release claims
 

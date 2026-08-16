@@ -12,7 +12,7 @@ $(error VERSION is no longer accepted; use RELEASE_VERSION with dist-candidate o
 endif
 endif
 
-.PHONY: paper synopsis fixture fixture-full manifest manifest-refresh inventory-contexts markdown test verify build-check dist dist-development dist-candidate dist-release ci
+.PHONY: paper synopsis fixture fixture-full bsc-core manifest manifest-refresh inventory-contexts markdown test verify build-check dist dist-development dist-candidate dist-release ci
 
 paper:
 	@test -n "$(SOURCE_DATE_EPOCH)"
@@ -30,9 +30,15 @@ fixture:
 	$(PYTHON) fixtures/F11_collatz_recursive_sieve/check_fixture.py
 	$(PYTHON) fixtures/F12_derived_holonomy_q/check_fixture.py
 	$(PYTHON) fixtures/F13_lorentz_auxiliary_passivity/check_fixture.py
+	$(PYTHON) fixtures/F14_intervention_identifiability/check_fixture.py
+	$(PYTHON) fixtures/F15_cyclic_readiness/check_fixture.py
 
 fixture-full: fixture
 	$(PYTHON) fixtures/F11_collatz_recursive_sieve/check_fixture.py --full-scan
+
+bsc-core:
+	$(PYTHON) -I -B tools/bsc_claim_readiness.py check ledgers/BSC_Core_v1_5_Claim_Graph.json ledgers/BSC_Core_v1_5_Claim_Graph.receipt.json
+	$(PYTHON) -I -B tools/bsc_core_claim_package.py check ledgers/BSC_Core_v1_5_Claim_Registry.json ledgers/BSC_Core_v1_5_Claim_Package.receipt.json
 
 manifest:
 	$(PYTHON) tools/verify_manifest.py
@@ -49,7 +55,7 @@ markdown:
 test:
 	$(PYTHON) -m unittest discover -s tests -v
 
-verify: inventory-contexts manifest fixture markdown test
+verify: inventory-contexts manifest fixture bsc-core markdown test
 
 build-check: paper synopsis
 	$(PYTHON) tools/verify_build.py --paper-pages $(PAPER_PAGES) --synopsis-pages $(SYNOPSIS_PAGES)

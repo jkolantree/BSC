@@ -7,7 +7,8 @@
 **Latest released version:** v1.4.0 · 31 July 2026.
 
 **Repository state:** immutable version 1.4.0 release plus explicitly marked
-post-release presentation and application notes on `main`.
+post-release presentation and application notes, research milestones, and
+formal projects on `main`.
 
 **Release status:** v1.4.0 is a foundational preprint with mathematical
 framework, audit artifacts, and explicit claim boundaries; not peer reviewed.
@@ -34,6 +35,8 @@ The unit of evaluation is not the universe. It is one claimed transfer.
 | Time | Read | Purpose |
 |---|---|---|
 | 2 minutes | This page | Understand the claim and its limits |
+| 2-minute v1.5 brief | [BSC Core v1.5 executive summary](synopsis/BSC_Core_v1_5_Executive_Summary.md) | See the new mathematical center, exact evidence, and residual limits |
+| Current core milestone | [BSC Core v1.5](BSC_CORE_V1_5.md) | Inspect product readiness, cyclic caps, operational identifiability, exact experiment design, the first non-Q26 Lean slice, and every authority ceiling |
 | 10 minutes | [Technical synopsis](synopsis/Technical_Synopsis.pdf) | See the formal object, status boundaries, and fixture set |
 | Field-specific | [Reader map](synopsis/Reader_Map.md) | Go directly to the sections nearest your expertise |
 | Full review | [Complete paper](paper/On_Boundaries_of_Evidence.pdf) | Inspect definitions, proofs, fixtures, applications, and references |
@@ -106,7 +109,8 @@ BSC is not presented as:
 - a universal law of persistence;
 - a claim that every boundary determines an interior;
 - a single total error score;
-- a machine-checked formalization; or
+- a machine-checked formalization of the immutable paper or complete
+  eight-field record; or
 - a complete reference implementation.
 
 The paper's strongest present territory is the grammar governing when boundary
@@ -116,6 +120,12 @@ recurrence, or duality earns the right to support a target claim.
 ## Available now
 
 - A reviewer-facing preprint and editable LaTeX/BibTeX source.
+- A post-v1.4.0 [BSC Core v1.5 research milestone](BSC_CORE_V1_5.md)
+  with human-readable proofs for product readiness, cyclic cap closure,
+  operational identifiability, target-relative pair cover, and approximate
+  oscillation; a separate pinned Lean-checked theorem slice; exact F14/F15 fixtures; proposed
+  causal and AI-evidence profiles; and a machine-readable selected-claim
+  package. It is not a new immutable release.
 - Standalone framework modules for certified finite scale families,
   normalization collapse, logarithmic-rate decomposition and stability,
   singular-set and slice visibility, analytic zero transfer, and
@@ -141,13 +151,15 @@ recurrence, or duality earns the right to support a target claim.
 - A symbol and notation ledger, claim-status ledger, and revision memorandum.
 - Eleven exact mathematical fixtures in immutable v1.4.0; immutable v1.3.0
   and v1.2.0 contain ten, immutable v1.1.0 contains nine, and immutable
-  v1.0.1 contains eight. Post-release `main` additionally contains F12 and
-  F13.
+  v1.0.1 contains eight. Post-release `main` additionally contains F12 through
+  F15.
 - Three executable fixtures, F8, F10, and F11, in immutable v1.4.0, plus the
-  post-release F12 exact-Q and F13 Lorentz-passivity certificates, with
-  deterministic CPython receipts.
-- Fail-closed checkers for those receipts and their parsed JSON Schemas, with
-  independent semantic recomputation and negative regression tests.
+  post-release F12 exact-Q, F13 Lorentz-passivity, F14 intervention-design,
+  and F15 cyclic-readiness certificates, with deterministic CPython receipts
+  or source-bound reports.
+- Fail-closed checkers for retained receipts and, where shipped, parsed JSON
+  Schemas, with exact recomputation or explicitly labeled cross-checks and
+  negative regression tests.
 - Reproduction instructions, release metadata, licenses, source-availability
   statement, and file-integrity manifest.
 - A complete-set manifest gate that rejects missing, extra, duplicate, unsafe,
@@ -163,8 +175,10 @@ its finite-prefix conclusion remains conditional on the external $2^{71}$
 base that BSC did not replay. F12 is an independent exact-Q reconstruction;
 the absent historical script remains `NOT_REPLAYED`. F13 independently checks
 one scalar auxiliary-state identity and four finite energy ledgers; it is not
-a continuous Maxwell execution or physical material calibration. No
-proof-assistant artifact is included.
+a continuous Maxwell execution or physical material calibration. The
+immutable v1.4.0 paper includes no proof-assistant artifact; separate
+post-release Lean projects check the Q26 theorem and the bounded BSC Core v1.5
+theorem slice without converting the paper as a whole into a formalization.
 
 ## How to evaluate the contribution
 
@@ -486,6 +500,8 @@ miners, and independent replay program were not supplied to the repository.
 | Fixture F11: Collatz recursive-sufficiency repair | True implication; conditional support | Exact induction defect, replacement sieve arithmetic, exhaustive interval enumeration, and first-descent replay | N/A | One exact receipt; external base not replayed | Fixture-local |
 | Fixture F12: exact-Q derived holonomy | True fixture result | Exact chain-homotopy pass or normalized left-null obstruction under BSC-DHC-01 | N/A | One independent-reconstruction receipt; historical script not replayed | Fixture-local |
 | Fixture F13: Lorentz auxiliary-state passivity | True fixture result | Exact symbolic storage and coupled-balance cancellation plus four rational energy ledgers under BSC-EM-12 | N/A | One independent-reconstruction receipt; not a PDE or historical replay | Fixture-local |
+| Fixture F14: finite intervention identifiability | True fixture result | Exact finite target-relative set cover, all minimum-cost ties, and rational target oscillations | N/A | One source-bound exact report with two internal criterion checks; no causal or empirical validation | Fixture-local |
+| Fixture F15: cyclic readiness | True fixture result | Exact simultaneous cap closure and exhaustive greatest-feasible cross-check for the declared three-node graph | N/A | One source-bound receipt and shared-model exhaustive cross-check; not an independent implementation | Fixture-local |
 | Collatz affine-certificate calculus | True within its declared path classes | Merge-kernel, affine-descent, valuation-screen, one-turn ghost-cylinder, and one-subprogression results proved; arithmetic-bar completeness remains open | N/A | Exact symbolic regressions; no catalog execution | Bounded |
 | Finite-resolution observation decides exact zero | False | Query fails operational descent when zero and nonzero amplitudes are confusable | N/A | Unexecuted | Blocked |
 | Finite evidence entails limiting DQPT exclusivity or RH | False | Limit, zero-census, and universal quantifier are not discharged | Single study | Unexecuted | Blocked |
@@ -506,6 +522,8 @@ python3 fixtures/F10_coupled_surrogate/check_fixture.py
 python3 fixtures/F11_collatz_recursive_sieve/check_fixture.py
 python3 fixtures/F12_derived_holonomy_q/check_fixture.py
 python3 fixtures/F13_lorentz_auxiliary_passivity/check_fixture.py
+python3 fixtures/F14_intervention_identifiability/check_fixture.py
+python3 fixtures/F15_cyclic_readiness/check_fixture.py
 ```
 
 No checker overwrites its retained receipt. F8 and F10 parse their shipped
@@ -537,12 +555,14 @@ commands.
 ## Repository map
 
 ```text
-paper/        manuscript PDF and editable source
-framework/    reusable scale, simulation, channel, electromagnetic, Lorentz-storage, and exact-Q certificate mathematics
+paper/        immutable-release manuscript PDF and editable source
+framework/    reusable mathematics and post-release evidence profiles
 applications/ source-bound domain crosswalks
-synopsis/     two-page synopsis, source, and reader map
-ledgers/      claim status and notation
-fixtures/     mathematical fixtures plus executable F8, F10, F11, and post-release F12/F13 receipts
+synopsis/     released synopsis plus current reader and executive maps
+ledgers/      claim status, notation, and the selected v1.5 claim package
+fixtures/     mathematical fixtures plus executable F8, F10, F11, and post-release F12–F15 evidence
+formal/       separate pinned Lean projects for Q26 and the bounded BSC core
+research/     prior-art and recent-research maps for BSC Core v1.5
 revision/     explicit definition repairs and unresolved obligations
 provenance/   supplied-corpus identity records
 tools/        complete-set manifest and release verification

@@ -1,0 +1,10 @@
+{
+  "schema": "bsc.fixture-provenance.v1",
+  "fixture": "F15",
+  "subject": "finite cyclic readiness-cap propagation",
+  "input": "input.json",
+  "generator": "../../tools/bsc_claim_readiness.py",
+  "cross_checker": "check_fixture.py (imports generator; exhaustive enumeration; not independent)",
+  "arithmetic": "finite ordinal products and exhaustive enumeration",
+  "authority_boundary": "the exact finite fixture only"
+}

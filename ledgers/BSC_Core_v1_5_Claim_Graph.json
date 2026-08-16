@@ -1,0 +1,398 @@
+{
+  "schema": "bsc.claim-readiness-graph.v1",
+  "axes": {
+    "COMPUTATION": [
+      "unexecuted",
+      "executed",
+      "cross-check-added",
+      "independent-reconstruction-added"
+    ],
+    "FORMAL": [
+      "unproved",
+      "human-proof-recorded",
+      "kernel-check-added",
+      "independent-check-added"
+    ],
+    "IDENTITY": [
+      "unbound",
+      "claim-bound",
+      "source-bound",
+      "environment-bound"
+    ],
+    "REVIEW": [
+      "unreviewed",
+      "internal-review-complete",
+      "internal-adversarial-complete",
+      "internal-and-external-review-complete"
+    ],
+    "SCOPE": [
+      "fixture-local",
+      "finite-model",
+      "general"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "BSC-AIR-01",
+      "verdict": "N/A",
+      "applicable_axes": [
+        "IDENTITY",
+        "REVIEW",
+        "SCOPE"
+      ],
+      "initial": {
+        "IDENTITY": "source-bound",
+        "REVIEW": "internal-adversarial-complete",
+        "SCOPE": "general"
+      }
+    },
+    {
+      "id": "BSC-CAT-01",
+      "verdict": "open",
+      "applicable_axes": [
+        "FORMAL",
+        "IDENTITY",
+        "REVIEW",
+        "SCOPE"
+      ],
+      "initial": {
+        "FORMAL": "unproved",
+        "IDENTITY": "claim-bound",
+        "REVIEW": "internal-review-complete",
+        "SCOPE": "general"
+      }
+    },
+    {
+      "id": "BSC-CAU-01",
+      "verdict": "N/A",
+      "applicable_axes": [
+        "IDENTITY",
+        "REVIEW",
+        "SCOPE"
+      ],
+      "initial": {
+        "IDENTITY": "source-bound",
+        "REVIEW": "internal-adversarial-complete",
+        "SCOPE": "general"
+      }
+    },
+    {
+      "id": "BSC-FIX-14",
+      "verdict": "true",
+      "applicable_axes": [
+        "COMPUTATION",
+        "IDENTITY",
+        "REVIEW",
+        "SCOPE"
+      ],
+      "initial": {
+        "COMPUTATION": "executed",
+        "IDENTITY": "source-bound",
+        "REVIEW": "internal-adversarial-complete",
+        "SCOPE": "fixture-local"
+      }
+    },
+    {
+      "id": "BSC-FIX-15",
+      "verdict": "true",
+      "applicable_axes": [
+        "COMPUTATION",
+        "IDENTITY",
+        "REVIEW",
+        "SCOPE"
+      ],
+      "initial": {
+        "COMPUTATION": "cross-check-added",
+        "IDENTITY": "source-bound",
+        "REVIEW": "internal-adversarial-complete",
+        "SCOPE": "fixture-local"
+      }
+    },
+    {
+      "id": "BSC-IDN-01",
+      "verdict": "true",
+      "applicable_axes": [
+        "FORMAL",
+        "IDENTITY",
+        "REVIEW",
+        "SCOPE"
+      ],
+      "initial": {
+        "FORMAL": "kernel-check-added",
+        "IDENTITY": "source-bound",
+        "REVIEW": "internal-adversarial-complete",
+        "SCOPE": "general"
+      }
+    },
+    {
+      "id": "BSC-IDN-02",
+      "verdict": "true",
+      "applicable_axes": [
+        "FORMAL",
+        "IDENTITY",
+        "REVIEW",
+        "SCOPE"
+      ],
+      "initial": {
+        "FORMAL": "kernel-check-added",
+        "IDENTITY": "source-bound",
+        "REVIEW": "internal-adversarial-complete",
+        "SCOPE": "finite-model"
+      }
+    },
+    {
+      "id": "BSC-IDN-03",
+      "verdict": "true",
+      "applicable_axes": [
+        "FORMAL",
+        "IDENTITY",
+        "REVIEW",
+        "SCOPE"
+      ],
+      "initial": {
+        "FORMAL": "kernel-check-added",
+        "IDENTITY": "source-bound",
+        "REVIEW": "internal-adversarial-complete",
+        "SCOPE": "finite-model"
+      }
+    },
+    {
+      "id": "BSC-NOV-01",
+      "verdict": "open",
+      "applicable_axes": [
+        "IDENTITY",
+        "REVIEW",
+        "SCOPE"
+      ],
+      "initial": {
+        "IDENTITY": "source-bound",
+        "REVIEW": "internal-adversarial-complete",
+        "SCOPE": "general"
+      }
+    },
+    {
+      "id": "BSC-RDY-01",
+      "verdict": "true",
+      "applicable_axes": [
+        "FORMAL",
+        "IDENTITY",
+        "REVIEW",
+        "SCOPE"
+      ],
+      "initial": {
+        "FORMAL": "kernel-check-added",
+        "IDENTITY": "source-bound",
+        "REVIEW": "internal-adversarial-complete",
+        "SCOPE": "general"
+      }
+    },
+    {
+      "id": "BSC-RDY-02",
+      "verdict": "true",
+      "applicable_axes": [
+        "FORMAL",
+        "IDENTITY",
+        "REVIEW",
+        "SCOPE"
+      ],
+      "initial": {
+        "FORMAL": "human-proof-recorded",
+        "IDENTITY": "source-bound",
+        "REVIEW": "internal-adversarial-complete",
+        "SCOPE": "general"
+      }
+    },
+    {
+      "id": "BSC-RDY-03",
+      "verdict": "true",
+      "applicable_axes": [
+        "FORMAL",
+        "IDENTITY",
+        "REVIEW",
+        "SCOPE"
+      ],
+      "initial": {
+        "FORMAL": "kernel-check-added",
+        "IDENTITY": "source-bound",
+        "REVIEW": "internal-adversarial-complete",
+        "SCOPE": "general"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "BSC-CAU-01",
+      "target": "BSC-CAT-01",
+      "caps": {
+        "IDENTITY": [
+          "unbound",
+          "claim-bound",
+          "source-bound",
+          "environment-bound"
+        ],
+        "REVIEW": [
+          "unreviewed",
+          "internal-review-complete",
+          "internal-adversarial-complete",
+          "internal-and-external-review-complete"
+        ]
+      }
+    },
+    {
+      "source": "BSC-IDN-01",
+      "target": "BSC-IDN-02",
+      "caps": {
+        "FORMAL": [
+          "unproved",
+          "human-proof-recorded",
+          "kernel-check-added",
+          "independent-check-added"
+        ],
+        "IDENTITY": [
+          "unbound",
+          "claim-bound",
+          "source-bound",
+          "environment-bound"
+        ]
+      }
+    },
+    {
+      "source": "BSC-IDN-01",
+      "target": "BSC-IDN-03",
+      "caps": {
+        "FORMAL": [
+          "unproved",
+          "human-proof-recorded",
+          "kernel-check-added",
+          "independent-check-added"
+        ],
+        "IDENTITY": [
+          "unbound",
+          "claim-bound",
+          "source-bound",
+          "environment-bound"
+        ]
+      }
+    },
+    {
+      "source": "BSC-IDN-02",
+      "target": "BSC-FIX-14",
+      "caps": {
+        "IDENTITY": [
+          "unbound",
+          "claim-bound",
+          "source-bound",
+          "environment-bound"
+        ],
+        "REVIEW": [
+          "unreviewed",
+          "internal-review-complete",
+          "internal-adversarial-complete",
+          "internal-and-external-review-complete"
+        ]
+      }
+    },
+    {
+      "source": "BSC-IDN-03",
+      "target": "BSC-FIX-14",
+      "caps": {
+        "REVIEW": [
+          "unreviewed",
+          "internal-review-complete",
+          "internal-adversarial-complete",
+          "internal-and-external-review-complete"
+        ]
+      }
+    },
+    {
+      "source": "BSC-IDN-01",
+      "target": "BSC-CAU-01",
+      "caps": {
+        "IDENTITY": [
+          "unbound",
+          "claim-bound",
+          "source-bound",
+          "environment-bound"
+        ],
+        "REVIEW": [
+          "unreviewed",
+          "internal-review-complete",
+          "internal-adversarial-complete",
+          "internal-and-external-review-complete"
+        ]
+      }
+    },
+    {
+      "source": "BSC-RDY-01",
+      "target": "BSC-RDY-02",
+      "caps": {
+        "FORMAL": [
+          "unproved",
+          "human-proof-recorded",
+          "kernel-check-added",
+          "independent-check-added"
+        ],
+        "IDENTITY": [
+          "unbound",
+          "claim-bound",
+          "source-bound",
+          "environment-bound"
+        ]
+      }
+    },
+    {
+      "source": "BSC-RDY-01",
+      "target": "BSC-CAT-01",
+      "caps": {
+        "FORMAL": [
+          "unproved",
+          "human-proof-recorded",
+          "kernel-check-added",
+          "independent-check-added"
+        ],
+        "IDENTITY": [
+          "unbound",
+          "claim-bound",
+          "source-bound",
+          "environment-bound"
+        ]
+      }
+    },
+    {
+      "source": "BSC-RDY-01",
+      "target": "BSC-RDY-03",
+      "caps": {
+        "FORMAL": [
+          "unproved",
+          "human-proof-recorded",
+          "kernel-check-added",
+          "independent-check-added"
+        ],
+        "IDENTITY": [
+          "unbound",
+          "claim-bound",
+          "source-bound",
+          "environment-bound"
+        ]
+      }
+    },
+    {
+      "source": "BSC-RDY-02",
+      "target": "BSC-FIX-15",
+      "caps": {
+        "IDENTITY": [
+          "unbound",
+          "claim-bound",
+          "source-bound",
+          "environment-bound"
+        ],
+        "REVIEW": [
+          "unreviewed",
+          "internal-review-complete",
+          "internal-adversarial-complete",
+          "internal-and-external-review-complete"
+        ]
+      }
+    }
+  ]
+}

@@ -137,18 +137,39 @@ v1.1.0, v1.0.1, or v1.0.0 release records.
 Release v1.4.0 is dated 31 July 2026 and does not alter the immutable v1.3.0,
 v1.2.0, v1.1.0, v1.0.1, or v1.0.0 release records.
 
-## Highest-leverage next work
+## Post-v1.4.0 BSC Core v1.5 milestone
+
+The post-release [BSC Core v1.5 milestone](BSC_CORE_V1_5.md) closes a bounded
+part of the former core-work gap without changing any immutable release:
+
+- product readiness with verdict, outcome, and inapplicability separated;
+- finite cyclic readiness-cap closure and an exact F15 cross-check;
+- operational identifiability through attainable reports;
+- the finite target-separated-pair cover theorem and exact F14 optimizer;
+- finite target-oscillation monotonicity;
+- proposed causal-transfer and AI-assisted evidence profiles;
+- a machine-readable selected-claim registry and executable readiness graph;
+- a pinned first non-Q26 BSC Lean project; and
+- bounded prior-art and recent-research maps with novelty left unknown.
+
+The breadth stop is active: no new application chapter belongs in the
+foundational proof flow until one of the remaining gates below closes.
+
+## Highest-leverage work after the v1.5 milestone
 
 1. **External adversarial reading**
    - Seek prior-art equivalence, type errors, failed hypotheses, and fixture
      counterexamples from field-specific readers.
    - Record corrections and demotions publicly.
 
-2. **Small machine-checked kernel**
-   - Formalize one bounded object first: normalized-scale rate addition,
-     exact-decision descent, dependency-DAG demotion, the binary deficiency
-     fixture, or the parity-gluing obstruction.
-   - Pin the proof-assistant environment and retain accepted proof objects.
+2. **Extend the machine-checked finite core**
+   - The first slice now covers readiness, cap fixed points, attainable-report
+     factorization, pair separation, and finite oscillation monotonicity.
+   - Next formalize finite rational stochastic matrices, total variation and
+     contraction, decision descent, and a bounded Blackwell–Le Cam deficiency
+     theorem before moving to general kernels.
+   - Keep application-specific physical assumptions as named premises rather
+     than importing them silently into the kernel.
 
 3. **Executable fixtures F1–F7**
    - Implement each fixture independently.

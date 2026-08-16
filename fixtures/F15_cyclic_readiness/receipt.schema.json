@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bsc:fixture:f15:cyclic-readiness-receipt:v1",
+  "title": "BSC F15 cyclic readiness receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "axis_count",
+    "checks",
+    "edge_count",
+    "generator_sha256",
+    "input_sha256",
+    "iterations",
+    "node_count",
+    "result",
+    "schema",
+    "status"
+  ],
+  "properties": {
+    "axis_count": {"const": 3},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "below_initial",
+        "edge_constraints_satisfied",
+        "fixed_point",
+        "verdicts_unchanged"
+      ],
+      "properties": {
+        "below_initial": {"const": true},
+        "edge_constraints_satisfied": {"const": true},
+        "fixed_point": {"const": true},
+        "verdicts_unchanged": {"const": true}
+      }
+    },
+    "edge_count": {"const": 3},
+    "generator_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "input_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "iterations": {"type": "integer", "minimum": 1},
+    "node_count": {"const": 3},
+    "result": {"type": "object"},
+    "schema": {"const": "bsc.claim-readiness-receipt.v1"},
+    "status": {"const": "PASS"}
+  }
+}

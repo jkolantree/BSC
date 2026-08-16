@@ -21,6 +21,72 @@ env:
   PYTHONHASHSEED: "0"
 
 jobs:
+  bsc-core-lean-proof:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+
+      - name: Set up Lean 4.33.0 and the matching mathlib cache
+        uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9 # v1.5.0
+        with:
+          lake-package-directory: formal/bsc_core
+          auto-config: false
+          build: false
+          test: false
+          lint: false
+          leanchecker: false
+          nanoda: false
+          use-mathlib-cache: true
+          use-github-cache: false
+
+      - name: Build the BSC core with a bounded heartbeat
+        working-directory: formal/bsc_core
+        timeout-minutes: 35
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import subprocess
+
+          command = ("lake", "build")
+          process = subprocess.Popen(command)
+          while True:
+              try:
+                  return_code = process.wait(timeout=60)
+                  break
+              except subprocess.TimeoutExpired:
+                  print("::notice::lake build is still running", flush=True)
+          if return_code != 0:
+              raise SystemExit(return_code)
+          PY
+
+      - name: Replay the BSC core through the Lean kernel
+        working-directory: formal/bsc_core
+        run: lake env leanchecker BscCore
+
+      - name: Elaborate the BSC core public tests
+        working-directory: formal/bsc_core
+        run: lake env lean BscCore/Tests.lean
+
+      - name: Reject prohibited proof shortcuts
+        working-directory: formal/bsc_core
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -R -n -E --include='*.lean' \
+            '\bsorry\b|\badmit\b|^[[:space:]]*((private|protected|local)[[:space:]]+)*axiom\b|\bunsafe\b|\bnative_decide\b|\bbv_decide\b|maxHeartbeats[[:space:]]+0' \
+            BscCore BscCore.lean; then
+            echo 'Prohibited Lean construct found.' >&2
+            exit 1
+          fi
+
+      - name: Print the BSC core axiom boundary
+        working-directory: formal/bsc_core
+        run: lake env lean BscCore/AxiomAudit.lean
+
   q26-lean-proof:
     runs-on: ubuntu-24.04
     timeout-minutes: 60

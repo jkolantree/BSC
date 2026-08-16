@@ -34,3 +34,15 @@ remaining eight fixtures—F1–F7 and F9—are mathematical derivations in the
 manuscript and are computationally unexecuted unless and until separate
 executable artifacts and receipts are added. Immutable v1.1.0 contains only
 the F8 executable receipt.
+
+Post-v1.4.0 research on `main` adds F12 through F15 and the BSC Core v1.5
+milestone. Coordinated model-assisted lanes contributed theorem design,
+formalization, exact finite tooling, prior-art triage, hostile-input review,
+claim-graph auditing, and presentation. These lanes are correlated internal
+development and adversarial review, not outside human referees or independent
+replications. The v1.5
+[validation report](research/BSC_Core_v1_5_Validation_Report.md) records the
+material findings, repairs, exact checker classifications, formal boundary,
+and residual limits. Complete prompts, hidden model state, and every
+intermediate candidate are not public evidence and are not required authority
+for the retained proofs, builds, and source-bound receipts.
