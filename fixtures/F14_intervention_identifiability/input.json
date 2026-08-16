@@ -1,0 +1,450 @@
+{
+  "arithmetic": "exact_rational",
+  "interventions": [
+    {
+      "cost": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "id": "column",
+      "metric": {
+        "distances": [
+          {
+            "distance": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "left": "0",
+            "right": "0"
+          },
+          {
+            "distance": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "left": "0",
+            "right": "1"
+          },
+          {
+            "distance": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "left": "1",
+            "right": "0"
+          },
+          {
+            "distance": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "left": "1",
+            "right": "1"
+          }
+        ],
+        "points": [
+          "0",
+          "1"
+        ]
+      },
+      "reports": {
+        "s0": "0",
+        "s1": "1",
+        "s2": "0",
+        "s3": "1"
+      },
+      "tolerance": {
+        "denominator": 1,
+        "numerator": 0
+      }
+    },
+    {
+      "cost": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "id": "direct",
+      "metric": {
+        "distances": [
+          {
+            "distance": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "left": "a",
+            "right": "a"
+          },
+          {
+            "distance": {
+              "denominator": 4,
+              "numerator": 1
+            },
+            "left": "a",
+            "right": "b"
+          },
+          {
+            "distance": {
+              "denominator": 4,
+              "numerator": 3
+            },
+            "left": "a",
+            "right": "c"
+          },
+          {
+            "distance": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "left": "a",
+            "right": "d"
+          },
+          {
+            "distance": {
+              "denominator": 4,
+              "numerator": 1
+            },
+            "left": "b",
+            "right": "a"
+          },
+          {
+            "distance": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "left": "b",
+            "right": "b"
+          },
+          {
+            "distance": {
+              "denominator": 2,
+              "numerator": 1
+            },
+            "left": "b",
+            "right": "c"
+          },
+          {
+            "distance": {
+              "denominator": 4,
+              "numerator": 3
+            },
+            "left": "b",
+            "right": "d"
+          },
+          {
+            "distance": {
+              "denominator": 4,
+              "numerator": 3
+            },
+            "left": "c",
+            "right": "a"
+          },
+          {
+            "distance": {
+              "denominator": 2,
+              "numerator": 1
+            },
+            "left": "c",
+            "right": "b"
+          },
+          {
+            "distance": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "left": "c",
+            "right": "c"
+          },
+          {
+            "distance": {
+              "denominator": 4,
+              "numerator": 1
+            },
+            "left": "c",
+            "right": "d"
+          },
+          {
+            "distance": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "left": "d",
+            "right": "a"
+          },
+          {
+            "distance": {
+              "denominator": 4,
+              "numerator": 3
+            },
+            "left": "d",
+            "right": "b"
+          },
+          {
+            "distance": {
+              "denominator": 4,
+              "numerator": 1
+            },
+            "left": "d",
+            "right": "c"
+          },
+          {
+            "distance": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "left": "d",
+            "right": "d"
+          }
+        ],
+        "points": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ]
+      },
+      "reports": {
+        "s0": "a",
+        "s1": "b",
+        "s2": "c",
+        "s3": "d"
+      },
+      "tolerance": {
+        "denominator": 4,
+        "numerator": 1
+      }
+    },
+    {
+      "cost": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "id": "row",
+      "metric": {
+        "distances": [
+          {
+            "distance": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "left": "0",
+            "right": "0"
+          },
+          {
+            "distance": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "left": "0",
+            "right": "1"
+          },
+          {
+            "distance": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "left": "1",
+            "right": "0"
+          },
+          {
+            "distance": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "left": "1",
+            "right": "1"
+          }
+        ],
+        "points": [
+          "0",
+          "1"
+        ]
+      },
+      "reports": {
+        "s0": "0",
+        "s1": "0",
+        "s2": "1",
+        "s3": "1"
+      },
+      "tolerance": {
+        "denominator": 1,
+        "numerator": 0
+      }
+    }
+  ],
+  "model_kind": "finite_deterministic",
+  "oscillation_queries": [
+    [],
+    [
+      "column"
+    ],
+    [
+      "direct"
+    ],
+    [
+      "row"
+    ],
+    [
+      "column",
+      "row"
+    ],
+    [
+      "column",
+      "direct",
+      "row"
+    ]
+  ],
+  "problem_id": "F14-INTERVENTION-IDENTIFIABILITY",
+  "schema": "bsc-intervention-design-input/1",
+  "states": [
+    "s0",
+    "s1",
+    "s2",
+    "s3"
+  ],
+  "target": {
+    "metric": {
+      "distances": [
+        {
+          "distance": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "left": "q0",
+          "right": "q0"
+        },
+        {
+          "distance": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "left": "q0",
+          "right": "q1"
+        },
+        {
+          "distance": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "left": "q0",
+          "right": "q2"
+        },
+        {
+          "distance": {
+            "denominator": 2,
+            "numerator": 7
+          },
+          "left": "q0",
+          "right": "q3"
+        },
+        {
+          "distance": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "left": "q1",
+          "right": "q0"
+        },
+        {
+          "distance": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "left": "q1",
+          "right": "q1"
+        },
+        {
+          "distance": {
+            "denominator": 2,
+            "numerator": 3
+          },
+          "left": "q1",
+          "right": "q2"
+        },
+        {
+          "distance": {
+            "denominator": 1,
+            "numerator": 3
+          },
+          "left": "q1",
+          "right": "q3"
+        },
+        {
+          "distance": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "left": "q2",
+          "right": "q0"
+        },
+        {
+          "distance": {
+            "denominator": 2,
+            "numerator": 3
+          },
+          "left": "q2",
+          "right": "q1"
+        },
+        {
+          "distance": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "left": "q2",
+          "right": "q2"
+        },
+        {
+          "distance": {
+            "denominator": 2,
+            "numerator": 3
+          },
+          "left": "q2",
+          "right": "q3"
+        },
+        {
+          "distance": {
+            "denominator": 2,
+            "numerator": 7
+          },
+          "left": "q3",
+          "right": "q0"
+        },
+        {
+          "distance": {
+            "denominator": 1,
+            "numerator": 3
+          },
+          "left": "q3",
+          "right": "q1"
+        },
+        {
+          "distance": {
+            "denominator": 2,
+            "numerator": 3
+          },
+          "left": "q3",
+          "right": "q2"
+        },
+        {
+          "distance": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "left": "q3",
+          "right": "q3"
+        }
+      ],
+      "points": [
+        "q0",
+        "q1",
+        "q2",
+        "q3"
+      ]
+    },
+    "values": {
+      "s0": "q0",
+      "s1": "q1",
+      "s2": "q2",
+      "s3": "q3"
+    }
+  }
+}

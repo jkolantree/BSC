@@ -21,6 +21,8 @@ from pathlib import Path, PurePosixPath
 MANIFEST_NAME = "MANIFEST.sha256"
 MANIFEST_LINE = re.compile(r"^([0-9a-f]{64})  (\./[^\r\n]+)$")
 EXCLUDED_DIRECTORY_NAMES = {
+    ".elan-home",
+    ".lake",
     ".pytest_cache",
     "__pycache__",
     "build",
@@ -28,6 +30,7 @@ EXCLUDED_DIRECTORY_NAMES = {
 }
 EXCLUDED_FILE_SUFFIXES = {".pyc", ".pyo"}
 FORBIDDEN_PAYLOAD_ROOTS = {"tmp"}
+MAX_DISPLAYED_PATHS = 20
 
 
 class ManifestError(ValueError):
@@ -56,6 +59,16 @@ def sha256_file(path: Path) -> str:
         for block in iter(lambda: stream.read(1024 * 1024), b""):
             digest.update(block)
     return digest.hexdigest()
+
+
+def format_path_list(paths: list[str]) -> str:
+    """Format a deterministic, bounded path list without hiding its size."""
+    displayed = paths[:MAX_DISPLAYED_PATHS]
+    omitted = len(paths) - len(displayed)
+    return (
+        f"{', '.join(displayed)} "
+        f"[total={len(paths)}; omitted={omitted}]"
+    )
 
 
 def normalize_manifest_path(raw_path: str) -> str:
@@ -179,11 +192,15 @@ def verify_manifest(root: Path, manifest_path: Path) -> list[str]:
     )
     errors: list[str] = []
     if forbidden:
-        errors.append("forbidden payload paths: " + ", ".join(forbidden))
+        errors.append("forbidden payload paths: " + format_path_list(forbidden))
     if missing:
-        errors.append("manifest entries missing from payload: " + ", ".join(missing))
+        errors.append(
+            "manifest entries missing from payload: " + format_path_list(missing)
+        )
     if extras:
-        errors.append("payload files missing from manifest: " + ", ".join(extras))
+        errors.append(
+            "payload files missing from manifest: " + format_path_list(extras)
+        )
 
     for path in sorted(manifest_paths & inventory_paths):
         actual = sha256_file(inventory[path])

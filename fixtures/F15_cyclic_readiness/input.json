@@ -1,0 +1,126 @@
+{
+  "schema": "bsc.claim-readiness-graph.v1",
+  "axes": {
+    "FORMAL": [
+      "proof-present",
+      "kernel-checked",
+      "independently-checked"
+    ],
+    "IDENTITY": [
+      "unbound",
+      "claim-bound",
+      "source-bound",
+      "environment-bound"
+    ],
+    "REVIEW": [
+      "unreviewed",
+      "internal",
+      "external"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "BSC-F15-SOURCE",
+      "verdict": "true",
+      "applicable_axes": [
+        "IDENTITY",
+        "REVIEW"
+      ],
+      "initial": {
+        "IDENTITY": "environment-bound",
+        "REVIEW": "external"
+      }
+    },
+    {
+      "id": "BSC-F15-MODEL",
+      "verdict": "true",
+      "applicable_axes": [
+        "FORMAL",
+        "IDENTITY",
+        "REVIEW"
+      ],
+      "initial": {
+        "FORMAL": "independently-checked",
+        "IDENTITY": "environment-bound",
+        "REVIEW": "external"
+      }
+    },
+    {
+      "id": "BSC-F15-DECISION",
+      "verdict": "open",
+      "applicable_axes": [
+        "FORMAL",
+        "IDENTITY",
+        "REVIEW"
+      ],
+      "initial": {
+        "FORMAL": "independently-checked",
+        "IDENTITY": "environment-bound",
+        "REVIEW": "external"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "BSC-F15-SOURCE",
+      "target": "BSC-F15-MODEL",
+      "caps": {
+        "IDENTITY": [
+          "unbound",
+          "claim-bound",
+          "source-bound",
+          "source-bound"
+        ],
+        "REVIEW": [
+          "unreviewed",
+          "internal",
+          "external"
+        ]
+      }
+    },
+    {
+      "source": "BSC-F15-MODEL",
+      "target": "BSC-F15-DECISION",
+      "caps": {
+        "FORMAL": [
+          "proof-present",
+          "kernel-checked",
+          "kernel-checked"
+        ],
+        "IDENTITY": [
+          "unbound",
+          "claim-bound",
+          "source-bound",
+          "environment-bound"
+        ],
+        "REVIEW": [
+          "unreviewed",
+          "internal",
+          "external"
+        ]
+      }
+    },
+    {
+      "source": "BSC-F15-DECISION",
+      "target": "BSC-F15-MODEL",
+      "caps": {
+        "FORMAL": [
+          "proof-present",
+          "kernel-checked",
+          "kernel-checked"
+        ],
+        "IDENTITY": [
+          "unbound",
+          "claim-bound",
+          "claim-bound",
+          "source-bound"
+        ],
+        "REVIEW": [
+          "unreviewed",
+          "internal",
+          "external"
+        ]
+      }
+    }
+  ]
+}

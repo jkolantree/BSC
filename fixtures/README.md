@@ -5,7 +5,7 @@ v1.2.0 remain the ten-fixture records, immutable v1.1.0 remains the
 nine-fixture record, and immutable v1.0.1 remains the historical
 eight-fixture record.
 
-Post-v1.4.0 development on `main` adds F12 and F13 without changing any
+Post-v1.4.0 development on `main` adds F12 through F15 without changing any
 released fixture record.
 
 | Fixture | Subject | Current computational status |
@@ -23,12 +23,17 @@ released fixture record.
 | F11 | Collatz recursive-sufficiency correction and conditional finite-prefix extension | Exact retained CPython receipt; external base remains conditional |
 | F12 | Exact rational derived-holonomy pass or obstruction over $\mathbb Q$ | Post-v1.4.0 independent-reconstruction receipt |
 | F13 | Scalar Lorentz auxiliary-state storage, damping, pump, and coupled energy balance | Post-v1.4.0 independent-reconstruction receipt |
+| F14 | Finite target-relative intervention identifiability and rational oscillation | Post-v1.4.0 exact source-bound report |
+| F15 | Finite cyclic readiness-cap closure | Post-v1.4.0 exact source-bound receipt with exhaustive shared-model cross-check |
 
-F8, F10, and F11 are executable in version 1.4.0. Post-release F12 and F13 are
-also executable on `main`. F9 has no raw-data replay, fitting execution,
+F8, F10, and F11 are executable in version 1.4.0. Post-release F12 through F15
+are also executable on `main`. F9 has no raw-data replay, fitting execution,
 hardware receipt, or complexity benchmark. Each executable fixture directory
-includes a retained receipt, generator, JSON Schema, and fail-closed checker.
-F8, F10, F12, and F13 run their generators in temporary locations and require
+includes a fail-closed checker and retained expected evidence; schemas and
+separate generators are used where the fixture format declares them. F14 is a
+same-implementation replay with two internal mathematical criteria, not an
+independent reconstruction. F8, F10, F12, and F13 run their generators in
+temporary locations and require
 byte-identical output without overwriting the reference receipt. F11 instead
 separates a routine exact replay from its several-minute complete-enumeration
 gate:
@@ -41,6 +46,8 @@ python3 fixtures/F10_coupled_surrogate/check_fixture.py
 python3 fixtures/F11_collatz_recursive_sieve/check_fixture.py
 python3 fixtures/F12_derived_holonomy_q/check_fixture.py
 python3 fixtures/F13_lorentz_auxiliary_passivity/check_fixture.py
+python3 fixtures/F14_intervention_identifiability/check_fixture.py
+python3 fixtures/F15_cyclic_readiness/check_fixture.py
 ```
 
 F10 uses exact rational arithmetic with the same interface error in two stable
@@ -68,3 +75,15 @@ ledgers. It keeps background field storage, polarization exchange, free-current
 work, damping, boundary flux, and coefficient-modulation pump terms distinct.
 The finite ledgers are not continuous Maxwell executions, physical material
 calibrations, source-paper replays, or general dispersive-medium proofs.
+
+F14 enumerates every subset of three reports in a four-state deterministic
+model. It checks identifiability both by report fibers and by target-separated
+pair cover, retains all exact minimum-cost ties, and computes rational target
+oscillations under declared finite metrics and tolerances. It is not evidence
+that the declared model is causal or empirically adequate.
+
+F15 evaluates one three-node cyclic cap graph and exhaustively cross-checks the
+retained assignment against every assignment below the initial ceilings. The
+cross-check shares parsing and model definitions with the primary evaluator,
+so it is not described as an independent implementation. The fixed point is a
+compatibility result, not proof that circular evidence is grounded.

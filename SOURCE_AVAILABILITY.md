@@ -39,3 +39,35 @@ Source access may be discussed through repository Issues, subject to
 redistribution rights and privacy constraints. A future public corpus deposit
 must preserve these hashes or record every changed artifact as a new source
 version.
+
+## Post-v1.4.0 BSC Core v1.5 sources
+
+The repository includes every artifact required to replay the declared public
+BSC Core v1.5 checks:
+
+- the foundations note, causal-transfer profile, AI-assisted evidence profile,
+  prior-art matrix, recent-research intake, and validation report;
+- the selected-claim registry and executable readiness graph;
+- the F14 and F15 inputs, expected evidence, checkers, and tests;
+- the claim-package and readiness evaluators and retained source-bound
+  receipts; and
+- the complete `formal/bsc_core` Lean source and pinned Lake configuration.
+
+The Lean/mathlib dependency repositories are not vendored. Their exact
+versions are pinned by `lean-toolchain`, `lakefile.toml`, and
+`lake-manifest.json` and are fetched through the ordinary Lake workflow.
+Bibliographic comparisons link to public primary or publisher sources; no
+external paper text, proprietary data, model weights, prompts, or source code
+is copied into the repository.
+
+The coordinated AI-assisted development history is summarized in the public
+validation report, but complete prompts, hidden model state, provider-side
+execution records, and every intermediate candidate are not published and are
+not reproducible from this repository. They are not required authority for the
+retained mathematical proofs, Lean build, finite checks, or package receipts.
+
+This source completeness applies only to the v1.5 milestone artifacts. It does
+not make the twelve internal BSC corpus documents or six supplied ASTRA audit
+records public, and it does not cure the lineage replay limits described
+above. Public SHA-256 values establish artifact identity and integrity, not
+confidentiality, authorship, novelty, or scientific validity.

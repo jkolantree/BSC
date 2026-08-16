@@ -7,8 +7,8 @@ The repository uses two licenses:
 - **CC BY 4.0** covers the manuscript, synopsis, bibliography, ledgers, revision
   memorandum, README files, roadmap, disclosure, provenance descriptions,
   figures, tables, and other human-readable documentation.
-- **MIT** covers Python code, JSON Schema, machine-readable fixture tooling,
-  workflow files, and the Makefile.
+- **MIT** covers Python and Lean code, proof-project configuration, JSON
+  Schema, machine-readable fixture tooling, workflow files, and the Makefile.
 - **CC BY 4.0** also covers the retained F11 tabular certificate as a
   machine-generated factual dataset. Its provenance and exact bytes are
   separately pinned; the submitted C/C++ sources are not redistributed.
@@ -22,7 +22,8 @@ be copied as needed to cite or deposit the work.
 | Paths | License |
 |---|---|
 | `paper/**`, `synopsis/**`, `ledgers/**`, `revision/**`, `provenance/**`, `*.md` | CC BY 4.0 |
-| `fixtures/**/*.py`, `fixtures/**/*.json`, `tools/**`, `tests/**` | MIT |
+| `fixtures/**/*.py`, `fixtures/**/*.json`, `tools/**`, `tests/**`, `schemas/**` | MIT |
+| `formal/**/*.lean`, `formal/**/lakefile.*`, `formal/**/lean-toolchain`, `formal/**/lake-manifest.json`, `formal/**/*.sh` | MIT |
 | `fixtures/**/*.tsv` | CC BY 4.0 |
 | `.github/**`, `Makefile` | MIT |
 | `CITATION.cff`, `.zenodo.json`, `MANIFEST.sha256` | Factual metadata; copying for citation, deposit, and verification is permitted |

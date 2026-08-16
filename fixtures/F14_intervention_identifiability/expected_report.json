@@ -1,0 +1,177 @@
+{
+  "authority": {
+    "does_not_establish": [
+      "causal-model validity",
+      "empirical adequacy",
+      "external or counterfactual identification",
+      "novelty or priority",
+      "stochastic or continuous-model identification"
+    ],
+    "establishes": [
+      "exact finite deterministic identifiability for the supplied model",
+      "exact minimum rational intervention cost within the supplied family",
+      "exact tolerance-based oscillation for the declared queries"
+    ],
+    "status": "exact_finite_conditional_result"
+  },
+  "exact_identifiability": {
+    "all_minimum_cost_families": [
+      [
+        "direct"
+      ],
+      [
+        "column",
+        "row"
+      ]
+    ],
+    "cross_check_methods": [
+      "joint_report_fiber_constancy",
+      "target_separated_pair_cover"
+    ],
+    "cross_check_methods_agree": true,
+    "full_family_covers_every_target_separated_pair": true,
+    "intervention_family_count_checked": 8,
+    "minimum_cost": {
+      "denominator": 1,
+      "numerator": 2
+    },
+    "selected_family": [
+      "direct"
+    ],
+    "selection_rule": "minimum exact rational cost; enumerate all ties; select minimum cardinality then lexicographic identifiers",
+    "target_separated_pair_count": 6,
+    "target_separated_pairs": [
+      [
+        "s0",
+        "s1"
+      ],
+      [
+        "s0",
+        "s2"
+      ],
+      [
+        "s0",
+        "s3"
+      ],
+      [
+        "s1",
+        "s2"
+      ],
+      [
+        "s1",
+        "s3"
+      ],
+      [
+        "s2",
+        "s3"
+      ]
+    ]
+  },
+  "finite_problem": {
+    "intervention_count": 3,
+    "model_kind": "finite_deterministic",
+    "problem_id": "F14-INTERVENTION-IDENTIFIABILITY",
+    "state_count": 4
+  },
+  "oscillation_queries": [
+    {
+      "admissible_nonidentical_pair_count": 6,
+      "family": [],
+      "maximum_target_oscillation": {
+        "denominator": 2,
+        "numerator": 7
+      },
+      "witness_pairs": [
+        [
+          "s0",
+          "s3"
+        ]
+      ],
+      "zero_target_ambiguity": false
+    },
+    {
+      "admissible_nonidentical_pair_count": 2,
+      "family": [
+        "column"
+      ],
+      "maximum_target_oscillation": {
+        "denominator": 1,
+        "numerator": 3
+      },
+      "witness_pairs": [
+        [
+          "s1",
+          "s3"
+        ]
+      ],
+      "zero_target_ambiguity": false
+    },
+    {
+      "admissible_nonidentical_pair_count": 2,
+      "family": [
+        "direct"
+      ],
+      "maximum_target_oscillation": {
+        "denominator": 2,
+        "numerator": 3
+      },
+      "witness_pairs": [
+        [
+          "s2",
+          "s3"
+        ]
+      ],
+      "zero_target_ambiguity": false
+    },
+    {
+      "admissible_nonidentical_pair_count": 2,
+      "family": [
+        "row"
+      ],
+      "maximum_target_oscillation": {
+        "denominator": 2,
+        "numerator": 3
+      },
+      "witness_pairs": [
+        [
+          "s2",
+          "s3"
+        ]
+      ],
+      "zero_target_ambiguity": false
+    },
+    {
+      "admissible_nonidentical_pair_count": 0,
+      "family": [
+        "column",
+        "row"
+      ],
+      "maximum_target_oscillation": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "witness_pairs": [],
+      "zero_target_ambiguity": true
+    },
+    {
+      "admissible_nonidentical_pair_count": 0,
+      "family": [
+        "column",
+        "direct",
+        "row"
+      ],
+      "maximum_target_oscillation": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "witness_pairs": [],
+      "zero_target_ambiguity": true
+    }
+  ],
+  "schema": "bsc-intervention-design-report/1",
+  "source_binding": {
+    "checker_sha256": "d6a97c9c8a8f68b04bd4eef4d050eed9b18b726ee2e9ec734c8a9861b1bb0e4e",
+    "input_sha256": "3a8bd9f961e839c4a40e08b6a0df8e8a5db124ae7852a87693bbc9a75bb481ce",
+    "serialization": "UTF-8 JSON, two-space indentation, sorted keys, LF terminator"
+  }
+}

@@ -22,6 +22,12 @@ and Fixture F13, an independently reconstructed scalar Lorentz auxiliary-state
 passivity certificate. Neither changes the immutable v1.4.0 release, paper,
 PDFs, tags, DOI, or eleven-fixture record.
 
+The separate post-v1.4.0 [BSC Core v1.5 milestone](BSC_CORE_V1_5.md) adds
+exact finite Fixtures F14 and F15, a machine-readable selected-claim package,
+and a pinned Lean project under `formal/bsc_core`. These are current
+main-branch research artifacts, not additions to the immutable v1.4.0 fixture
+or release record.
+
 Fresh PDF builds are not generally claimed to be byte-identical because PDF timestamps
 and trailer identifiers may vary. Reproduction of the paper means matching
 content, pagination, references, and visual layout.
@@ -33,6 +39,7 @@ content, pagination, references, and visual layout.
 - latexmk 4.83
 - BibTeX 0.99d
 - CPython 3.12.13
+- Lean 4.33.0 and matching mathlib v4.33.0 for `formal/bsc_core`
 
 ## Published v1.1.0 render
 
@@ -166,6 +173,8 @@ python3 fixtures/F10_coupled_surrogate/check_fixture.py
 python3 fixtures/F11_collatz_recursive_sieve/check_fixture.py
 python3 fixtures/F12_derived_holonomy_q/check_fixture.py
 python3 fixtures/F13_lorentz_auxiliary_passivity/check_fixture.py
+python3 fixtures/F14_intervention_identifiability/check_fixture.py
+python3 fixtures/F15_cyclic_readiness/check_fixture.py
 ```
 
 Expected terminal lines:
@@ -176,10 +185,15 @@ F10-COUPLED-SURROGATE: PASS
 F11-COLLATZ-RECURSIVE-SIEVE: PASS
 F12-DERIVED-HOLONOMY-Q: PASS: 2 exact certificates
 F13-LORENTZ-AUXILIARY-PASSIVITY: PASS: 4 exact ledgers
+F14-INTERVENTION-IDENTIFIABILITY: PASS: families=8 minimum_cost=2 minimizers=2
+F15 CHECK: PASS: canonical receipt; 84 feasible assignments; greatest fixed point confirmed
 ```
 
-Each check parses its shipped JSON Schema and verifies the bound artifact
-identities and exact mathematics. F8, F10, F12, and F13 also run their
+Each check validates the fixture's declared format and verifies its bound
+artifact identities and exact mathematics; where a JSON Schema is shipped,
+the checker parses it. F14 is a same-implementation replay with two internal
+criteria, and F15 is a shared-model exhaustive cross-check. F8, F10, F12, and
+F13 also run their
 generators in isolated locations and require byte-identical output. F12's
 checker is code-independent from its generator and reconstructs every
 homotopy or left-null equation. F13's independent checker reconstructs the
@@ -188,6 +202,37 @@ coupled, and port-oriented ledger; it also requires overwrite refusal. F11's
 routine check replays all 52,686 retained rows, recomputes its exact dynamic
 program and density arithmetic, and verifies the retained full-scan receipt;
 it does not silently repeat the ten-billion enumeration.
+
+## Verify the BSC Core v1.5 selected-claim package
+
+```bash
+python3 -I -B tools/bsc_claim_readiness.py check \
+  ledgers/BSC_Core_v1_5_Claim_Graph.json \
+  ledgers/BSC_Core_v1_5_Claim_Graph.receipt.json
+python3 -I -B tools/bsc_core_claim_package.py check \
+  ledgers/BSC_Core_v1_5_Claim_Registry.json \
+  ledgers/BSC_Core_v1_5_Claim_Package.receipt.json
+```
+
+The first command re-evaluates finite cap propagation. The second requires
+exact graph/registry identifier, verdict, dependency, path, and SHA-256
+agreement. A PASS validates the package bytes and declared relationships; it
+does not prove the curator-supplied initial verdict or readiness assessments.
+
+## Build the BSC Core v1.5 Lean slice
+
+```bash
+cd formal/bsc_core
+lake build
+lake env leanchecker BscCore
+lake env lean BscCore/Tests.lean
+lake env lean BscCore/AxiomAudit.lean
+```
+
+The project pins stable Lean 4.33.0 and matching mathlib. `leanchecker` is a
+second replay through the Lean kernel, not an independently implemented proof
+checker. The axiom output and exact prose-to-Lean scope are reported in
+`formal/bsc_core/README.md`.
 
 For the publication-only F11 completeness gate, run:
 

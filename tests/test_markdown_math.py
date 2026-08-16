@@ -138,7 +138,7 @@ class MarkdownMathTests(unittest.TestCase):
         ) as temporary:
             root = Path(temporary)
             (root / "README.md").write_text("$x$\n", encoding="utf-8")
-            for directory in ("build", "dist"):
+            for directory in (".elan-home", ".lake", "build", "dist"):
                 path = root / directory
                 path.mkdir()
                 (path / "generated.md").write_text(
@@ -146,6 +146,28 @@ class MarkdownMathTests(unittest.TestCase):
                     encoding="utf-8",
                 )
             self.assertEqual(scan_markdown(root), [])
+
+    def test_lean_cache_directory_exclusions_are_exact(self) -> None:
+        with tempfile.TemporaryDirectory(
+            prefix="bsc-markdown-math-"
+        ) as temporary:
+            root = Path(temporary)
+            for directory in (".elan-home-backup", ".lake-backup", ".other-cache"):
+                path = root / directory
+                path.mkdir()
+                (path / "untracked.md").write_text(
+                    r"\(legacy\)" + "\n",
+                    encoding="utf-8",
+                )
+            findings = scan_markdown(root)
+            self.assertEqual(
+                {finding.path for finding in findings},
+                {
+                    ".elan-home-backup/untracked.md",
+                    ".lake-backup/untracked.md",
+                    ".other-cache/untracked.md",
+                },
+            )
 
     def test_exact_screenshot_failures_are_rejected(self) -> None:
         with tempfile.TemporaryDirectory(

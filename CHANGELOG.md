@@ -1,5 +1,34 @@
 # Changelog
 
+## Post-v1.4.0 BSC Core v1.5 research milestone — 2026-08-15
+
+This bounded successor milestone stops application-layer expansion and adds a
+precise mathematical and evidentiary center:
+
+- replaces scalar readiness narratives with product readiness, per-axis
+  applicability, and verdict/outcome separation;
+- proves a finite heterogeneous cyclic-cap theorem in prose and checks a
+  separately identified homogeneous specialization in Lean 4.33.0;
+- proves operational identifiability as kernel inclusion and unique
+  factorization through attainable reports;
+- reduces finite intervention selection to target-relative pair cover and
+  implements exact rational weighted selection and oscillation in Fixture F14;
+- adds Fixture F15 for exact cyclic readiness closure and an exhaustive
+  shared-model cross-check;
+- adds proposed causal-transfer and AI-assisted research evidence profiles;
+- publishes a selected-claim registry, executable readiness graph, schemas,
+  source-bound receipts, and an internal adversarial validation report;
+- adds the first non-Q26 BSC formal project under `formal/bsc_core`; and
+- records direct prior art and a separate recent-research intake without
+  promoting novelty, empirical validity, or categorical closure.
+
+The broad heterogeneous cap theorem remains human-proof-recorded; the Lean
+claim is the narrower homogeneous common-lattice theorem. The causal and AI
+profiles are normative proposals. Universal novelty remains `unknown`, the
+full eight-field category remains open, and no new physical or empirical
+claim is validated. This is a post-release research milestone, not a rewrite,
+retag, or new deposit of the immutable v1.4.0 release.
+
 ## Post-v1.4.0 definitive Q26 Lean theorem - 2026-08-11
 
 This follow-up adds a direct verdict theorem to the Q26 Lean project:

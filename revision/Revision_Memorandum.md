@@ -905,8 +905,11 @@ remain binding:
 6. A learnability-aware Koopman recurrence certificate with honest ordered
    limits and finite-data stopping.
 7. Any domain-specific, physically derived topology-to-charge map.
-8. A pinned proof-assistant formalization and accepted build receipts for the
-   finite core theorems.
+8. A complete pinned proof-assistant formalization and accepted build receipts
+   for the paper's finite core theorems. This obligation is now **partially
+   discharged** by the bounded post-v1.4.0 `formal/bsc_core` theorem slice;
+   heterogeneous cap systems, DAG one-pass closure, weighted optimization,
+   causal deficiency, the full paper, and application layers remain open.
 
 These obligations are open by design. They are not defects that language can
 repair; they require constructions, proofs, experiments, or counterexamples.
@@ -2063,3 +2066,55 @@ authority. No external source prose, figure, table, code, or data is reused.
 The update addresses only roadmap item 9's auxiliary-state/storage bullet. It
 does not edit or reorder the roadmap and does not absorb any other scientific
 or formal-kernel milestone.
+
+## Post-v1.4.0: BSC Core v1.5 compression milestone
+
+The repository-wide audit concluded that adding further application chapters
+would not repair the central mathematical bottlenecks. The bounded successor
+therefore freezes a breadth stop and reorganizes the active research program
+around readiness, identifiability, causal transfer, and auditable evidence.
+It does not modify the immutable v1.4.0 manuscript, PDFs, release, tag, DOI, or
+deposit.
+
+### Adopted repairs
+
+1. Verdict and execution outcome are separated from readiness. Readiness is a
+   product over only the applicable axes; `N/A` is not assigned an artificial
+   top or bottom value.
+2. The DAG cap policy is generalized in prose to a finite heterogeneous cyclic
+   fixed-point theorem. Its homogeneous common-lattice specialization is
+   separately kernel checked, so formal authority does not silently transfer
+   to the broader theorem or the DAG one-sweep corollary.
+3. Identifiability is defined claim-locally as fiber constancy and unique
+   factorization through attainable reports. Finite intervention selection is
+   reduced to target-separated pair cover, with exact rational weighted
+   enumeration in F14.
+4. Approximate identifiability retains the target oscillation over compatible
+   pairs. Added reports and tightened finite tolerances are kernel-checked
+   monotonicity results; decision promotion still requires a strict local
+   margin theorem.
+5. Causal and AI-assisted evidence are recorded as certificate profiles with
+   explicit authority ceilings, not as new theorem fields or evidence that an
+   AI consensus validates itself.
+6. A selected claim registry and executable readiness graph now bind statement
+   identity, dependency edges, artifact paths, evidence bytes, and readiness
+   caps. Their evaluator does not prove curator-supplied verdicts or starting
+   readiness values.
+
+### Preserved non-promotions
+
+- F14 and F15 are exact finite fixtures, not empirical causal validation.
+- Their checks are explicitly classified as same-implementation or
+  shared-model cross-checks, not independent implementations.
+- The causal deficiency proposal imports ordinary statistical-experiment
+  comparison on an expanded index; no novelty claim is made for that object.
+- The full eight-field displayed/double-category construction remains open.
+- Universal novelty and priority remain unknown pending external literature
+  and mathematical review.
+- The internal AI review lanes are correlated development and adversarial
+  review, not outside human referees.
+
+The exact statement-to-evidence boundary is frozen in the v1.5 claim registry,
+formal README, and internal adversarial validation report. Any later widening
+of a proposition must receive a new claim identifier or a visibly lower
+support coordinate.

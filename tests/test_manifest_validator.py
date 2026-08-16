@@ -7,6 +7,7 @@ from pathlib import Path
 from unittest import mock
 
 from tools.verify_manifest import (
+    MAX_DISPLAYED_PATHS,
     ManifestError,
     inventory_release_files,
     parse_manifest,
@@ -106,6 +107,86 @@ class ManifestValidatorTests(unittest.TestCase):
             verify_manifest(root, root / "MANIFEST.sha256"),
             [],
         )
+
+    def test_lean_cache_directory_exclusions_are_exact(self) -> None:
+        temporary, root = self.make_release({"README.md": b"release\n"})
+        self.addCleanup(temporary.cleanup)
+
+        excluded = (
+            "formal/bsc_core/.lake/build/cache.bin",
+            "formal/bsc_core/.elan-home/toolchains/cache.bin",
+        )
+        for relative in excluded:
+            path = root / relative
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(b"generated")
+
+        self.assertEqual(verify_manifest(root, root / "MANIFEST.sha256"), [])
+
+        included = (
+            "formal/bsc_core/.lake-backup/untracked.bin",
+            "formal/bsc_core/.elan-home-backup/untracked.bin",
+            "formal/bsc_core/.other-cache/untracked.bin",
+        )
+        for relative in included:
+            path = root / relative
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(b"untracked")
+
+        errors = verify_manifest(root, root / "MANIFEST.sha256")
+        extras = next(
+            error
+            for error in errors
+            if error.startswith("payload files missing from manifest:")
+        )
+        for relative in included:
+            self.assertIn(relative, extras)
+        for relative in excluded:
+            self.assertNotIn(relative, extras)
+
+    def test_discrepancy_path_lists_are_bounded_and_counted(self) -> None:
+        temporary, root = self.make_release({"README.md": b"release\n"})
+        self.addCleanup(temporary.cleanup)
+        count = MAX_DISPLAYED_PATHS + 3
+        manifest = root / "MANIFEST.sha256"
+        manifest_lines = manifest.read_text(encoding="utf-8").splitlines()
+
+        groups: dict[str, list[str]] = {
+            "manifest entries missing from payload:": [],
+            "payload files missing from manifest:": [],
+            "forbidden payload paths:": [],
+        }
+        for index in range(count):
+            missing = f"missing/{index:03d}.bin"
+            extra = f"extra/{index:03d}.bin"
+            forbidden = f"tmp/{index:03d}.bin"
+            groups["manifest entries missing from payload:"].append(missing)
+            groups["payload files missing from manifest:"].append(extra)
+            groups["forbidden payload paths:"].append(forbidden)
+
+            extra_path = root / extra
+            extra_path.parent.mkdir(parents=True, exist_ok=True)
+            extra_path.write_bytes(b"extra")
+            forbidden_path = root / forbidden
+            forbidden_path.parent.mkdir(parents=True, exist_ok=True)
+            forbidden_path.write_bytes(b"forbidden")
+            manifest_lines.append(f"{'0' * 64}  ./{missing}")
+            manifest_lines.append(
+                f"{digest(b'forbidden')}  ./{forbidden}"
+            )
+
+        manifest.write_text("\n".join(manifest_lines) + "\n", encoding="utf-8")
+        errors = verify_manifest(root, manifest)
+
+        for prefix, paths in groups.items():
+            with self.subTest(prefix=prefix):
+                error = next(item for item in errors if item.startswith(prefix))
+                self.assertIn(
+                    f"[total={count}; omitted={count - MAX_DISPLAYED_PATHS}]",
+                    error,
+                )
+                self.assertIn(paths[MAX_DISPLAYED_PATHS - 1], error)
+                self.assertNotIn(paths[MAX_DISPLAYED_PATHS], error)
 
     def test_root_git_directory_is_excluded(self) -> None:
         temporary, root = self.make_release({"README.md": b"release\n"})

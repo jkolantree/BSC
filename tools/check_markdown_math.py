@@ -86,7 +86,9 @@ TABLE_DELIMITER_CELL = re.compile(r"^:?-{3,}:?$")
 BLOCKQUOTE_PREFIX = re.compile(r"^ {0,3}>")
 LIST_ITEM = re.compile(r"^( {0,3})([-+*]|\d{1,9}[.)])([ \t]+)")
 EXCLUDED_DIRECTORY_NAMES = {
+    ".elan-home",
     ".git",
+    ".lake",
     ".pytest_cache",
     "__pycache__",
     "build",

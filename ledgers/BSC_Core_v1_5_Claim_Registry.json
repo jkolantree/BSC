@@ -1,0 +1,216 @@
+{
+  "schema": "bsc.core.v1.5.claim-registry.v1",
+  "milestone": "BSC Core v1.5 — Identifiability, Causal Transfer, and Auditable Evidence",
+  "coverage": "selected-milestone-claims",
+  "readiness_graph": "ledgers/BSC_Core_v1_5_Claim_Graph.json",
+  "package_artifacts": [
+    ".github/workflows/verify-release.yml",
+    "BSC_CORE_V1_5.md",
+    "Makefile",
+    "REPRODUCING.md",
+    "fixtures/F15_cyclic_readiness/receipt.schema.json",
+    "formal/bsc_core/BscCore.lean",
+    "formal/bsc_core/BscCore/Examples.lean",
+    "formal/bsc_core/BscCore/Tests.lean",
+    "formal/bsc_core/README.md",
+    "formal/bsc_core/lake-manifest.json",
+    "formal/bsc_core/lakefile.toml",
+    "formal/bsc_core/lean-toolchain",
+    "schemas/bsc-claim-readiness-graph-v1.schema.json",
+    "schemas/bsc-core-v1.5-claim-registry.schema.json",
+    "tests/test_bsc_core_v1_5.py"
+  ],
+  "claims": [
+    {
+      "id": "BSC-AIR-01",
+      "statement": "AI-assisted research evidence must preserve frozen target identity, separate generation from verification, classify independence, retain material failures, and promote only the claim supported by the applicable evidence lanes.",
+      "verdict": "N/A",
+      "authority_ceiling": "Normative certificate profile only; it does not validate any AI-generated result or establish workflow novelty.",
+      "dependencies": [],
+      "sources": [
+        "framework/AI_Assisted_Research_Evidence_Profile.md"
+      ],
+      "evidence": [
+        "research/BSC_Core_v1_5_Validation_Report.md"
+      ]
+    },
+    {
+      "id": "BSC-CAT-01",
+      "statement": "The full eight-field BSC transfer record admits a coherent displayed or double-category construction with proved units, associativity, interchange, and certificate equivalence.",
+      "verdict": "open",
+      "authority_ceiling": "Open problem only; no category of full BSC morphisms is asserted.",
+      "dependencies": [
+        "BSC-CAU-01",
+        "BSC-RDY-01"
+      ],
+      "sources": [
+        "framework/BSC_Core_v1_5_Foundations.md"
+      ],
+      "evidence": [
+        "research/BSC_Core_v1_5_Validation_Report.md"
+      ]
+    },
+    {
+      "id": "BSC-CAU-01",
+      "statement": "A BSC causal-transfer certificate should separate observational, interventional, and counterfactual authority and retain claim-local causal assumptions, intervention maps, typed defects, and authority ceilings.",
+      "verdict": "N/A",
+      "authority_ceiling": "Normative causal profile only; no causal model, empirical effect, or counterfactual claim is thereby validated.",
+      "dependencies": [
+        "BSC-IDN-01"
+      ],
+      "sources": [
+        "framework/Causal_Transfer_Profile.md"
+      ],
+      "evidence": [
+        "research/BSC_Core_v1_5_Validation_Report.md"
+      ]
+    },
+    {
+      "id": "BSC-FIX-14",
+      "statement": "For the declared four-state F14 model, the exact minimum intervention cost is 2; both direct and the pair column-plus-row are minimizers, and the tolerant direct report has target oscillation 3/2.",
+      "verdict": "true",
+      "authority_ceiling": "Exact finite deterministic fixture only; no external causal or empirical validity is supplied.",
+      "dependencies": [
+        "BSC-IDN-02",
+        "BSC-IDN-03"
+      ],
+      "sources": [
+        "fixtures/F14_intervention_identifiability/README.md",
+        "fixtures/F14_intervention_identifiability/input.json",
+        "tools/bsc_intervention_design.py"
+      ],
+      "evidence": [
+        "fixtures/F14_intervention_identifiability/expected_report.json",
+        "research/BSC_Core_v1_5_Validation_Report.md"
+      ]
+    },
+    {
+      "id": "BSC-FIX-15",
+      "statement": "For the declared three-node cyclic F15 cap system, synchronous descent preserves verdicts and reaches the retained greatest feasible fixed point; exhaustive cross-checking finds 84 feasible assignments below the initial caps.",
+      "verdict": "true",
+      "authority_ceiling": "Exact finite readiness fixture only; shared parsing and model code mean the cross-check is not an independent implementation.",
+      "dependencies": [
+        "BSC-RDY-02"
+      ],
+      "sources": [
+        "fixtures/F15_cyclic_readiness/README.md",
+        "fixtures/F15_cyclic_readiness/check_fixture.py",
+        "fixtures/F15_cyclic_readiness/input.json",
+        "fixtures/F15_cyclic_readiness/provenance.json",
+        "tools/bsc_claim_readiness.py"
+      ],
+      "evidence": [
+        "fixtures/F15_cyclic_readiness/verification_receipt.json",
+        "research/BSC_Core_v1_5_Validation_Report.md"
+      ]
+    },
+    {
+      "id": "BSC-IDN-01",
+      "statement": "A report identifies a target exactly when equal reports force equal target values, equivalently when the target kernel contains the report kernel and the target factors through the attainable reports.",
+      "verdict": "true",
+      "authority_ceiling": "Mathematical theorem under the declared set-theoretic definitions; it does not establish model truth, empirical adequacy, or novelty.",
+      "dependencies": [],
+      "sources": [
+        "formal/bsc_core/BscCore/Identifiability.lean",
+        "framework/BSC_Core_v1_5_Foundations.md"
+      ],
+      "evidence": [
+        "formal/bsc_core/BscCore/AxiomAudit.lean",
+        "research/BSC_Core_v1_5_Validation_Report.md"
+      ]
+    },
+    {
+      "id": "BSC-IDN-02",
+      "statement": "For a finite completion space, an intervention family identifies the target exactly when its distinguished-pair sets cover every target-separated pair.",
+      "verdict": "true",
+      "authority_ceiling": "Finite mathematical reduction to target-relative set cover; it does not supply a causal model or a general complexity improvement.",
+      "dependencies": [
+        "BSC-IDN-01"
+      ],
+      "sources": [
+        "formal/bsc_core/BscCore/PairSeparation.lean",
+        "framework/BSC_Core_v1_5_Foundations.md"
+      ],
+      "evidence": [
+        "formal/bsc_core/BscCore/AxiomAudit.lean",
+        "research/BSC_Core_v1_5_Validation_Report.md"
+      ]
+    },
+    {
+      "id": "BSC-IDN-03",
+      "statement": "In the declared finite approximate model, adding report constraints or tightening tolerances cannot increase the target oscillation over compatible pairs.",
+      "verdict": "true",
+      "authority_ceiling": "Finite monotonicity theorem; real-valued supremum, statistical, and empirical extensions require additional hypotheses.",
+      "dependencies": [
+        "BSC-IDN-01"
+      ],
+      "sources": [
+        "formal/bsc_core/BscCore/Oscillation.lean",
+        "framework/BSC_Core_v1_5_Foundations.md"
+      ],
+      "evidence": [
+        "formal/bsc_core/BscCore/AxiomAudit.lean",
+        "research/BSC_Core_v1_5_Validation_Report.md"
+      ]
+    },
+    {
+      "id": "BSC-NOV-01",
+      "statement": "The joint BSC integration of product readiness, cyclic caps, operational identifiability, causal-transfer discipline, and source-bound certificates is mathematically novel.",
+      "verdict": "open",
+      "authority_ceiling": "Recorded primary-source comparison only; universal novelty or priority is not established.",
+      "dependencies": [],
+      "sources": [
+        "research/BSC_Core_v1_5_Prior_Art_Equivalence_Matrix.md"
+      ],
+      "evidence": [
+        "research/BSC_Core_v1_5_Validation_Report.md"
+      ]
+    },
+    {
+      "id": "BSC-RDY-01",
+      "statement": "For a fixed active-axis family whose coordinate values are meet-semilattices, readiness inherits coordinatewise meet and greatest-lower-bound laws; with coordinate tops it also inherits top, while mathematical verdict and execution outcome remain separate types.",
+      "verdict": "true",
+      "authority_ceiling": "Mathematical theorem for the declared product semantics; no universal readiness vocabulary or scalar ranking is asserted.",
+      "dependencies": [],
+      "sources": [
+        "formal/bsc_core/BscCore/Readiness.lean",
+        "framework/BSC_Core_v1_5_Foundations.md"
+      ],
+      "evidence": [
+        "formal/bsc_core/BscCore/AxiomAudit.lean",
+        "research/BSC_Core_v1_5_Validation_Report.md"
+      ]
+    },
+    {
+      "id": "BSC-RDY-02",
+      "statement": "A finite monotone cyclic cap system has a greatest feasible fixed point below its initial assignment, and descending synchronous iteration from the initial assignment terminates there.",
+      "verdict": "true",
+      "authority_ceiling": "Human-proof-recorded heterogeneous finite cap theorem only; a cyclic fixed point does not ground the truth or independence of circularly dependent evidence.",
+      "dependencies": [
+        "BSC-RDY-01"
+      ],
+      "sources": [
+        "framework/BSC_Core_v1_5_Foundations.md"
+      ],
+      "evidence": [
+        "research/BSC_Core_v1_5_Validation_Report.md"
+      ]
+    },
+    {
+      "id": "BSC-RDY-03",
+      "statement": "For a homogeneous cyclic cap system on one complete lattice, the monotone cap step has a greatest feasible fixed point below the initial ceiling; when the vertex set and lattice are finite, descending iteration from top stabilizes at that fixed point.",
+      "verdict": "true",
+      "authority_ceiling": "Kernel-checked homogeneous complete-lattice theorem only; it is not the broader heterogeneous theorem and supplies no grounding for circular evidence.",
+      "dependencies": [
+        "BSC-RDY-01"
+      ],
+      "sources": [
+        "formal/bsc_core/BscCore/CapSystem.lean"
+      ],
+      "evidence": [
+        "formal/bsc_core/BscCore/AxiomAudit.lean",
+        "research/BSC_Core_v1_5_Validation_Report.md"
+      ]
+    }
+  ]
+}
