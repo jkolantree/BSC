@@ -41,6 +41,114 @@ content, pagination, references, and visual layout.
 - CPython 3.12.13
 - Lean 4.33.0 and matching mathlib v4.33.0 for `formal/bsc_core`
 
+### Cloud workspace profile (October 2026)
+
+The historical canonical versions above remain the release baseline. The
+cloud workspace has a separate development profile: CPython 3.12.13,
+pdfTeX 1.40.26 (banner: TeX Live 2025/dev/Debian), latexmk 4.86, and
+BibTeX 0.99d. Debian package versions are `latexmk=1:4.86~ds-1`,
+`texlive-binaries=2024.20240313.70630+ds-6`,
+`texlive-base=2024.20250309-1`,
+`texlive-latex-base=2024.20250309-1`,
+`texlive-latex-recommended=2024.20250309-1`,
+`texlive-fonts-recommended=2024.20250309-1`, and
+`texlive-latex-extra=2024.20250309-2`. These identify the inspected image;
+the profile is not a claim that its PDFs equal the historical release bytes.
+
+These tools were prepared in one task VM. A repository commit does not update
+the saved cloud environment image, setup configuration, or dependency caches.
+For a fresh Linux x86-64 task, the environment must provide `curl`, `tar`,
+`zstd`, `make`, Git, uv (tested: 0.12.19), and the PDF packages listed above.
+If those system packages are missing, coordinate environment provisioning
+before running the setup below; it does not install system packages.
+
+Prepare the pinned Python and Elan in writable, task-local directories:
+
+```bash
+mkdir -p /workspace/.bsc-tools/bin /workspace/.bsc-tools/elan-installer
+uv --no-config python install 3.12.13 --no-bin \
+  --install-dir /workspace/.bsc-tools/python \
+  --cache-dir /workspace/.bsc-tools/cache/uv
+ln -sfn /workspace/.bsc-tools/python/cpython-3.12.13-linux-x86_64-gnu/bin/python3.12 \
+  /workspace/.bsc-tools/bin/python3.12
+export ELAN_HOME=/workspace/.bsc-tools/elan
+curl --fail --location --output /workspace/.bsc-tools/elan-installer/elan.tar.gz \
+  https://github.com/leanprover/elan/releases/download/v4.2.4/elan-x86_64-unknown-linux-gnu.tar.gz
+echo '42b94d4244e8353142c456ec0e4ca6528fd898a6c604d4059f494e706e431f63  /workspace/.bsc-tools/elan-installer/elan.tar.gz' | sha256sum --check
+tar -xzf /workspace/.bsc-tools/elan-installer/elan.tar.gz \
+  -C /workspace/.bsc-tools/elan-installer
+/workspace/.bsc-tools/elan-installer/elan-init -y --no-modify-path --default-toolchain none
+```
+
+In the `/workspace/BSC` checkout, select the isolated tools explicitly:
+
+```bash
+export ELAN_HOME=/workspace/.bsc-tools/elan
+export PATH=/workspace/.bsc-tools/bin:/workspace/.bsc-tools/elan/bin:$PATH
+export XDG_CACHE_HOME=/workspace/.bsc-tools/cache
+export PYTHONDONTWRITEBYTECODE=1
+export PYTHONHASHSEED=0
+test "$(/workspace/.bsc-tools/bin/python3.12 --version)" = 'Python 3.12.13'
+make verify PYTHON=/workspace/.bsc-tools/bin/python3.12
+make build-check PYTHON=/workspace/.bsc-tools/bin/python3.12 LATEXMK='latexmk -g'
+```
+
+The default `python3` in this image is 3.12.14, so the explicit `PYTHON`
+argument is required for pinned verification. `latexmk -g` forces fresh
+compilation instead of accepting existing outputs. This profile produced a
+75-page paper and two-page synopsis with clean final logs. Both were visually
+reviewed; tracked release PDFs and their historical hashes remain unchanged.
+The build verifier accepts TeX line wrapping within an output summary while
+still requiring exactly one summary, the expected page count, and clean logs.
+
+Lean projects retain their existing `lean-toolchain` and `lake-manifest.json`
+pins: BSC Core uses 4.33.0 and Q26 uses 4.32.2. No `lake update` is needed
+for routine verification. Isolated installations use official
+[Elan](https://github.com/leanprover/elan/releases/tag/v4.2.4) and
+[Lean release assets](https://github.com/leanprover/lean4/releases).
+On Linux x86-64, when Elan's download endpoint is unavailable, the same official
+toolchains can be installed from GitHub release assets into a writable tools
+directory without changing credentials, shell startup files, or security settings:
+
+```bash
+mkdir -p /workspace/.bsc-tools/lean
+for version in 4.33.0 4.32.2; do
+  archive="/workspace/.bsc-tools/lean/lean-${version}-linux.tar.zst"
+  curl --fail --location --output "$archive" \
+    "https://github.com/leanprover/lean4/releases/download/v${version}/lean-${version}-linux.tar.zst"
+  tar --zstd -xf "$archive" -C /workspace/.bsc-tools/lean
+  elan toolchain link "leanprover/lean4:v${version}" \
+    "/workspace/.bsc-tools/lean/lean-${version}-linux"
+done
+```
+
+The downloaded archives had SHA-256 values below (local byte identities, not
+an independent publisher-signature verification):
+
+```text
+4b3fb03c29a1e0a253fb1d11f9bae3725f19a0dc6fc09b3ea16d2c9df3349e2c  lean-4.33.0-linux.tar.zst
+5f2069e6f5db73780f374ccb49ce8ea649aa20a0cebf0116816744c999ce72aa  lean-4.32.2-linux.tar.zst
+```
+
+Use each formal project's documented build, kernel replay, and axiom-audit
+commands with its checked-in dependency manifest. If the official mathlib
+binary cache is unavailable, `lake --no-cache build` compiles the pinned
+dependencies from source. In this task VM the cache endpoint returned proxy
+HTTP 403; no proxy or access policy was changed. Q26's accepted `Shadow.lean`
+imports all of Mathlib, so a fresh source build must compile that library.
+Allow it to finish, retain `.lake` outputs between attempts, and avoid
+concurrent builds of the same project. On this four-core, 16 GiB workspace,
+use `LEAN_NUM_THREADS=4` and the staged Q26 commands from
+`.github/workflows/verify-release.yml`. Toolchain installation alone does not
+establish that proof checks pass.
+
+To make this preparation persistent for future tasks, the environment owner
+must separately add these steps to the saved environment's setup or refresh
+its image, then republish it and verify a fresh task with `make ci` and both
+formal projects' gates. Preserving build caches is optional for correctness
+but avoids repeating the source bootstrap. This task does not perform that
+environment refresh or change network, access, or security settings.
+
 ## Published v1.1.0 render
 
 The tracked PDFs in this release were compiled and

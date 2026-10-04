@@ -1,5 +1,12 @@
 # Changelog
 
+## Cloud reproducibility maintenance — 2026-10-04
+
+- Document the separate cloud Python, PDF, and isolated Lean toolchain profile
+  without changing the historical release baseline or tracked release PDFs.
+- Accept line-wrapped TeX output summaries in the PDF build verifier; retain
+  strict page-count and single-summary checks with regression coverage.
+
 ## Post-v1.4.0 BSC Core v1.5 research milestone — 2026-08-15
 
 This bounded successor milestone stops application-layer expansion and adds a
