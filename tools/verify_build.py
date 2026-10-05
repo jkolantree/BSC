@@ -13,7 +13,7 @@ from pathlib import Path
 
 OUTPUT_PATTERN = re.compile(
     r"Output written on[\s\S]{1,1000}?"
-    r"\((?P<pages>[0-9]+) pages?, [0-9]+ bytes\)\.",
+    r"\((?P<pages>[0-9]+)\s+pages?\s*,\s+[0-9]+\s+bytes\)\.",
 )
 FORBIDDEN_LOG_PATTERNS = {
     "LaTeX warning": re.compile(r"^LaTeX Warning:", re.MULTILINE),

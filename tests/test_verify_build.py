@@ -42,6 +42,30 @@ class BuildVerifierTests(unittest.TestCase):
         errors = verify_artifact(artifact)
         self.assertIn("test: expected 2 pages, got 3", errors)
 
+    def test_wrapped_output_summary_preserves_checks(self) -> None:
+        for summary in [
+            "2 \npages, 123 bytes",
+            "2 pages\n, 123 bytes",
+            "2 pages,\n123 bytes",
+            "2 pages, 123\nbytes",
+        ]:
+            with self.subTest(summary=summary):
+                temporary, artifact = self.make_artifact(
+                    f"Output written on artifact.pdf ({summary}).\n"
+                )
+                self.addCleanup(temporary.cleanup)
+                self.assertEqual(verify_artifact(artifact), [])
+                self.assertIn(
+                    "test: expected 3 pages, got 2",
+                    verify_artifact(Artifact("test", artifact.pdf, artifact.log, 3)),
+                )
+                original = artifact.log.read_text(encoding="utf-8")
+                artifact.log.write_text(original * 2, encoding="utf-8")
+                self.assertIn(
+                    "test: expected one final output record, found 2",
+                    verify_artifact(artifact),
+                )
+
     def test_warning_is_rejected(self) -> None:
         temporary, artifact = self.make_artifact(
             "Package natbib Warning: Citation `missing' undefined.\n"
